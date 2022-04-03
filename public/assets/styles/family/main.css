@@ -1,0 +1,45 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#tree {
+  background-color: #babfc5;
+  width: 100vw;
+  height: 100vh
+}
+
+#tree-wrapper:focus,
+#tree:focus,
+#tree > canvas:focus {
+  border: 0;
+  outline: 0;
+}
+
+#tree > canvas {
+  height: 100vh !important;
+  width: 100vw !important;
+}
+
+#tree > div {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+body > footer {
+  background-color: transparent;
+  color: #000;
+  font-family: 'Roboto', sans-serif;
+  font-size: 0.65rem;
+  position: fixed;
+  bottom: 0;
+  padding: 0.1rem 0.4rem;
+  right: 0;
+  z-index: 99999;
+}
+
+.hidden {
+  display: none !important;
+  visibility: hidden !important;
+}
