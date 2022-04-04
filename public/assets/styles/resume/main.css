@@ -108,7 +108,7 @@ h1, h2, h3, h4, h5 {
 
 .resume__programming-languages ul {
   list-style: none;
-  margin: 0;
+  margin: -4px 0 0 0;
   padding: 0;
 }
 
@@ -121,7 +121,7 @@ h1, h2, h3, h4, h5 {
   font-size: 14px;
   font-weight: 500;
   letter-spacing: .25px;
-  margin: 0 2px 4px;
+  margin: 4px 4px 4px 0;
   padding: 7px 12px;
 }
 
@@ -268,6 +268,14 @@ h1, h2, h3, h4, h5 {
 
   .hide-sm {
     display: inline;
+  }
+
+  .resume__programming-languages li {
+    margin: 0 2px 4px;
+  }
+
+  .resume__programming-languages ul {
+    margin: 0;
   }
 }
 
