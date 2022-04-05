@@ -198,6 +198,7 @@ h1, h2, h3, h4, h5 {
 }
 
 .resume__content-section ul {
+  line-height: 18px;
   list-style-type: none;
   margin: 10px 0 12px;
   padding-left: 18px;
@@ -264,6 +265,10 @@ h1, h2, h3, h4, h5 {
 
   .resume__content-section li {
     margin-bottom: 0;
+  }
+
+  .resume__content-section ul {
+    line-height: 28px;
   }
 
   .hide-sm {
