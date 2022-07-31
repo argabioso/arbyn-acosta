@@ -97,7 +97,7 @@ h1, h2, h3, h4, h5 {
   align-self: center;
   display: block;
   color: #bdc1c6;
-  font-size: 14px;
+  font-size: 16px;
   margin-right: 5px;
 }
 
@@ -297,7 +297,7 @@ h1, h2, h3, h4, h5 {
 
   .resume__page {
     border-radius: 8px;
-    height: 1268.2353px;
+    height: 1268.2352941176470588235294117647px;
   }
 
   .resume__header {
@@ -360,7 +360,7 @@ h1, h2, h3, h4, h5 {
   }
 
   html {
-    zoom: 0.85;
+    zoom: 0.83265306122448979591836734693878;
   }
 
   html,
