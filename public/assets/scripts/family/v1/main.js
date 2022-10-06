@@ -13,16 +13,17 @@ function updatePersons(query, isPush)
     isPush = true;
   }
 
-  $.getJSON('https://api.jsonbin.io/b/5e58ed5b09ac43054813b795/latest', function(gedcom)
+  $.getJSON('https://api.jsonbin.io/v3/b/5e58ed5b09ac43054813b795/latest', function(gedcom)
   {
     'use strict';
 
     // Update configuration
     let options = new primitives.famdiagram.Config();
     options = Object.assign(options, config);
+    gedcom = gedcom.record;
 
     // Add data and apply preprocesses
-    let persons = addRelationships(gedcom.persons, gedcom.relationships);
+    var persons = addRelationships(gedcom.persons, gedcom.relationships);
     persons = getItemizedArray(persons);
 
     let filteredResults = filterPersons(query, persons);
