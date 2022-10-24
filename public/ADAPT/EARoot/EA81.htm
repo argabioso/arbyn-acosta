@@ -1,0 +1,402 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>UniqueId</title>
+<link href="../css/ea.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" src="../js/displayToc.js" type="text/javascript"></script>
+<script>
+
+  function switchProjectProperties() {
+			if (document.getElementById("proj00").style.display == "none") {
+				document.getElementById("proj00").style.display = "revert";
+				document.getElementById("proj01").style.display = "revert";
+				document.getElementById("proj02").style.display = "revert";
+				document.getElementById("proj03").style.display = "revert";
+				document.getElementById("proj04").style.display = "revert";
+				document.getElementById("proj05").style.display = "revert";
+			} else {
+				document.getElementById("proj00").style.display = "none";
+				document.getElementById("proj01").style.display = "none";
+				document.getElementById("proj02").style.display = "none";
+				document.getElementById("proj03").style.display = "none";
+				document.getElementById("proj04").style.display = "none";
+				document.getElementById("proj05").style.display = "none";
+			}
+}
+
+		function switchAdvancedProperties(){
+
+			if (document.getElementById("adv00").style.display == "none") {;
+				document.getElementById("adv00").style.display = "revert";
+				document.getElementById("adv01").style.display = "revert";
+			} else {
+				document.getElementById("adv00").style.display = "none";
+				document.getElementById("adv01").style.display = "none";
+			}
+		}
+		function initPage()
+        {			
+			var divs = document.getElementsByClassName("ObjectDetailsNotes");
+			for (var j = 0; j < divs.length; j++) {
+				var tmpStr = divs[j].innerHTML;
+				tmpStr = tmpStr.replace(/&gt;/g, ">");
+				tmpStr = tmpStr.replace(/&lt;/g, "<");
+
+				tmpStr = tmpStr.replace(/#gt;/g, "&gt;");
+				tmpStr = tmpStr.replace(/#lt;/g, "&lt;");
+
+				divs[j].innerHTML = tmpStr;
+			}
+
+            if (document.getElementById('TableGroup') != null)
+            {
+                toggleItem(document.getElementById('TableGroup').getElementsByTagName('li')[0].id.replace("Title", ""));
+            }
+
+        }
+</script>
+<style>
+
+</style>
+</head>
+<body onload="initPage();">
+<div class="section group" >
+
+		<div class="col span_2_of_2 header_frame">
+			<h1> UniqueId </h1>
+			<!-- <img class="header_image" src="../images/ea-banner.png" align="right" alt="Header Image" />-->
+			<img class="header_image" src="../images/ea-banner.png" align="right" alt="Header Image" />
+		</div>
+		<div class="col span_2_of_2 breadcrumb_frame">
+			<p><a href="EA85.htm">ADAPTv2.2</a> / <a href="EA81.htm">UniqueId</a></p>
+		</div>
+			
+		<table class="contentmaintable">
+			<!-- <tfoot>
+				<tr>
+					<td>foot1</td>
+					<td>foot2</td>
+				</tr>
+			</tfoot> -->
+			<tbody>
+				<tr>
+					<td class="indexcell">
+						<div class="projectBrowserTitle">Project: </div>
+						<ul>
+<li><img src="../images/175.png" alt="Diagram"/> <a href="EA1.htm">ApplicationDataModel</a></li>
+<li><img src="../images/175.png" alt="Diagram"/> <a href="EA3.htm">Catalog</a></li>
+<li><img src="../images/175.png" alt="Diagram"/> <a href="EA5.htm">CompoundIdentifier</a></li>
+<li><img src="../images/175.png" alt="Diagram"/> <a href="EA7.htm">Containers</a></li>
+<li><img src="../images/175.png" alt="Diagram"/> <a href="EA9.htm">ContextItem</a></li>
+<li><img src="../images/175.png" alt="Diagram"/> <a href="EA11.htm">Cotton Plug-In Class Hierarchy</a></li>
+<li><img src="../images/175.png" alt="Diagram"/> <a href="EA13.htm">Data Quality</a></li>
+<li><img src="../images/175.png" alt="Diagram"/> <a href="EA15.htm">Device</a></li>
+<li><img src="../images/175.png" alt="Diagram"/> <a href="EA17.htm">Device (LoggedData-Config Bridge)</a></li>
+<li><img src="../images/175.png" alt="Diagram"/> <a href="EA19.htm">Document</a></li>
+<li><img src="../images/175.png" alt="Diagram"/> <a href="EA21.htm">Document (Simpler)</a></li>
+<li><img src="../images/175.png" alt="Diagram"/> <a href="EA23.htm">Document (Supporting)</a></li>
+<li><img src="../images/175.png" alt="Diagram"/> <a href="EA25.htm">Equipment</a></li>
+<li><img src="../images/175.png" alt="Diagram"/> <a href="EA27.htm">Equipment Identification</a></li>
+<li><img src="../images/175.png" alt="Diagram"/> <a href="EA29.htm">Field Boundary</a></li>
+<li><img src="../images/175.png" alt="Diagram"/> <a href="EA31.htm">Grower</a></li>
+<li><img src="../images/175.png" alt="Diagram"/> <a href="EA33.htm">Grower (GFFCB basics)</a></li>
+<li><img src="../images/175.png" alt="Diagram"/> <a href="EA35.htm">Grower (Simpler)</a></li>
+<li><img src="../images/175.png" alt="Diagram"/> <a href="EA37.htm">Guidance</a></li>
+<li><img src="../images/175.png" alt="Diagram"/> <a href="EA39.htm">Irrigation Equipment</a></li>
+<li><img src="../images/175.png" alt="Diagram"/> <a href="EA41.htm">Load</a></li>
+<li><img src="../images/175.png" alt="Diagram"/> <a href="EA43.htm">LoggedData</a></li>
+<li><img src="../images/175.png" alt="Diagram"/> <a href="EA45.htm">Mixers</a></li>
+<li><img src="../images/175.png" alt="Diagram"/> <a href="EA47.htm">Note</a></li>
+<li><img src="../images/175.png" alt="Diagram"/> <a href="EA49.htm">OM (Observations and Measurements)</a></li>
+<li><img src="../images/175.png" alt="Diagram"/> <a href="EA51.htm">OM Semantics</a></li>
+<li><img src="../images/175.png" alt="Diagram"/> <a href="EA53.htm">PackagedProduct</a></li>
+<li><img src="../images/175.png" alt="Diagram"/> <a href="EA55.htm">Parallel objects</a></li>
+<li><img src="../images/175.png" alt="Diagram"/> <a href="EA57.htm">Person</a></li>
+<li><img src="../images/175.png" alt="Diagram"/> <a href="EA59.htm">Places</a></li>
+<li><img src="../images/175.png" alt="Diagram"/> <a href="EA61.htm">Plugin Manager</a></li>
+<li><img src="../images/175.png" alt="Diagram"/> <a href="EA63.htm">Prescription</a></li>
+<li><img src="../images/175.png" alt="Diagram"/> <a href="EA65.htm">Product</a></li>
+<li><img src="../images/175.png" alt="Diagram"/> <a href="EA67.htm">Product (Basics)</a></li>
+<li><img src="../images/175.png" alt="Diagram"/> <a href="EA69.htm">Product (Inheritance)</a></li>
+<li><img src="../images/175.png" alt="Diagram"/> <a href="EA71.htm">ProductContainerOperation</a></li>
+<li><img src="../images/175.png" alt="Diagram"/> <a href="EA73.htm">ReferenceLayer</a></li>
+<li><img src="../images/175.png" alt="Diagram"/> <a href="EA75.htm">Representations</a></li>
+<li><img src="../images/175.png" alt="Diagram"/> <a href="EA77.htm">Shape</a></li>
+<li><img src="../images/175.png" alt="Diagram"/> <a href="EA79.htm">TimeScope</a></li>
+<li><img src="../images/175.png" alt="Diagram"/> <a href="EA81.htm">UniqueId</a></li>
+<li><img src="../images/175.png" alt="Diagram"/> <a href="EA83.htm">WorkItem</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA88.htm">AbCurve</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA89.htm">AbLine</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA90.htm">ActiveIngredient`</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA91.htm">APlus</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA92.htm">ApplicationDataModel</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA93.htm">ApplicationStrategyEnum</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA94.htm">AvailableProduct</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA95.htm">BoundingBox</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA96.htm">Brand</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA97.htm">CalibrationFactor</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA98.htm">Catalog</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA99.htm">CategoryEnum</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA100.htm">Company</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA101.htm">CompoundIdentifier</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA102.htm">Connector</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA103.htm">ConnectorTypeEnum</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA104.htm">ConstantOffsetHeadland</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA105.htm">Contact</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA106.htm">ContactInfo</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA107.htm">ContactTypeEnum</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA108.htm">ContainedPackagedProduct</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA109.htm">Container</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA110.htm">ContainerModel</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA112.htm">ContainerUseTypeEnum</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA113.htm">ContextItem</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA114.htm">ContextItemDefinition</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA115.htm">ContextItemEnumItem</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA118.htm">Crop</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA119.htm">CropNutritionIngredient</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA120.htm">CropNutritionProduct</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA121.htm">CropProtectionProduct</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA122.htm">CropVarietyProduct</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA123.htm">CropZone</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA124.htm">DataLogTrigger</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA125.htm">DateContextEnum</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA126.htm">DateTime</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA127.htm">DensityFactor</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA128.htm">Destination</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA129.htm">DeviceElement</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA130.htm">DeviceElementConfiguration</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA131.htm">DeviceElementTypeEnum</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA132.htm">DeviceElementUse</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA133.htm">DeviceModel</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA134.htm">DeviceSeries</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA135.htm">DocRelationshipTypeEnum</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA136.htm">Document</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA137.htm">DocumentCorrelation</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA138.htm">Documents</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA139.htm">Double</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA140.htm">DrivenHeadland</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA141.htm">EndgunConfiguration</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA142.htm">EndgunTable</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA143.htm">EndgunTableEntry</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA144.htm">EnumeratedRepresentation</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA145.htm">EnumeratedRepresentationGroup</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA146.htm">EnumeratedValue</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA147.htm">EnumeratedWorkingData</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA148.htm">EnumerationMember</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA149.htm">EquipmentConfiguration</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA150.htm">EquipmentConfigurationGroup</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA151.htm">Facility</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA152.htm">Farm</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA153.htm">Field</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA154.htm">FieldBoundary</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA155.htm">FileSystem</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA156.htm">GenericProduct</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA157.htm">GeoPoliticalContext</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA158.htm">GLNType</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA159.htm">GPCLevelEnum</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA160.htm">GPCSourceVocEnum</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA161.htm">GpsSource</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA162.htm">GpsSourceEnum</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA163.htm">Grower</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA164.htm">GuidanceAllocation</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA165.htm">GuidanceExtensionEnum</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA166.htm">GuidanceGroup</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA167.htm">GuidancePattern</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA168.htm">GuidancePatternTypeEnum</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA169.htm">GuidanceShift</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA170.htm">HarvestedCommodityProduct</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA171.htm">Headland</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA172.htm">HitchPoint</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA173.htm">HitchTypeEnum</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA174.htm">IdSourceTypeEnum</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA175.htm">IdTypeEnum</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA178.htm">ImplementConfiguration</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA179.htm">Ingredient</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA180.htm">InteriorBoundaryAttribute</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA184.htm">IrrCollection</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA188.htm">IrrItem</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA190.htm">IrrRadialSpatialScope</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA191.htm">IrrRecord</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA192.htm">IrrSectionConfiguration</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA193.htm">IrrSectionFlow</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA195.htm">IrrSpatialScope</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA196.htm">IrrSystemConfiguration</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA197.htm">IrrSystemModel</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA199.htm">Lexicalization</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA200.htm">LinearRing</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA201.htm">LineString</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA202.htm">Load</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA203.htm">LoadTypeEnum</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA204.htm">Location</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA205.htm">LoggedData</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA206.htm">LoggingLevelEnum</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA207.htm">LoggingMethodEnum</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA208.htm">MachineConfiguration</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA209.htm">ManualPrescription</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA210.htm">Manufacturer</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA211.htm">MeteredValue</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA212.htm">MixProduct</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA213.htm">ModelScope</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA215.htm">MultiLineString</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA216.htm">MultiPoint</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA217.htm">MultiPolygon</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA219.htm">Note</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA220.htm">NumericRepresentation</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA221.htm">NumericRepresentationValue</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA222.htm">NumericValue</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA223.htm">NumericWorkingData</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA224.htm">Obs</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA225.htm">ObsCollection</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA226.htm">ObsDataset</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA227.htm">Observations</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA228.htm">OMCode</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA229.htm">OperationData</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA230.htm">OperationSummary</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA231.htm">OperationTypeEnum</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA232.htm">OriginAxleLocationEnum</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA233.htm">PackagedProduct</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA234.htm">PackagedProductInstance</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA236.htm">PermittedProduct</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA237.htm">Person</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA238.htm">PersonRole</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA240.htm">PivotGuidancePattern</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA241.htm">Place</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA242.htm">PlaceTypeEnum</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA243.htm">Plan</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA244.htm">PluginFactory</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA245.htm">PluginMetadata</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA246.htm">Point</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA247.htm">Polygon</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA248.htm">Prescription</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA249.htm">Presentation</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA250.htm">Product</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA251.htm">ProductComponent</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA252.htm">ProductFormEnum</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA253.htm">ProductStatusEnum</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA254.htm">ProductTypeEnum</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA255.htm">ProductUse</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA256.htm">PropagationDirectionEnum</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA257.htm">Properties</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA258.htm">ProprietaryValue</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA259.htm">RadialExtent</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA260.htm">RadialLookupCollection</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA261.htm">RadialPrescription</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA262.htm">RasterData</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA263.htm">RasterGridPrescription</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA264.htm">RasterReferenceLayer</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA265.htm">Recommendation</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA266.htm">ReferenceLayer</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA267.htm">ReferenceLayerTypeEnum</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA268.htm">ReferencePoint</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA269.htm">Representation</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA270.htm">RepresentationCodeSourceEnum</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA271.htm">RepresentationValue</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA272.htm">RxCellLookup</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA273.htm">RxProductLookup</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA274.htm">RxRadialLookup</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA275.htm">RxRate</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA276.htm">RxShapeLookup</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA277.htm">SectionConfiguration</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA278.htm">Shape</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA279.htm">ShapeLookup</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA280.htm">ShapeReferenceLayer</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA281.htm">ShapeTypeEnum</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA282.htm">SpatialAttribute</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA283.htm">SpatialPrescription</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA284.htm">SpatialRecord</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA285.htm">Spiral</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA286.htm">StampedMeteredValues</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA287.htm">StatusUpdate</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA288.htm">StringRepresentation</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA289.htm">StringValue</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA290.htm">Summary</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA292.htm">TimeScope</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA293.htm">Timespan</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA294.htm">Trait</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA295.htm">UniqueId</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA296.htm">UnitOfMeasure</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA297.htm">UnitOfMeasureDimensionEnum</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA298.htm">VectorPrescription</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA299.htm">WorkingData</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA300.htm">WorkItem</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA301.htm">WorkItemOperation</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA302.htm">WorkItemPriorityEnum</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA303.htm">WorkOrder</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA304.htm">WorkRecord</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA305.htm">WorkStatusEnum</a></li>
+<li><img src="../images/8.png" alt="Interface"/> <a href="EA176.htm">IError</a></li>
+<li><img src="../images/8.png" alt="Interface"/> <a href="EA177.htm">IFileSystem</a></li>
+<li><img src="../images/8.png" alt="Interface"/> <a href="EA181.htm">IPlugin</a></li>
+<li><img src="../images/8.png" alt="Interface"/> <a href="EA182.htm">IPluginFactory</a></li>
+<li><img src="../images/8.png" alt="Interface"/> <a href="EA183.htm">IPluginLoader</a></li>
+<li><img src="../images/247.png" alt="Enumeration"/> <a href="EA111.htm">ContainerModelStatusEnum</a></li>
+<li><img src="../images/247.png" alt="Enumeration"/> <a href="EA116.htm">ContextItemValueTypeEnum</a></li>
+<li><img src="../images/247.png" alt="Enumeration"/> <a href="EA117.htm">CornerArmTypeEnum</a></li>
+<li><img src="../images/247.png" alt="Enumeration"/> <a href="EA185.htm">IrrErrorCodeEnum</a></li>
+<li><img src="../images/247.png" alt="Enumeration"/> <a href="EA186.htm">IrrFlowDataSourceEnum</a></li>
+<li><img src="../images/247.png" alt="Enumeration"/> <a href="EA187.htm">IrrFlowTagEnum</a></li>
+<li><img src="../images/247.png" alt="Enumeration"/> <a href="EA189.htm">IrrPressureLocationEnum</a></li>
+<li><img src="../images/247.png" alt="Enumeration"/> <a href="EA194.htm">IrrSectionTypeEnum</a></li>
+<li><img src="../images/247.png" alt="Enumeration"/> <a href="EA198.htm">IrrSystemTypeEnum</a></li>
+<li><img src="../images/247.png" alt="Enumeration"/> <a href="EA214.htm">ModelScopeTypeEnum</a></li>
+<li><img src="../images/60.png" alt="Collaboration"/> <a href="EA218.htm">newCollaboration</a></li>
+<li><img src="../images/247.png" alt="Enumeration"/> <a href="EA235.htm">PackagedProductStatusEnum</a></li>
+<li><img src="../images/247.png" alt="Enumeration"/> <a href="EA239.htm">PivotGuidanceDefinitionEnum</a></li>
+<li><img src="../images/247.png" alt="Enumeration"/> <a href="EA291.htm">TimeDataSourceEnum</a></li>
+</ul>
+
+					</td>
+					<td class="contentcell"><div class="PageBody">
+	<div class=diagram_image> 
+<img src="EA82.png" usemap="#EA82" border="0" />
+
+<MAP NAME="EA82">
+<area shape="rect" coords="10,20,100,131" href="EA175.htm" target="_self">
+<area shape="rect" coords="645,20,735,105" href="EA174.htm" target="_self">
+<area shape="rect" coords="300,10,481,98" href="EA295.htm" target="_self">
+</MAP>
+ </div>
+	<div class="ObjectTitle">UniqueId : Class diagram</div>
+	<table border="0" cellpadding="0" cellspacing="0" class="ObjectDetails">
+		<tr>
+			<td width="15%" class="ObjectDetailsTopic">Created:</td>
+			<td width="85%" class="ObjectDetailsValue">20/10/2022 1:51:24 AM</td>
+		</tr>
+		<tr>
+			<td width="15%" class="ObjectDetailsTopic">Modified:</td>
+			<td width="85%" class="ObjectDetailsValue">20/10/2022 1:51:24 AM</td>
+		</tr>
+		<tr style="padding-top: 10px;">
+			<td width="15%" class="ObjectDetailsTopic"><button onclick="switchProjectProperties()"><img src="../images/plus03.gif" align="absmiddle" id="proj" /></button>Project:</td>
+			<td width="85%" class="ObjectDetailsValue"></td>			
+		</tr>
+		<tr id="proj00" style="display: none;">
+			<td width="15%" class="ObjectDetailsTopic" style="padding-left: 18px;">Author:</td>
+			<td width="85%" class="ObjectDetailsValue">Jeff</td>
+		</tr>
+		<tr id="proj01" style="display: none;">
+			<td width="15%" class="ObjectDetailsTopic" style="padding-left: 18px;">Version:</td>
+			<td width="85%" class="ObjectDetailsValue">1.0</td>
+		</tr>
+		<tr>
+			<td width="15%" class="ObjectDetailsTopic"><button onclick="switchAdvancedProperties()"><img src="../images/plus03.gif" align="absmiddle" id="adv" /></button>Advanced:</td>
+			<td width="85%" class="ObjectDetailsValue"></td>			
+		</tr>
+		<tr id="adv00" style="display: none;">
+			<td width="15%" class="ObjectDetailsTopic" style="padding-left: 18px;">ID:</td>
+			<td width="85%" class="ObjectDetailsValue">{A4F77423-30D7-4bfb-90DC-FE4EDCE3564A}</td>
+		</tr>
+	</table>
+	
+</div>
+
+ </td>
+				</tr>
+			</tbody>
+		</table>
+		
+</div>
+</body>
+</html>
+
