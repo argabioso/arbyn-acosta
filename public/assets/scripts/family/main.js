@@ -125,7 +125,7 @@ tree.linkTemplate = $(
     go.Shape,
     {
       strokeWidth: 1,
-      stroke: "#6a6a6a"
+      stroke: "#9f9f9f"
     }
   )
 );
