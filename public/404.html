@@ -6,15 +6,17 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <meta name="google-site-verification" content="tPF4MkMFOKSA1UpzqhOkmaLuZyXORthRVe-GqmqBDhE" />
 
-    <link rel="shortcut icon" href="/assets/icons/favicon.ico" />
-
     <title>Page Not Found - Argabioso Domains</title>
 
     <style>
+      html, body {
+        padding: 0;
+        margin: 0;
+      }
       body{
         background-color: #f8f9fa;
         display: flex;
-        height:100vh;
+        height: 100vh;
         margin: 0;
         padding: 0;
       }
@@ -24,8 +26,8 @@
       }
       #mainImage_create {
         display: block;
-        width: 99%;
-        height: 99%;
+        width: 99vh;
+        height: 99vh;
         margin: auto;
       }
 
@@ -36,7 +38,7 @@
         }
       }
     </style>
-    <link rel="stylesheet" href="/assets/styles/common/fonts.css" />
+    <link rel="stylesheet" href="//arbyn.argabioso.com/assets/styles/common/fonts.css" />
   </head>
   <body>
           <svg id="mainImage_create" data-name="mainImage" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 171.2 81.5">
@@ -316,7 +318,37 @@
           <!-- <h1 id="title">Subdomain not found.</h1> -->
           <!-- <button id="newBtn" class="btn" disabled>&#8594; &nbsp;Back to Home</button> -->
 
-      <script src="/assets/scripts/resume/plugins.js"></script>
-      <script src="/assets/scripts/resume/main.js" defer></script>
+      <script>
+        function isdark() {
+          const now = new Date();
+
+          var hours = now.getHours();
+          var minutes = now.getMinutes();
+          var ampm = hours >= 12 ? 'pm' : 'am';
+          hours = hours % 12;
+          hours = hours ? hours : 12; // the hour '0' should be '12'
+          minutes = minutes < 10 ? '0'+minutes : minutes;
+          var strTime = hours + ':' + minutes + ' ' + ampm;
+
+          if (
+            (hours > 7 && hours <= 11 && ampm == "pm") ||
+            (hours >= 1 && hours < 7 && ampm == "am") ||
+            (hours == 12 && ampm == "am")
+          ) {
+            return true;
+          }
+          return false;
+        }
+
+        function applyDarkMode() {
+          if (isdark()) {
+             document.querySelector("body").classList.add('dark');
+           }
+        }
+        const interval = setInterval(applyDarkMode, 1800000);
+
+        applyDarkMode();
+        clearInterval(interval);
+      </script>
   </body>
 </html>
