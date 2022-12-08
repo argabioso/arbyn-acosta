@@ -1,10 +1,49 @@
+function isdark() {
+  const now = new Date();
+
+  var hours = now.getHours();
+  var minutes = now.getMinutes();
+  var ampm = hours >= 12 ? 'pm' : 'am';
+  hours = hours % 12;
+  hours = hours ? hours : 12; // the hour '0' should be '12'
+  minutes = minutes < 10 ? '0'+minutes : minutes;
+  var strTime = hours + ':' + minutes + ' ' + ampm;
+
+  if (
+    (hours > 7 && hours <= 11 && ampm == "pm") ||
+    (hours >= 1 && hours < 7 && ampm == "am") ||
+    (hours == 12 && ampm == "am")
+  ) {
+    return true;
+  }
+  return false;
+}
+
+var color_a = '#ffffff';
+var color_b = '#000000';
+var color_c = '#000000';
+
+var male_avatar = '../assets/images/family/male.png'
+var female_avatar = '../assets/images/family/female.png'
+
+if (isdark()) {
+  document.querySelector("body").classList.add('dark');
+  color_a = '#2f2f2f';
+  color_b = '#fefefe';
+  color_c = '#bdc1c6';
+
+  male_avatar = '../assets/images/family/male.dark.png';
+  female_avatar = '../assets/images/family/female.dark.png';
+}
+
+
 // Some constants
 const subtractor = 2;
 const node = {
   margin: 10 - subtractor,
   height: 51 - subtractor,
   width: 245 - (subtractor * 2),
-  background: '#ffffff'
+  background: color_a
 }
 
 // For conciseness. See the "Building Parts" intro page for more
@@ -61,9 +100,9 @@ tree.nodeTemplate = $(
         return '../assets/images/family/' + nodeData.key + '.png';
       }
       if (nodeData.gender.toUpperCase() == 'M') {
-        return '../assets/images/family/male.png';
+        return male_avatar;
       }
-      return '../assets/images/family/female.png';
+      return female_avatar;
     })
   ),
   $(
@@ -83,7 +122,8 @@ tree.nodeTemplate = $(
     {
       font: "700 14px Google Sans, sans-serif",
       margin: new go.Margin(node.margin + 1, node.margin, 0, node.height + node.margin + 5),
-      maxSize: new go.Size(node.width - node.height, 24)
+      maxSize: new go.Size(node.width - node.height, 24),
+      stroke: color_b
     },
     new go.Binding("text", function(nodeData) {
       let middleInitialsArray  = nodeData.name.middle.trim().split(' ');
@@ -103,7 +143,8 @@ tree.nodeTemplate = $(
     {
       font: "400 12px Roboto, sans-serif",
       margin: new go.Margin(24 + parseInt(node.margin / 2), node.margin, node.margin, node.height + node.margin + 5),
-      maxSize: new go.Size(node.width - node.height, 24)
+      maxSize: new go.Size(node.width - node.height, 24),
+      stroke: color_c
     },
     new go.Binding("text", function(nodeData) {
       return nodeData.lifespan + ' • ' + nodeData.key;
@@ -136,3 +177,4 @@ model.nodeDataArray = TREE_DATA;
 tree.model = model;
 
 document.querySelector('footer').classList.remove("hidden");
+

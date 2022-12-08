@@ -10,6 +10,10 @@ body {
   height: 100vh
 }
 
+.dark #tree {
+  background-color: #202124;
+}
+
 #tree-wrapper:focus,
 #tree:focus,
 #tree > canvas:focus {
@@ -29,7 +33,7 @@ body {
 
 body > footer {
   background-color: transparent;
-  color: #000;
+  color: #202124;
   font-family: 'Roboto', sans-serif;
   font-size: 0.65rem;
   position: fixed;
@@ -37,6 +41,10 @@ body > footer {
   padding: 0.1rem 0.4rem;
   right: 0;
   z-index: 99999;
+}
+
+body.dark > footer {
+  color: #bdc1c6;
 }
 
 .hidden {
