@@ -8,7 +8,7 @@ const TREE_DATA = [
           { key: "GHBZ-P5Q",         parent: "GQJK-LCT", name: { first: "Francisca",  middle: "Asco",        last: "Mia"         }, gender: "F", lifespan: "Deceased",        hasImage: false },
           { key: "GJJ8-MK1",         parent: "GHBZ-P5Q", name: { first: "Francisco",  middle: "Trobela",     last: "Mía"         }, gender: "M", lifespan: "Deceased",        hasImage: false },
             { key: "GJJ8-HDC",       parent: "GJJ8-MK1", name: { first: "Santiago",   middle: "",            last: "Mía"         }, gender: "M", lifespan: "Deceased",        hasImage: false },
-            { key: "GJJZ-54Z",       parent: "GJJ8-MK1", name: { first: "Aniceta",    middle: "",            last: "Trobela"     }, gender: "F", lifespan: "Deceased",        hasImage: false },
+            { key: "GJJZ-54Z",       parent: "GJJ8-MK1", name: { first: "Aniceta",    middle: "",            last: "Trovela"     }, gender: "F", lifespan: "Deceased",        hasImage: false },
           { key: "GJJZ-65G",         parent: "GHBZ-P5Q", name: { first: "Gabina",     middle: "Villarante",  last: "Asco"        }, gender: "F", lifespan: "Deceased",        hasImage: false },
             { key: "GJJ8-XXM",       parent: "GJJZ-65G", name: { first: "Eleuterio",  middle: "",            last: "Asco"        }, gender: "M", lifespan: "Deceased",        hasImage: false },
             { key: "GJJZ-1K6",       parent: "GJJZ-65G", name: { first: "Sabina",     middle: "",            last: "Villarante"  }, gender: "F", lifespan: "Deceased",        hasImage: false },
