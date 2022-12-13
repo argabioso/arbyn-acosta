@@ -66,11 +66,6 @@ var tree = $(
   }
 );
 
-tree.addDiagramListener("ObjectSingleClicked", function(e) {
-  var part = e.subject.part;
-  if (!(part instanceof go.Link)) console.log("Clicked on " + part.data.key);
-});
-
 tree.nodeTemplate = $(
   go.Node,
   {
