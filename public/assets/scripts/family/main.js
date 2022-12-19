@@ -19,6 +19,49 @@ function isdark() {
   return false;
 }
 
+function getLifeSpan(nodeData) {
+  var SEPARATOR = " — "
+
+  var lifespan = ""
+  var isLiving = nodeData.living;
+
+  var birthYear = null;
+  var deathYear = null;
+
+  if (nodeData.birthDate != null) birthYear = nodeData.birthDate.split("-", 1)[0];
+  if (nodeData.deathDate != null) deathYear = nodeData.deathDate.split("-", 1)[0];
+
+  if (birthYear == null && deathYear == null && isLiving == null) {
+    return "Living";
+  }
+
+  if (birthYear == null && deathYear == null) {
+    if (isLiving) {
+      return "Living";
+    } else {
+      return "Deceased";
+    }
+  }
+
+  if (birthYear == null && deathYear != null) {
+    return " — " + deathYear;
+  }
+
+  if (birthYear != null && deathYear == null) {
+    if (isLiving) {
+      return birthYear + SEPARATOR + "Living";
+    } else {
+      return birthYear + SEPARATOR + "Deceased";
+    }
+  }
+
+  if (birthYear != null && deathYear != null) {
+    return birthYear + SEPARATOR + deathYear;
+  }
+
+  return "Living"
+}
+
 var color_a = '#ffffff';
 var color_b = '#000000';
 var color_c = '#000000';
@@ -142,7 +185,7 @@ tree.nodeTemplate = $(
       stroke: color_c
     },
     new go.Binding("text", function(nodeData) {
-      return nodeData.lifespan + ' • ' + nodeData.key;
+      return getLifeSpan(nodeData) + ' • ' + nodeData.key;
     })
   ),
 );
