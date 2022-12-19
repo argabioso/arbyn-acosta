@@ -4,10 +4,17 @@ body {
   padding: 0;
 }
 
+html,
+body,
+#tree-wrapper,
+#tree,
+#tree > canvas {
+  width: 100%;
+  height: 100%
+}
+
 #tree {
   background-color: #f8f9fa;
-  width: 100vw;
-  height: 100vh
 }
 
 .dark #tree {
@@ -19,11 +26,6 @@ body {
 #tree > canvas:focus {
   border: 0;
   outline: 0;
-}
-
-#tree > canvas {
-  height: 100vh !important;
-  width: 100vw !important;
 }
 
 #tree > div {
