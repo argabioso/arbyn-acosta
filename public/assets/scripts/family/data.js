@@ -1,7 +1,7 @@
 const TREE_DATA = [
   { key: "GQX8-000",                                     name: {},                                                                  gender: "",  birthDate: null,         deathDate: null,         living: false, hasImage: false, height: 0, width: 0 },
     { key: "GQX8-CQP",               parent: "GQX8-000", name: { first: "Arbyn",      middle: "Acosta",      last: "Argabioso"   }, gender: "M", birthDate: "1995-04-19", deathDate: null,         living: true,  hasImage: true   },
-      { key: "GQJK-L51",             parent: "GQX8-CQP", name: { first: "Rolando",    middle: "Saplala",     last: "Argabioso"   }, gender: "M", birthDate: "1966-10-09", deathDate: null,         living: true,  hasImage: true   },
+      { key: "GQJK-L51",             parent: "GQX8-CQP", name: { first: "Rolando",    middle: "Saplala",     last: "Argabioso"   }, gender: "M", birthDate: "1965-10-09", deathDate: null,         living: true,  hasImage: true   },
         { key: "GQJK-LCT",           parent: "GQJK-L51", name: { first: "Marcial",    middle: "Mia",         last: "Argabioso"   }, gender: "M", birthDate: "1932-10-14", deathDate: "2020-02-27", living: false, hasImage: true   },
           { key: "GHBZ-TM4",         parent: "GQJK-LCT", name: { first: "Eusebio",    middle: "Lopecillo",   last: "Argabioso"   }, gender: "M", birthDate: "1895",       deathDate: "1972-10-27", living: false, hasImage: false  },
             { key: "GHB8-RCH",       parent: "GHBZ-TM4", name: { first: "Estebana",   middle: "",            last: "Lopecillo"   }, gender: "F", birthDate: null,         deathDate: null,         living: false, hasImage: false  },
