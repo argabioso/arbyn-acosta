@@ -362,7 +362,7 @@ function addDisplayDetails(persons)
     person.description = generateDescription(person);
 
 
-    // console.log(person.description)
+    console.log(person.description)
   }
 
   return persons;
