@@ -1,0 +1,120 @@
+const TREE_DATA = [
+    // Side ni Lola Lina
+    { id: "L66T-WY8", gender: "male",   hasImage: false, name: { first: "Juan",         middle: "",            last: "Bautista"    }, birthDate: "1783",       deathDate: null,         living: false, parents: [] },
+    { id: "L6HC-MMX", gender: "female", hasImage: false, name: { first: "Maria",        middle: "",            last: "Quinto"      }, birthDate: null,         deathDate: null,         living: false, parents: [] },
+    { id: "GC7T-H59", gender: "male",   hasImage: false, name: { first: "Agustin",      middle: "Quinto",      last: "Bautista"    }, birthDate: "1812",       deathDate: null,         living: false, parents: ["L66T-WY8", "L6HC-MMX"] },
+    { id: "GC7T-1PK", gender: "female", hasImage: false, name: { first: "Felipa",       middle: "",            last: "Garcia"      }, birthDate: null,         deathDate: null,         living: false, parents: [] },
+    { id: "L281-614", gender: "female", hasImage: false, name: { first: "Maria",        middle: "Garcia",      last: "Bautista"    }, birthDate: null,         deathDate: null,         living: false, parents: ["GC7T-1PK", "GC7T-H59"] },
+    { id: "LLQS-6YC", gender: "male",   hasImage: false, name: { first: "Guillermo",    middle: "Bautista",    last: "Maramba"     }, birthDate: null,         deathDate: null,         living: false, parents: [] },
+    { id: "LLQS-641", gender: "male",   hasImage: true,  name: { first: "Miguel",       middle: "Bautista",    last: "Maramba"     }, birthDate: "1858",       deathDate: null,         living: false, parents: ["LLQS-6YC", "L281-614"] },
+    { id: "G7C3-B6P", gender: "male",   hasImage: false, name: { first: "Gregorio",     middle: "",            last: "Reyes"       }, birthDate: null,         deathDate: null,         living: false, parents: [] },
+    { id: "G7C3-J9S", gender: "female", hasImage: false, name: { first: "Leocadia",     middle: "",            last: "Novilla"     }, birthDate: null,         deathDate: null,         living: false, parents: [] },
+    { id: "LLQS-6F1", gender: "female", hasImage: true,  name: { first: "Mercedes",     middle: "Novilla",     last: "Reyes"       }, birthDate: null,         deathDate: null,         living: false, parents: ["G7C3-B6P", "G7C3-J9S"] },
+    { id: "GHB8-GB6", gender: "male",   hasImage: true,  name: { first: "Sotero",       middle: "Reyes",       last: "Maramba Sr." }, birthDate: null,         deathDate: null,         living: false, parents: ["LLQS-6F1", "LLQS-641"] },
+
+    { id: "GJJR-ZM1", gender: "male",   hasImage: false, name: { first: "Pavio",        middle: "",            last: "Ramos"       }, birthDate: null,         deathDate: null,         living: false, parents: [] },
+    { id: "GJJ5-528", gender: "female", hasImage: false, name: { first: "Juana",        middle: "Vicente",     last: "Alvarida"    }, birthDate: null,         deathDate: null,         living: false, parents: [] },
+    { id: "GJJK-R47", gender: "female", hasImage: false, name: { first: "Camila",       middle: "Alvarida",    last: "Ramos"       }, birthDate: null,         deathDate: null,         living: false, parents: ["GJJR-ZM1", "GJJ5-528"] },
+    { id: "GJJ5-PMT", gender: "male",   hasImage: false, name: { first: "Hilario",      middle: "",            last: "Dumantay"    }, birthDate: null,         deathDate: null,         living: false, parents: [] },
+    { id: "GJJR-4Y9", gender: "female", hasImage: false, name: { first: "Marcela",      middle: "",            last: "Dela Cruz"   }, birthDate: null,         deathDate: null,         living: false, parents: [] },
+    { id: "LLMC-RWF", gender: "male",   hasImage: false, name: { first: "Saturnino",    middle: "Dela Cruz",   last: "Dumantay"    }, birthDate: null,         deathDate: null,         living: false, parents: ["GJJ5-PMT", "GJJR-4Y9"] },
+    { id: "GHBD-9LY", gender: "female", hasImage: true,  name: { first: "Cresencia",    middle: "Ramos",       last: "Dumantay"    }, birthDate: "1911-04-20", deathDate: null,         living: false, parents: ["LLMC-RWF", "GJJK-R47"] },
+
+    { id: "GHB8-J1B", gender: "female", hasImage: true,  name: { first: "Catalina",     middle: "Dumantay",    last: "Maramba"     }, birthDate: "1943-01-28", deathDate: "1974-08-10", living: false, parents: ["GHBD-9LY", "GHB8-GB6"] },
+ // { id: "TEMP-033", gender: "female", hasImage: false, name: { first: "Angela",       middle: "",            last: "George"      }, birthDate: null,         deathDate: null,         living: false, parents: [] },
+
+    // Side ni Lolo Boy
+    { id: "GHB8-SQN", gender: "male",   hasImage: false, name: { first: "Ligorio",      middle: "",            last: "Acosta"      }, birthDate: "1871",       deathDate: "1948-07-07", living: false, parents: [] },
+    { id: "GHB8-5K8", gender: "female", hasImage: false, name: { first: "Maximiana",    middle: "",            last: "Bongco"      }, birthDate: null,         deathDate: null,         living: false, parents: [] },
+    { id: "GHBD-9L6", gender: "male",   hasImage: true,  name: { first: "Manuel",       middle: "Bongco",      last: "Acosta Sr."  }, birthDate: "1913-11-10", deathDate: "1994-11-15", living: false, parents: ["GHB8-SQN", "GHB8-5K8"] },
+    { id: "GHB8-LCC", gender: "male",   hasImage: false, name: { first: "Vicente",      middle: "",            last: "San Agustin" }, birthDate: null,         deathDate: null,         living: false, parents: [] },
+    { id: "GHB8-H7K", gender: "female", hasImage: false, name: { first: "Nena",         middle: "",            last: "Villacorta"  }, birthDate: null,         deathDate: null,         living: false, parents: [] },
+    { id: "GHB8-DXY", gender: "female", hasImage: true,  name: { first: "Natividad",    middle: "Villacorta",  last: "San Agustin" }, birthDate: "1925-12-21", deathDate: "2008-10-09", living: false, parents: ["GHB8-LCC", "GHB8-H7K"] },
+    { id: "GHBD-7M4", gender: "male",   hasImage: true,  name: { first: "Manuel",       middle: "San Agustin", last: "Acosta Jr."  }, birthDate: "1948-07-06", deathDate: "1979-06-07", living: false, parents: ["GHBD-9L6", "GHB8-DXY"] },
+    { id: "TEMP-015", gender: "male",   hasImage: false, name: { first: "Benjamin",     middle: "San Agustin", last: "Acosta Sr."  }, birthDate: "1947-10-23", deathDate: null,         living: false, parents: ["GHBD-9L6", "GHB8-DXY"] },
+    { id: "TEMP-031", gender: "female", hasImage: false, name: { first: "Amelia",       middle: "Villacorta",  last: "Acosta"      }, birthDate: null,         deathDate: null,         living: false, parents: ["GHBD-9L6", "GHB8-DXY"] },
+    { id: "TEMP-032", gender: "female", hasImage: false, name: { first: "Victoria",     middle: "Villacorta",  last: "Acosta"      }, birthDate: "1945-06-17", deathDate: null,         living: false, parents: ["GHBD-9L6", "GHB8-DXY"] },
+
+    // Lolo Boy - Generation Partners
+    { id: "TEMP-016", gender: "female", hasImage: false, name: { first: "Aida",         middle: "",            last: "Villacorta"  }, birthDate: null,         deathDate: "2020-08",    living: false, parents: [] },
+
+    // Batch nila Nanay
+    { id: "GQJK-G8W", gender: "female", hasImage: true,  name: { first: "Corazon",      middle: "Maramba",     last: "Acosta"      }, birthDate: "1971-03-10", deathDate: "2018-05-25", living: false, parents: ["GHBD-7M4", "GHB8-J1B"] },
+    { id: "TEMP-001", gender: "male",   hasImage: false, name: { first: "Manuel",       middle: "Maramba",     last: "Acosta III"  }, birthDate: "1966-11-07", deathDate: null,         living: true,  parents: ["GHBD-7M4", "GHB8-J1B"] },
+    { id: "TEMP-002", gender: "female", hasImage: false, name: { first: "Susan",        middle: "Maramba",     last: "Acosta"      }, birthDate: null,         deathDate: null,         living: true,  parents: ["GHBD-7M4", "GHB8-J1B"] },
+
+    { id: "TEMP-017", gender: "male",   hasImage: false, name: { first: "Benjamin",     middle: "Villacorta", last: "Acosta Jr."   }, birthDate: null,         deathDate: null,         living: true,  parents: ["TEMP-015", "TEMP-016"] },
+    { id: "TEMP-018", gender: "male",   hasImage: false, name: { first: "Darwin",       middle: "Villacorta", last: "Acosta Sr."   }, birthDate: null,         deathDate: null,         living: true,  parents: ["TEMP-015", "TEMP-016"] },
+
+    // Side ni Tatay Roland
+    { id: "GHB8-RCH", gender: "female", hasImage: false, name: { first: "Estebana",     middle: "",            last: "Lopecillo"   }, birthDate: null,         deathDate: null,         living: false, parents: [] },
+    { id: "GHBZ-TM4", gender: "male",   hasImage: false, name: { first: "Eusebio",      middle: "Lopecillo",   last: "Argabioso"   }, birthDate: "1895",       deathDate: "1972-10-27", living: false, parents: ["GHB8-RCH"] },
+    { id: "GHBZ-P5Q", gender: "female", hasImage: false, name: { first: "Francisca",    middle: "Arco",        last: "Mia"         }, birthDate: null,         deathDate: null,         living: false, parents: ["GJJ8-MK1", "GJJZ-65G"] },
+
+    { id: "GJJ8-HDC", gender: "male",   hasImage: false, name: { first: "Santiago",     middle: "",            last: "Mía"         }, birthDate: null,         deathDate: null,         living: false, parents: [] },
+    { id: "GJJZ-54Z", gender: "female", hasImage: false, name: { first: "Aniceta",      middle: "",            last: "Trovela"     }, birthDate: null,         deathDate: null,         living: false, parents: [] },
+    { id: "GJJ8-MK1", gender: "male",   hasImage: false, name: { first: "Francisco",    middle: "Trobela",     last: "Mía"         }, birthDate: null,         deathDate: null,         living: false, parents: ["GJJ8-HDC", "GJJZ-54Z"] },
+    { id: "GJJ8-XXM", gender: "male",   hasImage: false, name: { first: "Eleuterio",    middle: "",            last: "Arco"        }, birthDate: null,         deathDate: null,         living: false, parents: [] },
+    { id: "GJJZ-1K6", gender: "female", hasImage: false, name: { first: "Sabina",       middle: "",            last: "Villarante"  }, birthDate: null,         deathDate: null,         living: false, parents: [] },
+    { id: "GJJZ-65G", gender: "female", hasImage: false, name: { first: "Gabina",       middle: "Villarante",  last: "Arco"        }, birthDate: null,         deathDate: null,         living: false, parents: ["GJJ8-XXM", "GJJZ-1K6"] },
+
+    { id: "GHB8-7T6", gender: "male",   hasImage: true,  name: { first: "Fernando",     middle: "",            last: "Saplala"     }, birthDate: null,         deathDate: null,         living: false, parents: [] },
+    { id: "GHB8-GZL", gender: "female", hasImage: true,  name: { first: "Lucina",       middle: "Gutierrez",   last: "Perez"       }, birthDate: null,         deathDate: null,         living: false, parents: [] },
+    { id: "GQJK-LCT", gender: "male",   hasImage: true,  name: { first: "Marcial",      middle: "Mia",         last: "Argabioso"   }, birthDate: "1932-10-14", deathDate: "2020-02-27", living: false, parents: ["GHBZ-TM4", "GHBZ-P5Q"] },
+    { id: "GHBZ-YVX", gender: "female", hasImage: true,  name: { first: "Lydia",        middle: "Perez",       last: "Saplala"     }, birthDate: "1944-11-24", deathDate: null,         living: true,  parents: ["GHB8-7T6", "GHB8-GZL"] },
+
+    { id: "GQJK-L51", gender: "male",   hasImage: true,  name: { first: "Rolando",      middle: "Saplala",     last: "Argabioso"   }, birthDate: "1965-10-09", deathDate: null,         living: true,  parents: ["GQJK-LCT", "GHBZ-YVX"] },
+    { id: "GHBF-XBT", gender: "male",   hasImage: true,  name: { first: "Antonio",      middle: "Saplala",     last: "Argabioso"   }, birthDate: "1963-12-14", deathDate: null,         living: true,  parents: ["GQJK-LCT", "GHBZ-YVX"] },
+    { id: "GHBN-R99", gender: "male",   hasImage: true,  name: { first: "Danilo",       middle: "Saplala",     last: "Argabioso"   }, birthDate: "1969-03-31", deathDate: null,         living: true,  parents: ["GQJK-LCT", "GHBZ-YVX"] },
+
+    // My siblings, Rain = "Riand Nikole"
+    { id: "GQX8-CQP", gender: "male",   hasImage: true,  name: { first: "Arbyn",        middle: "Acosta",      last: "Argabioso"   }, birthDate: "1995-04-19", deathDate: null,         living: true,  parents: ["GQJK-L51", "GQJK-G8W"] },
+    { id: "TEMP-008", gender: "female", hasImage: true,  name: { first: "Rain",         middle: "Martin",      last: "Argabioso"   }, birthDate: "2003-11-07", deathDate: null,         living: true,  parents: ["GQJK-L51", "TEMP-006"] },
+    { id: "TEMP-009", gender: "female", hasImage: false, name: { first: "Ira Mae",      middle: "Acosta",      last: "Ignacio"     }, birthDate: "2004-08-05", deathDate: null,         living: true,  parents: ["GQJK-G8W", "TEMP-003"] },
+    { id: "TEMP-010", gender: "male",   hasImage: false, name: { first: "Joshua Caleb", middle: "Acosta",      last: "Ignacio"     }, birthDate: "2008-08-01", deathDate: null,         living: true,  parents: ["GQJK-G8W", "TEMP-003"] },
+
+    // My other parents
+    { id: "TEMP-004", gender: "male",   hasImage: false, name: { first: "Lorenzo",      middle: "Ventura",     last: "Ignacio"     }, birthDate: null,         deathDate: null,         living: false, parents: [] },
+    { id: "TEMP-005", gender: "female", hasImage: false, name: { first: "Teresita",     middle: "Go",          last: "Calilong"    }, birthDate: null,         deathDate: null,         living: true,  parents: [] },
+    { id: "TEMP-003", gender: "male",   hasImage: false, name: { first: "Larry",        middle: "Calilong",    last: "Ignacio"     }, birthDate: "1971-05-10", deathDate: null,         living: true,  parents: ["TEMP-004", "TEMP-005"] },
+    { id: "TEMP-006", gender: "female", hasImage: true,  name: { first: "Nierene",      middle: "Nieves",      last: "Martin"      }, birthDate: "1975",       deathDate: null,         living: true,  parents: [] },
+
+    // Cousins and their parents
+    { id: "TEMP-011", gender: "male",   hasImage: false, name: { first: "Neri",         middle: "",             last: "Hanopol"     }, birthDate: null,         deathDate: null,         living: true,  parents: [] },
+    { id: "TEMP-012", gender: "male",   hasImage: false, name: { first: "Franz Nersus", middle: "Acosta",       last: "Hanopol"     }, birthDate: null,         deathDate: null,         living: true,  parents: ["TEMP-011", "TEMP-002"] },
+    { id: "TEMP-030", gender: "female", hasImage: false, name: { first: "Karen",        middle: "Filomeno",     last: "Guillermo"   }, birthDate: null,         deathDate: null,         living: true,  parents: [] },
+    { id: "TEMP-027", gender: "male",   hasImage: false, name: { first: "Franzis Karl", middle: "Guillermo",    last: "Hanopol"     }, birthDate: "2007-11-24", deathDate: null,         living: true,  parents: ["TEMP-012", "TEMP-030"] },
+    { id: "TEMP-028", gender: "male",   hasImage: false, name: { first: "Lanz",         middle: "Acosta",       last: "Hanopol"     }, birthDate: null,         deathDate: null,         living: true,  parents: ["TEMP-012", "TEMP-030"] },
+    { id: "TEMP-029", gender: "male",   hasImage: false, name: { first: "Ezekiel",      middle: "Acosta",       last: "Hanopol"     }, birthDate: null,         deathDate: null,         living: true,  parents: ["TEMP-012", "TEMP-030"] },
+
+    { id: "GHBN-Y4G", gender: "female", hasImage: true,  name: { first: "Dulce",        middle: "Urgel",        last: "Cruz"        }, birthDate: "1964-09-07", deathDate: null,         living: true,  parents: [] },
+    { id: "GHBN-ZCN", gender: "female", hasImage: true,  name: { first: "Lotus",        middle: "Cruz",         last: "Argabioso"   }, birthDate: "1987",       deathDate: null,         living: true,  parents: ["GHBN-Y4G", "GHBF-XBT"] },
+    { id: "GHBF-LJX", gender: "male",   hasImage: true,  name: { first: "Mark",         middle: "Cruz",         last: "Argabioso"   }, birthDate: "1989",       deathDate: null,         living: true,  parents: ["GHBN-Y4G", "GHBF-XBT"] },
+    { id: "GHBJ-MVC", gender: "male",   hasImage: true,  name: { first: "Michael",      middle: "Cruz",         last: "Argabioso"   }, birthDate: "1995",       deathDate: null,         living: true,  parents: ["GHBN-Y4G", "GHBF-XBT"] },
+
+    { id: "TEMP-024", gender: "female", hasImage: true,  name: { first: "Melosina",     middle: "Cablao",       last: "Gallardo"    }, birthDate: "1967-03-08", deathDate: null,         living: true,  parents: [] },
+    { id: "TEMP-025", gender: "female", hasImage: true,  name: { first: "Danae",        middle: "Gallardo",     last: "Argabioso"   }, birthDate: null,         deathDate: null,         living: true,  parents: ["GHBN-R99", "TEMP-024"] },
+    { id: "TEMP-026", gender: "female", hasImage: true,  name: { first: "Danielle",     middle: "Gallardo",     last: "Argabioso"   }, birthDate: null,         deathDate: null,         living: true,  parents: ["GHBN-R99", "TEMP-024"] },
+
+    { id: "TEMP-021", gender: "female", hasImage: false, name: { first: "Analyn",       middle: "R",            last: "Costuya"     }, birthDate: null,         deathDate: null,         living: false, parents: [] },
+    { id: "TEMP-019", gender: "female", hasImage: false, name: { first: "Kristine",     middle: "Costuya",      last: "Acosta Jr."  }, birthDate: "1994-07-28", deathDate: null,         living: true,  parents: ["TEMP-018", "TEMP-021"] },
+    { id: "TEMP-022", gender: "female", hasImage: false, name: { first: "Rowena",       middle: "Costuya",      last: "Acosta"      }, birthDate: null,         deathDate: null,         living: true,  parents: ["TEMP-018", "TEMP-021"] },
+    { id: "TEMP-023", gender: "female", hasImage: false, name: { first: "Kim",          middle: "Costuya",      last: "Acosta"      }, birthDate: null,         deathDate: null,         living: true,  parents: ["TEMP-018", "TEMP-021"] },
+    { id: "TEMP-020", gender: "male",   hasImage: false, name: { first: "Darwin",       middle: "Costuya",      last: "Acosta"      }, birthDate: null,         deathDate: null,         living: true,  parents: ["TEMP-018", "TEMP-021"] },
+];
+
+/*
+    Grumaduate si Nanay ng May 30, 1994 ng BS Accounting sa UE Caloocan
+    Grumaduate si Nanay ng March 22, 1990 ng Highschool
+    Kasal ni Tito Dada and Tita Melo: December 26, 1995
+
+    pavelia - manila
+    jose reyes - manila
+
+    mylen - sinamungan (bahay), pillar, capiz
+    mamang - dolangan, pillar
+    tatay ni tita - bilawbawan, pillar
+
+    darne - water falls,
+    balingasag, misamis oriental
+*/

@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en-PH">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#222222" />
+
+    <link rel="shortcut icon" href="../../assets/icons/favicon.ico" />
+
+    <title>Arbyn Acosta Argabioso - Family Tree</title>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400" />
+
+    <link rel="stylesheet" href="../../assets/styles/common/fonts.css" />
+
+    <script type="text/javascript" src="../../assets/scripts/family/v3/primitives.js"></script>
+    <script type="text/javascript" src="../../assets/scripts/family/v3/data.js"></script>
+
+    <style>
+        *, *:before, *:after {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .bp-scrollframe {
+            border: 0;
+            overflow: hidden !important;
+            cursor: pointer;
+        }
+
+        #tree {
+            background-color: #f8f9fa;
+            height: 100vh;
+            width: 100vw;
+        }
+
+        .dark #tree {
+            background-color: #202124;
+        }
+
+        .person {
+            background-color: #fff;
+            border-radius: 4px;
+            -webkit-box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.05);
+            box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.05);
+        }
+
+        .dark .person {
+            background-color: #2e2e2e;
+        }
+
+        .person__image-wrapper,
+        .person__image {
+            -webkit-border-radius: 4px 0 0 4px;
+            border-radius: 4px 0 0 4px;
+        }
+
+        .person__image-wrapper {
+            top: 0;
+            left: 0;
+            float: left;
+        }
+
+        .person__image {
+        }
+
+        .person__details {
+            font-family: 'Roboto', sans-serif;
+            position: absolute;
+            margin: 0;
+        }
+
+        .person__details:before {
+            height: 100%;
+            background-color: #222;
+            content: '';
+            display: block;
+            width: 4px;
+            left: 0;
+            position: absolute;
+            top: 0;
+        }
+
+        .person.female .person__details:before {
+            background-color: #ea1969;
+        }
+
+        .person.male .person__details:before {
+            background-color: #2799fd;
+        }
+
+        .person__details-container {
+            line-height: 1.1;
+            margin-top: 0;
+            z-index: 999;
+        }
+
+        .person__display-name {
+            font-family: Google Sans, sans-serif;
+            font-weight: 700;
+            margin-bottom: 2px;
+            letter-spacing: -0.3px;
+        }
+
+        .dark .person__display-name {
+            color: #fff;
+        }
+
+        .person__lifespan {
+            letter-spacing: -0.1px;
+            font-weight: 400;
+        }
+
+        .dark .person__lifespan {
+            color: #bdc1c6;
+        }
+
+        body > footer {
+          background-color: transparent;
+          color: #202124;
+          font-family: 'Roboto', sans-serif;
+          font-size: 10.5px;
+          position: fixed;
+          bottom: 0;
+          padding: 0.1rem 0.4rem;
+          right: 0;
+          z-index: 99999;
+        }
+
+        body.dark > footer {
+          color: #bdc1c6;
+        }
+
+        .hidden {
+          display: none !important;
+          visibility: hidden !important;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="tree"></div>
+
+    <footer>
+        <span>Arbyn Acosta Argabioso - Family Tree &copy; <span id="datestamp">2023</span></span>
+    </footer>
+
+    <script>
+        function isdark() {
+          const now = new Date();
+
+          var hours = now.getHours();
+          var minutes = now.getMinutes();
+          var ampm = hours >= 12 ? 'pm' : 'am';
+          hours = hours % 12;
+          hours = hours ? hours : 12; // the hour '0' should be '12'
+          minutes = minutes < 10 ? '0'+minutes : minutes;
+          var strTime = hours + ':' + minutes + ' ' + ampm;
+
+          if (
+            (hours > 7 && hours <= 11 && ampm == "pm") ||
+            (hours >= 1 && hours < 7 && ampm == "am") ||
+            (hours == 12 && ampm == "am")
+          ) {
+            return false;
+          }
+          return false;
+        }
+
+        var MONTH_MAPPING = {
+            '01': 'Jan',
+            '02': 'Feb',
+            '03': 'Mar',
+            '04': 'Apr',
+            '05': 'May',
+            '06': 'Jun',
+            '07': 'Jul',
+            '08': 'Aug',
+            '09': 'Sep',
+            '10': 'Oct',
+            '11': 'Nov',
+            '12': 'Dec',
+        }
+
+        var IS_DARK = isdark();
+        var template = new primitives.TemplateConfig();
+
+        var HEIGHT = 40; // ONLY CHANGE THIS
+        var WIDTH = 216 / 45 * HEIGHT;
+
+        template.name = 'TreeItemTemplate';
+        template.itemSize = new primitives.Size(WIDTH, HEIGHT);
+
+        var shorterSide = Math.min(template.itemSize.width, template.itemSize.height);
+        var longerSide = Math.max(template.itemSize.width, template.itemSize.height);
+
+        template.itemTemplate = ["div",
+            {
+                "style": {
+                    "height": shorterSide + "px",
+                    "width": longerSide + "px",
+                },
+                "class": ["node", "person"]
+            },
+            ["div",
+                {
+                    "class": ["person__image-wrapper"],
+                    "style": {
+                        "height": shorterSide + "px",
+                        "width": shorterSide + "px",
+                    }
+                },
+                ["img",
+                    {
+                        "name": "photo",
+                        "class": ["person__image"],
+                        "style": {
+                            "height": shorterSide + "px",
+                            "width": shorterSide + "px",
+                        }
+                    }
+                ]
+            ],
+            ["div",
+                {
+                    "class": ["person__details"],
+                    "style": {
+                        "height": shorterSide + "px",
+                        "width": (longerSide - shorterSide) + "px",
+                        "left": shorterSide + "px",
+                    }
+                },
+                ["div",
+                    {
+                        "name": "name",
+                        "class": ["person__details-container"],
+                        "style": {
+                            "font-size": (shorterSide / 45 * 11.25) + "px",
+                            "height": shorterSide + "px",
+                            "width": (longerSide - shorterSide) + "px",
+                            "padding-top": (shorterSide / 36 * 7) + "px",
+                            "padding-right": (shorterSide / 36 * 7) + "px",
+                            "padding-bottom": (shorterSide / 36 * 7) + "px",
+                            "padding-left": (shorterSide / 36 * 11) + "px",
+                        }
+                    },
+                    ["div",
+                        {
+                            "name": "name",
+                            "class": ["person__display-name"],
+                            "style": {
+                                "font-size": (shorterSide / 45 * 13.125) + "px",
+                            }
+                        }
+                    ],
+                    ["div",
+                        {
+                            "name": "lifespan",
+                            "class": ["person__lifespan"],
+                        }
+                    ]
+                ]
+            ]
+        ];
+
+        function getDisplayName(data) {
+            let middleInitialsArray  = data.name.middle.trim().split(' ');
+            let middleInitialsString = '';
+
+            if (middleInitialsArray[0] != '') {
+                // for (let i = 0; i < middleInitialsArray.length; i++) {
+                //     middleInitialsString += middleInitialsArray[i][0] + '. '
+                // }
+
+                middleInitialsString += middleInitialsArray[0][0] + ". ";
+            }
+
+            return data.name.first + " " + middleInitialsString + data.name.last;
+        }
+
+        function getLifeSpan(nodeData) {
+            var SEPARATOR = " — "
+
+            var lifespan = ""
+            var isLiving = nodeData.living;
+
+            var birthYear = null;
+            var deathYear = null;
+
+            if (nodeData.birthDate != null) {
+                birthYear = '';
+
+                var birthParts = nodeData.birthDate.split("-", 2);
+                if (birthParts.length > 1) birthYear += MONTH_MAPPING[birthParts[1]] + ' ';
+
+                birthYear += birthParts[0];
+            }
+            if (nodeData.deathDate != null) {
+                deathYear = '';
+
+                var deathParts = nodeData.deathDate.split("-", 2);
+                if (deathParts.length > 1) deathYear += MONTH_MAPPING[deathParts[1]] + ' ';
+
+                deathYear += deathParts[0];
+            }
+
+            if (birthYear == null && deathYear == null && isLiving == null) {
+                return "Living";
+            }
+
+            if (birthYear == null && deathYear == null) {
+                if (isLiving) {
+                    return "Living";
+                } else {
+                    return "Deceased";
+                }
+            }
+
+            if (birthYear == null && deathYear != null) {
+                return " — " + deathYear;
+            }
+
+            if (birthYear != null && deathYear == null) {
+                if (isLiving) {
+                    return birthYear + SEPARATOR + "Living";
+                } else {
+                    return birthYear + SEPARATOR + "Deceased";
+                }
+            }
+
+            if (birthYear != null && deathYear != null) {
+                return birthYear + SEPARATOR + deathYear;
+            }
+
+            return "Living"
+        }
+
+        function onTemplateRender(event, data) {
+            var itemConfig = data.context;
+
+            switch (data.renderingMode) {
+                case primitives.RenderingMode.Create:
+                    break;
+
+                case primitives.RenderingMode.Update:
+                    if (itemConfig.gender == "female") {
+                        data.element.classList.remove("male");
+                    } else {
+                        data.element.classList.remove("female");
+                    }
+
+                    break;
+            }
+
+            var photoElement = data.element.firstChild.firstChild;
+            var displayNameElement = data.element.children[1].firstChild.firstChild;
+            var lifeSpanElement = data.element.children[1].firstChild.children[1];
+
+            var displayName = getDisplayName(itemConfig);
+            var lifeSpan = getLifeSpan(itemConfig);
+
+            displayNameElement.textContent = displayName;
+            lifeSpanElement.textContent = lifeSpan;
+
+            photoElement.alt = displayName;
+            data.element.classList.add(itemConfig.gender);
+
+            if (itemConfig.hasImage) {
+                photoElement.src = "../../assets/images/family/" + itemConfig.id + ".png";
+            } else {
+                if (IS_DARK) {
+                    photoElement.src = "../../assets/images/family/" + itemConfig.gender + ".dark.png";
+                } else {
+                    photoElement.src = "../../assets/images/family/" + itemConfig.gender + ".png";
+                }
+            }
+        }
+
+        var control;
+        document.addEventListener('DOMContentLoaded', function () {
+            if (IS_DARK) {
+                document.querySelector("body").classList.add('dark');
+            }
+
+            var options = new primitives.FamConfig();
+
+            options.pageFitMode = primitives.PageFitMode.None;
+            options.updateMode = primitives.UpdateMode.Recreate,
+
+            options.items = TREE_DATA;
+            options.cursorItem = 2;
+            options.linesWidth = 1;
+            options.linesColor = IS_DARK ? "#7f7f7f" : "#abacac";
+            options.hasSelectorCheckbox = primitives.Enabled.False;
+            options.normalLevelShift = 20;
+            options.dotLevelShift = 20;
+            options.lineLevelShift = 20;
+            options.normalItemsInterval = 10;
+            options.dotItemsInterval = 10;
+            options.lineItemsInterval = 10;
+            options.arrowsDirection = false;
+            options.showExtraArrows = false;
+            options.orientationType = primitives.OrientationType.Right;
+            options.bevelSize = 8
+
+            options.templates = [template];
+            options.onItemRender = onTemplateRender;
+            options.defaultTemplateName = "TreeItemTemplate";
+            options.connectorType = primitives.ConnectorType.Curved;
+            options.elbowDotSize = 5;
+
+            // var annotationList = [];
+            // TREE_DATA.forEach(function (item, index) {
+            //     console.log(item, index);
+            // });
+
+            // console.log(primitives.ZOrderType.Foreground)
+
+            // options.annotations = annotationList;
+            // options.annotations = [
+            //     {
+            //         annotationType: primitives.AnnotationType.HighlightPath,
+            //         items: ["TEMP-012", "TEMP-011", "TEMP-002"],
+            //         color: "#9acaca",
+            //         lineWidth: 1,
+            //         opacity: 1,
+            //         showArrows: false,
+            //         zOrderType: 2,
+            //     },
+            //     {
+            //         annotationType: primitives.AnnotationType.HighlightPath,
+            //         items: ["TEMP-012", "TEMP-011", "TEMP-002"],
+            //         color: "#fff9fa",
+            //         lineWidth: 4,
+            //         opacity: 1,
+            //         showArrows: false,
+            //         zOrderType: 2,
+            //         lineType: 0,
+            //     },
+            // ];
+
+            control = primitives.FamDiagram(document.getElementById("tree"), options);
+        });
+    </script>
+</body>
+</html>
