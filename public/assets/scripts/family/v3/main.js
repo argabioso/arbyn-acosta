@@ -14,7 +14,7 @@ function isdark() {
     (hours >= 1 && hours < 7 && ampm == "am") ||
     (hours == 12 && ampm == "am")
   ) {
-    return false;
+    return true;
   }
   return false;
 }
@@ -38,8 +38,8 @@ var IS_DARK = isdark();
 var template = new primitives.TemplateConfig();
 var combiner = new primitives.TemplateConfig();
 
-var HEIGHT = 40; // ONLY CHANGE THIS
-var WIDTH = 226 / 45 * HEIGHT;
+var HEIGHT = 45; // ONLY CHANGE THIS
+var WIDTH = 233 / 45 * HEIGHT;
 
 template.name = 'TreeItemTemplate';
 template.itemSize = new primitives.Size(WIDTH, HEIGHT);
@@ -147,16 +147,28 @@ function getLifeSpan(nodeData) {
     if (nodeData.birthDate != null) {
         birthYear = '';
 
-        var birthParts = nodeData.birthDate.split("-", 2);
-        if (birthParts.length > 1) birthYear += MONTH_MAPPING[birthParts[1]] + ' ';
+        var birthParts = nodeData.birthDate.split("-", 3);
+        if (birthParts.length >= 3) {
+            birthYear += birthParts[2] + ' ';
+            birthYear += MONTH_MAPPING[birthParts[1]] + ' ';
+        }
+        else if (birthParts.length == 2) {
+            birthYear += MONTH_MAPPING[birthParts[1]] + ' ';
+        }
 
         birthYear += birthParts[0];
     }
     if (nodeData.deathDate != null) {
         deathYear = '';
 
-        var deathParts = nodeData.deathDate.split("-", 2);
-        if (deathParts.length > 1) deathYear += MONTH_MAPPING[deathParts[1]] + ' ';
+        var deathParts = nodeData.deathDate.split("-", 3);
+        if (deathParts.length >= 3) {
+            deathYear += deathParts[2] + ' ';
+            deathYear += MONTH_MAPPING[deathParts[1]] + ' ';
+        }
+        else if (deathParts.length == 2) {
+            deathYear += MONTH_MAPPING[deathParts[1]] + ' ';
+        }
 
         deathYear += deathParts[0];
     }
@@ -201,6 +213,18 @@ function onTemplateRender(event, data) {
 
     switch (data.renderingMode) {
         case primitives.RenderingMode.Create:
+            if (itemConfig.gender == "female") {
+                data.element.classList.remove("male");
+            } else {
+                data.element.classList.remove("female");
+            }
+
+            if (itemConfig.adopted) {
+                data.element.classList.add("adopted");
+            } else {
+                data.element.classList.remove("adopted");
+            }
+
             break;
 
         case primitives.RenderingMode.Update:
@@ -208,6 +232,12 @@ function onTemplateRender(event, data) {
                 data.element.classList.remove("male");
             } else {
                 data.element.classList.remove("female");
+            }
+
+            if (itemConfig.adopted) {
+                data.element.classList.add("adopted");
+            } else {
+                data.element.classList.remove("adopted");
             }
 
             break;
@@ -270,7 +300,7 @@ document.addEventListener('DOMContentLoaded', function () {
     options.elbowDotSize = 3;
     // options.alignBylevels = false;
     // options.enableMatrixLayout = true;
-    // options.groupByType = primitives.GroupByType.Children;
+    options.groupByType = primitives.GroupByType.Children;
 
     // var annotationList = [];
     // TREE_DATA.forEach(function (item, index) {

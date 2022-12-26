@@ -71,6 +71,18 @@ body {
   top: 0;
 }
 
+.person.adopted .person__details:after {
+  height: 6px;
+  background-color: #ea1969;
+  content: "";
+  display: block;
+  width: 6px;
+  right: -1.5px;
+  position: absolute;
+  border-radius: 3px;
+  top: -1.5px;
+}
+
 .person.female .person__details:before {
   background-color: #ea1969;
 }
