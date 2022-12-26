@@ -51,8 +51,8 @@ const MY_TREE_DATA = [
   { id: "GQJK-L51", gender: "male",   hasImage: true,  name: { first: "Rolando",       middle: "Saplala",     last: "Argabioso"   }, birthDate: "1965-10-09", deathDate: null,         living: true,  parents: ["GQJK-LCT", "GHBZ-YVX"] },
   { id: "GQJK-G8W", gender: "female", hasImage: true,  name: { first: "Corazon",       middle: "Maramba",     last: "Acosta"      }, birthDate: "1971-03-10", deathDate: "2018-05-25", living: false, parents: ["GHBD-7M4", "GHB8-J1B"] },
 
- // { id: "GHB5-TWN", gender: "female", hasImage: false, name: { first: "Mitchie",       middle: "Ajesta",      last: "Adanza"      }, birthDate: "1994-12-16", deathDate: null,         living: true,  parents: [] },
- // { id: "COMB-001", gender: "male",   hasImage: false, name: { first: "",              middle: "",            last: ""            }, birthDate: null,         deathDate: null,         living: true,  parents: ["GQX8-CQP", "GHB5-TWN"], templateName: "CombinerTemplate" },
+//{ id: "GHB5-TWN", gender: "female", hasImage: false, name: { first: "Mitchie",       middle: "Ajesta",      last: "Adanza"      }, birthDate: "1994-12-16", deathDate: null,         living: true,  parents: [] },
+//{ id: "COMB-001", gender: "male",   hasImage: false, name: { first: "",              middle: "",            last: ""            }, birthDate: null,         deathDate: null,         living: true,  parents: ["GQX8-CQP", "GHB5-TWN"], templateName: "CombinerTemplate" },
 ];
 
 // const RAW_TREE_DATA = MY_TREE_DATA;
@@ -62,7 +62,8 @@ const RAW_TREE_DATA = MY_TREE_DATA.concat([
   { id: "TEMP-047", gender: "male",   hasImage: true,  name: { first: "Bonifacio",     middle: "Perez",       last: "Saplala"     }, birthDate: null,         deathDate: null,         living: true,  parents: ["GHB8-7T6", "GHB8-GZL"] },
   { id: "TEMP-048", gender: "male",   hasImage: false, name: { first: "Claro",         middle: "Perez",       last: "Saplala Sr." }, birthDate: null,         deathDate: null,         living: true,  parents: ["GHB8-7T6", "GHB8-GZL"] },
 
- // { id: "TEMP-033", gender: "female", hasImage: false, name: { first: "Angela",        middle: "",            last: "George"      }, birthDate: null,         deathDate: null,         living: false, parents: [] },
+  // Pangalawang asawa ni Lolo Manuel
+//{ id: "TEMP-033", gender: "female", hasImage: false, name: { first: "Angela",        middle: "",            last: "George"      }, birthDate: null,         deathDate: null,         living: false, parents: [] },
 
   { id: "TEMP-015", gender: "male",   hasImage: false, name: { first: "Benjamin",      middle: "San Agustin", last: "Acosta Sr."  }, birthDate: "1949-10-23", deathDate: null,         living: false, parents: ["GHBD-9L6", "GHB8-DXY"] },
   { id: "TEMP-031", gender: "female", hasImage: false, name: { first: "Amelia",        middle: "Villacorta",  last: "Acosta"      }, birthDate: "1947-06-12", deathDate: "2021-05-02", living: false, parents: ["GHBD-9L6", "GHB8-DXY"] },
@@ -82,7 +83,7 @@ const RAW_TREE_DATA = MY_TREE_DATA.concat([
   { id: "GHBN-R99", gender: "male",   hasImage: true,  name: { first: "Danilo",        middle: "Saplala",     last: "Argabioso"   }, birthDate: "1969-03-31", deathDate: null,         living: true,  parents: ["GQJK-LCT", "GHBZ-YVX"] },
 
   { id: "TEMP-056", gender: "male",   hasImage: false, name: { first: "Claro",         middle: "",            last: "Saplala Jr." }, birthDate: "1974-04-01", deathDate: null,         living: true,  parents: ["TEMP-048"] },
-  // { id: "TEMP-R57", gender: "male",   hasImage: true,  name: { first: "Danilo",        middle: "Saplala",     last: "Argabioso"   }, birthDate: "1969-03-31", deathDate: null,         living: true,  parents: ["GQJK-LCT", "GHBZ-YVX"] },
+//{ id: "TEMP-R57", gender: "male",   hasImage: true,  name: { first: "Danilo",        middle: "Saplala",     last: "Argabioso"   }, birthDate: "1969-03-31", deathDate: null,         living: true,  parents: ["GQJK-LCT", "GHBZ-YVX"] },
 
   // My siblings
   { id: "TEMP-008", gender: "female", hasImage: true,  name: { first: "Riand Nikole",  middle: "Martin",      last: "Argabioso"   }, birthDate: "2003-11-07", deathDate: null,         living: true,  parents: ["GQJK-L51", "TEMP-006"] },
@@ -98,57 +99,79 @@ const RAW_TREE_DATA = MY_TREE_DATA.concat([
   { id: "TEMP-006", gender: "female", hasImage: true,  name: { first: "Nierene",       middle: "Nieves",      last: "Martin"      }, birthDate: "1975",       deathDate: null,         living: true,  parents: [] },
 
   // Cousins and their parents
-  { id: "TEMP-011", gender: "male",   hasImage: true,  name: { first: "Neri",          middle: "",             last: "Hanopol"     }, birthDate: null,         deathDate: null,         living: true,  parents: [] },
-  { id: "TEMP-012", gender: "male",   hasImage: true,  name: { first: "Franz Nersus",  middle: "Acosta",       last: "Hanopol"     }, birthDate: null,         deathDate: null,         living: true,  parents: ["TEMP-011", "TEMP-002"] },
-  { id: "TEMP-049", gender: "female", hasImage: false, name: { first: "Tezz",          middle: "",             last: "Filomeno"    }, birthDate: null,         deathDate: null,         living: true,  parents: [] },
-  { id: "TEMP-030", gender: "female", hasImage: true,  name: { first: "Karen",         middle: "Filomeno",     last: "Guillermo"   }, birthDate: null,         deathDate: null,         living: true,  parents: ["TEMP-049"] },
-  { id: "TEMP-027", gender: "male",   hasImage: true,  name: { first: "Franzis Karl",  middle: "Guillermo",    last: "Hanopol"     }, birthDate: "2007-11-24", deathDate: null,         living: true,  parents: ["TEMP-012", "TEMP-030"] },
-  { id: "TEMP-028", gender: "male",   hasImage: true,  name: { first: "Lanz",          middle: "Acosta",       last: "Hanopol"     }, birthDate: null,         deathDate: null,         living: true,  parents: ["TEMP-012", "TEMP-030"] },
-  { id: "TEMP-029", gender: "male",   hasImage: true,  name: { first: "Ezekiel Kyrie", middle: "Acosta",       last: "Hanopol"     }, birthDate: null,         deathDate: null,         living: true,  parents: ["TEMP-012", "TEMP-030"] },
+  { id: "TEMP-011", gender: "male",   hasImage: true,  name: { first: "Neri",          middle: "",            last: "Hanopol"     }, birthDate: null,         deathDate: null,         living: true,  parents: [] },
+  { id: "TEMP-012", gender: "male",   hasImage: true,  name: { first: "Franz Nersus",  middle: "Acosta",      last: "Hanopol"     }, birthDate: null,         deathDate: null,         living: true,  parents: ["TEMP-011", "TEMP-002"] },
+  { id: "TEMP-049", gender: "female", hasImage: false, name: { first: "Tezz",          middle: "",            last: "Filomeno"    }, birthDate: null,         deathDate: null,         living: true,  parents: [] },
+  { id: "TEMP-030", gender: "female", hasImage: true,  name: { first: "Karen",         middle: "Filomeno",    last: "Guillermo"   }, birthDate: null,         deathDate: null,         living: true,  parents: ["TEMP-049"] },
+  { id: "TEMP-027", gender: "male",   hasImage: true,  name: { first: "Franzis Karl",  middle: "Guillermo",   last: "Hanopol"     }, birthDate: "2007-11-24", deathDate: null,         living: true,  parents: ["TEMP-012", "TEMP-030"] },
+  { id: "TEMP-028", gender: "male",   hasImage: true,  name: { first: "Lanz",          middle: "Acosta",      last: "Hanopol"     }, birthDate: null,         deathDate: null,         living: true,  parents: ["TEMP-012", "TEMP-030"] },
+  { id: "TEMP-029", gender: "male",   hasImage: true,  name: { first: "Ezekiel Kyrie", middle: "Acosta",      last: "Hanopol"     }, birthDate: null,         deathDate: null,         living: true,  parents: ["TEMP-012", "TEMP-030"] },
 
-  { id: "GHBN-Y4G", gender: "female", hasImage: true,  name: { first: "Dulce",         middle: "Urgel",        last: "Cruz"        }, birthDate: "1964-09-07", deathDate: null,         living: true,  parents: [] },
-  { id: "GHBN-ZCN", gender: "female", hasImage: true,  name: { first: "Lotus",         middle: "Cruz",         last: "Argabioso"   }, birthDate: "1987",       deathDate: null,         living: true,  parents: ["GHBN-Y4G", "GHBF-XBT"] },
-  { id: "GHBF-LJX", gender: "male",   hasImage: true,  name: { first: "Mark",          middle: "Cruz",         last: "Argabioso"   }, birthDate: "1989",       deathDate: null,         living: true,  parents: ["GHBN-Y4G", "GHBF-XBT"] },
-  { id: "GHBJ-MVC", gender: "male",   hasImage: true,  name: { first: "Michael",       middle: "Cruz",         last: "Argabioso"   }, birthDate: "1995",       deathDate: null,         living: true,  parents: ["GHBN-Y4G", "GHBF-XBT"] },
+  { id: "TEMP-065", gender: "female", hasImage: false, name: { first: "Teodorica",     middle: "Lequesta",    last: "Urgel"       }, birthDate: null,         deathDate: null,         living: true,  parents: [] },
+  { id: "TEMP-066", gender: "male",   hasImage: false, name: { first: "Edgardo",       middle: "Aguilar",     last: "Cruz"        }, birthDate: null,         deathDate: null,         living: true,  parents: ["TEMP-068"] },
+  { id: "GHBN-Y4G", gender: "female", hasImage: true,  name: { first: "Dulce",         middle: "Urgel",       last: "Cruz"        }, birthDate: "1964-09-07", deathDate: null,         living: true,  parents: ["TEMP-065", "TEMP-066"] },
+  { id: "GHBN-ZCN", gender: "female", hasImage: true,  name: { first: "Lotus",         middle: "Cruz",        last: "Argabioso"   }, birthDate: "1987",       deathDate: null,         living: true,  parents: ["GHBN-Y4G", "GHBF-XBT"] },
+  { id: "GHBF-LJX", gender: "male",   hasImage: true,  name: { first: "Mark",          middle: "Cruz",        last: "Argabioso"   }, birthDate: "1989",       deathDate: null,         living: true,  parents: ["GHBN-Y4G", "GHBF-XBT"] },
+  { id: "GHBJ-MVC", gender: "male",   hasImage: true,  name: { first: "Michael",       middle: "Cruz",        last: "Argabioso"   }, birthDate: "1995",       deathDate: null,         living: true,  parents: ["GHBN-Y4G", "GHBF-XBT"] },
 
-  { id: "TEMP-024", gender: "female", hasImage: true,  name: { first: "Melosina",      middle: "Cablao",       last: "Gallardo"    }, birthDate: "1967-03-08", deathDate: null,         living: true,  parents: [] },
-  { id: "TEMP-025", gender: "female", hasImage: true,  name: { first: "Danae",         middle: "Gallardo",     last: "Argabioso"   }, birthDate: null,         deathDate: null,         living: true,  parents: ["GHBN-R99", "TEMP-024"] },
-  { id: "TEMP-026", gender: "female", hasImage: true,  name: { first: "Danielle",      middle: "Gallardo",     last: "Argabioso"   }, birthDate: null,         deathDate: null,         living: true,  parents: ["GHBN-R99", "TEMP-024"] },
+  { id: "TEMP-024", gender: "female", hasImage: true,  name: { first: "Melosina",      middle: "Cablao",      last: "Gallardo"    }, birthDate: "1967-03-08", deathDate: null,         living: true,  parents: [] },
+  { id: "TEMP-025", gender: "female", hasImage: true,  name: { first: "Danae",         middle: "Gallardo",    last: "Argabioso"   }, birthDate: null,         deathDate: null,         living: true,  parents: ["GHBN-R99", "TEMP-024"] },
+  { id: "TEMP-026", gender: "female", hasImage: true,  name: { first: "Danielle",      middle: "Gallardo",    last: "Argabioso"   }, birthDate: null,         deathDate: null,         living: true,  parents: ["GHBN-R99", "TEMP-024"] },
 
-  { id: "TEMP-021", gender: "female", hasImage: false, name: { first: "Analyn",        middle: "R",            last: "Costuya"     }, birthDate: null,         deathDate: null,         living: false, parents: [] },
-  { id: "TEMP-019", gender: "female", hasImage: false, name: { first: "Kristine",      middle: "Costuya",      last: "Acosta Jr."  }, birthDate: "1994-07-28", deathDate: null,         living: true,  parents: ["TEMP-018", "TEMP-021"] },
-  { id: "TEMP-022", gender: "female", hasImage: false, name: { first: "Rowena",        middle: "Costuya",      last: "Acosta"      }, birthDate: null,         deathDate: null,         living: true,  parents: ["TEMP-018", "TEMP-021"] },
-  { id: "TEMP-023", gender: "female", hasImage: false, name: { first: "Kim",           middle: "Costuya",      last: "Acosta"      }, birthDate: "1997-09-09", deathDate: null,         living: true,  parents: ["TEMP-018", "TEMP-021"] },
-  { id: "TEMP-020", gender: "male",   hasImage: false, name: { first: "Darwin",        middle: "Costuya",      last: "Acosta"      }, birthDate: null,         deathDate: null,         living: true,  parents: ["TEMP-018", "TEMP-021"] },
+  { id: "TEMP-021", gender: "female", hasImage: false, name: { first: "Analyn",        middle: "R",           last: "Costuya"     }, birthDate: null,         deathDate: null,         living: false, parents: [] },
+  { id: "TEMP-019", gender: "female", hasImage: false, name: { first: "Kristine",      middle: "Costuya",     last: "Acosta Jr."  }, birthDate: "1994-07-28", deathDate: null,         living: true,  parents: ["TEMP-018", "TEMP-021"] },
+  { id: "TEMP-022", gender: "female", hasImage: false, name: { first: "Rowena",        middle: "Costuya",     last: "Acosta"      }, birthDate: null,         deathDate: null,         living: true,  parents: ["TEMP-018", "TEMP-021"] },
+  { id: "TEMP-023", gender: "female", hasImage: false, name: { first: "Kim",           middle: "Costuya",     last: "Acosta"      }, birthDate: "1997-09-09", deathDate: null,         living: true,  parents: ["TEMP-018", "TEMP-021"] },
+  { id: "TEMP-020", gender: "male",   hasImage: false, name: { first: "Darwin",        middle: "Costuya",     last: "Acosta"      }, birthDate: null,         deathDate: null,         living: true,  parents: ["TEMP-018", "TEMP-021"] },
 
-  { id: "TEMP-034", gender: "female", hasImage: true,  name: { first: "Rodelia",       middle: "Constantino",  last: "Diamse"      }, birthDate: null,         deathDate: "1995-04-20", living: false, parents: [] },
-  { id: "TEMP-035", gender: "female", hasImage: false, name: { first: "Jheng Jheng",   middle: "Diamse",       last: "Acosta"      }, birthDate: null,         deathDate: null,         living: true,  parents: ["TEMP-034", "TEMP-017"], adopted: true },
-  { id: "TEMP-036", gender: "male",   hasImage: false, name: { first: "Benjamin",      middle: "Diamse",       last: "Acosta III"  }, birthDate: null,         deathDate: null,         living: true,  parents: ["TEMP-034", "TEMP-017"] },
-  { id: "TEMP-037", gender: "female", hasImage: false, name: { first: "Judel",         middle: "Diamse",       last: "Acosta"      }, birthDate: null,         deathDate: null,         living: true,  parents: ["TEMP-034", "TEMP-017"] },
+  { id: "TEMP-034", gender: "female", hasImage: true,  name: { first: "Rodelia",       middle: "Constantino", last: "Diamse"      }, birthDate: null,         deathDate: "1995-04-20", living: false, parents: [] },
+  { id: "TEMP-035", gender: "female", hasImage: false, name: { first: "Jheng Jheng",   middle: "Diamse",      last: "Acosta"      }, birthDate: null,         deathDate: null,         living: true,  parents: ["TEMP-034", "TEMP-017"], adopted: true },
+  { id: "TEMP-036", gender: "male",   hasImage: false, name: { first: "Benjamin",      middle: "Diamse",      last: "Acosta III"  }, birthDate: null,         deathDate: null,         living: true,  parents: ["TEMP-034", "TEMP-017"] },
+  { id: "TEMP-037", gender: "female", hasImage: false, name: { first: "Judel",         middle: "Diamse",      last: "Acosta"      }, birthDate: null,         deathDate: null,         living: true,  parents: ["TEMP-034", "TEMP-017"] },
 
-  { id: "TEMP-038", gender: "female", hasImage: false, name: { first: "Raquel",        middle: "D",            last: "Rosete"      }, birthDate: null,         deathDate: null,         living: true,  parents: [] },
-  { id: "TEMP-039", gender: "male",   hasImage: false, name: { first: "Mark",          middle: "Rosete",       last: "Acosta"      }, birthDate: "2001-11-29", deathDate: null,         living: true,  parents: ["TEMP-038", "TEMP-017"] },
-  { id: "TEMP-040", gender: "female", hasImage: false, name: { first: "Katrina",       middle: "",             last: "Rosete"      }, birthDate: null,         deathDate: null,         living: true,  parents: ["TEMP-038"] },
-  { id: "TEMP-041", gender: "female", hasImage: false, name: { first: "Ella",          middle: "",             last: "Rosete"      }, birthDate: null,         deathDate: null,         living: true,  parents: ["TEMP-038"] },
+  { id: "TEMP-038", gender: "female", hasImage: false, name: { first: "Raquel",        middle: "D",           last: "Rosete"      }, birthDate: null,         deathDate: null,         living: true,  parents: [] },
+  { id: "TEMP-039", gender: "male",   hasImage: false, name: { first: "Mark",          middle: "Rosete",      last: "Acosta"      }, birthDate: "2001-11-29", deathDate: null,         living: true,  parents: ["TEMP-038", "TEMP-017"] },
+  { id: "TEMP-040", gender: "female", hasImage: false, name: { first: "Katrina",       middle: "",            last: "Rosete"      }, birthDate: null,         deathDate: null,         living: true,  parents: ["TEMP-038"] },
+  { id: "TEMP-041", gender: "female", hasImage: false, name: { first: "Kristine Ella", middle: "",            last: "Rosete"      }, birthDate: null,         deathDate: null,         living: true,  parents: ["TEMP-038"] },
 
-  { id: "TEMP-057", gender: "female", hasImage: false, name: { first: "Jennylyn",      middle: "",            last: "Tiozon"       }, birthDate: "1974-03-17", deathDate: null,         living: true,  parents: [] },
-  { id: "TEMP-058", gender: "male",   hasImage: false, name: { first: "Claro",         middle: "Tiozon",      last: "Saplala III"  }, birthDate: null,         deathDate: null,         living: true,  parents: ["TEMP-056", "TEMP-057"] },
-  { id: "TEMP-059", gender: "female", hasImage: false, name: { first: "Cyrill Aouie",  middle: "Tiozon",      last: "Saplala"      }, birthDate: null,         deathDate: null,         living: true,  parents: ["TEMP-056", "TEMP-057"] },
-  { id: "TEMP-060", gender: "male",   hasImage: false, name: { first: "Fernando",      middle: "Tiozon",      last: "Saplala"      }, birthDate: null,         deathDate: null,         living: true,  parents: ["TEMP-056", "TEMP-057"] },
-  { id: "TEMP-061", gender: "male",   hasImage: false, name: { first: "Ceejay",        middle: "Tiozon",      last: "Saplala"      }, birthDate: null,         deathDate: null,         living: true,  parents: ["TEMP-056", "TEMP-057"] },
-  { id: "TEMP-062", gender: "male",   hasImage: false, name: { first: "Tyron",         middle: "Tiozon",      last: "Saplala"      }, birthDate: null,         deathDate: null,         living: true,  parents: ["TEMP-056", "TEMP-057"] },
+  { id: "TEMP-057", gender: "female", hasImage: false, name: { first: "Jennylyn",      middle: "",            last: "Tiozon"      }, birthDate: "1974-03-17", deathDate: null,         living: true,  parents: [] },
+  { id: "TEMP-058", gender: "male",   hasImage: false, name: { first: "Claro",         middle: "Tiozon",      last: "Saplala III" }, birthDate: null,         deathDate: null,         living: true,  parents: ["TEMP-056", "TEMP-057"] },
+  { id: "TEMP-059", gender: "female", hasImage: false, name: { first: "Cyrill Aouie",  middle: "Tiozon",      last: "Saplala"     }, birthDate: null,         deathDate: null,         living: true,  parents: ["TEMP-056", "TEMP-057"] },
+  { id: "TEMP-060", gender: "male",   hasImage: false, name: { first: "Fernando",      middle: "Tiozon",      last: "Saplala"     }, birthDate: null,         deathDate: null,         living: true,  parents: ["TEMP-056", "TEMP-057"] },
+  { id: "TEMP-061", gender: "male",   hasImage: false, name: { first: "Ceejay",        middle: "Tiozon",      last: "Saplala"     }, birthDate: null,         deathDate: null,         living: true,  parents: ["TEMP-056", "TEMP-057"] },
+  { id: "TEMP-062", gender: "male",   hasImage: false, name: { first: "Tyron",         middle: "Tiozon",      last: "Saplala"     }, birthDate: null,         deathDate: null,         living: true,  parents: ["TEMP-056", "TEMP-057"] },
 
   // Nephews and Nieces and their not-my-cousin parents
-  { id: "TEMP-042", gender: "male",   hasImage: false, name: { first: "RJ Cedrick",    middle: "",             last: "Delrosario"  }, birthDate: "1995-01-20", deathDate: null,         living: true,  parents: [] },
-  { id: "TEMP-043", gender: "male",   hasImage: false, name: { first: "Kaycee Clark",  middle: "Acosta",       last: "Delrosario"  }, birthDate: "2018-03-19", deathDate: null,         living: true,  parents: ["TEMP-042", "TEMP-023"] },
+  { id: "TEMP-042", gender: "male",   hasImage: false, name: { first: "RJ Cedrick",    middle: "",            last: "Delrosario"  }, birthDate: "1995-01-20", deathDate: null,         living: true,  parents: [] },
+  { id: "TEMP-043", gender: "male",   hasImage: false, name: { first: "Kaycee Clark",  middle: "Acosta",      last: "Delrosario"  }, birthDate: "2018-03-19", deathDate: null,         living: true,  parents: ["TEMP-042", "TEMP-023"] },
 
-  { id: "TEMP-044", gender: "female", hasImage: false, name: { first: "Missy",         middle: "",             last: "Oroña"       }, birthDate: null,         deathDate: null,         living: true,  parents: [] },
-  { id: "TEMP-045", gender: "male",   hasImage: false, name: { first: "Kiel Aeko",     middle: "Oroña",        last: "Acosta"      }, birthDate: "2021-11-08", deathDate: null,         living: true,  parents: ["TEMP-044", "TEMP-039"] },
+  { id: "TEMP-044", gender: "female", hasImage: false, name: { first: "Missy",         middle: "",            last: "Oroña"       }, birthDate: null,         deathDate: null,         living: true,  parents: [] },
+  { id: "TEMP-045", gender: "male",   hasImage: false, name: { first: "Kiel Aeko",     middle: "Oroña",       last: "Acosta"      }, birthDate: "2021-11-08", deathDate: null,         living: true,  parents: ["TEMP-044", "TEMP-039"] },
 
-  { id: "TEMP-050", gender: "male",   hasImage: false, name: { first: "Raiver Kyle",   middle: "",             last: "Acosta"      }, birthDate: null,         deathDate: null,         living: true,  parents: ["TEMP-054", "TEMP-035"] },
-  { id: "TEMP-051", gender: "female", hasImage: false, name: { first: "Rhianna Keith", middle: "Acosta",       last: "Fernandez"   }, birthDate: null,         deathDate: null,         living: true,  parents: ["TEMP-054", "TEMP-035"] },
-  { id: "TEMP-052", gender: "female", hasImage: false, name: { first: "Krishna",       middle: "Acosta",       last: "Fernandez"   }, birthDate: null,         deathDate: null,         living: true,  parents: ["TEMP-054", "TEMP-035"] },
-  { id: "TEMP-054", gender: "male",   hasImage: false, name: { first: "Mhack Mac",     middle: "",             last: "Fernandez"   }, birthDate: null,         deathDate: null,         living: true,  parents: [] },
+  { id: "TEMP-050", gender: "male",   hasImage: false, name: { first: "Raiver Kyle",   middle: "",            last: "Acosta"      }, birthDate: null,         deathDate: null,         living: true,  parents: ["TEMP-054", "TEMP-035"] },
+  { id: "TEMP-051", gender: "female", hasImage: false, name: { first: "Rhianna Keith", middle: "Acosta",      last: "Fernandez"   }, birthDate: null,         deathDate: null,         living: true,  parents: ["TEMP-054", "TEMP-035"] },
+  { id: "TEMP-052", gender: "female", hasImage: false, name: { first: "Krishna",       middle: "Acosta",      last: "Fernandez"   }, birthDate: null,         deathDate: null,         living: true,  parents: ["TEMP-054", "TEMP-035"] },
+  { id: "TEMP-054", gender: "male",   hasImage: false, name: { first: "Mhack Mac",     middle: "",            last: "Fernandez"   }, birthDate: null,         deathDate: null,         living: true,  parents: [] },
+
+  // John-Tita Dulce connection
+  { id: "TEMP-072", gender: "female", hasImage: false, name: { first: "Yohana",        middle: "Pelagio",     last: "Cruz"        }, birthDate: null,         deathDate: null,         living: true,  parents: ["TEMP-071", "TEMP-070"] },
+  { id: "TEMP-071", gender: "female", hasImage: false, name: { first: "Carol",         middle: "Alviza",      last: "Pelagio"     }, birthDate: null,         deathDate: null,         living: true,  parents: ["TEMP-073"] },
+  { id: "TEMP-074", gender: "male",   hasImage: false, name: { first: "Aldrin",        middle: "Alviza",      last: "Pelagio"     }, birthDate: null,         deathDate: null,         living: true,  parents: ["TEMP-073"] },
+  { id: "TEMP-075", gender: "female", hasImage: false, name: { first: "Meldrin",       middle: "Alviza",      last: "Pelagio"     }, birthDate: null,         deathDate: null,         living: true,  parents: ["TEMP-073"] },
+  { id: "TEMP-073", gender: "female", hasImage: false, name: { first: "Lucita",        middle: "Santos",      last: "Alviza"      }, birthDate: null,         deathDate: null,         living: false, parents: ["TEMP-078"] },
+  { id: "TEMP-070", gender: "male",   hasImage: false, name: { first: "John",          middle: "",            last: "Cruz"        }, birthDate: null,         deathDate: null,         living: true,  parents: ["TEMP-067"] },
+  { id: "TEMP-067", gender: "male",   hasImage: false, name: { first: "Herminio",      middle: "Aguilar",     last: "Cruz"        }, birthDate: null,         deathDate: null,         living: true,  parents: ["TEMP-068"] },
+  { id: "TEMP-068", gender: "male",   hasImage: false, name: { first: "Remigio",       middle: "Ramos",       last: "Cruz Jr."    }, birthDate: null,         deathDate: null,         living: false, parents: ["TEMP-069"] },
+  { id: "TEMP-069", gender: "male",   hasImage: false, name: { first: "Remigio",       middle: "",            last: "Cruz Sr."    }, birthDate: null,         deathDate: null,         living: false, parents: [] },
+
+  // Side ni Obet
+  { id: "TEMP-078", gender: "male",   hasImage: false, name: { first: "",              middle: "",            last: "Alviza"      }, birthDate: null,         deathDate: null,         living: false, parents: [] },
+  { id: "TEMP-076", gender: "male",   hasImage: false, name: { first: "Roberto",       middle: "Santos",      last: "Alviza"      }, birthDate: null,         deathDate: null,         living: true,  parents: ["TEMP-078"] },
+  { id: "TEMP-077", gender: "female", hasImage: false, name: { first: "Mirabel",       middle: "",            last: "Aguilar"     }, birthDate: null,         deathDate: null,         living: true,  parents: [] },
+  { id: "TEMP-079", gender: "male",   hasImage: false, name: { first: "Paul Robert",   middle: "Aguilar",     last: "Alviza"      }, birthDate: "1995-01-18", deathDate: null,         living: false, parents: ["TEMP-076", "TEMP-077"] },
+  { id: "TEMP-080", gender: "male",   hasImage: false, name: { first: "Robbie May",    middle: "Aguilar",     last: "Alviza"      }, birthDate: null,         deathDate: null,         living: false, parents: ["TEMP-076", "TEMP-077"] },
+  { id: "TEMP-081", gender: "male",   hasImage: false, name: { first: "Albert",        middle: "Aguilar",     last: "Alviza"      }, birthDate: null,         deathDate: null,         living: false, parents: ["TEMP-076", "TEMP-077"] },
+  { id: "TEMP-082", gender: "female", hasImage: false, name: { first: "Marybeth",      middle: "Aguilar",     last: "Alviza"      }, birthDate: null,         deathDate: null,         living: false, parents: ["TEMP-076", "TEMP-077"] },
 ]);
 
 // /*
