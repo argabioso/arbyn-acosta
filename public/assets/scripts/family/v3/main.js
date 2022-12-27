@@ -19,6 +19,133 @@ function isdark() {
   return false;
 }
 
+const IS_DARK = isdark();
+const BACKGROUND_COLOR = IS_DARK ? "#202124" : "#f8f9fa";
+const CONNECTION_COLOR = IS_DARK ? "#7f7f7f" : "#bbbcbc";
+
+const query = window.location.get("q");
+let queryIsId = false;
+
+if (query != undefined) {
+  let queryLeft = query.split("-", 1)[0];
+  queryIsId = queryLeft.length == 4;
+  queryIsId = query.length == 8 && query.match('-').length == 1 && queryIsId;
+}
+
+let treeData = rawTreeData;
+let parentCombinations = {};
+
+// Special case for siblings, also parent addition
+for (let i = 0, imax = treeData.length; i < imax; i++) {
+  let person = treeData[i];
+
+  // parent addition
+  if (person.parents !== undefined && person.parents.length >= 1) {
+    let parentA = person.parents[0];
+    let parentB = person.parents[1];
+
+    if (parentCombinations[parentA] === undefined) {
+      parentCombinations[parentA] = [];
+    }
+
+    if (parentB !== undefined) {
+      if (!parentCombinations[parentA].includes(parentB)) {
+        parentCombinations[parentA].push(parentB);
+      }
+      if (parentCombinations[parentB] === undefined) {
+        parentCombinations[parentB] = [];
+      } else {
+        if (!parentCombinations[parentB].includes(parentA)) {
+          parentCombinations[parentB].push(parentA);
+        }
+      }
+    }
+  }
+
+  let siblings = treeData.getbys(person.parents, 'parents');
+
+  if (siblings.length != 0) {
+    person.siblings = [];
+    for (let j = 0, jmax = siblings.length; j < jmax; j++) {
+      let sibling = siblings[j];
+      if (person.id != sibling.id) {
+        person.siblings.push(sibling.id);
+      }
+    }
+  }
+}
+
+// Add special nodes for spouses
+let annotations = [];
+for (let i = 0, imax = treeData.length; i < imax; i++) {
+  let person = treeData[i];
+
+  if (person.spouses !== undefined) {
+    for (let j = 0, imax = person.spouses.length; j < imax; j++) {
+      let spouseId = person.spouses[j];
+      let spouseConnectionId = person.id + "+" + spouseId;
+
+      treeData.push(
+        {
+          id: spouseConnectionId,
+          gender: "male", // doesn't really matter
+          hasImage: false,
+          name: {
+            first: "",
+            middle: "",
+            last: ""
+          },
+          birthDate: null,
+          deathDate: null,
+          living: false,
+          parents: [
+            person.id,
+            spouseId,
+          ],
+          templateName: "CombinerTemplate",
+        }
+      )
+
+      annotations = annotations.concat([
+        {
+            annotationType: primitives.AnnotationType.HighlightPath,
+            items: [spouseConnectionId, person.id],
+            color: BACKGROUND_COLOR,
+            lineWidth: 6,
+            opacity: 1,
+            showArrows: false,
+            zOrderType: primitives.ZOrderType.Foreground,
+        },
+        {
+            annotationType: primitives.AnnotationType.HighlightPath,
+            items: [spouseConnectionId, spouseId],
+            color: BACKGROUND_COLOR,
+            lineWidth: 6,
+            opacity: 1,
+            showArrows: false,
+            zOrderType: primitives.ZOrderType.Foreground,
+        },
+        {
+            annotationType: primitives.AnnotationType.HighlightPath,
+            items: [person.id, spouseId],
+            color: CONNECTION_COLOR,
+            lineWidth: 1.5,
+            opacity: 1,
+            showArrows: false,
+            zOrderType: primitives.ZOrderType.Foreground,
+        },
+      ]);
+    }
+  }
+
+  else if (parentCombinations[person.id] !== undefined) {
+    person.spouses = parentCombinations[person.id];
+  }
+}
+
+treeData = filterPersons(query, treeData);
+
+
 var MONTH_MAPPING = {
     '01': 'Jan',
     '02': 'Feb',
@@ -34,7 +161,6 @@ var MONTH_MAPPING = {
     '12': 'Dec',
 }
 
-var IS_DARK = isdark();
 var template = new primitives.TemplateConfig();
 var combiner = new primitives.TemplateConfig();
 
@@ -267,6 +393,7 @@ function onTemplateRender(event, data) {
     }
 }
 
+var control = null;
 document.addEventListener('DOMContentLoaded', function () {
     if (IS_DARK) {
         document.querySelector("body").classList.add('dark');
@@ -275,12 +402,12 @@ document.addEventListener('DOMContentLoaded', function () {
     var options = new primitives.FamConfig();
 
     options.pageFitMode = primitives.PageFitMode.None;
-    options.updateMode = primitives.UpdateMode.Recreate,
+    options.updateMode = primitives.UpdateMode.Refresh,
 
-    options.items = TREE_DATA;
+    options.items = treeData;
     options.cursorItem = 2;
     options.linesWidth = 1.5;
-    options.linesColor = IS_DARK ? "#7f7f7f" : "#bbbcbc";
+    options.linesColor = CONNECTION_COLOR;
     options.hasSelectorCheckbox = primitives.Enabled.False;
     options.normalLevelShift = 20;
     options.dotLevelShift = 20;
@@ -303,34 +430,42 @@ document.addEventListener('DOMContentLoaded', function () {
     options.groupByType = primitives.GroupByType.Children;
 
     // var annotationList = [];
-    // TREE_DATA.forEach(function (item, index) {
+    // treeData.forEach(function (item, index) {
     //     console.log(item, index);
     // });
 
     // console.log(primitives.ZOrderType.Foreground)
 
-    // options.annotations = annotationList;
+    options.annotations = annotations;
     // options.annotations = [
     //     {
     //         annotationType: primitives.AnnotationType.HighlightPath,
-    //         items: ["TEMP-012", "TEMP-011", "TEMP-002"],
-    //         color: "#9acaca",
-    //         lineWidth: 1,
+    //         items: ["GQX8-CQP", "GQJK-G8W"], //"GQJK-L51", "GQJK-G8W"
+    //         color: BACKGROUND_COLOR,
+    //         lineWidth: 6,
     //         opacity: 1,
     //         showArrows: false,
-    //         zOrderType: 2,
+    //         zOrderType: primitives.ZOrderType.Foreground,
     //     },
     //     {
     //         annotationType: primitives.AnnotationType.HighlightPath,
-    //         items: ["TEMP-012", "TEMP-011", "TEMP-002"],
-    //         color: "#fff9fa",
-    //         lineWidth: 4,
+    //         items: ["GQX8-CQP", "GQJK-L51"], //"GQJK-L51", "GQJK-G8W"
+    //         color: BACKGROUND_COLOR,
+    //         lineWidth: 6,
     //         opacity: 1,
     //         showArrows: false,
-    //         zOrderType: 2,
-    //         lineType: 0,
+    //         zOrderType: primitives.ZOrderType.Foreground,
+    //     },
+    //     {
+    //         annotationType: primitives.AnnotationType.HighlightPath,
+    //         items: ["GQJK-G8W", "GQJK-L51"],
+    //         color: CONNECTION_COLOR,
+    //         lineWidth: 1.5,
+    //         opacity: 1,
+    //         showArrows: false,
+    //         zOrderType: primitives.ZOrderType.Foreground,
     //     },
     // ];
 
-    var control = primitives.FamDiagram(document.getElementById("tree"), options);
+    control = primitives.FamDiagram(document.getElementById("tree"), options);
 });

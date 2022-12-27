@@ -20,7 +20,7 @@ const MY_TREE_DATA = [
   { id: "GHBD-9LY", gender: "female", hasImage: true,  name: { first: "Cresencia",     middle: "Ramos",       last: "Dumantay"    }, birthDate: "1911-04-20", deathDate: null,         living: false, parents: ["LLMC-RWF", "GJJK-R47"] },
   { id: "GHB8-J1B", gender: "female", hasImage: true,  name: { first: "Catalina",      middle: "Dumantay",    last: "Maramba"     }, birthDate: "1943-01-28", deathDate: "1974-08-10", living: false, parents: ["GHBD-9LY", "GHB8-GB6"] },
 
-  // Side ni Lolo Boy ====: --------- ========: ------ ====: - =====: ---------------- ======: -------------- ====: ---------------- =========: ------------- =========: ------------- ======: ------ =======: ---------------------------
+  // Side ni Lolo Boy
   { id: "GHB8-SQN", gender: "male",   hasImage: false, name: { first: "Ligorio",       middle: "",            last: "Acosta"      }, birthDate: "1871",       deathDate: "1948-07-07", living: false, parents: [] },
   { id: "GHB8-5K8", gender: "female", hasImage: false, name: { first: "Maximiana",     middle: "",            last: "Bongco"      }, birthDate: null,         deathDate: null,         living: false, parents: [] },
   { id: "GHBD-9L6", gender: "male",   hasImage: true,  name: { first: "Manuel",        middle: "Bongco",      last: "Acosta Sr."  }, birthDate: "1913-11-10", deathDate: "1994-11-15", living: false, parents: ["GHB8-SQN", "GHB8-5K8"] },
@@ -29,7 +29,7 @@ const MY_TREE_DATA = [
   { id: "GHB8-DXY", gender: "female", hasImage: true,  name: { first: "Natividad",     middle: "Villacorta",  last: "San Agustin" }, birthDate: "1925-12-21", deathDate: "2008-10-09", living: false, parents: ["GHB8-LCC", "GHB8-H7K"] },
   { id: "GHBD-7M4", gender: "male",   hasImage: true,  name: { first: "Manuel",        middle: "San Agustin", last: "Acosta Jr."  }, birthDate: "1948-07-06", deathDate: "1979-06-07", living: false, parents: ["GHBD-9L6", "GHB8-DXY"] },
 
-  // Side ni Lolo Marcial --- ======: --------- ========: ------ ====: - =====: ---------------- ======: -------------- ====: ---------------- =========: ------------- =========: ------------- ======: ------ =======: ---------------------------
+  // Side ni Lolo Marcial
   { id: "GQJK-LCT", gender: "male",   hasImage: true,  name: { first: "Marcial",       middle: "Mia",         last: "Argabioso"   }, birthDate: "1932-10-14", deathDate: "2020-02-27", living: false, parents: ["GHBZ-TM4", "GHBZ-P5Q"] },
   { id: "GHBZ-TM4", gender: "male",   hasImage: false, name: { first: "Eusebio",       middle: "Lopecillo",   last: "Argabioso"   }, birthDate: "1895",       deathDate: "1972-10-27", living: false, parents: ["GHB8-RCH"] },
   { id: "GHB8-RCH", gender: "female", hasImage: false, name: { first: "Estebana",      middle: "",            last: "Lopecillo"   }, birthDate: null,         deathDate: null,         living: false, parents: [] },
@@ -41,29 +41,34 @@ const MY_TREE_DATA = [
   { id: "GJJ8-XXM", gender: "male",   hasImage: false, name: { first: "Eleuterio",     middle: "",            last: "Arco"        }, birthDate: null,         deathDate: null,         living: false, parents: [] },
   { id: "GJJZ-1K6", gender: "female", hasImage: false, name: { first: "Sabina",        middle: "",            last: "Villarante"  }, birthDate: null,         deathDate: null,         living: false, parents: [] },
 
-  // Side ni Lola Lydia ==: --------- ========: ------ ====: - =====: ---------------- ======: -------------- ====: ---------------- =========: ------------- =========: ------------- ======: ------ =======: ---------------------------
+  // Side ni Lola Lydia
   { id: "GHBZ-YVX", gender: "female", hasImage: true,  name: { first: "Lydia",         middle: "Perez",       last: "Saplala"     }, birthDate: "1944-11-24", deathDate: null,         living: true,  parents: ["GHB8-7T6", "GHB8-GZL"] },
   { id: "GHB8-7T6", gender: "male",   hasImage: true,  name: { first: "Fernando",      middle: "",            last: "Saplala"     }, birthDate: null,         deathDate: null,         living: false, parents: [] },
   { id: "GHB8-GZL", gender: "female", hasImage: true,  name: { first: "Lucina",        middle: "Gutierrez",   last: "Perez"       }, birthDate: null,         deathDate: null,         living: false, parents: [] },
 
-  // Nanay, Tatay, and me : --------- ========: ------ ====: - =====: ---------------- ======: -------------- ====: ---------------- =========: ------------- =========: ------------- ======: ------ =======: ---------------------------
-  { id: "GQX8-CQP", gender: "male",   hasImage: true,  name: { first: "Arbyn",         middle: "Acosta",      last: "Argabioso"   }, birthDate: "1995-04-19", deathDate: null,         living: true,  parents: ["GQJK-L51", "GQJK-G8W"] },
+  // Nanay, Tatay, and me
+  { id: "GQX8-CQP", gender: "male",   hasImage: true,  name: { first: "Arbyn",         middle: "Acosta",      last: "Argabioso"   }, birthDate: "1995-04-19", deathDate: null,         living: true,  parents: ["GQJK-L51", "GQJK-G8W"], spouses: ["GHB5-TWN"] },
   { id: "GQJK-L51", gender: "male",   hasImage: true,  name: { first: "Rolando",       middle: "Saplala",     last: "Argabioso"   }, birthDate: "1965-10-09", deathDate: null,         living: true,  parents: ["GQJK-LCT", "GHBZ-YVX"] },
   { id: "GQJK-G8W", gender: "female", hasImage: true,  name: { first: "Corazon",       middle: "Maramba",     last: "Acosta"      }, birthDate: "1971-03-10", deathDate: "2018-05-25", living: false, parents: ["GHBD-7M4", "GHB8-J1B"] },
 
-//{ id: "GHB5-TWN", gender: "female", hasImage: false, name: { first: "Mitchie",       middle: "Ajesta",      last: "Adanza"      }, birthDate: "1994-12-16", deathDate: null,         living: true,  parents: [] },
-//{ id: "COMB-001", gender: "male",   hasImage: false, name: { first: "",              middle: "",            last: ""            }, birthDate: null,         deathDate: null,         living: true,  parents: ["GQX8-CQP", "GHB5-TWN"], templateName: "CombinerTemplate" },
+  { id: "GHB5-TWN", gender: "female", hasImage: true,  name: { first: "Mitchie",       middle: "Ajesta",      last: "Adanza"      }, birthDate: "1994-12-16", deathDate: null,         living: true,  parents: [] },
 ];
 
-// const RAW_TREE_DATA = MY_TREE_DATA;
-const RAW_TREE_DATA = MY_TREE_DATA.concat([
+const ADANZA_TREE_DATA = [
+];
+
+var rawTreeData = [];
+
+rawTreeData = rawTreeData.concat(MY_TREE_DATA);
+rawTreeData = rawTreeData.concat(ADANZA_TREE_DATA);
+rawTreeData = rawTreeData.concat([
   // Mga kapatid ni Lola Lydia
   { id: "TEMP-046", gender: "female", hasImage: true,  name: { first: "Celia",         middle: "Perez",       last: "Saplala"     }, birthDate: null,         deathDate: null,         living: true,  parents: ["GHB8-7T6", "GHB8-GZL"] },
   { id: "TEMP-047", gender: "male",   hasImage: true,  name: { first: "Bonifacio",     middle: "Perez",       last: "Saplala"     }, birthDate: null,         deathDate: null,         living: true,  parents: ["GHB8-7T6", "GHB8-GZL"] },
   { id: "TEMP-048", gender: "male",   hasImage: false, name: { first: "Claro",         middle: "Perez",       last: "Saplala Sr." }, birthDate: null,         deathDate: null,         living: true,  parents: ["GHB8-7T6", "GHB8-GZL"] },
 
   // Pangalawang asawa ni Lolo Manuel
-//{ id: "TEMP-033", gender: "female", hasImage: false, name: { first: "Angela",        middle: "",            last: "George"      }, birthDate: null,         deathDate: null,         living: false, parents: [] },
+  { id: "TEMP-033", gender: "female", hasImage: false, name: { first: "Angela",        middle: "",            last: "George"      }, birthDate: null,         deathDate: null,         living: false, parents: [], spouses: ["GHBD-7M4"] },
 
   { id: "TEMP-015", gender: "male",   hasImage: false, name: { first: "Benjamin",      middle: "San Agustin", last: "Acosta Sr."  }, birthDate: "1949-10-23", deathDate: null,         living: false, parents: ["GHBD-9L6", "GHB8-DXY"] },
   { id: "TEMP-031", gender: "female", hasImage: false, name: { first: "Amelia",        middle: "Villacorta",  last: "Acosta"      }, birthDate: "1947-06-12", deathDate: "2021-05-02", living: false, parents: ["GHBD-9L6", "GHB8-DXY"] },
@@ -104,8 +109,8 @@ const RAW_TREE_DATA = MY_TREE_DATA.concat([
   { id: "TEMP-049", gender: "female", hasImage: false, name: { first: "Tezz",          middle: "",            last: "Filomeno"    }, birthDate: null,         deathDate: null,         living: true,  parents: [] },
   { id: "TEMP-030", gender: "female", hasImage: true,  name: { first: "Karen",         middle: "Filomeno",    last: "Guillermo"   }, birthDate: null,         deathDate: null,         living: true,  parents: ["TEMP-049"] },
   { id: "TEMP-027", gender: "male",   hasImage: true,  name: { first: "Franzis Karl",  middle: "Guillermo",   last: "Hanopol"     }, birthDate: "2007-11-24", deathDate: null,         living: true,  parents: ["TEMP-012", "TEMP-030"] },
-  { id: "TEMP-028", gender: "male",   hasImage: true,  name: { first: "Lanz",          middle: "Acosta",      last: "Hanopol"     }, birthDate: null,         deathDate: null,         living: true,  parents: ["TEMP-012", "TEMP-030"] },
-  { id: "TEMP-029", gender: "male",   hasImage: true,  name: { first: "Ezekiel Kyrie", middle: "Acosta",      last: "Hanopol"     }, birthDate: null,         deathDate: null,         living: true,  parents: ["TEMP-012", "TEMP-030"] },
+  { id: "TEMP-028", gender: "male",   hasImage: true,  name: { first: "Lanz",          middle: "Guillermo",   last: "Hanopol"     }, birthDate: null,         deathDate: null,         living: true,  parents: ["TEMP-012", "TEMP-030"] },
+  { id: "TEMP-029", gender: "male",   hasImage: true,  name: { first: "Ezekiel Kyrie", middle: "Guillermo",   last: "Hanopol"     }, birthDate: null,         deathDate: null,         living: true,  parents: ["TEMP-012", "TEMP-030"] },
 
   { id: "TEMP-065", gender: "female", hasImage: false, name: { first: "Teodorica",     middle: "Lequesta",    last: "Urgel"       }, birthDate: null,         deathDate: null,         living: true,  parents: [] },
   { id: "TEMP-066", gender: "male",   hasImage: false, name: { first: "Edgardo",       middle: "Aguilar",     last: "Cruz"        }, birthDate: null,         deathDate: null,         living: true,  parents: ["TEMP-068"] },
@@ -189,9 +194,3 @@ const RAW_TREE_DATA = MY_TREE_DATA.concat([
 //     darne - water falls,
 //     balingasag, misamis oriental
 // */
-
-
-const query = window.location.get("q");
-print(query);
-
-const TREE_DATA = RAW_TREE_DATA;

@@ -199,3 +199,214 @@ Array.prototype.getbys = function(value, property)
 
   return result;
 }
+
+/*
+ * Adds a special highlight to the connectors of the ancestors of
+ * of the selected `id`.
+ *
+ * @param {Text} id: The id of the main person
+ * @param {Array} persons: the family tree, persons array
+ * @param {Array} output: Original output to append to
+ * @return {Array} The new, updated output
+ */
+function getPedegreePeople(id, persons, output)
+{
+  'use strict';
+
+  // Put a default empty array if first call
+  if (!output) {
+    output = [];
+  }
+
+  // Default to first person if can't find by ID
+  let person = persons.getby(id);
+  if (!person) {
+    return output;
+  }
+
+  // The main person has no parents, stop the method
+  if (person && !person.parents) {
+    return output;
+  }
+
+  output = output.concat(person.id);
+
+  // Recursively get the ancestors of the main person
+  for (let i = 0, imax = (person.parents || []).length; i < imax; i++) {
+    output = getPedegreePeople(person.parents[i], persons, output);
+  }
+
+  return output
+}
+
+/*
+ * Returns the likeness of the query matching a person info.
+ */
+function searchPerson(query, person)
+{
+  'use strict';
+
+  // Just return, there's no query anyway
+  if (!query) {
+    return false;
+  }
+
+  // Search actual id if query is a number
+  if (query.length == 8 && query.match('-').length == 1) {
+    return person.id == query ? 1 : 0;
+  }
+
+  // Split query and name by space so we can compare per word
+  let queryParts = query.split(' ');
+  let nameParts = person.name.first.split(' ');
+  nameParts = nameParts.concat(person.name.middle.split(' '));
+  nameParts = nameParts.concat(person.name.last.split(' '));
+
+  // Get overall, word-per-word likeness
+  let overallLikeness = 0;
+  for (let i = 0, imax = queryParts.length; i < imax; i++) {
+    let queryLikeness = 0;
+    for (let j = 0, jmax = nameParts.length; j < jmax; j++) {
+      let nameLikeness = queryParts[i].compare(nameParts[j]);
+      if (nameLikeness > queryLikeness) {
+        queryLikeness = nameLikeness;
+      }
+    }
+    overallLikeness += queryLikeness;
+  }
+  overallLikeness /= queryParts.length
+
+  // print(query, person.id, overallLikeness)
+  return overallLikeness;
+}
+
+function filterPersons(query, persons)
+{
+  'use strict';
+
+  // Don't bother, there's no query
+  if (!query) {
+    return persons;
+  }
+
+  // Get direct matches, the spouse of that direct match, and its parents
+  let likenessMapping = {};
+  let highestLikeness = 0;
+  for (let i = 0, imax = persons.length; i < imax; i++) {
+    let person = persons[i];
+    let likeness = searchPerson(query, person);
+
+    if (likenessMapping[likeness] == undefined) {
+      likenessMapping[likeness] = [person.id];
+    } else {
+      likenessMapping[likeness].push(person.id);
+    }
+
+    highestLikeness = Math.max(highestLikeness, likeness);
+  }
+
+  // Don't even bother if the highest likeness is less than 73%
+  if (highestLikeness < 0.73) {
+    return persons;
+  }
+
+  // All the match containers
+  let directMatchIds = likenessMapping[highestLikeness];
+  let parentMatchIds = [];
+  let siblingMatchIds = [];
+  let spouseMatchIds = [];
+  let childrenMatchIds = [];
+
+  // Get direct matches, the spouse of that direct match, and its parents
+  for (let i = 0, imax = directMatchIds.length; i < imax; i++) {
+    let id = directMatchIds[i];
+    let person = persons.getby(id);
+
+    parentMatchIds = parentMatchIds.concat(person.parents);
+    siblingMatchIds = siblingMatchIds.concat(person.siblings);
+    spouseMatchIds = spouseMatchIds.concat(person.spouses);
+  }
+
+  // print(directMatchIds);
+  // print(parentMatchIds);
+  // print(siblingMatchIds);
+  // print(spouseMatchIds);
+
+  // Default to first person in direct matches, otherwise... ARBYN IS THE MAIN!!
+  let singleSearch = (directMatchIds.length == 1);
+  let mainPerson = null;
+  if (singleSearch) {
+    mainPerson = persons.getby(directMatchIds[0]);
+    parentMatchIds = getPedegreePeople(mainPerson.id, persons, parentMatchIds);
+  }
+
+  for (let i = 0, imax = persons.length; i < imax; i++) {
+    let person = persons[i];
+
+    // If a parent is in the direct matches, include its kids as well
+    for (let j = 0, jmax = (person.parents || []).length; j < jmax; j++) {
+      if (directMatchIds.includes(person.parents[j])) {
+        childrenMatchIds.push(person.id);
+      }
+    }
+
+    // If a spouse is in the direct matches, include its partner as well
+    for (let j = 0, jmax = (person.spouses || []).length; j < jmax; j++) {
+      if (directMatchIds.includes(person.spouses[j])) {
+        spouseMatchIds.push(person.id);
+      }
+    }
+  }
+
+  // Add all parents too
+  let matchIds = directMatchIds.concat(childrenMatchIds);
+  matchIds = matchIds.concat(parentMatchIds);
+  matchIds = matchIds.concat(siblingMatchIds);
+  // print(childrenMatchIds.includes('GQJK-L51'))
+  if (singleSearch) {
+    for (let i = 0, imax = matchIds.length; i < imax; i++) {
+      for (let j = 0, jmax = persons.length; j < jmax; j++) {
+        let person = persons[j];
+
+        if (matchIds[i] == person.id) {
+          if (person.parents.includes("GHBZ-YVX")) {
+            // print(person)
+          }
+          matchIds = matchIds.concat(person.parents);
+        }
+      }
+    }
+  }
+  matchIds = matchIds.concat(spouseMatchIds);
+
+  // print(matchIds)
+
+  let filteredPersons = [];
+  for (let i = 0, imax = persons.length; i < imax; i++) {
+    let person = persons[i];
+
+    if (!matchIds.includes(person.id)) {
+      continue;
+    }
+
+    let newParents = [];
+    for (let j = 0, jmax = (person.parents || []).length; j < jmax; j++) {
+      if (matchIds.includes(person.parents[j])) {
+        newParents.push(person.parents[j]);
+      }
+    }
+
+    let newSpouses = [];
+    for (let j = 0, jmax = (person.spouses || []).length; j < jmax; j++) {
+      if (matchIds.includes(person.spouses[j])) {
+        newSpouses.push(person.spouses[j]);
+      }
+    }
+
+    person.parents = newParents;
+    person.spouses = newSpouses;
+    filteredPersons.push(person);
+  }
+
+  return filteredPersons;
+}
