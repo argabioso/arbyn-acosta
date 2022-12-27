@@ -27,9 +27,12 @@ const query = window.location.get("q");
 let queryIsId = false;
 
 if (query != undefined) {
-  let queryLeft = query.split("-", 1)[0];
-  queryIsId = queryLeft.length == 4;
-  queryIsId = query.length == 8 && query.match('-').length == 1 && queryIsId;
+  let hasHyphen = query.match('-');
+  if (hasHyphen != null) {
+    let queryLeft = query.split("-", 1)[0];
+    queryIsId = queryLeft.length == 4;
+    queryIsId = query.length == 8 && hasHyphen.length == 1 && queryIsId;
+  }
 }
 
 let treeData = rawTreeData;

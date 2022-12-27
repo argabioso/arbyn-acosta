@@ -64,8 +64,8 @@ rawTreeData = rawTreeData.concat(ADANZA_TREE_DATA);
 rawTreeData = rawTreeData.concat([
   // Mga kapatid ni Lola Lydia
   { id: "TEMP-046", gender: "female", hasImage: true,  name: { first: "Celia",         middle: "Perez",       last: "Saplala"     }, birthDate: null,         deathDate: null,         living: true,  parents: ["GHB8-7T6", "GHB8-GZL"] },
-  { id: "TEMP-047", gender: "male",   hasImage: true,  name: { first: "Bonifacio",     middle: "Perez",       last: "Saplala"     }, birthDate: null,         deathDate: null,         living: true,  parents: ["GHB8-7T6", "GHB8-GZL"] },
-  { id: "TEMP-048", gender: "male",   hasImage: false, name: { first: "Claro",         middle: "Perez",       last: "Saplala Sr." }, birthDate: null,         deathDate: null,         living: true,  parents: ["GHB8-7T6", "GHB8-GZL"] },
+  { id: "TEMP-047", gender: "male",   hasImage: true,  name: { first: "Bonifacio",     middle: "Perez",       last: "Saplala"     }, birthDate: "1939",       deathDate: null,         living: true,  parents: ["GHB8-7T6", "GHB8-GZL"] },
+  { id: "TEMP-048", gender: "male",   hasImage: false, name: { first: "Claro",         middle: "Perez",       last: "Saplala Sr." }, birthDate: null,         deathDate: null,         living: false, parents: ["GHB8-7T6", "GHB8-GZL"] },
 
   // Pangalawang asawa ni Lolo Manuel
   { id: "TEMP-033", gender: "female", hasImage: false, name: { first: "Angela",        middle: "",            last: "George"      }, birthDate: null,         deathDate: null,         living: false, parents: [], spouses: ["GHBD-7M4"] },
@@ -81,14 +81,18 @@ rawTreeData = rawTreeData.concat([
   { id: "TEMP-001", gender: "male",   hasImage: false, name: { first: "Manuel",        middle: "Maramba",     last: "Acosta III"  }, birthDate: "1966-11-07", deathDate: null,         living: true,  parents: ["GHBD-7M4", "GHB8-J1B"] },
   { id: "TEMP-002", gender: "female", hasImage: false, name: { first: "Susan",         middle: "Maramba",     last: "Acosta"      }, birthDate: null,         deathDate: null,         living: true,  parents: ["GHBD-7M4", "GHB8-J1B"] },
 
-  { id: "TEMP-017", gender: "male",   hasImage: false, name: { first: "Benjamin",      middle: "Villacorta",  last: "Acosta Jr."   }, birthDate: null,        deathDate: null,         living: true,  parents: ["TEMP-015", "TEMP-016"] },
-  { id: "TEMP-018", gender: "male",   hasImage: false, name: { first: "Darwin",        middle: "Villacorta",  last: "Acosta Sr."   }, birthDate: null,        deathDate: null,         living: true,  parents: ["TEMP-015", "TEMP-016"] },
+  { id: "TEMP-017", gender: "male",   hasImage: false, name: { first: "Benjamin",      middle: "Villacorta",  last: "Acosta Jr."  }, birthDate: null,         deathDate: null,         living: true,  parents: ["TEMP-015", "TEMP-016"] },
+  { id: "TEMP-018", gender: "male",   hasImage: false, name: { first: "Darwin",        middle: "Villacorta",  last: "Acosta Sr."  }, birthDate: null,         deathDate: null,         living: true,  parents: ["TEMP-015", "TEMP-016"] },
 
   { id: "GHBF-XBT", gender: "male",   hasImage: true,  name: { first: "Antonio",       middle: "Saplala",     last: "Argabioso"   }, birthDate: "1963-12-14", deathDate: null,         living: true,  parents: ["GQJK-LCT", "GHBZ-YVX"] },
   { id: "GHBN-R99", gender: "male",   hasImage: true,  name: { first: "Danilo",        middle: "Saplala",     last: "Argabioso"   }, birthDate: "1969-03-31", deathDate: null,         living: true,  parents: ["GQJK-LCT", "GHBZ-YVX"] },
 
   { id: "TEMP-056", gender: "male",   hasImage: false, name: { first: "Claro",         middle: "",            last: "Saplala Jr." }, birthDate: "1974-04-01", deathDate: null,         living: true,  parents: ["TEMP-048"] },
-//{ id: "TEMP-R57", gender: "male",   hasImage: true,  name: { first: "Danilo",        middle: "Saplala",     last: "Argabioso"   }, birthDate: "1969-03-31", deathDate: null,         living: true,  parents: ["GQJK-LCT", "GHBZ-YVX"] },
+  { id: "TEMP-083", gender: "female", hasImage: false, name: { first: "Cynthia",       middle: "",            last: "Saplala"     }, birthDate: "1966-10-12", deathDate: null,         living: true,  parents: ["TEMP-048"] },
+  { id: "TEMP-084", gender: "female", hasImage: true,  name: { first: "Barbara",       middle: "",            last: "Saplala"     }, birthDate: null,         deathDate: null,         living: true,  parents: ["TEMP-048"] },
+
+  { id: "TEMP-097", gender: "male",   hasImage: false, name: { first: "Danilo",        middle: "",            last: "Franco"      }, birthDate: null,         deathDate: null,         living: false, parents: [] },
+  { id: "TEMP-098", gender: "male",   hasImage: true,  name: { first: "Ferdie",        middle: "Saplala",     last: "Franco"      }, birthDate: "1977-04-03", deathDate: null,         living: true,  parents: ["TEMP-097", "TEMP-046"] },
 
   // My siblings
   { id: "TEMP-008", gender: "female", hasImage: true,  name: { first: "Riand Nikole",  middle: "Martin",      last: "Argabioso"   }, birthDate: "2003-11-07", deathDate: null,         living: true,  parents: ["GQJK-L51", "TEMP-006"] },
@@ -146,6 +150,20 @@ rawTreeData = rawTreeData.concat([
   { id: "TEMP-061", gender: "male",   hasImage: false, name: { first: "Ceejay",        middle: "Tiozon",      last: "Saplala"     }, birthDate: null,         deathDate: null,         living: true,  parents: ["TEMP-056", "TEMP-057"] },
   { id: "TEMP-062", gender: "male",   hasImage: false, name: { first: "Tyron",         middle: "Tiozon",      last: "Saplala"     }, birthDate: null,         deathDate: null,         living: true,  parents: ["TEMP-056", "TEMP-057"] },
 
+  { id: "TEMP-085", gender: "male",   hasImage: true,  name: { first: "Ian",           middle: "O",           last: "Manalo"      }, birthDate: null,         deathDate: null,         living: true,  parents: [] },
+  { id: "TEMP-086", gender: "male",   hasImage: false, name: { first: "Jwayne",        middle: "Saplala",     last: "Manalo"      }, birthDate: null,         deathDate: null,         living: true,  parents: ["TEMP-085", "TEMP-084"] },
+  { id: "TEMP-087", gender: "male",   hasImage: false, name: { first: "Irvin Jeo",     middle: "Saplala",     last: "Manalo"      }, birthDate: null,         deathDate: null,         living: true,  parents: ["TEMP-085", "TEMP-084"] },
+  { id: "TEMP-088", gender: "female", hasImage: false, name: { first: "Ian Jyke",      middle: "Saplala",     last: "Manalo"      }, birthDate: null,         deathDate: null,         living: true,  parents: ["TEMP-085", "TEMP-084"] },
+
+  { id: "TEMP-089", gender: "male",   hasImage: false, name: { first: "Danny",         middle: "",            last: "Maravilla"   }, birthDate: null,         deathDate: null,         living: false, parents: [] },
+  { id: "TEMP-090", gender: "female", hasImage: false, name: { first: "Danica",        middle: "Saplala",     last: "Maravilla"   }, birthDate: null,         deathDate: null,         living: true,  parents: ["TEMP-083", "TEMP-089"] },
+
+  { id: "TEMP-091", gender: "female", hasImage: true,  name: { first: "Maura",         middle: "Fabriz",      last: "Dalagan"     }, birthDate: "1940-11-30", deathDate: "2021-07-25", living: false, parents: [] },
+  { id: "TEMP-092", gender: "male",   hasImage: true,  name: { first: "Ronaldo",       middle: "Dalagan",     last: "Saplala"     }, birthDate: "1977-01-13", deathDate: null,         living: true,  parents: ["TEMP-091", "TEMP-047"] },
+  { id: "TEMP-093", gender: "female", hasImage: true,  name: { first: "Maria Khanela", middle: "",            last: "De Jesus"    }, birthDate: "1977-06-09", deathDate: null,         living: true,  parents: [] },
+  { id: "TEMP-094", gender: "female", hasImage: true,  name: { first: "Alma",          middle: "De Jesus",    last: "Saplala"     }, birthDate: null,         deathDate: null,         living: true,  parents: ["TEMP-092", "TEMP-093"] },
+  { id: "TEMP-095", gender: "female", hasImage: true,  name: { first: "Maria",         middle: "De Jesus",    last: "Saplala"     }, birthDate: null,         deathDate: null,         living: true,  parents: ["TEMP-092", "TEMP-093"] },
+
   // Nephews and Nieces and their not-my-cousin parents
   { id: "TEMP-042", gender: "male",   hasImage: false, name: { first: "RJ Cedrick",    middle: "",            last: "Delrosario"  }, birthDate: "1995-01-20", deathDate: null,         living: true,  parents: [] },
   { id: "TEMP-043", gender: "male",   hasImage: false, name: { first: "Kaycee Clark",  middle: "Acosta",      last: "Delrosario"  }, birthDate: "2018-03-19", deathDate: null,         living: true,  parents: ["TEMP-042", "TEMP-023"] },
@@ -157,6 +175,9 @@ rawTreeData = rawTreeData.concat([
   { id: "TEMP-051", gender: "female", hasImage: false, name: { first: "Rhianna Keith", middle: "Acosta",      last: "Fernandez"   }, birthDate: null,         deathDate: null,         living: true,  parents: ["TEMP-054", "TEMP-035"] },
   { id: "TEMP-052", gender: "female", hasImage: false, name: { first: "Krishna",       middle: "Acosta",      last: "Fernandez"   }, birthDate: null,         deathDate: null,         living: true,  parents: ["TEMP-054", "TEMP-035"] },
   { id: "TEMP-054", gender: "male",   hasImage: false, name: { first: "Mhack Mac",     middle: "",            last: "Fernandez"   }, birthDate: null,         deathDate: null,         living: true,  parents: [] },
+
+  { id: "TEMP-099", gender: "female", hasImage: true,  name: { first: "Caseymars",     middle: "",            last: "Carriedo"    }, birthDate: null,         deathDate: null,         living: true,  parents: [] },
+  { id: "TEMP-100", gender: "male",   hasImage: false, name: { first: "Cayden",        middle: "Carriedo",    last: "Saplala"     }, birthDate: null,         deathDate: null,         living: true,  parents: ["TEMP-099", "TEMP-060"] },
 
   // John-Tita Dulce connection
   { id: "TEMP-072", gender: "female", hasImage: false, name: { first: "Yohana",        middle: "Pelagio",     last: "Cruz"        }, birthDate: null,         deathDate: null,         living: true,  parents: ["TEMP-071", "TEMP-070"] },

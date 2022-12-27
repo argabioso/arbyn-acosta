@@ -252,7 +252,8 @@ function searchPerson(query, person)
   }
 
   // Search actual id if query is a number
-  if (query.length == 8 && query.match('-').length == 1) {
+  let hasHyphen = query.match('-');
+  if (query.length == 8 && hasHyphen != null && hasHyphen.length == 1) {
     return person.id == query ? 1 : 0;
   }
 
