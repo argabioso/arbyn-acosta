@@ -20,7 +20,7 @@ function isdark() {
 }
 
 const IS_DARK = isdark();
-const BACKGROUND_COLOR = IS_DARK ? "#202124" : "#f8f9fa";
+const BACKGROUND_COLOR = IS_DARK ? "#202124" : "#f3f4f5";
 const CONNECTION_COLOR = IS_DARK ? "#7f7f7f" : "#bbbcbc";
 
 const query = window.location.get("q");
