@@ -9,9 +9,10 @@ function isdark() {
   minutes = minutes < 10 ? '0'+minutes : minutes;
   var strTime = hours + ':' + minutes + ' ' + ampm;
 
+  console.log(hours)
   if (
-    (hours > 7 && hours <= 11 && ampm == "pm") ||
-    (hours >= 1 && hours < 7 && ampm == "am") ||
+    (hours >= 6 && hours <= 11 && ampm == "pm") ||
+    (hours >= 1 && hours <= 6 && ampm == "am") ||
     (hours == 12 && ampm == "am")
   ) {
     return true;
@@ -95,7 +96,7 @@ for (let i = 0, imax = treeData.length; i < imax; i++) {
           hasImage: false,
           name: {
             first: "",
-            middle: "",
+            middle: person.name.last,
             last: ""
           },
           birthDate: null,
@@ -114,7 +115,7 @@ for (let i = 0, imax = treeData.length; i < imax; i++) {
             annotationType: primitives.AnnotationType.HighlightPath,
             items: [spouseConnectionId, person.id],
             color: BACKGROUND_COLOR,
-            lineWidth: 6,
+            lineWidth: 3,
             opacity: 1,
             showArrows: false,
             zOrderType: primitives.ZOrderType.Foreground,
@@ -123,7 +124,7 @@ for (let i = 0, imax = treeData.length; i < imax; i++) {
             annotationType: primitives.AnnotationType.HighlightPath,
             items: [spouseConnectionId, spouseId],
             color: BACKGROUND_COLOR,
-            lineWidth: 6,
+            lineWidth: 3,
             opacity: 1,
             showArrows: false,
             zOrderType: primitives.ZOrderType.Foreground,
