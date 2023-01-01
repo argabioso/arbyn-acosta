@@ -147,8 +147,7 @@ for (let i = 0, imax = treeData.length; i < imax; i++) {
   }
 }
 
-treeData = filterPersons(query, treeData);
-
+filteredTreeData = filterPersons(query, treeData);
 
 var MONTH_MAPPING = {
     '01': 'Jan',
@@ -168,7 +167,7 @@ var MONTH_MAPPING = {
 var template = new primitives.TemplateConfig();
 var combiner = new primitives.TemplateConfig();
 
-var HEIGHT = 45; // ONLY CHANGE THIS
+var HEIGHT = 40; // ONLY CHANGE THIS
 var WIDTH = 233 / 45 * HEIGHT;
 
 template.name = 'TreeItemTemplate';
@@ -181,7 +180,7 @@ var shorterSide = Math.min(template.itemSize.width, template.itemSize.height);
 var longerSide = Math.max(template.itemSize.width, template.itemSize.height);
 
 combiner.itemTemplate = ["div", { "class": ["node", "combiner"] }]
-template.itemTemplate = ["div",
+template.itemTemplate = ["a",
     {
         "style": {
             "height": shorterSide + "px",
@@ -343,35 +342,25 @@ function onTemplateRender(event, data) {
 
     switch (data.renderingMode) {
         case primitives.RenderingMode.Create:
-            if (itemConfig.gender == "female") {
-                data.element.classList.remove("male");
-            } else {
-                data.element.classList.remove("female");
-            }
-
-            if (itemConfig.adopted) {
-                data.element.classList.add("adopted");
-            } else {
-                data.element.classList.remove("adopted");
-            }
-
             break;
 
         case primitives.RenderingMode.Update:
-            if (itemConfig.gender == "female") {
-                data.element.classList.remove("male");
-            } else {
-                data.element.classList.remove("female");
-            }
-
-            if (itemConfig.adopted) {
-                data.element.classList.add("adopted");
-            } else {
-                data.element.classList.remove("adopted");
-            }
-
             break;
     }
+
+    if (itemConfig.gender == "female") {
+        data.element.classList.remove("male");
+    } else {
+        data.element.classList.remove("female");
+    }
+
+    if (itemConfig.adopted) {
+        data.element.classList.add("adopted");
+    } else {
+        data.element.classList.remove("adopted");
+    }
+
+    data.element.setAttribute("href", "?q=" + data.id)
 
     var photoElement = data.element.firstChild.firstChild;
     var displayNameElement = data.element.children[1].firstChild.firstChild;
@@ -408,21 +397,25 @@ document.addEventListener('DOMContentLoaded', function () {
     options.pageFitMode = primitives.PageFitMode.None;
     options.updateMode = primitives.UpdateMode.Refresh,
 
-    options.items = treeData;
+    options.items = filteredTreeData;
     options.cursorItem = 2;
     options.linesWidth = 1.5;
     options.linesColor = CONNECTION_COLOR;
     options.hasSelectorCheckbox = primitives.Enabled.False;
-    options.normalLevelShift = 20;
+    options.normalLevelShift = 26;
     options.dotLevelShift = 20;
     options.lineLevelShift = 20;
-    options.normalItemsInterval = 10;
+    options.normalItemsInterval = 13;
     options.dotItemsInterval = 10;
-    options.lineItemsInterval = 10;
+    options.lineItemsInterval = 50;
     options.arrowsDirection = false;
     options.showExtraArrows = false;
     options.orientationType = primitives.OrientationType.Right;
     options.bevelSize = 8;
+
+    // options.normalItemsInterval: 13,
+    // options.normalLevelShift: 26,
+
 
     options.templates = [template, combiner];
     options.onItemRender = onTemplateRender;
@@ -434,7 +427,7 @@ document.addEventListener('DOMContentLoaded', function () {
     options.groupByType = primitives.GroupByType.Children;
 
     // var annotationList = [];
-    // treeData.forEach(function (item, index) {
+    // filteredTreeData.forEach(function (item, index) {
     //     console.log(item, index);
     // });
 

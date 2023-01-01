@@ -406,8 +406,17 @@ function filterPersons(query, persons)
 
     person.parents = newParents;
     person.spouses = newSpouses;
+
+    // if (singleSearch && mainPerson.id == "GQX8-CQP" && person.id == "GHB5-TWN") {
+    //   person.parents = ["GHB5-XTZ", "GHBR-FK3"];
+    // }
+
     filteredPersons.push(person);
   }
+
+  // if (singleSearch && mainPerson.id == "GQX8-CQP") {
+  //   filteredPersons = filteredPersons.concat(ADANZA_TREE_DATA);
+  // }
 
   return filteredPersons;
 }

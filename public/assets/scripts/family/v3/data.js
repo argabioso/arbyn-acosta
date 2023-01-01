@@ -51,10 +51,12 @@ const MY_TREE_DATA = [
   { id: "GQJK-L51", gender: "male",   hasImage: true,  name: { first: "Rolando",       middle: "Saplala",     last: "Argabioso"   }, birthDate: "1965-10-09", deathDate: null,         living: true,  parents: ["GQJK-LCT", "GHBZ-YVX"] },
   { id: "GQJK-G8W", gender: "female", hasImage: true,  name: { first: "Corazon",       middle: "Maramba",     last: "Acosta"      }, birthDate: "1971-03-10", deathDate: "2018-05-25", living: false, parents: ["GHBD-7M4", "GHB8-J1B"] },
 
-  { id: "GHB5-TWN", gender: "female", hasImage: true,  name: { first: "Mitchie",       middle: "Ajesta",      last: "Adanza"      }, birthDate: "1994-12-16", deathDate: null,         living: true,  parents: [] },
+  { id: "GHB5-TWN", gender: "female", hasImage: true,  name: { first: "Mitchie",       middle: "Ajesta",      last: "Adanza"      }, birthDate: "1994-12-16", deathDate: null,         living: true,  parents: ["GHB5-XTZ", "GHBR-FK3"] },
 ];
 
 const ADANZA_TREE_DATA = [
+  { id: "GHB5-XTZ", gender: "male",   hasImage: true,  name: { first: "Darne",         middle: "Elican",      last: "Adanza"      }, birthDate: "1964-06-22", deathDate: null,         living: true,  parents: [] },
+  { id: "GHBR-FK3", gender: "female", hasImage: true,  name: { first: "Mylen",         middle: "Vergara",     last: "Ajesta"      }, birthDate: "1974-04-14", deathDate: null,         living: true,  parents: [] },
 ];
 
 var rawTreeData = [];
@@ -205,11 +207,17 @@ rawTreeData = rawTreeData.concat([
   // Side ni Obet
   { id: "TEMP-078", gender: "male",   hasImage: false, name: { first: "",              middle: "",            last: "Alviza"      }, birthDate: null,         deathDate: null,         living: false, parents: [] },
   { id: "TEMP-076", gender: "male",   hasImage: false, name: { first: "Roberto",       middle: "Santos",      last: "Alviza"      }, birthDate: null,         deathDate: null,         living: true,  parents: ["TEMP-078"] },
-  { id: "TEMP-077", gender: "female", hasImage: false, name: { first: "Mirabel",       middle: "",            last: "Aguilar"     }, birthDate: null,         deathDate: null,         living: true,  parents: [] },
-  { id: "TEMP-079", gender: "male",   hasImage: false, name: { first: "Paul Robert",   middle: "Aguilar",     last: "Alviza"      }, birthDate: "1995-01-18", deathDate: null,         living: false, parents: ["TEMP-076", "TEMP-077"] },
-  { id: "TEMP-080", gender: "male",   hasImage: false, name: { first: "Robbie May",    middle: "Aguilar",     last: "Alviza"      }, birthDate: null,         deathDate: null,         living: false, parents: ["TEMP-076", "TEMP-077"] },
-  { id: "TEMP-081", gender: "male",   hasImage: false, name: { first: "Albert",        middle: "Aguilar",     last: "Alviza"      }, birthDate: null,         deathDate: null,         living: false, parents: ["TEMP-076", "TEMP-077"] },
-  { id: "TEMP-082", gender: "female", hasImage: false, name: { first: "Marybeth",      middle: "Aguilar",     last: "Alviza"      }, birthDate: null,         deathDate: null,         living: false, parents: ["TEMP-076", "TEMP-077"] },
+  { id: "TEMP-114", gender: "male",   hasImage: false, name: { first: "Angelito",      middle: "",            last: "Santos"      }, birthDate: null,         deathDate: null,         living: false, parents: [] },
+  { id: "TEMP-115", gender: "female", hasImage: false, name: { first: "Susana",        middle: "",            last: "Misamis"     }, birthDate: null,         deathDate: null,         living: false, parents: [] },
+  { id: "TEMP-112", gender: "female", hasImage: false, name: { first: "Natividad",     middle: "Misamis",     last: "Santos"      }, birthDate: "1934",       deathDate: null,         living: false, parents: ["TEMP-114", "TEMP-115"] },
+  { id: "TEMP-116", gender: "male",   hasImage: false, name: { first: "Juan",          middle: "",            last: "Aguilar"     }, birthDate: null,         deathDate: null,         living: false, parents: [] },
+  { id: "TEMP-117", gender: "female", hasImage: false, name: { first: "Donata",        middle: "",            last: "Zapata"      }, birthDate: null,         deathDate: null,         living: false, parents: [] },
+  { id: "TEMP-113", gender: "male",   hasImage: false, name: { first: "Fundador",      middle: "Zapata",      last: "Aguilar"     }, birthDate: "1930",       deathDate: null,         living: false, parents: ["TEMP-116", "TEMP-117"] },
+  { id: "TEMP-077", gender: "female", hasImage: false, name: { first: "Mirabel",       middle: "Santos",      last: "Aguilar"     }, birthDate: "1960",       deathDate: null,         living: true,  parents: ["TEMP-112", "TEMP-113"] },
+  { id: "TEMP-079", gender: "male",   hasImage: false, name: { first: "Paul Robert",   middle: "Aguilar",     last: "Alviza"      }, birthDate: "1995-01-18", deathDate: null,         living: true,  parents: ["TEMP-076", "TEMP-077"] },
+  { id: "TEMP-080", gender: "male",   hasImage: false, name: { first: "Robbie May",    middle: "Aguilar",     last: "Alviza"      }, birthDate: null,         deathDate: null,         living: true,  parents: ["TEMP-076", "TEMP-077"] },
+  { id: "TEMP-081", gender: "male",   hasImage: false, name: { first: "Albert",        middle: "Aguilar",     last: "Alviza"      }, birthDate: null,         deathDate: null,         living: true,  parents: ["TEMP-076", "TEMP-077"] },
+  { id: "TEMP-082", gender: "female", hasImage: false, name: { first: "Marybeth",      middle: "Aguilar",     last: "Alviza"      }, birthDate: null,         deathDate: null,         living: true,  parents: ["TEMP-076", "TEMP-077"] },
 
   // Si ni Lola Nene
   { id: "TEMP-108", gender: "male",   hasImage: false, name: { first: "Macky",         middle: "",            last: "Asis"        }, birthDate: null,         deathDate: null,         living: true,  parents: [], },
