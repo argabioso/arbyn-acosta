@@ -42,6 +42,7 @@ let parentCombinations = {};
 // Special case for siblings, also parent addition
 for (let i = 0, imax = treeData.length; i < imax; i++) {
   let person = treeData[i];
+  person.isActive = false; // prevents the basic primitive click function
 
   // parent addition
   if (person.parents !== undefined && person.parents.length >= 1) {
@@ -360,7 +361,7 @@ function onTemplateRender(event, data) {
         data.element.classList.remove("adopted");
     }
 
-    data.element.setAttribute("href", "?q=" + data.id)
+    data.element.setAttribute("href", "?q=" + data.id);
 
     var photoElement = data.element.firstChild.firstChild;
     var displayNameElement = data.element.children[1].firstChild.firstChild;
@@ -387,7 +388,7 @@ function onTemplateRender(event, data) {
 }
 
 var control = null;
-document.addEventListener('DOMContentLoaded', function () {
+function initialize(init) {
     if (IS_DARK) {
         document.querySelector("body").classList.add('dark');
     }
@@ -465,4 +466,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // ];
 
     control = primitives.FamDiagram(document.getElementById("tree"), options);
-});
+    control.forceCenterOnCursor = false;
+}
+
+document.addEventListener('DOMContentLoaded', initialize);
