@@ -136,7 +136,9 @@ rawTreeData = rawTreeData.concat([
   { id: "TEMP-025", gender: "female", hasImage: true,  name: { first: "Danae",         middle: "Gallardo",    last: "Argabioso"   }, birthDate: null,         deathDate: null,         living: true,  parents: ["GHBN-R99", "TEMP-024"] },
   { id: "TEMP-026", gender: "female", hasImage: true,  name: { first: "Danielle",      middle: "Gallardo",    last: "Argabioso"   }, birthDate: null,         deathDate: null,         living: true,  parents: ["GHBN-R99", "TEMP-024"] },
 
-  { id: "TEMP-021", gender: "female", hasImage: false, name: { first: "Analyn",        middle: "R",           last: "Costuya"     }, birthDate: null,         deathDate: null,         living: false, parents: [] },
+  { id: "TEMP-137", gender: "female", hasImage: false, name: { first: "Liliosa",       middle: "",            last: "Rowayan"     }, birthDate: "1943-10-07", deathDate: "2019-07-07", living: false, parents: [] },
+  { id: "TEMP-138", gender: "male",   hasImage: false, name: { first: "Baudelio",      middle: "",            last: "Costuya"     }, birthDate: "1945-05-25", deathDate: "2019-12-11", living: false, parents: [] },
+  { id: "TEMP-021", gender: "female", hasImage: false, name: { first: "Analyn",        middle: "Rowayan",     last: "Costuya"     }, birthDate: null,         deathDate: null,         living: false, parents: ["TEMP-137", "TEMP-138"] },
   { id: "TEMP-019", gender: "female", hasImage: false, name: { first: "Kristine",      middle: "Costuya",     last: "Acosta Jr."  }, birthDate: "1994-07-28", deathDate: null,         living: true,  parents: ["TEMP-018", "TEMP-021"] },
   { id: "TEMP-022", gender: "female", hasImage: false, name: { first: "Rowena",        middle: "Costuya",     last: "Acosta"      }, birthDate: null,         deathDate: null,         living: true,  parents: ["TEMP-018", "TEMP-021"] },
   { id: "TEMP-023", gender: "female", hasImage: false, name: { first: "Kim",           middle: "Costuya",     last: "Acosta"      }, birthDate: "1997-09-09", deathDate: null,         living: true,  parents: ["TEMP-018", "TEMP-021"] },
