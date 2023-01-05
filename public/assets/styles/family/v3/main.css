@@ -54,6 +54,7 @@ body {
 }
 
 .person__image {
+/*  filter: grayscale(90%);*/
 }
 
 .person__details {

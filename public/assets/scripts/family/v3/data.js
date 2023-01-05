@@ -52,11 +52,31 @@ const MY_TREE_DATA = [
   { id: "GQJK-G8W", gender: "female", hasImage: true,  name: { first: "Corazon",       middle: "Maramba",     last: "Acosta"      }, birthDate: "1971-03-10", deathDate: "2018-05-25", living: false, parents: ["GHBD-7M4", "GHB8-J1B"] },
 
   { id: "GHB5-TWN", gender: "female", hasImage: true,  name: { first: "Mitchie",       middle: "Ajesta",      last: "Adanza"      }, birthDate: "1994-12-16", deathDate: null,         living: true,  parents: ["GHB5-XTZ", "GHBR-FK3"] },
+
 ];
 
 const ADANZA_TREE_DATA = [
-  { id: "GHB5-XTZ", gender: "male",   hasImage: true,  name: { first: "Darne",         middle: "Elican",      last: "Adanza"      }, birthDate: "1964-06-22", deathDate: null,         living: true,  parents: [] },
-  { id: "GHBR-FK3", gender: "female", hasImage: true,  name: { first: "Mylen",         middle: "Vergara",     last: "Ajesta"      }, birthDate: "1974-04-14", deathDate: null,         living: true,  parents: [] },
+  // Side ni Tito Darne
+  { id: "GH12-DRN", gender: "male",   hasImage: false, name: { first: "Felomino",      middle: "B",           last: "Adanza"      }, birthDate: "1901",       deathDate: "1990",       living: false, parents: [] },
+  { id: "GH12-3GN", gender: "female", hasImage: false, name: { first: "Consuelo",      middle: "",            last: "Ladera"      }, birthDate: "1911",       deathDate: null,         living: false, parents: [] },
+  { id: "GH12-9JZ", gender: "male",   hasImage: false, name: { first: "Cecilio",       middle: "",            last: "Elican"      }, birthDate: null,         deathDate: null,         living: false, parents: [] },
+  { id: "GH12-35H", gender: "female", hasImage: false, name: { first: "Jovita",        middle: "",            last: "Acerto"      }, birthDate: null,         deathDate: null,         living: false, parents: [] },
+
+  { id: "GH12-SVQ", gender: "male",   hasImage: true,  name: { first: "Nestor",        middle: "Ladera",      last: "Adanza"      }, birthDate: null,         deathDate: "2018-09-29", living: false, parents: ["GH12-DRN", "GH12-3GN"] },
+  { id: "GH12-9F6", gender: "female", hasImage: true,  name: { first: "Rufa",          middle: "Acerto",      last: "Elican"      }, birthDate: null,         deathDate: "2015-04-02", living: false, parents: ["GH12-9JZ", "GH12-35H"] },
+
+  { id: "GHB5-XTZ", gender: "male",   hasImage: true,  name: { first: "Darne",         middle: "Elican",      last: "Adanza"      }, birthDate: "1964-06-22", deathDate: null,         living: true,  parents: ["GH12-SVQ", "GH12-9F6"] },
+
+  // Side ni Tita Mylen
+  { id: "GH12-6YL", gender: "male",   hasImage: false, name: { first: "Benigno",       middle: "Aquino",      last: "Vergara"     }, birthDate: null,         deathDate: null,         living: false, parents: [] },
+  { id: "GH12-DD8", gender: "female", hasImage: false, name: { first: "Enoria",        middle: "",            last: "Borja"       }, birthDate: null,         deathDate: null,         living: false, parents: [] },
+  { id: "GH12-XX4", gender: "male",   hasImage: false, name: { first: "Emmanuel",      middle: "",            last: "Ajesta"      }, birthDate: null,         deathDate: null,         living: false, parents: [] },
+  { id: "GH12-HQN", gender: "female", hasImage: false, name: { first: "Ursula",        middle: "",            last: "Crispolon"   }, birthDate: null,         deathDate: null,         living: false, parents: [] },
+
+  { id: "GH12-Z3C", gender: "male",   hasImage: false, name: { first: "Napoleon",      middle: "Crispolon",   last: "Ajesta"      }, birthDate: null,         deathDate: null,         living: false, parents: ["GH12-XX4", "GH12-HQN"] },
+  { id: "GH12-W17", gender: "female", hasImage: true,  name: { first: "Celma",         middle: "Borja",       last: "Vergara"     }, birthDate: "1941-07-08", deathDate: "2020-02-16", living: false, parents: ["GH12-6YL", "GH12-DD8"] },
+
+  { id: "GHBR-FK3", gender: "female", hasImage: true,  name: { first: "Mylen",         middle: "Vergara",     last: "Ajesta"      }, birthDate: "1974-04-14", deathDate: null,         living: true,  parents: ["GH12-Z3C", "GH12-W17"] },
 ];
 
 var rawTreeData = [];
@@ -193,8 +213,6 @@ rawTreeData = rawTreeData.concat([
   { id: "TEMP-099", gender: "female", hasImage: true,  name: { first: "Caseymars",     middle: "",            last: "Carriedo"    }, birthDate: null,         deathDate: null,         living: true,  parents: [] },
   { id: "TEMP-100", gender: "male",   hasImage: false, name: { first: "Cayden",        middle: "Carriedo",    last: "Saplala"     }, birthDate: null,         deathDate: null,         living: true,  parents: ["TEMP-099", "TEMP-060"] },
 
-  { id: "TEMP-107", gender: "male",   hasImage: false, name: { first: "Cayden",        middle: "Carriedo",    last: "Saplala"     }, birthDate: null,         deathDate: null,         living: true,  parents: ["TEMP-099", "TEMP-060"] },
-
   // John-Tita Dulce connection
   { id: "TEMP-072", gender: "female", hasImage: false, name: { first: "Yohana",        middle: "Pelagio",     last: "Cruz"        }, birthDate: null,         deathDate: null,         living: true,  parents: ["TEMP-071", "TEMP-070"] },
   { id: "TEMP-071", gender: "female", hasImage: false, name: { first: "Carol",         middle: "Alviza",      last: "Pelagio"     }, birthDate: null,         deathDate: null,         living: true,  parents: ["TEMP-073"] },
@@ -223,7 +241,7 @@ rawTreeData = rawTreeData.concat([
   { id: "TEMP-113", gender: "male",   hasImage: false, name: { first: "Fundador",      middle: "Zapata",      last: "Aguilar"     }, birthDate: "1930",       deathDate: null,         living: false, parents: ["TEMP-116", "TEMP-117"] },
   { id: "TEMP-077", gender: "female", hasImage: false, name: { first: "Mirabel",       middle: "Santos",      last: "Aguilar"     }, birthDate: "1960",       deathDate: null,         living: true,  parents: ["TEMP-112", "TEMP-113"] },
   { id: "TEMP-079", gender: "male",   hasImage: false, name: { first: "Paul Robert",   middle: "Aguilar",     last: "Alviza"      }, birthDate: "1995-01-18", deathDate: null,         living: true,  parents: ["TEMP-076", "TEMP-077"] },
-  { id: "TEMP-080", gender: "male",   hasImage: false, name: { first: "Robbie May",    middle: "Aguilar",     last: "Alviza"      }, birthDate: "1998",        deathDate: null,         living: true,  parents: ["TEMP-076", "TEMP-077"] },
+  { id: "TEMP-080", gender: "male",   hasImage: false, name: { first: "Robbie May",    middle: "Aguilar",     last: "Alviza"      }, birthDate: "1998",       deathDate: null,         living: true,  parents: ["TEMP-076", "TEMP-077"] },
   { id: "TEMP-081", gender: "male",   hasImage: false, name: { first: "Albert",        middle: "Aguilar",     last: "Alviza"      }, birthDate: null,         deathDate: null,         living: true,  parents: ["TEMP-076", "TEMP-077"] },
   { id: "TEMP-082", gender: "female", hasImage: false, name: { first: "Marybeth",      middle: "Aguilar",     last: "Alviza"      }, birthDate: null,         deathDate: null,         living: true,  parents: ["TEMP-076", "TEMP-077"] },
 
@@ -231,6 +249,10 @@ rawTreeData = rawTreeData.concat([
   { id: "TEMP-133", gender: "female", hasImage: false, name: { first: "Lilibeth",      middle: "",            last: "Marmita"     }, birthDate: null,         deathDate: null,         living: true,  parents: [], spouses: ["TEMP-120"] },
   { id: "TEMP-124", gender: "male",   hasImage: false, name: { first: "Gilbert",       middle: "Malabrigo",   last: "Alviza"      }, birthDate: null,         deathDate: null,         living: true,  parents: ["TEMP-123"] },
   { id: "TEMP-125", gender: "male",   hasImage: false, name: { first: "Gerwin",        middle: "Malabrigo",   last: "Alviza"      }, birthDate: null,         deathDate: null,         living: true,  parents: ["TEMP-123"] },
+  { id: "TEMP-139", gender: "male",   hasImage: false, name: { first: "Anthony",       middle: "",            last: "Alviza"      }, birthDate: "1984",       deathDate: null,         living: true,  parents: ["TEMP-119"] },
+  { id: "TEMP-140", gender: "female", hasImage: false, name: { first: "Argie",         middle: "",            last: "Chuatoco"    }, birthDate: null,         deathDate: null,         living: true,  parents: ["TEMP-119"] },
+  { id: "TEMP-141", gender: "female", hasImage: false, name: { first: "Hurley",        middle: "",            last: "Alviza"      }, birthDate: null,         deathDate: null,         living: true,  parents: ["TEMP-139", "TEMP-140"] },
+  { id: "TEMP-142", gender: "male",   hasImage: false, name: { first: "Bodhi",         middle: "",            last: "Alviza"      }, birthDate: "2019-03-08", deathDate: null,         living: true,  parents: ["TEMP-139", "TEMP-140"] },
 
   // Side nila Arvin Chris
   { id: "TEMP-126", gender: "male",   hasImage: false, name: { first: "Boy",           middle: "",            last: "Martin"      }, birthDate: null,         deathDate: null,         living: false, parents: [] },

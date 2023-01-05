@@ -23,6 +23,8 @@ function isdark() {
 const IS_DARK = isdark();
 const BACKGROUND_COLOR = IS_DARK ? "#202124" : "#f3f4f5";
 const CONNECTION_COLOR = IS_DARK ? "#7f7f7f" : "#bbbcbc";
+const PHOTO_BACKGROUND_COLOR = IS_DARK ? "#5b5b5b" : "#dcdcdc";
+const BORDER_COLOR = IS_DARK ? "rgba(255, 255, 255, 0.10)" : "rgba(0, 0, 0, 0.10)";
 
 const query = window.location.get("q");
 let queryIsId = false;
@@ -42,6 +44,15 @@ let parentCombinations = {};
 // Special case for siblings, also parent addition
 for (let i = 0, imax = treeData.length; i < imax; i++) {
   let person = treeData[i];
+
+  // add nodetail template
+  if (!person.hasImage && person.birthDate == null && person.deathDate == null && !person.living) {
+    person.templateName = "NoDetailTreeItemTemplate";
+    person.hasDetails = false;
+  } else {
+    person.hasDetails = true;
+  }
+
   person.isActive = false; // prevents the basic primitive click function
 
   // parent addition
@@ -166,6 +177,7 @@ var MONTH_MAPPING = {
 }
 
 var template = new primitives.TemplateConfig();
+var templat2 = new primitives.TemplateConfig();
 var combiner = new primitives.TemplateConfig();
 
 var HEIGHT = 40; // ONLY CHANGE THIS
@@ -174,11 +186,15 @@ var WIDTH = 233 / 45 * HEIGHT;
 template.name = 'TreeItemTemplate';
 template.itemSize = new primitives.Size(WIDTH, HEIGHT);
 
+templat2.name = 'NoDetailTreeItemTemplate';
+templat2.itemSize = new primitives.Size(WIDTH, HEIGHT * (27 / 40));
+
 combiner.name = 'CombinerTemplate';
 combiner.itemSize = new primitives.Size(0, 0);
 
 var shorterSide = Math.min(template.itemSize.width, template.itemSize.height);
 var longerSide = Math.max(template.itemSize.width, template.itemSize.height);
+var noDetailShorterSide = Math.min(shorterSide, templat2.itemSize.height);
 
 combiner.itemTemplate = ["div", { "class": ["node", "combiner"] }]
 template.itemTemplate = ["a",
@@ -224,6 +240,80 @@ template.itemTemplate = ["a",
                 "style": {
                     "font-size": (shorterSide / 45 * 11.25) + "px",
                     "height": shorterSide + "px",
+                    "width": (longerSide - shorterSide) + "px",
+                    "padding-top": (shorterSide / 36 * 7) + "px",
+                    "padding-right": (shorterSide / 36 * 7) + "px",
+                    "padding-bottom": (shorterSide / 36 * 7) + "px",
+                    "padding-left": (shorterSide / 36 * 11) + "px",
+                }
+            },
+            ["div",
+                {
+                    "name": "name",
+                    "class": ["person__display-name"],
+                    "style": {
+                        "font-size": (shorterSide / 45 * 13.125) + "px",
+                    }
+                }
+            ],
+            ["div",
+                {
+                    "name": "lifespan",
+                    "class": ["person__lifespan"],
+                }
+            ]
+        ]
+    ]
+];
+templat2.itemTemplate = ["a",
+    {
+        "style": {
+            "height": noDetailShorterSide + "px",
+            "width": longerSide + "px",
+        },
+        "class": ["node", "person"]
+    },
+    ["div",
+        {
+            "class": ["person__image-wrapper"],
+            "style": {
+                "background-color": PHOTO_BACKGROUND_COLOR,
+                "height": noDetailShorterSide + "px",
+                "width": shorterSide + "px",
+            }
+        },
+        ["div",
+            {
+                "name": "photo",
+                "class": ["person__image"],
+                "style": {
+                    "border-top": (noDetailShorterSide / 2) + "px solid " + BORDER_COLOR,
+                    "border-right": (shorterSide / 2) + "px solid " + BORDER_COLOR,
+                    "border-bottom": (noDetailShorterSide / 2) + "px solid transparent",
+                    "border-left": (shorterSide / 2) + "px solid transparent",
+                    // "width": (shorterSide) + "px",
+                    "width": 0,
+                    "height": 0,
+                }
+            }
+        ]
+    ],
+    ["div",
+        {
+            "class": ["person__details"],
+            "style": {
+                "height": noDetailShorterSide + "px",
+                "width": (longerSide - shorterSide) + "px",
+                "left": shorterSide + "px",
+            }
+        },
+        ["div",
+            {
+                "name": "name",
+                "class": ["person__details-container"],
+                "style": {
+                    "font-size": (shorterSide / 45 * 11.25) + "px",
+                    "height": noDetailShorterSide + "px",
                     "width": (longerSide - shorterSide) + "px",
                     "padding-top": (shorterSide / 36 * 7) + "px",
                     "padding-right": (shorterSide / 36 * 7) + "px",
@@ -335,7 +425,7 @@ function getLifeSpan(nodeData) {
 }
 
 function onTemplateRender(event, data) {
-    if (data.templateName != "TreeItemTemplate") {
+    if (data.templateName != "TreeItemTemplate" && data.templateName != "NoDetailTreeItemTemplate") {
         return;
     }
 
@@ -369,9 +459,13 @@ function onTemplateRender(event, data) {
 
     var displayName = getDisplayName(itemConfig);
     var lifeSpan = getLifeSpan(itemConfig);
+    var hasLifeSpan = lifeSpan != "Deceased";
 
     displayNameElement.textContent = displayName;
-    lifeSpanElement.textContent = lifeSpan;
+
+    if (itemConfig.hasDetails) {
+        lifeSpanElement.textContent = lifeSpan;
+    }
 
     photoElement.alt = displayName;
     data.element.classList.add(itemConfig.gender);
@@ -418,7 +512,7 @@ function initialize(init) {
     // options.normalLevelShift: 26,
 
 
-    options.templates = [template, combiner];
+    options.templates = [template, templat2, combiner];
     options.onItemRender = onTemplateRender;
     options.defaultTemplateName = "TreeItemTemplate";
     options.connectorType = primitives.ConnectorType.Curved;
