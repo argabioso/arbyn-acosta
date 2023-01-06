@@ -1,4 +1,4 @@
-/* 6.5.0 */
+/* 6.5.1 */
 (function webpackUniversalModuleDefinition(root, factory) {
     if(typeof exports === 'object' && typeof module === 'object')
         module.exports = factory();
@@ -2376,7 +2376,7 @@ function OrgPdfkitTaskManagerFactory(getOptions, getGraphics, setLayout, templat
   tasks.addTask('ApplyLayoutChangesTask', ['graphics', 'setLayout', 'ItemsSizesOptionTask', 'CurrentControlSizeTask', 'ScaleOptionTask', 'AlignDiagramTask', 'FrameSizeTask', 'LevelTitleSizeTask'], _tasks_layout_ApplyLayoutChangesTask__WEBPACK_IMPORTED_MODULE_50__["default"], _enums__WEBPACK_IMPORTED_MODULE_8__["Colors"].Green);
   tasks.addTask('ViewPortPlacementTask', ['ScaleOptionTask', 'CenterOnCursorTask', 'CreateTransformTask', 'ApplyLayoutChangesTask'], _tasks_layout_ViewPortPlacementTask__WEBPACK_IMPORTED_MODULE_56__["default"], _enums__WEBPACK_IMPORTED_MODULE_8__["Colors"].Green);
   tasks.addTask('VerticalOffsetTask', ['ViewPortPlacementTask'], _tasks_layout_VerticalOffsetTask__WEBPACK_IMPORTED_MODULE_57__["default"], _enums__WEBPACK_IMPORTED_MODULE_8__["Colors"].Green);
-  tasks.addTask('LogicalLevelsPlacementTask', ['OrgTreeTask', 'VisualTreeTask', 'AlignDiagramTask'], _tasks_layout_OrgLogicalLevelsPlacementTask__WEBPACK_IMPORTED_MODULE_58__["default"], _enums__WEBPACK_IMPORTED_MODULE_8__["Colors"].Green);
+  tasks.addTask('LogicalLevelsPlacementTask', ['OrgTreeTask', 'AlignDiagramTask'], _tasks_layout_OrgLogicalLevelsPlacementTask__WEBPACK_IMPORTED_MODULE_58__["default"], _enums__WEBPACK_IMPORTED_MODULE_8__["Colors"].Green);
   tasks.addTask('MergeLevelIntervalsTask', ['LevelAnnotationOptionTask', 'LogicalLevelsPlacementTask'], _tasks_layout_MergeLevelIntervalsTask__WEBPACK_IMPORTED_MODULE_59__["default"], _enums__WEBPACK_IMPORTED_MODULE_8__["Colors"].Green); // Renders
 
   tasks.addTask('DrawBackgroundAnnotationTask', ['graphics', 'CreateTransformTask', 'ApplyLayoutChangesTask', 'BackgroundAnnotationOptionTask', 'VisualTreeTask', 'AlignDiagramTask'], _tasks_renders_DrawBackgroundAnnotationTask__WEBPACK_IMPORTED_MODULE_60__["default"], _enums__WEBPACK_IMPORTED_MODULE_8__["Colors"].Green);
@@ -2690,7 +2690,7 @@ function TaskManagerFactory(getOptions, getGraphics, getLayout, setLayout, templ
   tasks.addTask('ProjectItemsToFrameTask', ['CreateTransformTask', 'FrameSizeTask', 'ApplyLayoutChangesTask', 'ScaleOptionTask', 'AlignDiagramTask', 'CenterOnCursorTask', 'ItemTemplateParamsTask', 'SelectedItemsTask'], _tasks_layout_ProjectItemsToFrameTask__WEBPACK_IMPORTED_MODULE_71__["default"], _enums__WEBPACK_IMPORTED_MODULE_1__["Colors"].Green);
   tasks.addTask('ViewPortPlacementTask', ['ScaleOptionTask', 'CenterOnCursorTask', 'CreateTransformTask', 'ApplyLayoutChangesTask'], _tasks_layout_ViewPortPlacementTask__WEBPACK_IMPORTED_MODULE_72__["default"], _enums__WEBPACK_IMPORTED_MODULE_1__["Colors"].Green);
   tasks.addTask('VerticalOffsetTask', ['ViewPortPlacementTask'], _tasks_layout_VerticalOffsetTask__WEBPACK_IMPORTED_MODULE_73__["default"], _enums__WEBPACK_IMPORTED_MODULE_1__["Colors"].Green);
-  tasks.addTask('LogicalLevelsPlacementTask', ['OrgTreeTask', 'VisualTreeTask', 'AlignDiagramTask'], _tasks_layout_OrgLogicalLevelsPlacementTask__WEBPACK_IMPORTED_MODULE_74__["default"], _enums__WEBPACK_IMPORTED_MODULE_1__["Colors"].Green);
+  tasks.addTask('LogicalLevelsPlacementTask', ['OrgTreeTask', 'AlignDiagramTask'], _tasks_layout_OrgLogicalLevelsPlacementTask__WEBPACK_IMPORTED_MODULE_74__["default"], _enums__WEBPACK_IMPORTED_MODULE_1__["Colors"].Green);
   tasks.addTask('MergeLevelIntervalsTask', ['LevelAnnotationOptionTask', 'LogicalLevelsPlacementTask'], _tasks_layout_MergeLevelIntervalsTask__WEBPACK_IMPORTED_MODULE_75__["default"], _enums__WEBPACK_IMPORTED_MODULE_1__["Colors"].Green); // Renders
 
   tasks.addTask('DrawBackgroundAnnotationTask', ['graphics', 'CreateTransformTask', 'ApplyLayoutChangesTask', 'BackgroundAnnotationOptionTask', 'VisualTreeTask', 'AlignDiagramTask'], _tasks_renders_DrawBackgroundAnnotationTask__WEBPACK_IMPORTED_MODULE_76__["default"], _enums__WEBPACK_IMPORTED_MODULE_1__["Colors"].Green);
@@ -12651,9 +12651,8 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 
 /**
  * @class BackgroundAnnotationConfig
- * @classdesc Background annotation draws a rectangular shape around annotated items.
- * Annotations borders are offset around nodes, so if two annotations overlap,
- * they are merged into one continuous shape with a single borderline.
+ * @classdesc Background annotation draws rectangular shape around annotated items. Annotations borders are offset around items, so if
+ * two annotations overlap each other they are merged into one continuos shape having single border line.
  *
  * @param {object} arg0 Object properties.
  */
@@ -12661,46 +12660,41 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 function BackgroundAnnotationConfig(arg0) {
   var property;
   /**
-   * Annotation type property explicitly defines annotation object type when
-   * it is defined as a JSON object. The `annotations` collection contains
-   * a mixture of all kinds of control annotations.
+   * Annotation type. All types of annotations objects are added to `annotations` collection property of the control.
+   * This property is needed to distinguish them when they are defined as JSON objects.
    *
    * @type {AnnotationType}
    */
 
   this.annotationType = _enums__WEBPACK_IMPORTED_MODULE_1__["AnnotationType"].Background;
   /**
-   * The `items` Collection contains nodes ids the background annotation is drawn for.
+   * Collection of nodes ids this background annotation is drawn for.
    *
    * @type {string[]}
    */
 
   this.items = [];
   /**
-   * If this property is true, background annotation includes all descendants of every
-   * item in the `items` collection. It works in {OrgDiagram} only.
+   * If this property is true then background annotation includes all descendants of every item in `items` collection. It works in {OrgDiagram} only.
    *
    * @type {boolean}
    */
 
   this.includeChildren = false;
   /**
-   * Sets annotation z-order placement relative to the diagram items.
-   * Diagram visual elements are drawn in layers on top of each other.
-   * If you place annotations over diagram nodes, you block mouse events
-   * of UI elements in nodes templates. Browsers don't support mouse events
-   * transparency consistently yet. So to avoid mouse events blocking UI
-   * elements in node templates, you have to place annotation items under
-   * nodes or manipulate z-index for UI interactive controls and make them
-   * placed on top of other visual elements. The component puts the buttons panel
-   * on top of everything, so annotations drawn over the diagram nodes are not blocked.
+   * Sets annotation Z order placement relative to the diagram items. Diagram visual elements are drawn in layers on top of each other.
+   * If you place annotations over diagram nodes then you block mouse events of UI elements in their templates.
+   * Browsers don't support mouse events transparency consistently yet. So in order to avoid mouse events blocking of UI elements in item
+   * templates you have to place annotation items under them or explicitly define maximum zindex for controls and make them rendered on top
+   * of other visual elements. The control takes this into account and renders buttons panel on top of everything,
+   * so they are never blocked by annotations drawn in front of diagram nodes.
    *
    * @type {ZOrderType}
    */
 
   this.zOrderType = _enums__WEBPACK_IMPORTED_MODULE_1__["ZOrderType"].Auto;
   /**
-   * Sets background borderline offset around annotated items.
+   * Sets background offset around annotated items.
    *
    * @type {Thickness}
    */
@@ -12721,7 +12715,7 @@ function BackgroundAnnotationConfig(arg0) {
 
   this.opacity = 1;
   /**
-   * Border line color
+   * Shape border line color
    *
    * @type {string}
    */
@@ -12742,8 +12736,7 @@ function BackgroundAnnotationConfig(arg0) {
 
   this.lineType = _enums__WEBPACK_IMPORTED_MODULE_1__["LineType"].Solid;
   /**
-   * If true, annotated nodes are shown in their expanded form using item
-   * templates regardless of controls autofit mode and available screen space.
+   * If true then annotated nodes are shown full size regardless of controls auto fit mode and available screen space.
    * @type {boolean}
    */
 
@@ -12788,9 +12781,9 @@ __webpack_require__.r(__webpack_exports__);
 
 /**
  * @class ConnectorAnnotationConfig
- * @classdesc Connector annotations draw lines between two nodes of the diagram.
- * They are drawn on top of the existing diagram layout, and they don't impact
- * nodes placement. So it is the user's responsibility to preserve space between nodes for them.
+ * @classdesc  Connector annotation configuration object. Connector annotations draws lines between two nodes of the diagram.
+ * They are drawn on top of existing diagram layout and they don't affect nodes placement. So it is users responsibility to
+ * preserve space between nodes for them.
  *
  * @param {object} arg0 Object properties.
  */
@@ -12798,82 +12791,72 @@ __webpack_require__.r(__webpack_exports__);
 function ConnectorAnnotationConfig(arg0, arg1) {
   var property;
   /**
-   * Annotation type property explicitly defines annotation object type when
-   * it is defined as a JSON object. The `annotations` collection contains
-   * a mixture of all kinds of control annotations.
+   * Annotation type. All types of annotations objects are added to `annotations` collection property of the control.
+   * This property is needed to distinguish them when they are defined as JSON objects.
    *
    * @type {AnnotationType}
    */
 
   this.annotationType = _enums__WEBPACK_IMPORTED_MODULE_2__["AnnotationType"].Connector;
   /**
-   * Sets annotation z-order placement relative to the diagram items.
-   * Diagram visual elements are drawn in layers on top of each other.
-   * If you place annotations over diagram nodes, you block mouse events
-   * of UI elements in nodes templates. Browsers don't support mouse events
-   * transparency consistently yet. So to avoid mouse events blocking UI
-   * elements in node templates, you have to place annotation items under
-   * nodes or manipulate z-index for UI interactive controls and make them
-   * placed on top of other visual elements. The component puts the buttons panel
-   * on top of everything, so annotations drawn over the diagram nodes are not blocked.
+   * Sets annotation Z order placement relative to the diagram items. Diagram visual elements are drawn in layers on top of each other.
+   * If you place annotations over diagram nodes then you block mouse events of UI elements in their templates.
+   * Browsers don't support mouse events transparency consistently yet. So in order to avoid mouse events blocking of UI elements in item
+   * templates you have to place annotation items under them or explicitly define maximum zindex for controls and make them rendered on top
+   * of other visual elements. The control takes this into account and renders buttons panel on top of everything,
+   * so they are never blocked by annotations drawn in front of diagram nodes.
    *
    * @type {ZOrderType}
    */
 
   this.zOrderType = _enums__WEBPACK_IMPORTED_MODULE_2__["ZOrderType"].Foreground;
   /**
-   * The start node of the connection line
+   * The start node of connection line
    *
    * @type {string}
    */
 
   this.fromItem = null;
   /**
-   * The end node of the connection line
+   * The end node of connection line
    *
    * @type {string}
    */
 
   this.toItem = null;
   /**
-   * Connector shape type defines the number of lines and arrows at their ends
-   * drawn between nodes of the connector annotation. This feature, combined
-   * with conflict resolution, places overlapping annotations in parallel.
-   * It gives you complete flexibility over variations of possible connector
-   * lines between two given diagram nodes.
+   * Connector shape type defines number of lines and arrows at their ends drawn between nodes of the connector annotation.
+   * This feature combined with basic conflict resolution, which places overlapping annotations in parallel when they overlap each other,
+   * gives you full flexibility over variations of possible connector lines between two given nodes of diagram.
    *
    * @type {ConnectorShapeType}
    */
 
   this.connectorShapeType = _enums__WEBPACK_IMPORTED_MODULE_2__["ConnectorShapeType"].OneWay;
   /**
-   * The connector placement type defines how the component traces the connector
-   * line over the diagram nodes. The `Straight` is a direct line connecting two
-   * nodes. The`Offbeat` style is designed to dynamically tune connector line
-   * placement depending on the relative position of nodes and the gap between them.
-   * It uses free-hand line style drawing going from start to the end node.
-   * Since every diagram is packed with various connection lines, this annotation
-   * placement style is deliberately made not straight so that it can be
-   * noticeable on top of other diagram lines.
+   * Connector placement type defines style of connector line drawing over diagram layout. It supports two options:
+   * the `Straight` is classic direct line connecting two nodes, this is the most expected style of connector annotation
+   * drawing over diagram, the second style is called `Offbeat` and it is designed to dynamically adopt to nodes mutual
+   * location and gap between them. It uses free hand line style drawing going from start to the end node. Since every diagram
+   * is packed with various connection lines, this annotation placement style is deliberately made not straight, so it can be
+   * noticeable on top of other lines of the diagram.
    *
    * @type {ConnectorPlacementType}
    */
 
   this.connectorPlacementType = _enums__WEBPACK_IMPORTED_MODULE_2__["ConnectorPlacementType"].Offbeat;
   /**
-   * Label placement relative to connector annotation. Connector annotation is
-   * bound and drawn between two nodes defined by the `fromItem` and the `toItem`
-   * properties. The component places the label along the connector line close
-   * to the start, the end nodes, or between them.
+   * Label placement relative to connector annotation. Connector annotation is bound and drawn between two nodes
+   * defined by two properties: `fromItem` and `toItem`. Label can be placed close to "start", "end" nodes or in between of them
+   * along the connector line.
    *
    * @type {ConnectorLabelPlacementType}
    */
 
   this.labelPlacementType = _enums__WEBPACK_IMPORTED_MODULE_2__["ConnectorLabelPlacementType"].Between;
   /**
-   * Connection lines start from the margin of the node's rectangle. If the offset is positive,
-   * the connection line has a gap between its endpoints and the node's rectangles.
-   * If it is negative, the connection line overlaps the node's rectangle and starts from inside them.
+   * Connector line end points offset. By default connection lines start from the margin of the node's rectangle.
+   * If offset is positive then start point goes from outside of the rectangle, if it is negative then it starts from inside of the nodes rectangle.
    *
    * @type {Thickness}
    */
@@ -12901,23 +12884,19 @@ function ConnectorAnnotationConfig(arg0, arg1) {
 
   this.lineType = _enums__WEBPACK_IMPORTED_MODULE_2__["LineType"].Solid;
   /**
-   * If true, annotated nodes are shown in their expanded form using item
-   * templates regardless of controls autofit mode and available screen space.
-   *
+   * If true then annotated nodes are shown full size regardless of controls auto fit mode and available screen space.
    * @type {boolean}
    */
 
   this.selectItems = true;
   /**
-   * Label. Label styled with "bp-connector-label" css class.
-   *
+   * Label. Label styled with css class name "bp-connector-label".
    * @type {string}
    */
 
   this.label = null;
   /**
    * Label size
-   *
    * @type {Size}
    */
 
@@ -12964,12 +12943,6 @@ __webpack_require__.r(__webpack_exports__);
  * @classdesc Family Chart configuration object. Use this object as a reference
  * for available properties and their default values.
  *
- * Family Chart control has API options similar to regular UI collection controls.
- * It supports single node selection with the `cursorItem` property, mouse click,
- * or keyboard `Enter` key. The `highlightItem` functionality provides mouse over feedback
- * and lets the user navigate diagram nodes with keyboard arrow keys. The `selectedItems`
- * collection and checkboxes enable multi-select available in ListView and TreeView controls.
- *
  * @param {string} name
  */
 
@@ -12977,26 +12950,28 @@ function FamConfig(name) {
   this.name = name !== undefined ? name : "FamDiagram";
   this.classPrefix = "famdiagram";
   /**
-   * The navigation mode property allows disabling control interactivity.
-   * By default, the control behaves like a regular collection control. It has a cursor to select
-   * a single item in the collection. So user can click and select any node in the diagram.
-   * The control has a highlight for mouseover feedback. So user can move the mouse and see highlight
-   * frame and callout callback annotation for a node under the cursor.
+   * Sets control navigation mode.
    *
-   * By `Default`, the control has both cursor and highlight. If they are disabled, then control is rendered as a static image.
+   * By default control replicates interactivity of regular collection control. It has cursor to select single
+   * item in the collection. So user can click and select any node in the diagram. The control has highlight for mouse over feedback.
+   * So user can move mouse and see highlight frame and callout callback annotation for node under cursor.
+   *
+   * By `Default` the control has both cursor and highlight. If they are disabled then control is rendered as a static image.
    *
    * @type {NavigationMode}
    */
 
   this.navigationMode = _enums__WEBPACK_IMPORTED_MODULE_0__["NavigationMode"].Default;
   /**
-   * The page fit mode option minimizes the diagram size via replacing nodes with markers and labels.
-   * That mode can show a large number of nodes while not affecting the rendering performance.
-   * It can fit thousands of nodes into available screen space without losing usability.
-   * On the other hand, when we use a graphics editor to draw our diagrams manually,
-   * it is common to have a sparse layout with significant gaps between the nodes.
-   * If we don't fit the graph, the space between nodes can easily make
-   * the diagram/chart unusable hard to view, edit and navigate.
+   * Page fit mode. Minimizing nodes into markers and labels. This option provides a special mode that renders the diagram
+   * nodes in the form of markers. This is a highly scalable form that is capable of rendering large numbers of nodes
+   * while not affecting the rendering performance. With this, huge diagrams can be fit into available screen space.
+   *
+   * When using a graphics editor to manually draw your diagrams, it is common place to have large gaps between the nodes.
+   * This can make the diagram/chart unreadable, hard to edit and navigate. On top of that, on a large scale the diagram could have screen size
+   * intervals between items. Admittedly the computer UI does allow the user to scale and fit the diagram in order to visualize it
+   * on a single screen. But in that case, the items become small and unreadable as there is no scaling priority and the items
+   * are just too small to be readable.
    *
    * @group Auto Layout
    * @type {PageFitMode}
@@ -13004,7 +12979,8 @@ function FamConfig(name) {
 
   this.pageFitMode = _enums__WEBPACK_IMPORTED_MODULE_0__["PageFitMode"].FitToPage;
   /**
-   * The minimal nodes visibility option controls how small nodes of the diagram can be in auto-fit mode.
+   * Minimal nodes visibility in the diagram. If auto fit of the diagram into current page size is enabled, then
+   * this option controls minimum allowed size of the diagram nodes.
    *
    * @group Auto Layout
    * @type {Visibility}
@@ -13012,8 +12988,7 @@ function FamConfig(name) {
 
   this.minimalVisibility = _enums__WEBPACK_IMPORTED_MODULE_0__["Visibility"].Dot;
   /**
-   * The minimum visible levels option prevents top-level nodes from folding into markers.
-   * It accounts for family chart relations and the `levelOffset` of individual items.
+   * Minimum visible levels option prevents top-level nodes from folding into markers.
    *
    * @group Auto Layout
    * @type {number}
@@ -13021,7 +12996,8 @@ function FamConfig(name) {
 
   this.minimumVisibleLevels = 0;
   /**
-   * The orientation property rotates the diagram layout. It is needed for right-to-left languages support and custom layouts.
+   * Set diagram orientation. This option controls diagram layout orientation. The control can be rotated in any direction,
+   * this is needed for Arabic support and various layouts.
    *
    * @group Auto Layout
    * @type {OrientationType}
@@ -13029,9 +13005,7 @@ function FamConfig(name) {
 
   this.orientationType = _enums__WEBPACK_IMPORTED_MODULE_0__["OrientationType"].Top;
   /**
-   * The vertical alignment sets nodes alignment inside row's vertical boundaries.
-   * If a row of nodes contains nodes of multiple sizes, small nodes
-   * are vertically aligned relative to their bigger siblings.
+   * Sets items vertical alignment relative to each other within one level of the hierarchy.
    * It does not change anything if diagram nodes are all of the same size.
    *
    * @group Auto Layout
@@ -13040,8 +13014,8 @@ function FamConfig(name) {
 
   this.verticalAlignment = _enums__WEBPACK_IMPORTED_MODULE_0__["VerticalAlignmentType"].Middle;
   /**
-   * The arrows direction property shows arrows for connector lines.
-   * If it is set to the `Parents`, arrows are drawn towards logical parents from logical children.
+   * Sets arrows direction for connector lines. If this property set to `Parents` then arrows are drawn
+   * from logical children towards logical parents. By default diagram has no arrows.
    *
    * @group Relation Lines
    * @type {GroupByType}
@@ -13049,8 +13023,8 @@ function FamConfig(name) {
 
   this.arrowsDirection = _enums__WEBPACK_IMPORTED_MODULE_0__["GroupByType"].None;
   /**
-   * Show extra horizontal arrows for long horizontal connection lines for the easy visual
-   * tracking of relations between parents and children. By default, it is off.
+   * Show extra horizontal arrows on top of long horizontal connection lines for the easy visual tracing
+   * of relations between parents and children. By default it is off.
    *
    * @group Relation Lines
    * @type {boolean}
@@ -13058,7 +13032,7 @@ function FamConfig(name) {
 
   this.showExtraArrows = true;
   /**
-   * The extra arrows minimum space on horizontal connection lines. See `showExtraArrows` property.
+   * Set minimum space for placement of extra arrows on horizontal connection lines. See `showExtraArrows` property.
    *
    * @group Relation Lines
    * @type {number}
@@ -13066,7 +13040,7 @@ function FamConfig(name) {
 
   this.extraArrowsMinimumSpace = 30;
   /**
-   * The group by property sets loose nodes alignment between rows. Nodes can be placed close towards parents or children.
+   * This property sets loose nodes alignment between rows. Nodes can be placed close towards parents or children.
    *
    * @group Auto Layout
    * @type {GroupByType}
@@ -13074,7 +13048,7 @@ function FamConfig(name) {
 
   this.groupByType = _enums__WEBPACK_IMPORTED_MODULE_0__["GroupByType"].Children;
   /**
-   * The align by levels option keeps items at the same levels after bundling connection lines between parents and children.
+   * This option keeps items at the same levels after connections bundling.
    *
    * @group Auto Layout
    * @type {boolean}
@@ -13082,7 +13056,7 @@ function FamConfig(name) {
 
   this.alignBylevels = true;
   /**
-   * The matrix layout option enables nodes sharing the same parents and children into a matrix formation.
+   * This option enables automatic layout of nodes sharing the same set of parents and children in form of matrix.
    *
    * @group Auto Layout
    * @type {boolean}
@@ -13090,7 +13064,8 @@ function FamConfig(name) {
 
   this.enableMatrixLayout = false;
   /**
-   * The minimum matrix size sets the number of nodes needed to be shaped into matrix formation. See the `enableMatrixLayout` property.
+   * Sets Minimum number of nodes needed to be shaped into matrix formation. In order to shape nodes in
+   * form of matrix they should share the same set of parents and children. See `enableMatrixLayout` property.
    *
    * @group Auto Layout
    * @type {number}
@@ -13098,8 +13073,9 @@ function FamConfig(name) {
 
   this.minimumMatrixSize = 4;
   /**
-   * The maximum number of columns in the matrix formation prevents
-   * it from outgrowing screen width and forces it to grow vertically.
+   * Sets maximum number of columns in the matrix formation. The matrix formation stays squared as long as total number
+   * of columns does not exceed this property value. In order to shape nodes into matrix formation they should
+   * share the same set of parents and children. See `enableMatrixLayout` property.
    *
    * @group Auto Layout
    * @type {number}
@@ -13107,8 +13083,7 @@ function FamConfig(name) {
 
   this.maximumColumnsInMatrix = 6;
   /**
-   * The hide grandparents connections property enables hiding of direct connectors to grandparents.
-   * It helps to reduce diagrams connectors layout complexity.
+   * Set this property to enable hiding of direct connectors to grand parents. It helps to reduce diagrams connectors layout complexity.
    *
    * @group Auto Layout
    * @type {boolean}
@@ -13116,7 +13091,7 @@ function FamConfig(name) {
 
   this.hideGrandParentsConnectors = false;
   /**
-   * The elbow style of squared connectors lines.
+   * Set style of squared connectors with custom elbows.
    *
    * @group Relation Lines
    * @type {ElbowType}
@@ -13124,7 +13099,7 @@ function FamConfig(name) {
 
   this.elbowType = _enums__WEBPACK_IMPORTED_MODULE_0__["ElbowType"].Round;
   /**
-   * The bevel size of squared connection lines.
+   * The bevel size of squared connector lines.
    *
    * @group Relation Lines
    * @type {number}
@@ -13132,7 +13107,7 @@ function FamConfig(name) {
 
   this.bevelSize = 4;
   /**
-   * The elbow dot size property sets marker size in elbows of connector lines.
+   * The size of dot markers placed in the elbows of connector lines.
    *
    * @group Relation Lines
    * @type {number}
@@ -13140,99 +13115,103 @@ function FamConfig(name) {
 
   this.elbowDotSize = 4;
   /**
-   * Empty diagram message. This option should tell the user
-   * that the chart is blank when no data is available for rendering.
+   * Empty diagram message. This option is supposed to say user that chart is empty when no data is available for rendering.
    *
    * @type {string}
    */
 
   this.emptyDiagramMessage = "Diagram is empty.";
   /**
-   * The items collection defines the data we render in the diagram.
-   * Every item should have a unique `id`. They are used to create relations
-   * between the nodes of the graph and render various UI elements associated with nodes.
+   * Items collection. Ths property defines data we render in the diagram.
+   *
+   * Every items should have unique `id` property set. They are used to create relations
+   * between items in the diagram and for rendering various UI elements bound to nodes.
    *
    * @type {FamItemConfig[]}
    */
 
   this.items = [];
   /**
-   * Annotations are visual elements attached to the diagram nodes and designed to spotlight
-   * some nodes or relations. They are drawn either in front of the diagram or the background.
-   * The annotations don't impact the placement of the nodes, though, with some exceptions.
-   * As a result, the control redraws them instantaneously without rendering
-   * or recalculating the actual diagram layout.
+   * Annotations. Annotations are API elements attached to the diagram nodes
+   * and designed to highlight some nodes or relations. We draw our annotations
+   * either in front of the nodes or in the background. The annotations don't affect
+   * the placement of the nodes in any way. We have some exceptions. As a result, the control
+   * redraws them instantaneously without rendering or recalculating the actual diagram layout.
    *
    * @type {Array.<(ShapeAnnotationConfig | BackgroundAnnotationConfig | ConnectorAnnotationConfig | HighlightPathAnnotationConfig)>}
    */
 
   this.annotations = [];
   /**
-   * The cursor item provides a single node selection, navigation, and local zoom in the diagram.
-   * The component shows the cursor, neighbors, and selected nodes using templates and folds
-   * everything into markers to save space. So clicking and moving the cursor from node to node
-   * works as stepping in and expanding nodes in the neighboring diagram area. To select cursor
-   * node with keyboard, use arrow keys to change focus selection first in the diagram and press
-   * the `Enter` key to set the `cursorItem` to the required node. See the'onCursorChanging`
-   * and `onCursorChanged` events to handle user clicks on nodes. If the cursor item is set to
-   * null, then no cursor item is selected in the diagram.
+   * Cursor item. Family Chart control has API options equivalent to standard UI controls.
+   * The cursor item is used to select a single item in the hierarchy with a mouse click, and
+   * the highlighted item provides visual feedback on the mouse over. Selected items collection
+   * is equivalent to checked items in ListView or TreeView controls.
+   *
+   * The chart's navigation work around the current cursor item. The component shows
+   * the cursor and its neighbors regardless of page fit mode. So cursor item plays the role
+   * of local zoom in the chart hierarchy. The user navigates around the chart via clicking
+   * and selecting cursor items and zooming into data around the new cursor item.
+   *
+   * The control notifies about this property changes with `onCursorChanging` and `onCursorChanged` events.
+   *
+   * If the cursor item is set to null, then no cursor item is selected in the diagram.
    *
    * @type {string}
    */
 
   this.cursorItem = null;
   /**
-   * The highlighted item sets focus to some node in the diagram. It is a redundant feature on
-   * touch screen devices, so use the `navigationMode` property to disable it.
-   * The highlight item can be set programmatically, with mouseover, keyboard arrow keys, or the `Tab` key.
-   * The default visual is a rounded rectangle; use templates to customize the highlight's graphic.
-   * The highlight item setting does not trigger diagram layout or scrolling, so it is near-instant.
-   * It is designed to synchronize mouse moves over diagram nodes with other collection controls or UI elements.
-   * The component triggers  the `onHighlightChanging` and `onHighlightChanged` events on highlight changes.
-   * Set it to `null` to hide the highlight of the diagram.
+   * Highlighted item. Shows highlight and callout annotation for given item id. It does not trigger diagram
+   * layout or scrolling so it can be used to synchronize mouse over feedback of the diagram nodes with other
+   * collection controls or UI elements.
+   *
+   * The control notifies about this property changes with `onHighlightChanging` and `onHighlightChanged` events.
+   *
+   * If `null` then no highlight shown on the diagram.
    *
    * @type {string}
    */
 
   this.highlightItem = null;
   /**
-   * The highlight gravity radius controls distance to the nearest marker to trigger the highlight setting
-   * and callout annotation. For the templated nodes, it is required for the mouse to be inside the node's
-   * bounding rectangle to activate the highlight setting. It can be problematic to put the mouse precisely
-   * over the marker. The gravity radius helps to overcome that issue, but at the same time, it can be a source
-   * of performance if the component gets too many markers within the scope of the gravity radius.
-   * Please, keep this in mind and don't make it too big. It is crucial when the diagram has
-   * over 5 thousand nodes in the hierarchy.
+   * Highlight gravity radius. This property controls mouse over feedback and callout annotation visibility for nodes
+   * rendered as markers when diagram auto fits nodes into available screen space. It makes marker highlighted when
+   * mouse pointer is inside of the gravity radius cycle of the marker. This property is ignored when the nearest item
+   * is outside of the screen boundaries and is not visible to the end user.
+   *
+   * The normal item has mouse over feedback in form of highlight border only when mouse pointer is inside of its boundaries.
    *
    * @type {number}
    */
 
   this.highlightGravityRadius = 40;
   /**
-   * The selected items collection property allows the end-user to choose multiple nodes in the diagram.
-   * It is a collection of ids of checked nodes. The selected items impact the diagram layout and navigation
-   * process since they are always shown in the expanded templated form. So it also helps users pin nodes while they browse in the diagram.
-   * The control notifies about the user changes in this collection with the `onSelectionChanging` and the `onSelectionChanged` events.
+   * Selected items collection. Selected items is a collection of items ids having checked their check boxes.
+   * The control always shows selected items in the full size form, regardless of enabled page fit mode.
+   *
+   * The control notifies about user made changes in this collection with `onSelectionChanging` and `onSelectionChanged` events.
    *
    * @type {string[]}
    */
 
   this.selectedItems = [];
   /**
-  * The selection checkboxes are built-in UI elements managing the `selectedItems` collection property.
+  * Sets visibility of selection check boxes for the diagram nodes.
+  *
   * `Auto` - visible for cursor item only
   * `True` - visible
   * `False` - hidden
   *
-  * Adding a custom checkbox element to the item template requires its name to be `checkbox`,
-  * so the control can use it the same way as the built-in checkbox element.
+  * See `selectedItems` property. All items listed in this property are going to have checked selection checkboxes.
+  * Checkbox can be added to item template, in that case it should be named="checkbox", so control can use it as built in checkbox element.
   *
   * @type {Enabled}
   */
 
   this.hasSelectorCheckbox = _enums__WEBPACK_IMPORTED_MODULE_0__["Enabled"].Auto;
   /**
-   * The checkbox label. See `hasSelectorCheckbox` and `selectedItems` properties.
+   * Selection check box label. See `hasSelectorCheckbox` and `selectedItems` properties.
    *
    * @group Templates
    * @type {string}
@@ -13240,10 +13219,12 @@ function FamConfig(name) {
 
   this.selectCheckBoxLabel = "Selected";
   /**
-   * The selection path mode property makes all parents of the cursor item up to the root nodes
-   * to be shown with templates. It is a complimentary feature to the auto-fit mode of the
-   * diagram. See the `pageFitMode` for more details.
+   * Selection path mode. This property controls visibility of nodes between cursor and the root of the diagram in the auto fit mode. It allows to draw
+   * them in full size regardless of available space and auto fit mode.
    *
+   * The control supports diagram auto fit into screen view. It is achieved via drawing nodes in form of markers.
+   * So small nodes make diagram fit into the screen space, but they have no details. Our solution is to show cursor and selected items
+   * of the diagram in full size and draw all other diagram nodes as markers.
    *
    * @group Auto Layout
    * @type {SelectionPathMode}
@@ -13251,16 +13232,15 @@ function FamConfig(name) {
 
   this.selectionPathMode = _enums__WEBPACK_IMPORTED_MODULE_0__["SelectionPathMode"].None;
   /**
-   * The neighbors selection method defines how many neighbors are selected around the cursor.
+   * Sets the neighbours selection mode, it defines how many neighbours are selected around cursor.
    *
    * @type {NeighboursSelectionMode}
    */
 
   this.neighboursSelectionMode = _enums__WEBPACK_IMPORTED_MODULE_0__["NeighboursSelectionMode"].ParentsAndChildren;
   /**
-   * The show frame controls the visibility of decorating frame around the diagram.
-   * The frame displays markers for selected nodes in the chart when they are outside
-   * the screen and not visible to the end-user.
+   * Sets selected items frame visibility. If selected item is outside of the diagram's area visible to the end user,
+   * control displays that item in the form of the marker on frame around the diagram.
    *
    * @group Frame
    * @type {boolean}
@@ -13268,7 +13248,7 @@ function FamConfig(name) {
 
   this.showFrame = false;
   /**
-   * The frame's inner padding adds extra padding around markers on the inner side of the frame.
+   * Frame inner padding. Adds extra padding around markers on the inner side of the frame.
    *
    * @group Frame
    * @type {Thickness}
@@ -13276,7 +13256,7 @@ function FamConfig(name) {
 
   this.frameInnerPadding = new _graphics_structs_Thickness__WEBPACK_IMPORTED_MODULE_1__["default"](2, 2, 2, 2);
   /**
-   * The frame's outer padding adds extra padding around markers on the outer side of the frame.
+   * Frame outer padding. Adds extra padding around markers on the outer side of the frame.
    *
    * @group Frame
    * @type {Thickness}
@@ -13284,7 +13264,7 @@ function FamConfig(name) {
 
   this.frameOuterPadding = new _graphics_structs_Thickness__WEBPACK_IMPORTED_MODULE_1__["default"](2, 2, 2, 2);
   /**
-   * The diagram padding adds extra padding around the diagram nodes.
+   * Diagram padding. Adds extra padding around the diagram.
    *
    * @group Frame
    * @type {Thickness}
@@ -13292,10 +13272,8 @@ function FamConfig(name) {
 
   this.padding = new _graphics_structs_Thickness__WEBPACK_IMPORTED_MODULE_1__["default"](10, 10, 10, 10);
   /**
-   * The templates property is a collection of uniquely named templates objects used
-   * to customize nodes size, interactivity, and visuals for content, cursor, and highlight.
-   * By default, the control provides templates for all types of visual elements.
-   * So to start experimenting with the Basic Primitives library, you don't need to define any templates.
+   * Collection of named templates used to define content for nodes, cursor and highlight.
+   * By default control provides templates for all types of visual elements.
    *
    * @group Templates
    * @type {TemplateConfig[]}
@@ -13303,9 +13281,8 @@ function FamConfig(name) {
 
   this.templates = [];
   /**
-   * The default template name property allows overriding the default template for all nodes
-   * without setting the template name individually per node. See the `templates` property for mode details.
-   * To customize the template per node, see the `templateName` property of the `FamItemConfig`.
+   * Name of the template used to render nodes in the diagram. See `templates` property. Template name
+   * can be set individually for every node see `templateName` property of `FamItemConfig`.
    *
    * @group Templates
    * @type {string}
@@ -13313,8 +13290,7 @@ function FamConfig(name) {
 
   this.defaultTemplateName = null;
   /**
-   * The default label annotation template sets the template's name used to
-   * render label annotations. Label annotations are labels placed in the layout of the diagram.
+   * Sets the name of template used to render label annotations. Label annotations are labels placed in layout of the diagram.
    *
    * @group Templates
    * @type {string}
@@ -13322,10 +13298,7 @@ function FamConfig(name) {
 
   this.defaultLabelAnnotationTemplate = null;
   /**
-   * The button visibility is a legacy property. The only reason it is still available on the components API
-   * is the lack of consistent support of the mouse transparency across browsers.
-   * The buttons panel is placed over all other visuals in the diagram,
-   * so they are not obstructed by the connector and shape annotations.
+   * Sets buttons panel visibility.
    *
    * `Auto` - cursor item only.
    * `True` - visible
@@ -13337,7 +13310,9 @@ function FamConfig(name) {
 
   this.hasButtons = _enums__WEBPACK_IMPORTED_MODULE_0__["Enabled"].Auto;
   /**
-   * The event property is used to render the content of the buttons panel.
+   * On buttons panel render event. This callback function is called to render context of buttons panel.
+   * It is used to replace `buttons` collection property in ReactJS component. So we preserve context buttons panel as a functional
+   * concept, but eliminate buttons customization API.
    *
    * @callback
    * @param {EventArgs} data Context information
@@ -13345,12 +13320,8 @@ function FamConfig(name) {
 
   this.onButtonsRender = null;
   /**
-   * This callback function is called before the `onHighlightChanged` event.
-   * See the `highlightItem` property. Use this event to modify diagram elements
-   * not affecting diagram layout. For example, on-screen connector annotations
-   * added in this event handler to the diagram configuration would be rendered
-   * together with highlight. Use properties of this event to stop event propagation
-   * and the following diagram layout and rendering if needed.
+   * On highlight item being changed event. See `highlightItem` property. This callback function is called before `onHighlightChanged` event.
+   * Use this callback function to stop event propagation. See `EventArgs` for details.
    *
    * @callback
    * @param {Object} event Mouse event
@@ -13359,7 +13330,7 @@ function FamConfig(name) {
 
   this.onHighlightChanging = null;
   /**
-   * The on highlight changed event. See `highlightItem` property.
+   * On highlight item changed event. See `highlightItem` property.
    *
    * @callback
    * @param {Object} event Mouse event
@@ -13368,9 +13339,8 @@ function FamConfig(name) {
 
   this.onHighlightChanged = null;
   /**
-   * This callback function is called before the `onCursorChanged` event.
-   * See the `cursorItem` property. Use properties of this event to stop event propagation
-   * and the following diagram layout and rendering if needed.
+   * On cursor item being changed event. See `cursorItem` property. This callback function is called before `onCursorChanged` event.
+   * Use this callback function to stop event propagation. See `EventArgs` for details.
    *
    * @callback
    * @param {Object} event Mouse event
@@ -13379,7 +13349,7 @@ function FamConfig(name) {
 
   this.onCursorChanging = null;
   /**
-   * The on cursor item changed event. See `cursorItem` property.
+   * On cursor item changed event. See `cursorItem` property.
    *
    * @callback
    * @param {Object} event Mouse event
@@ -13388,7 +13358,7 @@ function FamConfig(name) {
 
   this.onCursorChanged = null;
   /**
-   * The on selected items being changed event. See `selectedItems` property.
+   * On selected items being changed event. See `selectedItems` property.
    *
    * @callback
    * @param {Object} event Mouse event
@@ -13397,7 +13367,7 @@ function FamConfig(name) {
 
   this.onSelectionChanging = null;
   /**
-   * The on selected items changed event. See `selectedItems` property.
+   * On selected items changed event. See `selectedItems` property.
    *
    * @callback
    * @param {Object} event Mouse event
@@ -13406,8 +13376,7 @@ function FamConfig(name) {
 
   this.onSelectionChanged = null;
   /**
-   * The on content button click event is a legacy property.
-   * To use it, buttons in the buttons panel in the item template should have the `data-buttonname` property set.
+   * Button click event. See `buttons` property.
    *
    * @callback
    * @param {Object} event Mouse event
@@ -13434,10 +13403,11 @@ function FamConfig(name) {
 
   this.onMouseDblClick = null;
   /**
-   * The on item render callback function is used to populate the content of templated
-   * nodes in the diagram. It is called for user templates only. The callback references
-   * the DOM element and the node configuration object. The control reuses existing DOM elements,
-   * so the application should update the entire content of the template.
+   * Callback function for rendering content of the diagram nodes. This callback is only
+   * called when custom item template is defined in the template object configuration.
+   * This callback receives reference to DOM element and context object of the rendered item.
+   * The control reuses existing elements in the DOM, so it is applications responsibility
+   * to properly update their content.
    *
    * @callback
    * @param {Object} event Event if available
@@ -13446,7 +13416,8 @@ function FamConfig(name) {
 
   this.onItemRender = null;
   /**
-   * The on highlight render callback function is used to update the highlight visual content having a custom template.
+   * Callback function for rendering content of the highlight template. This callback is only
+   * called when custom highlight is defined in the template configuration.
    *
    * @callback
    * @param {Object} event Event if available
@@ -13455,7 +13426,8 @@ function FamConfig(name) {
 
   this.onHighlightRender = null;
   /**
-   * The on cursor render callback function is used to update the cursor visual content having a custom template.
+   * Callback function for rendering content of the cursor template. This callback is only
+   * called when custom cursor is defined in the template configuration.
    *
    * @callback
    * @param {Object} event Event if available
@@ -13464,7 +13436,7 @@ function FamConfig(name) {
 
   this.onCursorRender = null;
   /**
-   * The normal level shift sets spacing between rows of templated nodes.
+   * Sets the spacing between rows.
    *
    * @group Intervals
    * @type {number}
@@ -13472,7 +13444,7 @@ function FamConfig(name) {
 
   this.normalLevelShift = 20;
   /**
-   * The dot level shift property sets the spacing between rows of markers.
+   * Sets the spacing after the row containing nodes minimized down to markers.
    *
    * @group Intervals
    * @type {number}
@@ -13480,8 +13452,7 @@ function FamConfig(name) {
 
   this.dotLevelShift = 20;
   /**
-   * The lines level shift property sets the spacing between rows
-   * having only connection lines. Nodes are hidden completely.
+   * Sets the spacing after the row containing nodes minimized down to lines.
    *
    * @group Intervals
    * @type {number}
@@ -13489,7 +13460,7 @@ function FamConfig(name) {
 
   this.lineLevelShift = 10;
   /**
-   * The normal items interval property sets the spacing between templated nodes.
+   * Sets interval between nodes of the same row.
    *
    * @group Intervals
    * @type {number}
@@ -13497,7 +13468,7 @@ function FamConfig(name) {
 
   this.normalItemsInterval = 10;
   /**
-   * The dotted items interval property sets the spacing between markers.
+   * Sets interval between nodes of the same row, minimized down to markers.
    *
    * @group Intervals
    * @type {number}
@@ -13505,7 +13476,7 @@ function FamConfig(name) {
 
   this.dotItemsInterval = 1;
   /**
-   * The line items interval property sets the spacing between lines.
+   * Sets interval between nodes of the same row, minimized down to lines.
    *
    * @group Intervals
    * @type {number}
@@ -13513,9 +13484,8 @@ function FamConfig(name) {
 
   this.lineItemsInterval = 2;
   /**
-   * The cousins interval multiplier property adds extra space between branches of the hierarchy.
-   * For example, if the multiplier equals five, nodes of the same parent will have interval 20,
-   * and nodes of two different parents will have interval 100.
+   * Set cousins interval multiplier. This values adds extra space between branches of the hierarchy.
+   * For example nodes of the same parent have interval 20 and nodes of two different parents are going to have interval 100.
    *
    * @group Intervals
    * @type {number}
@@ -13523,8 +13493,11 @@ function FamConfig(name) {
 
   this.cousinsIntervalMultiplier = 5;
   /**
-   * The first choice title color. The component has two properties for the title color to automatically select
-   * the one having the highest contract for the node's background-color
+   * The first font color of the title.
+   *
+   * The title background color is designed to be one of the available dimensions to group nodes in the diagram,
+   * so title can be unreadable if its color matches its background color. This property is created to auto resolve this issue
+   * via automatic switch between two available font title colors.
    *
    * @group Templates
    * @type {string}
@@ -13532,7 +13505,7 @@ function FamConfig(name) {
 
   this.itemTitleFirstFontColor = _enums__WEBPACK_IMPORTED_MODULE_0__["Colors"].White;
   /**
-   * The second choice title color.
+   * The second font color of the title.
    *
    * @group Templates
    * @type {string}
@@ -13540,9 +13513,12 @@ function FamConfig(name) {
 
   this.itemTitleSecondFontColor = _enums__WEBPACK_IMPORTED_MODULE_0__["Colors"].Navy;
   /**
-   * The markers shape type property sets the default marker shape for nodes.
-   * It is possible to set it individually for every node or in the item template.
-   * By default color of the marker is equal to the `itemTitleColor` property set for individual items.
+   * Markers. The shape of the markers when nodes are minimized by auto fit. The control supports auto fit of the diagram into available screen space.
+   * When the diagram size significantly larger than available screen space, its scrolling and navigation becomes problematic,
+   * so control supports automatic diagram fit into the screen space via rendering some of its nodes in form of small markers.
+   * So this option sets default marker shape for nodes. It can be set individually per node in items configurations.
+   *
+   * The default color of shape is the same as `itemTitleColor` property set for individual items.
    *
    * @group Templates
    * @type {ShapeType}
@@ -13550,7 +13526,7 @@ function FamConfig(name) {
 
   this.minimizedItemShapeType = _enums__WEBPACK_IMPORTED_MODULE_0__["ShapeType"].None;
   /**
-   * The color of the relations lines
+   * The relations lines color. The control uses this lines color to render basic relations between nodes.
    *
    * @group Relation Lines
    * @type {string}
@@ -13558,7 +13534,7 @@ function FamConfig(name) {
 
   this.linesColor = _enums__WEBPACK_IMPORTED_MODULE_0__["Colors"].Silver;
   /**
-   * The line width of the relations lines
+   * The relations lines width
    *
    * @group Relation Lines
    * @type {number}
@@ -13566,7 +13542,7 @@ function FamConfig(name) {
 
   this.linesWidth = 1;
   /**
-   * The line style of the relations lines
+   * The relations lines pattern
    *
    * @group Relation Lines
    * @type {LineType}
@@ -13574,9 +13550,11 @@ function FamConfig(name) {
 
   this.linesType = _enums__WEBPACK_IMPORTED_MODULE_0__["LineType"].Solid;
   /**
-   * The property shows connection lines between the cursor item and its neighbors highlighted.
-   * See the `neighboursSelectionMode` and `highlightLinesColor`, `highlightLinesWidth`
-   * and `highlightLinesType` to style highlighted lines.
+   * Shows connection lines between current cursor item and its neighbours highlighted. Neighbours selection mode
+   * is set by `neighboursSelectionMode` property.
+   *
+   * Set following properties: `highlightLinesColor`, `highlightLinesWidth` and `highlightLinesType` to
+   * style highlighted lines.
    *
    * @group Relation Lines
    * @type {boolean}
@@ -13584,7 +13562,8 @@ function FamConfig(name) {
 
   this.showNeigboursConnectorsHighlighted = false;
   /**
-   * The color of the highlighted relation lines.
+   * Sets highlight lines color. The diagram uses highlight lines to render highlighted relation lines between nodes.
+   * See `showNeigboursConnectorsHighlighted` property.
    *
    * @group Relation Lines
    * @type {string}
@@ -13592,7 +13571,7 @@ function FamConfig(name) {
 
   this.highlightLinesColor = _enums__WEBPACK_IMPORTED_MODULE_0__["Colors"].Red;
   /**
-   * The line width of the highlighted relation lines.
+   * Sets highlight lines width. See `showNeigboursConnectorsHighlighted` property.
    *
    * @group Relation Lines
    * @type {number}
@@ -13600,7 +13579,7 @@ function FamConfig(name) {
 
   this.highlightLinesWidth = 1;
   /**
-   * The line style of the highlighted relation lines.
+   * Sets highlight lines pattern. See `showNeigboursConnectorsHighlighted` property.
    *
    * @group Relation Lines
    * @type {LineType}
@@ -13608,12 +13587,8 @@ function FamConfig(name) {
 
   this.highlightLinesType = _enums__WEBPACK_IMPORTED_MODULE_0__["LineType"].Solid;
   /**
-   * The lines palette collection contains lines styles for rendering relations across the family hierarchy.
-   * The multi-parent diagram may have a lot of parallel lines, so to make their visual tracing easier,
-   * the component supports multiple line styles and evenly distributes them. It is a similar
-   * approach as for visualization of regular line charts. If we have numerous lines in the chart area,
-   * it makes sense to style every line individually.
-   *
+   * This collection contains lines styles for rendering relations going across family hierarchy.
+   * The purpose of this collection is to draw long horizontal parallel lines drawn between family branches in different styles.
    * If this collection is empty then default `linesColor`, `linesWidth` and `linesType` are used for all connector lines.
    *
    * @group Relation Lines
@@ -13622,7 +13597,7 @@ function FamConfig(name) {
 
   this.linesPalette = [];
   /**
-   * The show callout property enables on mouse over node callout for the diagram.
+   * Sets callout visibility.
    *
    * @group Callout
    * @type {boolean}
@@ -13630,8 +13605,7 @@ function FamConfig(name) {
 
   this.showCallout = true;
   /**
-   * The callout maximum visibility property enables callout
-   * for the diagram nodes having specified visibility. See the `pageFitMode` property.
+   * Sets visibility of the callout annotation depending on size of a node it is shown for. See `pageFitMode` property.
    *
    * @group Callout
    * @type {Visibility}
@@ -13639,7 +13613,7 @@ function FamConfig(name) {
 
   this.calloutMaximumVisibility = _enums__WEBPACK_IMPORTED_MODULE_0__["Visibility"].Dot;
   /**
-   * The callout annotation placement offset sets how far the callout rectangle is offset from the marker it is displayed for.
+   * Callout annotation placement offset. Sets how far callout content is offset from the marker it is displayed for.
    *
    * @group Callout
    * @type {number}
@@ -13647,8 +13621,10 @@ function FamConfig(name) {
 
   this.calloutPlacementOffset = 100;
   /**
-   * The callout default template name. Templates are HTML fragments used to render diagram nodes.
-   * They are defined with named configuration objects. See the `templates` property for more details.
+   * Callout annotation default template name.
+   *
+   * Templates are HTML fragments containing layout and styles used to render diagram nodes.
+   * They are defined with a named configuration objects. See `templates` property of control's configuration object.
    *
    * @group Callout
    * @type {string}
@@ -13712,7 +13688,7 @@ function FamConfig(name) {
 
   this.calloutOpacity = 0.2;
   /**
-   * The size of the button panel
+   * The size of the panel containing context buttons.
    *
    * @group Templates
    * @type {number}
@@ -13720,7 +13696,7 @@ function FamConfig(name) {
 
   this.buttonsPanelSize = 28;
   /**
-   * The size of the group title
+   * The size of the panel containing group title.
    *
    * @group Group Titles
    * @type {number}
@@ -13728,7 +13704,7 @@ function FamConfig(name) {
 
   this.groupTitlePanelSize = 24;
   /**
-   * The size of the selection checkbox
+   * The size of the panel containing selection checkbox.
    *
    * @group Templates
    * @type {number}
@@ -13736,8 +13712,9 @@ function FamConfig(name) {
 
   this.checkBoxPanelSize = 24;
   /**
-   * The group titles placement property sets left to right or right to left alignment
-   * for group title and buttons panel relative to the node.
+   * Group titles placement. Defines group title and buttons panel position relative to the node. By default it is on the left.
+   * The group title on the side of the diagram node is one of controls default easy to use features. It gives extra dimension
+   * for nodes visual grouping in the diagram.
    *
    * @group Group Titles
    * @type {AdviserPlacementType}
@@ -13753,7 +13730,7 @@ function FamConfig(name) {
 
   this.groupTitleOrientation = _enums__WEBPACK_IMPORTED_MODULE_0__["TextOrientationType"].RotateRight;
   /**
-   * The group titles vertical alignment property sets text vertical alignment inside the group title panel.
+   * Group titles vertical alignment.
    *
    * @group Group Titles
    * @type {VerticalAlignmentType}
@@ -13761,7 +13738,7 @@ function FamConfig(name) {
 
   this.groupTitleVerticalAlignment = _enums__WEBPACK_IMPORTED_MODULE_0__["VerticalAlignmentType"].Middle;
   /**
-   * The group titles horizontal alignment property sets text horizontal alignment inside the group title panel.
+   * Group titles horizontal alignment.
    *
    * @group Group Titles
    * @type {HorizontalAlignmentType}
@@ -13820,7 +13797,7 @@ function FamConfig(name) {
 
   this.onGroupTitleRender = null;
   /**
-   * The panel size of the level annotation titles
+   * The size of the panel containing level titles.
    *
    * @group Level Titles
    * @type {number}
@@ -13828,7 +13805,7 @@ function FamConfig(name) {
 
   this.levelTitlePanelSize = 24;
   /**
-   * The panel placement of the level annotation titles
+   * Level titles placement. Defines level title panel position relative to the diagram.
    *
    * @group Level Titles
    * @type {AdviserPlacementType}
@@ -13836,7 +13813,7 @@ function FamConfig(name) {
 
   this.levelTitlePlacementType = _enums__WEBPACK_IMPORTED_MODULE_0__["AdviserPlacementType"].Left;
   /**
-   * If this property is true, level titles are placed inside the diagram's viewport above or below diagram nodes.
+   * If this property is true then level titles are placed inside of the diagram's view port above or below diagram nodes.
    *
    * @group Level Titles
    * @type {boolean}
@@ -13844,7 +13821,7 @@ function FamConfig(name) {
 
   this.levelTitlePlaceInside = false;
   /**
-   * The level annotation titles orientation.
+   * Group titles orientation.
    *
    * @group Level Titles
    * @type {TextOrientationType}
@@ -13852,7 +13829,7 @@ function FamConfig(name) {
 
   this.levelTitleOrientation = _enums__WEBPACK_IMPORTED_MODULE_0__["TextOrientationType"].Auto;
   /**
-   * The level annotation titles vertical alignment.
+   * Level titles vertical alignment.
    *
    * @group Level Titles
    * @type {VerticalAlignmentType}
@@ -13860,7 +13837,7 @@ function FamConfig(name) {
 
   this.levelTitleVerticalAlignment = _enums__WEBPACK_IMPORTED_MODULE_0__["VerticalAlignmentType"].Middle;
   /**
-   * The level annotation titles horizontal alignment.
+   * Level titles horizontal alignment.
    *
    * @group Level Titles
    * @type {HorizontalAlignmentType}
@@ -13916,8 +13893,9 @@ function FamConfig(name) {
 
   this.levelTitleFontStyle = "normal";
   /**
-   * The level title callback function allows rendering custom content in the level annotation title panel.
-   * It is called only for the visible level annotations. See other level annotation options for details.
+    * On level annotation title render event. This callback function is called to render level annotation title panel.
+    * It is used to overwrite default level title template renderer. It is called only when level annotations are visible.
+    * See other level annotation options for details.
     *
     * @group Level Titles
     * @callback
@@ -13926,8 +13904,9 @@ function FamConfig(name) {
 
   this.onLevelTitleRender = null;
   /**
-   * The level background callback function allows rendering custom content in the level annotation background panel.
-   * It is called only for the visible level annotations. See other level annotation options for details.
+    * On level annotation background render event. This callback function is called to render level annotation background panel.
+    * It is used to overwrite default level background template renderer. It is called only when level annotations are visible.
+    * See other level annotation options for details.
     *
     * @group Level Titles
     * @callback
@@ -13941,40 +13920,41 @@ function FamConfig(name) {
 
   this.distance = 3;
   /**
-   * The scale property sets the CSS scale-transform property for the diagram content.
+   * CSS3 scale transform. Control supports content scaling using CSS scale transform. It scales everything except scroll bars.
+   * It properly handles mouse event coordinates. The CSS scale transform produces unreadable text and corrupted lines in desktop browsers,
+   * it looks good only in mobile browsers, so our recommendation is to use zoom with collection of item templates of various sizes.
+   * Templates gives you better control over quality of your content at various zoom levels.
    *
    * @type {number}
    */
 
   this.scale = 1;
   /**
-   * Minimum scale
+   * Minimum CSS3 scale transform.
    *
    * @ignore
    */
 
   this.minimumScale = 0.5;
   /**
-   * Maximum scale
+   * Maximum CSS3 scale transform.
    *
    * @ignore
    */
 
   this.maximumScale = 1;
   /**
-   * The show label property sets labels visibility for individual nodes.
-   * The control displays label only for node markers. The control does not
-   * preserve space for labels in the diagram layout. The application's
-   * responsibility is to set intervals between nodes to fit labels.
-   * Use controls `dotLevelShift`, `dotItemsInterval` and `padding` properties to preserve
-   * space between nodes for labels. Labels are displayed inside `div's of
-   * the fixed size, see the `labelSize` property, and the control provides
-   * simple conflict resolution to avoid displaying overlapping labels.
-   * If two labels overlap with their bounding rectangles,
-   * then only one of them will stay visible.
+   * Sets labels visibility for nodes when they are minimized into markers by page auto fit. See `pageFitMode` property.
    *
-   * Auto - avoid labels overlapping, hide some of them
-   * True - visible
+   * The control does not preserve space for labels in the diagram layout, since that would contradict the purpose of minimizing the nodes
+   * into markers. Use controls `dotLevelShift`, `dotItemsInterval` properties to preserve space between nodes for labels.
+   *
+   * Labels are displayed inside of `div`s of the fixed size, see `labelSize` property, and control provides simple conflict
+   * resolution to avoid labels overlapping. If two labels overlap each other with their bounding rectangles then only one of them
+   * is going to stay visible.
+   *
+   * Auto - displays label only when it has space to be rendered.
+   * True - shows label regardless, even if it overlaps other labels and nodes.
    * False - hidden.
    *
    * @group Labels
@@ -13983,8 +13963,8 @@ function FamConfig(name) {
 
   this.showLabels = _enums__WEBPACK_IMPORTED_MODULE_0__["Enabled"].Auto;
   /**
-   * The label size property defines the label's placeholder `div` size,
-   * which impacts conflict resolution if labels overlap.
+   * Label size. Sets labels placeholders `div`s size. It is needed to resolve labels overlapping.
+   * If one label overlaps another label the or item it will be hidden.
    *
    * @group Labels
    * @type {Size}
@@ -13992,7 +13972,7 @@ function FamConfig(name) {
 
   this.labelSize = new _graphics_structs_Size__WEBPACK_IMPORTED_MODULE_2__["default"](80, 24);
   /**
-   * The label offset property sets the distance from the markers bounding rectangles.
+   * Sets labels offset from the markers bounding rectangles.
    *
    * @group Labels
    * @type {number}
@@ -14000,7 +13980,7 @@ function FamConfig(name) {
 
   this.labelOffset = 1;
   /**
-   * Label orientation defines label rotation.
+   * Labels orientation.
    *
    * @group Labels
    * @type {TextOrientationType}
@@ -14008,7 +13988,7 @@ function FamConfig(name) {
 
   this.labelOrientation = _enums__WEBPACK_IMPORTED_MODULE_0__["TextOrientationType"].Horizontal;
   /**
-   * Label placement sets label placement around the marker.
+   * Labels placement. Sets labels placement relative to the markers bounding rectangles.
    *
    * @group Labels
    * @type {PlacementType}
@@ -14057,15 +14037,15 @@ function FamConfig(name) {
 
   this.labelFontStyle = "normal";
   /**
-   * The enable panning property enables chart panning with mouse drag for
-   * desktop browsers. Disable it if you need to support items Drag & Drop.
+   * Enable panning. Enable chart panning with mouse drag & drop for desktop browsers.
+   * Disable it if you need to support items Drag & Drop.
    *
    * @type {boolean}
    */
 
   this.enablePanning = true;
   /**
-   * Sets minimum size, the diagram can shrink itself in auto size mode. See `pageFitMode` property.
+   * Sets minimum size the diagram can shrink itself in auto size mode. See `pageFitMode` property.
    * In the auto size mode diagram controls its placeholder size itself,
    * it sets its size to accommodate all nodes and render them normally.
    *
@@ -14075,7 +14055,7 @@ function FamConfig(name) {
 
   this.autoSizeMinimum = new _graphics_structs_Size__WEBPACK_IMPORTED_MODULE_2__["default"](800, 600);
   /**
-   * Sets maximum size, the diagram can expand itself in auto size mode. See `pageFitMode` property.
+   * Sets maximum size the diagram can expand itself in auto size mode. See `pageFitMode` property.
    * In the auto size mode diagram controls its placeholder size itself,
    * it sets its size to accommodate all nodes and render them normally.
    *
@@ -14103,10 +14083,8 @@ __webpack_require__.r(__webpack_exports__);
 
 /**
  * @class FamItemConfig
- * @classdesc Family chart item configuration object defines properties
- * of individual nodes in the family diagram. Nodes configurations
- * populate the `items` collection property of the family chart
- * configuration object used to describe the entire component configuration.
+ * @classdesc Item Configuration Object defines properties of individual node in the family chart hierarchy. See `items` collection property
+ * of family control configuration object.
  *
  * @param {FamItemConfig} arg0 Item config properties
  *
@@ -14120,27 +14098,25 @@ __webpack_require__.r(__webpack_exports__);
 function FamItemConfig(arg0, arg1, arg2, arg3, arg4) {
   var property;
   /**
-   * Unique item id.
+   * Item id. It should be unique per chart.
    *
    * @type {string}
    */
 
   this.id = null;
   /**
-   * The parents collection property contains parent nodes ids.
-   * If it is empty, then the item is considered a root item.
-   *
+   * Parents items ids. If this collection is empty then item considered as a root item.
    * @type {string[]}
    */
 
   this.parents = [];
   /**
-   * The relative item id is used to place the given item in the diagram on the left
-   * or right side of the referenced item. See the `placementType` property.
-   * If multiple items share the same relative item, their order can be customized
-   * with the `position` property. If this property is set to null, the family layout
-   * algorithm will try to choose elements order via placing connected nodes
-   * as close to each other as possible.
+   * Relative item id. This property is used to control items mutual placement in order to keep consistent ordering within levels. Relative item is used
+   * for placing given item in diagram. We can place item on left or right side of relative item via setting placementType type property.
+   * In case when multiple items use the same relative item then their order can be customized with position property.
+   *
+   * If this property set to null, family layout algorithm will try to choose elements order via placing connected
+   * nodes as close to each other as possible.
    *
    * @group Order
    * @type {string}
@@ -14148,7 +14124,7 @@ function FamItemConfig(arg0, arg1, arg2, arg3, arg4) {
 
   this.relativeItem = null;
   /**
-   * The placement type property defines the node position on the left or the right side of the relative node.
+   * Relative placement type defines Left ot Right side placement of the node relative to the `relativeItem`.
    *
    * @group Order
    * @type {AdviserPlacementType}
@@ -14156,7 +14132,7 @@ function FamItemConfig(arg0, arg1, arg2, arg3, arg4) {
 
   this.placementType = _enums__WEBPACK_IMPORTED_MODULE_0__["AdviserPlacementType"].Right;
   /**
-   * The position property sets the sequence of elements placed relative to the same relative item on the same side.
+   * Relative position defines order of elements placed relative to the same relative item on the same side.
    *
    * @group Order
    * @type {number}
@@ -14164,9 +14140,8 @@ function FamItemConfig(arg0, arg1, arg2, arg3, arg4) {
 
   this.position = null;
   /**
-   * The primary parent id lets place item close to the selected parent when the
-   * node has multiple parents. If the referenced parent does not exist,
-   * this property is simply ignored.
+   * Primary parents id. Set this property to place item close to the selected primary parent in `parents` collection.
+   * If property set to null or referenced parent does not exists then this property is ignored.
    *
    * @group Order
    * @type {string}
@@ -14174,7 +14149,7 @@ function FamItemConfig(arg0, arg1, arg2, arg3, arg4) {
 
   this.primaryParent = null;
   /**
-   * Title. It is used in the default template.
+   * Title
    *
    * @group Template
    * @type {string}
@@ -14206,8 +14181,7 @@ function FamItemConfig(arg0, arg1, arg2, arg3, arg4) {
 
   this.context = null;
   /**
-   * Title background color for default template.
-   * When the node is displayed as a marker, it sets the marker color.
+   * Title background color. The same color is used for node marker when control has enabled auto fit mode.
    *
    * @group Template
    * @type {string}
@@ -14215,11 +14189,10 @@ function FamItemConfig(arg0, arg1, arg2, arg3, arg4) {
 
   this.itemTitleColor = _enums__WEBPACK_IMPORTED_MODULE_0__["Colors"].RoyalBlue;
   /**
-   * Marker type. The shape of the marker when the node is minimized in the diagram layout.
-   * The component is designed for automatic nodes positioning; it optimizes nodes placement
-   * and size depending on the available screen space. When the diagram size is significantly
-   * larger than the available screen space, its scrolling and navigation become problematic,
-   * so control replaces some nodes with markers. That feature has a lot of options for tuning.
+   * Marker type. The shape of the marker when node is minimized by auto fit. The control supports auto fit of diagram into available screen space.
+   * When diagram size significantly larger than available screen space, its scrolling and navigation becomes problematic,
+   * so control supports automatic diagram fit into the screen space via rendering some of its nodes in form of small markers.
+   * So this option sets marker shape for individual node.
    *
    * @group Template
    * @type {ShapeType}
@@ -14227,9 +14200,8 @@ function FamItemConfig(arg0, arg1, arg2, arg3, arg4) {
 
   this.minimizedItemShapeType = null;
   /**
-   * Group Title. The group title is a panel on the side of the node with rotated text inside.
-   * It is one of the control's default easy-to-use features.
-   * It gives extra dimension for the visual grouping in the diagram.
+   * Group Title. The group title on the side of the diagram node is one of controls default easy to use features.
+   * It gives extra dimension for nodes visual grouping in the diagram.
    *
    * @group Group Title
    * @type {string}
@@ -14245,39 +14217,37 @@ function FamItemConfig(arg0, arg1, arg2, arg3, arg4) {
 
   this.groupTitleColor = _enums__WEBPACK_IMPORTED_MODULE_0__["Colors"].RoyalBlue;
   /**
-   * Matrix id defines the grouping of multiple nodes into matrixes.
-   * Use this property to split large matrixes into small ones.
+   * Matrix id defines grouping of multiple nodes into individual matrixes. By default all applicable nodes grouped into a single matrix.
+   * Use this property to split nodes into multiple matrixes.
    *
    * @type {string}
    */
 
   this.matrixId = null;
   /**
-   * Add to matrix property allows the node to be grouped with other nodes. It is true, by default.
+   * Add to matrix property allows node to be grouped with other nodes into matrix. It is true by default.
    *
    * @type {boolean}
    */
 
   this.addToMatrix = true;
   /**
-   * If it is true, it makes the node inactive in the diagram layout.
-   * The inactive item is excluded from navigation, which means it is not clickable,
-   * and it is impossible to set the cursor to it. Consider the inactive node as an in-layout
-   * label or title having a custom item template. It is worth mentioning that it
-   * impacts cursor neighbors selection. The component skips the static node
-   * and selects its neighbors instead
+   * If true it makes item inactive in the diagram layout. Inactive items are regular items excluded from navigation, that means
+   * when diagram uses auto fit mode, selection of the neighboring nodes goes through inactive items, so all nodes next to inactive item
+   * become selected and shown in full size as well. Inactive items play a role of in layout annotations having no user interaction
+   * and templated with HTML. For example they can be used to add titles into family diagram layout or terminator items
+   * indicating that upon reaching them diagram would load extra nodes into layout.
    *
    * @type {boolean}
    */
 
   this.isActive = true;
   /**
-   * It controls the visibility of the selection check box for the node.
-   * The selection checkbox is a default, easy-to-use feature to add and
-   * remove nodes to selected items collection
+   * Shows selection check box for the node.
+   * If Auto then selection check box visibility depends on control's configuration.
    *
-   * Auto - depends on the control's configuration `hasSelectorCheckbox` property setting
-   * True - visible
+   * Auto - depends on `hasSelectorCheckbox` property of the control
+   * True - shown
    * False - hidden
    *
    * @type {Enabled}
@@ -14285,13 +14255,11 @@ function FamItemConfig(arg0, arg1, arg2, arg3, arg4) {
 
   this.hasSelectorCheckbox = _enums__WEBPACK_IMPORTED_MODULE_0__["Enabled"].Auto;
   /**
-   * It controls the visibility of the context buttons panel for the node.
-   * The context buttons panel is a built-in, easy-to-use feature to add
-   * interactive UI elements around the cursor node. On-screen annotations
-   * do not block context buttons panel as well
+   * Shows context buttons panel for the node.
+   * If Auto then context buttons panel visibility depends on control's configuration.
    *
-   * Auto - depends on the control's configuration `hasButtons` property setting
-   * True - visible
+   * Auto - depends on `hasButtons` property of the control
+   * True - shown
    * False - hidden
    *
    * @group Template
@@ -14300,10 +14268,9 @@ function FamItemConfig(arg0, arg1, arg2, arg3, arg4) {
 
   this.hasButtons = _enums__WEBPACK_IMPORTED_MODULE_0__["Enabled"].Auto;
   /**
-   * Template name lets individually assign rendering templates per individual
-   * node of the diagram. Templates contain settings defining node size,
-   * interactivity options, and HTML fragments to render nodes.
-   * See the family chart configuration object for the `templates` property
+   * Template name. Templates are HTML fragments containing layout and styles used to render diagram nodes.
+   * They are defined with a named configuration objects. See `templates` property of control's configuration object.
+   * This option lets individually assign rendering template per individual node of the diagram.
    *
    * @group Template
    * @type {string}
@@ -14311,15 +14278,15 @@ function FamItemConfig(arg0, arg1, arg2, arg3, arg4) {
 
   this.templateName = null;
   /**
-   * Show callout property sets callout annotation visibility per individual node.
-   * The callout annotation is one of the easy-to-use features of the control.
-   * It is displayed for markers to preview the node's content. The content is displayed
-   * using the current node template it is rendered for. The callout can be forced
-   * to be displayed for templated nodes as well. In that case, use the `calloutTemplateName`
-   * property to change the callout template
+   * Sets callout annotation visibility for individual node. The callout annotation is one of easy to use features of the control.
+   * By default it is displayed for markers in order to preview their node's content. The content is displayed using
+   * current template of the node it is rendered for.
    *
-   * Auto - depends on the control's configuration `showCallout` property setting
-   * True - always visible
+   * The callout can be forced to be displayed for regular nodes as well. In that case use `calloutTemplateName` property
+   * to change their template.
+   *
+   * Auto - depends on `showCallout` property of the control
+   * True - shown regardless of node's visibility
    * False - hidden
    *
    * @group Callout
@@ -14328,10 +14295,11 @@ function FamItemConfig(arg0, arg1, arg2, arg3, arg4) {
 
   this.showCallout = _enums__WEBPACK_IMPORTED_MODULE_0__["Enabled"].Auto;
   /**
-   * Callout annotation template name redefined default item template used to display
-   * the content of the callout annotation. Templates contain size and HTML fragments
-   * to display node content. See the `templates` property of the family
-   * chart control configuration object
+   * Callout annotation template name. This option lets individually assign rendering callout annotation template
+   * per individual node of the diagram.
+   *
+   * Templates are HTML fragments containing layout and styles used to render diagram nodes.
+   * They are defined with a named configuration objects. See `templates` property of control's configuration object.
    *
    * @group Callout
    * @type {string}
@@ -14339,7 +14307,7 @@ function FamItemConfig(arg0, arg1, arg2, arg3, arg4) {
 
   this.calloutTemplateName = null;
   /**
-   * Marker label
+   * Marker label.
    *
    * @group Label
    * @type {string}
@@ -14347,20 +14315,18 @@ function FamItemConfig(arg0, arg1, arg2, arg3, arg4) {
 
   this.label = null;
   /**
-   * The show label property sets labels visibility for individual nodes.
-   * The control displays label only for node markers. The control does not
-   * preserve space for labels in the diagram layout. The application's
-   * responsibility is to set intervals between nodes to fit labels.
-   * Use controls `dotLevelShift`, `dotItemsInterval` properties to preserve
-   * space between nodes for labels. Labels are displayed inside `div's of
-   * the fixed size, see the `labelSize` property, and the control provides
-   * simple conflict resolution to avoid displaying overlapping labels.
-   * If two labels overlap each other with their bounding rectangles,
-   * then only one of them will stay visible.
+   * Sets label visibility for individual nodes. Labels are only rendered for a node's markers.
    *
-   * Auto - avoid labels overlapping, hide some of them
-   * True - visible
-   * False - hidden
+   * The control does not preserve space for labels in the diagram layout, since that would contradict the purpose of minimizing the nodes
+   * into markers. Use controls `dotLevelShift`, `dotItemsInterval` properties to preserve space between nodes for labels.
+   *
+   * Labels are displayed inside of `div`s of the fixed size, see `labelSize` property, and control provides simple conflict
+   * resolution to avoid labels overlapping. If two labels overlap each other with their bounding rectangles then only one of them
+   * is going to stay visible.
+   *
+   * Auto - displays label only when it has space to be rendered.
+   * True - shows label regardless, even if it overlaps other labels and nodes.
+   * False - hidden.
    *
    * @group Label
    * @type {Enabled}
@@ -14368,9 +14334,8 @@ function FamItemConfig(arg0, arg1, arg2, arg3, arg4) {
 
   this.showLabel = _enums__WEBPACK_IMPORTED_MODULE_0__["Enabled"].Auto;
   /**
-   * The label size property defines the label's placeholder `div` size,
-   * which impacts conflict resolution if labels overlap. If it is `null`,
-   * it uses the `labelSize` property of the control configuration
+   * Label size. Sets label's placeholder `div` size and controls conflict resolution if labels overlap each other.
+   * If `null` then it is set to `labelSize` property of the control configuration.
    *
    * @group Label
    * @type {Size}
@@ -14378,8 +14343,8 @@ function FamItemConfig(arg0, arg1, arg2, arg3, arg4) {
 
   this.labelSize = null;
   /**
-   * Label orientation defines label rotation. If it is `Auto`,
-   * it uses the `labelOrientation` property of the control configuration
+   * Label orientation.
+   * If `Auto` then it is set to `labelOrientation` property of the control configuration.
    *
    * @group Label
    * @type {TextOrientationType}
@@ -14387,8 +14352,8 @@ function FamItemConfig(arg0, arg1, arg2, arg3, arg4) {
 
   this.labelOrientation = _enums__WEBPACK_IMPORTED_MODULE_0__["TextOrientationType"].Auto;
   /**
-   * Label placement sets label placement around the marker.
-   * If it is `Auto`, it uses the `labelPlacement` of the control configuration
+   * Label placement. Sets label placement relative to the marker bounding rectangle.
+   * If `Auto` then it is set to `labelPlacement` of the control configuration.
    *
    * @group Label
    * @type {PlacementType}
@@ -14435,8 +14400,8 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 
 /**
  * @class HighlightPathAnnotationConfig
- * @classdesc  Highlight path annotation renders the route between the
- * given sequence of nodes over existing connector lines in the diagram.
+ * @classdesc  Highlight path annotation configuration object. Highlight path annotation traces path between given sequence of nodes
+ * over existing connector lines in the diagram.
  *
  * @param {object} arg0 Object properties.
  */
@@ -14444,33 +14409,28 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 function HighlightPathAnnotationConfig(arg0) {
   var property;
   /**
-   * Annotation type property explicitly defines annotation object type when
-   * it is defined as a JSON object. The `annotations` collection contains
-   * a mixture of all kinds of control annotations.
+   * Annotation type. All types of annotations objects are added to `annotations` collection property of the control.
+   * This property is needed to distinguish them when they are defined as JSON objects.
    *
    * @type {AnnotationType}
    */
 
   this.annotationType = _enums__WEBPACK_IMPORTED_MODULE_0__["AnnotationType"].HighlightPath;
   /**
-   * Sets annotation z-order placement relative to the diagram items.
-   * Diagram visual elements are drawn in layers on top of each other.
-   * If you place annotations over diagram nodes, you block mouse events
-   * of UI elements in nodes templates. Browsers don't support mouse events
-   * transparency consistently yet. So to avoid mouse events blocking UI
-   * elements in node templates, you have to place annotation items under
-   * nodes or manipulate z-index for UI interactive controls and make them
-   * placed on top of other visual elements. The component puts the buttons panel
-   * on top of everything, so annotations drawn over the diagram nodes are not blocked.
+   * Sets annotation Z order placement relative to the diagram items. Diagram visual elements are drawn in layers on top of each other.
+   * If you place annotations over diagram nodes then you block mouse events of UI elements in their templates.
+   * Browsers don't support mouse events transparency consistently yet. So in order to avoid mouse events blocking of UI elements in item
+   * templates you have to place annotation items under them or explicitly define maximum zindex for controls and make them rendered on top
+   * of other visual elements. The control takes this into account and renders buttons panel on top of everything,
+   * so they are never blocked by annotations drawn in front of diagram nodes.
    *
    * @type {ZOrderType}
    */
 
   this.zOrderType = _enums__WEBPACK_IMPORTED_MODULE_0__["ZOrderType"].Foreground;
   /**
-   * Collection of nodes ids this path is drawn for. Please, pay attention
-   * that this is the array of nodes ids. So if the diagram finds the wrong
-   * way from start to end nodes, you can sequence the route yourself.
+   * Collection of nodes ids this annotation is drawn for. Please, pay attention that this is array of nodes ids. So if diagram finds
+   * wrong path from start to end node you have possibility to define every intermediate node in the sequence yourself.
    *
    * @type {string[]}
    */
@@ -14505,16 +14465,14 @@ function HighlightPathAnnotationConfig(arg0) {
 
   this.opacity = 1;
   /**
-   * If true, then annotation has arrows along the route.
+   * If true then annotation has arrows along the highlight path line.
    *
    * @type {boolean}
    */
 
   this.showArrows = true;
   /**
-   * If true, annotated nodes are shown in their expanded form using item
-   * templates regardless of controls autofit mode and available screen space.
-   *
+   * If true then annotated nodes are shown full size regardless of controls auto fit mode and available screen space.
    * @type {boolean}
    */
 
@@ -14555,9 +14513,9 @@ __webpack_require__.r(__webpack_exports__);
 
 /**
  * @class LabelAnnotationConfig
- * @classdesc In-layout label annotations are placed between nodes,
- * impacting diagram layout and node placement. Label annotations are
- * designed for auto-placement and bundling connection lines between nodes when needed.
+ * @classdesc In-layout label annotation. Label annotations are placed in layout between nodes, they preserve
+ * space between nodes, so they don't overlap neighboring nodes. Label annotations are designed
+ * for auto placement and bundling of connection lines between nodes when needed.
  *
  * @param {object} arg0 Object properties.
  */
@@ -14565,9 +14523,8 @@ __webpack_require__.r(__webpack_exports__);
 function LabelAnnotationConfig(arg0, arg1) {
   var property;
   /**
-   * Annotation type property explicitly defines annotation object type when
-   * it is defined as a JSON object. The `annotations` collection contains
-   * a mixture of all kinds of control annotations.
+   * Annotation type. All types of annotations objects are added to `annotations` collection property of the control.
+   * This property is needed to distinguish them when they are defined as JSON objects.
    *
    * @type {AnnotationType}
    */
@@ -14575,38 +14532,35 @@ function LabelAnnotationConfig(arg0, arg1) {
   this.annotationType = _enums__WEBPACK_IMPORTED_MODULE_0__["AnnotationType"].Label;
   /**
    * This is the item id you are creating annotation for.
-   *
    * @type {string}
    */
 
   this.fromItem = null;
   /**
-   * The collection of destination nodes should have only child or parent
-   * items of the annotated item simultaneously. It cannot include children
-   * and parents at the same time. Suppose the annotated item has several
-   * label annotations for different sub-sets of children. In that case,
-   * annotations form into cascades of labels over connection lines in the diagram.
+   * This collection should contain only child or parent items of the annotated item. It cannot contain children and parents at the same time.
+   * If it contain sub set of children then annotation label bundles children into subset and annotations form cascades
+   * of labels over connection lines in the diagram.
    *
    * @type {string[]}
    */
 
   this.toItems = [];
   /**
-   * The label of the annotation. It is styled with `bp-connector-label` CSS class name.
+   * Title. Annotation label text, it is styled with css class name "bp-connector-label".
    *
    * @type {string}
    */
 
   this.title = null;
   /**
-   * Background color.
+   * Default template title background color.
    *
    * @type {string}
    */
 
   this.itemTitleColor = _enums__WEBPACK_IMPORTED_MODULE_0__["Colors"].RoyalBlue;
   /**
-   * Item template name. See items templates collection for more details.
+   * Template name used to render this label.
    *
    * @type {string}
    */
@@ -14651,11 +14605,10 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 
 /**
  * @class LevelAnnotationConfig
- * @classdesc Level annotation highlights the same level nodes of the diagram via
- * drawing continuous rectangular shapes from side to side and the optional title
- * on the side of the diagram view area. Title placement can be inside or outside
- * of the diagram. The inside placement does not occupy diagram space and
- * is rendered in the background.
+ * @classdesc Level annotation highlights same level nodes of the diagram via drawing continuous rectangular shape
+ * from side to side in their background. Level has optional title on the side of the diagram view area.
+ * Title may be placed inside or outside of the diagram. If it is placed inside, it is drawn in the
+ * background and does not occupy space.
  *
  * @param {object} arg0 Object properties.
  */
@@ -14663,9 +14616,8 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 function LevelAnnotationConfig(arg0) {
   var property;
   /**
-   * Annotation type property explicitly defines annotation object type when
-   * it is defined as a JSON object. The `annotations` collection contains
-   * a mixture of all kinds of control annotations.
+   * Annotation type. All types of annotations objects are added to `annotations` collection property of the control.
+   * This property is needed to distinguish them when they are defined as a type less JSON objects.
    *
    * @type {AnnotationType}
    */
@@ -14679,7 +14631,7 @@ function LevelAnnotationConfig(arg0) {
 
   this.levels = [];
   /**
-   * Title.
+   * Level Title.
    *
    * @type {string}
    */
@@ -14693,21 +14645,21 @@ function LevelAnnotationConfig(arg0) {
 
   this.titleFontColor = null;
   /**
-   * The title background color.
+   * The level title background color.
    *
    * @type {string}
    */
 
   this.titleColor = null;
   /**
-   * Background offset relative to its default position.
+   * Sets background offset relative to default position.
    *
    * @type {Thickness}
    */
 
   this.offset = new _graphics_structs_Thickness__WEBPACK_IMPORTED_MODULE_0__["default"](0, 0, 0, 0);
   /**
-   * The background border line width. Use {Thickness} to set border width individually per side.
+   * Background stripe border line width. Use {Thickness} to set border width individually per side.
    *
    * @type {Thickness}
    */
@@ -14721,21 +14673,21 @@ function LevelAnnotationConfig(arg0) {
 
   this.opacity = 1;
   /**
-   * Background border line color
+   * Background stripe border line color
    *
    * @type {string}
    */
 
   this.borderColor = null;
   /**
-   * Background fill Color.
+   * Background stripe fill Color.
    *
    * @type {string}
    */
 
   this.fillColor = "#D4D4D4";
   /**
-   * Background border line type
+   * Background stripe border line type
    *
    * @type {LineType}
    */
@@ -14784,12 +14736,6 @@ __webpack_require__.r(__webpack_exports__);
  * @classdesc Organizational Chart configuration object. Use this object as a reference
  * for available properties and their default values.
  *
- * Organizational Chart control has API options similar to regular UI collection controls.
- * It supports single node selection with the `cursorItem` property, mouse click,
- * or keyboard `Enter` key. The `highlightItem` functionality provides mouse over feedback
- * and lets the user navigate diagram nodes with keyboard arrow keys. The `selectedItems`
- * collection and checkboxes enable multi-select available in ListView and TreeView controls.
- *
  * @param {string} name
  */
 
@@ -14797,26 +14743,28 @@ function OrgConfig(name) {
   this.name = name !== undefined ? name : "OrgDiagram";
   this.classPrefix = "orgdiagram";
   /**
-   * The navigation mode property allows disabling control interactivity.
-   * By default, the control behaves like a regular collection control. It has a cursor to select
-   * a single item in the collection. So user can click and select any node in the diagram.
-   * The control has a highlight for mouseover feedback. So user can move the mouse and see highlight
-   * frame and callout callback annotation for a node under the cursor.
+   * Sets control navigation mode.
    *
-   * By `Default`, the control has both cursor and highlight. If they are disabled, then control is rendered as a static image.
+   * By default control replicates interactivity of regular collection control. It has cursor to select single
+   * item in the collection. So user can click and select any node in the diagram. The control has highlight for mouse over feedback.
+   * So user can move mouse and see highlight frame and callout callback annotation for node under cursor.
+   *
+   * By `Default` the control has both cursor and highlight. If they are disabled then control is rendered as a static image.
    *
    * @type {NavigationMode}
    */
 
   this.navigationMode = _enums__WEBPACK_IMPORTED_MODULE_0__["NavigationMode"].Default;
   /**
-   * The page fit mode option minimizes the diagram size via replacing nodes with markers and labels.
-   * That mode can show a large number of nodes while not affecting the rendering performance.
-   * It can fit thousands of nodes into available screen space without losing usability.
-   * On the other hand, when we use a graphics editor to draw our diagrams manually,
-   * it is common to have a sparse layout with significant gaps between the nodes.
-   * If we don't fit the graph, the space between nodes can easily make
-   * the diagram/chart unusable hard to view, edit and navigate.
+   * Page fit mode. Minimizing nodes into markers and labels. This option provides a special mode that renders the diagram
+   * nodes in the form of markers. This is a highly scalable form that is capable of rendering large numbers of nodes
+   * while not affecting the rendering performance. With this, huge diagrams can be fit into available screen space.
+   *
+   * When using a graphics editor to manually draw your diagrams, it is common place to have large gaps between the nodes.
+   * This can make the diagram/chart unreadable, hard to edit and navigate. On top of that, on a large scale the diagram could have screen size
+   * intervals between items. Admittedly the computer UI does allow the user to scale and fit the diagram in order to visualize it
+   * on a single screen. But in that case, the items become small and unreadable as there is no scaling priority and the items
+   * are just too small to be readable.
    *
    * @group Auto Layout
    * @type {PageFitMode}
@@ -14824,7 +14772,8 @@ function OrgConfig(name) {
 
   this.pageFitMode = _enums__WEBPACK_IMPORTED_MODULE_0__["PageFitMode"].FitToPage;
   /**
-   * The minimal nodes visibility option controls how small nodes of the diagram can be in auto-fit mode.
+   * Minimal nodes visibility in the diagram. If auto fit of the diagram into current page size is enabled, then
+   * this option controls minimum allowed size of the diagram nodes.
    *
    * @group Auto Layout
    * @type {Visibility}
@@ -14832,8 +14781,8 @@ function OrgConfig(name) {
 
   this.minimalVisibility = _enums__WEBPACK_IMPORTED_MODULE_0__["Visibility"].Dot;
   /**
-   * The minimum visible levels option prevents top-level nodes from folding into markers.
-   * It accounts for organizational chart relations and the `levelOffset` of individual items.
+   * Minimum visible levels option prevents top-level nodes from folding into markers. The option
+   * accounts for organizational chart relations and `levelOffset` of individual items.
    *
    * @group Auto Layout
    * @type {number}
@@ -14841,7 +14790,8 @@ function OrgConfig(name) {
 
   this.minimumVisibleLevels = 1;
   /**
-   * The orientation property rotates the diagram layout. It is needed for right-to-left languages support and custom layouts.
+   * Set diagram orientation. This option controls diagram layout orientation. The control can be rotated in any direction,
+   * this is needed for Arabic support and various layouts.
    *
    * @group Auto Layout
    * @type {OrientationType}
@@ -14849,10 +14799,9 @@ function OrgConfig(name) {
 
   this.orientationType = _enums__WEBPACK_IMPORTED_MODULE_0__["OrientationType"].Top;
   /**
-   * The horizontal alignment allows the transformation of hierarchy into a folder-like tree
-   * visualization, where the parent node is aligned with the first child. If alignment
-   * is set to center, then the parent node is aligned to the children's center.
-   * In the `Left` alignment mode parent is aligned to left most child and vice versa for the `Right` alignment.
+   * Sets children horizontal alignment relative to their parent. The children by default are measured in size and then aligned
+   * towards the parent node. If it is `Center` aligned then parent node is placed in the middle of the children. In the `Left`
+   * alignment mode parent is aligned to left of the children and vice versa for `Right` alignment.
    *
    * @group Auto Layout
    * @type {HorizontalAlignmentType}
@@ -14860,9 +14809,7 @@ function OrgConfig(name) {
 
   this.horizontalAlignment = _enums__WEBPACK_IMPORTED_MODULE_0__["HorizontalAlignmentType"].Center;
   /**
-   * The vertical alignment sets nodes alignment inside row's vertical boundaries.
-   * If a row of nodes contains nodes of multiple sizes, small nodes
-   * are vertically aligned relative to their bigger siblings.
+   * Sets items vertical alignment relative to each other within one level of the hierarchy.
    * It does not change anything if diagram nodes are all of the same size.
    *
    * @group Auto Layout
@@ -14871,8 +14818,8 @@ function OrgConfig(name) {
 
   this.verticalAlignment = _enums__WEBPACK_IMPORTED_MODULE_0__["VerticalAlignmentType"].Middle;
   /**
-   * The arrows direction property shows arrows for connector lines.
-   * If it is set to the `Parents`, arrows are drawn towards logical parents from logical children.
+   * Sets arrows direction for connector lines. If this property set to `Parents` then arrows are drawn
+   * from logical children towards logical parents. By default diagram has no arrows.
    *
    * @group Relation Lines
    * @type {GroupByType}
@@ -14880,8 +14827,8 @@ function OrgConfig(name) {
 
   this.arrowsDirection = _enums__WEBPACK_IMPORTED_MODULE_0__["GroupByType"].None;
   /**
-   * Show extra horizontal arrows for long horizontal connection lines for the easy visual
-   * tracking of relations between parents and children. By default, it is off.
+   * Show extra horizontal arrows on top of long horizontal connection lines for the easy visual tracing
+   * of relations between parents and children. By default it is off.
    *
    * @group Relation Lines
    * @type {boolean}
@@ -14889,7 +14836,7 @@ function OrgConfig(name) {
 
   this.showExtraArrows = false;
   /**
-   * The extra arrows minimum space on horizontal connection lines. See `showExtraArrows` property.
+   * Set minimum space for placement of extra arrows on horizontal connection lines. See `showExtraArrows` property.
    *
    * @group Relation Lines
    * @type {number}
@@ -14897,9 +14844,8 @@ function OrgConfig(name) {
 
   this.extraArrowsMinimumSpace = 30;
   /**
-   * The connector type option defines the style of connection lines in the diagram.
-   * It is only applicable to nodes minimized to markers or lines.
-   * The templated nodes are always connected with squared connection lines
+   * Connection lines style. This option is only applicable to nodes minimized to markers or lines. Full size nodes
+   * are always connected with squared connection lines
    *
    * @group Relation Lines
    * @type {ConnectorType}
@@ -14907,7 +14853,7 @@ function OrgConfig(name) {
 
   this.connectorType = _enums__WEBPACK_IMPORTED_MODULE_0__["ConnectorType"].Squared;
   /**
-   * The bevel size of squared connection lines.
+   * The bevel size of squared connector lines.
    *
    * @group Relation Lines
    * @type {number}
@@ -14915,7 +14861,7 @@ function OrgConfig(name) {
 
   this.bevelSize = 4;
   /**
-   * The elbow type of squared connection lines
+   * Set style of squared connectors with custom elbows.
    *
    * @group Relation Lines
    * @type {ElbowType}
@@ -14923,7 +14869,7 @@ function OrgConfig(name) {
 
   this.elbowType = _enums__WEBPACK_IMPORTED_MODULE_0__["ElbowType"].None;
   /**
-   * The elbow dot size property sets marker size in elbows of connector lines.
+   * The size of dot markers placed in the elbows of connector lines.
    *
    * @group Relation Lines
    * @type {number}
@@ -14931,99 +14877,103 @@ function OrgConfig(name) {
 
   this.elbowDotSize = 4;
   /**
-   * Empty diagram message. This option should tell the user
-   * that the chart is blank when no data is available for rendering.
+   * Empty diagram message. This option is supposed to say user that chart is empty when no data is available for rendering.
    *
    * @type {string}
    */
 
   this.emptyDiagramMessage = "Diagram is empty.";
   /**
-   * The items collection defines the data we render in the diagram.
-   * Every item should have a unique `id`. They are used to create relations
-   * between the nodes of the graph and render various UI elements associated with nodes.
+   * Items collection. Ths property defines data we render in the diagram.
+   *
+   * Every item should have set unique `id` property. They are used to create relations
+   * between items in the diagram and for rendering of various UI elements bound to nodes.
    *
    * @type {OrgItemConfig[]}
    */
 
   this.items = [];
   /**
-   * Annotations are visual elements attached to the diagram nodes and designed to spotlight
-   * some nodes or relations. They are drawn either in front of the diagram or the background.
-   * The annotations don't impact the placement of the nodes, though, with some exceptions.
-   * As a result, the control redraws them instantaneously without rendering
-   * or recalculating the actual diagram layout.
+   * Annotations. Annotations are API elements attached to the diagram nodes
+   * and designed to highlight some nodes or relations. We draw our annotations
+   * either in front of the nodes or in the background. The annotations don't affect
+   * the placement of the nodes in any way. We have some exceptions. As a result, the control
+   * redraws them instantaneously without rendering or recalculating the actual diagram layout.
    *
    * @type {Array.<(ShapeAnnotationConfig | BackgroundAnnotationConfig | ConnectorAnnotationConfig | HighlightPathAnnotationConfig)>}
    */
 
   this.annotations = [];
   /**
-   * The cursor item provides a single node selection, navigation, and local zoom in the diagram.
-   * The component shows the cursor, neighbors, and selected nodes using templates and folds
-   * everything into markers to save space. So clicking and moving the cursor from node to node
-   * works as stepping in and expanding nodes in the neighboring diagram area. To select cursor
-   * node with keyboard, use arrow keys to change focus selection first in the diagram and press
-   * the `Enter` key to set the `cursorItem` to the required node. See the'onCursorChanging`
-   * and `onCursorChanged` events to handle user clicks on nodes. If the cursor item is set to
-   * null, then no cursor item is selected in the diagram.
+   * Cursor item. Organization Chart control has API options equivalent to standard UI controls.
+   * The cursor item is used to select a single item in the hierarchy with a mouse click, and
+   * the highlighted item provides visual feedback on the mouse over. Selected items collection
+   * is equivalent to checked items in ListView or TreeView controls.
+   *
+   * The chart's navigation work around the current cursor item. The component shows
+   * the cursor and its neighbors regardless of page fit mode. So cursor item plays the role
+   * of local zoom in the chart hierarchy. The user navigates around the chart via clicking
+   * and selecting cursor items and zooming into data around the new cursor item.
+   *
+   * The control notifies about this property changes with `onCursorChanging` and `onCursorChanged` events.
+   *
+   * If the cursor item is set to null, then no cursor item is selected in the diagram.
    *
    * @type {string}
    */
 
   this.cursorItem = null;
   /**
-   * The highlighted item sets focus to some node in the diagram. It is a redundant feature on
-   * touch screen devices, so use the `navigationMode` property to disable it.
-   * The highlight item can be set programmatically, with mouseover, keyboard arrow keys, or the `Tab` key.
-   * The default visual is a rounded rectangle; use templates to customize the highlight's graphic.
-   * The highlight item setting does not trigger diagram layout or scrolling, so it is near-instant.
-   * It is designed to synchronize mouse moves over diagram nodes with other collection controls or UI elements.
-   * The component triggers  the `onHighlightChanging` and `onHighlightChanged` events on highlight changes.
-   * Set it to `null` to hide the highlight of the diagram.
+   * Highlighted item. Shows highlight and callout annotation for given item id. It does not trigger diagram
+   * layout or scrolling so it can be used to synchronize mouse over feedback of the diagram nodes with other
+   * collection controls or UI elements.
+   *
+   * The control notifies about this property changes with `onHighlightChanging` and `onHighlightChanged` events.
+   *
+   * If `null` then no highlight shown on the diagram.
    *
    * @type {string}
    */
 
   this.highlightItem = null;
   /**
-   * The highlight gravity radius controls distance to the nearest marker to trigger the highlight setting
-   * and callout annotation. For the templated nodes, it is required for the mouse to be inside the node's
-   * bounding rectangle to activate the highlight setting. It can be problematic to put the mouse precisely
-   * over the marker. The gravity radius helps to overcome that issue, but at the same time, it can be a source
-   * of performance if the component gets too many markers within the scope of the gravity radius.
-   * Please, keep this in mind and don't make it too big. It is crucial when the diagram has
-   * over 5 thousand nodes in the hierarchy.
+   * Highlight gravity radius. This property controls mouse over feedback and callout annotation visibility for nodes
+   * rendered as markers when diagram auto fits nodes into available screen space. It makes marker highlighted when
+   * mouse pointer is inside of the gravity radius cycle of the marker. This property is ignored when the nearest item
+   * is outside of the screen boundaries and is not visible to the end user.
+   *
+   * The normal item has mouse over feedback in form of highlight border only when mouse pointer is inside of its boundaries.
    *
    * @type {number}
    */
 
   this.highlightGravityRadius = 40;
   /**
-   * The selected items collection property allows the end-user to choose multiple nodes in the diagram.
-   * It is a collection of ids of checked nodes. The selected items impact the diagram layout and navigation
-   * process since they are always shown in the expanded templated form. So it also helps users pin nodes while they browse in the diagram.
-   * The control notifies about the user changes in this collection with the `onSelectionChanging` and the `onSelectionChanged` events.
+   * Selected items collection. Selected items is a collection of items ids having checked their check boxes.
+   * The control always shows selected items in the full size form, regardless of enabled page fit mode.
+   *
+   * The control notifies about user made changes in this collection with `onSelectionChanging` and `onSelectionChanged` events.
    *
    * @type {string[]}
    */
 
   this.selectedItems = [];
   /**
-  * The selection checkboxes are built-in UI elements managing the `selectedItems` collection property.
+  * Sets visibility of selection check boxes for the diagram nodes.
+  *
   * `Auto` - visible for cursor item only
   * `True` - visible
   * `False` - hidden
   *
-  * Adding a custom checkbox element to the item template requires its name to be `checkbox`,
-  * so the control can use it the same way as the built-in checkbox element.
+  * See `selectedItems` property. All items listed in this property are going to have checked selection checkboxes.
+  * Checkbox can be added to item template, in that case it should be named="checkbox", so control can use it as built in checkbox element.
   *
   * @type {Enabled}
   */
 
   this.hasSelectorCheckbox = _enums__WEBPACK_IMPORTED_MODULE_0__["Enabled"].Auto;
   /**
-   * The checkbox label. See `hasSelectorCheckbox` and `selectedItems` properties.
+   * Selection check box label. See `hasSelectorCheckbox` and `selectedItems` properties.
    *
    * @group Templates
    * @type {string}
@@ -15031,9 +14981,12 @@ function OrgConfig(name) {
 
   this.selectCheckBoxLabel = "Selected";
   /**
-   * The selection path mode property makes all parents of the cursor item up to the root node
-   * to be shown with templates. It is a complimentary feature to the auto-fit mode of the
-   * diagram. See the `pageFitMode` for more details.
+   * Selection path mode. This property controls visibility of nodes between cursor and the root of the diagram in the auto fit mode. It allows to draw
+   * them in full size regardless of available space and auto fit mode.
+   *
+   * The control supports diagram auto fit into screen view. It is achieved via drawing nodes in form of markers.
+   * So small nodes make diagram fit into the screen space, but they have no details. Our solution is to show cursor and selected items
+   * of the diagram in full size and draw all other diagram nodes as markers.
    *
    * @group Auto Layout
    * @type {SelectionPathMode}
@@ -15041,9 +14994,8 @@ function OrgConfig(name) {
 
   this.selectionPathMode = _enums__WEBPACK_IMPORTED_MODULE_0__["SelectionPathMode"].FullStack;
   /**
-   * The show frame controls the visibility of decorating frame around the diagram.
-   * The frame displays markers for selected nodes in the chart when they are outside
-   * the screen and not visible to the end-user.
+   * Sets selected items frame visibility. If selected item is outside of the diagram's area visible to the end user,
+   * control displays that item in the form of the marker on frame around the diagram.
    *
    * @group Frame
    * @type {boolean}
@@ -15051,7 +15003,7 @@ function OrgConfig(name) {
 
   this.showFrame = false;
   /**
-   * The frame's inner padding adds extra padding around markers on the inner side of the frame.
+   * Frame inner padding. Adds extra padding around markers on the inner side of the frame.
    *
    * @group Frame
    * @type {Thickness}
@@ -15059,7 +15011,7 @@ function OrgConfig(name) {
 
   this.frameInnerPadding = new _graphics_structs_Thickness__WEBPACK_IMPORTED_MODULE_1__["default"](2, 2, 2, 2);
   /**
-   * The frame's outer padding adds extra padding around markers on the outer side of the frame.
+   * Frame outer padding. Adds extra padding around markers on the outer side of the frame.
    *
    * @group Frame
    * @type {Thickness}
@@ -15067,7 +15019,7 @@ function OrgConfig(name) {
 
   this.frameOuterPadding = new _graphics_structs_Thickness__WEBPACK_IMPORTED_MODULE_1__["default"](2, 2, 2, 2);
   /**
-   * The diagram padding adds extra padding around the diagram nodes.
+   * Diagram padding. Adds extra padding around the diagram.
    *
    * @group Frame
    * @type {Thickness}
@@ -15075,10 +15027,8 @@ function OrgConfig(name) {
 
   this.padding = new _graphics_structs_Thickness__WEBPACK_IMPORTED_MODULE_1__["default"](10, 10, 10, 10);
   /**
-   * The templates property is a collection of uniquely named templates objects used
-   * to customize nodes' size, interactivity, and visuals for content, cursor, and highlight.
-   * By default, the control provides templates for all types of visual elements.
-   * So to start experimenting with the Basic Primitives library, you don't need to define any templates.
+   * Collection of named templates used to define content for nodes, cursor and highlight.
+   * By default control provides templates for all types of visual elements.
    *
    * @group Templates
    * @type {TemplateConfig[]}
@@ -15086,9 +15036,8 @@ function OrgConfig(name) {
 
   this.templates = [];
   /**
-   * The default template name property allows overriding the default template for all nodes
-   * without setting the template name individually per node. See the `templates` property for mode details.
-   * To customize the template per node, see the `templateName` property of the `OrgItemConfig`.
+   * Name of the template used to render nodes in the diagram. See `templates` property. Template name can be set individually for every node
+   * see `templateName` property of `OrgItemConfig`.
    *
    * @group Templates
    * @type {string}
@@ -15096,10 +15045,7 @@ function OrgConfig(name) {
 
   this.defaultTemplateName = null;
   /**
-   * The button visibility is a legacy property. The only reason it is still available on the components API
-   * is the lack of consistent support of the mouse transparency across browsers.
-   * The buttons panel is placed over all other visuals in the diagram,
-   * so they are not obstructed by the connector and shape annotations.
+   * Sets buttons visibility.
    *
    * `Auto` - cursor item only.
    * `True` - visible
@@ -15111,7 +15057,9 @@ function OrgConfig(name) {
 
   this.hasButtons = _enums__WEBPACK_IMPORTED_MODULE_0__["Enabled"].Auto;
   /**
-   * The event property is used to render the content of the buttons panel.
+   * On buttons panel render event. This callback function is called to render context of buttons panel.
+   * It is used to replace `buttons` collection property in the control. So we preserve context buttons panel as a functional
+   * concept, but eliminate buttons customization API.
    *
    * @callback
    * @param {EventArgs} data Context information
@@ -15119,21 +15067,18 @@ function OrgConfig(name) {
 
   this.onButtonsRender = null;
   /**
-   * This callback function is called before the `onHighlightChanged` event.
-   * See the `highlightItem` property. Use this event to modify diagram elements
-   * not affecting diagram layout. For example, on-screen connector annotations
-   * added in this event handler to the diagram configuration would be rendered
-   * together with highlight. Use properties of this event to stop event propagation
-   * and the following diagram layout and rendering if needed.
+   * This callback function is called before `onHighlightChanged` event. See `highlightItem` property.
+   * Use this event to modify diagram elements not affecting diagram layout. For example on-screen connector annotations added
+   * in this event handler to diagram configuration would be rendered together with highlight.
    *
    * @callback
    * @param {Object} event Mouse event
-   * @param {EventArgs} data Context information.
+   * @param {EventArgs} data Context information. Use properties of this argument to stop event propagate and further diagram layout and rendering.
    */
 
   this.onHighlightChanging = null;
   /**
-   * The on highlight changed event. See `highlightItem` property.
+   * On highlight item changed event. See `highlightItem` property.
    *
    * @callback
    * @param {Object} event Mouse event
@@ -15142,9 +15087,8 @@ function OrgConfig(name) {
 
   this.onHighlightChanged = null;
   /**
-   * This callback function is called before the `onCursorChanged` event.
-   * See the `cursorItem` property. Use properties of this event to stop event propagation
-   * and the following diagram layout and rendering if needed.
+   * On cursor item being changed event. See `cursorItem` property. This callback function is called before `onCursorChanged` event.
+   * Use this callback function to stop event propagation. See `EventArgs` for details.
    *
    * @callback
    * @param {Object} event Mouse event
@@ -15153,7 +15097,7 @@ function OrgConfig(name) {
 
   this.onCursorChanging = null;
   /**
-   * The on cursor item changed event. See `cursorItem` property.
+   * On cursor item changed event. See `cursorItem` property.
    *
    * @callback
    * @param {Object} event Mouse event
@@ -15162,7 +15106,7 @@ function OrgConfig(name) {
 
   this.onCursorChanged = null;
   /**
-   * The on selected items being changed event. See `selectedItems` property.
+   * On selected items being changed event. See `selectedItems` property.
    *
    * @callback
    * @param {Object} event Mouse event
@@ -15171,7 +15115,7 @@ function OrgConfig(name) {
 
   this.onSelectionChanging = null;
   /**
-   * The on selected items changed event. See `selectedItems` property.
+   * On selected items changed event. See `selectedItems` property.
    *
    * @callback
    * @param {Object} event Mouse event
@@ -15180,8 +15124,7 @@ function OrgConfig(name) {
 
   this.onSelectionChanged = null;
   /**
-   * The on content button click event is a legacy property.
-   * To use it, buttons in the buttons panel in the item template should have the `data-buttonname` property set.
+   * Button click event. See `buttons` property.
    *
    * @callback
    * @param {Object} event Mouse event
@@ -15208,10 +15151,11 @@ function OrgConfig(name) {
 
   this.onMouseDblClick = null;
   /**
-   * The on item render callback function is used to populate the content of templated
-   * nodes in the diagram. It is called for user templates only. The callback references
-   * the DOM element and the node configuration object. The control reuses existing DOM elements,
-   * so the application should update the entire content of the template.
+   * Callback function for rendering content of the diagram nodes. This callback is only
+   * called when custom item template is defined in the template object configuration.
+   * This callback receives reference to DOM element and context object of the rendered item.
+   * The control reuses existing elements in the DOM, so it is applications responsibility
+   * to properly update their content.
    *
    * @callback
    * @param {Object} event Event if available
@@ -15220,7 +15164,8 @@ function OrgConfig(name) {
 
   this.onItemRender = null;
   /**
-   * The on highlight render callback function is used to update the highlight visual content having a custom template.
+   * Callback function for rendering content of the highlight template. This callback is only
+   * called when custom highlight is defined in the template configuration.
    *
    * @callback
    * @param {Object} event Event if available
@@ -15229,7 +15174,8 @@ function OrgConfig(name) {
 
   this.onHighlightRender = null;
   /**
-   * The on cursor render callback function is used to update the cursor visual content having a custom template.
+   * Callback function for rendering content of the cursor template. This callback is only
+   * called when custom cursor is defined in the template configuration.
    *
    * @callback
    * @param {Object} event Event if available
@@ -15238,7 +15184,7 @@ function OrgConfig(name) {
 
   this.onCursorRender = null;
   /**
-   * The normal level shift sets spacing between rows of templated nodes.
+   * Sets the spacing between rows.
    *
    * @group Intervals
    * @type {number}
@@ -15246,7 +15192,7 @@ function OrgConfig(name) {
 
   this.normalLevelShift = 20;
   /**
-   * The dot level shift property sets the spacing between rows of markers.
+   * Sets the spacing after the row containing nodes minimized down to markers.
    *
    * @group Intervals
    * @type {number}
@@ -15254,8 +15200,7 @@ function OrgConfig(name) {
 
   this.dotLevelShift = 20;
   /**
-   * The lines level shift property sets the spacing between rows
-   * having only connection lines. Nodes are hidden completely.
+   * Sets the spacing after the row containing nodes minimized down to lines.
    *
    * @group Intervals
    * @type {number}
@@ -15263,7 +15208,7 @@ function OrgConfig(name) {
 
   this.lineLevelShift = 10;
   /**
-   * The normal items interval property sets the spacing between templated nodes.
+   * Sets interval between nodes of the same row.
    *
    * @group Intervals
    * @type {number}
@@ -15271,7 +15216,7 @@ function OrgConfig(name) {
 
   this.normalItemsInterval = 10;
   /**
-   * The dotted items interval property sets the spacing between markers.
+   * Sets interval between nodes of the same row, minimized down to markers.
    *
    * @group Intervals
    * @type {number}
@@ -15279,7 +15224,7 @@ function OrgConfig(name) {
 
   this.dotItemsInterval = 1;
   /**
-   * The line items interval property sets the spacing between lines.
+   * Sets interval between nodes of the same row, minimized down to lines.
    *
    * @group Intervals
    * @type {number}
@@ -15287,9 +15232,8 @@ function OrgConfig(name) {
 
   this.lineItemsInterval = 2;
   /**
-   * The cousins' interval multiplier property adds extra space between branches of the hierarchy.
-   * For example, if the multiplier equals five, nodes of the same parent will have interval 20,
-   * and nodes of two different parents will have interval 100.
+   * Set cousins interval multiplier. This values adds extra space between branches of the hierarchy.
+   * For example nodes of the same parent have interval 20 and nodes of two different parents are going to have interval 100.
    *
    * @group Intervals
    * @type {number}
@@ -15297,8 +15241,11 @@ function OrgConfig(name) {
 
   this.cousinsIntervalMultiplier = 5;
   /**
-   * The first choice title color. The component has two properties for the title color to automatically select
-   * the one having the highest contract for the node's background-color
+   * The first font color of the title.
+   *
+   * The title background color is designed to be one of the available dimensions to group nodes in the diagram,
+   * so title can be unreadable if its color matches its background color. This property is created to auto resolve this issue
+   * via automatic switch between two available font title colors.
    *
    * @group Templates
    * @type {string}
@@ -15306,7 +15253,7 @@ function OrgConfig(name) {
 
   this.itemTitleFirstFontColor = _enums__WEBPACK_IMPORTED_MODULE_0__["Colors"].White;
   /**
-   * The second choice title color.
+   * The second font color of the title.
    *
    * @group Templates
    * @type {string}
@@ -15314,9 +15261,12 @@ function OrgConfig(name) {
 
   this.itemTitleSecondFontColor = _enums__WEBPACK_IMPORTED_MODULE_0__["Colors"].Navy;
   /**
-   * The markers shape type property sets the default marker shape for nodes.
-   * It is possible to set it individually for every node or in the item template.
-   * By default color of the marker is equal to the `itemTitleColor` property set for individual items.
+   * Markers. The shape of the markers when nodes are minimized by auto fit. The control supports auto fit of the diagram into available screen space.
+   * When the diagram size significantly larger than available screen space, its scrolling and navigation becomes problematic,
+   * so control supports automatic diagram fit into the screen space via rendering some of its nodes in form of small markers.
+   * So this option sets default marker shape for nodes. It can be set individually per node in items configurations.
+   *
+   * The default color of shape is the same as `itemTitleColor` property set for individual items.
    *
    * @group Templates
    * @type {ShapeType}
@@ -15324,7 +15274,7 @@ function OrgConfig(name) {
 
   this.minimizedItemShapeType = _enums__WEBPACK_IMPORTED_MODULE_0__["ShapeType"].None;
   /**
-   * The color of the relations lines
+   * The relations lines color. The control uses this lines color to render basic relations between nodes.
    *
    * @group Relation Lines
    * @type {string}
@@ -15332,7 +15282,7 @@ function OrgConfig(name) {
 
   this.linesColor = _enums__WEBPACK_IMPORTED_MODULE_0__["Colors"].Silver;
   /**
-   * The line width of the relations lines
+   * The relations lines width
    *
    * @group Relation Lines
    * @type {number}
@@ -15340,7 +15290,7 @@ function OrgConfig(name) {
 
   this.linesWidth = 1;
   /**
-   * The line style of the relations lines
+   * The relations lines pattern
    *
    * @group Relation Lines
    * @type {LineType}
@@ -15348,7 +15298,7 @@ function OrgConfig(name) {
 
   this.linesType = _enums__WEBPACK_IMPORTED_MODULE_0__["LineType"].Solid;
   /**
-   * The color of the highlighted relation lines.
+   * Sets highlight lines color. The diagram uses highlight lines to render highlighted relation lines between nodes.
    *
    * @group Relation Lines
    * @type {string}
@@ -15356,7 +15306,7 @@ function OrgConfig(name) {
 
   this.highlightLinesColor = _enums__WEBPACK_IMPORTED_MODULE_0__["Colors"].Red;
   /**
-   * The line width of the highlighted relation lines.
+   * Sets highlight lines width.
    *
    * @group Relation Lines
    * @type {number}
@@ -15364,7 +15314,7 @@ function OrgConfig(name) {
 
   this.highlightLinesWidth = 1;
   /**
-   * The line style of the highlighted relation lines.
+   * Sets highlight lines pattern.
    *
    * @group Relation Lines
    * @type {LineType}
@@ -15372,7 +15322,7 @@ function OrgConfig(name) {
 
   this.highlightLinesType = _enums__WEBPACK_IMPORTED_MODULE_0__["LineType"].Solid;
   /**
-   * The show callout property enables on mouse over node callout for the diagram.
+   * Sets callout visibility.
    *
    * @group Callout
    * @type {boolean}
@@ -15380,8 +15330,7 @@ function OrgConfig(name) {
 
   this.showCallout = true;
   /**
-   * The callout maximum visibility property enables callout
-   * for the diagram nodes having specified visibility. See the `pageFitMode` property.
+   * Sets visibility of the callout annotation depending on size of a node it is shown for. See `pageFitMode` property.
    *
    * @group Callout
    * @type {Visibility}
@@ -15389,7 +15338,7 @@ function OrgConfig(name) {
 
   this.calloutMaximumVisibility = _enums__WEBPACK_IMPORTED_MODULE_0__["Visibility"].Dot;
   /**
-   * The callout annotation placement offset sets how far the callout rectangle is offset from the marker it is displayed for.
+   * Callout annotation placement offset. Sets how far callout content is offset from the marker it is displayed for.
    *
    * @group Callout
    * @type {number}
@@ -15397,8 +15346,10 @@ function OrgConfig(name) {
 
   this.calloutPlacementOffset = 100;
   /**
-   * The callout default template name. Templates are HTML fragments used to render diagram nodes.
-   * They are defined with named configuration objects. See the `templates` property for more details.
+   * Callout annotation default template name.
+   *
+   * Templates are HTML fragments containing layout and styles used to render diagram nodes.
+   * They are defined with a named configuration objects. See `templates` property of control's configuration object.
    *
    * @group Callout
    * @type {string}
@@ -15462,13 +15413,7 @@ function OrgConfig(name) {
 
   this.calloutOpacity = 0.2;
   /**
-   * The align branches property enables cross-branch nodes alignment. In the Organizational Chart layout,
-   * the number of rows occupied by the immediate children depends on the number of assistants, advisers,
-   * and levels of children of the node. So nodes at the same logical level in the organizational chart
-   * hierarchy require visual alignment. As expected, the control aligns regular horizontally placed children
-   * across branches of the hierarchy. But it supports the alignment of Assistants, SubAssistants, Advisers,
-   * and SubAdvisers hierarchies and child nodes in vertical and matrix formations across departments.
-   * The component supports the infinite nesting of children layers and their alignment across hierarchy branches.
+   * Enables cross branch nodes alignment. Places the same type of nodes across all branches of the diagram at the same level.
    *
    * @group Auto Layout
    * @type {boolean}
@@ -15476,12 +15421,11 @@ function OrgConfig(name) {
 
   this.alignBranches = false;
   /**
-   * The children's placement type sets default children's layout formation.
-   * The control places children in a horizontal line below the parent node by default.
-   * That may result in the end-user having to scroll screens to view many child nodes.
-   * So to compensate for this, the component supports placing children in a square/matrix and vertical formation.
-   * It reduces sideways screen scrolling by compacting the child nodes into a much smaller area on the screen.
-   * See the 'levelOffset' and the 'itemType' on `OrgItemConfig` for more layout options.
+   * Sets default formation of child nodes. By default all children that belong to a parent node are always aligned
+   * below and placed in a horizontal line. On a large scale this may result in the end user having to scroll screens
+   * in order to view all of the nodes. To compensate for this, we provide the option of placing all of the children
+   * of a parent node in a square/matrix formation. This will reduce sideways screen scrolling by compacting the child
+   * nodes into a much smaller area on the screen.
    *
    * @group Auto Layout
    * @type {ChildrenPlacementType}
@@ -15489,8 +15433,7 @@ function OrgConfig(name) {
 
   this.childrenPlacementType = _enums__WEBPACK_IMPORTED_MODULE_0__["ChildrenPlacementType"].Horizontal;
   /**
-   * The leaves placement type property sets default children formation of
-   * leave children. See the `childrenPlacementType` for more details.
+   * Sets formation of leave children.
    *
    * @group Auto Layout
    * @type {ChildrenPlacementType}
@@ -15498,10 +15441,9 @@ function OrgConfig(name) {
 
   this.leavesPlacementType = _enums__WEBPACK_IMPORTED_MODULE_0__["ChildrenPlacementType"].Horizontal;
   /**
-   * The property sets the default placement of assistants hierarchies
-   * relative to the regular children of the node. If the assistant
-   * node has its children, control adds extra levels, so the assistant's
-   * children are placed above the regular children.
+   * Sets default placement of assistants hierarchies relative to the regular children of the parent node.
+   * If assistant node has its own children then control adds extra levels, so assistants children are placed
+   * above level of the parent node children.
    *
    * @group Auto Layout
    * @type {boolean}
@@ -15509,18 +15451,17 @@ function OrgConfig(name) {
 
   this.placeAssistantsAboveChildren = true;
   /**
-   * The property sets default placement of advisers hierarchies relative to the regular
-   * children of the node. If the adviser node has its children, then control adds extra levels,
-   * so the adviser's children are placed above the regular children.
-   *
-   * @group Auto Layout
-   * @type {boolean}
-   */
+  * Sets default placement of advisers hierarchies relative to the regular children of the parent node.
+  * If adviser node has its own children then control adds extra levels, so advisers children are placed
+  * above level of the parent node children.
+  *
+  * @group Auto Layout
+  * @type {boolean}
+  */
 
   this.placeAdvisersAboveChildren = true;
   /**
-   * The maximum number of columns in the matrix formation prevents
-   * it from outgrowing screen width and forces it to grow vertically.
+   * Maximum number of columns for matrix layout of children.
    *
    * @group Auto Layout
    * @type {number}
@@ -15528,7 +15469,7 @@ function OrgConfig(name) {
 
   this.maximumColumnsInMatrix = 6;
   /**
-   * The size of the button panel
+   * The size of the panel containing context buttons.
    *
    * @group Templates
    * @type {number}
@@ -15536,7 +15477,7 @@ function OrgConfig(name) {
 
   this.buttonsPanelSize = 28;
   /**
-   * The size of the group title
+   * The size of the panel containing group title.
    *
    * @group Group Titles
    * @type {number}
@@ -15544,7 +15485,7 @@ function OrgConfig(name) {
 
   this.groupTitlePanelSize = 24;
   /**
-   * The size of the selection checkbox
+   * The size of the panel containing selection checkbox.
    *
    * @group Templates
    * @type {number}
@@ -15552,8 +15493,9 @@ function OrgConfig(name) {
 
   this.checkBoxPanelSize = 24;
   /**
-   * The group titles placement property sets left to right or right to left alignment
-   * for group title and buttons panel relative to the node.
+   * Group titles placement. Defines group title and buttons panel position relative to the node.
+   * The group title on the side of the diagram node is one of controls default easy to use features. It gives extra dimension
+   * for nodes visual grouping in the diagram.
    *
    * @group Group Titles
    * @type {AdviserPlacementType}
@@ -15569,7 +15511,7 @@ function OrgConfig(name) {
 
   this.groupTitleOrientation = _enums__WEBPACK_IMPORTED_MODULE_0__["TextOrientationType"].RotateRight;
   /**
-   * The group titles vertical alignment property sets text vertical alignment inside the group title panel.
+   * Group titles vertical alignment.
    *
    * @group Group Titles
    * @type {VerticalAlignmentType}
@@ -15577,7 +15519,7 @@ function OrgConfig(name) {
 
   this.groupTitleVerticalAlignment = _enums__WEBPACK_IMPORTED_MODULE_0__["VerticalAlignmentType"].Middle;
   /**
-   * The group titles horizontal alignment property sets text horizontal alignment inside the group title panel.
+   * Group titles horizontal alignment.
    *
    * @group Group Titles
    * @type {HorizontalAlignmentType}
@@ -15636,7 +15578,7 @@ function OrgConfig(name) {
 
   this.onGroupTitleRender = null;
   /**
-   * The panel size of the level annotation titles
+   * The size of the panel containing level titles.
    *
    * @group Level Titles
    * @type {number}
@@ -15644,7 +15586,7 @@ function OrgConfig(name) {
 
   this.levelTitlePanelSize = 24;
   /**
-   * The panel placement of the level annotation titles
+   * Level titles placement. Defines level title panel position relative to the diagram.
    *
    * @group Level Titles
    * @type {AdviserPlacementType}
@@ -15652,7 +15594,7 @@ function OrgConfig(name) {
 
   this.levelTitlePlacementType = _enums__WEBPACK_IMPORTED_MODULE_0__["AdviserPlacementType"].Left;
   /**
-   * If this property is true, level titles are placed inside the diagram's viewport above or below diagram nodes.
+   * If this property is true then level titles are placed inside of the diagram's view port above or below diagram nodes.
    *
    * @group Level Titles
    * @type {boolean}
@@ -15660,7 +15602,7 @@ function OrgConfig(name) {
 
   this.levelTitlePlaceInside = false;
   /**
-   * The level annotation titles orientation.
+   * Group titles orientation.
    *
    * @group Level Titles
    * @type {TextOrientationType}
@@ -15668,7 +15610,7 @@ function OrgConfig(name) {
 
   this.levelTitleOrientation = _enums__WEBPACK_IMPORTED_MODULE_0__["TextOrientationType"].Auto;
   /**
-   * The level annotation titles vertical alignment.
+   * Level titles vertical alignment.
    *
    * @group Level Titles
    * @type {VerticalAlignmentType}
@@ -15676,7 +15618,7 @@ function OrgConfig(name) {
 
   this.levelTitleVerticalAlignment = _enums__WEBPACK_IMPORTED_MODULE_0__["VerticalAlignmentType"].Middle;
   /**
-   * The level annotation titles horizontal alignment.
+   * Level titles horizontal alignment.
    *
    * @group Level Titles
    * @type {HorizontalAlignmentType}
@@ -15732,8 +15674,9 @@ function OrgConfig(name) {
 
   this.levelTitleFontStyle = "normal";
   /**
-   * The level title callback function allows rendering custom content in the level annotation title panel.
-   * It is called only for the visible level annotations. See other level annotation options for details.
+   * On level annotation title render event. This callback function is called to render level annotation title panel.
+   * It is used to overwrite default level title template renderer. It is called only when level annotations are visible.
+   * See other level annotation options for details.
    *
    * @group Level Titles
    * @callback
@@ -15742,8 +15685,9 @@ function OrgConfig(name) {
 
   this.onLevelTitleRender = null;
   /**
-   * The level background callback function allows rendering custom content in the level annotation background panel.
-   * It is called only for the visible level annotations. See other level annotation options for details.
+   * On level annotation background render event. This callback function is called to render level annotation background panel.
+   * It is used to overwrite default level background template renderer. It is called only when level annotations are visible.
+   * See other level annotation options for details.
    *
    * @group Level Titles
    * @callback
@@ -15757,14 +15701,17 @@ function OrgConfig(name) {
 
   this.distance = 3;
   /**
-   * The scale property sets the CSS scale-transform property for the diagram content.
+   * CSS3 scale transform. Control supports content scaling using CSS scale transform. It scales everything except scroll bars.
+   * It properly handles mouse event coordinates. The CSS scale transform produces unreadable text and corrupted lines in desktop browsers,
+   * it looks good only in mobile browsers, so our recommendation is to use zoom with collection of item templates of various sizes.
+   * Templates gives you better control over quality of your content at various zoom levels.
    *
    * @type {number}
    */
 
   this.scale = 1;
   /**
-   * Minimum scale
+   * Minimum CSS3 scale transform.
    *
    * @ignore
    * @type {number}
@@ -15772,7 +15719,7 @@ function OrgConfig(name) {
 
   this.minimumScale = 0.5;
   /**
-   * Maximum scale
+   * Maximum CSS3 scale transform.
    *
    * @ignore
    * @type {number}
@@ -15780,19 +15727,17 @@ function OrgConfig(name) {
 
   this.maximumScale = 2;
   /**
-   * The show label property sets labels visibility for individual nodes.
-   * The control displays label only for node markers. The control does not
-   * preserve space for labels in the diagram layout. The application's
-   * responsibility is to set intervals between nodes to fit labels.
-   * Use controls `dotLevelShift`, `dotItemsInterval` and `padding` properties to preserve
-   * space between nodes for labels. Labels are displayed inside `div's of
-   * the fixed size, see the `labelSize` property, and the control provides
-   * simple conflict resolution to avoid displaying overlapping labels.
-   * If two labels overlap with their bounding rectangles,
-   * then only one of them will stay visible.
+   * Sets labels visibility for nodes when they are minimized into markers by page auto fit. See `pageFitMode` property.
    *
-   * Auto - avoid labels overlapping, hide some of them
-   * True - visible
+   * The control does not preserve space for labels in the diagram layout, since that would contradict the purpose of minimizing the nodes
+   * into markers. Use controls `dotLevelShift`, `dotItemsInterval` properties to preserve space between nodes for labels.
+   *
+   * Labels are displayed inside of `div`s of the fixed size, see `labelSize` property, and control provides simple conflict
+   * resolution to avoid labels overlapping. If two labels overlap each other with their bounding rectangles then only one of them
+   * is going to stay visible.
+   *
+   * Auto - displays label only when it has space to be rendered.
+   * True - shows label regardless, even if it overlaps other labels and nodes.
    * False - hidden.
    *
    * @group Labels
@@ -15801,8 +15746,8 @@ function OrgConfig(name) {
 
   this.showLabels = _enums__WEBPACK_IMPORTED_MODULE_0__["Enabled"].Auto;
   /**
-   * The label size property defines the label's placeholder `div` size,
-   * which impacts conflict resolution if labels overlap.
+   * Label size. Sets labels placeholders `div`s size. It is needed to resolve labels overlapping.
+   * If one label overlaps another label the or item it will be hidden.
    *
    * @group Labels
    * @type {Size}
@@ -15810,7 +15755,7 @@ function OrgConfig(name) {
 
   this.labelSize = new _graphics_structs_Size__WEBPACK_IMPORTED_MODULE_2__["default"](80, 24);
   /**
-   * The label offset property sets the distance from the markers bounding rectangles.
+   * Sets labels offset from the markers bounding rectangles.
    *
    * @group Labels
    * @type {number}
@@ -15818,7 +15763,7 @@ function OrgConfig(name) {
 
   this.labelOffset = 1;
   /**
-   * Label orientation defines label rotation.
+   * Labels orientation.
    *
    * @group Labels
    * @type {TextOrientationType}
@@ -15826,7 +15771,7 @@ function OrgConfig(name) {
 
   this.labelOrientation = _enums__WEBPACK_IMPORTED_MODULE_0__["TextOrientationType"].Horizontal;
   /**
-   * Label placement sets label placement around the marker.
+   * Labels placement. Sets labels placement relative to the markers bounding rectangles.
    *
    * @group Labels
    * @type {PlacementType}
@@ -15875,15 +15820,15 @@ function OrgConfig(name) {
 
   this.labelFontStyle = "normal";
   /**
-   * The enable panning property enables chart panning with mouse drag for
-   * desktop browsers. Disable it if you need to support items Drag & Drop.
+   * Enable panning. Enable chart panning with mouse drag & drop for desktop browsers.
+   * Disable it if you need to support items Drag & Drop.
    *
    * @type {boolean}
    */
 
   this.enablePanning = true;
   /**
-   * Sets minimum size, the diagram can shrink itself in auto size mode. See `pageFitMode` property.
+   * Sets minimum size the diagram can shrink itself in auto size mode. See `pageFitMode` property.
    * In the auto size mode diagram controls its placeholder size itself,
    * it sets its size to accommodate all nodes and render them normally.
    *
@@ -15893,7 +15838,7 @@ function OrgConfig(name) {
 
   this.autoSizeMinimum = new _graphics_structs_Size__WEBPACK_IMPORTED_MODULE_2__["default"](800, 600);
   /**
-   * Sets maximum size, the diagram can expand itself in auto size mode. See `pageFitMode` property.
+   * Sets maximum size the diagram can expand itself in auto size mode. See `pageFitMode` property.
    * In the auto size mode diagram controls its placeholder size itself,
    * it sets its size to accommodate all nodes and render them normally.
    *
@@ -15923,10 +15868,8 @@ __webpack_require__.r(__webpack_exports__);
 
 /**
  * @class OrgItemConfig
- * @classdesc Organizational chart item configuration object defines properties
- * of individual nodes in the organizational chart hierarchy. Nodes configurations
- * populate the `items` collection property of the organizational chart
- * configuration object used to describe the entire component configuration.
+ * @classdesc Item Configuration Object defines properties of individual node in the organizational chart hierarchy. See `items` collection property
+ * of organizational chart control configuration object.
  *
  * @param {OrgItemConfig} arg0 Item config properties
  *
@@ -15940,21 +15883,20 @@ __webpack_require__.r(__webpack_exports__);
 function OrgItemConfig(arg0, arg1, arg2, arg3, arg4) {
   var property;
   /**
-   * Unique item id
+   * Item id. It should be unique per chart.
    *
    * @type {string}
    */
 
   this.id = null;
   /**
-   * Parent item id. If `null`, then the node is the root item of the hierarchy.
-   *
+   * Parent item id. If `null` then node is the root item of the hierarchy.
    * @type {string}
    */
 
   this.parent = null;
   /**
-   * Title. It is used in the default template.
+   * Title
    *
    * @group Template
    * @type {string}
@@ -15970,7 +15912,7 @@ function OrgItemConfig(arg0, arg1, arg2, arg3, arg4) {
 
   this.description = null;
   /**
-   * Image. It is used in the default template.
+   * Image
    *
    * @group Template
    * @type {string}
@@ -15986,8 +15928,7 @@ function OrgItemConfig(arg0, arg1, arg2, arg3, arg4) {
 
   this.context = null;
   /**
-   * Title background color for default template.
-   * When the node is displayed in its minimized form, it also sets the marker color.
+   * Title background color. The same color is used for node marker when control has enabled auto fit mode.
    *
    * @group Template
    * @type {string}
@@ -15995,11 +15936,10 @@ function OrgItemConfig(arg0, arg1, arg2, arg3, arg4) {
 
   this.itemTitleColor = _enums__WEBPACK_IMPORTED_MODULE_1__["Colors"].RoyalBlue;
   /**
-   * Marker type. The shape of the marker when the node is minimized in the diagram layout.
-   * The component is designed for automatic nodes positioning; it optimizes nodes placement
-   * and size depending on the available screen space. When the diagram size is significantly
-   * larger than the available screen space, its scrolling and navigation become problematic,
-   * so control replaces some nodes with markers. That feature has a lot of options for tuning.
+   * Marker type. The shape of the marker when node is minimized by auto fit. The control supports auto fit of diagram into available screen space.
+   * When diagram size significantly larger than available screen space, its scrolling and navigation becomes problematic,
+   * so control supports automatic diagram fit into the screen space via rendering some of its nodes in form of small markers.
+   * So this option sets marker shape for individual node.
    *
    * @group Template
    * @type {ShapeType}
@@ -16007,9 +15947,8 @@ function OrgItemConfig(arg0, arg1, arg2, arg3, arg4) {
 
   this.minimizedItemShapeType = null;
   /**
-   * Group Title. The group title is a panel on the side of the node with rotated text inside.
-   * It is one of the control's default easy-to-use features.
-   * It gives extra dimension for the visual grouping in the diagram.
+   * Group Title. The group title on the side of the diagram node is one of controls default easy to use features.
+   * It gives extra dimension for nodes visual grouping in the diagram.
    *
    * @group Group Title
    * @type {string}
@@ -16025,33 +15964,30 @@ function OrgItemConfig(arg0, arg1, arg2, arg3, arg4) {
 
   this.groupTitleColor = _enums__WEBPACK_IMPORTED_MODULE_1__["Colors"].RoyalBlue;
   /**
-   * If `false`, it makes the item invisible in the layout. If the item has no visible parents,
-   * its connections are hidden as well. From the navigation perspective,
-   * children of hidden nodes become children of their parents.
+   * If `false` it makes item invisible in the layout. If item has no visible parents then its connections are hidden as well.
+   * From navigation perspective invisible items make all their children to be children of their parents.
    *
    * @type {boolean}
    */
 
   this.isVisible = true;
   /**
-   * If it is true, it makes the node inactive in the diagram layout.
-   * The inactive item is excluded from navigation, which means it is not clickable,
-   * and it is impossible to set the cursor to it. Consider the inactive node as an in-layout
-   * label or title having a custom item template. It is worth mentioning that it
-   * impacts cursor neighbors selection. The component skips the static node
-   * and selects its neighbors instead.
+   * If true it makes item inactive in the diagram layout. Inactive items are regular items excluded from navigation, that means
+   * when diagram uses auto fit mode, selection of the neighboring nodes goes through inactive items, so all nodes next to inactive item
+   * become selected and shown in full size as well. Inactive items play a role of in layout annotations having no user interaction
+   * and templated with HTML. For example they can be used to add titles into family diagram layout or terminator items
+   * indicating that upon reaching them diagram would load extra nodes into layout.
    *
    * @type {boolean}
    */
 
   this.isActive = true;
   /**
-   * It controls the visibility of the selection check box for the node.
-   * The selection checkbox is a default, easy-to-use feature to add and
-   * remove nodes to selected items collection.
+   * Shows selection check box for the node.
+   * If Auto then selection check box visibility depends on control's configuration.
    *
-   * Auto - depends on the control's configuration `hasSelectorCheckbox` property setting.
-   * True - visible
+   * Auto - depends on `hasSelectorCheckbox` property of the control
+   * True - shown
    * False - hidden
    *
    * @type {Enabled}
@@ -16059,13 +15995,11 @@ function OrgItemConfig(arg0, arg1, arg2, arg3, arg4) {
 
   this.hasSelectorCheckbox = _enums__WEBPACK_IMPORTED_MODULE_1__["Enabled"].Auto;
   /**
-   * It controls the visibility of the context buttons panel for the node.
-   * The context buttons panel is a built-in, easy-to-use feature to add
-   * interactive UI elements around the cursor node. On-screen annotations
-   * do not block context buttons panel as well.
+   * Shows context buttons panel for the node.
+   * If Auto then context buttons panel visibility depends on control's configuration.
    *
-   * Auto - depends on the control's configuration `hasButtons` property setting
-   * True - visible
+   * Auto - depends on `hasButtons` property of the control
+   * True - shown
    * False - hidden
    *
    * @group Template
@@ -16074,60 +16008,55 @@ function OrgItemConfig(arg0, arg1, arg2, arg3, arg4) {
 
   this.hasButtons = _enums__WEBPACK_IMPORTED_MODULE_1__["Enabled"].Auto;
   /**
-   * Item type defines child node placement relative to its parent node.
-   * By default, all children of the same parent node are of the same rank and
-   * status are aligned below the parent in a horizontal line. However,
-   * for exceptional cases where the end-user wishes to have a child separate
-   * from the rest of its siblings, we provide custom child types that
-   * the end-user can use to place different ranking nodes anywhere around
-   * the parent node. These placement options give a lot of space for creating
-   * roles such as an Assistant, Adviser, various Partners,
-   * and co-heads in the organization.
+   * Item type. This property defines child node placement relative to its parent node. By default all children that belong
+   * to a parent node are of the same rank and status between each other and due to that, are always aligned below
+   * the parent and are organized in the same way. However for special cases were the end user wishes to have a child
+   * that is separate from the rest of it's siblings, we provide custom child types that the end user can use to
+   * place different ranking nodes anywhere around the parent node. These placement options give a lot of space for
+   * the creation of roles such as an Assistant, Adviser, various Partners and co-heads that may be in the organization.
+   * Additionally, by default `Regular` children are always placed in a horizontal line below the parent node.
    *
    * @type {ItemType}
    */
 
   this.itemType = _enums__WEBPACK_IMPORTED_MODULE_1__["ItemType"].Regular;
   /**
-   * Level offset organizes some node types, like regular children and assistants, into multiple rows.
+   * Sets node level offset relative to parent node. This property is ignored if it is not applicable.
    *
    * @type {number}
    */
 
   this.levelOffset = null;
   /**
-   * Adviser placement type sets node placement relative to the parent item
-   * on the left or right side of the parent's hierarchy. If it is set to `Auto`,
-   * the control's configuration object property is used.
+   * Defines leftward or rightward item placement relative to the parent item.
+   * By default it is `Auto` and depends on general diagram layout orientation.
    *
    * @type {AdviserPlacementType}
    */
 
   this.adviserPlacementType = _enums__WEBPACK_IMPORTED_MODULE_1__["AdviserPlacementType"].Auto;
   /**
-   * The children's placement type sets children's layout formation.
-   * Control places children in a horizontal line below the parent node by default.
-   * That may result in the end-user having to scroll screens to view many child nodes.
-   * Placing children in a square/matrix formation compensates for this.
-   * It reduces sideways screen scrolling by compacting the child nodes
-   * into a much smaller area on the screen.
+   * The property defines children's layout formation. By default, control places children
+   * in a horizontal line below the parent node. On a large scale, this may result in the end-user
+   * having to scroll screens to view all nodes. To compensate for this, we place children
+   * in a square/matrix formation. That will reduce sideways screen scrolling by compacting
+   * the child nodes into a much smaller area on the screen.
    *
    * @type {ChildrenPlacementType}
    */
 
   this.childrenPlacementType = _enums__WEBPACK_IMPORTED_MODULE_1__["ChildrenPlacementType"].Auto;
   /**
-   * The property sets the placement of assistants hierarchies
-   * relative to the regular children of the node. If the assistant
-   * node has its children, control adds extra levels, so the assistant's
-   * children are placed above the regular children.
+   * The property sets the default placement of assistants hierarchies relative to the regular
+   * children of the node. If the assistant node has its children, then control adds extra levels,
+   * so the assistant's children are placed above the regular children.
    *
    * @type {Enabled}
    */
 
   this.placeAssistantsAboveChildren = _enums__WEBPACK_IMPORTED_MODULE_1__["Enabled"].Auto;
   /**
-   * The property sets placement of advisers hierarchies relative to the regular
+   * The property sets default placement of advisers hierarchies relative to the regular
    * children of the node. If the adviser node has its children, then control adds extra levels,
    * so the adviser's children are placed above the regular children.
    *
@@ -16136,10 +16065,9 @@ function OrgItemConfig(arg0, arg1, arg2, arg3, arg4) {
 
   this.placeAdvisersAboveChildren = _enums__WEBPACK_IMPORTED_MODULE_1__["Enabled"].Auto;
   /**
-   * Template name lets individually assign rendering templates per individual
-   * node of the diagram. Templates contain settings defining node size,
-   * interactivity options, and HTML fragments to render nodes.
-   * See the organization chart configuration object for the `templates` property.
+   * Template name. Templates are HTML fragments containing layout and styles used to render diagram nodes.
+   * They are defined with a named configuration objects. See `templates` property of control's configuration object.
+   * This option lets individually assign rendering template per individual node of the diagram.
    *
    * @group Template
    * @type {string}
@@ -16147,15 +16075,15 @@ function OrgItemConfig(arg0, arg1, arg2, arg3, arg4) {
 
   this.templateName = null;
   /**
-   * Show callout property sets callout annotation visibility per individual node.
-   * The callout annotation is one of the easy-to-use features of the control.
-   * It is displayed for markers to preview the node's content. The content is displayed
-   * using the current node template it is rendered for. The callout can be forced
-   * to be displayed for templated nodes as well. In that case, use the `calloutTemplateName`
-   * property to change the callout template.
+   * Sets callout annotation visibility for individual node. The callout annotation is one of easy to use features of the control.
+   * By default it is displayed for markers in order to preview their node's content. The content is displayed using
+   * current template of the node it is rendered for.
    *
-   * Auto - depends on the control's configuration `showCallout` property setting
-   * True - always visible
+   * The callout can be forced to be displayed for regular nodes as well. In that case use `calloutTemplateName` property
+   * to change their template.
+   *
+   * Auto - depends on `showCallout` property of the control
+   * True - shown regardless of node's visibility
    * False - hidden
    *
    * @group Callout
@@ -16164,10 +16092,11 @@ function OrgItemConfig(arg0, arg1, arg2, arg3, arg4) {
 
   this.showCallout = _enums__WEBPACK_IMPORTED_MODULE_1__["Enabled"].Auto;
   /**
-   * Callout annotation template name redefined default item template used to display
-   * the content of the callout annotation. Templates contain size and HTML fragments
-   * to display node content. See the `templates` property of the organizational
-   * chart control configuration object.
+   * Callout annotation template name. This option lets individually assign rendering callout annotation template
+   * per individual node of the diagram.
+   *
+   * Templates are HTML fragments containing layout and styles used to render diagram nodes.
+   * They are defined with a named configuration objects. See `templates` property of control's configuration object.
    *
    * @group Callout
    * @type {string}
@@ -16183,19 +16112,17 @@ function OrgItemConfig(arg0, arg1, arg2, arg3, arg4) {
 
   this.label = null;
   /**
-   * The show label property sets labels visibility for individual nodes.
-   * The control displays label only for node markers. The control does not
-   * preserve space for labels in the diagram layout. The application's
-   * responsibility is to set intervals between nodes to fit labels.
-   * Use controls `dotLevelShift`, `dotItemsInterval` properties to preserve
-   * space between nodes for labels. Labels are displayed inside `div's of
-   * the fixed size, see the `labelSize` property, and the control provides
-   * simple conflict resolution to avoid displaying overlapping labels.
-   * If two labels overlap each other with their bounding rectangles,
-   * then only one of them will stay visible.
+   * Sets label visibility for individual nodes. Labels are only rendered for a node's markers.
    *
-   * Auto - avoid labels overlapping, hide some of them
-   * True - visible
+   * The control does not preserve space for labels in the diagram layout, since that would contradict the purpose of minimizing the nodes
+   * into markers. Use controls `dotLevelShift`, `dotItemsInterval` properties to preserve space between nodes for labels.
+   *
+   * Labels are displayed inside of `div`s of the fixed size, see `labelSize` property, and control provides simple conflict
+   * resolution to avoid labels overlapping. If two labels overlap each other with their bounding rectangles then only one of them
+   * is going to stay visible.
+   *
+   * Auto - displays label only when it has space to be rendered.
+   * True - shows label regardless, even if it overlaps other labels and nodes.
    * False - hidden.
    *
    * @group Label
@@ -16204,9 +16131,8 @@ function OrgItemConfig(arg0, arg1, arg2, arg3, arg4) {
 
   this.showLabel = _enums__WEBPACK_IMPORTED_MODULE_1__["Enabled"].Auto;
   /**
-   * The label size property defines the label's placeholder `div` size,
-   * which impacts conflict resolution if labels overlap. If it is `null`,
-   * it uses the `labelSize` property of the control configuration.
+   * Label size. Sets label's placeholder `div` size and controls conflict resolution if labels overlap each other.
+   * If `null` then it is set to `labelSize` property of the control configuration.
    *
    * @group Label
    * @type {Size}
@@ -16214,8 +16140,8 @@ function OrgItemConfig(arg0, arg1, arg2, arg3, arg4) {
 
   this.labelSize = null;
   /**
-   * Label orientation defines label rotation. If it is `Auto`,
-   * it uses the `labelOrientation` property of the control configuration.
+   * Label orientation.
+   * If `Auto` then it is set to `labelOrientation` property of the control configuration.
    *
    * @group Label
    * @type {TextOrientationType}
@@ -16223,8 +16149,8 @@ function OrgItemConfig(arg0, arg1, arg2, arg3, arg4) {
 
   this.labelOrientation = _enums__WEBPACK_IMPORTED_MODULE_1__["TextOrientationType"].Auto;
   /**
-   * Label placement sets label placement around the marker.
-   * If it is `Auto`, it uses the `labelPlacement` of the control configuration.
+   * Label placement. Sets label placement relative to the marker bounding rectangle.
+   * If `Auto` then it is set to `labelPlacement` of the control configuration.
    *
    * @group Label
    * @type {PlacementType}
@@ -16269,12 +16195,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /**
  * @class PaletteItemConfig
- * @classdesc Palette Item configuration object defines cross-family
- * connections lines styles. Multi-parent diagrams may have a lot of
- * parallel lines, so to make their visual tracing easier, the component
- * supports multiple line styles and evenly distributes them. It is a similar
- * approach as for visualization of regular line charts. If we have numerous
- * lines in the chart area, it makes sense to style every line individually.
+ * @classdesc Palette Item configuration object defines cross family connections lines styles. Multi-parent diagrams have cross hierarchy
+ * relation lines, so in order to make their visual tracing more easy on diagram every connection line can be styled differently.
+ * (This is the same approach as for visualization of regular classic line charts. If we have multiple lines in chart area it makes
+ * sense to style every line individually.)
  *
  * @param {PaletteItemConfig} arg0 Palette properties object.
  *
@@ -16348,8 +16272,8 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 
 /**
  * @class ShapeAnnotationConfig
- * @classdesc  Shape annotation draws geometrical shapes over nodes
- * of the diagram. Consider them as free-hand figures drawn over nodes with a highlighter.
+ * @classdesc  Shape annotation configuration object. Shape annotation is a possibility to draw some geometrical
+ * shapes over nodes of the diagram.
  *
  * @param {object} arg0 Object properties.
  */
@@ -16357,24 +16281,20 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 function ShapeAnnotationConfig(arg0) {
   var property;
   /**
-   * Annotation type property explicitly defines annotation object type when
-   * it is defined as a JSON object. The `annotations` collection contains
-   * a mixture of all kinds of control annotations.
+   * Annotation type. All types of annotations objects are added to `annotations` collection property of the control.
+   * This property is needed to distinguish them when they are defined as JSON objects.
    *
    * @type {AnnotationType}
    */
 
   this.annotationType = _enums__WEBPACK_IMPORTED_MODULE_2__["AnnotationType"].Shape;
   /**
-   * Sets annotation z-order placement relative to the diagram items.
-   * Diagram visual elements are drawn in layers on top of each other.
-   * If you place annotations over diagram nodes, you block mouse events
-   * of UI elements in nodes templates. Browsers don't support mouse events
-   * transparency consistently yet. So to avoid mouse events blocking UI
-   * elements in node templates, you have to place annotation items under
-   * nodes or manipulate z-index for UI interactive controls and make them
-   * placed on top of other visual elements. The component puts the buttons panel
-   * on top of everything, so annotations drawn over the diagram nodes are not blocked.
+   * Sets annotation Z order placement relative to the diagram items. Diagram visual elements are drawn in layers on top of each other.
+   * If you place annotations over diagram nodes then you block mouse events of UI elements in their templates.
+   * Browsers don't support mouse events transparency consistently yet. So in order to avoid mouse events blocking of UI elements in item
+   * templates you have to place annotation items under them or explicitly define maximum zindex for controls and make them rendered on top
+   * of other visual elements. The control takes this into account and renders buttons panel on top of everything,
+   * so they are never blocked by annotations drawn in front of diagram nodes.
    *
    * @type {ZOrderType}
    */
@@ -16395,7 +16315,7 @@ function ShapeAnnotationConfig(arg0) {
 
   this.shapeType = _enums__WEBPACK_IMPORTED_MODULE_2__["ShapeType"].Rectangle;
   /**
-   * Shape offset around annotated items.
+   * Sets shape offset around annotated items.
    *
    * @type {Thickness}
    */
@@ -16409,14 +16329,14 @@ function ShapeAnnotationConfig(arg0) {
 
   this.lineWidth = 2;
   /**
-   * Adds rounded corners for applicable shapes. Radius is defined in percents or pixels.
+   * Corner radius. Body corner radius in percents or pixels. For applicable shapes only.
    *
    * @type {string|number}
    */
 
   this.cornerRadius = "10%";
   /**
-   * Background color opacity
+   * Background color opacity.
    *
    * @type {number}
    */
@@ -16444,36 +16364,32 @@ function ShapeAnnotationConfig(arg0) {
 
   this.lineType = _enums__WEBPACK_IMPORTED_MODULE_2__["LineType"].Solid;
   /**
-   * If true, annotated nodes are shown in their expanded form using item
-   * templates regardless of controls autofit mode and available screen space.
-   *
+   * If true then annotated nodes are shown full size regardless of controls auto fit mode and available screen space.
    * @type {boolean}
    */
 
   this.selectItems = false;
   /**
-   * Annotation label, it is styled with 'bp-connector-label' CSS class
-   *
+   * Label. Label styled with css class name "bp-connector-label".
    * @type {string}
    */
 
   this.label = null;
   /**
    * Label size
-   *
    * @type {Size}
    */
 
   this.labelSize = new _graphics_structs_Size__WEBPACK_IMPORTED_MODULE_1__["default"](60, 30);
   /**
-   * Label placement around the annotation.
+   * Label placement relative to the annotation.
    *
    * @type {PlacementType}
    */
 
   this.labelPlacement = _enums__WEBPACK_IMPORTED_MODULE_2__["PlacementType"].Auto;
   /**
-   * Label offset in pixels.
+   * Label offset from shape in pixels.
    *
    * @type {number}
    */
@@ -16519,73 +16435,72 @@ __webpack_require__.r(__webpack_exports__);
 
 /**
  * @class TemplateConfig
- * @classdesc Template configuration object defines DOM elements for node content, cursor,
- * and mouseover highlight visual representation. If one of them is not set, then the
- * component uses an internal default template. We separate template creation and
- * rendering functions for security reasons. It is not needed in modern frameworks anymore.
+ * @classdesc Template configuration object defines DOM elements for node content, cursor and highlight visual representation.
+ * They are grouped into one configuration object because if we decide to customize cursor or highlight templates most likely
+ * we are going to make them item template specific. At the same time control does not require all 3 of them to be defined.
+ * If cursor or highlight templates properties are not set in template configuration object then control uses internal
+ * default template for all of them. Generally all 3 templates can be set to null, so default templates are going to be used
+ * by control.
  */
 
 function TemplateConfig() {
   /**
-   * A unique template name is used to reference templates from items
-   * and other diagram components. The 'onItemRender' callback passes the template name as an argument.
+   * Name. Every template configuration object has name property, it is being used to reference templates from items.
+   * This name is used to as an argument of call back rendering function as well. If item has not template name set
+   * it uses default template for rendering.
    *
    * @type {string}
    */
   this.name = null;
   /**
-   * If it is true, it makes templated items inactive in the diagram layout.
-   * Inactive items are regular items excluded from navigation, which means they
-   * are not clickable, and it is impossible to set the cursor to them. Consider
-   * the inactive nodes as in-layout labels or titles having a custom item template.
-   * It is worth mentioning that they impact neighbors of cursor item selection.
-   * The component skips them and selects neighbors of inactive nodes.
+   * If true it makes templated items inactive in diagram layout. Inactive items are regular items excluded from navigation, that means
+   * when use auto fit mode, selection of neighboring node to inactive item makes all nodes of inactive item shown in full
+   * size as well. Inactive items play a role of in layout annotations having no user interaction and templated with HTML.
+   * For example they can be used to add titles into family diagram layout or terminator items indicating that upon reaching
+   * them diagram would load extra nodes into layout.
    *
    * @type {boolean}
    */
 
   this.isActive = true;
   /**
-   * Size. Control deals with the fixed-size layout. It makes no guesses about
-   * the content of nodes. So we don't support in any form nodes auto-sizing;
-   * otherwise, the component should measure the content of every node before
-   * the rendering cycle. Considering that the visibility of nodes depends on
-   * available space, it will be an infinite loop of diagram layout, and nodes
-   * measure iterations. The more room we provide to nodes, the fewer diagram nodes
-   * are visible. So control expects that node size is hard valued in the
-   * template configuration.
+   * Size. Control deals with fixed size layout, it makes no guesses about content and size of nodes.
+   * So we don't support in any form nodes auto sizing. In order to support such feature control should measure content
+   * of every node before rendering cycle. Taking into account that nodes visibility depends on available space it is going
+   * to be infinite loop of diagram layout and nodes measure iterations. The more space we provide to nodes the less number
+   * of diagram nodes is going to be visible. So control expect that node size is hard valued in template configuration.
    *
    * @type {Size}
    */
 
   this.itemSize = new _graphics_structs_Size__WEBPACK_IMPORTED_MODULE_1__["default"](120, 100);
   /**
-   * Border width. We use the archaic method to layout cursor and highlight
-   * frames around nodes, so we need to know border width to measure gaps between them correctly.
+   * Border width. We use archaic method to layout cursor and highlight frames around nodes, so we need to know border
+   * width in order measure gaps between them properly.
    *
    * @type {number}
    */
 
   this.itemBorderWidth = 1;
   /**
-   * Item template. The control provides two ways to define item templates.
-   * The first one sets HTML elements content via innerHTML DOM element property.
-   * See the following reference at https://developer.mozilla.org website for more details.
-   * The second uses JSON ML library for templates definition.
-   * See http://www.jsonml.org/ for more details. That is only 3d party MIT licensed
-   * code included in our codebase; everything else is 100% authentic.
-   * We included it with minor modifications.
+   * Item template. Supported template formats: Control provide two distinct ways to define item templates.
+   * The original one is based on setting HTML elements content via innerHTML DOM element property, see following reference
+   * at https://developer.mozilla.org web site for more details. The modern way is to use JSON ML library that is our recommended
+   * solution for templates definition, see following web site for more details http://www.jsonml.org/. This is only 3d party
+   * MIT licensed code included into our code base, everything else is 100% authentic. We adopted it with minor modifications,
+   * it generally works according to its original design.
    *
-   * The control calls the 'onItemRender' callback function to populate the template's content for a specific node.
+   * The control calls `onItemRender` callback function when specific node cursor needs to be rendered with this template.
    *
    * @type {string|object}
    */
 
   this.itemTemplate = null;
   /**
-   * The markers shape type property sets the default marker shape for nodes.
-   * It is possible to set it individually for every node or in the item template.
-   * By default color of the marker is equal to the `itemTitleColor` property set for individual items.
+   * Marker type. The shape of the marker when node is minimized by auto fit. The control supports auto fit of the diagram into available screen space.
+   * When diagram size significantly larger than available screen space, its scrolling and navigation becomes problematic,
+   * so control supports automatic diagram fit into the screen space via rendering some of its nodes in form of small markers.
+   * So this option sets marker shape for nodes templated with this template.
    *
    * @type {ShapeType}
    */
@@ -16599,8 +16514,8 @@ function TemplateConfig() {
 
   this.minimizedItemSize = new _graphics_structs_Size__WEBPACK_IMPORTED_MODULE_1__["default"](4, 4);
   /**
-   * Marker corner radius. It applies to simple square shapes only. If it is null,
-   * then squire markers are displayed as cycles. Squares have no rounded corners if the corner radius is set to 0.
+   * Marker corder radius for simple squares. By default it is null and dots displayed as cycles. If corner radius set to 0 then
+   * they are displayed as regular squares.
    *
    * @type {number}
    */
@@ -16614,74 +16529,74 @@ function TemplateConfig() {
 
   this.minimizedItemLineWidth = 1;
   /**
-   * Marker border line color. It equals the `itemTitleColor` of the rendered node by default.
+   * Marker border line color. By default it is the same as `itemTitleColor` of rendered node.
    *
    * @type {string}
    */
 
   this.minimizedItemBorderColor = null;
-  /**
-   * Marker border line pattern
-   *
-   * @type {LineType}
+  /*
+    Marker border line pattern
+
+    @type {LineType}
   */
 
   this.minimizedItemLineType = _enums__WEBPACK_IMPORTED_MODULE_2__["LineType"].Solid;
   /**
-   * Marker fill color. It equals to `itemTitleColor` of the rendered node by default.
+   * Marker fill color. By default it is the same as `itemTitleColor` of rendered node.
    *
    * @type {string}
    */
 
   this.minimizedItemFillColor = null;
   /**
-   * Marker fill color opacity
+   * Marker fill color opacity.
    *
    * @type {number}
    */
 
   this.minimizedItemOpacity = 1;
   /**
-   * Highlight frame offset
+   * Highlight frame offset from node.
    *
    * @type {Thickness}
    */
 
   this.highlightPadding = new _graphics_structs_Thickness__WEBPACK_IMPORTED_MODULE_0__["default"](2, 2, 2, 2);
   /**
-   * Highlight frame border width
+   * Highlight frame border width.
    *
    * @type {number}
    */
 
   this.highlightBorderWidth = 1;
   /**
-   * Highlight Template. See item template for details.
+   * Highlight Template.
    *
-   * The control calls the 'onHighlightRender' callback function to populate the highlight template content for a specific node.
+   * The control calls `onHighlightRender` callback function when specific node highlight needs to be rendered with this template.
    *
    * @type {string|object}
    */
 
   this.highlightTemplate = null;
   /**
-   * Cursor frame offset from node
+   * Cursor frame offset from node.
    *
    * @type {Thickness}
    */
 
   this.cursorPadding = new _graphics_structs_Thickness__WEBPACK_IMPORTED_MODULE_0__["default"](3, 3, 3, 3);
   /**
-   * Cursor frame border width
+   * Cursor frame border width.
    *
    * @type {number}
    */
 
   this.cursorBorderWidth = 2;
   /**
-   * Cursor Template. See item template for details.
+   * Cursor Template.
    *
-   * The control calls the 'onCursorRender' callback function to populate the cursor template content for a specific node.
+   * The control calls `onCursorRender` callback function when specific node cursor needs to be rendered with this template.
    *
    * @type {string|object}
    */
@@ -16690,7 +16605,7 @@ function TemplateConfig() {
   /**
    * Sets buttons panel visibility.
    *
-   * `Auto` - depends on the controls config `hasButtons` property setting.
+   * `Auto` - depends on master config `hasButtons` property setting.
    * `True` - visible
    * `False` - hidden
    *
@@ -16700,7 +16615,9 @@ function TemplateConfig() {
 
   this.hasButtons = _enums__WEBPACK_IMPORTED_MODULE_2__["Enabled"].Auto;
   /**
-   * On buttons render callback function. This function is called to render context of buttons panel.
+   * On buttons panel render event. This callback function is called to render context of buttons panel.
+   * It is used to replace `buttons` collection property in the control. So we preserve context buttons panel as a functional
+   * concept, but eliminate buttons customization API.
    *
    * @callback
    * @param {EventArgs} data Context information
@@ -17597,10 +17514,9 @@ __webpack_require__.r(__webpack_exports__);
  **/
 
 /**
- * The adviser placement type controls assistants and advisers placement relative
- * to the parent node, on the left or the right side of the parent's hierarchy
- * in the organizational chart. In the case of the family diagram,
- * the position is defined relative to siblings.
+ * The enumeration sets leftward or rightward item placement relative to the referenced item.
+ * In the case of assistants or advisers, the referenced node is their immediate parent.
+ * In the case of the family diagram, the referenced node is a sibling.
  *
  * @enum {AdviserPlacementType}
  */
@@ -17625,8 +17541,8 @@ var AdviserPlacementType = {
  **/
 
 /**
- * Annotation type defines the type of on-screen and in-layout annotation object.
- * Annotations are geometrical figures drawn around or bound to existing nodes of the diagram.
+ * Defines type of on-screen and in-layout annotation object. Annotations are geometrical
+ * figures drawn around or bound to existing nodes of the diagram.
  *
  * @enum {AnnotationType}
  */
@@ -17641,7 +17557,7 @@ var AnnotationType = {
   Connector: 0,
 
   /**
-   * Shape annotation lets draw some geometrical figures over nodes of the diagram.
+   * Shape annotation is a possibility to draw some geometrical shapes over several nodes of the diagram.
    */
   Shape: 1,
 
@@ -17651,23 +17567,23 @@ var AnnotationType = {
   HighlightPath: 2,
 
   /**
-   * The in-layout label annotations display values over relation lines between nodes.
-   * The control reserves space for labels in the diagram layout to not overlap nodes.
-   * Label annotations are designed for auto-placement and bundling connection lines between nodes when needed.
+   * The in-layout label annotation display values over relation lines between nodes.
+   * The control preserves space for labels in the diagram layout so they don't overlap nodes.
+   * Label annotations are designed for auto-placement and bundling of connection lines between nodes when needed.
    */
   Label: 3,
 
   /**
    * The background annotation highlights nodes via drawing the rectangular shape in the node's background.
-   * If annotations of neighboring nodes overlap, control merges them into one continuous polygon geometry.
+   * If the same style annotations of neighboring nodes overlap, control merges them into one continuous polygon geometry.
    */
   Background: 4,
 
   /**
-   * Level annotation highlights the row of nodes of the diagram by drawing a continuous rectangular shape
-   * from side to side in their background. The level annotation has the optional title on the side of
-   * the diagram view area. The level's title is optionally placed inside or outside of the diagram.
-   * If placed inside, it is drawn in the background and does not occupy space.
+   * Level annotation highlights same level nodes of the diagram via drawing continuous rectangular shape
+   * from side to side in their background. Level has optional title on the side of the diagram view area.
+   * Title may be placed inside or outside of the diagram. If it is placed inside, it is drawn in the
+   * background and does not occupy space.
    */
   Level: 5
 };
@@ -17676,19 +17592,18 @@ var AnnotationType = {
  **/
 
 /**
- * The children's placement type enumeration defines the shape of children's formation.
- * Control places children in a horizontal line below the parent node by default.
- * In the case of many child nodes, this may result in the end-user having to scroll screens to
- * view all of them. To compensate, we provide the option of placing all of the parent node's
- * children in a square/matrix formation. That will reduce sideways screen scrolling by compacting
- * the child nodes into a much smaller area on the screen.
+ * The enumeration defines the shape of children's formation. By default, control places children in a horizontal
+ * line below the parent node. On a large scale, this may result in the end-user having to scroll screens
+ * to view all of them. To compensate, we provide the option of placing all of the children of a parent node
+ * in a square/matrix formation. That will reduce sideways screen scrolling by compacting the child
+ * nodes into a much smaller area on the screen.
  *
  * @enum {ChildrenPlacementType}
  */
 
 var ChildrenPlacementType = {
   /**
-   * Sets nodes layout at the component level
+   * Auto: This mode lets you set nodes layout at the component level and then redefine it for individual nodes if needed.
    */
   Auto: 0,
 
@@ -17712,7 +17627,7 @@ var ChildrenPlacementType = {
  **/
 
 /**
- * List of named colors.
+ * Just a list of named colors.
  *
  * @ignore
  * @enum {Colors}
@@ -17866,9 +17781,9 @@ var Colors = {
  **/
 
 /**
- * Connector label placement type defines label placement relative to connector annotation endpoints.
- * Connector annotation is bound and drawn between two nodes defined by the `fromItem` and the `toItem`
- * properties. The label can be placed close to the start, end, or between them along the connector line.
+ * Label placement relative to connector annotation. Connector annotation is bound and drawn between two nodes
+ * defined by two properties: `fromItem` and `toItem`. Label can be placed close to "start", "end" nodes or in between of them
+ *  along the connector line.
  *
  * @enum {ConnectorLabelPlacementType}
  */
@@ -17883,23 +17798,28 @@ var ConnectorLabelPlacementType = {
  **/
 
 /**
- * Connector placement type defines style and shape of the connector line.
+ * Connector placement type defines style of connector line drawing over diagram layout. It supports two options:
+ * the `Straight` is classic direct line connecting two nodes, this is the most expected style of connector annotation
+ * drawing over diagram, the second style is called `Offbeat` and it design to dynamically adopt to nodes mutual
+ * location and gap between them. It uses free hand line style drawing going from start to the end nodes. Since every diagram
+ * is packed with various connection lines, this annotation placement style is deliberately made not straight, so it can be
+ * noticeable on top of other lines of the diagram.
  *
  * @enum {ConnectorPlacementType}
  */
 
 var ConnectorPlacementType = {
   /**
-   * The offbeat connection line style places the connector line not to overlap or parallel
-   * the underlying diagram connector lines. If nodes are close to each other and the gap
-   * between them cannot fit annotation, it will be traced around the nodes to have enough space for arrows and labels.
+   * Places connector annotation in the way that it does not overlap underlying diagram connector lines.
+   * If nodes are close to each other and gap between them cannot fit annotation, then
+   * it will be drawn on the side of the nodes, so it will have enough space for arrow and label.
    */
   Offbeat: 0,
 
   /**
-   * The straight option is a classic direct line connecting two nodes. The component provides conflict
-   * resolution between annotations overlapping each other. If two or more annotations overlap,
-   * the layout engine will add offset to them to be drawn parallel.
+   * Straight line annotation between nodes. This annotation mode provides basic conflict resolution between annotations
+   * overlapping each other. If two or more straight annotations overlap each other then layout engine will
+   * add extra offset to them, so they will be drawn in parallel to each other.
    */
   Straight: 1
 };
@@ -17908,11 +17828,9 @@ var ConnectorPlacementType = {
  **/
 
 /**
- * Connector shape type defines the number of lines and arrows at their ends drawn between
- * nodes of the connector annotation. The possibility to draw single lines, combined with
- * conflict resolution, which places overlapping annotations in parallel when they overlap
- * each other, provides flexibility to create an infinite variety of parallel lines and
- * styles between nodes.
+ * Connector shape type defines number of lines and arrows at their ends drawn between nodes of the connector annotation.
+ * This feature combined with basic conflict resolution, which places overlapping annotations in parallel when they overlap each other,
+ * gives you full flexibility over variations of possible connector lines between two given nodes of diagram.
  *
  * @enum {ConnectorShapeType}
  */
@@ -17943,26 +17861,25 @@ var ConnectorStyleType = {
  **/
 
 /**
- * The connector type option defines the base connection lines in the diagram.
- * It is only applicable to nodes minimized to markers or lines.
- * The templated nodes are always connected with squared connection lines
+ * Connection lines style. This option is only applicable to nodes minimized to markers or lines.
+ * Full size nodes are always connected with squared connection lines
  *
  * @enum {ConnectorType}
  */
 
 var ConnectorType = {
   /**
-   * Orthogonal
+   * Orthogonal connection lines
    */
   Squared: 0,
 
   /**
-   * Angular
+   * Angular direct node to node connection lines
    */
   Angular: 1,
 
   /**
-   * Curved
+   * Curved direct node to node connection lines
    */
   Curved: 2
 };
@@ -18025,11 +17942,11 @@ var Enabled = {
  **/
 
 /**
- * The group by type enumeration defines direction towards parents or children.
- * For example, connection lines arrows direction can be towards parents or down
- * towards children in the hierarchy. The other example is the placement of nodes
- * close to their parents or children when we have multiple empty levels between
- * parents and children of the node.
+ * This enumeration defines objects gravity in the chart relative to parents and children.
+ * For example connection lines can be drawn with arrows, so this enumeration controls
+ * direction of arrows up towards parents or down towards children in the hierarchy.
+ * The other example is nodes placement close to their immediate parents or immediate children
+ * in case when parents and children are offset from them by multiple levels in hierarchy.
  *
  * @enum {GroupByType}
  */
@@ -18059,22 +17976,24 @@ var HorizontalAlignmentType = {
  **/
 
 /**
- * The enumeration defines child nodes' placement relative to their parents.
- * By default, all children of the same parent node are of the same rank and
- * status are aligned below the parent in a horizontal line. However,
- * for exceptional cases where the end-user wishes to have a child separate
- * from the rest of its siblings, we provide custom child types that
- * the end-user can use to place different ranking nodes anywhere around
- * the parent node. These placement options give a lot of space for creating
- * roles such as an Assistant, Adviser, various Partners,
- * and co-heads in the organization.
+ * The enumeration defines child node placement relative to its parent node.
+ * By default, the control places all children that belong to the same parent as
+ * the horizontal line below it. That works for a regular hierarchy of nodes
+ * having the same type. In the organizational chart, we have a lot of exceptions
+ * and non-hierarchical relations between nodes. For this purpose, we provide custom
+ * item types to place nodes around the logical parent, which helps visually
+ * differentiate nodes logically belonging to the same parent.  These placement
+ * options give a lot of space for creating roles such as an Assistant, Adviser,
+ * various Partners, and co-heads in the organization.  Additionally, control allows
+ * shaping the same type of children into vertical and matrix formations
+ * and place them into multiple levels.
  *
  * @enum {ItemType}
  */
 
 var ItemType = {
   /**
-   * The regular type places node below the parent.
+   * The regular type places node below parent.
    */
   Regular: 0,
 
@@ -18084,23 +18003,20 @@ var ItemType = {
   Assistant: 1,
 
   /**
-   * The sub-assistant node type is a variation of the assistant type.
-   * It is placed on the side of the connection line going from parent
-   * to regular children and attached to it with the connection
-   * line going from the top of the node.
+   * The sub-assistant node type is a variation of the assistant node type.
+   * The sub-assistant places node at the row on the side of the connection line
+   * going from parent to its children. The connection line goes out of the top side of the node.
    */
   SubAssistant: 4,
 
   /**
-   * The adviser type places node on the right or left side of the parent
-   * and attaches to it with a horizontal connection line.
+   * The adviser type places node on the right or left side of the parent.
    */
   Adviser: 2,
 
   /**
-   * The sub-adviser type places node on the right or left side of the
-   * parent and attaches to it with the connection line that goes out of
-   * the top side of the sub-adviser node.
+   * The sub-adviser type places node on the right or left side of the parent.
+   * The connection line goes out of the top side of the sub-adviser node.
    */
   SubAdviser: 5,
 
@@ -18169,9 +18085,9 @@ var LineType = {
  **/
 
 /**
- * It is possible to disable control interactivity depending on application requirements.
- * The control implements the standard behavior of collection controls. It supports single
- * node selection, mouse over visual feedback, and multiple node selection.
+ * Interactivity mode. Control implements standard behavior of classic desktop UI controls. It supports single selected node - cursor.
+ * It supports on mouse over node visual feedback - highlight. It supports selection of group of nodes - selected items.
+ * All that functionality can be disabled depending on your application requirements.
  *
  * @enum {NavigationMode}
  */
@@ -18202,23 +18118,24 @@ var NavigationMode = {
  **/
 
 /**
- * Neighbors selection method defines the neighbors of the cursor node in the autofit mode.
- * The auto-fit mode replaces nodes with small markers to fit the diagram into the screen view.
- * Small nodes fit the diagram into the screen space, but they have no details.
- * So our solution is to show the cursor, neighbors, and selected diagram items
- * with templates and draw all others as markers.
+ * Neighbors selection mode. The control supports diagram auto fit into screen view. It is achieved via drawing nodes in form of markers.
+ * So small nodes make diagram fit into the screen space, but they have no details. Our solution is to show cursor and selected items
+ * of the diagram in full size and draw all other as markers.
+ *
+ * This enumeration controls visibility of neighbors of the cursor node in the auto fit mode. It allows to draw
+ * them in full size regardless of available space.
  *
  * @enum {NavigationMode}
  */
 
 var NeighboursSelectionMode = {
   /**
-   * Parents and children of the cursor item
+   * Selects parents and children of the cursor item
    */
   ParentsAndChildren: 0,
 
   /**
-   * Parents, children, and siblings of the cursor item.
+   * Selects parents, children, and siblings of the cursor item.
    */
   ParentsChildrenSiblingsAndSpouses: 1
 };
@@ -18227,8 +18144,7 @@ var NeighboursSelectionMode = {
  **/
 
 /**
- * The orientation type defines diagram layout direction.
- * The control can rotate diagrams in any direction; this is needed for Arabic support and other layouts.
+ * Controls diagram layout orientation. The control can be rotated in any direction, this is needed for arabic support and various layout.
  *
  * @enum {OrientationType}
  */
@@ -18245,12 +18161,11 @@ var OrientationType = {
  **/
 
 /**
- * The page fit method defines how the control fits the diagram into available screen space.
- * When the diagram size is significantly larger than the screen space, its scrolling and navigation
- * become problematic, so the component automatically fits the diagram into the screen space via
- * rendering some of its nodes in the form of small markers. The control supports several page fit
- * method options which can match your requirements depending on the diagram layout, orientation,
- * and the number of nodes.
+ * Fits diagram into available screen space. When diagram size significantly larger that available screen space, its scrolling and navigation
+ * becomes problematic, so we support automatic diagram fit into the screen space via rendering some of its nodes in form of small markers.
+ * Control supports several page fit mode options which can match your requirements depending on diagram layout, orientation and number of nodes.
+ *
+ * Autosize - this option is opposite to auto fit. It lets you expand control size to fit all diagram nodes full size without scroll bars.
  *
  * @enum {PageFitMode}
  */
@@ -18262,12 +18177,12 @@ var PageFitMode = {
   None: 0,
 
   /**
-   * Fits the diagram into the view width, so it has no horizontal scrollbar.
+   * Fits diagram into the view width, so it has no horizontal scrollbar.
    */
   PageWidth: 1,
 
   /**
-   * fits the diagram into the view hight, so it has no vertical scrollbar.
+   * Fits diagram into the view hight, so it has no vertical scrollbar.
    */
   PageHeight: 2,
 
@@ -18277,14 +18192,13 @@ var PageFitMode = {
   FitToPage: 3,
 
   /**
-   * The auto size option is opposite to the fit-to-page. It expands the control placeholder to fit the entire diagram without scrolling.
+   * This is opposite mode to auto fit. In this mode diagram controls its size, it sets its size to fit all nodes and render them full size using templates.
    */
   AutoSize: 5,
 
   /**
-   * It renders all nodes as markers regardless of available screen space, and only the cursor node,
-   * neighbors, and selected nodes are rendered with templates. Don't forget to disable the selection
-   * path mode, which forces all nodes from the cursor up to the root to be shown with templates.
+   * Renders all nodes as markers regardless of available screen space. Control selects and renders full size cursor, its neighbours and selected nodes only.
+   * Don't forget to disable selection path as well, so nodes from cursor up to the root are not selected.
    */
   SelectionOnly: 6
 };
@@ -18293,7 +18207,7 @@ var PageFitMode = {
  **/
 
 /**
- * Defines element placement around the rectangular area it is bound to.
+ * Defines element placement relative to rectangular area it is bound to.
  *
  * @enum {PlacementType}
  */
@@ -18321,14 +18235,21 @@ var PlacementType = {
  **/
 
 /**
- * This enumeration is used to tell rendering callback functions the current state
- * of the template. It is needed for proper events binding and content updates.
+ * This enumeration is used to tell rendering callback functions current state of the template.
+ * It is needed for proper events binding and content updates.
  *
  * @enum {RenderingMode}
  */
 
 var RenderingMode = {
+  /**
+   * Template is just created.
+   */
   Create: 0,
+
+  /**
+   * Template is reused and update is needed.
+   */
   Update: 1
 };
 var SegmentType = {
@@ -18343,20 +18264,24 @@ var SegmentType = {
  **/
 
 /**
- * The selection path enumeration controls nodes visibility between the cursor node and
- * the root of the diagram in the auto-fit mode. It forces drawing of them with templates.
+ * Selection path mode. This enumeration controls visibility of nodes between cursor and the root of the diagram in the auto fit mode. It allows to draw
+ * them in full size regardless of available space and auto fit mode.
+ *
+ * The control supports diagram auto fit into screen view. It is achieved via drawing nodes in form of markers.
+ * So small nodes make diagram fit into the screen space, but they have no details. Our solution is to show cursor and selected items
+ * of the diagram in full size and draw all other diagram nodes as markers.
  *
  * @enum {SelectionPathMode}
  */
 
 var SelectionPathMode = {
   /**
-   * Disabled
+   * No selection path
    */
   None: 0,
 
   /**
-   * Snow all parent nodes with templates
+   * Selects cursor node parents up to the root are renders them full size regardless of available space.
    */
   FullStack: 1
 };
@@ -18402,7 +18327,7 @@ var SideFlag = {
 
 var TextOrientationType = {
   /**
-   * Horizontal text
+   * Regular horizontal text
    */
   Horizontal: 0,
 
@@ -18426,7 +18351,7 @@ var TextOrientationType = {
  **/
 
 /**
- * Defines update method of the diagram
+ * Controls update of the diagram
  *
  * @enum {UpdateMode}
  */
@@ -18434,12 +18359,12 @@ var TextOrientationType = {
 var UpdateMode = {
   /**
    * Forces control to make a full chart redraw. It is equivalent to initial chart creation.
-   * It removes everything from the placeholder and renders all elements again.
+   * It removes everything from placeholder and renders all elements again.
    */
   Recreate: 0,
 
   /**
-   * Optimized refresh. It only updates visual elements which need to be updated.
+   * Optimized refresh. It only updates visual elements which needs to be updated.
    */
   Refresh: 1,
 
@@ -18469,9 +18394,8 @@ var VectorRelationType = {
  **/
 
 /**
- * The vertical alignment defines nodes alignment inside row's vertical boundaries.
- * If a row of nodes contains nodes of multiple sizes, small nodes
- * are vertically aligned relative to their bigger siblings.
+ * Controls nodes vertical alignment inside row of nodes. If row of nodes contains nodes of
+ * multiple sizes then small nodes are vertically aligned relative to their large neighbours.
  *
  * @enum {VerticalAlignmentType}
  */
@@ -18486,8 +18410,8 @@ var VerticalAlignmentType = {
  **/
 
 /**
- * The enumeration defines nodes visibility in the diagram.
- * If the diagram's auto-fit is enabled, this option controls the minimum allowed size of diagram nodes.
+ * Minimal nodes visibility in the diagram. If auto fit of diagram into current page size is enabled, then
+ * this option controls minimum allowed size of diagram nodes.
  *
  * @enum {Visibility}
  */
@@ -18499,23 +18423,23 @@ var Visibility = {
   Auto: 0,
 
   /**
-   * All nodes shown with templates
+   * Regular template based diagram nodes
    */
   Normal: 1,
 
   /**
-   * Nodes are allowed to be replaced with markers
+   * Diagram draws nodes in form of markers
    */
   Dot: 2,
 
   /**
-   * The component displays only connection lines, no nodes or markers visible in layout
+   * Diagram only draws connection lines and hides actual nodes.
    */
   Line: 3,
 
   /**
-   * It hides the node and shows only its connection lines.
-   * If the node has no parents, its connection lines are hidden as well.
+   * Makes node invisible in layout. If node has no parents then
+   * its connection lines are hidden as well.
    *
    * @ignore
    */
@@ -18526,7 +18450,7 @@ var Visibility = {
  **/
 
 /**
- * Z-order type defines the annotation layer in the foreground or the background of diagram nodes.
+ * Option to draw annotation in the foreground or in the background of diagram nodes.
  *
  * @enum {ZOrderType}
  */
@@ -18696,7 +18620,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return RenderEventArgs; });
 /**
  * @class RenderEventArgs
- * @classdesc The render event arguments contains parameters of rendering callback function
+ * @classdesc This is object parameter of rendering callback function
  */
 function RenderEventArgs() {
   /**
@@ -26834,12 +26758,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _enums__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../enums */ "./src/enums.js");
 /* harmony import */ var _algorithms_getMergedIntervals__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../algorithms/getMergedIntervals */ "./src/algorithms/getMergedIntervals.js");
 /* harmony import */ var _graphics_structs_Interval__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../graphics/structs/Interval */ "./src/graphics/structs/Interval.js");
-/* harmony import */ var _transformations_visualTreeBuilder_enums__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../transformations/visualTreeBuilder/enums */ "./src/tasks/transformations/visualTreeBuilder/enums.js");
 
 
 
-
-function OrgLogicalLevelsPlacementTask(orgTreeTask, visualTreeTask, alignDiagramTask) {
+function OrgLogicalLevelsPlacementTask(orgTreeTask, alignDiagramTask) {
   var _data = {
     positions: []
   };
@@ -26853,7 +26775,6 @@ function OrgLogicalLevelsPlacementTask(orgTreeTask, visualTreeTask, alignDiagram
     var intervals = [],
         orgTree = orgTreeTask.getOrgTree(),
         itemsPositions = alignDiagramTask.getItemsPositions(),
-        branchAligner = visualTreeTask.getBranchAligner(),
         visited = {};
     orgTree.loopLevels(this, function (nodeId, node, levelIndex) {
       if (node.itemType == _enums__WEBPACK_IMPORTED_MODULE_0__["ItemType"].Regular) {
@@ -26861,13 +26782,7 @@ function OrgLogicalLevelsPlacementTask(orgTreeTask, visualTreeTask, alignDiagram
           var itemPosition = itemsPositions[nodeId];
 
           if (itemPosition) {
-            var levelOffset = node.levelOffset;
-
-            if (levelOffset === null) {
-              levelOffset = branchAligner.getGroupSize(node.parent, _transformations_visualTreeBuilder_enums__WEBPACK_IMPORTED_MODULE_3__["GroupType"].RowChildren);
-            }
-
-            var interval = new _graphics_structs_Interval__WEBPACK_IMPORTED_MODULE_2__["default"](itemPosition.topConnectorShift, itemPosition.bottomConnectorShift - 1, levelIndex + levelOffset);
+            var interval = new _graphics_structs_Interval__WEBPACK_IMPORTED_MODULE_2__["default"](itemPosition.topConnectorShift, itemPosition.bottomConnectorShift - 1, levelIndex + node.levelOffset);
             var key = interval.toString();
 
             if (!visited[key]) {
@@ -28413,7 +28328,7 @@ function OrgItemsOptionTask(optionsTask, defaultItemConfig) {
       placeAssistantsAboveChildren: new _readers_EnumerationReader__WEBPACK_IMPORTED_MODULE_3__["default"](_enums__WEBPACK_IMPORTED_MODULE_4__["Enabled"], false, defaultItemConfig.placeAssistantsAboveChildren),
       isVisible: new _readers_ValueReader__WEBPACK_IMPORTED_MODULE_0__["default"](["boolean"], false, defaultItemConfig.isVisible),
       isActive: new _readers_ValueReader__WEBPACK_IMPORTED_MODULE_0__["default"](["boolean"], false, defaultItemConfig.isActive),
-      levelOffset: new _readers_ValueReader__WEBPACK_IMPORTED_MODULE_0__["default"](["number"], false, null)
+      levelOffset: new _readers_ValueReader__WEBPACK_IMPORTED_MODULE_0__["default"](["number"], true)
     }), true, "id", true, true)
   });
 
@@ -34415,9 +34330,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return VisualTreeTask; });
 /* harmony import */ var _algorithms_Family__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../algorithms/Family */ "./src/algorithms/Family.js");
 /* harmony import */ var _algorithms_Tree__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../algorithms/Tree */ "./src/algorithms/Tree.js");
-/* harmony import */ var _visualTreeBuilder_BranchAligner__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./visualTreeBuilder/BranchAligner */ "./src/tasks/transformations/visualTreeBuilder/BranchAligner.js");
-/* harmony import */ var _visualTreeBuilder_VisualTreeBuilder__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./visualTreeBuilder/VisualTreeBuilder */ "./src/tasks/transformations/visualTreeBuilder/VisualTreeBuilder.js");
-
+/* harmony import */ var _visualTreeBuilder_VisualTreeBuilder__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./visualTreeBuilder/VisualTreeBuilder */ "./src/tasks/transformations/visualTreeBuilder/VisualTreeBuilder.js");
 
 
 
@@ -34431,8 +34344,7 @@ function VisualTreeTask(orgTreeTask, activeItemsTask, visualTreeOptionTask) {
 
   /* Family structure where key: TreeItem.id and value: TreeItem */
   _treeItemCounter,
-      _branchAligner,
-      _visualTreeBuilder = Object(_visualTreeBuilder_VisualTreeBuilder__WEBPACK_IMPORTED_MODULE_3__["default"])();
+      _visualTreeBuilder = Object(_visualTreeBuilder_VisualTreeBuilder__WEBPACK_IMPORTED_MODULE_2__["default"])();
 
   function process() {
     var orgTree = orgTreeTask.getOrgTree();
@@ -34446,11 +34358,9 @@ function VisualTreeTask(orgTreeTask, activeItemsTask, visualTreeOptionTask) {
       _visualTree = _visualTreeBuilder$bu.visualTree;
       _navigationFamily = _visualTreeBuilder$bu.navigationFamily;
       _treeItemCounter = _visualTreeBuilder$bu.treeItemCounter;
-      _branchAligner = _visualTreeBuilder$bu.branchAligner;
     } else {
       _visualTree = Object(_algorithms_Tree__WEBPACK_IMPORTED_MODULE_1__["default"])();
       _navigationFamily = Object(_algorithms_Family__WEBPACK_IMPORTED_MODULE_0__["default"])();
-      _branchAligner = Object(_visualTreeBuilder_BranchAligner__WEBPACK_IMPORTED_MODULE_2__["default"])();
     }
 
     var _getVisualTreeMargins = getVisualTreeMargins(_visualTree);
@@ -34510,10 +34420,6 @@ function VisualTreeTask(orgTreeTask, activeItemsTask, visualTreeOptionTask) {
     return _navigationFamily;
   }
 
-  function getBranchAligner() {
-    return _branchAligner;
-  }
-
   function getLeftMargins() {
     return _leftMargins;
   }
@@ -34532,8 +34438,7 @@ function VisualTreeTask(orgTreeTask, activeItemsTask, visualTreeOptionTask) {
     getLogicalFamily: getLogicalFamily,
     getLeftMargins: getLeftMargins,
     getRightMargins: getRightMargins,
-    getMaximumId: getMaximumId,
-    getBranchAligner: getBranchAligner
+    getMaximumId: getMaximumId
   };
 }
 ;
@@ -38615,12 +38520,12 @@ function RowKeyGenerator() {
 
 function Row(id) {
   this.id = id;
-  this.rowType = _enums__WEBPACK_IMPORTED_MODULE_1__["RowType"].Items;
   this.index = 0;
   this.offset = 0;
   this.extend = true;
   /* indicates that we need to keep branches of this row children above subsequent rows */
 
+  this.nodes = [];
   this.depth = 0;
   this.groups = [];
   this.groups[_enums__WEBPACK_IMPORTED_MODULE_1__["GroupType"].Items] = [[1, 1]];
@@ -38742,6 +38647,7 @@ function BranchAligner() {
       _rowsTree.add(parentRowId, rowId, row);
     }
 
+    ;
     nodes.forEach(function (child) {
       _rowHash[child.id] = rowId;
     });
@@ -38751,9 +38657,11 @@ function BranchAligner() {
 
   function align(debug) {
     _rowsTree.loopPostOrder(this, function (rowId, row, parentRowId, parentRow) {
+      // console.log(rowId + "  " + Object.entries(RowType).filter(([name, value]) => value == row.rowType)[0][0]  + " parent=" + parentRowId + " extend=" + row.extend);
       row.depth = row.getDepth() + row.offset;
 
       if (parentRow != null) {
+        //console.log(rowId + "  depth = " + row.depth);
         parentRow.addRowDepth(row.rowType, row.extend, row.index, row.depth);
       }
     });
@@ -38783,20 +38691,6 @@ function BranchAligner() {
 
     var childRow = (row.groups[groupType] || [])[index];
     return childRow && childRow[0] || 1;
-  }
-
-  function getGroupSize(nodeId, groupType) {
-    var rowId = _rowHash[nodeId];
-
-    var row = _rowsTree.node(rowId);
-
-    if (row) {
-      if (row.groups.hasOwnProperty(groupType)) {
-        return row.groups[groupType].length;
-      }
-    }
-
-    return 0;
   }
 
   function getRowsDepth(nodeId, groupType) {
@@ -38839,8 +38733,7 @@ function BranchAligner() {
     loopGroupTypes: loopGroupTypes,
     getRowDepth: getRowDepth,
     getRowsDepth: getRowsDepth,
-    loopRows: loopRows,
-    getGroupSize: getGroupSize
+    loopRows: loopRows
   };
 }
 
@@ -39097,13 +38990,11 @@ function VisualTreeBuilder() {
 
     var _createVisualTreeItem = createVisualTreeItems(orgTree, options, activeItems),
         visualTree = _createVisualTreeItem.visualTree,
-        navigationFamily = _createVisualTreeItem.navigationFamily,
-        branchAligner = _createVisualTreeItem.branchAligner;
+        navigationFamily = _createVisualTreeItem.navigationFamily;
 
     return {
       visualTree: visualTree,
       navigationFamily: navigationFamily.getFamily(),
-      branchAligner: branchAligner,
       treeItemCounter: _treeItemCounter
     };
   }
@@ -39557,8 +39448,7 @@ function VisualTreeBuilder() {
     });
     return {
       visualTree: visualTree,
-      navigationFamily: navigationFamily,
-      branchAligner: branchAligner
+      navigationFamily: navigationFamily
     };
   }
 

@@ -9,7 +9,6 @@ function isdark() {
   minutes = minutes < 10 ? '0'+minutes : minutes;
   var strTime = hours + ':' + minutes + ' ' + ampm;
 
-  console.log(hours)
   if (
     (hours >= 6 && hours <= 11 && ampm == "pm") ||
     (hours >= 1 && hours <= 6 && ampm == "am") ||
