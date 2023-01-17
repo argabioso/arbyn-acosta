@@ -14,8 +14,15 @@ body {
 
 .bp-scrollframe {
   border: 0;
-  overflow: hidden !important;
-  cursor: pointer !important;
+  cursor: move !important;
+
+  /* hide scrollbar but still allow scrolling */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.bp-scrollframe::-webkit-scrollbar{
+  display: none;
 }
 
 #tree {
