@@ -1,3 +1,18 @@
+var MONTH_MAPPING = {
+    '01': 'Jan',
+    '02': 'Feb',
+    '03': 'Mar',
+    '04': 'Apr',
+    '05': 'May',
+    '06': 'Jun',
+    '07': 'Jul',
+    '08': 'Aug',
+    '09': 'Sep',
+    '10': 'Oct',
+    '11': 'Nov',
+    '12': 'Dec',
+}
+
 function isdark() {
   const now = new Date();
 
@@ -28,35 +43,61 @@ function getLifeSpan(nodeData) {
   var birthYear = null;
   var deathYear = null;
 
-  if (nodeData.birthDate != null) birthYear = nodeData.birthDate.split("-", 1)[0];
-  if (nodeData.deathDate != null) deathYear = nodeData.deathDate.split("-", 1)[0];
+  if (nodeData.birthDate != null) {
+      birthYear = '';
+
+      var birthParts = nodeData.birthDate.split("-", 3);
+      if (birthParts.length >= 3) {
+          birthYear += birthParts[2] + ' ';
+          birthYear += MONTH_MAPPING[birthParts[1]] + ' ';
+      }
+      else if (birthParts.length == 2) {
+          birthYear += MONTH_MAPPING[birthParts[1]] + ' ';
+      }
+
+      birthYear += birthParts[0];
+  }
+  if (nodeData.deathDate != null) {
+      deathYear = '';
+
+      var deathParts = nodeData.deathDate.split("-", 3);
+      if (deathParts.length >= 3) {
+          deathYear += deathParts[2] + ' ';
+          deathYear += MONTH_MAPPING[deathParts[1]] + ' ';
+      }
+      else if (deathParts.length == 2) {
+          deathYear += MONTH_MAPPING[deathParts[1]] + ' ';
+      }
+
+      deathYear += deathParts[0];
+  }
 
   if (birthYear == null && deathYear == null && isLiving == null) {
-    return "Living";
+      return "Living";
   }
 
   if (birthYear == null && deathYear == null) {
-    if (isLiving) {
-      return "Living";
-    } else {
-      return "Deceased";
-    }
+      if (isLiving) {
+          return "Living";
+      } else {
+          return "Deceased";
+      }
   }
 
   if (birthYear == null && deathYear != null) {
-    return " — " + deathYear;
+      return " — " + deathYear;
   }
 
   if (birthYear != null && deathYear == null) {
-    if (isLiving) {
-      return birthYear + SEPARATOR + "Living";
-    } else {
-      return birthYear + SEPARATOR + "Deceased";
-    }
+      if (isLiving) {
+          return birthYear + SEPARATOR + "Living";
+      } else {
+          return birthYear + SEPARATOR + "Deceased";
+      }
   }
 
   if (birthYear != null && deathYear != null) {
-    return birthYear + SEPARATOR + deathYear;
+      return birthYear + SEPARATOR + deathYear;
   }
 
   return "Living"
@@ -185,7 +226,7 @@ tree.nodeTemplate = $(
       stroke: color_c
     },
     new go.Binding("text", function(nodeData) {
-      return getLifeSpan(nodeData) + ' • ' + nodeData.key;
+      return getLifeSpan(nodeData); // + ' • ' + nodeData.key;
     })
   ),
 );

@@ -43,8 +43,11 @@ const MY_TREE_DATA = [
 
   // Side ni Lola Lydia
   { id: "GHBZ-YVX", gender: "female", hasImage: true,  name: { first: "Lydia",         middle: "Perez",       last: "Saplala"     }, birthDate: "1944-11-24", deathDate: null,         living: true,  parents: ["GHB8-7T6", "GHB8-GZL"] },
-  { id: "GHB8-7T6", gender: "male",   hasImage: true,  name: { first: "Fernando",      middle: "",            last: "Saplala"     }, birthDate: null,         deathDate: null,         living: false, parents: [] },
-  { id: "GHB8-GZL", gender: "female", hasImage: true,  name: { first: "Lucina",        middle: "Gutierrez",   last: "Perez"       }, birthDate: null,         deathDate: null,         living: false, parents: [] },
+  { id: "TEMP-999", gender: "male",   hasImage: false, name: { first: "Estanislao",    middle: "",            last: "Saplala"     }, birthDate: null,         deathDate: null,         living: false, parents: [] },
+  { id: "GHB8-7T6", gender: "male",   hasImage: true,  name: { first: "Fernando",      middle: "",            last: "Saplala"     }, birthDate: null,         deathDate: null,         living: false, parents: ["TEMP-999"] },
+  { id: "GHB8-M8D", gender: "male",   hasImage: false, name: { first: "Victor",        middle: "",            last: "Perez"       }, birthDate: null,         deathDate: null,         living: false, parents: [] },
+  { id: "GHB8-M86", gender: "female", hasImage: false, name: { first: "Genoveba",      middle: "",            last: "Gutierrez"   }, birthDate: null,         deathDate: null,         living: false, parents: [] },
+  { id: "GHB8-GZL", gender: "female", hasImage: true,  name: { first: "Lucina",        middle: "Gutierrez",   last: "Perez"       }, birthDate: null,         deathDate: null,         living: false, parents: ["GHB8-M8D", "GHB8-M86"] },
 
   // Nanay, Tatay, and me
   { id: "GQX8-CQP", gender: "male",   hasImage: true,  name: { first: "Arbyn",         middle: "Acosta",      last: "Argabioso"   }, birthDate: "1995-04-19", deathDate: null,         living: true,  parents: ["GQJK-L51", "GQJK-G8W"], spouses: ["GHB5-TWN"] },
