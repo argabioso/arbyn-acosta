@@ -80,6 +80,7 @@ const ADANZA_TREE_DATA = [
   { id: "GH12-W17", gender: "female", hasImage: true,  name: { first: "Celma",         middle: "Borja",       last: "Vergara"     }, birthDate: "1941-07-08", deathDate: "2020-02-16", living: false, parents: ["GH12-6YL", "GH12-DD8"] },
 
   { id: "GHBR-FK3", gender: "female", hasImage: true,  name: { first: "Mylen",         middle: "Vergara",     last: "Ajesta"      }, birthDate: "1974-04-14", deathDate: null,         living: true,  parents: ["GH12-Z3C", "GH12-W17"] },
+  { id: "TEMP-144", gender: "male",   hasImage: true,  name: { first: "DM",            middle: "Ajesta",      last: "Adanza"      }, birthDate: "2004-11-18", deathDate: null,         living: true,  parents: ["GHB5-XTZ", "GHBR-FK3"] },
 ];
 
 var rawTreeData = [];
