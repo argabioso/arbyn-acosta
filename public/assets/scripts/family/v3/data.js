@@ -17,7 +17,7 @@ const MY_TREE_DATA = [
   { id: "GJJ5-PMT", gender: "male",   hasImage: false, name: { first: "Hilario",       middle: "",            last: "Dumantay"    }, birthDate: null,         deathDate: null,         living: false, parents: [] },
   { id: "GJJR-4Y9", gender: "female", hasImage: false, name: { first: "Marcela",       middle: "",            last: "Dela Cruz"   }, birthDate: null,         deathDate: null,         living: false, parents: [] },
   { id: "LLMC-RWF", gender: "male",   hasImage: false, name: { first: "Saturnino",     middle: "Dela Cruz",   last: "Dumantay"    }, birthDate: null,         deathDate: null,         living: false, parents: ["GJJ5-PMT", "GJJR-4Y9"] },
-  { id: "GHBD-9LY", gender: "female", hasImage: true,  name: { first: "Cresencia",     middle: "Ramos",       last: "Dumantay"    }, birthDate: "1911-04-20", deathDate: null,         living: false, parents: ["LLMC-RWF", "GJJK-R47"] },
+  { id: "GHBD-9LY", gender: "female", hasImage: true,  name: { first: "Crescencia",    middle: "Ramos",       last: "Dumantay"    }, birthDate: "1911-04-20", deathDate: null,         living: false, parents: ["LLMC-RWF", "GJJK-R47"] },
   { id: "GHB8-J1B", gender: "female", hasImage: true,  name: { first: "Catalina",      middle: "Dumantay",    last: "Maramba"     }, birthDate: "1943-01-28", deathDate: "1974-08-10", living: false, parents: ["GHBD-9LY", "GHB8-GB6"] },
 
   // Side ni Lolo Boy
