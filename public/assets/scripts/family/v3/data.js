@@ -108,7 +108,7 @@ rawTreeData = rawTreeData.concat([
 
   // Batch nila Nanay
   { id: "TEMP-001", gender: "male",   hasImage: true,  name: { first: "Manuel",        middle: "Maramba",     last: "Acosta III"  }, birthDate: "1966-11-07", deathDate: null,         living: true,  parents: ["GHBD-7M4", "GHB8-J1B"] },
-  { id: "TEMP-002", gender: "female", hasImage: true,  name: { first: "Susan",         middle: "Maramba",     last: "Acosta"      }, birthDate: null,         deathDate: null,         living: true,  parents: ["GHBD-7M4", "GHB8-J1B"] },
+  { id: "TEMP-002", gender: "female", hasImage: true,  name: { first: "Susan",         middle: "Maramba",     last: "Acosta"      }, birthDate: "1968-02-21", deathDate: null,         living: true,  parents: ["GHBD-7M4", "GHB8-J1B"] },
 
   { id: "TEMP-017", gender: "male",   hasImage: false, name: { first: "Benjamin",      middle: "Villacorta",  last: "Acosta Jr."  }, birthDate: null,         deathDate: null,         living: true,  parents: ["TEMP-015", "TEMP-016"] },
   { id: "TEMP-018", gender: "male",   hasImage: false, name: { first: "Darwin",        middle: "Villacorta",  last: "Acosta Sr."  }, birthDate: null,         deathDate: null,         living: true,  parents: ["TEMP-015", "TEMP-016"] },
