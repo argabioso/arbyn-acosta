@@ -138,7 +138,9 @@ rawTreeData = rawTreeData.concat([
   { id: "TEMP-063", gender: "male",   hasImage: false, name: { first: "Juanito",       middle: "",            last: "Calilong"    }, birthDate: null,         deathDate: null,         living: false, parents: [] },
   { id: "TEMP-064", gender: "female", hasImage: false, name: { first: "Nenita",        middle: "Ramoz",       last: "Go"          }, birthDate: null,         deathDate: null,         living: false, parents: [] },
   { id: "TEMP-003", gender: "male",   hasImage: true,  name: { first: "Larry",         middle: "Calilong",    last: "Ignacio"     }, birthDate: "1971-05-10", deathDate: null,         living: true,  parents: ["TEMP-004", "TEMP-005"] },
-  { id: "TEMP-006", gender: "female", hasImage: true,  name: { first: "Nierene",       middle: "Nieves",      last: "Martin"      }, birthDate: "1975-08-29", deathDate: null,         living: true,  parents: [] },
+  { id: "TEMP-145", gender: "male",   hasImage: false, name: { first: "Renato",        middle: "S",           last: "Martin"      }, birthDate: null,         deathDate: null,         living: false, parents: [] },
+  { id: "TEMP-146", gender: "female", hasImage: false, name: { first: "Nieves",        middle: "B",           last: "Dianela"     }, birthDate: null,         deathDate: null,         living: true,  parents: [] },
+  { id: "TEMP-006", gender: "female", hasImage: true,  name: { first: "Nierene",       middle: "Dianela",     last: "Martin"      }, birthDate: "1977-08-29", deathDate: null,         living: true,  parents: ["TEMP-145", "TEMP-146"] },
 
   // Cousins and their parents
   { id: "TEMP-011", gender: "male",   hasImage: true,  name: { first: "Neri",          middle: "",            last: "Hanopol"     }, birthDate: null,         deathDate: null,         living: true,  parents: [] },
