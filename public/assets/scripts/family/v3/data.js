@@ -33,12 +33,12 @@ const MY_TREE_DATA = [
   { id: "GQJK-LCT", gender: "male",   hasImage: true,  name: { first: "Marcial",       middle: "Mia",         last: "Argabioso"   }, birthDate: "1932-10-14", deathDate: "2020-02-27", living: false, parents: ["GHBZ-TM4", "GHBZ-P5Q"] },
   { id: "GHBZ-TM4", gender: "male",   hasImage: false, name: { first: "Eusebio",       middle: "Lopecillo",   last: "Argabioso"   }, birthDate: "1895",       deathDate: "1972-10-27", living: false, parents: ["GHB8-RCH"] },
   { id: "GHB8-RCH", gender: "female", hasImage: false, name: { first: "Estebana",      middle: "",            last: "Lopecillo"   }, birthDate: null,         deathDate: null,         living: false, parents: [] },
-  { id: "GHBZ-P5Q", gender: "female", hasImage: false, name: { first: "Francisca",     middle: "Arco",        last: "Mia"         }, birthDate: null,         deathDate: null,         living: false, parents: ["GJJ8-MK1", "GJJZ-65G"] },
+  { id: "GHBZ-P5Q", gender: "female", hasImage: false, name: { first: "Francisca",     middle: "Acejo",       last: "Mia"         }, birthDate: null,         deathDate: null,         living: false, parents: ["GJJ8-MK1", "GJJZ-65G"] },
   { id: "GJJ8-MK1", gender: "male",   hasImage: false, name: { first: "Francisco",     middle: "Trobela",     last: "Mía"         }, birthDate: null,         deathDate: null,         living: false, parents: ["GJJ8-HDC", "GJJZ-54Z"] },
   { id: "GJJ8-HDC", gender: "male",   hasImage: false, name: { first: "Santiago",      middle: "",            last: "Mía"         }, birthDate: null,         deathDate: null,         living: false, parents: [] },
   { id: "GJJZ-54Z", gender: "female", hasImage: false, name: { first: "Aniceta",       middle: "",            last: "Trovela"     }, birthDate: null,         deathDate: null,         living: false, parents: [] },
-  { id: "GJJZ-65G", gender: "female", hasImage: false, name: { first: "Gabina",        middle: "Villarante",  last: "Arco"        }, birthDate: null,         deathDate: null,         living: false, parents: ["GJJ8-XXM", "GJJZ-1K6"] },
-  { id: "GJJ8-XXM", gender: "male",   hasImage: false, name: { first: "Eleuterio",     middle: "",            last: "Arco"        }, birthDate: null,         deathDate: null,         living: false, parents: [] },
+  { id: "GJJZ-65G", gender: "female", hasImage: false, name: { first: "Gabina",        middle: "Villarante",  last: "Acejo"       }, birthDate: null,         deathDate: null,         living: false, parents: ["GJJ8-XXM", "GJJZ-1K6"] },
+  { id: "GJJ8-XXM", gender: "male",   hasImage: false, name: { first: "Eleuterio",     middle: "",            last: "Acejo"       }, birthDate: null,         deathDate: null,         living: false, parents: [] },
   { id: "GJJZ-1K6", gender: "female", hasImage: false, name: { first: "Sabina",        middle: "",            last: "Villarante"  }, birthDate: null,         deathDate: null,         living: false, parents: [] },
 
   // Side ni Lola Lydia
