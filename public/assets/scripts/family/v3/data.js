@@ -159,8 +159,8 @@ rawTreeData = rawTreeData.concat([
   { id: "GHBJ-MVC", gender: "male",   hasImage: true,  name: { first: "Michael",       middle: "Cruz",        last: "Argabioso"   }, birthDate: "1995",       deathDate: null,         living: true,  parents: ["GHBN-Y4G", "GHBF-XBT"] },
 
   { id: "TEMP-024", gender: "female", hasImage: true,  name: { first: "Melosina",      middle: "Cablao",      last: "Gallardo"    }, birthDate: "1967-03-08", deathDate: null,         living: true,  parents: [] },
-  { id: "TEMP-025", gender: "female", hasImage: true,  name: { first: "Danae",         middle: "Gallardo",    last: "Argabioso"   }, birthDate: null,         deathDate: null,         living: true,  parents: ["GHBN-R99", "TEMP-024"] },
-  { id: "TEMP-026", gender: "female", hasImage: true,  name: { first: "Danielle",      middle: "Gallardo",    last: "Argabioso"   }, birthDate: null,         deathDate: null,         living: true,  parents: ["GHBN-R99", "TEMP-024"] },
+  { id: "TEMP-025", gender: "female", hasImage: true,  name: { first: "Danae",         middle: "Gallardo",    last: "Argabioso"   }, birthDate: "1996-10-29", deathDate: null,         living: true,  parents: ["GHBN-R99", "TEMP-024"] },
+  { id: "TEMP-026", gender: "female", hasImage: true,  name: { first: "Danielle",      middle: "Gallardo",    last: "Argabioso"   }, birthDate: "1996-10-29", deathDate: null,         living: true,  parents: ["GHBN-R99", "TEMP-024"] },
 
   { id: "TEMP-137", gender: "female", hasImage: false, name: { first: "Liliosa",       middle: "",            last: "Rowayan"     }, birthDate: "1943-10-07", deathDate: "2019-07-07", living: false, parents: [] },
   { id: "TEMP-138", gender: "male",   hasImage: false, name: { first: "Baudelio",      middle: "",            last: "Costuya"     }, birthDate: "1945-05-25", deathDate: "2019-12-11", living: false, parents: [] },
