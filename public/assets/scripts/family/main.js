@@ -140,6 +140,7 @@ var tree = $(
     // "undoManager.isEnabled": true,
     padding: node.height - 10,
     // initialAutoScale: go.Diagram.Uniform,
+    scale: 0.9,
     layout: $(
       go.TreeLayout, {
         angle: 0,
