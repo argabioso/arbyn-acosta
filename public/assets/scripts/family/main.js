@@ -140,7 +140,7 @@ var tree = $(
     // "undoManager.isEnabled": true,
     padding: node.height - 10,
     // initialAutoScale: go.Diagram.Uniform,
-    scale: 0.9,
+    scale: 0.85,
     layout: $(
       go.TreeLayout, {
         angle: 0,
@@ -200,7 +200,7 @@ tree.nodeTemplate = $(
   $(
     go.TextBlock,
     {
-      font: "700 14px Google Sans, sans-serif",
+      font: "700 15px Google Sans, sans-serif",
       margin: new go.Margin(node.margin + 1, node.margin, 0, node.height + node.margin + 5),
       maxSize: new go.Size(node.width - node.height, 24),
       stroke: color_b
@@ -210,9 +210,10 @@ tree.nodeTemplate = $(
       let middleInitialsString = '';
 
       if (middleInitialsArray[0] != '') {
-        for (let i = 0; i < middleInitialsArray.length; i++) {
-          middleInitialsString += middleInitialsArray[i][0] + '. '
-        }
+        // for (let i = 0; i < middleInitialsArray.length; i++) {
+        //   middleInitialsString += middleInitialsArray[i][0] + '. '
+        // }
+        middleInitialsString += middleInitialsArray[0][0] + '. '
       }
 
       return nodeData.name.first + " " + middleInitialsString + nodeData.name.last;
