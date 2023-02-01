@@ -25,8 +25,8 @@ function isdark() {
   var strTime = hours + ':' + minutes + ' ' + ampm;
 
   if (
-    (hours > 7 && hours <= 11 && ampm == "pm") ||
-    (hours >= 1 && hours < 7 && ampm == "am") ||
+    (hours >= 6 && hours <= 11 && ampm == "pm") ||
+    (hours >= 1 && hours <= 6 && ampm == "am") ||
     (hours == 12 && ampm == "am")
   ) {
     return true;
