@@ -126,7 +126,7 @@ const subtractor = 2;
 const node = {
   margin: 10 - subtractor,
   height: 51 - subtractor,
-  width: 250 - (subtractor * 2),
+  width: 251 - (subtractor * 2),
   background: color_a
 }
 

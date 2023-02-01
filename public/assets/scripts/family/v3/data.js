@@ -1,8 +1,8 @@
 const MY_TREE_DATA = [
   // Side ni Lola Lina
-  { id: "L66T-WY8", gender: "male",   hasImage: false, name: { first: "Juan",          middle: "",            last: "Bautista"    }, birthDate: "1783",       deathDate: null,         living: false, parents: [] },
+  { id: "L66T-WY8", gender: "male",   hasImage: false, name: { first: "Juan",          middle: "",            last: "Bautista"    }, birthDate: "1783",       deathDate: "1883",       living: false, parents: [] },
   { id: "L6HC-MMX", gender: "female", hasImage: false, name: { first: "Maria",         middle: "",            last: "Quinto"      }, birthDate: null,         deathDate: null,         living: false, parents: [] },
-  { id: "GC7T-H59", gender: "male",   hasImage: false, name: { first: "Agustin",       middle: "Quinto",      last: "Bautista"    }, birthDate: "1812",       deathDate: null,         living: false, parents: ["L66T-WY8", "L6HC-MMX"] },
+  { id: "GC7T-H59", gender: "male",   hasImage: false, name: { first: "Agustin",       middle: "Quinto",      last: "Bautista"    }, birthDate: "1812-05-29", deathDate: null,         living: false, parents: ["L66T-WY8", "L6HC-MMX"] },
   { id: "GC7T-1PK", gender: "female", hasImage: false, name: { first: "Felipa",        middle: "",            last: "Garcia"      }, birthDate: null,         deathDate: null,         living: false, parents: [] },
   { id: "L281-614", gender: "female", hasImage: false, name: { first: "Maria",         middle: "Garcia",      last: "Bautista"    }, birthDate: null,         deathDate: null,         living: false, parents: ["GC7T-1PK", "GC7T-H59"] },
   { id: "LLQS-6YC", gender: "male",   hasImage: false, name: { first: "Guillermo",     middle: "Bautista",    last: "Maramba"     }, birthDate: null,         deathDate: null,         living: false, parents: [] },
@@ -31,8 +31,8 @@ const MY_TREE_DATA = [
 
   // Side ni Lolo Marcial
   { id: "GQJK-LCT", gender: "male",   hasImage: true,  name: { first: "Marcial",       middle: "Mia",         last: "Argabioso"   }, birthDate: "1932-10-14", deathDate: "2020-02-27", living: false, parents: ["GHBZ-TM4", "GHBZ-P5Q"] },
-  { id: "GHBZ-TM4", gender: "male",   hasImage: false, name: { first: "Eusebio",       middle: "Lopecillo",   last: "Argabioso"   }, birthDate: "1895",       deathDate: "1972-10-27", living: false, parents: ["GHB8-RCH"] },
-  { id: "GHB8-RCH", gender: "female", hasImage: false, name: { first: "Estebana",      middle: "",            last: "Lopecillo"   }, birthDate: null,         deathDate: null,         living: false, parents: [] },
+  { id: "GHBZ-TM4", gender: "male",   hasImage: false, name: { first: "Eusebio",       middle: "Lopecillo",   last: "Argabioso"   }, birthDate: "1894-09-18", deathDate: "1972-10-27", living: false, parents: ["GHB8-RCH"] },
+  { id: "GHB8-RCH", gender: "female", hasImage: false, name: { first: "Estebana",      middle: "",            last: "Lopecillo"   }, birthDate: "1861",       deathDate: "1951-08-30", living: false, parents: [] },
   { id: "GHBZ-P5Q", gender: "female", hasImage: false, name: { first: "Francisca",     middle: "Acejo",       last: "Mia"         }, birthDate: null,         deathDate: null,         living: false, parents: ["GJJ8-MK1", "GJJZ-65G"] },
   { id: "GJJ8-MK1", gender: "male",   hasImage: false, name: { first: "Francisco",     middle: "Trobela",     last: "Mía"         }, birthDate: null,         deathDate: null,         living: false, parents: ["GJJ8-HDC", "GJJZ-54Z"] },
   { id: "GJJ8-HDC", gender: "male",   hasImage: false, name: { first: "Santiago",      middle: "",            last: "Mía"         }, birthDate: null,         deathDate: null,         living: false, parents: [] },
@@ -43,8 +43,9 @@ const MY_TREE_DATA = [
 
   // Side ni Lola Lydia
   { id: "GHBZ-YVX", gender: "female", hasImage: true,  name: { first: "Lydia",         middle: "Perez",       last: "Saplala"     }, birthDate: "1944-11-24", deathDate: null,         living: true,  parents: ["GHB8-7T6", "GHB8-GZL"] },
-  { id: "TEMP-999", gender: "male",   hasImage: false, name: { first: "Estanislao",    middle: "",            last: "Saplala"     }, birthDate: null,         deathDate: null,         living: false, parents: [] },
-  { id: "GHB8-7T6", gender: "male",   hasImage: true,  name: { first: "Fernando",      middle: "",            last: "Saplala"     }, birthDate: null,         deathDate: null,         living: false, parents: ["TEMP-999"] },
+  { id: "GNNH-JLM", gender: "male",   hasImage: false, name: { first: "Estanislao",    middle: "",            last: "Saplala"     }, birthDate: null,         deathDate: null,         living: false, parents: [] },
+  { id: "GJJX-1SG", gender: "female", hasImage: false, name: { first: "Adela",         middle: "",            last: "Sison"       }, birthDate: null,         deathDate: null,         living: false, parents: [] },
+  { id: "GHB8-7T6", gender: "male",   hasImage: true,  name: { first: "Fernando",      middle: "Sison",       last: "Saplala"     }, birthDate: null,         deathDate: null,         living: false, parents: ["GNNH-JLM", "GJJX-1SG"] },
   { id: "GHB8-M8D", gender: "male",   hasImage: false, name: { first: "Victor",        middle: "",            last: "Perez"       }, birthDate: null,         deathDate: null,         living: false, parents: [] },
   { id: "GHB8-M86", gender: "female", hasImage: false, name: { first: "Genoveba",      middle: "",            last: "Gutierrez"   }, birthDate: null,         deathDate: null,         living: false, parents: [] },
   { id: "GHB8-GZL", gender: "female", hasImage: true,  name: { first: "Lucina",        middle: "Gutierrez",   last: "Perez"       }, birthDate: null,         deathDate: null,         living: false, parents: ["GHB8-M8D", "GHB8-M86"] },
