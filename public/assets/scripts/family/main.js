@@ -34,6 +34,10 @@ function isdark() {
   return false;
 }
 
+function useNonePhoto(nodeData) {
+  return (!nodeData.hasImage && nodeData.birthDate == null && nodeData.deathDate == null && !nodeData.living);
+}
+
 function getLifeSpan(nodeData) {
   var SEPARATOR = " — "
 
@@ -107,8 +111,9 @@ var color_a = '#ffffff';
 var color_b = '#000000';
 var color_c = '#000000';
 
-var male_avatar = '../assets/images/family/male.png'
-var female_avatar = '../assets/images/family/female.png'
+var male_avatar = '../assets/images/family/male.png';
+var female_avatar = '../assets/images/family/female.png';
+var none_avatar = '../assets/images/family/none.png';
 
 if (isdark()) {
   document.querySelector("body").classList.add('dark');
@@ -118,6 +123,7 @@ if (isdark()) {
 
   male_avatar = '../assets/images/family/male.dark.png';
   female_avatar = '../assets/images/family/female.dark.png';
+  none_avatar = '../assets/images/family/none.dark.png'
 }
 
 
@@ -156,7 +162,12 @@ tree.nodeTemplate = $(
   {
     selectable: false,
   },
-    new go.Binding('height', 'height'),
+    new go.Binding('height', function(nodeData) {
+      if (useNonePhoto(nodeData)) {
+        return node.height - 15;
+      }
+      return node.height;
+    }),
     new go.Binding('width', 'width'),
   $(
     go.Shape,
@@ -172,12 +183,20 @@ tree.nodeTemplate = $(
     go.Picture,
     {
       width: node.height,
-      height: node.height,
       margin: new go.Margin(0.5, 0, 0, 0)
     },
+    new go.Binding("height", function(nodeData) {
+      if (useNonePhoto(nodeData)) {
+        return node.height - 15;
+      }
+      return node.height;
+    }),
     new go.Binding("source", function(nodeData) {
       if (nodeData.hasImage) {
         return '../assets/images/family/' + nodeData.key + '.png';
+      }
+      if (nodeData.birthDate == null && nodeData.deathDate == null && !nodeData.living) {
+        return none_avatar;
       }
       if (nodeData.gender.toUpperCase() == 'M') {
         return male_avatar;
