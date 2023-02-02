@@ -172,12 +172,17 @@ tree.nodeTemplate = $(
   $(
     go.Shape,
     {
-      desiredSize: new go.Size(node.width, node.height),
       figure: 'RoundedRectangle',
       fill: node.background,
       stroke: null,
       shadowVisible: true
-    }
+    },
+    new go.Binding('desiredSize', function(nodeData) {
+      if (useNonePhoto(nodeData)) {
+        return new go.Size(node.width, node.height - 15);
+      }
+      return new go.Size(node.width, node.height);
+    }),
   ),
   $(
     go.Picture,
@@ -258,7 +263,6 @@ tree.linkTemplate = $(
   {
     selectable: false,
     routing: go.Link.Orthogonal,
-    corner: 0
   },
 
   // the link path, a Shape
