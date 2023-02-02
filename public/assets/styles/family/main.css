@@ -2,6 +2,7 @@ html,
 body {
   margin: 0;
   padding: 0;
+
 }
 
 html,
@@ -10,7 +11,17 @@ body,
 #tree,
 #tree > canvas {
   width: 100%;
-  height: 100%
+  height: 100%;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar,
+#tree-wrapper::-webkit-scrollbar,
+#tree::-webkit-scrollbar,
+#tree > canvas::-webkit-scrollbar {
+    display: none;
 }
 
 #tree {
