@@ -1,3 +1,43 @@
+/*
+ * Left/Start trim for strings
+ */
+String.prototype.ltrim = function()
+{
+  return this.replace(/^\s+/g, '');
+}
+
+/*
+ * Right/End trim for strings
+ */
+String.prototype.rtrim = function()
+{
+  return this.replace(/\s+$/g, '');
+}
+
+/*
+ * Returns the value of the indicated URL parameter name
+ *
+ * @param {Text} name The URL parameter name to get the value of
+ * @return {Text} The value of the URL parameter specified
+ */
+window.location.get = function(name)
+{
+  'use strict';
+
+  // Use regex on location.href if URLSearchParams is not supported
+  let paramValue = new RegExp('[\?&]' + name + '=([^&#]*)').exec(this.href);
+  if (paramValue == null || (paramValue && !paramValue[1])) {
+    return null;
+  }
+  else {
+    return decodeURI(paramValue[1]).ltrim().rtrim().replace(/\s\s+/g, ' ');
+  }
+};
+
+
+const useVerification = window.location.get("v") == "1";
+console.log(useVerification);
+
 var MONTH_MAPPING = {
     '01': 'Jan',
     '02': 'Feb',
@@ -277,7 +317,16 @@ tree.linkTemplate = $(
 
 
 var model = $(go.TreeModel);
-model.nodeDataArray = TREE_DATA;
+
+// Add verification concept here
+var treeData = [];
+if (useVerification) {
+  treeData = VERIFIED_DATA;
+} else {
+  treeData = TREE_DATA;
+}
+
+model.nodeDataArray = treeData;
 tree.model = model;
 
 document.querySelector('footer').classList.remove("hidden");
