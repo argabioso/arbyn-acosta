@@ -4,6 +4,10 @@ body.dark,
     color: #bdc1c6;
 }
 
+.tdc .resume__header {
+    background-color: #202124;
+}
+
 .dark .resume__content-section > header > h3,
 .dark .resume__content-section > header > h4 {
     color: #8ab4f8;
@@ -40,5 +44,9 @@ body.dark,
     .dark .resume {
         border: 1px solid #5f6368;
         border-radius: 8px;
+    }
+
+    .dark .resume.no-border {
+        border-color: transparent !important;
     }
 }
