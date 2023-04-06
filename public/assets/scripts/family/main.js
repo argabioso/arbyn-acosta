@@ -20,13 +20,14 @@ String.prototype.rtrim = function()
  * @param {Text} name The URL parameter name to get the value of
  * @return {Text} The value of the URL parameter specified
  */
-window.location.get = function(name)
+window.location.get = function(name, defaultValue = null)
 {
-  'use strict';
-
   // Use regex on location.href if URLSearchParams is not supported
   let paramValue = new RegExp('[\?&]' + name + '=([^&#]*)').exec(this.href);
   if (paramValue == null || (paramValue && !paramValue[1])) {
+    if (defaultValue != null) {
+      return defaultValue;
+    }
     return null;
   }
   else {
@@ -35,8 +36,8 @@ window.location.get = function(name)
 };
 
 
-const useVerification = window.location.get("v") == "1";
-console.log(useVerification);
+var useVerification = window.location.get("verified", "true").trim().toLowerCase()
+useVerification = !(useVerification == "false" || useVerification == "0")
 
 var MONTH_MAPPING = {
     '01': 'Jan',
