@@ -50,7 +50,7 @@ body::-webkit-scrollbar,
 }
 
 body > footer {
-  background-color: transparent;
+  background-color: #f3f4f5;
   color: #202124;
   font-family: 'Roboto', sans-serif;
   font-size: 0.65rem;
@@ -59,6 +59,10 @@ body > footer {
   padding: 0.1rem 0.4rem;
   right: 0;
   z-index: 99999;
+}
+
+body.dark > footer {
+  background-color: #202124;
 }
 
 body.dark > footer {
