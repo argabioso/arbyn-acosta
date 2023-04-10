@@ -150,7 +150,9 @@ function getLifeSpan(nodeData) {
 
 var color_a = '#ffffff';
 var color_b = '#000000';
-var color_c = '#000000';
+var color_c = '#222222';
+var color_b2 = '#bdbdbd';  // color of nameless people
+var color_c2 = '#b0b0b0';  // color of nameless people
 
 var male_avatar = '../assets/images/family/male.png';
 var female_avatar = '../assets/images/family/female.png';
@@ -161,6 +163,8 @@ if (isdark()) {
   color_a = '#2f2f2f';
   color_b = '#fefefe';
   color_c = '#bdc1c6';
+  color_b2 = '#909090';
+  color_c2 = '#929292';
 
   male_avatar = '../assets/images/family/male.dark.png';
   female_avatar = '../assets/images/family/female.dark.png';
@@ -268,8 +272,13 @@ tree.nodeTemplate = $(
       font: "700 15px Google Sans, sans-serif",
       margin: new go.Margin(node.margin + 1, node.margin, 0, node.height + node.margin + 5),
       maxSize: new go.Size(node.width - node.height, 24),
-      stroke: color_b
     },
+    new go.Binding("stroke", function(nodeData) {
+      if (nodeData.name.first.includes("known")) {
+        return color_b2;
+      }
+      return color_b;
+    }),
     new go.Binding("text", function(nodeData) {
       let middleInitialsArray  = nodeData.name.middle.trim().split(' ');
       let middleInitialsString = '';
@@ -290,8 +299,13 @@ tree.nodeTemplate = $(
       font: "400 12px Roboto, sans-serif",
       margin: new go.Margin(24 + parseInt(node.margin / 2), node.margin, node.margin, node.height + node.margin + 5),
       maxSize: new go.Size(node.width - node.height, 24),
-      stroke: color_c
     },
+    new go.Binding("stroke", function(nodeData) {
+      if (nodeData.name.first.includes("nknown")) {
+        return color_c2;
+      }
+      return color_c;
+    }),
     new go.Binding("text", function(nodeData) {
       return getLifeSpan(nodeData); // + ' • ' + nodeData.key;
     })
