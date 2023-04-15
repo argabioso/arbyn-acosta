@@ -26,7 +26,9 @@ const VERIFIED_DATA = [
             { key: "LLQS-641",       parent: "GHB8-GB6", name: { first: "Miguel",     middle: "Bautista",    last: "Maramba"     }, gender: "M", birthDate: null,         deathDate: null,         living: false, hasImage: false  },
               { key: "LLQS-6YC",     parent: "LLQS-641", name: { first: "Guillermo",  middle: "Bautista",    last: "Maramba"     }, gender: "M", birthDate: null,         deathDate: null,         living: false, hasImage: false  },
               { key: "L281-614",     parent: "LLQS-641", name: { first: "Maria",      middle: "Garcia",      last: "Bautista"    }, gender: "F", birthDate: null,         deathDate: null,         living: false, hasImage: false  },
-            { key: "LLQS-6F1",       parent: "GHB8-GB6", name: { first: "Mercedes",   middle: "",            last: "Reyes"       }, gender: "F", birthDate: null,         deathDate: null,         living: false, hasImage: false  },
+            { key: "LLQS-6F1",       parent: "GHB8-GB6", name: { first: "Mercedes",   middle: "Novilla",     last: "Reyes"       }, gender: "F", birthDate: null,         deathDate: null,         living: false, hasImage: false  },
+              { key: "G7C3-B6P",     parent: "LLQS-6F1", name: { first: "Gregorio",   middle: "",            last: "Reyes"       }, gender: "M", birthDate: null,         deathDate: null,         living: false, hasImage: false  },
+              { key: "G7C3-J9S",     parent: "LLQS-6F1", name: { first: "Leocadia",   middle: "",            last: "Novilla"     }, gender: "F", birthDate: null,         deathDate: null,         living: false, hasImage: false  },
           { key: "GHBD-9LY",         parent: "GHB8-J1B", name: { first: "Crescencia", middle: "",            last: "Dumantay"    }, gender: "F", birthDate: "1918-04-19", deathDate: "1990-04-16", living: false, hasImage: true   },
             { key: "TEMP-111",       parent: "GHBD-9LY", name: { first: "Unknown",    middle: "",            last: "name"        }, gender: "F", birthDate: null,         deathDate: null,         living: false, hasImage: true   },
     { key: "GHB5-TWN",               parent: "XXXX-000", name: { first: "Mitchie",    middle: "Ajesta",      last: "Adanza"      }, gender: "F", birthDate: "1994-12-16", deathDate: null,         living: true,  hasImage: true,  },
@@ -45,3 +47,19 @@ const VERIFIED_DATA = [
           { key: "GH12-6YL",         parent: "GH12-W17", name: { first: "Benigno",    middle: "Aquino",      last: "Vergara"     }, gender: "M", birthDate: null,         deathDate: null,         living: false, hasImage: false  },
           { key: "GH12-DD8",         parent: "GH12-W17", name: { first: "Enoria",     middle: "",            last: "Borja"       }, gender: "F", birthDate: null,         deathDate: null,         living: false, hasImage: false  },
 ];
+
+
+const SOURCES = {
+  "LLQS-641": [  // Miguel Bautista Maramba
+    "https://www.familysearch.org/ark:/61903/1:1:66HQ-VJGQ"
+  ],
+  "L281-614": [  // Maria Garcia Bautista
+    "https://www.familysearch.org/ark:/61903/1:1:66HQ-VJGQ"
+  ],
+  "G7C3-B6P": [  // Gregorio Reyes
+    "https://www.familysearch.org/ark:/61903/1:1:66HQ-VJGQ"
+  ],
+  "LLQS-6F1": [ // Mercedes Novilla Reyes
+    "https://www.familysearch.org/ark:/61903/1:1:66HQ-VJGQ"
+  ]
+};
