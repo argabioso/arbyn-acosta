@@ -50,16 +50,19 @@ const VERIFIED_DATA = [
 
 
 const SOURCES = {
-  "LLQS-641": [  // Miguel Bautista Maramba
-    "https://www.familysearch.org/ark:/61903/1:1:66HQ-VJGQ"
-  ],
-  "L281-614": [  // Maria Garcia Bautista
-    "https://www.familysearch.org/ark:/61903/1:1:66HQ-VJGQ"
-  ],
-  "G7C3-B6P": [  // Gregorio Reyes
-    "https://www.familysearch.org/ark:/61903/1:1:66HQ-VJGQ"
-  ],
-  "LLQS-6F1": [ // Mercedes Novilla Reyes
-    "https://www.familysearch.org/ark:/61903/1:1:66HQ-VJGQ"
-  ]
+  "GHB8-SQN": {  // Ligorio Acosta
+    "https://www.familysearch.org/ark:/61903/1:1:FV6D-SZH": "Vital • Philippines Deaths and Burials, 1726-1957"
+  },
+  "LLQS-641": {  // Miguel Bautista Maramba
+    "https://www.familysearch.org/ark:/61903/1:1:66HQ-VJGQ": "Christening • Philippines, Lingayen-Dagupan Catholic Archdiocese Parish Registers, 1615-1982"
+  },
+  "L281-614": {  // Maria Garcia Bautista
+    "https://www.familysearch.org/ark:/61903/1:1:66HQ-VJGQ": "Christening • Philippines, Lingayen-Dagupan Catholic Archdiocese Parish Registers, 1615-1982"
+  },
+  "G7C3-B6P": {  // Gregorio Reyes
+    "https://www.familysearch.org/ark:/61903/1:1:66HQ-VJGQ": "Christening • Philippines, Lingayen-Dagupan Catholic Archdiocese Parish Registers, 1615-1982"
+  },
+  "LLQS-6F1": { // Mercedes Novilla Reyes
+    "https://www.familysearch.org/ark:/61903/1:1:66HQ-VJGQ": "Christening • Philippines, Lingayen-Dagupan Catholic Archdiocese Parish Registers, 1615-1982"
+  }
 };
