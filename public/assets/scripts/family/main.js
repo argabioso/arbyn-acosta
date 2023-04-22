@@ -310,6 +310,21 @@ tree.nodeTemplate = $(
       return getLifeSpan(nodeData); // + ' • ' + nodeData.key;
     })
   ),
+  $(
+    go.Shape,
+    {
+      figure: 'Circle',
+      fill: "#da50f2",
+      stroke: null,
+      margin: new go.Margin(6, 0, 0, 236)
+    },
+    new go.Binding('desiredSize', function(nodeData) {
+      if (nodeData.hasDNATest) {
+        return new go.Size(6, 6);
+      }
+      return new go.Size(0, 0);
+    }),
+  ),
 );
 
 // define a Link template that routes orthogonally, with no arrowhead

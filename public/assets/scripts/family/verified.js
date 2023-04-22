@@ -1,6 +1,6 @@
 var VERIFIED_DATA = [
   { key: "XXXX-000",                                    name: {                                                                 }, gender: "",  birthDate: null,         deathDate: null,         living: false, hasImage: false, height: 0, width: 0 },
-    { key: "GQX8-CQP",               child: "XXXX-000", name: { first: "Arbyn",      middle: "Acosta",      last: "Argabioso"   }, gender: "M", birthDate: "1995-04-19", deathDate: null,         living: true,  hasImage: true   },
+    { key: "GQX8-CQP",               child: "XXXX-000", name: { first: "Arbyn",      middle: "Acosta",      last: "Argabioso"   }, gender: "M", birthDate: "1995-04-19", deathDate: null,         living: true,  hasImage: true , hasDNATest: true,  },
       { key: "GQJK-L51",             child: "GQX8-CQP", name: { first: "Rolando",    middle: "Saplala",     last: "Argabioso"   }, gender: "M", birthDate: "1965-10-09", deathDate: null,         living: true,  hasImage: true   },
         { key: "GQJK-LCT",           child: "GQJK-L51", name: { first: "Marcial",    middle: "Mia",         last: "Argabioso"   }, gender: "M", birthDate: "1932-10-14", deathDate: "2020-02-27", living: false, hasImage: true   },
           { key: "GHBZ-TM4",         child: "GQJK-LCT", name: { first: "Eusebio",    middle: "Lopecillo",   last: "Argabioso"   }, gender: "M", birthDate: null,         deathDate: null,         living: false, hasImage: false  },
