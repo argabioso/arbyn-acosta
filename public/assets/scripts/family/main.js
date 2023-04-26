@@ -257,7 +257,7 @@ tree.nodeTemplate = $(
   $(
     go.Shape,
     {
-      desiredSize: new go.Size(4, node.height),
+      desiredSize: new go.Size(3, node.height),
       figure: "Rectangle",
       stroke: null,
       margin: new go.Margin(0, 0, 0, node.height - 1)
