@@ -179,7 +179,7 @@ var template = new primitives.TemplateConfig();
 var templat2 = new primitives.TemplateConfig();
 var combiner = new primitives.TemplateConfig();
 
-var HEIGHT = 40; // ONLY CHANGE THIS
+var HEIGHT = 45; // ONLY CHANGE THIS
 var WIDTH = 233 / 45 * HEIGHT;
 
 template.name = 'TreeItemTemplate';
