@@ -36,9 +36,6 @@ window.location.get = function(name, defaultValue = null)
 };
 
 
-var useVerification = window.location.get("verified", "true").trim().toLowerCase()
-useVerification = !(useVerification == "false" || useVerification == "0")
-
 var MONTH_MAPPING = {
     '01': 'Jan',
     '02': 'Feb',
@@ -347,14 +344,8 @@ tree.linkTemplate = $(
 
 
 var model = $(go.TreeModel);
-
-// Add verification concept here
 var treeData = [];
-if (useVerification) {
-  treeData = VERIFIED_DATA;
-} else {
-  treeData = TREE_DATA;
-}
+treeData = TREE_DATA;
 
 model.nodeDataArray = treeData;
 tree.model = model;
