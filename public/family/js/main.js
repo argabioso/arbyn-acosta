@@ -1,148 +1,66 @@
-/*
- * Left/Start trim for strings
- */
-String.prototype.ltrim = function()
-{
-  return this.replace(/^\s+/g, '');
-}
-
-/*
- * Right/End trim for strings
- */
-String.prototype.rtrim = function()
-{
-  return this.replace(/\s+$/g, '');
-}
-
-/*
- * Returns the value of the indicated URL parameter name
- *
- * @param {Text} name The URL parameter name to get the value of
- * @return {Text} The value of the URL parameter specified
- */
-window.location.get = function(name, defaultValue = null)
-{
-  // Use regex on location.href if URLSearchParams is not supported
-  let paramValue = new RegExp('[\?&]' + name + '=([^&#]*)').exec(this.href);
-  if (paramValue == null || (paramValue && !paramValue[1])) {
-    if (defaultValue != null) {
-      return defaultValue;
-    }
-    return null;
-  }
-  else {
-    return decodeURI(paramValue[1]).ltrim().rtrim().replace(/\s\s+/g, ' ');
-  }
-};
-
-
-var MONTH_MAPPING = {
-    '01': 'Jan',
-    '02': 'Feb',
-    '03': 'Mar',
-    '04': 'Apr',
-    '05': 'May',
-    '06': 'Jun',
-    '07': 'Jul',
-    '08': 'Aug',
-    '09': 'Sep',
-    '10': 'Oct',
-    '11': 'Nov',
-    '12': 'Dec',
-}
-
-function isdark() {
-  const now = new Date();
-
-  var hours = now.getHours();
-  var minutes = now.getMinutes();
-  var ampm = hours >= 12 ? 'pm' : 'am';
-  hours = hours % 12;
-  hours = hours ? hours : 12; // the hour '0' should be '12'
-  minutes = minutes < 10 ? '0'+minutes : minutes;
-  var strTime = hours + ':' + minutes + ' ' + ampm;
-
-  if (
-    (hours >= 6 && hours <= 11 && ampm == "pm") ||
-    (hours >= 1 && hours <= 6 && ampm == "am") ||
-    (hours == 12 && ampm == "am")
-  ) {
-    return true;
-  }
-  return false;
-}
-
 function useNonePhoto(nodeData) {
   return (!nodeData.hasImage && nodeData.birthDate == null && nodeData.deathDate == null && !nodeData.living);
 }
 
+/**
+ * Get lifespan information from given nodeData.
+ * @param {Object} nodeData - Contains living, birthDate, and deathDate data.
+ * @return {string} Formatted lifespan string.
+ */
 function getLifeSpan(nodeData) {
-  var SEPARATOR = " — "
+  /**
+   * Format date string as 'day month year'.
+   * @param {string} dateString - Date in 'YYYY-MM-DD' format.
+   * @return {string|null} Formatted date or null if dateString is falsy.
+   */
+  const formatYear = (dateString) => {
+    const months = [
+      'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+      'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec',
+    ];
 
-  var lifespan = ""
-  var isLiving = nodeData.living;
+    if (!dateString) {
+      return null;
+    }
 
-  var birthYear = null;
-  var deathYear = null;
+    let [year, month, day] = dateString.split('-', 3);
 
-  if (nodeData.birthDate != null) {
-      birthYear = '';
+    if (month) {
+      day = (day === undefined) ? "" : day + " ";
+      return `${day}${months[parseInt(month, 10) - 1]} ${year}`;
+    }
 
-      var birthParts = nodeData.birthDate.split("-", 3);
-      if (birthParts.length >= 3) {
-          birthYear += birthParts[2] + ' ';
-          birthYear += MONTH_MAPPING[birthParts[1]] + ' ';
-      }
-      else if (birthParts.length == 2) {
-          birthYear += MONTH_MAPPING[birthParts[1]] + ' ';
-      }
+    return year;
+  };
 
-      birthYear += birthParts[0];
-  }
-  if (nodeData.deathDate != null) {
-      deathYear = '';
+  const separator = ' — ';
+  const { living, birthDate, deathDate } = nodeData;
 
-      var deathParts = nodeData.deathDate.split("-", 3);
-      if (deathParts.length >= 3) {
-          deathYear += deathParts[2] + ' ';
-          deathYear += MONTH_MAPPING[deathParts[1]] + ' ';
-      }
-      else if (deathParts.length == 2) {
-          deathYear += MONTH_MAPPING[deathParts[1]] + ' ';
-      }
+  const birthYear = formatYear(birthDate);
+  const deathYear = formatYear(deathDate);
 
-      deathYear += deathParts[0];
-  }
-
-  if (birthYear == null && deathYear == null && isLiving == null) {
-      return "Living";
+  // If both birthYear and deathYear do not exist, return
+  // "Living" or "Deceased" based on the living flag.
+  if (!birthYear && !deathYear) {
+    return living ? 'Living' : 'Deceased';
   }
 
-  if (birthYear == null && deathYear == null) {
-      if (isLiving) {
-          return "Living";
-      } else {
-          return "Deceased";
-      }
+  // If birthYear does not exist, return the
+  // formatted deathYear with a separator.
+  if (!birthYear) {
+    return `${separator}${deathYear}`;
   }
 
-  if (birthYear == null && deathYear != null) {
-      return " — " + deathYear;
+  // If deathYear does not exist, return the formatted
+  // `birthYear` with a separator and "Living" or "Deceased"
+  // based on the living flag.
+  if (!deathYear) {
+    return `${birthYear}${separator}${living ? 'Living' : 'Deceased'}`;
   }
 
-  if (birthYear != null && deathYear == null) {
-      if (isLiving) {
-          return birthYear + SEPARATOR + "Living";
-      } else {
-          return birthYear + SEPARATOR + "Deceased";
-      }
-  }
-
-  if (birthYear != null && deathYear != null) {
-      return birthYear + SEPARATOR + deathYear;
-  }
-
-  return "Living"
+  // If both birthYear and deathYear exist,
+  // return the formatted lifespan string.
+  return `${birthYear}${separator}${deathYear}`;
 }
 
 var color_a = '#ffffff';
@@ -151,11 +69,11 @@ var color_c = '#222222';
 var color_b2 = '#bdbdbd';  // color of nameless people
 var color_c2 = '#b0b0b0';  // color of nameless people
 
-var male_avatar = '../assets/images/family/male.png';
-var female_avatar = '../assets/images/family/female.png';
-var none_avatar = '../assets/images/family/none.png';
+var male_avatar = 'images/male.png';
+var female_avatar = 'images/female.png';
+var none_avatar = 'images/none.png';
 
-if (isdark()) {
+if (window.isDark()) {
   document.querySelector("body").classList.add('dark');
   color_a = '#2f2f2f';
   color_b = '#fefefe';
@@ -163,9 +81,9 @@ if (isdark()) {
   color_b2 = '#909090';
   color_c2 = '#929292';
 
-  male_avatar = '../assets/images/family/male.dark.png';
-  female_avatar = '../assets/images/family/female.dark.png';
-  none_avatar = '../assets/images/family/none.dark.png'
+  male_avatar = 'images/male.dark.png';
+  female_avatar = 'images/female.dark.png';
+  none_avatar = 'images/none.dark.png'
 }
 
 
@@ -203,6 +121,10 @@ tree.nodeTemplate = $(
   go.Node,
   {
     selectable: false,
+    // click: function (e, obj) { // Event listener for node click
+    //   console.log(obj);
+    //   addDot(obj.Ib.x, obj.Ib.y)
+    // },
   },
     new go.Binding('height', function(nodeData) {
       if (useNonePhoto(nodeData)) {
@@ -240,7 +162,7 @@ tree.nodeTemplate = $(
     }),
     new go.Binding("source", function(nodeData) {
       if (nodeData.hasImage) {
-        return '../assets/images/family/' + nodeData.key + '.png';
+        return 'images/' + nodeData.key + '.png';
       }
       if (nodeData.birthDate == null && nodeData.deathDate == null && !nodeData.living) {
         return none_avatar;

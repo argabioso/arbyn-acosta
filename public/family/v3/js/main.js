@@ -470,12 +470,12 @@ function onTemplateRender(event, data) {
     data.element.classList.add(itemConfig.gender);
 
     if (itemConfig.hasImage) {
-        photoElement.src = "../../assets/images/family/" + itemConfig.id + ".png";
+        photoElement.src = "../images/" + itemConfig.id + ".png";
     } else {
         if (IS_DARK) {
-            photoElement.src = "../../assets/images/family/" + itemConfig.gender + ".dark.png";
+            photoElement.src = "../images/" + itemConfig.gender + ".dark.png";
         } else {
-            photoElement.src = "../../assets/images/family/" + itemConfig.gender + ".png";
+            photoElement.src = "../images/" + itemConfig.gender + ".png";
         }
     }
 }

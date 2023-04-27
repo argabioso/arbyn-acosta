@@ -374,7 +374,7 @@ footer .logo img {
 
 .home-hero {
     position: relative;
-    background-image: url("../../images/portfolio/hero-bg.jpg");
+    background-image: url("../images/hero-bg.jpg");
 }
 
 .home-hero:before {
@@ -507,26 +507,26 @@ footer .logo img {
     opacity: 0;
 }
 
-#emeralds::before {background-image: url("../../images/portfolio/emeralds.png");}
-#emeralds         {background-image: url("../../images/portfolio/emeralds.gif");}
+#emeralds::before {background-image: url("../images/emeralds.png");}
+#emeralds         {background-image: url("../images/emeralds.gif");}
 
-#ieee::before {background-image: url("../../images/portfolio/ieee.png");}
-#ieee         {background-image: url("../../images/portfolio/ieee.gif");}
+#ieee::before {background-image: url("../images/ieee.png");}
+#ieee         {background-image: url("../images/ieee.gif");}
 
-#vector::before {background-image: url("../../images/portfolio/vector.png");}
-#vector         {background-image: url("../../images/portfolio/vector.gif");}
+#vector::before {background-image: url("../images/vector.png");}
+#vector         {background-image: url("../images/vector.gif");}
 
-#family-tree::before {background-image: url("../../images/portfolio/family-tree.png");}
-#family-tree         {background-image: url("../../images/portfolio/family-tree.png");}
+#family-tree::before {background-image: url("../images/family-tree.png");}
+#family-tree         {background-image: url("../images/family-tree.png");}
 
-#qcsc::before {background-image: url("../../images/portfolio/qcsc.png");}
-#qcsc         {background-image: url("../../images/portfolio/qcsc.gif");}
+#qcsc::before {background-image: url("../images/qcsc.png");}
+#qcsc         {background-image: url("../images/qcsc.gif");}
 
-#eces::before {background-image: url("../../images/portfolio/eces.png");}
-#eces         {background-image: url("../../images/portfolio/eces.gif");}
+#eces::before {background-image: url("../images/eces.png");}
+#eces         {background-image: url("../images/eces.gif");}
 
-#cv::before {background-image: url("../../images/portfolio/cv.png");}
-#cv         {background-image: url("../../images/portfolio/cv.png");}
+#cv::before {background-image: url("../images/cv.png");}
+#cv         {background-image: url("../images/cv.png");}
 
 /*
  * Footer.
@@ -837,7 +837,7 @@ footer a:hover {
     }
 
     /*.home-hero {
-        background-image: url("../../images/portfolio/hero-bg.jpg");
+        background-image: url("../images/hero-bg.jpg");
     }*/
 
     .hero-container {

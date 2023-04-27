@@ -1,0 +1,149 @@
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.bp-scrollframe {
+  border: 0;
+  cursor: move !important;
+
+  /* hide scrollbar but still allow scrolling */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.bp-scrollframe::-webkit-scrollbar{
+  display: none;
+}
+
+#tree {
+  background-color: #f3f4f5;
+  height: 100vh;
+  width: 100vw;
+}
+
+.dark #tree {
+  background-color: #202124;
+}
+
+.person {
+  -webkit-box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.05);
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.05);
+  background-color: #fff;
+  border-radius: 4px;
+  display: block;
+  color: #222;
+}
+
+.dark .person {
+  background-color: #2e2e2e;
+}
+
+.person__image-wrapper,
+.person__image {
+  -webkit-border-radius: 4px 0 0 4px;
+  border-radius: 4px 0 0 4px;
+}
+
+.person__image-wrapper {
+  top: 0;
+  left: 0;
+  float: left;
+}
+
+.person__image {
+/*  filter: grayscale(90%);*/
+}
+
+.person__details {
+  font-family: "Roboto", sans-serif;
+  position: absolute;
+  margin: 0;
+}
+
+.person__details:before {
+  height: 100%;
+  background-color: #222;
+  content: "";
+  display: block;
+  width: 3px;
+  left: 0;
+  position: absolute;
+  top: 0;
+}
+
+.person.adopted .person__details:after {
+  height: 6px;
+  background-color: #ea1969;
+  content: "";
+  display: block;
+  width: 6px;
+  right: -1.5px;
+  position: absolute;
+  border-radius: 3px;
+  top: -1.5px;
+}
+
+.person.female .person__details:before {
+  background-color: #ea1969;
+}
+
+.person.male .person__details:before {
+  background-color: #2799fd;
+}
+
+.person__details-container {
+  line-height: 1.1;
+  margin-top: 0;
+  z-index: 999;
+}
+
+.person__display-name {
+  font-family: Google Sans, sans-serif;
+  font-weight: 700;
+  margin-bottom: 2px;
+  letter-spacing: -0.3px;
+}
+
+.dark .person__display-name {
+  color: #fff;
+}
+
+.person__lifespan {
+  letter-spacing: -0.1px;
+  font-weight: 400;
+}
+
+.dark .person__lifespan {
+  color: #bdc1c6;
+}
+
+body > footer {
+  background-color: transparent;
+  color: #202124;
+  font-family: "Roboto", sans-serif;
+  font-size: 10.5px;
+  position: fixed;
+  bottom: 0;
+  padding: 0.1rem 0.4rem;
+  right: 0;
+  z-index: 99999;
+}
+
+body.dark > footer {
+  color: #bdc1c6;
+}
+
+.hidden {
+  display: none !important;
+  visibility: hidden !important;
+}
