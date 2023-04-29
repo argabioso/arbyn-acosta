@@ -1,5 +1,5 @@
 function applyDarkMode() {
-  if (isdark()) {
+  if (isDark()) {
      document.querySelector("body").classList.add('dark');
    }
 }
