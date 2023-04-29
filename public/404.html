@@ -321,21 +321,43 @@
           <!-- <button id="newBtn" class="btn" disabled>&#8594; &nbsp;Back to Home</button> -->
 
       <script>
-        function isdark() {
-          const now = new Date();
+        /**
+         * Determines if the local operating system has a preferred color scheme.
+         * If none then we use the current time and checks if we consider it
+         * 'dark' based on specific time ranges or not.
+         * @return {boolean} Returns true if the current time falls within the
+         *   'dark' time range, otherwise false.
+         */
+        window.isDark = function() {
+          const dark = '(prefers-color-scheme: dark)';
+          const light = '(prefers-color-scheme: light)';
+          const matchMedia = window.matchMedia;
 
-          var hours = now.getHours();
-          var minutes = now.getMinutes();
-          var ampm = hours >= 12 ? 'pm' : 'am';
-          hours = hours % 12;
-          hours = hours ? hours : 12; // the hour '0' should be '12'
-          minutes = minutes < 10 ? '0'+minutes : minutes;
-          var strTime = hours + ':' + minutes + ' ' + ampm;
+          if (matchMedia && matchMedia(dark).matches) {
+            return true;
+          }
+
+          if (matchMedia && matchMedia(light).matches) {
+            return false;
+          }
+
+          const now = new Date();
+          const hours = now.getHours();
+          const minutes = now.getMinutes();
+
+          let ampm = hours >= 12 ? 'pm' : 'am';
+
+          // the hour '0' should be '12'
+          let adjustedHours = hours % 12;
+          adjustedHours = adjustedHours ? adjustedHours : 12;
+
+          const formattedMinutes = minutes < 10 ? '0' + minutes : minutes;
+          const strTime = `${adjustedHours}:${formattedMinutes} ${ampm}`;
 
           if (
-            (hours > 7 && hours <= 11 && ampm == "pm") ||
-            (hours >= 1 && hours < 7 && ampm == "am") ||
-            (hours == 12 && ampm == "am")
+            (adjustedHours >= 6 && adjustedHours <= 11 && ampm === 'pm') ||
+            (adjustedHours >= 1 && adjustedHours <= 6 && ampm === 'am') ||
+            (adjustedHours === 12 && ampm === 'am')
           ) {
             return true;
           }
@@ -343,7 +365,7 @@
         }
 
         function applyDarkMode() {
-          if (isdark()) {
+          if (isDark()) {
              document.querySelector("body").classList.add('dark');
            }
         }
