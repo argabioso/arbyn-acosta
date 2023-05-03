@@ -69,6 +69,8 @@ var color_c = '#222222';
 var color_b2 = '#bdbdbd';  // color of nameless people
 var color_c2 = '#b0b0b0';  // color of nameless people
 
+var dnaMarkerColor = "#da4ff2";
+
 var male_avatar = 'images/male.png';
 var female_avatar = 'images/female.png';
 var none_avatar = 'images/none.png';
@@ -80,6 +82,8 @@ if (window.isDark()) {
   color_c = '#bdc1c6';
   color_b2 = '#909090';
   color_c2 = '#929292';
+
+  dnaMarkerColor = "#da4ff2";
 
   male_avatar = 'images/male.dark.png';
   female_avatar = 'images/female.dark.png';
@@ -233,7 +237,7 @@ tree.nodeTemplate = $(
     go.Shape,
     {
       figure: 'Circle',
-      fill: "#da50f2",
+      fill: dnaMarkerColor,
       stroke: null,
       margin: new go.Margin(6, 0, 0, 236)
     },
