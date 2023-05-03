@@ -96,7 +96,7 @@ const subtractor = 2;
 const node = {
   margin: 10 - subtractor,
   height: 51 - subtractor,
-  width: 252 - (subtractor * 2),
+  width: 254 - (subtractor * 2),
   background: color_a
 }
 
@@ -131,6 +131,9 @@ tree.nodeTemplate = $(
     // },
   },
     new go.Binding('height', function(nodeData) {
+      if (nodeData.birthPlace) {
+        return node.height + 15;
+      }
       if (useNonePhoto(nodeData)) {
         return node.height - 15;
       }
@@ -146,6 +149,9 @@ tree.nodeTemplate = $(
       shadowVisible: true
     },
     new go.Binding('desiredSize', function(nodeData) {
+      if (nodeData.birthPlace) {
+        return new go.Size(node.width, node.height + 15);
+      }
       if (useNonePhoto(nodeData)) {
         return new go.Size(node.width, node.height - 15);
       }
@@ -155,10 +161,18 @@ tree.nodeTemplate = $(
   $(
     go.Picture,
     {
-      width: node.height,
       margin: new go.Margin(0.5, 0, 0, 0)
     },
+    new go.Binding("width", function(nodeData) {
+      if (nodeData.birthPlace) {
+        return node.height + 15;
+      }
+      return node.height;
+    }),
     new go.Binding("height", function(nodeData) {
+      if (nodeData.birthPlace) {
+        return node.height + 15;
+      }
       if (useNonePhoto(nodeData)) {
         return node.height - 15;
       }
@@ -168,7 +182,7 @@ tree.nodeTemplate = $(
       if (nodeData.hasImage) {
         return 'images/' + nodeData.key + '.png';
       }
-      if (nodeData.birthDate == null && nodeData.deathDate == null && !nodeData.living) {
+      if (nodeData.birthDate == null && nodeData.deathDate == null && !nodeData.living && nodeData.birthPlace == null) {
         return none_avatar;
       }
       if (nodeData.gender.toUpperCase() == 'M') {
@@ -183,8 +197,19 @@ tree.nodeTemplate = $(
       desiredSize: new go.Size(3, node.height),
       figure: "Rectangle",
       stroke: null,
-      margin: new go.Margin(0, 0, 0, node.height - 1)
     },
+    new go.Binding("desiredSize", function(nodeData) {
+      if (nodeData.birthPlace) {
+      return new go.Size(3, node.height + 15);
+      }
+      return new go.Size(3, node.height);
+    }),
+    new go.Binding("margin", function(nodeData) {
+      if (nodeData.birthPlace) {
+        return new go.Margin(0, 0, 0, node.height + 14);
+      }
+      return new go.Margin(0, 0, 0, node.height - 1);
+    }),
     new go.Binding("fill", function(nodeData) {
       return nodeData.gender.toUpperCase() == 'M' ? '#2799fd' : '#ea1a68';
     })
@@ -193,9 +218,14 @@ tree.nodeTemplate = $(
     go.TextBlock,
     {
       font: "700 15px Google Sans, sans-serif",
-      margin: new go.Margin(node.margin + 1, node.margin, 0, node.height + node.margin + 5),
       maxSize: new go.Size(node.width - node.height, 24),
     },
+    new go.Binding("margin", function(nodeData) {
+      if (nodeData.birthPlace) {
+        return new go.Margin(node.margin + 1, node.margin, 0, node.height + node.margin + 21);
+      }
+      return new go.Margin(node.margin + 1, node.margin, 0, node.height + node.margin + 5);
+    }),
     new go.Binding("stroke", function(nodeData) {
       if (nodeData.name.first.includes("known")) {
         return color_b2;
@@ -220,9 +250,14 @@ tree.nodeTemplate = $(
     go.TextBlock,
     {
       font: "400 12px Roboto, sans-serif",
-      margin: new go.Margin(24 + parseInt(node.margin / 2), node.margin, node.margin, node.height + node.margin + 5),
       maxSize: new go.Size(node.width - node.height, 24),
     },
+    new go.Binding("margin", function(nodeData) {
+      if (nodeData.birthPlace) {
+        return new go.Margin(24 + parseInt(node.margin / 2), node.margin, node.margin, node.height + node.margin + 21);
+      }
+      return new go.Margin(24 + parseInt(node.margin / 2), node.margin, node.margin, node.height + node.margin + 5);
+    }),
     new go.Binding("stroke", function(nodeData) {
       if (nodeData.name.first.includes("nknown")) {
         return color_c2;
@@ -234,12 +269,34 @@ tree.nodeTemplate = $(
     })
   ),
   $(
+    go.TextBlock,
+    {
+      font: "400 12px Roboto, sans-serif",
+      maxSize: new go.Size(node.width - node.height, 24),
+    },
+    new go.Binding("margin", function(nodeData) {
+      if (nodeData.birthPlace) {
+        return new go.Margin(39 + parseInt(node.margin / 2), node.margin, node.margin, node.height + node.margin + 21);
+      }
+      return new go.Margin(39 + parseInt(node.margin / 2), node.margin, node.margin, node.height + node.margin + 5);
+    }),
+    new go.Binding("stroke", function(nodeData) {
+      if (nodeData.name.first.includes("nknown")) {
+        return color_c2;
+      }
+      return color_c;
+    }),
+    new go.Binding("text", function(nodeData) {
+      return nodeData.birthPlace;
+    })
+  ),
+  $(
     go.Shape,
     {
       figure: 'Circle',
       fill: dnaMarkerColor,
       stroke: null,
-      margin: new go.Margin(6, 0, 0, 236)
+      margin: new go.Margin(6, 0, 0, 238)
     },
     new go.Binding('desiredSize', function(nodeData) {
       if (nodeData.hasDNATest) {
