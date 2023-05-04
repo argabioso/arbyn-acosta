@@ -42,6 +42,9 @@ function getLifeSpan(nodeData) {
   // If both birthYear and deathYear do not exist, return
   // "Living" or "Deceased" based on the living flag.
   if (!birthYear && !deathYear) {
+    if (nodeData.birthPlace == null && !nodeData.hasImage) {
+      return "";
+    }
     return living ? 'Living' : 'Deceased';
   }
 
@@ -63,6 +66,7 @@ function getLifeSpan(nodeData) {
   return `${birthYear}${separator}${deathYear}`;
 }
 
+var backgroundColor = "#f3f4f5";
 var color_a = '#ffffff';
 var color_b = '#000000';
 var color_c = '#222222';
@@ -73,10 +77,13 @@ var dnaMarkerColor = "#da4ff2";
 
 var male_avatar = 'images/male.png';
 var female_avatar = 'images/female.png';
+var maleWideAvatar = 'images/male.wide.png';
+var femaleWideAvatar = 'images/female.wide.png';
 var none_avatar = 'images/none.png';
 
 if (window.isDark()) {
   document.querySelector("body").classList.add('dark');
+  backgroundColor = "#202124";
   color_a = '#2f2f2f';
   color_b = '#fefefe';
   color_c = '#bdc1c6';
@@ -87,16 +94,17 @@ if (window.isDark()) {
 
   male_avatar = 'images/male.dark.png';
   female_avatar = 'images/female.dark.png';
+  maleWideAvatar = 'images/male.dark.wide.png';
+  femaleWideAvatar = 'images/female.dark.wide.png';
   none_avatar = 'images/none.dark.png'
 }
 
-
 // Some constants
-const subtractor = 2;
 const node = {
-  margin: 10 - subtractor,
-  height: 51 - subtractor,
-  width: 254 - (subtractor * 2),
+  margin: 12,
+  padding: 10,
+  height: 49,
+  width: 265,
   background: color_a
 }
 
@@ -114,78 +122,110 @@ var tree = $(
     layout: $(
       go.TreeLayout, {
         angle: 0,
-        layerSpacing: Math.max(parseInt(node.margin * 6), 20),
-        nodeSpacing: node.margin * 1.5,
+        layerSpacing: Math.max(parseInt(node.margin * 4), 20),
+        nodeSpacing: node.margin,
       }
     )
   }
 );
 
+class TopLeftBorderRadius extends go.Shape {
+  constructor() {
+    super();
+    this._figure = 'TopLeftBorderRadius';
+  }
+
+  makeGeometry() {
+    const geo = new go.Geometry();
+    const path = new go.PathFigure(0, 0, true);
+
+    path.add(new go.PathSegment(go.PathSegment.Line, 0, 6));
+    path.add(new go.PathSegment(go.PathSegment.Arc, 180, 90, 6, 6, 6, 6));
+
+    geo.add(path);
+    return geo;
+  }
+}
+
+go.Shape.defineFigureGenerator('TopLeftBorderRadius', (shape) => {
+  const invertedRoundSquareCorner = new TopLeftBorderRadius();
+  return invertedRoundSquareCorner.makeGeometry();
+});
+
+class BottomLeftBorderRadius extends go.Shape {
+  constructor() {
+    super();
+    this._figure = 'BottomLeftBorderRadius';
+  }
+
+  makeGeometry() {
+    const geo = new go.Geometry();
+    const path = new go.PathFigure(0, 0, true);
+
+    path.add(new go.PathSegment(go.PathSegment.Arc, 180, -90, 6, 0, 6, 6));
+    path.add(new go.PathSegment(go.PathSegment.Line, 0, 6));
+
+    geo.add(path);
+    return geo;
+  }
+}
+
+go.Shape.defineFigureGenerator('BottomLeftBorderRadius', (shape) => {
+  const invertedRoundSquareCorner = new BottomLeftBorderRadius();
+  return invertedRoundSquareCorner.makeGeometry();
+});
+
+function calculateHeight(nodeData) {
+  let height = node.height;
+  if (nodeData.birthPlace) height += 15
+  else if (useNonePhoto(nodeData)) height -= 15
+  return height;
+}
+
 tree.nodeTemplate = $(
-  go.Node,
-  {
-    selectable: false,
-    // click: function (e, obj) { // Event listener for node click
-    //   console.log(obj);
-    //   addDot(obj.Ib.x, obj.Ib.y)
-    // },
-  },
-    new go.Binding('height', function(nodeData) {
-      if (nodeData.birthPlace) {
-        return node.height + 15;
-      }
-      if (useNonePhoto(nodeData)) {
-        return node.height - 15;
-      }
-      return node.height;
-    }),
-    new go.Binding('width', 'width'),
+  go.Node, { selectable: false },
+  new go.Binding('height', function(nodeData) {
+    if (nodeData.birthPlace) return node.height + 15;
+    if (useNonePhoto(nodeData)) return node.height - 15;
+    return node.height;
+  }),
+  new go.Binding('width', 'width'),
   $(
     go.Shape,
     {
       figure: 'RoundedRectangle',
       fill: node.background,
       stroke: null,
+      strokeWidth: 0,
       shadowVisible: true
     },
     new go.Binding('desiredSize', function(nodeData) {
-      if (nodeData.birthPlace) {
-        return new go.Size(node.width, node.height + 15);
-      }
-      if (useNonePhoto(nodeData)) {
-        return new go.Size(node.width, node.height - 15);
-      }
-      return new go.Size(node.width, node.height);
+      return new go.Size(node.width, calculateHeight(nodeData));
     }),
   ),
   $(
     go.Picture,
     {
-      margin: new go.Margin(0.5, 0, 0, 0)
+      width: node.height + (15 - 0.4),
+      margin: new go.Margin(0.2, 0, 0, 0.2),
     },
-    new go.Binding("width", function(nodeData) {
-      if (nodeData.birthPlace) {
-        return node.height + 15;
-      }
-      return node.height;
-    }),
     new go.Binding("height", function(nodeData) {
-      if (nodeData.birthPlace) {
-        return node.height + 15;
-      }
-      if (useNonePhoto(nodeData)) {
-        return node.height - 15;
-      }
-      return node.height;
+      return calculateHeight(nodeData) - 0.4;
     }),
     new go.Binding("source", function(nodeData) {
       if (nodeData.hasImage) {
+        if (nodeData.birthPlace == null) {
+          return 'images/' + nodeData.key + '.wide.png';
+        }
         return 'images/' + nodeData.key + '.png';
       }
       if (nodeData.birthDate == null && nodeData.deathDate == null && !nodeData.living && nodeData.birthPlace == null) {
         return none_avatar;
       }
       if (nodeData.gender.toUpperCase() == 'M') {
+        if (nodeData.birthPlace == null) {
+          return maleWideAvatar;
+        }
         return male_avatar;
       }
       return female_avatar;
@@ -197,6 +237,7 @@ tree.nodeTemplate = $(
       desiredSize: new go.Size(3, node.height),
       figure: "Rectangle",
       stroke: null,
+      strokeWidth: 0,
     },
     new go.Binding("desiredSize", function(nodeData) {
       if (nodeData.birthPlace) {
@@ -205,10 +246,11 @@ tree.nodeTemplate = $(
       return new go.Size(3, node.height);
     }),
     new go.Binding("margin", function(nodeData) {
-      if (nodeData.birthPlace) {
+      // if (nodeData.birthPlace) {
+      //   return new go.Margin(0, 0, 0, node.height + 14);
+      // }
+      // return new go.Margin(0, 0, 0, node.height - 1);
         return new go.Margin(0, 0, 0, node.height + 14);
-      }
-      return new go.Margin(0, 0, 0, node.height - 1);
     }),
     new go.Binding("fill", function(nodeData) {
       return nodeData.gender.toUpperCase() == 'M' ? '#2799fd' : '#ea1a68';
@@ -218,13 +260,13 @@ tree.nodeTemplate = $(
     go.TextBlock,
     {
       font: "700 15px Google Sans, sans-serif",
-      maxSize: new go.Size(node.width - node.height, 24),
+      height: 15 + 2 /* font size + 2 */,
     },
+    new go.Binding("width", function(nodeData) {
+      return node.width - (node.height + 15 + (node.padding * 2) + 5);
+    }),
     new go.Binding("margin", function(nodeData) {
-      if (nodeData.birthPlace) {
-        return new go.Margin(node.margin + 1, node.margin, 0, node.height + node.margin + 21);
-      }
-      return new go.Margin(node.margin + 1, node.margin, 0, node.height + node.margin + 5);
+      return new go.Margin(node.padding, node.margin, 0, node.height + 15 + 3 /* for gender band */ + node.padding);
     }),
     new go.Binding("stroke", function(nodeData) {
       if (nodeData.name.first.includes("known")) {
@@ -250,13 +292,13 @@ tree.nodeTemplate = $(
     go.TextBlock,
     {
       font: "400 12px Roboto, sans-serif",
-      maxSize: new go.Size(node.width - node.height, 24),
+      height: 12 + 2 /* font size + 2 */,
     },
+    new go.Binding("width", function(nodeData) {
+      return node.width - (node.height + 15 + (node.padding * 2) + 5);
+    }),
     new go.Binding("margin", function(nodeData) {
-      if (nodeData.birthPlace) {
-        return new go.Margin(24 + parseInt(node.margin / 2), node.margin, node.margin, node.height + node.margin + 21);
-      }
-      return new go.Margin(24 + parseInt(node.margin / 2), node.margin, node.margin, node.height + node.margin + 5);
+      return new go.Margin(24 + parseInt(node.padding / 2), node.padding, node.padding, node.height + 15 + 3 /* for gender band */ + node.padding);
     }),
     new go.Binding("stroke", function(nodeData) {
       if (nodeData.name.first.includes("nknown")) {
@@ -272,13 +314,13 @@ tree.nodeTemplate = $(
     go.TextBlock,
     {
       font: "400 12px Roboto, sans-serif",
-      maxSize: new go.Size(node.width - node.height, 24),
+      height: 12 + 2 /* font size + 2 */,
     },
+    new go.Binding("width", function(nodeData) {
+      return node.width - (node.height + 15 + (node.padding * 2) + 5);
+    }),
     new go.Binding("margin", function(nodeData) {
-      if (nodeData.birthPlace) {
-        return new go.Margin(39 + parseInt(node.margin / 2), node.margin, node.margin, node.height + node.margin + 21);
-      }
-      return new go.Margin(39 + parseInt(node.margin / 2), node.margin, node.margin, node.height + node.margin + 5);
+      return new go.Margin(38 + parseInt(node.padding / 2), node.padding, node.padding, node.height + 15 + 3 /* for gender band */ + node.padding);
     }),
     new go.Binding("stroke", function(nodeData) {
       if (nodeData.name.first.includes("nknown")) {
@@ -296,7 +338,7 @@ tree.nodeTemplate = $(
       figure: 'Circle',
       fill: dnaMarkerColor,
       stroke: null,
-      margin: new go.Margin(6, 0, 0, 238)
+      margin: new go.Margin(6, 0, 0, 251)
     },
     new go.Binding('desiredSize', function(nodeData) {
       if (nodeData.hasDNATest) {
@@ -304,6 +346,17 @@ tree.nodeTemplate = $(
       }
       return new go.Size(0, 0);
     }),
+  ),
+  $(
+    go.Shape, 'TopLeftBorderRadius',
+    { fill: backgroundColor, stroke: null, margin: new go.Margin(0, 0, 0, 0), strokeWidth: 0 }
+  ),
+  $(
+    go.Shape, 'BottomLeftBorderRadius',
+    { fill: backgroundColor, stroke: null, strokeWidth: 0 },
+    new go.Binding("margin", function(nodeData) {
+      return new go.Margin(calculateHeight(nodeData) - 5.8, 0, 0, 0);
+    })
   ),
 );
 
