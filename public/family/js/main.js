@@ -109,18 +109,18 @@ const node = {
 }
 
 // For conciseness. See the "Building Parts" intro page for more
-var $ = go.GraphObject.make;
+var $ = bino.GraphObject.make;
 
 var tree = $(
-  go.Diagram,
+  bino.Diagram,
   "tree",
   {
     // "undoManager.isEnabled": true,
     padding: node.height - 10,
-    // initialAutoScale: go.Diagram.Uniform,
+    // initialAutoScale: bino.Diagram.Uniform,
     scale: 0.85,
     layout: $(
-      go.TreeLayout, {
+      bino.TreeLayout, {
         angle: 0,
         layerSpacing: Math.max(parseInt(node.margin * 4), 20),
         nodeSpacing: node.margin,
@@ -129,48 +129,48 @@ var tree = $(
   }
 );
 
-class TopLeftBorderRadius extends go.Shape {
+class TopLeftBorderRadius extends bino.Shape {
   constructor() {
     super();
     this._figure = 'TopLeftBorderRadius';
   }
 
   makeGeometry() {
-    const geo = new go.Geometry();
-    const path = new go.PathFigure(0, 0, true);
+    const geo = new bino.Geometry();
+    const path = new bino.PathFigure(0, 0, true);
 
-    path.add(new go.PathSegment(go.PathSegment.Line, 0, 6));
-    path.add(new go.PathSegment(go.PathSegment.Arc, 180, 90, 6, 6, 6, 6));
+    path.add(new bino.PathSegment(bino.PathSegment.Line, 0, 6));
+    path.add(new bino.PathSegment(bino.PathSegment.Arc, 180, 90, 6, 6, 6, 6));
 
     geo.add(path);
     return geo;
   }
 }
 
-go.Shape.defineFigureGenerator('TopLeftBorderRadius', (shape) => {
+bino.Shape.defineFigureGenerator('TopLeftBorderRadius', (shape) => {
   const invertedRoundSquareCorner = new TopLeftBorderRadius();
   return invertedRoundSquareCorner.makeGeometry();
 });
 
-class BottomLeftBorderRadius extends go.Shape {
+class BottomLeftBorderRadius extends bino.Shape {
   constructor() {
     super();
     this._figure = 'BottomLeftBorderRadius';
   }
 
   makeGeometry() {
-    const geo = new go.Geometry();
-    const path = new go.PathFigure(0, 0, true);
+    const geo = new bino.Geometry();
+    const path = new bino.PathFigure(0, 0, true);
 
-    path.add(new go.PathSegment(go.PathSegment.Arc, 180, -90, 6, 0, 6, 6));
-    path.add(new go.PathSegment(go.PathSegment.Line, 0, 6));
+    path.add(new bino.PathSegment(bino.PathSegment.Arc, 180, -90, 6, 0, 6, 6));
+    path.add(new bino.PathSegment(bino.PathSegment.Line, 0, 6));
 
     geo.add(path);
     return geo;
   }
 }
 
-go.Shape.defineFigureGenerator('BottomLeftBorderRadius', (shape) => {
+bino.Shape.defineFigureGenerator('BottomLeftBorderRadius', (shape) => {
   const invertedRoundSquareCorner = new BottomLeftBorderRadius();
   return invertedRoundSquareCorner.makeGeometry();
 });
@@ -183,15 +183,15 @@ function calculateHeight(nodeData) {
 }
 
 tree.nodeTemplate = $(
-  go.Node, { selectable: false },
-  new go.Binding('height', function(nodeData) {
+  bino.Node, { selectable: false },
+  new bino.Binding('height', function(nodeData) {
     if (nodeData.birthPlace) return node.height + 15;
     if (useNonePhoto(nodeData)) return node.height - 15;
     return node.height;
   }),
-  new go.Binding('width', 'width'),
+  new bino.Binding('width', 'width'),
   $(
-    go.Shape,
+    bino.Shape,
     {
       figure: 'RoundedRectangle',
       fill: node.background,
@@ -199,20 +199,20 @@ tree.nodeTemplate = $(
       strokeWidth: 0,
       shadowVisible: true
     },
-    new go.Binding('desiredSize', function(nodeData) {
-      return new go.Size(node.width, calculateHeight(nodeData));
+    new bino.Binding('desiredSize', function(nodeData) {
+      return new bino.Size(node.width, calculateHeight(nodeData));
     }),
   ),
   $(
-    go.Picture,
+    bino.Picture,
     {
       width: node.height + (15 - 0.4),
-      margin: new go.Margin(0.2, 0, 0, 0.2),
+      margin: new bino.Margin(0.2, 0, 0, 0.2),
     },
-    new go.Binding("height", function(nodeData) {
+    new bino.Binding("height", function(nodeData) {
       return calculateHeight(nodeData) - 0.4;
     }),
-    new go.Binding("source", function(nodeData) {
+    new bino.Binding("source", function(nodeData) {
       if (nodeData.hasImage) {
         if (nodeData.birthPlace == null) {
           return 'images/' + nodeData.key + '.wide.png';
@@ -232,49 +232,49 @@ tree.nodeTemplate = $(
     })
   ),
   $(
-    go.Shape,
+    bino.Shape,
     {
-      desiredSize: new go.Size(3, node.height),
+      desiredSize: new bino.Size(3, node.height),
       figure: "Rectangle",
       stroke: null,
       strokeWidth: 0,
     },
-    new go.Binding("desiredSize", function(nodeData) {
+    new bino.Binding("desiredSize", function(nodeData) {
       if (nodeData.birthPlace) {
-      return new go.Size(3, node.height + 15);
+      return new bino.Size(3, node.height + 15);
       }
-      return new go.Size(3, node.height);
+      return new bino.Size(3, node.height);
     }),
-    new go.Binding("margin", function(nodeData) {
+    new bino.Binding("margin", function(nodeData) {
       // if (nodeData.birthPlace) {
-      //   return new go.Margin(0, 0, 0, node.height + 14);
+      //   return new bino.Margin(0, 0, 0, node.height + 14);
       // }
-      // return new go.Margin(0, 0, 0, node.height - 1);
-        return new go.Margin(0, 0, 0, node.height + 14);
+      // return new bino.Margin(0, 0, 0, node.height - 1);
+        return new bino.Margin(0, 0, 0, node.height + 14);
     }),
-    new go.Binding("fill", function(nodeData) {
+    new bino.Binding("fill", function(nodeData) {
       return nodeData.gender.toUpperCase() == 'M' ? '#2799fd' : '#ea1a68';
     })
   ),
   $(
-    go.TextBlock,
+    bino.TextBlock,
     {
       font: "700 15px Google Sans, sans-serif",
       height: 15 + 2 /* font size + 2 */,
     },
-    new go.Binding("width", function(nodeData) {
+    new bino.Binding("width", function(nodeData) {
       return node.width - (node.height + 15 + (node.padding * 2) + 5);
     }),
-    new go.Binding("margin", function(nodeData) {
-      return new go.Margin(node.padding, node.margin, 0, node.height + 15 + 3 /* for gender band */ + node.padding);
+    new bino.Binding("margin", function(nodeData) {
+      return new bino.Margin(node.padding, node.margin, 0, node.height + 15 + 3 /* for gender band */ + node.padding);
     }),
-    new go.Binding("stroke", function(nodeData) {
+    new bino.Binding("stroke", function(nodeData) {
       if (nodeData.name.first.includes("known")) {
         return color_b2;
       }
       return color_b;
     }),
-    new go.Binding("text", function(nodeData) {
+    new bino.Binding("text", function(nodeData) {
       let middleInitialsArray  = nodeData.name.middle.trim().split(' ');
       let middleInitialsString = '';
 
@@ -289,88 +289,88 @@ tree.nodeTemplate = $(
     })
   ),
   $(
-    go.TextBlock,
+    bino.TextBlock,
     {
       font: "400 12px Roboto, sans-serif",
       height: 12 + 2 /* font size + 2 */,
     },
-    new go.Binding("width", function(nodeData) {
+    new bino.Binding("width", function(nodeData) {
       return node.width - (node.height + 15 + (node.padding * 2) + 5);
     }),
-    new go.Binding("margin", function(nodeData) {
-      return new go.Margin(24 + parseInt(node.padding / 2), node.padding, node.padding, node.height + 15 + 3 /* for gender band */ + node.padding);
+    new bino.Binding("margin", function(nodeData) {
+      return new bino.Margin(24 + parseInt(node.padding / 2), node.padding, node.padding, node.height + 15 + 3 /* for gender band */ + node.padding);
     }),
-    new go.Binding("stroke", function(nodeData) {
+    new bino.Binding("stroke", function(nodeData) {
       if (nodeData.name.first.includes("nknown")) {
         return color_c2;
       }
       return color_c;
     }),
-    new go.Binding("text", function(nodeData) {
+    new bino.Binding("text", function(nodeData) {
       return getLifeSpan(nodeData); // + ' • ' + nodeData.key;
     })
   ),
   $(
-    go.TextBlock,
+    bino.TextBlock,
     {
       font: "400 12px Roboto, sans-serif",
       height: 12 + 2 /* font size + 2 */,
     },
-    new go.Binding("width", function(nodeData) {
+    new bino.Binding("width", function(nodeData) {
       return node.width - (node.height + 15 + (node.padding * 2) + 5);
     }),
-    new go.Binding("margin", function(nodeData) {
-      return new go.Margin(39 + parseInt(node.padding / 2), node.padding, node.padding, node.height + 15 + 3 /* for gender band */ + node.padding);
+    new bino.Binding("margin", function(nodeData) {
+      return new bino.Margin(39 + parseInt(node.padding / 2), node.padding, node.padding, node.height + 15 + 3 /* for gender band */ + node.padding);
     }),
-    new go.Binding("stroke", function(nodeData) {
+    new bino.Binding("stroke", function(nodeData) {
       if (nodeData.name.first.includes("nknown")) {
         return color_c2;
       }
       return color_c;
     }),
-    new go.Binding("text", function(nodeData) {
+    new bino.Binding("text", function(nodeData) {
       return nodeData.birthPlace;
     })
   ),
   $(
-    go.Shape,
+    bino.Shape,
     {
       figure: 'Circle',
       fill: dnaMarkerColor,
       stroke: null,
-      margin: new go.Margin(6, 0, 0, 256)
+      margin: new bino.Margin(6, 0, 0, 256)
     },
-    new go.Binding('desiredSize', function(nodeData) {
+    new bino.Binding('desiredSize', function(nodeData) {
       if (nodeData.hasDNATest) {
-        return new go.Size(6, 6);
+        return new bino.Size(6, 6);
       }
-      return new go.Size(0, 0);
+      return new bino.Size(0, 0);
     }),
   ),
   $(
-    go.Shape, 'TopLeftBorderRadius',
-    { fill: backgroundColor, stroke: null, margin: new go.Margin(0, 0, 0, 0), strokeWidth: 0 }
+    bino.Shape, 'TopLeftBorderRadius',
+    { fill: backgroundColor, stroke: null, margin: new bino.Margin(0, 0, 0, 0), strokeWidth: 0 }
   ),
   $(
-    go.Shape, 'BottomLeftBorderRadius',
+    bino.Shape, 'BottomLeftBorderRadius',
     { fill: backgroundColor, stroke: null, strokeWidth: 0 },
-    new go.Binding("margin", function(nodeData) {
-      return new go.Margin(calculateHeight(nodeData) - 5.8, 0, 0, 0);
+    new bino.Binding("margin", function(nodeData) {
+      return new bino.Margin(calculateHeight(nodeData) - 5.8, 0, 0, 0);
     })
   ),
 );
 
 // define a Link template that routes orthogonally, with no arrowhead
 tree.linkTemplate = $(
-  go.Link,
+  bino.Link,
   {
     selectable: false,
-    routing: go.Link.Orthogonal,
+    routing: bino.Link.Orthogonal,
   },
 
   // the link path, a Shape
   $(
-    go.Shape,
+    bino.Shape,
     {
       strokeWidth: 1,
       stroke: "#9f9f9f"
@@ -379,7 +379,7 @@ tree.linkTemplate = $(
 );
 
 
-var model = $(go.TreeModel);
+var model = $(bino.TreeModel);
 var treeData = [];
 treeData = TREE_DATA;
 
