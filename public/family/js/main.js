@@ -101,10 +101,10 @@ if (window.isDark()) {
 
 // Some constants
 const node = {
-  margin: 12,
+  margin: 11,
   padding: 10,
-  height: 49,
-  width: 265,
+  height: 50,
+  width: 268,
   background: color_a
 }
 
@@ -320,7 +320,7 @@ tree.nodeTemplate = $(
       return node.width - (node.height + 15 + (node.padding * 2) + 5);
     }),
     new go.Binding("margin", function(nodeData) {
-      return new go.Margin(38 + parseInt(node.padding / 2), node.padding, node.padding, node.height + 15 + 3 /* for gender band */ + node.padding);
+      return new go.Margin(39 + parseInt(node.padding / 2), node.padding, node.padding, node.height + 15 + 3 /* for gender band */ + node.padding);
     }),
     new go.Binding("stroke", function(nodeData) {
       if (nodeData.name.first.includes("nknown")) {
@@ -338,7 +338,7 @@ tree.nodeTemplate = $(
       figure: 'Circle',
       fill: dnaMarkerColor,
       stroke: null,
-      margin: new go.Margin(6, 0, 0, 251)
+      margin: new go.Margin(6, 0, 0, 256)
     },
     new go.Binding('desiredSize', function(nodeData) {
       if (nodeData.hasDNATest) {
