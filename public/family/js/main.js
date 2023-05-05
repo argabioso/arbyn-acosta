@@ -127,6 +127,7 @@ var tree = $(
       }
     ),
     // Your diagram configuration
+    allowSelect: false,
     allowHorizontalScroll: true,
     allowVerticalScroll: true,
     allowZoom: true,
