@@ -125,7 +125,13 @@ var tree = $(
         layerSpacing: Math.max(parseInt(node.margin * 4), 20),
         nodeSpacing: node.margin,
       }
-    )
+    ),
+    // Your diagram configuration
+    allowHorizontalScroll: true,
+    allowVerticalScroll: true,
+    allowZoom: true,
+    hasHorizontalScrollbar: false,
+    hasVerticalScrollbar: false
   }
 );
 
