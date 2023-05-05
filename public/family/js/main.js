@@ -269,7 +269,7 @@ tree.nodeTemplate = $(
       height: 15 + 2 /* font size + 2 */,
     },
     new bino.Binding("width", function(nodeData) {
-      return node.width - (node.height + 15 + (node.padding * 2) + 5);
+      return node.width - 90;
     }),
     new bino.Binding("margin", function(nodeData) {
       return new bino.Margin(node.padding, node.margin, 0, node.height + 15 + 3 /* for gender band */ + node.padding);
@@ -301,7 +301,7 @@ tree.nodeTemplate = $(
       height: 12 + 2 /* font size + 2 */,
     },
     new bino.Binding("width", function(nodeData) {
-      return node.width - (node.height + 15 + (node.padding * 2) + 5);
+      return node.width - 88;
     }),
     new bino.Binding("margin", function(nodeData) {
       return new bino.Margin(24 + parseInt(node.padding / 2), node.padding, node.padding, node.height + 15 + 3 /* for gender band */ + node.padding);
@@ -323,7 +323,7 @@ tree.nodeTemplate = $(
       height: 12 + 2 /* font size + 2 */,
     },
     new bino.Binding("width", function(nodeData) {
-      return node.width - (node.height + 15 + (node.padding * 2) + 5);
+      return node.width - 88;
     }),
     new bino.Binding("margin", function(nodeData) {
       return new bino.Margin(39 + parseInt(node.padding / 2), node.padding, node.padding, node.height + 15 + 3 /* for gender band */ + node.padding);
