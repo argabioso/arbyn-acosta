@@ -7,13 +7,13 @@ function useNonePhoto(nodeData) {
  * @param {Object} nodeData - Contains living, birthDate, and deathDate data.
  * @return {string} Formatted lifespan string.
  */
-function getLifeSpan(nodeData) {
+function getLifeSpan(nodeData, isPrivate) {
   /**
    * Format date string as 'day month year'.
    * @param {string} dateString - Date in 'YYYY-MM-DD' format.
    * @return {string|null} Formatted date or null if dateString is falsy.
    */
-  const formatYear = (dateString) => {
+  const formatYear = (dateString, isPrivate) => {
     const months = [
       'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
       'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec',
@@ -25,7 +25,7 @@ function getLifeSpan(nodeData) {
 
     let [year, month, day] = dateString.split('-', 3);
 
-    if (month) {
+    if (month && !isPrivate) {
       day = (day === undefined) ? "" : day + " ";
       return `${day}${months[parseInt(month, 10) - 1]} ${year}`;
     }
@@ -36,7 +36,7 @@ function getLifeSpan(nodeData) {
   const separator = ' — ';
   const { living, birthDate, deathDate } = nodeData;
 
-  const birthYear = formatYear(birthDate);
+  const birthYear = formatYear(birthDate, isPrivate);
   const deathYear = formatYear(deathDate);
 
   // If both birthYear and deathYear do not exist, return
@@ -81,6 +81,7 @@ var maleWideAvatar = 'images/male.wide.png';
 var femaleWideAvatar = 'images/female.wide.png';
 var none_avatar = 'images/none.png';
 
+var isPrivate = window.location.get("private") == "true";
 if (window.isDark()) {
   document.querySelector("body").classList.add('dark');
   backgroundColor = "#202124";
@@ -314,7 +315,10 @@ tree.nodeTemplate = $(
       return color_c;
     }),
     new bino.Binding("text", function(nodeData) {
-      return getLifeSpan(nodeData); // + ' • ' + nodeData.key;
+      if (isPrivate) {
+        return getLifeSpan(nodeData, nodeData.living); // + ' • ' + nodeData.key;
+      }
+      return getLifeSpan(nodeData, false); // + ' • ' + nodeData.key;
     })
   ),
   $(
@@ -348,7 +352,7 @@ tree.nodeTemplate = $(
       margin: new bino.Margin(6, 0, 0, 256)
     },
     new bino.Binding('desiredSize', function(nodeData) {
-      if (nodeData.hasDNATest) {
+      if (nodeData.hasDNATest && !isPrivate) {
         return new bino.Size(6, 6);
       }
       return new bino.Size(0, 0);

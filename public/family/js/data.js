@@ -1,4 +1,4 @@
-var TREE_DATA = [
+var tempTreeData = [
   { key: "XXXX-000",                                    name: {                                                                 }, gender: "",  birthDate: null,         deathDate: null,         living: false, hasImage: false,  birthPlace: null,                               hasDNATest: false, height: 0, width: 0 },
     { key: "GQX8-CQP",               child: "XXXX-000", name: { first: "Arbyn",      middle: "Acosta",      last: "Argabioso"   }, gender: "M", birthDate: "1995-04-19", deathDate: null,         living: true,  hasImage: true,   birthPlace: "Santa Cruz, Manila, PH",           hasDNATest: true,  },
       { key: "GQJK-L51",             child: "GQX8-CQP", name: { first: "Rolando",    middle: "Saplala",     last: "Argabioso"   }, gender: "M", birthDate: "1965-10-09", deathDate: null,         living: true,  hasImage: true,   birthPlace: "Poblacion, Caloocan, PH",          hasDNATest: true,  },
@@ -53,10 +53,11 @@ var TREE_DATA = [
 ];
 
 // Add "parent" from "child" value since GoJS works that way
-for (var i = TREE_DATA.length - 1; i >= 0; i--) {
-  TREE_DATA[i]["parent"] = TREE_DATA[i]["child"];
+for (var i = tempTreeData.length - 1; i >= 0; i--) {
+  tempTreeData[i]["parent"] = tempTreeData[i]["child"];
 }
 
+const TREE_DATA = tempTreeData;
 const SOURCES = {
   "https://www.familysearch.org/ark:/61903/1:1:FV6D-SZH": [
     "GHB8-SQN:birthDate",
