@@ -283,17 +283,7 @@ tree.nodeTemplate = $(
       return color_b;
     }),
     new bino.Binding("text", function(nodeData) {
-      let middleInitialsArray  = nodeData.name.middle.trim().split(' ');
-      let middleInitialsString = '';
-
-      if (middleInitialsArray[0] != '') {
-        // for (let i = 0; i < middleInitialsArray.length; i++) {
-        //   middleInitialsString += middleInitialsArray[i][0] + '. '
-        // }
-        middleInitialsString += middleInitialsArray[0][0] + '. '
-      }
-
-      return nodeData.name.first + " " + middleInitialsString + nodeData.name.last;
+      return nodeData.fullName;
     })
   ),
   $(

@@ -57,8 +57,58 @@ for (var i = tempTreeData.length - 1; i >= 0; i--) {
   tempTreeData[i]["parent"] = tempTreeData[i]["child"];
 }
 
+// Add "fullName" to each person
+for (const [i, person] of Object.entries(tempTreeData)) {
+  if (person.name.first == undefined) {
+    continue;
+  }
+  let middleInitialsArray  = person.name.middle.trim().split(' ');
+  let middleInitialsString = '';
+
+  if (middleInitialsArray[0] != '') {
+    middleInitialsString += middleInitialsArray[0][0] + '. '
+  }
+
+  tempTreeData[i]['fullName'] = person.name.first + " " + middleInitialsString + person.name.last;
+}
+
 const TREE_DATA = tempTreeData;
 const SOURCES = {
+  "My knowledge, stories, and present observation": [
+    "GQJK-L51:living",
+    "GQX8-CQP:birthDate",
+    "GQX8-CQP:birthPlace",
+    "GQX8-CQP:gender",
+    "GQX8-CQP:living",
+    "GQX8-CQP:name.first",
+    "GQX8-CQP:name.last",
+    "GQX8-CQP:name.middle",
+    "XXXX-000:GQX8-CQP:parent", // aesthetic data consideration
+  ],
+  "https://drive.google.com/file/d/1B1umw_xm5i-AmNp9YzshX2DebSAhj3cz/view?usp=sharing": [
+    "GQX8-CQP:GQJK-G8W:parent",
+    "GQX8-CQP:GQJK-L51:parent",
+  ],
+  "https://drive.google.com/file/d/1degLEAa8cBBxJrRsWwz0t6wHh9vs29cH/view?usp=sharing": [
+    "GQJK-L51:birthDate",
+    "GQJK-L51:birthPlace",
+    "GQJK-L51:gender",
+    "GQJK-L51:name.first",
+    "GQJK-L51:name.last",
+    "GQJK-L51:name.middle",
+  ],
+  "https://drive.google.com/file/d/1Db5lGDp-mhJH7LAXnuijFXBc1c1vA07j/view?usp=sharing": [
+    "GQJK-G8W:birthDate",
+    "GQJK-G8W:birthPlace",
+    "GQJK-G8W:gender",
+    "GQJK-G8W:name.first",
+    "GQJK-G8W:name.last",
+    "GQJK-G8W:name.middle",
+  ],
+  "https://drive.google.com/file/d/1JArFl6_m-kuvyPf-LqDLU3_SapZzCvkt/view?usp=sharing": [
+    "GQJK-G8W:deathDate",
+    "GQJK-G8W:living",
+  ],
   "https://www.familysearch.org/ark:/61903/1:1:FV6D-SZH": [
     "GHB8-SQN:birthDate",
     "GHB8-SQN:deathDate",
@@ -68,8 +118,8 @@ const SOURCES = {
   ],
   "https://www.geni.com/people/Miguel-Maramba/4012194445110022663": [
     "LLQS-641:birthYear",
-    "LLQS-641:LLQS-6YC:parent",
     "LLQS-641:L281-614:parent",
+    "LLQS-641:LLQS-6YC:parent",
     "LLQS-6F1:G7C3-B6P:parent",
     "LLQS-6F1:LLQS-6F1:parent",
   ],
