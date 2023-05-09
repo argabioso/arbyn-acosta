@@ -2,6 +2,13 @@ function useNonePhoto(nodeData) {
   return (!nodeData.hasImage && nodeData.birthDate == null && nodeData.deathDate == null && !nodeData.living);
 }
 
+function removeLeadingZero(str) {
+  if (str.startsWith("0")) {
+    return str.slice(1);
+  }
+  return str;
+}
+
 /**
  * Get lifespan information from given nodeData.
  * @param {Object} nodeData - Contains living, birthDate, and deathDate data.
@@ -27,6 +34,7 @@ function getLifeSpan(nodeData, isPrivate) {
 
     if (month) {
       day = (day === undefined || isPrivate) ? "" : day + " ";
+      day = removeLeadingZero(day);
       return `${day}${months[parseInt(month, 10) - 1]} ${year}`;
     }
 
