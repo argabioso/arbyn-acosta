@@ -129,6 +129,10 @@ const SOURCES = {
     "GH12-DRN:birthDate",
     "GH12-DRN:deathDate",
   ],
+  "https://www.familysearch.org/tree/pedigree/landscape/G4MF-WD8": [
+    "GHB8-5K8:G4MF-WD8:parent",
+    "GHB8-5K8:GHB8-5K8:parent",
+  ],
 };
 
 /*
