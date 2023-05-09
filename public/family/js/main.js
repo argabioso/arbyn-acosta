@@ -81,7 +81,7 @@ var maleWideAvatar = 'images/male.wide.png';
 var femaleWideAvatar = 'images/female.wide.png';
 var none_avatar = 'images/none.png';
 
-var isPrivate = window.location.get("private") == "true";
+var isPrivate = !(window.location.get("private") == "false");
 if (window.isDark()) {
   document.querySelector("body").classList.add('dark');
   backgroundColor = "#202124";
