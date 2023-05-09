@@ -25,8 +25,8 @@ function getLifeSpan(nodeData, isPrivate) {
 
     let [year, month, day] = dateString.split('-', 3);
 
-    if (month && !isPrivate) {
-      day = (day === undefined) ? "" : day + " ";
+    if (month) {
+      day = (day === undefined || isPrivate) ? "" : day + " ";
       return `${day}${months[parseInt(month, 10) - 1]} ${year}`;
     }
 
@@ -342,7 +342,7 @@ tree.nodeTemplate = $(
       margin: new bino.Margin(6, 0, 0, 256)
     },
     new bino.Binding('desiredSize', function(nodeData) {
-      if (nodeData.hasDNATest && !isPrivate) {
+      if (nodeData.hasDNATest) {
         return new bino.Size(6, 6);
       }
       return new bino.Size(0, 0);
