@@ -54,27 +54,6 @@ var tempTreeData = [
           { key: "GH12-DD8",         child: "GH12-W17", name: { first: "Enoria",     middle: "",            last: "Borja"       }, gender: "F", birthDate: null,         deathDate: null,         living: false, hasImage: false,  birthPlace: null,                               hasDNATest: false, },
 ];
 
-// Add "parent" from "child" value since GoJS works that way
-for (var i = tempTreeData.length - 1; i >= 0; i--) {
-  tempTreeData[i]["parent"] = tempTreeData[i]["child"];
-}
-
-// Add "fullName" to each person
-for (const [i, person] of Object.entries(tempTreeData)) {
-  if (person.name.first == undefined) {
-    continue;
-  }
-  let middleInitialsArray  = person.name.middle.trim().split(' ');
-  let middleInitialsString = '';
-
-  if (middleInitialsArray[0] != '') {
-    middleInitialsString += middleInitialsArray[0][0] + '. '
-  }
-
-  tempTreeData[i]['fullName'] = person.name.first + " " + middleInitialsString + person.name.last;
-}
-
-const TREE_DATA = tempTreeData;
 const SOURCES = {
   "My knowledge, stories, and present observation": [
     "GQJK-L51:living",
@@ -135,6 +114,30 @@ const SOURCES = {
   ],
 };
 
+// Add "parent" from "child" value since GoJS works that way
+for (var i = tempTreeData.length - 1; i >= 0; i--) {
+  tempTreeData[i]["parent"] = tempTreeData[i]["child"];
+}
+
+// Add "fullName" to each person
+for (const [i, person] of Object.entries(tempTreeData)) {
+  if (person.name.first == undefined) {
+    continue;
+  }
+  let middleInitialsArray  = person.name.middle.trim().split(' ');
+  let middleInitialsString = '';
+
+  if (middleInitialsArray[0] != '') {
+    for (let i = 0; i < middleInitialsArray.length; i++) {
+      middleInitialsString += middleInitialsArray[i][0] + '. '
+    }
+    // middleInitialsString += middleInitialsArray[0][0] + '. '
+  }
+
+  tempTreeData[i]['fullName'] = person.name.first + " " + middleInitialsString + person.name.last;
+}
+
+const TREE_DATA = tempTreeData;
 /*
   Grumaduate si Nanay ng May 30, 1994 ng BS Accounting sa UE Caloocan
   Grumaduate si Nanay ng March 22, 1990 ng Highschool
