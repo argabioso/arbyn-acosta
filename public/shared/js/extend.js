@@ -77,3 +77,14 @@ window.isDark = function() {
   }
   return false;
 }
+
+// Add dark mode class to any page using extend.js
+function applyDarkMode() {
+  if (isDark()) {
+     document.querySelector("body").classList.add('dark');
+   }
+}
+const interval = setInterval(applyDarkMode, 1800000);
+
+applyDarkMode();
+clearInterval(interval);

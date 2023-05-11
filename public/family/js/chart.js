@@ -2230,3 +2230,53 @@ CircularLayout:Jr,CircularNetwork:$r,CircularVertex:ns,CircularEdge:os,ForceDire
 Q.prototype.bino=Vu;x.bino=Vu; 'undefined'!==typeof module&&'object'===typeof module.exports&&(module.exports='undefined'!==typeof global?global.bino:self.bino); })();
 
   "function"===typeof define&&define.amd&&define("undefined"!==typeof global?global.bino:self.bino);
+
+
+class TopLeftBorderRadius extends bino.Shape {
+  constructor() {
+    super();
+    this._figure = 'TopLeftBorderRadius';
+  }
+
+  makeGeometry() {
+    const geo = new bino.Geometry();
+    const path = new bino.PathFigure(0, 0, true);
+
+    path.add(new bino.PathSegment(bino.PathSegment.Line, 0, 6));
+    path.add(new bino.PathSegment(bino.PathSegment.Arc, 180, 90, 6, 6, 6, 6));
+
+    geo.add(path);
+    return geo;
+  }
+}
+
+bino.Shape.defineFigureGenerator('TopLeftBorderRadius', (shape) => {
+  const invertedRoundSquareCorner = new TopLeftBorderRadius();
+  return invertedRoundSquareCorner.makeGeometry();
+});
+
+class BottomLeftBorderRadius extends bino.Shape {
+  constructor() {
+    super();
+    this._figure = 'BottomLeftBorderRadius';
+  }
+
+  makeGeometry() {
+    const geo = new bino.Geometry();
+    const path = new bino.PathFigure(0, 0, true);
+
+    path.add(new bino.PathSegment(bino.PathSegment.Arc, 180, -90, 6, 0, 6, 6));
+    path.add(new bino.PathSegment(bino.PathSegment.Line, 0, 6));
+
+    geo.add(path);
+    return geo;
+  }
+}
+
+bino.Shape.defineFigureGenerator('BottomLeftBorderRadius', (shape) => {
+  const invertedRoundSquareCorner = new BottomLeftBorderRadius();
+  return invertedRoundSquareCorner.makeGeometry();
+});
+
+// For conciseness. See the "Building Parts" intro page for more
+var $ = bino.GraphObject.make;
