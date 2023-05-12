@@ -30,7 +30,7 @@ const ui = {
       police: '#4285F4',
       retail: !isDark ? '#0a4abf' : '#1a55c1',
       software: 'black',
-      seaman: !isDark ? '#a0c2f9' : '#33548c',
+      seaman: '#a0c2f9',
     },
     link: '#9f9f9f',
     female: '#ea1a68',
