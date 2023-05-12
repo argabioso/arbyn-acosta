@@ -19,7 +19,10 @@ const ui = {
         details: !isDark ? '#b0b0b0' : '#929292',
       },
     },
-    dna: '#da4ff2',
+    marker: {
+      default: !isDark ? '#909090' : '#696969',
+      dna: '#da4ff2',
+    },
     link: '#9f9f9f',
     female: '#ea1a68',
     male: '#2799fd',
@@ -34,8 +37,10 @@ const ui = {
     genderBand: {
       width: 3,
     },
-    dna: {
-      radius: 6,
+    marker: {
+      scale: 0.3,
+      width: 21,
+      margin: 6,
     },
     node: {
       margin: 11,

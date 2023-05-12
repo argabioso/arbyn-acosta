@@ -16,25 +16,61 @@ template['GenderBand'] = function() {
   );
 }
 
-template["DNADot"] = function() {
+template["DNAMarker"] = function() {
   return $(
-    bino.Shape,
+    bino.Panel, "Auto",
     {
-      figure: 'Circle',
-      fill: ui.color.dna,
-      stroke: null,
       margin: new bino.Margin(
-        ui.measure.dna.radius,
+        ui.measure.marker.margin,
         0,
         0,
-        ui.measure.node.width - (ui.measure.dna.radius * 2)
+        ui.measure.node.width - (ui.measure.marker.width + ui.measure.marker.margin),
       ),
     },
-    new bino.Binding('desiredSize', function(nodeData) {
-      if (nodeData.hasDNATest) {
-        return new bino.Size(ui.measure.dna.radius, ui.measure.dna.radius);
-      }
-      return new bino.Size(0, 0);
+    new bino.Binding("visible", function(nodeData) {
+      return nodeData.hasDNA;
     }),
+    $(
+      bino.Shape,
+      { figure: 'Circle', fill: ui.color.marker.dna, stroke: null },
+    ),
+    $(
+      bino.Picture,
+      {
+        scale: ui.measure.marker.scale,
+        source: 'images/dna.svg',
+        sourceCrossOrigin: function(pict) { return '*'; },
+      },
+    ),
+  );
+}
+
+template["SecondMarker"] = function() {
+  return $(
+    bino.Panel, "Auto",
+    new bino.Binding("margin", function(nodeData) {
+      let topMargin = ui.measure.marker.margin + (ui.measure.marker.width + ui.measure.marker.margin) - 2;
+      if (!nodeData.hasDNA) {
+        topMargin = ui.measure.marker.margin;
+      }
+      return new bino.Margin(
+        topMargin, 0, 0,
+        ui.measure.node.width - (ui.measure.marker.width + ui.measure.marker.margin),
+      )
+    }),
+    new bino.Binding("visible", function(nodeData) {
+      return nodeData.marker !== undefined;
+    }),
+    $(
+      bino.Shape,
+      { figure: 'Circle', fill: ui.color.marker.default, stroke: null },
+    ),
+    $(
+      bino.Picture,
+      { scale: ui.measure.marker.scale, sourceCrossOrigin: function(pict) { return '*'; } },
+      new bino.Binding("source", function(nodeData) {
+        return `images/${nodeData.marker}.svg`;
+      }),
+    ),
   );
 }
