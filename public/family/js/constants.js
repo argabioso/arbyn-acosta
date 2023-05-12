@@ -2,6 +2,7 @@ const isPrivate = !(window.location.get("private") == "false");
 const isDark = window.isDark();
 
 const ui = {
+  scale: 0.85,
   font: {
     size: {
       name: 15,
@@ -21,7 +22,13 @@ const ui = {
     },
     marker: {
       default: !isDark ? '#909090' : '#696969',
-      dna: '#da4ff2',
+      dna: !isDark ? '#e173f1' : '#da4ff2',
+      military: '#586e2c',
+      police: '#4285F4',
+      farming: '#0f9d58',
+      beautician: '#ca7566',
+      software: 'black',
+      manufacturing: '#edc100',
     },
     link: '#9f9f9f',
     female: '#ea1a68',
@@ -38,8 +45,11 @@ const ui = {
       width: 3,
     },
     marker: {
-      scale: 0.3,
-      width: 21,
+      // scale: 0.3,
+      // width: 21,
+      // margin: 6,
+      scale: 0.35,
+      width: 24.5,
       margin: 6,
     },
     node: {

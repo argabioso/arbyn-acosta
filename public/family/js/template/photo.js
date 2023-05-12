@@ -15,7 +15,6 @@ template['Photo'] = function() {
       bino.Picture,
       {
         margin: new bino.Margin(0.2, 0, 0, 0.2),
-        sourceCrossOrigin: function(pict) { return '*' },
       },
       new bino.Binding('imageStretch', function(nodeData) {
         if (nodeData.useNonePhoto) {
