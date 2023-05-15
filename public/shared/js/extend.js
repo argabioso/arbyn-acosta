@@ -52,7 +52,7 @@ window.isDark = function() {
   }
 
   if (matchMedia && matchMedia(light).matches) {
-    return true;
+    return false;
   }
 
   const now = new Date();
@@ -75,7 +75,7 @@ window.isDark = function() {
   ) {
     return true;
   }
-  return true;
+  return false;
 }
 
 // Add dark mode class to any page using extend.js
