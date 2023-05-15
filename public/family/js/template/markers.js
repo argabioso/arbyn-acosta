@@ -94,6 +94,9 @@ template["SecondMarker"] = function() {
         return `images/${nodeData.marker}.svg`;
       }),
       new bino.Binding("margin", function(nodeData) {
+        if (nodeData.marker === 'farming') {
+          return new bino.Margin(2, 0, 0, 1);
+        }
         return new bino.Margin(2, 0, 0, 2);
       }),
     ),
