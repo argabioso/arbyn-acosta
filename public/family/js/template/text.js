@@ -265,8 +265,8 @@ function formatDate(raw, isPrivate) {
     prefix += ' ';
   }
 
-  if (month) {
-    day = (day === undefined || isPrivate) ? "" : day + " ";
+  if (month && !isPrivate) {
+    day = (day === undefined) ? "" : day + " ";
 
     // Remove leading zero from days
     if (day.startsWith('0')) {
