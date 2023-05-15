@@ -246,17 +246,24 @@ function getLifeSpan(nodeData, isPrivate) {
  * @param {string} dateString - Date in 'YYYY-MM-DD' format.
  * @return {string|null} Formatted date or null if dateString is falsy.
  */
-function formatDate(dateString, isPrivate) {
+function formatDate(raw, isPrivate) {
   const months = [
     'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
     'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec',
   ];
 
-  if (!dateString) {
+  if (!raw) {
     return null;
   }
 
+  // Check for prefix words
+  let [prefix, dateString] = raw.includes(' ') ? raw.split(' ') : ["", raw];
   let [year, month, day] = dateString.split('-', 3);
+
+  // Add a separating space for prefix if its populated
+  if (prefix != '') {
+    prefix += ' ';
+  }
 
   if (month) {
     day = (day === undefined || isPrivate) ? "" : day + " ";
@@ -266,8 +273,8 @@ function formatDate(dateString, isPrivate) {
       day = day.slice(1);
     }
 
-    return `${day}${months[parseInt(month, 10) - 1]} ${year}`;
+    return `${prefix}${day}${months[parseInt(month, 10) - 1]} ${year}`;
   }
 
-  return year;
+  return `${prefix}${year}`;
 };
