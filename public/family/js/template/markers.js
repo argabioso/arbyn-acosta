@@ -18,32 +18,46 @@ template['GenderBand'] = function() {
 
 template["DNAMarker"] = function() {
   return $(
-    bino.Panel, "Auto",
-    {
-      margin: new bino.Margin(
-        ui.measure.marker.margin,
-        0,
-        0,
+    bino.Panel,
+    new bino.Binding("margin", function(nodeData) {
+      let topMargin = ui.measure.marker.margin;
+      return new bino.Margin(
+        topMargin, 0, 0,
         ui.measure.node.width - (ui.measure.marker.width + ui.measure.marker.margin),
-      ),
-    },
+      )
+    }),
     new bino.Binding("visible", function(nodeData) {
       return nodeData.hasDNA;
     }),
     $(
       bino.Shape,
-      { figure: 'Circle', fill: ui.color.marker.dna, stroke: null },
+      { figure: 'Circle', stroke: null, width: ui.measure.marker.width },
+      new bino.Binding("fill", function(nodeData) {
+        return ui.color.marker.background.dna;
+      }),
     ),
     $(
       bino.Picture,
-      { scale: ui.measure.marker.scale, source: 'images/dna.svg' },
+      { scale: ui.measure.marker.scale },
+      new bino.Binding("source", function(nodeData) {
+        if (nodeData.hasDNA === undefined) {
+          return '';
+        }
+        if (isDark) {
+          return 'images/dna.dark.svg';
+        }
+        return `images/dna.svg`;
+      }),
+      new bino.Binding("margin", function(nodeData) {
+        return new bino.Margin(2, 0, 0, 2);
+      }),
     ),
   );
 }
 
 template["SecondMarker"] = function() {
   return $(
-    bino.Panel, "Auto",
+    bino.Panel,
     new bino.Binding("margin", function(nodeData) {
       let topMargin = ui.measure.marker.margin + (ui.measure.marker.width + ui.measure.marker.margin) - 3;
       if (!nodeData.hasDNA) {
@@ -59,12 +73,12 @@ template["SecondMarker"] = function() {
     }),
     $(
       bino.Shape,
-      { figure: 'Circle', stroke: null },
+      { figure: 'Circle', stroke: null, width: ui.measure.marker.width },
       new bino.Binding("fill", function(nodeData) {
-        if (ui.color.marker[nodeData.marker] !== undefined) {
-          return ui.color.marker[nodeData.marker];
+        if (ui.color.marker.background[nodeData.marker] !== undefined) {
+          return ui.color.marker.background[nodeData.marker];
         }
-        return ui.color.marker.default;
+        return ui.color.marker.background.default;
       }),
     ),
     $(
@@ -74,7 +88,13 @@ template["SecondMarker"] = function() {
         if (nodeData.marker === undefined) {
           return '';
         }
+        if (isDark) {
+          return `images/${nodeData.marker}.dark.svg`;
+        }
         return `images/${nodeData.marker}.svg`;
+      }),
+      new bino.Binding("margin", function(nodeData) {
+        return new bino.Margin(2, 0, 0, 2);
       }),
     ),
   );
