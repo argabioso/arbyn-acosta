@@ -1,6 +1,6 @@
 template['Photo'] = function() {
   return $(bino.Panel, 'Spot',
-    { isClipping: true },
+    { isClipping: true, margin: new bino.Margin(0.2, 0, 0, 0.2) },
     $(
       bino.Shape, 'Rectangle',
       {
@@ -30,7 +30,7 @@ template['Photo'] = function() {
           return ui.photo.none;
         }
         if (nodeData.hasImage) {
-          return 'images/' + nodeData.key + '.png';
+          return 'images/' + nodeData.key + '.jpg';
         }
         if (nodeData.gender.toUpperCase() == 'M') {
           return ui.photo.male;
@@ -46,16 +46,16 @@ function calculatePhotoScale(nodeData) {
     return 1;
   }
   if (nodeData.birthPlace == null && nodeData.deathPlace == null) {
-    return 0.17;
+    return 0.35;
   }
   if (nodeData.birthPlace == null && nodeData.deathPlace != null) {
-    return 0.225;
+    return 0.47;
   }
   if (nodeData.birthPlace != null && nodeData.deathPlace == null) {
-    return 0.225;
+    return 0.47;
   }
   if (nodeData.birthPlace != null && nodeData.deathPlace != null) {
-    return 0.25;
+    return 0.52;
   }
   return 1;
 }

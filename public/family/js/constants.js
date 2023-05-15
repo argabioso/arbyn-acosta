@@ -44,9 +44,9 @@ const ui = {
     male: '#2799fd',
   },
   photo: {
-    none: !isDark ? 'images/none.png' : 'images/none.dark.png',
-    female: !isDark ? 'images/female.png' : 'images/female.dark.png',
-    male: !isDark ? 'images/male.png' : 'images/male.dark.png',
+    none: !isDark ? 'images/none.jpg' : 'images/none.dark.jpg',
+    female: !isDark ? 'images/female.jpg' : 'images/female.dark.jpg',
+    male: !isDark ? 'images/male.jpg' : 'images/male.dark.jpg',
   },
   measure: {
     padding: 40,
