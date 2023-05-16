@@ -32,6 +32,7 @@ const ui = {
         housewife: !isDark ? '#fde8f0' : '#462c36',
         retail: !isDark ? '#fde8f0' : '#462c36',
         farming: !isDark ? '#dff1e0' : '#2e4030',
+        land: !isDark ? '#f2ebe6' : '#393633',
         police: !isDark ? '#e3edfd' : '#323b48',
         military: !isDark ? '#fcf3e2' : '#3e382e',
       },
