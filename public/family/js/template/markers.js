@@ -97,9 +97,6 @@ template["SecondMarker"] = function() {
         if (nodeData.marker === 'military') {
           return new bino.Margin(1.5, 0, 0, 2);
         }
-        if (nodeData.marker === 'buysell') {
-          return new bino.Margin(1, 0, 0, 2);
-        }
         if (nodeData.marker === 'housewife') {
           return new bino.Margin(0.5, 0, 0, 0.5);
         }
