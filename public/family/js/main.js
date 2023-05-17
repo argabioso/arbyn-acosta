@@ -2,7 +2,6 @@ var tree = $(
   bino.Diagram,
   "tree",
   {
-    isReadOnly: true,
     padding: ui.measure.padding,
     scale: ui.scale,
     layout: $(
@@ -12,10 +11,6 @@ var tree = $(
         nodeSpacing: ui.measure.node.margin,
       }
     ),
-    allowHorizontalScroll: true,
-    allowSelect: false,
-    allowVerticalScroll: true,
-    allowZoom: true,
     hasHorizontalScrollbar: false,
     hasVerticalScrollbar: false
   }
