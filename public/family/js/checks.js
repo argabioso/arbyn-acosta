@@ -1,29 +1,21 @@
-function attributesToCheck(person) {
-  return {
-    "child": person.child,
-    "name.first": (person.name == undefined) ? null : person.name.first,
-    "name.middle": (person.name == undefined) ? null : person.name.middle,
-    "name.last": (person.name == undefined) ? null : person.name.last,
-    "gender": person.gender,
-    "birthDate": person.birthDate,
-    "deathDate": person.deathDate,
-    "living": person.living,
-    "birthPlace": person.birthPlace,
-  }
-}
-
-function getSourceCount(person) {
+function checkPerPerson(person) {
   let sources = 0;
 
-  for (const [attributeName, attributeValue] of Object.entries(attributesToCheck(person))) {
+  for (const [attributeName, attributeValue] of Object.entries(person)) {
     for (const [url, originalSourceKey] of Object.entries(SOURCES)) {
+      // Custom checks that does not work well with loop
+      // use "key" to trigger since everyone has a "key"
+      if (attributeName == "key") {
+      }
+
       let sourceKey = `${person.key}:${attributeName}`;
       if (attributeName == "child") {
         sourceKey = `${attributeValue}:${person.key}:parent`;
       }
-      if (SOURCES[url].includes(sourceKey)) {
-        // Ignore deathDate
-        if (attributeName == "living" && person.living) sources += 1
+
+      if (originalSourceKey.includes(sourceKey)) {
+        // Ignore deathDate and place if still living
+        if (attributeName == "living" && person.living) sources += 2
 
         sources += 1;
         continue;
@@ -33,34 +25,29 @@ function getSourceCount(person) {
   return sources;
 }
 
-console.partly = function (message) {
-  console.log(`%c[?] ${message}`, 'background-color: #fce8b2; color: #222222; padding: 2px 5px; border-radius: 3px;');
-};
-
-console.valid = function (message) {
-  console.log(`%c[✓] ${message}`, 'background-color: #b6e1cd; color: #222222; padding: 2px 5px; border-radius: 3px;');
-};
-
-console.invalid = function (message) {
-  console.log(`%c[✕] ${message}`, 'background-color: #ea9999; color: #222222; padding: 2px 5px; border-radius: 3px;');
-};
-
 function checkSources() {
-  const MAX_ATTRIBUTE_COUNT = Object.entries(attributesToCheck({})).length;
+  // Configuration of check
+  const MINIMUM_ATTRIBUTES_TO_CHECK = 10;
+  var attributesToCheckCount = MINIMUM_ATTRIBUTES_TO_CHECK;
 
+  let keysInSource = '';
+  for (const [url, originalSourceKey] of Object.entries(SOURCES)) {
+    keysInSource += originalSourceKey.toString();
+  }
+
+  console.group(`Verifying family tree dataset ...`)
   for (const [i, person] of Object.entries(TREE_DATA)) {
     if (person.fullName === undefined) continue;
+    if (!keysInSource.includes(person.key)) continue;
 
-    let sourceCount = getSourceCount(person);
-
-    if (sourceCount == 0) {
-      // console.invalid(`No sources found for ${person.fullName}`);
-    } else if (sourceCount == MAX_ATTRIBUTE_COUNT) {
-      console.valid(`${sourceCount} / ${MAX_ATTRIBUTE_COUNT} sources found for ${person.fullName}`);
+    let sourceCount = checkPerPerson(person);
+    if (sourceCount >= attributesToCheckCount) {
+      console.valid(`${sourceCount} / ${sourceCount} sources found for "${person.fullName}"`);
     } else {
-      console.partly(`${sourceCount} / ${MAX_ATTRIBUTE_COUNT} sources found for ${person.fullName}`);
+      console.partly(`${sourceCount} / ${attributesToCheckCount} sources found for "${person.fullName}"`);
     }
   }
+  console.groupEnd();
 }
 
 checkSources();

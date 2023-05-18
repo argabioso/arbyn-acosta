@@ -78,6 +78,30 @@ window.isDark = function() {
   return false;
 }
 
+console.partly = function (message) {
+  console.log(`%c[?] ${message}`, 'background-color: #fce8b2; color: #222222; padding: 2px 5px; border-radius: 3px;');
+};
+
+console.valid = function (message) {
+  console.log(`%c[✓] ${message}`, 'background-color: #b6e1cd; color: #222222; padding: 2px 5px; border-radius: 3px;');
+};
+
+console.invalid = function (message) {
+  console.log(`%c[✕] ${message}`, 'background-color: #ea9999; color: #222222; padding: 2px 5px; border-radius: 3px;');
+};
+
+console.partlyGroup = function (message) {
+  console.group(`%c[?] ${message}`, 'background-color: #fce8b2; color: #222222; padding: 2px 5px; border-radius: 3px;');
+};
+
+console.validGroup = function (message) {
+  console.group(`%c[✓] ${message}`, 'background-color: #b6e1cd; color: #222222; padding: 2px 5px; border-radius: 3px;');
+};
+
+console.invalidGroup = function (message) {
+  console.group(`%c[✕] ${message}`, 'background-color: #ea9999; color: #222222; padding: 2px 5px; border-radius: 3px;');
+};
+
 // Add dark mode class to any page using extend.js
 function applyDarkMode() {
   if (isDark()) {

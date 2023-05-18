@@ -17,7 +17,7 @@ template['Name'] = function() {
       );
     }),
     new bino.Binding('stroke', function(nodeData) {
-      if (nodeData.name.first.includes('known')) {
+      if (nodeData.firstName.includes('known')) {
         return ui.color.node.nameless.name;
       }
       return ui.color.node.name;
@@ -47,7 +47,7 @@ template['Lifespan'] = function() {
       );
     }),
     new bino.Binding("stroke", function(nodeData) {
-      if (nodeData.name.first.includes("nknown")) {
+      if (nodeData.firstName.includes("nknown")) {
         return ui.color.node.nameless.details;
       }
       return ui.color.node.details;
@@ -81,7 +81,7 @@ template['BirthDeathPlace1'] = function() {
         );
       }),
       new bino.Binding("stroke", function(nodeData) {
-        if (nodeData.name.first.includes("nknown")) {
+        if (nodeData.firstName.includes("nknown")) {
           return ui.color.node.nameless.details;
         }
         return ui.color.node.details;
@@ -116,7 +116,7 @@ template['BirthDeathPlace1'] = function() {
         );
       }),
       new bino.Binding("stroke", function(nodeData) {
-        if (nodeData.name.first.includes("nknown")) {
+        if (nodeData.firstName.includes("nknown")) {
           return ui.color.node.nameless.details;
         }
         return ui.color.node.details;
@@ -156,7 +156,7 @@ template['BirthDeathPlace2'] = function() {
         );
       }),
       new bino.Binding("stroke", function(nodeData) {
-        if (nodeData.name.first.includes("nknown")) {
+        if (nodeData.firstName.includes("nknown")) {
           return ui.color.node.nameless.details;
         }
         return ui.color.node.details;
@@ -186,7 +186,7 @@ template['BirthDeathPlace2'] = function() {
         );
       }),
       new bino.Binding("stroke", function(nodeData) {
-        if (nodeData.name.first.includes("nknown")) {
+        if (nodeData.firstName.includes("nknown")) {
           return ui.color.node.nameless.details;
         }
         return ui.color.node.details;
