@@ -59,26 +59,29 @@ var TREE_DATA = [
 ];
 
 const SOURCES = {
-  'My knowledge, stories, and present observation': [
+  'PRESENT': [
+    'GHB5-TWN:birthDate',
+    'GHB5-TWN:firstName',
+    'GHB5-TWN:gender',
+    'GHB5-TWN:lastName',
+    'GHB5-TWN:living',
+    'GHB5-TWN:middleName',
     'GQJK-L51:living',
     'GQX8-CQP:birthDate',
-    'GQX8-CQP:birthPlace',
-    'GQX8-CQP:gender',
-    'GQX8-CQP:living',
     'GQX8-CQP:firstName',
+    'GQX8-CQP:gender',
     'GQX8-CQP:lastName',
+    'GQX8-CQP:living',
     'GQX8-CQP:middleName',
-    'XXXX-000:GQX8-CQP:parent', // aesthetic data consideration
-    'GHB5-TWN:birthDate',
-    'GHB5-TWN:birthPlace',
-    'GHB5-TWN:gender',
-    'GHB5-TWN:living',
-    'GHB5-TWN:firstName',
-    'GHB5-TWN:lastName',
-    'GHB5-TWN:middleName',
     'XXXX-000:GHB5-TWN:parent', // aesthetic data consideration
+    'XXXX-000:GQX8-CQP:parent', // aesthetic data consideration
   ],
   'https://drive.google.com/file/d/1B1umw_xm5i-AmNp9YzshX2DebSAhj3cz/view?usp=sharing': [
+    'GQX8-CQP:birthDate',
+    'GQX8-CQP:birthPlace',
+    'GQX8-CQP:firstName',
+    'GQX8-CQP:gender',
+    'GQX8-CQP:middleName',
     'GQX8-CQP:GQJK-G8W:parent',
     'GQX8-CQP:GQJK-L51:parent',
   ],
@@ -108,10 +111,10 @@ const SOURCES = {
     'GHB8-SQN:deathDate',
   ],
   'https://www.familysearch.org/ark:/61903/1:1:66HQ-VJGQ': [
-    'LLQS-641:LLQS-6F1:spouse',
+    'LLQS-641:LLQS-6F1:partner',
   ],
   'https://www.geni.com/people/Miguel-Maramba/4012194445110022663': [
-    'LLQS-641:birthYear',
+    'LLQS-641:birthDate',
     'LLQS-641:L281-614:parent',
     'LLQS-641:LLQS-6YC:parent',
   ],
@@ -148,6 +151,26 @@ for (const [i, person] of Object.entries(TREE_DATA)) {
   // Add "fullName" to each person
   TREE_DATA[i]['fullName'] = person.firstName + " " + middleInitialsString + person.lastName;
 }
+
+// Create a map of child to parents.
+let childToParents = {};
+TREE_DATA.forEach(node => {
+  if (node.child) {
+    if (childToParents[node.child]) {
+      childToParents[node.child].push(node.key);
+    } else {
+      childToParents[node.child] = [node.key];
+    }
+  }
+});
+
+// Add partner to each node.
+TREE_DATA.forEach(node => {
+  node.partner = null; // Default value
+  if (node.child && childToParents[node.child].length > 1) {
+    node.partner = childToParents[node.child].find(parentKey => parentKey !== node.key);
+  }
+});
 
 // const TREE_DATA = TREE_DATA;
 /*
