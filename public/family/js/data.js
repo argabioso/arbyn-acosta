@@ -19,7 +19,7 @@ var TREE_DATA = [
             { key: 'GHB8-SQN',       child: 'GHBD-9L6', firstName: 'Ligorio',            middleName: '',            lastName: 'Acosta',      gender: 'M', birthDate: 'about 1871', deathDate: '1948-07-07',       living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                deathPlace: 'Manila, PHL',                       },
             { key: 'GHB8-5K8',       child: 'GHBD-9L6', firstName: 'Maximiana',          middleName: 'Cahanding',   lastName: 'Bongco',      gender: 'F', birthDate: null,         deathDate: 'after 1913-11-10', living: false, hasDNA: false, hasImage: false,  birthPlace: 'Orani, Bataan, PHL',                deathPlace: null,                                },
               { key: 'G4MF-WD8',     child: 'GHB8-5K8', firstName: 'Fabian',             middleName: '',            lastName: 'Bongco',      gender: 'M', birthDate: null,         deathDate: null,               living: false, hasDNA: false, hasImage: false,  birthPlace: 'Orani, Bataan, PHL',                deathPlace: null,                                },
-              { key: 'GHB8-5K8',     child: 'GHB8-5K8', firstName: 'Lucina',             middleName: '',            lastName: 'Cahanding',   gender: 'F', birthDate: null,         deathDate: null,               living: false, hasDNA: false, hasImage: false,  birthPlace: 'Orani, Bataan, PHL',                deathPlace: null,                                },
+              { key: 'G4MF-S3R',     child: 'GHB8-5K8', firstName: 'Lucina',             middleName: '',            lastName: 'Cahanding',   gender: 'F', birthDate: null,         deathDate: null,               living: false, hasDNA: false, hasImage: false,  birthPlace: 'Orani, Bataan, PHL',                deathPlace: null,                                },
           { key: 'GHB8-DXY',         child: 'GHBD-7M4', firstName: 'Natividad',          middleName: 'Villacorta',  lastName: 'San Agustin', gender: 'F', birthDate: '1925-12-21', deathDate: '2008-10-09',       living: false, hasDNA: false, hasImage: true,   birthPlace: 'Ermita, Manila, PHL',               deathPlace: 'San Dimas, Los Angeles, CA, USA',   },
             { key: 'GHB8-LCC',       child: 'GHB8-DXY', firstName: 'Vicente',            middleName: '',            lastName: 'San Agustin', gender: 'M', birthDate: null,         deathDate: null,               living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                deathPlace: null,                                },
             { key: 'GHB8-H7K',       child: 'GHB8-DXY', firstName: 'Nena',               middleName: '',            lastName: 'Villacorta',  gender: 'F', birthDate: null,         deathDate: null,               living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                deathPlace: null,                                },
@@ -40,8 +40,8 @@ var TREE_DATA = [
     { key: 'GHB5-TWN',               child: 'XXXX-000', firstName: 'Mitchie',            middleName: 'Ajesta',      lastName: 'Adanza',      gender: 'F', birthDate: '1994-12-16', deathDate: null,               living: true,  hasDNA: true,  hasImage: true,   birthPlace: 'Santa Cruz, Manila, PHL',           deathPlace: null,                                },
       { key: 'GHB5-XTZ',             child: 'GHB5-TWN', firstName: 'Darne',              middleName: 'Elican',      lastName: 'Adanza',      gender: 'M', birthDate: '1964-06-22', deathDate: null,               living: true,  hasDNA: false, hasImage: true,   birthPlace: 'Balingasag, Misamis Oriental, PHL', deathPlace: null,                                marker: 'manufacturing' },
         { key: 'GH12-SVQ',           child: 'GHB5-XTZ', firstName: 'Nestor',             middleName: 'Ladera',      lastName: 'Adanza',      gender: 'M', birthDate: '1938-02-26', deathDate: '2018-09-29',       living: false, hasDNA: false, hasImage: true,   birthPlace: 'Balingasag, Misamis Oriental, PHL', deathPlace: 'Balingasag, Misamis Oriental, PHL', marker: 'farming' },
-          { key: 'GH12-DRN',         child: 'GH12-SVQ', firstName: 'Felomino',           middleName: '',            lastName: 'Adanza',      gender: 'M', birthDate: 'about 1901', deathDate: '1990-11-03',       living: false, hasDNA: false, hasImage: false,  birthPlace: 'Dumaguete, Negros Oriental, PHL',   deathPlace: null,                                marker: 'buysell' },
-          { key: 'GH12-3GN',         child: 'GH12-SVQ', firstName: 'Consuelo',           middleName: '',            lastName: 'Ladera',      gender: 'F', birthDate: null,         deathDate: null,               living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                deathPlace: null,                                },
+          { key: 'GH12-DRN',         child: 'GH12-SVQ', firstName: 'Felomino',           middleName: 'R',           lastName: 'Adanza',      gender: 'M', birthDate: 'about 1901', deathDate: '1990-11-03',       living: false, hasDNA: false, hasImage: false,  birthPlace: 'Dumaguete, Negros Oriental, PHL',   deathPlace: 'Balingasag, Misamis Oriental, PHL', marker: 'farming' },
+          { key: 'GH12-3GN',         child: 'GH12-SVQ', firstName: 'Consuelo',           middleName: '',            lastName: 'Ladera',      gender: 'F', birthDate: null,         deathDate: 'after 1990-11-03', living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                deathPlace: null,                                },
         { key: 'GH12-9F6',           child: 'GHB5-XTZ', firstName: 'Rufa',               middleName: 'Acerto',      lastName: 'Elican',      gender: 'F', birthDate: '1939-11-28', deathDate: '2015-04-02',       living: false, hasDNA: false, hasImage: true,   birthPlace: 'Balingasag, Misamis Oriental, PHL', deathPlace: 'Balingasag, Misamis Oriental, PHL', marker: 'farming' },
           { key: 'GH12-9JZ',         child: 'GH12-9F6', firstName: 'Cecilio',            middleName: '',            lastName: 'Elican',      gender: 'M', birthDate: null,         deathDate: null,               living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                deathPlace: null,                                marker: 'military' },
           { key: 'GH12-35H',         child: 'GH12-9F6', firstName: 'Jovita',             middleName: '',            lastName: 'Acerto',      gender: 'F', birthDate: null,         deathDate: null,               living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                deathPlace: null,                                },
@@ -69,6 +69,14 @@ const SOURCES = {
     'GQX8-CQP:lastName',
     'GQX8-CQP:middleName',
     'XXXX-000:GQX8-CQP:parent', // aesthetic data consideration
+    'GHB5-TWN:birthDate',
+    'GHB5-TWN:birthPlace',
+    'GHB5-TWN:gender',
+    'GHB5-TWN:living',
+    'GHB5-TWN:firstName',
+    'GHB5-TWN:lastName',
+    'GHB5-TWN:middleName',
+    'XXXX-000:GHB5-TWN:parent', // aesthetic data consideration
   ],
   'https://drive.google.com/file/d/1B1umw_xm5i-AmNp9YzshX2DebSAhj3cz/view?usp=sharing': [
     'GQX8-CQP:GQJK-G8W:parent',
@@ -106,8 +114,6 @@ const SOURCES = {
     'LLQS-641:birthYear',
     'LLQS-641:L281-614:parent',
     'LLQS-641:LLQS-6YC:parent',
-    'LLQS-6F1:G7C3-B6P:parent',
-    'LLQS-6F1:LLQS-6F1:parent',
   ],
   'https://www.familysearch.org/ark:/61903/1:1:HYTD-R5ZM': [
     'GH12-DRN:birthDate',
@@ -115,7 +121,7 @@ const SOURCES = {
   ],
   'https://www.familysearch.org/tree/pedigree/landscape/G4MF-WD8': [
     'GHB8-5K8:G4MF-WD8:parent',
-    'GHB8-5K8:GHB8-5K8:parent',
+    'GHB8-5K8:G4MF-S3R:parent',
   ],
   'https://www.familysearch.org/ark:/61903/1:1:6JG6-3YR8': [
   ],
