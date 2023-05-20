@@ -14,6 +14,26 @@ String.prototype.rtrim = function()
   return this.replace(/\s+$/g, '');
 }
 
+String.prototype.occurrences = function(subString, allowOverlapping) {
+    let string = this;
+    string += "";
+    subString += "";
+    if (subString.length <= 0) return (string.length + 1);
+
+    var n = 0,
+        pos = 0,
+        step = allowOverlapping ? 1 : subString.length;
+
+    while (true) {
+        pos = string.indexOf(subString, pos);
+        if (pos >= 0) {
+            ++n;
+            pos += step;
+        } else break;
+    }
+    return n;
+}
+
 /*
  * Returns the value of the indicated URL parameter name
  *
@@ -78,28 +98,91 @@ window.isDark = function() {
   return false;
 }
 
+const BG_COLORS = [
+  'f4c7c2',
+  'f6cbc2',
+  'f7cfbf',
+  'fad3bd',
+  'fcd9ba',
+  'feddb6',
+  'ffe2b4',
+  'ffe6b2',
+  'fbe8b2',
+  'f7e9b4',
+  'efe9b7',
+  'e5e9ba',
+  'dce7bf',
+  'd1e5c4',
+  'c6e3c7',
+  'bee2cb',
+  'b7e2cd',
+];
+
+const FG_COLORS = [
+  '45140e',
+  '46130a',
+  '461403',
+  '4a1800',
+  '552200',
+  '5f2c00',
+  '683600',
+  '6f4000',
+  '704500',
+  '6a4804',
+  '61480c',
+  '564812',
+  '484817',
+  '38451b',
+  '29431d',
+  '174120',
+  '054021',
+];
+
+function colorScaler(percent) {
+    percent = Math.max(0, Math.min(100, percent));
+    return Math.round((percent * 16) / 100);
+}
+
+function dynamicStatusIcon(percent) {
+    if (percent >= 75) {
+      return '✓';
+    }
+    if (percent >= 0 && percent <= 25) {
+      return '✕';
+    }
+    return '?';
+}
+
 console.partly = function (message) {
-  console.log(`%c[?] ${message}`, 'background-color: #fce8b2; color: #222222; padding: 2px 5px; border-radius: 3px;');
+  console.log(`%c[?] ${message}`, 'background-color: #fce8b2; color: #704500; padding: 2px 5px; border-radius: 3px; font-weight: bold;');
 };
 
 console.valid = function (message) {
-  console.log(`%c[✓] ${message}`, 'background-color: #b6e1cd; color: #222222; padding: 2px 5px; border-radius: 3px;');
+  console.log(`%c[✓] ${message}`, 'background-color: #b7e2cd; color: #054021; padding: 2px 5px; border-radius: 3px; font-weight: bold;');
 };
 
 console.invalid = function (message) {
-  console.log(`%c[✕] ${message}`, 'background-color: #ea9999; color: #222222; padding: 2px 5px; border-radius: 3px;');
+  console.log(`%c[✕] ${message}`, 'background-color: #f4c8c3; color: #45140e; padding: 2px 5px; border-radius: 3px; font-weight: bold;');
+};
+
+console.dynamic = function (message, count, total) {
+  console.log(`%c[${dynamicStatusIcon(count / total * 100)}] ${message}`, `background-color: #${BG_COLORS[colorScaler(count / total * 100)]}; color: #${FG_COLORS[colorScaler(count / total * 100)]}; padding: 2px 5px; border-radius: 3px; font-weight: bold;`);
 };
 
 console.partlyGroup = function (message) {
-  console.group(`%c[?] ${message}`, 'background-color: #fce8b2; color: #222222; padding: 2px 5px; border-radius: 3px;');
+  console.groupCollapsed(`%c[?] ${message}`, 'background-color: #fce8b2; color: #704500; padding: 2px 5px; border-radius: 3px; font-weight: bold;');
 };
 
 console.validGroup = function (message) {
-  console.group(`%c[✓] ${message}`, 'background-color: #b6e1cd; color: #222222; padding: 2px 5px; border-radius: 3px;');
+  console.groupCollapsed(`%c[✓] ${message}`, 'background-color: #b7e2cd; color: #054021; padding: 2px 5px; border-radius: 3px; font-weight: bold;');
 };
 
 console.invalidGroup = function (message) {
-  console.group(`%c[✕] ${message}`, 'background-color: #ea9999; color: #222222; padding: 2px 5px; border-radius: 3px;');
+  console.groupCollapsed(`%c[✕] ${message}`, 'background-color: #f4c8c3; color: #45140e; padding: 2px 5px; border-radius: 3px; font-weight: bold;');
+};
+
+console.dynamicGroup = function (message, count, total) {
+  console.groupCollapsed(`%c[${dynamicStatusIcon(count / total * 100)}] ${message}`, `background-color: #${BG_COLORS[colorScaler(count / total * 100)]}; color: #${FG_COLORS[colorScaler(count / total * 100)]}; padding: 2px 5px; border-radius: 3px; font-weight: bold;`);
 };
 
 // Add dark mode class to any page using extend.js

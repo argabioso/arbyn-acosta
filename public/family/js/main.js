@@ -2,6 +2,7 @@ var tree = $(
   bino.Diagram,
   "tree",
   {
+    isReadOnly: true,
     padding: ui.measure.padding,
     scale: ui.scale,
     layout: $(
@@ -12,7 +13,11 @@ var tree = $(
       }
     ),
     hasHorizontalScrollbar: false,
-    hasVerticalScrollbar: false
+    hasVerticalScrollbar: false,
+    allowHorizontalScroll: true,
+    allowSelect: false,
+    allowVerticalScroll: true,
+    allowZoom: true,
   }
 );
 

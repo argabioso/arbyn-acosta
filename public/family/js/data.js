@@ -73,34 +73,41 @@ const SOURCES = {
     'GQX8-CQP:lastName',
     'GQX8-CQP:living',
     'GQX8-CQP:middleName',
-    'XXXX-000:GHB5-TWN:parent', // aesthetic data consideration
-    'XXXX-000:GQX8-CQP:parent', // aesthetic data consideration
+    'XXXX-000:GHB5-TWN:parentChild', // aesthetic data consideration
+    'XXXX-000:GQX8-CQP:parentChild', // aesthetic data consideration
   ],
+  // Arbyn Argabioso birth certificate
   'https://drive.google.com/file/d/1B1umw_xm5i-AmNp9YzshX2DebSAhj3cz/view?usp=sharing': [
     'GQX8-CQP:birthDate',
     'GQX8-CQP:birthPlace',
     'GQX8-CQP:firstName',
     'GQX8-CQP:gender',
     'GQX8-CQP:middleName',
-    'GQX8-CQP:GQJK-G8W:parent',
-    'GQX8-CQP:GQJK-L51:parent',
+    'GQX8-CQP:GQJK-G8W:parentChild',
+    'GQX8-CQP:GQJK-L51:parentChild',
+    'GQJK-L51:GQJK-G8W:partner',
   ],
+  // Tatay Roland's birth certificate
   'https://drive.google.com/file/d/1degLEAa8cBBxJrRsWwz0t6wHh9vs29cH/view?usp=sharing': [
     'GQJK-L51:birthDate',
     'GQJK-L51:birthPlace',
-    'GQJK-L51:gender',
     'GQJK-L51:firstName',
+    'GQJK-L51:gender',
     'GQJK-L51:lastName',
     'GQJK-L51:middleName',
+    'GQJK-L51:GQJK-LCT:parentChild',
+    'GQJK-L51:GHBZ-YVX:parentChild',
   ],
+  // Nanay's birth certificate
   'https://drive.google.com/file/d/1Db5lGDp-mhJH7LAXnuijFXBc1c1vA07j/view?usp=sharing': [
     'GQJK-G8W:birthDate',
     'GQJK-G8W:birthPlace',
-    'GQJK-G8W:gender',
     'GQJK-G8W:firstName',
+    'GQJK-G8W:gender',
     'GQJK-G8W:lastName',
     'GQJK-G8W:middleName',
   ],
+  // Nanay's death certificate
   'https://drive.google.com/file/d/1JArFl6_m-kuvyPf-LqDLU3_SapZzCvkt/view?usp=sharing': [
     'GQJK-G8W:deathDate',
     'GQJK-G8W:deathPlace',
@@ -115,18 +122,54 @@ const SOURCES = {
   ],
   'https://www.geni.com/people/Miguel-Maramba/4012194445110022663': [
     'LLQS-641:birthDate',
-    'LLQS-641:L281-614:parent',
-    'LLQS-641:LLQS-6YC:parent',
+    'LLQS-641:L281-614:parentChild',
+    'LLQS-641:LLQS-6YC:parentChild',
   ],
   'https://www.familysearch.org/ark:/61903/1:1:HYTD-R5ZM': [
     'GH12-DRN:birthDate',
     'GH12-DRN:deathDate',
   ],
   'https://www.familysearch.org/tree/pedigree/landscape/G4MF-WD8': [
-    'GHB8-5K8:G4MF-WD8:parent',
-    'GHB8-5K8:G4MF-S3R:parent',
+    'GHB8-5K8:G4MF-S3R:parentChild',
+    'GHB8-5K8:G4MF-WD8:parentChild',
   ],
-  'https://www.familysearch.org/ark:/61903/1:1:6JG6-3YR8': [
+  // Manuel Ajesta and Ursula badoles in son's catholic record
+  'https://www.familysearch.org/ark:/61903/1:1:6JG6-3YRH': [
+    'GH12-XX4:GH12-HQN:partner',
+    'GH12-HQN:GKBT-9GD:parentChild',
+    'GH12-XX4:GKBR-M9Y:parentChild',
+  ],
+  // Lola Estebana Death Certificate
+  'https://drive.google.com/file/d/1yf_M5CJgnXsHGFvFmF5Uzfp4YrsAnfUY/view?usp=sharing': [
+    'GHB8-RCH:deathDate',
+    'GHB8-RCH:deathPlace',
+    'GHB8-RCH:gender',
+  ],
+  // Lola Lydia Birth Certificate
+  'https://drive.google.com/file/d/1Yy9S1Y4NOilHHulCeejkeeY1BUbzgRyn/view?usp=sharing': [
+    'GHBZ-YVX:birthDate',
+    'GHBZ-YVX:birthPlace',
+    'GHBZ-YVX:firstName',
+    'GHBZ-YVX:gender',
+    'GHBZ-YVX:lastName',
+    'GHBZ-YVX:living',
+    'GHBZ-YVX:middleName',
+    'GHBZ-YVX:GHB8-7T6:parentChild',
+    'GHBZ-YVX:GHB8-GZL:parentChild',
+  ],
+  // Lola Lydia marriage certificate with Lolo Marcial
+  'https://drive.google.com/file/d/1C2TFs8kVvf6lWq-ANjEEG165f7bWUZCs/view?usp=sharing': [
+    'GHBZ-YVX:GQJK-LCT:partner',
+  ],
+  // FamilySearch: Lola Marcial marriage record
+  'https://www.familysearch.org/ark:/61903/1:1:HBBK-QDMM': [
+    'GHB8-7T6:GHB8-GZL:partner',
+    'GHBZ-TM4:GHBZ-P5Q:partner',
+    'GHBZ-YVX:GQJK-LCT:partner',
+    'GHBZ-YVX:GHB8-7T6:parentChild',
+    'GHBZ-YVX:GHB8-GZL:parentChild',
+    'GQJK-LCT:GHBZ-P5Q:parentChild',
+    'GQJK-LCT:GHBZ-TM4:parentChild',
   ],
 };
 
