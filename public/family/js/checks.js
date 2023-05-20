@@ -9,10 +9,8 @@ function checkPerPerson(person) {
   let unverifiedAttributes = [];
 
   let attributesToIgnore = [
-    'key', // custom attribute, not verifiable
+    'key', // custom-information attribute, not verifiable
     'hasDNA', // aesthetic attribute
-    'hasImage', // aesthetic attribute
-    'marker', // aesthetic attribute
     'parent', // derived attribute
     'fullName', // composite attribute
   ];
@@ -23,6 +21,14 @@ function checkPerPerson(person) {
 
     sourceCount += 2;
     expectedSourceCount += 2;
+  }
+
+  if (person.marker === undefined) {
+    attributesToIgnore.push('marker');
+  }
+
+  if (!person.hasImage) {
+    attributesToIgnore.push('hasImage');
   }
 
   for (const [attributeName, attributeValue] of Object.entries(person)) {
@@ -46,6 +52,14 @@ function checkPerPerson(person) {
     }
 
     let currentSourceCount = 0;
+
+    // This attribute is already a statement of "having an image"
+    // since we don't put a random image at all cost, having this
+    // attribute already serves as a source
+    if (attributeName == "hasImage") {
+      currentSourceCount += 1;
+    }
+
     currentSourceCount += KEYS_IN_SOURCE.occurrences(sourceKey);
     currentSourceCount += KEYS_IN_SOURCE.occurrences(sourceKeyAlternative);
     sourceCount += currentSourceCount;
@@ -54,6 +68,8 @@ function checkPerPerson(person) {
     // sources found for that specific attribute
     if (currentSourceCount <= 0) {
       unverifiedAttributes.push(attributeName);
+    } else if (currentSourceCount > 1) {
+      expectedSourceCount += (currentSourceCount - 1);
     }
   }
   return [sourceCount, expectedSourceCount, unverifiedAttributes];
@@ -99,18 +115,28 @@ function checkSources() {
     console.valid('All the source in the dataset are unique');
   }
 
+  let peopleWithSources = [];
+  let peopleWithNoSources = [];
+
   for (const [i, person] of Object.entries(TREE_DATA)) {
     // Ignore people with no name
-    if (person.fullName === undefined) continue;
+    if (person.fullName === undefined) {
+      continue;
+    }
 
     let [sourceCount, expectedSourceCount, unverifiedAttributes] = checkPerPerson(person);
-    if (sourceCount <= 0) continue
+    if (sourceCount <= 0) {
+      peopleWithNoSources.push(person.fullName);
+      continue;
+    }
 
     let prettySourceCount = `${String(sourceCount).padStart(2, '0')}`;
     if (sourceCount >= expectedSourceCount) {
-      console.valid(`${prettySourceCount} / ${expectedSourceCount} sources found for ${person.fullName}`);
+      peopleWithSources.push(person.fullName);
+      console.valid(`${prettySourceCount} / ${expectedSourceCount} sources for ${person.fullName}`);
     } else if (sourceCount > 0) {
-      console.dynamicGroup(`${prettySourceCount} / ${expectedSourceCount} sources found for ${person.fullName}`, sourceCount, expectedSourceCount);
+      peopleWithSources.push(person.fullName);
+      console.dynamicGroup(`${prettySourceCount} / ${expectedSourceCount} sources for ${person.fullName}`, sourceCount, expectedSourceCount);
       for (const [j, unverifiedAttribute] of Object.entries(unverifiedAttributes)) {
         console.log(`%c${unverifiedAttribute} %chas no source`, 'font-weight: 700;', 'font-weight: 400;');
       }
@@ -118,6 +144,11 @@ function checkSources() {
     }
   }
 
+  console.invalidGroup(`${peopleWithNoSources.length} / ${TREE_DATA.length} people has no documented sources`)
+  for (const [i, personFullName] of Object.entries(peopleWithNoSources)) {
+    console.log(`%c${personFullName}`, 'font-weight: 700;');
+  }
+  console.groupEnd();
   console.groupEnd();
 }
 

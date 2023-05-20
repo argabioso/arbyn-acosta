@@ -115,7 +115,7 @@ const BG_COLORS = [
   'd1e5c4',
   'c6e3c7',
   'bee2cb',
-  'b7e2cd',
+  'b1e0c8',
 ];
 
 const FG_COLORS = [
@@ -144,7 +144,7 @@ function colorScaler(percent) {
 }
 
 function dynamicStatusIcon(percent) {
-    if (percent >= 75) {
+    if (percent == 100) {
       return '✓';
     }
     if (percent >= 0 && percent <= 25) {
@@ -158,7 +158,7 @@ console.partly = function (message) {
 };
 
 console.valid = function (message) {
-  console.log(`%c[✓] ${message}`, 'background-color: #b7e2cd; color: #054021; padding: 2px 5px; border-radius: 3px; font-weight: bold;');
+  console.log(`%c[✓] ${message}`, 'background-color: #b1e0c8; color: #054021; padding: 2px 5px; border-radius: 3px; font-weight: bold;');
 };
 
 console.invalid = function (message) {
@@ -174,7 +174,7 @@ console.partlyGroup = function (message) {
 };
 
 console.validGroup = function (message) {
-  console.groupCollapsed(`%c[✓] ${message}`, 'background-color: #b7e2cd; color: #054021; padding: 2px 5px; border-radius: 3px; font-weight: bold;');
+  console.groupCollapsed(`%c[✓] ${message}`, 'background-color: #b1e0c8; color: #054021; padding: 2px 5px; border-radius: 3px; font-weight: bold;');
 };
 
 console.invalidGroup = function (message) {

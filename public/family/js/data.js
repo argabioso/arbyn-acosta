@@ -1,9 +1,9 @@
 var TREE_DATA = [
-  { key: 'XXXX-000',                                                                                                                         gender: '',  birthDate: null,         deathDate: null,               living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                deathPlace: null,                                height: 0, width: 0 },
-    { key: 'GQX8-CQP',               child: 'XXXX-000', firstName: 'Arbyn',              middleName: 'Acosta',      lastName: 'Argabioso',   gender: 'M', birthDate: '1995-04-19', deathDate: null,               living: true,  hasDNA: true,  hasImage: true,   birthPlace: 'Santa Cruz, Manila, PHL',           deathPlace: null,                                marker: 'software' },
+  { key: 'TEMP-000',                                                                                                                         gender: '',  birthDate: null,         deathDate: null,               living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                deathPlace: null,                                height: 0, width: 0 },
+    { key: 'GQX8-CQP',               child: 'TEMP-000', firstName: 'Arbyn',              middleName: 'Acosta',      lastName: 'Argabioso',   gender: 'M', birthDate: '1995-04-19', deathDate: null,               living: true,  hasDNA: true,  hasImage: true,   birthPlace: 'Santa Cruz, Manila, PHL',           deathPlace: null,                                marker: 'software' },
       { key: 'GQJK-L51',             child: 'GQX8-CQP', firstName: 'Rolando',            middleName: 'Saplala',     lastName: 'Argabioso',   gender: 'M', birthDate: '1965-10-09', deathDate: null,               living: true,  hasDNA: true,  hasImage: true,   birthPlace: 'Poblacion, Caloocan, PHL',          deathPlace: null,                                marker: 'government' },
         { key: 'GQJK-LCT',           child: 'GQJK-L51', firstName: 'Marcial',            middleName: 'Mia',         lastName: 'Argabioso',   gender: 'M', birthDate: '1932-10-14', deathDate: '2020-02-27',       living: false, hasDNA: false, hasImage: true,   birthPlace: 'Majayjay, Laguna, PHL',             deathPlace: 'Quezon City, PHL',                  },
-          { key: 'GHBZ-TM4',         child: 'GQJK-LCT', firstName: 'Eusebio',            middleName: 'Lopecillo',   lastName: 'Argabioso',   gender: 'M', birthDate: '1894-09-18', deathDate: '1972-10-27',       living: false, hasDNA: false, hasImage: false,  birthPlace: 'Majayjay, Laguna, PHL',             deathPlace: 'Majayjay, Laguna, PHL',             marker: 'farming' },
+          { key: 'GHBZ-TM4',         child: 'GQJK-LCT', firstName: 'Eusebio',            middleName: 'Lopecillo',   lastName: 'Argabioso',   gender: 'M', birthDate: 'about 1895', deathDate: '1972-10-27',       living: false, hasDNA: false, hasImage: false,  birthPlace: 'Majayjay, Laguna, PHL',             deathPlace: 'Majayjay, Laguna, PHL',             marker: 'farming' },
             { key: 'GHB8-RCH',       child: 'GHBZ-TM4', firstName: 'Estebana',           middleName: '',            lastName: 'Lopecillo',   gender: 'F', birthDate: 'about 1861', deathDate: '1951-08-30',       living: false, hasDNA: false, hasImage: false,  birthPlace: 'Majayjay, Laguna, PHL',             deathPlace: 'Majayjay, Laguna, PHL',             },
           { key: 'GHBZ-P5Q',         child: 'GQJK-LCT', firstName: 'Francisca',          middleName: '',            lastName: 'Mia',         gender: 'F', birthDate: null,         deathDate: 'after 1936-10-14', living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                deathPlace: null,                                },
         { key: 'GHBZ-YVX',           child: 'GQJK-L51', firstName: 'Lydia',              middleName: 'Perez',       lastName: 'Saplala',     gender: 'F', birthDate: '1944-11-24', deathDate: null,               living: true,  hasDNA: true,  hasImage: true,   birthPlace: 'Lubao, Pampanga, PHL',              deathPlace: null,                                marker: 'retail' },
@@ -14,7 +14,7 @@ var TREE_DATA = [
             { key: 'GHB8-M8D',       child: 'GHB8-GZL', firstName: 'Victor',             middleName: '',            lastName: 'Perez',       gender: 'M', birthDate: null,         deathDate: null,               living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                deathPlace: null,                                },
             { key: 'GHB8-M86',       child: 'GHB8-GZL', firstName: 'Genoveba',           middleName: '',            lastName: 'Gutierrez',   gender: 'F', birthDate: null,         deathDate: null,               living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                deathPlace: null,                                },
       { key: 'GQJK-G8W',             child: 'GQX8-CQP', firstName: 'Corazon',            middleName: 'Maramba',     lastName: 'Acosta',      gender: 'F', birthDate: '1971-03-10', deathDate: '2018-05-25',       living: false, hasDNA: false, hasImage: true,   birthPlace: 'Sampaloc, Manila, PHL',             deathPlace: 'Santa Cruz, Laguna, PHL',           marker: 'housewife' },
-        { key: 'GHBD-7M4',           child: 'GQJK-G8W', firstName: 'Manuel',             middleName: 'San Agustin', lastName: 'Acosta Jr.',  gender: 'M', birthDate: '1948-07-06', deathDate: '1979-06-07',       living: false, hasDNA: false, hasImage: true,   birthPlace: 'Manila, PHL',                       deathPlace: 'Los Angeles, California, USA',      marker: 'seaman' },
+        { key: 'GHBD-7M4',           child: 'GQJK-G8W', firstName: 'Manuel',             middleName: 'San Agustin', lastName: 'Acosta Jr.',  gender: 'M', birthDate: '1948-07-06', deathDate: '1979-06-07',       living: false, hasDNA: false, hasImage: true,   birthPlace: 'Manila, PHL',                       deathPlace: 'Pasadena, Los Angeles, CA, USA',    marker: 'seaman' },
           { key: 'GHBD-9L6',         child: 'GHBD-7M4', firstName: 'Manuel',             middleName: 'Bongco',      lastName: 'Acosta Sr.',  gender: 'M', birthDate: '1913-11-10', deathDate: '1994-11-20',       living: false, hasDNA: false, hasImage: true,   birthPlace: 'Orani, Bataan, PHL',                deathPlace: 'San Dimas, Los Angeles, CA, USA',   marker: 'police' },
             { key: 'GHB8-SQN',       child: 'GHBD-9L6', firstName: 'Ligorio',            middleName: '',            lastName: 'Acosta',      gender: 'M', birthDate: 'about 1871', deathDate: '1948-07-07',       living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                deathPlace: 'Manila, PHL',                       },
             { key: 'GHB8-5K8',       child: 'GHBD-9L6', firstName: 'Maximiana',          middleName: 'Cahanding',   lastName: 'Bongco',      gender: 'F', birthDate: null,         deathDate: 'after 1913-11-10', living: false, hasDNA: false, hasImage: false,  birthPlace: 'Orani, Bataan, PHL',                deathPlace: null,                                },
@@ -36,8 +36,8 @@ var TREE_DATA = [
               { key: 'G7C3-B6P',     child: 'LLQS-6F1', firstName: 'Gregorio',           middleName: '',            lastName: 'Reyes',       gender: 'M', birthDate: null,         deathDate: null,               living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                deathPlace: null,                                },
               { key: 'G7C3-J9S',     child: 'LLQS-6F1', firstName: 'Leocadia',           middleName: '',            lastName: 'Novilla',     gender: 'F', birthDate: null,         deathDate: null,               living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                deathPlace: null,                                },
           { key: 'GHBD-9LY',         child: 'GHB8-J1B', firstName: 'Crescencia',         middleName: '',            lastName: 'Dumantay',    gender: 'F', birthDate: '1918-04-19', deathDate: '1990-04-16',       living: false, hasDNA: false, hasImage: true,   birthPlace: null,                                deathPlace: 'Sangandaan, Caloocan, PHL',         },
-            { key: 'TEMP-111',       child: 'GHBD-9LY', firstName: 'Unknown',            middleName: '',            lastName: 'name',        gender: 'F', birthDate: null,         deathDate: null,               living: false, hasDNA: false, hasImage: true,   birthPlace: null,                                deathPlace: null,                                },
-    { key: 'GHB5-TWN',               child: 'XXXX-000', firstName: 'Mitchie',            middleName: 'Ajesta',      lastName: 'Adanza',      gender: 'F', birthDate: '1994-12-16', deathDate: null,               living: true,  hasDNA: true,  hasImage: true,   birthPlace: 'Santa Cruz, Manila, PHL',           deathPlace: null,                                },
+            { key: 'TEMP-001',       child: 'GHBD-9LY', firstName: 'Unknown',            middleName: '',            lastName: 'name',        gender: 'F', birthDate: null,         deathDate: null,               living: false, hasDNA: false, hasImage: true,   birthPlace: null,                                deathPlace: null,                                },
+    { key: 'GHB5-TWN',               child: 'TEMP-000', firstName: 'Mitchie',            middleName: 'Ajesta',      lastName: 'Adanza',      gender: 'F', birthDate: '1994-12-16', deathDate: null,               living: true,  hasDNA: true,  hasImage: true,   birthPlace: 'Santa Cruz, Manila, PHL',           deathPlace: null,                                },
       { key: 'GHB5-XTZ',             child: 'GHB5-TWN', firstName: 'Darne',              middleName: 'Elican',      lastName: 'Adanza',      gender: 'M', birthDate: '1964-06-22', deathDate: null,               living: true,  hasDNA: false, hasImage: true,   birthPlace: 'Balingasag, Misamis Oriental, PHL', deathPlace: null,                                marker: 'manufacturing' },
         { key: 'GH12-SVQ',           child: 'GHB5-XTZ', firstName: 'Nestor',             middleName: 'Ladera',      lastName: 'Adanza',      gender: 'M', birthDate: '1938-02-26', deathDate: '2018-09-29',       living: false, hasDNA: false, hasImage: true,   birthPlace: 'Balingasag, Misamis Oriental, PHL', deathPlace: 'Balingasag, Misamis Oriental, PHL', marker: 'farming' },
           { key: 'GH12-DRN',         child: 'GH12-SVQ', firstName: 'Felomino',           middleName: 'R',           lastName: 'Adanza',      gender: 'M', birthDate: 'about 1901', deathDate: '1990-11-03',       living: false, hasDNA: false, hasImage: false,  birthPlace: 'Dumaguete, Negros Oriental, PHL',   deathPlace: 'Balingasag, Misamis Oriental, PHL', marker: 'farming' },
@@ -57,121 +57,6 @@ var TREE_DATA = [
           { key: 'GH12-6YL',         child: 'GH12-W17', firstName: 'Benigno',            middleName: '',            lastName: 'Vergara',     gender: 'M', birthDate: null,         deathDate: null,               living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                deathPlace: null,                                },
           { key: 'GH12-DD8',         child: 'GH12-W17', firstName: 'Enoria',             middleName: '',            lastName: 'Borja',       gender: 'F', birthDate: null,         deathDate: 'after 1997-12-16', living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                deathPlace: null,                                },
 ];
-
-const SOURCES = {
-  'PRESENT': [
-    'GHB5-TWN:birthDate',
-    'GHB5-TWN:firstName',
-    'GHB5-TWN:gender',
-    'GHB5-TWN:lastName',
-    'GHB5-TWN:living',
-    'GHB5-TWN:middleName',
-    'GQJK-L51:living',
-    'GQX8-CQP:birthDate',
-    'GQX8-CQP:firstName',
-    'GQX8-CQP:gender',
-    'GQX8-CQP:lastName',
-    'GQX8-CQP:living',
-    'GQX8-CQP:middleName',
-    'XXXX-000:GHB5-TWN:parentChild', // aesthetic data consideration
-    'XXXX-000:GQX8-CQP:parentChild', // aesthetic data consideration
-  ],
-  // Arbyn Argabioso birth certificate
-  'https://drive.google.com/file/d/1B1umw_xm5i-AmNp9YzshX2DebSAhj3cz/view?usp=sharing': [
-    'GQX8-CQP:birthDate',
-    'GQX8-CQP:birthPlace',
-    'GQX8-CQP:firstName',
-    'GQX8-CQP:gender',
-    'GQX8-CQP:middleName',
-    'GQX8-CQP:GQJK-G8W:parentChild',
-    'GQX8-CQP:GQJK-L51:parentChild',
-    'GQJK-L51:GQJK-G8W:partner',
-  ],
-  // Tatay Roland's birth certificate
-  'https://drive.google.com/file/d/1degLEAa8cBBxJrRsWwz0t6wHh9vs29cH/view?usp=sharing': [
-    'GQJK-L51:birthDate',
-    'GQJK-L51:birthPlace',
-    'GQJK-L51:firstName',
-    'GQJK-L51:gender',
-    'GQJK-L51:lastName',
-    'GQJK-L51:middleName',
-    'GQJK-L51:GQJK-LCT:parentChild',
-    'GQJK-L51:GHBZ-YVX:parentChild',
-  ],
-  // Nanay's birth certificate
-  'https://drive.google.com/file/d/1Db5lGDp-mhJH7LAXnuijFXBc1c1vA07j/view?usp=sharing': [
-    'GQJK-G8W:birthDate',
-    'GQJK-G8W:birthPlace',
-    'GQJK-G8W:firstName',
-    'GQJK-G8W:gender',
-    'GQJK-G8W:lastName',
-    'GQJK-G8W:middleName',
-  ],
-  // Nanay's death certificate
-  'https://drive.google.com/file/d/1JArFl6_m-kuvyPf-LqDLU3_SapZzCvkt/view?usp=sharing': [
-    'GQJK-G8W:deathDate',
-    'GQJK-G8W:deathPlace',
-    'GQJK-G8W:living',
-  ],
-  'https://www.familysearch.org/ark:/61903/1:1:FV6D-SZH': [
-    'GHB8-SQN:birthDate',
-    'GHB8-SQN:deathDate',
-  ],
-  'https://www.familysearch.org/ark:/61903/1:1:66HQ-VJGQ': [
-    'LLQS-641:LLQS-6F1:partner',
-  ],
-  'https://www.geni.com/people/Miguel-Maramba/4012194445110022663': [
-    'LLQS-641:birthDate',
-    'LLQS-641:L281-614:parentChild',
-    'LLQS-641:LLQS-6YC:parentChild',
-  ],
-  'https://www.familysearch.org/ark:/61903/1:1:HYTD-R5ZM': [
-    'GH12-DRN:birthDate',
-    'GH12-DRN:deathDate',
-  ],
-  'https://www.familysearch.org/tree/pedigree/landscape/G4MF-WD8': [
-    'GHB8-5K8:G4MF-S3R:parentChild',
-    'GHB8-5K8:G4MF-WD8:parentChild',
-  ],
-  // Manuel Ajesta and Ursula badoles in son's catholic record
-  'https://www.familysearch.org/ark:/61903/1:1:6JG6-3YRH': [
-    'GH12-XX4:GH12-HQN:partner',
-    'GH12-HQN:GKBT-9GD:parentChild',
-    'GH12-XX4:GKBR-M9Y:parentChild',
-  ],
-  // Lola Estebana Death Certificate
-  'https://drive.google.com/file/d/1yf_M5CJgnXsHGFvFmF5Uzfp4YrsAnfUY/view?usp=sharing': [
-    'GHB8-RCH:deathDate',
-    'GHB8-RCH:deathPlace',
-    'GHB8-RCH:gender',
-  ],
-  // Lola Lydia Birth Certificate
-  'https://drive.google.com/file/d/1Yy9S1Y4NOilHHulCeejkeeY1BUbzgRyn/view?usp=sharing': [
-    'GHBZ-YVX:birthDate',
-    'GHBZ-YVX:birthPlace',
-    'GHBZ-YVX:firstName',
-    'GHBZ-YVX:gender',
-    'GHBZ-YVX:lastName',
-    'GHBZ-YVX:living',
-    'GHBZ-YVX:middleName',
-    'GHBZ-YVX:GHB8-7T6:parentChild',
-    'GHBZ-YVX:GHB8-GZL:parentChild',
-  ],
-  // Lola Lydia marriage certificate with Lolo Marcial
-  'https://drive.google.com/file/d/1C2TFs8kVvf6lWq-ANjEEG165f7bWUZCs/view?usp=sharing': [
-    'GHBZ-YVX:GQJK-LCT:partner',
-  ],
-  // FamilySearch: Lola Marcial marriage record
-  'https://www.familysearch.org/ark:/61903/1:1:HBBK-QDMM': [
-    'GHB8-7T6:GHB8-GZL:partner',
-    'GHBZ-TM4:GHBZ-P5Q:partner',
-    'GHBZ-YVX:GQJK-LCT:partner',
-    'GHBZ-YVX:GHB8-7T6:parentChild',
-    'GHBZ-YVX:GHB8-GZL:parentChild',
-    'GQJK-LCT:GHBZ-P5Q:parentChild',
-    'GQJK-LCT:GHBZ-TM4:parentChild',
-  ],
-};
 
 // Add "parent" from "child" value since GoJS works that way
 for (var i = TREE_DATA.length - 1; i >= 0; i--) {
