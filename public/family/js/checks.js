@@ -3,6 +3,10 @@ for (const [url, originalSourceKeys] of Object.entries(SOURCES)) {
   KEYS_IN_SOURCE += originalSourceKeys.toString();
 }
 
+function isEmpty(value) {
+  return value === undefined || value === null || value.trim() === '';
+}
+
 function checkPerPerson(person) {
   let sourceCount = 0;
   let expectedSourceCount = 0;
@@ -23,8 +27,12 @@ function checkPerPerson(person) {
     expectedSourceCount += 2;
   }
 
-  if (person.marker === undefined) {
+  if (isEmpty(person.marker)) {
     attributesToIgnore.push('marker');
+  }
+
+  if (isEmpty(person.partner)) {
+    attributesToIgnore.push('partner');
   }
 
   if (!person.hasImage) {

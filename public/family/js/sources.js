@@ -106,9 +106,13 @@ const SOURCES = {
   ],
   // Lola Estebana Death Certificate
   'https://drive.google.com/file/d/1yf_M5CJgnXsHGFvFmF5Uzfp4YrsAnfUY/view?usp=sharing': [
+    'GHB8-RCH:birthPlace',
     'GHB8-RCH:deathDate',
     'GHB8-RCH:deathPlace',
+    'GHB8-RCH:firstName',
     'GHB8-RCH:gender',
+    'GHB8-RCH:lastName',
+    'GHB8-RCH:living',
   ],
   // Lola Lydia Birth Certificate
   'https://drive.google.com/file/d/1Yy9S1Y4NOilHHulCeejkeeY1BUbzgRyn/view?usp=sharing': [
