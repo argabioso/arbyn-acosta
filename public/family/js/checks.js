@@ -134,11 +134,13 @@ function checkSources() {
   for (const [i, person] of Object.entries(TREE_DATA)) {
     // Ignore people with no name
     if (person.fullName === undefined) {
+      person['verificationColor'] = `#${BG_COLORS[0]}`;
       continue;
     }
 
     let [sourceCount, expectedSourceCount, unverifiedAttributes] = checkPerPerson(person);
     if (sourceCount <= 0) {
+      person['verificationColor'] = `#${BG_COLORS[0]}`;
       peopleWithNoSources.push(person.fullName);
       continue;
     }
@@ -147,6 +149,11 @@ function checkSources() {
     person['expectedSourceCount'] = expectedSourceCount;
     person['unverifiedAttributes'] = unverifiedAttributes;
     person['sourcePercentage'] = sourceCount / expectedSourceCount;
+
+    // Not really used but we already prepared it
+    // by adding it to the actual tree dataset
+    person['verificationColor'] = `#${BG_COLORS[colorScaler(sourceCount / expectedSourceCount * 100)]}`;
+
     sortedPeople.push(person);
   }
 

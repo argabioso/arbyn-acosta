@@ -139,18 +139,18 @@ const FG_COLORS = [
 ];
 
 function colorScaler(percent) {
-    percent = Math.max(0, Math.min(100, percent));
-    return Math.round((percent * 16) / 100);
+  percent = Math.max(0, Math.min(100, percent));
+  return Math.round((percent * 16) / 100);
 }
 
 function dynamicStatusIcon(percent) {
-    if (percent == 100) {
-      return '✓';
-    }
-    if (percent >= 0 && percent <= 25) {
-      return '✕';
-    }
-    return '?';
+  if (percent == 100) {
+    return '✓';
+  }
+  if (percent >= 0 && percent <= 25) {
+    return '✕';
+  }
+  return '?';
 }
 
 console.partly = function (message) {
