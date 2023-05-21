@@ -127,6 +127,7 @@ function checkSources() {
     console.valid('All the source in the dataset are unique');
   }
 
+  let sortedPeople = [];
   let peopleWithSources = [];
   let peopleWithNoSources = [];
 
@@ -142,21 +143,37 @@ function checkSources() {
       continue;
     }
 
+    person['sourceCount'] = sourceCount;
+    person['expectedSourceCount'] = expectedSourceCount;
+    person['unverifiedAttributes'] = unverifiedAttributes;
+    person['sourcePercentage'] = sourceCount / expectedSourceCount;
+    sortedPeople.push(person);
+  }
+
+  sortedPeople.sort((a, b) => b.sourcePercentage - a.sourcePercentage);
+
+  for (const [i, person] of Object.entries(sortedPeople)) {
+    let sourceCount = person['sourceCount'];
+    let expectedSourceCount = person['expectedSourceCount'];
+    let unverifiedAttributes = person['unverifiedAttributes'];
+
     let prettySourceCount = `${String(sourceCount).padStart(2, '0')}`;
+    let prettyexpectedSourceCount = `${String(expectedSourceCount).padStart(2, '0')}`;
+
     if (sourceCount >= expectedSourceCount) {
       peopleWithSources.push(person.fullName);
-      console.valid(`${prettySourceCount} / ${expectedSourceCount} checks passed for ${person.fullName}`);
+      console.valid(`${prettySourceCount} / ${prettyexpectedSourceCount} checks passed for ${person.fullName}`);
     } else if (sourceCount > 0) {
       peopleWithSources.push(person.fullName);
-      console.dynamicGroup(`${prettySourceCount} / ${expectedSourceCount} checks passed for ${person.fullName}`, sourceCount, expectedSourceCount);
+      console.dynamicGroup(`${prettySourceCount} / ${prettyexpectedSourceCount} checks passed for ${person.fullName}`, sourceCount, expectedSourceCount);
       for (const [j, unverifiedAttribute] of Object.entries(unverifiedAttributes)) {
-        console.log(`%c${unverifiedAttribute} %chas no source`, 'font-weight: 700;', 'font-weight: 400;');
+        console.log(`No source given for %c${unverifiedAttribute}`, 'font-weight: 700;');
       }
       console.groupEnd();
     }
   }
 
-  console.invalidGroup(`${peopleWithNoSources.length} / ${TREE_DATA.length} people has no documented sources`)
+  console.invalidGroup(`${peopleWithNoSources.length} / ${TREE_DATA.length} people have no documented sources`)
   for (const [i, personFullName] of Object.entries(peopleWithNoSources)) {
     console.log(`%c${personFullName}`, 'font-weight: 700;');
   }

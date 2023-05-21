@@ -85,6 +85,7 @@ const SOURCES = {
   'https://www.familysearch.org/ark:/61903/1:1:66HQ-VJGQ': [
     'LLQS-641:LLQS-6F1:partner',
   ],
+  // Geni Record for Lolo Miguel Maramba
   'https://www.geni.com/people/Miguel-Maramba/4012194445110022663': [
     'LLQS-641:birthDate',
     'LLQS-641:L281-614:parentChild',
@@ -254,6 +255,16 @@ const SOURCES = {
 
     'GHB8-SQN:GHB8-5K8:partner',
 
+    'GHB8-LCC:firstName',
+    'GHB8-LCC:lastName',
+    'GHB8-LCC:gender',
+
+    'GHB8-H7K:firstName',
+    'GHB8-H7K:lastName',
+    'GHB8-H7K:gender',
+
+    'GHB8-LCC:GHB8-H7K:partner',
+
     'GHBD-9L6:birthPlace',
     'GHBD-9L6:firstName',
     'GHBD-9L6:lastName',
@@ -284,5 +295,14 @@ const SOURCES = {
     'GHBZ-TM4:living',
     'GHBZ-TM4:GHB8-RCH:parentChild',
     'GHBZ-TM4:marker',
+  ],
+  // Death certificate ni Lolo Felomino
+  '???': [
+    'GH12-DRN:firstName',
+    'GH12-DRN:middleName',
+    'GH12-DRN:lastName',
+    'GH12-DRN:deathDate',
+    'GH12-DRN:deathPlace',
+    'GH12-DRN:living',
   ]
 };
