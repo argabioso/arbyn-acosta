@@ -244,6 +244,16 @@ const SOURCES = {
   ],
   // Marriage certificate ni Lolo Manuel Sr. and Lola Nati
   'https://drive.google.com/file/d/1L4zy5f_l9gYFBQQ68WdVFLDunwFoKgru/view?usp=sharing': [
+    'GHB8-SQN:firstName',
+    'GHB8-SQN:lastName',
+    'GHB8-SQN:gender',
+
+    'GHB8-5K8:firstName',
+    'GHB8-5K8:lastName',
+    'GHB8-5K8:gender',
+
+    'GHB8-SQN:GHB8-5K8:partner',
+
     'GHBD-9L6:birthPlace',
     'GHBD-9L6:firstName',
     'GHBD-9L6:lastName',

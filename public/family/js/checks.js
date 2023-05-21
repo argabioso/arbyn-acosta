@@ -27,6 +27,10 @@ function checkPerPerson(person) {
     expectedSourceCount += 2;
   }
 
+  if (isEmpty(person.middleName)) {
+    attributesToIgnore.push('middleName');
+  }
+
   if (isEmpty(person.marker)) {
     attributesToIgnore.push('marker');
   }
@@ -141,10 +145,10 @@ function checkSources() {
     let prettySourceCount = `${String(sourceCount).padStart(2, '0')}`;
     if (sourceCount >= expectedSourceCount) {
       peopleWithSources.push(person.fullName);
-      console.valid(`${prettySourceCount} / ${expectedSourceCount} sources for ${person.fullName}`);
+      console.valid(`${prettySourceCount} / ${expectedSourceCount} checks passed for ${person.fullName}`);
     } else if (sourceCount > 0) {
       peopleWithSources.push(person.fullName);
-      console.dynamicGroup(`${prettySourceCount} / ${expectedSourceCount} sources for ${person.fullName}`, sourceCount, expectedSourceCount);
+      console.dynamicGroup(`${prettySourceCount} / ${expectedSourceCount} checks passed for ${person.fullName}`, sourceCount, expectedSourceCount);
       for (const [j, unverifiedAttribute] of Object.entries(unverifiedAttributes)) {
         console.log(`%c${unverifiedAttribute} %chas no source`, 'font-weight: 700;', 'font-weight: 400;');
       }
