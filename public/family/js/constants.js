@@ -1,5 +1,4 @@
 const isPrivate = !(window.location.get("private") == "false");
-const isDark = window.isDark();
 
 const ui = {
   scale: 0.85,
