@@ -4,14 +4,11 @@ const SOURCES = {
     'GHB5-TWN:firstName',
     'GHB5-TWN:gender',
     'GHB5-TWN:lastName',
-    'GHB5-TWN:living',
     'GHB5-TWN:middleName',
-    'GQJK-L51:living',
     'GQX8-CQP:birthDate',
     'GQX8-CQP:firstName',
     'GQX8-CQP:gender',
     'GQX8-CQP:lastName',
-    'GQX8-CQP:living',
     'GQX8-CQP:middleName',
     'TEMP-000:GHB5-TWN:parentChild', // aesthetic data consideration
     'TEMP-000:GQX8-CQP:parentChild', // aesthetic data consideration
@@ -36,6 +33,29 @@ const SOURCES = {
   ],
   'https://web.facebook.com/arbyn.argabioso/posts/pfbid02U3X7BU11Lb41vrbLQKrAyGe8oCEvd8SSqbY8rcCZ2MEQzcb3BUQJWL8UPhF1ZttYl': [
     'GQX8-CQP:GHB5-TWN:partner',
+  ],
+  // Mitch's birth certificate
+  'https://drive.google.com/file/d/19s_gdN98AQ1sZ5lhqSf8GrpJJIpFhsdf/view?usp=sharing': [
+    'GHB5-TWN:firstName',
+    'GHB5-TWN:middleName',
+    'GHB5-TWN:lastName',
+    'GHB5-TWN:gender',
+    'GHB5-TWN:birthDate',
+    'GHB5-TWN:birthPlace',
+
+    'GHB5-TWN:GHB5-XTZ:parentChild',
+    'GHB5-XTZ:firstName',
+    'GHB5-XTZ:middleName',
+    'GHB5-XTZ:lastName',
+    'GHB5-XTZ:gender',
+
+    'GHB5-TWN:GHBR-FK3:parentChild',
+    'GHBR-FK3:firstName',
+    'GHBR-FK3:middleName',
+    'GHBR-FK3:lastName',
+    'GHBR-FK3:gender',
+
+    'GHB5-XTZ:GHBR-FK3:partner',
   ],
   // Tatay Roland's birth certificate
   'https://drive.google.com/file/d/1degLEAa8cBBxJrRsWwz0t6wHh9vs29cH/view?usp=sharing': [
@@ -311,5 +331,46 @@ const SOURCES = {
     'GH12-DRN:marker',
     'GH12-DRN:GH12-3GN:partner',
     'GH12-SVQ:GH12-DRN:parentChild',
-  ]
+  ],
+  // Tito Darne's birth certificate
+  'https://drive.google.com/file/d/1jYZqUHatNlvgDuyFw7jxSwgZsE6jy_9V/view?usp=sharing': [
+    'GHB5-XTZ:middleName',
+    'GHB5-XTZ:lastName',
+    'GHB5-XTZ:gender',
+    'GHB5-XTZ:birthDate',
+    'GHB5-XTZ:birthPlace',
+
+    'GHB5-XTZ:GH12-9F6:parentChild',
+    'GH12-9F6:firstName',
+    'GH12-9F6:lastName',
+    'GH12-9F6:gender',
+
+    'GHB5-XTZ:GH12-SVQ:parentChild',
+    'GH12-SVQ:firstName',
+    'GH12-SVQ:lastName',
+    'GH12-SVQ:gender',
+
+    'GH12-9F6:GH12-SVQ:partner',
+  ],
+  // Tita Mylen's birth certificate
+  'https://drive.google.com/file/d/1J6wUo6AwrS5aO9LJWbh8CUReaRTkUEFF/view?usp=sharing': [
+    'GHBR-FK3:middleName',
+    'GHBR-FK3:lastName',
+    'GHBR-FK3:gender',
+    'GHBR-FK3:birthDate',
+    'GHBR-FK3:birthPlace',
+
+    'GHBR-FK3:GH12-Z3C:parentChild',
+    'GH12-Z3C:firstName',
+    'GH12-Z3C:lastName',
+    'GH12-Z3C:gender',
+
+    'GHBR-FK3:GH12-W17:parentChild',
+    'GH12-W17:firstName',
+    'GH12-W17:middleName',
+    'GH12-W17:lastName',
+    'GH12-W17:gender',
+
+    'GH12-Z3C:GH12-W17:partner',
+  ],
 };

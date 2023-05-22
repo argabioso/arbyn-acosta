@@ -39,6 +39,10 @@ function checkPerPerson(person) {
     attributesToIgnore.push('partner');
   }
 
+  if (person.living) {
+    attributesToIgnore.push('living');
+  }
+
   if (!person.hasImage) {
     attributesToIgnore.push('hasImage');
   }
@@ -130,6 +134,7 @@ function checkSources() {
   let sortedPeople = [];
   let peopleWithSources = [];
   let peopleWithNoSources = [];
+  let fullyVerifiedPeople = [];
 
   for (const [i, person] of Object.entries(TREE_DATA)) {
     // Ignore people with no name
@@ -140,6 +145,9 @@ function checkSources() {
     }
 
     let [sourceCount, expectedSourceCount, unverifiedAttributes] = checkPerPerson(person);
+    if (sourceCount == expectedSourceCount) {
+      fullyVerifiedPeople.push(person.fullName);
+    }
     if (sourceCount <= 0) {
       person['verificationBgColor'] = `#${BG_COLORS[0]}`;
       person['verificationFgColor'] = `#${FG_COLORS[0]}`;
@@ -159,9 +167,9 @@ function checkSources() {
 
     sortedPeople.push(person);
   }
+  console.valid(`${String(fullyVerifiedPeople.length).padStart(2, '0')} / ${TREE_DATA.length} people have complete sources`)
 
   sortedPeople.sort((a, b) => b.sourcePercentage - a.sourcePercentage);
-
   for (const [i, person] of Object.entries(sortedPeople)) {
     let sourceCount = person['sourceCount'];
     let expectedSourceCount = person['expectedSourceCount'];
