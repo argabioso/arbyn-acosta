@@ -39,6 +39,9 @@ template['BottomLeftBorderRadius'] = function() {
 template['CheckFill'] = function() {
   return $(
     bino.Panel,
+    new bino.Binding("visible", function(nodeData) {
+      return isChecking;
+    }),
     $(
       bino.Shape,
       {
@@ -49,9 +52,6 @@ template['CheckFill'] = function() {
         opacity: 0.75,
         margin: new bino.Margin(0.2, 0, 0, 0.2),
       },
-      new bino.Binding("visible", function(nodeData) {
-        return isChecking;
-      }),
       new bino.Binding('desiredSize', function(nodeData) {
         return new bino.Size(
           (ui.measure.node.height + ui.measure.genderBand.width - 0.8) - 0.4,

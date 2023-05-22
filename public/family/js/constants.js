@@ -1,9 +1,9 @@
 const isPrivate = !(window.location.get("private") == "false");
 const isChecking = window.location.get("check") == "true";
 
-console.log(`Using dark theme: ${isPrivate}`);
+console.log(`Using dark theme: ${isDark}`);
 console.log(`Enabled private mode: ${isPrivate}`);
-console.log(`Enabled checking mode: ${isPrivate}`);
+console.log(`Enabled checking mode: ${isChecking}`);
 
 const ui = {
   scale: 0.85,
