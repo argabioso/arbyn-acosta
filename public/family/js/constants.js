@@ -1,4 +1,5 @@
 const isPrivate = !(window.location.get("private") == "false");
+const isChecking = window.location.get("check") == "true";
 
 const ui = {
   scale: 0.85,
