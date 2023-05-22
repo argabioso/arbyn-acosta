@@ -91,8 +91,11 @@ const SOURCES = {
     'LLQS-641:L281-614:parentChild',
     'LLQS-641:LLQS-6YC:parentChild',
   ],
+  // FamilySearch: Lolo Felomino death record
   'https://www.familysearch.org/ark:/61903/1:1:HYTD-R5ZM': [
-    'GH12-DRN:birthDate',
+    'GH12-DRN:firstName',
+    'GH12-DRN:lastName',
+    'GH12-DRN:deathPlace',
     'GH12-DRN:deathDate',
   ],
   'https://www.familysearch.org/tree/pedigree/landscape/G4MF-WD8': [
@@ -286,7 +289,7 @@ const SOURCES = {
     'GHBZ-TM4:living',
   ],
   // Death certificate ni Lolo Bio
-  '???': [
+  'https://drive.google.com/file/d/1SQy34nGR1Z5-AqNSZDInfkewArzP_xqp/view?usp=share_link': [
     'GHBZ-TM4:firstName',
     'GHBZ-TM4:middleName',
     'GHBZ-TM4:lastName',
@@ -295,14 +298,19 @@ const SOURCES = {
     'GHBZ-TM4:living',
     'GHBZ-TM4:GHB8-RCH:parentChild',
     'GHBZ-TM4:marker',
+    'GHBZ-TM4:gender',
   ],
   // Death certificate ni Lolo Felomino
-  '???': [
+  'https://drive.google.com/file/d/1BK3uw-U_2ONst68_V7wUXFQWzzlu0pFc/view?usp=share_link': [
     'GH12-DRN:firstName',
     'GH12-DRN:middleName',
     'GH12-DRN:lastName',
     'GH12-DRN:deathDate',
     'GH12-DRN:deathPlace',
     'GH12-DRN:living',
+    'GH12-DRN:gender',
+    'GH12-DRN:marker',
+    'GH12-DRN:GH12-3GN:partner',
+    'GH12-SVQ:GH12-DRN:parentChild',
   ]
 };
