@@ -68,12 +68,13 @@ template['CheckFill'] = function() {
         font: `700 ${ui.font.size.name}px Google Sans, sans-serif`,
         height: ui.font.size.name + 2,
         textAlign: 'center',
+        opacity: 0.5,
       },
       new bino.Binding('width', function(nodeData) {
         return (ui.measure.node.height + ui.measure.genderBand.width - 0.8) - 0.4;
       }),
       new bino.Binding('stroke', function(nodeData) {
-        return pSBC(0.85, nodeData.verificationBgColor, '#111111');
+        return '#111111';
       }),
       new bino.Binding("margin", function(nodeData) {
         return new bino.Margin(
