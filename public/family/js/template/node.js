@@ -125,10 +125,7 @@ template['CheckFill'] = function() {
       //   );
       // }),
       new bino.Binding("stroke", function(nodeData) {
-        if (nodeData.firstName.includes("nknown")) {
-          return ui.color.node.nameless.details;
-        }
-        return ui.color.node.details;
+        return '#111111';
       }),
       new bino.Binding("text", function(nodeData) {
         if (nodeData.sourceCount === undefined) {
