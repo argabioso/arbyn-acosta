@@ -103,7 +103,7 @@ template['CheckFill'] = function() {
         font: `700 8px Roboto, sans-serif`,
         height: ui.font.size.details + 2,
         textAlign: 'center',
-        opacity: 0.5,
+        opacity: 0.6,
       },
       new bino.Binding("visible", function(nodeData) {
         return isChecking;

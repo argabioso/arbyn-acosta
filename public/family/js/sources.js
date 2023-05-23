@@ -373,4 +373,10 @@ const SOURCES = {
 
     'GH12-Z3C:GH12-W17:partner',
   ],
+  'https://www.familysearch.org/ark:/61903/1:1:HBNK-LY2M': [
+    'GHB8-GB6:firstName',
+    'GHB8-GB6:middleName',
+    'GHB8-GB6:lastName',
+    'GHBD-9LY:lastName',
+  ]
 };
