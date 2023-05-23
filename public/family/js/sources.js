@@ -373,10 +373,16 @@ const SOURCES = {
 
     'GH12-Z3C:GH12-W17:partner',
   ],
+  // FamilySearch: record of Corazon Maramba including her parents
   'https://www.familysearch.org/ark:/61903/1:1:HBNK-LY2M': [
     'GHB8-GB6:firstName',
     'GHB8-GB6:middleName',
     'GHB8-GB6:lastName',
     'GHBD-9LY:lastName',
+  ],
+  // News article regarding Lolo Sotero being the chief in the police force
+  // caputuring some trouble makers near a train station
+  'https://drive.google.com/file/d/15o0fdYYMYTzXQ3ikiMCOqy-YlfAND76C/view?usp=sharing': [
+    'GHB8-GB6:marker',
   ]
 };
