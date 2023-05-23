@@ -52,6 +52,9 @@ template['CheckFill'] = function() {
         opacity: 0.75,
         margin: new bino.Margin(0.2, 0, 0, 0.2),
       },
+      new bino.Binding("visible", function(nodeData) {
+        return isChecking;
+      }),
       new bino.Binding('desiredSize', function(nodeData) {
         return new bino.Size(
           (ui.measure.node.height + ui.measure.genderBand.width - 0.8) - 0.4,
@@ -70,6 +73,9 @@ template['CheckFill'] = function() {
         textAlign: 'center',
         opacity: 0.5,
       },
+      new bino.Binding("visible", function(nodeData) {
+        return isChecking;
+      }),
       new bino.Binding('width', function(nodeData) {
         return (ui.measure.node.height + ui.measure.genderBand.width - 0.8) - 0.4;
       }),
@@ -78,7 +84,7 @@ template['CheckFill'] = function() {
       }),
       new bino.Binding("margin", function(nodeData) {
         return new bino.Margin(
-          nodeData.height / 2 - 7, 0, 0, 0,
+          nodeData.height / 2 - 12, 0, 0, 0,
         );
       }),
       new bino.Binding('text', function(nodeData) {
@@ -90,6 +96,46 @@ template['CheckFill'] = function() {
         }
         return `${prettySourceCount} / ${prettyexpectedSourceCount}`;
       })
+    ),
+    $(
+      bino.TextBlock,
+      {
+        font: `700 8px Roboto, sans-serif`,
+        height: ui.font.size.details + 2,
+        textAlign: 'center',
+        opacity: 0.5,
+      },
+      new bino.Binding("visible", function(nodeData) {
+        return isChecking;
+      }),
+      new bino.Binding("margin", function(nodeData) {
+        return new bino.Margin(
+          nodeData.height / 2 + 4, 0, 0, 0,
+        );
+      }),
+      new bino.Binding("width", function(nodeData) {
+        return (ui.measure.node.height + ui.measure.genderBand.width - 0.8) - 0.4;
+      }),
+      // new bino.Binding("margin", function(nodeData) {
+      //   return new bino.Margin(
+      //     24 + parseInt(ui.measure.node.padding / 2),
+      //     0,
+      //     0,
+      //     ui.measure.node.height + ui.font.size.details,
+      //   );
+      // }),
+      new bino.Binding("stroke", function(nodeData) {
+        if (nodeData.firstName.includes("nknown")) {
+          return ui.color.node.nameless.details;
+        }
+        return ui.color.node.details;
+      }),
+      new bino.Binding("text", function(nodeData) {
+        if (nodeData.sourceCount === undefined) {
+          return '';
+        }
+        return 'CHECKS PASSED';
+      }),
     )
   );
 }
