@@ -214,6 +214,7 @@ function getLifeSpan(nodeData, isPrivate) {
   const separator = ' — ';
   const { living, birthDate, deathDate } = nodeData;
 
+  const age = calculateAge(birthDate, deathDate)
   const birthYear = formatDate(birthDate, isPrivate);
   const deathYear = formatDate(deathDate);
 
@@ -233,12 +234,12 @@ function getLifeSpan(nodeData, isPrivate) {
   // `birthYear` with a separator and "Living" or "Deceased"
   // based on the living flag.
   if (!deathYear) {
-    return `${birthYear}${separator}${living ? 'Living' : 'Deceased'}`;
+    return `${birthYear}${separator}${living ? 'Living' : 'Deceased'}` + (living ? ` (${age})` : '');
   }
 
   // If both birthYear and deathYear exist,
   // return the formatted lifespan string.
-  return `${birthYear}${separator}${deathYear}`;
+  return `${birthYear}${separator}${deathYear} (${age})`;
 }
 
 /**
@@ -278,3 +279,18 @@ function formatDate(raw, isPrivate) {
 
   return `${prefix}${year}`;
 };
+
+function calculateAge(birthDateString, deathDateString) {
+    let deathDate = deathDateString ? new Date(deathDateString) : new Date();
+    let birthDate = new Date(birthDateString);
+
+    let age = deathDate.getFullYear() - birthDate.getFullYear();
+    let m = deathDate.getMonth() - birthDate.getMonth();
+
+    // adjust age if birth month hasn't occurred in the death year
+    if (m < 0 || (m === 0 && deathDate.getDate() < birthDate.getDate())) {
+        age--;
+    }
+
+    return age;
+}
