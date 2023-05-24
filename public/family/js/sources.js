@@ -373,6 +373,28 @@ const SOURCES = {
 
     'GH12-Z3C:GH12-W17:partner',
   ],
+  // Tita Mylen's PSA Birth Certificate
+  'https://drive.google.com/file/d/18MFv7G6xKBJj9M4ewH8a3GgcpFW4VSht/view?usp=sharing': [
+    'GHBR-FK3:middleName',
+    'GHBR-FK3:lastName',
+    'GHBR-FK3:gender',
+    'GHBR-FK3:birthDate',
+    'GHBR-FK3:birthPlace',
+
+    'GHBR-FK3:GH12-Z3C:parentChild',
+    'GH12-Z3C:firstName',
+    'GH12-Z3C:middleName',
+    'GH12-Z3C:lastName',
+    'GH12-Z3C:gender',
+
+    'GHBR-FK3:GH12-W17:parentChild',
+    'GH12-W17:firstName',
+    'GH12-W17:middleName',
+    'GH12-W17:lastName',
+    'GH12-W17:gender',
+
+    'GH12-Z3C:GH12-W17:partner',
+  ],
   // FamilySearch: record of Corazon Maramba including her parents
   'https://www.familysearch.org/ark:/61903/1:1:HBNK-LY2M': [
     'GHB8-GB6:firstName',
