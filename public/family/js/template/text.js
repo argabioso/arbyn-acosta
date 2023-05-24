@@ -232,10 +232,6 @@ function getLifeSpan(nodeData, isPrivate) {
     return `${separator}${deathYear}`;
   }
 
-  if (birthDate.includes('about')) {
-    age = `~${rawAge}`;
-  }
-
   // If deathYear does not exist, return the formatted
   // `birthYear` with a separator and "Living" or "Deceased"
   // based on the living flag.
