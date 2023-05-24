@@ -214,7 +214,9 @@ function getLifeSpan(nodeData, isPrivate) {
   const separator = ' — ';
   const { living, birthDate, deathDate } = nodeData;
 
-  const age = calculateAge(birthDate, deathDate)
+  let rawAge = calculateAge(birthDate, deathDate)
+  let age = rawAge;
+
   const birthYear = formatDate(birthDate, isPrivate);
   const deathYear = formatDate(deathDate);
 
@@ -230,11 +232,23 @@ function getLifeSpan(nodeData, isPrivate) {
     return `${separator}${deathYear}`;
   }
 
+  if (birthDate.includes('about')) {
+    age = `~${rawAge}`;
+  }
+
   // If deathYear does not exist, return the formatted
   // `birthYear` with a separator and "Living" or "Deceased"
   // based on the living flag.
   if (!deathYear) {
     return `${birthYear}${separator}${living ? 'Living' : 'Deceased'}` + (living ? ` (${age})` : '');
+  }
+
+  if (deathDate.includes('after')) {
+    age = `${rawAge}+`;
+  } else if (deathDate.includes('before')) {
+    age = `${rawAge}-`;
+  } else if (deathDate.includes('about')) {
+    age = `~${rawAge}`;
   }
 
   // If both birthYear and deathYear exist,
