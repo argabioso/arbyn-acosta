@@ -196,16 +196,6 @@ if (isDarkQuery !== null || isLightQuery !== null) {
   }
 }
 
-// Add dark mode class to any page using extend.js
-function applyDarkMode() {
-  if (isDark) {
-     document.querySelector("body").classList.add('dark');
-   }
-}
-const interval = setInterval(applyDarkMode, 1800000);
-
-applyDarkMode();
-clearInterval(interval);
 // Version 4.0
 const pSBC=(p,c0,c1,l)=>{
     let r,g,b,P,f,t,h,i=parseInt,m=Math.round,a=typeof(c1)=="string";
@@ -231,3 +221,32 @@ const pSBC=(p,c0,c1,l)=>{
     if(h)return"rgb"+(f?"a(":"(")+r+","+g+","+b+(f?","+m(a*1000)/1000:"")+")";
     else return"#"+(4294967296+r*16777216+g*65536+b*256+(f?m(a*255):0)).toString(16).slice(1,f?undefined:-2)
 }
+
+var agent = navigator.userAgent;
+var isWebkit = (agent.indexOf("AppleWebKit") > 0);
+var isIPad = (agent.indexOf("iPad") > 0);
+var isIOS = (agent.indexOf("iPhone") > 0 || agent.indexOf("iPod") > 0);
+var isAndroid = (agent.indexOf("Android")  > 0);
+var isNewBlackBerry = (agent.indexOf("AppleWebKit") > 0 && agent.indexOf("BlackBerry") > 0);
+var isWebOS = (agent.indexOf("webOS") > 0);
+var isWindowsMobile = (agent.indexOf("IEMobile") > 0);
+var isSmallScreen = (screen.width < 767 || (isAndroid && screen.width < 1000));
+var isUnknownMobile = (isWebkit && isSmallScreen);
+var isMobile = (isIOS || isAndroid || isNewBlackBerry || isWebOS || isWindowsMobile || isUnknownMobile);
+var isTablet = (isIPad || (isMobile && !isSmallScreen));
+
+
+// Add dark mode class to any page using extend.js
+const isMobileDevice = ( isMobile && isSmallScreen && document.cookie.indexOf( "mobileFullSiteClicked=") < 0 );
+function applyBodyClasses() {
+  if (isDark) {
+    document.querySelector("body").classList.add('dark');
+  }
+  if ( isMobileDevice ) {
+    document.querySelector("body").classList.add('mobile');
+  }
+}
+const interval = setInterval(applyBodyClasses, 1800000);
+
+applyBodyClasses();
+clearInterval(interval);
