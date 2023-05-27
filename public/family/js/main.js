@@ -4,8 +4,7 @@ var tree = $(
   {
     isReadOnly: true,
     padding: ui.measure.padding,
-    initialAutoScale: (isMobileDevice) ? bino.Diagram.None : bino.Diagram.Uniform,
-    scale: (isMobileDevice) ? 1 : ui.scale,
+    scale: ui.scale,
     layout: $(
       bino.TreeLayout, {
         angle: 0,
