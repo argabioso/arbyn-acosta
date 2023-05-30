@@ -35,6 +35,14 @@ function checkPerPerson(person) {
     attributesToIgnore.push('marker');
   }
 
+  if (isEmpty(person.prefix)) {
+    attributesToIgnore.push('prefix');
+  }
+
+  if (isEmpty(person.suffix)) {
+    attributesToIgnore.push('suffix');
+  }
+
   if (isEmpty(person.partner)) {
     attributesToIgnore.push('partner');
   }
