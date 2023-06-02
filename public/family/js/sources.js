@@ -20,6 +20,10 @@ const SOURCES = {
     'GHB5-XTZ:marker',
     'GHBR-FK3:marker',
   ],
+  // Usual suffix verification
+  "Son's existance": [
+    'GHBD-9L6:suffix',
+  ],
   // Arbyn Argabioso birth certificate
   'https://drive.google.com/file/d/1B1umw_xm5i-AmNp9YzshX2DebSAhj3cz/view?usp=sharing': [
     'GQX8-CQP:birthDate',
@@ -193,6 +197,7 @@ const SOURCES = {
   // Lolo Sotero's grave headstone photo, together with
   // Lola Cresing and Lola Catalina
   'https://drive.google.com/file/d/1AeoNewX7fEeAaihfBI3Tz6kNA9ia0m-D/view?usp=share_link': [
+    'GHB8-GB6:suffix',
     'GHB8-GB6:birthDate',
     'GHB8-GB6:deathDate',
     'GHB8-GB6:deathPlace', // Photo was taken by Arbyn Argabioso (Me)
@@ -406,5 +411,32 @@ const SOURCES = {
   // caputuring some trouble makers near a train station
   'https://drive.google.com/file/d/15o0fdYYMYTzXQ3ikiMCOqy-YlfAND76C/view?usp=sharing': [
     'GHB8-GB6:marker',
+  ],
+  // Geni: Guillermo Maramba
+  'https://www.geni.com/people/Guillermo-Maramba/6000000010495044375': [
+
+  ],
+  // Lolo Sotero's death certificate
+  'https://drive.google.com/file/d/1Pn6Xvn7ucwnzTgNTcFBsQq9hzAnARp51/view?usp=sharing': [
+    'GHB8-GB6:birthDate',
+    'GHB8-GB6:birthPlace',
+    'GHB8-GB6:deathDate',
+    'GHB8-GB6:deathPlace',
+    'GHB8-GB6:firstName',
+    'GHB8-GB6:gender',
+    'GHB8-GB6:lastName',
+    'GHB8-GB6:living',
+  ],
+  // Lolo Nestor death certificate
+  'https://drive.google.com/file/d/1peIClAbyWzZV_kWcxPKAVBPDnVqFXG2Q/view?usp=drive_link': [
+    'GH12-SVQ:firstName',
+    'GH12-SVQ:middleName',
+    'GH12-SVQ:lastName',
+    'GH12-SVQ:gender',
+    'GH12-SVQ:birthDate',
+    'GH12-SVQ:deathDate',
+    'GH12-SVQ:deathPlace',
+    'GH12-SVQ:living',
+    'GH12-SVQ:marker',
   ]
 };
