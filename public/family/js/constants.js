@@ -26,6 +26,9 @@ const ui = {
         dna: !isDark ? '#f2e6f9' : '#403148',
         software: !isDark ? '#f0f0f0' : '#393939',
         government: !isDark ? '#f0f0f0' : '#393939',
+        cattle: !isDark ? '#f3ede9' : '#393939',
+        investigate: !isDark ? '#f0f0f0' : '#393939',
+        train: !isDark ? '#f0f0f0' : '#393939',
         church: !isDark ? '#f0f0f0' : '#393939',
         seaman: !isDark ? '#f0f0f0' : '#393939',
         manufacturing: !isDark ? '#f0f0f0' : '#393939',
@@ -37,6 +40,7 @@ const ui = {
         land: !isDark ? '#f2ebe6' : '#393633',
         police: !isDark ? '#e3edfd' : '#323b48',
         military: !isDark ? '#fcf3e2' : '#3e382e',
+        sales: !isDark ? '#fcf3e2' : '#3e382e',
       },
       symbol: {
         default: 'white',

@@ -253,6 +253,7 @@ const SOURCES = {
     'GHBD-9L6:deathPlace',
     'GHBD-9L6:living',
     'GHBD-9L6:marker',
+    'GHBD-9L6:marker2',
   ],
   // Birth certificate ni Lolo Ben
   'https://drive.google.com/file/d/1u-7tnWjKdZ5-GrdLKuKi-NOAVvty25Qo/view?usp=sharing': [
@@ -411,6 +412,7 @@ const SOURCES = {
   // caputuring some trouble makers near a train station
   'https://drive.google.com/file/d/15o0fdYYMYTzXQ3ikiMCOqy-YlfAND76C/view?usp=sharing': [
     'GHB8-GB6:marker',
+    'GHB8-GB6:marker2',
   ],
   // Geni: Guillermo Maramba
   'https://www.geni.com/people/Guillermo-Maramba/6000000010495044375': [
@@ -438,5 +440,5 @@ const SOURCES = {
     'GH12-SVQ:deathPlace',
     'GH12-SVQ:living',
     'GH12-SVQ:marker',
-  ]
+  ],
 };

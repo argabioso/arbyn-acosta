@@ -34,6 +34,7 @@ tree.nodeTemplate = $(
 
   // Markers should always be at the end
   template.DNAMarker(),
+  template.FirstMarker(),
   template.SecondMarker(),
   template.GenderBand(),
   template.CheckFill(),
