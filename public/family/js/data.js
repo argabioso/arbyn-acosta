@@ -79,8 +79,8 @@ for (const [i, person] of Object.entries(TREE_DATA)) {
   let prefix = '';
   let suffix = '';
 
-  if (person.prefix != '') prefix = `${person.prefix} `;
-  if (person.suffix != '') suffix = ` ${person.suffix}`;
+  if (person.prefix !== undefined && person.prefix != '') prefix = `${person.prefix} `;
+  if (person.suffix !== undefined && person.suffix != '') suffix = ` ${person.suffix}`;
 
   // Add "fullName" to each person
   TREE_DATA[i]['fullName'] = (

@@ -27,7 +27,7 @@ template["DNAMarker"] = function() {
       )
     }),
     new bino.Binding("visible", function(nodeData) {
-      return nodeData.hasDNA;
+      return nodeData.hasDNA !== undefined && nodeData.hasDNA;
     }),
     $(
       bino.Shape,
