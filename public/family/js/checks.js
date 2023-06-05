@@ -1,3 +1,5 @@
+isChecking = window.location.get("check") == "true";
+
 var KEYS_IN_SOURCE = '';
 for (const [url, originalSourceKeys] of Object.entries(SOURCES)) {
   KEYS_IN_SOURCE += originalSourceKeys.toString();
@@ -207,4 +209,6 @@ function checkSources() {
   console.groupEnd();
 }
 
-checkSources();
+if (isChecking) {
+  checkSources();
+}

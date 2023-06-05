@@ -1,5 +1,5 @@
 const isPrivate = !(window.location.get("private") == "false");
-const isChecking = window.location.get("check") == "true";
+var isChecking = false; // overridden by checks.js if imported
 
 const ui = {
   scale: 0.85,
