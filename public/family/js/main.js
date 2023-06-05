@@ -43,11 +43,7 @@ tree.nodeTemplate = $(
 );
 
 // Define a Link template that routes orthogonally, with no arrowhead
-tree.linkTemplate = $(
-  bino.Link,
-  { selectable: false, routing: bino.Link.Orthogonal },
-  $(bino.Shape, { strokeWidth: 1, stroke: ui.color.link }),
-);
+tree.linkTemplate = template.Link();
 
 // Create the tree diagram
 let model = $(bino.TreeModel);
