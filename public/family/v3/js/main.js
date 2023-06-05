@@ -473,9 +473,9 @@ function onTemplateRender(event, data) {
         photoElement.src = "../images/" + itemConfig.id + ".png";
     } else {
         if (IS_DARK) {
-            photoElement.src = "../images/" + itemConfig.gender + ".dark.png";
+            photoElement.src = "../images/" + itemConfig.gender + ".dark.square.png";
         } else {
-            photoElement.src = "../images/" + itemConfig.gender + ".png";
+            photoElement.src = "../images/" + itemConfig.gender + ".square.png";
         }
     }
 }
