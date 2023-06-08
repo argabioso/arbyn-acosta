@@ -262,6 +262,12 @@ function formatDate(raw, isPrivate) {
     'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
     'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec',
   ];
+  const longMonths = [
+    'January', 'February', 'March',
+    'April', 'May', 'June', 'July',
+    'August', 'September', 'October',
+    'November', 'December',
+  ];
 
   if (!raw) {
     return null;
@@ -285,6 +291,10 @@ function formatDate(raw, isPrivate) {
     }
 
     return `${prefix}${day}${months[parseInt(month, 10) - 1]} ${year}`;
+  }
+
+  if (month) {
+    return `${prefix}${longMonths[parseInt(month, 10) - 1]} ${year}`;
   }
 
   return `${prefix}${year}`;
