@@ -49,7 +49,7 @@ template['CheckFill'] = function() {
         stroke: null,
         strokeWidth: 0,
         shadowVisible: true,
-        opacity: 0.75,
+        opacity: 0.7,
         margin: new bino.Margin(0.2, 0, 0, 0.2),
       },
       new bino.Binding("visible", function(nodeData) {
@@ -68,10 +68,10 @@ template['CheckFill'] = function() {
     $(
       bino.TextBlock,
       {
-        font: `700 ${ui.font.size.name}px Google Sans, sans-serif`,
+        font: `700 ${ui.font.size.name * 0.92}px Google Sans, sans-serif`,
         height: ui.font.size.name + 2,
         textAlign: 'center',
-        opacity: 0.5,
+        opacity: 0.55,
       },
       new bino.Binding("visible", function(nodeData) {
         return isChecking;
@@ -84,17 +84,25 @@ template['CheckFill'] = function() {
       }),
       new bino.Binding("margin", function(nodeData) {
         return new bino.Margin(
-          nodeData.height / 2 - 12, 0, 0, 0,
+          nodeData.height / 2 - 11, 0, 0, 0,
         );
       }),
       new bino.Binding('text', function(nodeData) {
-        let prettySourceCount = `${String(nodeData.sourceCount).padStart(2, '0')}`;
-        let prettyexpectedSourceCount = `${String(nodeData.expectedSourceCount).padStart(2, '0')}`;
+        // let prettySourceCount = `${String(nodeData.sourceCount).padStart(2, '0')}`;
+        // let prettyexpectedSourceCount = `${String(nodeData.expectedSourceCount).padStart(2, '0')}`;
+
+        let prettySourceCount = `${nodeData.sourceCount}`;
+        let prettyexpectedSourceCount = `${nodeData.expectedSourceCount}`;
 
         if (prettySourceCount === 'undefined') {
           return '';
         }
-        return `${prettySourceCount} / ${prettyexpectedSourceCount}`;
+        // let sentimentSourceCount = (nodeData.sentimentSourceCount > 0) ? ` / ${sentimentSourceCount}` : '';
+        let sentimentSourceCount = ''
+        if (nodeData.sentimentSourceCount > 0) {
+          sentimentSourceCount = `${nodeData.sentimentSourceCount} / `
+        }
+        return `${sentimentSourceCount}${prettySourceCount} / ${prettyexpectedSourceCount}`;
       })
     ),
     $(

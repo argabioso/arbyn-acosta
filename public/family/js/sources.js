@@ -20,9 +20,129 @@ const SOURCES = {
     'GHB5-XTZ:marker',
     'GHBR-FK3:marker',
   ],
+  // Should only be used on ancestors with living children
+  // since this type of source would have a bigger "mistake chance"
+  // as the generation gets older (Family Tree started on March 2020)
+  // DO NOT CHANGE THIS SOURCE, IT IS USED DIRECTLY IN checks.js
+  'SENTIMENTS OF LIVING RELATIVES': [
+    // From Tita Susan (child of Lola Catalina)
+    'GHBD-7M4:marker',
+
+    // Directly from Nanay (child of Lola Catalina)
+    'GHB8-J1B:birthDate',
+    'GHB8-J1B:deathDate',
+    'GHB8-J1B:birthPlace',
+
+    // Directly from Tito Darne (child of Lolo Nestor)
+    'GH12-SVQ:birthPlace',
+
+    // Directly from Tito Dak (grandson of Lola Nati)
+    'GHB8-DXY:marker',
+
+    // Directly from Lolo Marcial (son of Lola Francisca)
+    'GHBZ-P5Q:living',
+
+    // Directly from Lola Lydia and Lolo Boning (children of Lolo Andong)
+    'GHB8-7T6:birthDate',
+    'GHB8-7T6:birthPlace',
+    'GHB8-7T6:deathDate',
+    'GHB8-7T6:deathPlace',
+    'GHB8-7T6:living',
+    'GHB8-7T6:marker',
+    'GHB8-7T6:middleName',
+
+    // Directly from Lola Lydia and Lolo Boning (children of Lolo Andong)
+    'GHB8-GZL:birthDate',
+    'GHB8-GZL:birthPlace',
+    'GHB8-GZL:deathDate',
+    'GHB8-GZL:deathPlace',
+    'GHB8-GZL:lastName',
+    'GHB8-GZL:living',
+    'GHB8-GZL:middleName',
+
+    // Directly from Lola Lydia (granddaughter of Lolo Estanislao and Lola Adela)
+    'GNNH-JLM:firstName',
+    'GNNH-JLM:lastName',
+    'GNNH-JLM:gender',
+    'GNNH-JLM:GHB8-7T6:parentChild',
+    'GJJX-1SG:firstName',
+    'GJJX-1SG:lastName',
+    'GJJX-1SG:gender',
+    'GJJX-1SG:GHB8-7T6:parentChild',
+    'GNNH-JLM:GJJX-1SG:partner',
+
+    // Directly from Lola Lydia (granddaughter of Lolo Victor and Lola Genoveba)
+    'GHB8-M8D:firstName',
+    'GHB8-M8D:lastName',
+    'GHB8-M8D:gender',
+    'GHB8-M8D:GHB8-GZL:parentChild',
+    'GHB8-M86:firstName',
+    'GHB8-M86:lastName',
+    'GHB8-M86:gender',
+    'GHB8-M86:GHB8-GZL:parentChild',
+    'GHB8-M8D:GHB8-M86:partner',
+
+    // Directly from Tito Darne (grandson)
+    'GH12-DRN:firstName',
+    'GH12-DRN:lastName',
+    'GH12-3GN:firstName',
+    'GH12-3GN:lastName',
+    'GH12-9JZ:firstName',
+    'GH12-9JZ:lastName',
+    'GH12-35H:firstName',
+    'GH12-35H:lastName',
+
+    // Directly from Tito Darne (grandson)
+    'GH12-XX4:firstName',
+    'GH12-XX4:lastName',
+    'GH12-HQN:firstName',
+    'GH12-HQN:lastName',
+    'GH12-6YL:firstName',
+    'GH12-6YL:lastName',
+    'GH12-DD8:firstName',
+    'GH12-DD8:lastName',
+
+    // Directly from Tita Mylen (daughter)
+    'GH12-Z3C:living',
+  ],
   // Usual suffix verification
   "Son's existance": [
     'GHBD-9L6:suffix',
+  ],
+  "Father's existance": [
+    'GHBD-7M4:suffix',
+  ],
+  // Doesn't make sense for them to be alive
+  // Everyone in Lola Estebana's generation is probably dead
+  'PROBABLY NOT LIVING ANYMORE': [
+    'GHB8-RCH:living',
+    'G2HQ-YQS:living',
+    'G2H7-Q75:living',
+    'GNNH-JLM:living',
+    'GJJX-1SG:living',
+    'GHB8-M8D:living',
+    'GHB8-M86:living',
+    'GHB8-SQN:living',
+    'GHB8-5K8:living',
+    'G4MF-WD8:living',
+    'G4MF-S3R:living',
+    'GHB8-LCC:living',
+    'GHB8-H7K:living',
+    'LLQS-641:living',
+    'LLQS-6YC:living',
+    'L281-614:living',
+    'GC7T-H59:living',
+    'L66T-WY8:living',
+    'L6HC-MMX:living',
+    'GC7T-1PK:living',
+    'LLQS-6F1:living',
+    'G7C3-B6P:living',
+    'G7C3-J9S:living',
+    'TEMP-001:living',
+    'GKBR-M9Y:living',
+    'GKBR-7P7:living',
+    'GKBT-9GD:living',
+    'K2GJ-YY3:living',
   ],
   // Arbyn Argabioso birth certificate
   'https://drive.google.com/file/d/1B1umw_xm5i-AmNp9YzshX2DebSAhj3cz/view?usp=sharing': [
@@ -441,8 +561,50 @@ const SOURCES = {
     'GH12-SVQ:living',
     'GH12-SVQ:marker',
   ],
+  // U.S. Social Security Death Index
+  'U.S. Social Security Death Index': [
+    'GHB8-DXY:deathDate',
+    'GHB8-DXY:deathPlace',
+  ],
+  // Lola Nati's grave headstone
+  'https://drive.google.com/file/d/10Z0kurjxNy0s7M0um4w5SxFMAFWA8Ivm/view?usp=drive_link': [
+    'GHB8-DXY:living',
+    'GHB8-DXY:birthDate',
+    'GHB8-DXY:deathDate',
+    'GHB8-DXY:firstName',
+    'GHB8-DXY:GHBD-9L6:partner',
+  ],
   // FamilySearch: Simplicio Lopecillo and Gregoria Villarebin
   'https://www.familysearch.org/ark:/61903/1:1:66XW-VQRT': [
+    'G2HQ-YQS:firstName',
+    'G2HQ-YQS:lastName',
+    'G2HQ-YQS:gender',
+    'G2H7-Q75:firstName',
+    'G2H7-Q75:lastName',
+    'G2H7-Q75:gender',
+    'G2HQ-YQS:GHB8-RCH:parentChild',
+    'G2H7-Q75:GHB8-RCH:parentChild',
+    'G2HQ-YQS:G2H7-Q75:partner',
+  ],
+  // Records regarding Adela Sison and Lolo Estanislao
+  'https://www.familysearch.org/ark:/61903/1:1:FN4G-JSH': [
+    'GNNH-JLM:firstName',
+    'GNNH-JLM:lastName',
+    'GNNH-JLM:gender',
+    'GJJX-1SG:firstName',
+    'GJJX-1SG:lastName',
+    'GJJX-1SG:gender',
+    'GNNH-JLM:GJJX-1SG:partner',
+  ],
+  // Record regarding Lolo Victor and Lola Genoveba
+  'https://www.familysearch.org/ark:/61903/1:1:HBP6-8VZM': [
+    'GHB8-M8D:firstName',
+    'GHB8-M8D:lastName',
+    'GHB8-M8D:gender',
+    'GHB8-M86:firstName',
+    'GHB8-M86:lastName',
+    'GHB8-M86:gender',
+    'GHB8-M8D:GHB8-M86:partner',
   ],
   // Felipe A. Mia
   'https://www.familysearch.org/ark:/61903/1:1:FK6J-3YC': [

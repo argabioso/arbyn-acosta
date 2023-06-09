@@ -5,6 +5,11 @@ for (const [url, originalSourceKeys] of Object.entries(SOURCES)) {
   KEYS_IN_SOURCE += originalSourceKeys.toString();
 }
 
+var KEYS_IN_SENTIMENT_SOURCE = '';
+for (const [i, originalSourceKeys] of Object.entries(SOURCES['SENTIMENTS OF LIVING RELATIVES'])) {
+  KEYS_IN_SENTIMENT_SOURCE += originalSourceKeys.toString();
+}
+
 function isEmpty(value) {
   return value === undefined || value === null || value.trim() === '';
 }
@@ -98,7 +103,13 @@ function checkPerPerson(person) {
       expectedSourceCount += (currentSourceCount - 1);
     }
   }
-  return [sourceCount, expectedSourceCount, unverifiedAttributes];
+
+  return [
+    sourceCount,
+    expectedSourceCount,
+    unverifiedAttributes,
+    KEYS_IN_SENTIMENT_SOURCE.occurrences(person.key),
+  ];
 }
 
 function isUniqueObjectArray(arr, key) {
@@ -154,7 +165,7 @@ function checkSources() {
       continue;
     }
 
-    let [sourceCount, expectedSourceCount, unverifiedAttributes] = checkPerPerson(person);
+    let [sourceCount, expectedSourceCount, unverifiedAttributes, sentimentSourceCount] = checkPerPerson(person);
     if (sourceCount == expectedSourceCount) {
       fullyVerifiedPeople.push(person.fullName);
     }
@@ -169,6 +180,7 @@ function checkSources() {
     person['expectedSourceCount'] = expectedSourceCount;
     person['unverifiedAttributes'] = unverifiedAttributes;
     person['sourcePercentage'] = sourceCount / expectedSourceCount;
+    person['sentimentSourceCount'] = sentimentSourceCount;
 
     // Not really used but we already prepared it
     // by adding it to the actual tree dataset
@@ -201,7 +213,9 @@ function checkSources() {
     }
   }
 
-  console.invalidGroup(`${peopleWithNoSources.length} / ${TREE_DATA.length} people have no documented sources`)
+  if (peopleWithNoSources.length > 0) {
+    console.invalidGroup(`${peopleWithNoSources.length} / ${TREE_DATA.length} people have no documented sources`);
+  }
   for (const [i, personFullName] of Object.entries(peopleWithNoSources)) {
     console.log(`%c${personFullName}`, 'font-weight: 700;');
   }
