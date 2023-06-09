@@ -230,9 +230,22 @@ const SOURCES = {
   ],
   // Geni Record for Lolo Miguel Maramba
   'https://www.geni.com/people/Miguel-Maramba/4012194445110022663': [
+    'LLQS-641:firstName',
+    'LLQS-641:middleName',
+    'LLQS-641:lastName',
     'LLQS-641:birthDate',
+    'LLQS-641:gender',
+    'GHB8-GB6:LLQS-641:parentChild',
     'LLQS-641:L281-614:parentChild',
     'LLQS-641:LLQS-6YC:parentChild',
+  ],
+  // Official Gazette ni Lolo Miguel
+  'https://drive.google.com/file/d/1Ik8lFHm_F4-FaKOs4qL4CNiq-Il2WfLR/view?usp=drive_link': [
+    'LLQS-641:marker',
+  ],
+  // Another Official Gazette entry for Lolo Miguel
+  'https://drive.google.com/file/d/1CNF4lEbL4vfjbhMnTOEk02KFDhaO-Xwa/view?usp=drive_link': [
+    'LLQS-641:prefix',
   ],
   // FamilySearch: Lolo Felomino death record
   'https://www.familysearch.org/ark:/61903/1:1:HYTD-R5ZM': [
