@@ -260,6 +260,23 @@ const SOURCES = {
   ],
   // Manuel Ajesta and Ursula badoles in son's catholic record
   'https://www.familysearch.org/ark:/61903/1:1:6JG6-3YRH': [
+    'GH12-XX4:firstName',
+    'GH12-XX4:gender',
+    'GH12-HQN:firstName',
+    'GH12-HQN:lastName',
+    'GH12-HQN:gender',
+
+    'GKBR-M9Y:firstName',
+    'GKBR-M9Y:lastName',
+    'GKBR-7P7:firstName',
+    'GKBR-7P7:lastName',
+    'GKBR-7P7:gender',
+    'GKBT-9GD:firstName',
+    'GKBT-9GD:lastName',
+    'K2GJ-YY3:firstName',
+    'K2GJ-YY3:lastName',
+    'K2GJ-YY3:gender',
+
     'GH12-XX4:GH12-HQN:partner',
     'GH12-HQN:GKBT-9GD:parentChild',
     'GH12-XX4:GKBR-M9Y:parentChild',
