@@ -25,6 +25,11 @@ const SOURCES = {
   // as the generation gets older (Family Tree started on March 2020)
   // DO NOT CHANGE THIS SOURCE, IT IS USED DIRECTLY IN checks.js
   'SENTIMENTS OF LIVING RELATIVES': [
+    // Everyone in the chat group of Lolo Bio's descendants say that
+    // he was born in Majayjay Laguna. Same goes for Lola Estebana
+    'GHBZ-TM4:birthPlace',
+    'GHB8-RCH:birthPlace',
+
     // From Tita Susan (child of Lola Catalina)
     'GHBD-7M4:marker',
 
@@ -104,6 +109,18 @@ const SOURCES = {
 
     // Directly from Tita Mylen (daughter)
     'GH12-Z3C:living',
+
+    // Airecel Bongco, another descendant from my Bongo line
+    // She mentioned in her Ancestry direct message and her grandfather
+    // told a lot of story about their Bongco family and that's where
+    // Lolo Fabian and Lola Lucina Cahanding's names came up
+    'G4MF-WD8:firstName',
+    'G4MF-WD8:lastName',
+    'G4MF-WD8:GHB8-5K8:parentChild',
+    'G4MF-S3R:firstName',
+    'G4MF-S3R:lastName',
+    'G4MF-S3R:GHB8-5K8:parentChild',
+    'G4MF-WD8:G4MF-S3R:partner',
   ],
   // Usual suffix verification
   "Son's existance": [
@@ -716,10 +733,11 @@ const SOURCES = {
     'GC7T-1PK:L281-614:parentChild',
     'GC7T-H59:GC7T-1PK:partner',
   ],
-  // Felipe A. Mia
+  // Felipe A. Mia. Brother of Lola Francisca Mia
   'https://www.familysearch.org/ark:/61903/1:1:FK6J-3YC': [
   ],
-  // Felipe A. Mia larger
+  // Felipe A. Mia larger. Brother of Lola Francisca Mia
   'https://www.familysearch.org/ark:/61903/1:1:66XW-N368': [
-  ]
+    ''
+  ],
 };
