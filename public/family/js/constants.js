@@ -72,7 +72,7 @@ const ui = {
       margin: 11,
       padding: 10,
       height: 80,
-      width: 312,
+      width: 305,
     },
   },
 };
