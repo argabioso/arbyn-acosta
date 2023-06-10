@@ -566,7 +566,35 @@ const SOURCES = {
   ],
   // Geni: Guillermo Maramba
   'https://www.geni.com/people/Guillermo-Maramba/6000000010495044375': [
+    'LLQS-6YC:firstName',
+    'LLQS-6YC:lastName',
+    'LLQS-6YC:gender',
+    'LLQS-6YC:LLQS-641:parentChild',
+    'LLQS-6YC:L281-614:partner',
+  ],
+  // Geni: Maria Garcia Bautista
+  'https://www.geni.com/people/Maria-Maramba/6000000017013425750': [
+    'L281-614:firstName',
+    'L281-614:middleName',
+    'L281-614:lastName',
+    'L281-614:gender',
+    'L281-614:LLQS-641:parentChild',
+    'LLQS-6YC:L281-614:partner',
 
+    'GC7T-H59:L281-614:parentChild',
+    'GC7T-1PK:L281-614:parentChild',
+  ],
+  // Geni: Don Agustin Bautista
+  'https://www.geni.com/people/Agustin-Bautista/6000000017013722083': [
+    'GC7T-H59:firstName',
+    'GC7T-H59:lastName',
+    'GC7T-H59:gender',
+  ],
+  // Geni: Felipa Garcia
+  'https://www.geni.com/people/Felipa-Bautista/6000000010494358163': [
+    'GC7T-1PK:firstName',
+    'GC7T-1PK:lastName',
+    'GC7T-1PK:gender',
   ],
   // Lolo Sotero's death certificate
   'https://drive.google.com/file/d/1Pn6Xvn7ucwnzTgNTcFBsQq9hzAnARp51/view?usp=sharing': [
@@ -604,7 +632,7 @@ const SOURCES = {
     'GHB8-DXY:firstName',
     'GHB8-DXY:GHBD-9L6:partner',
   ],
-  // FamilySearch: Simplicio Lopecillo and Gregoria Villarebin
+  // FamilySearch: Simplicio Lopecillo and Gregoria Villarubin
   'https://www.familysearch.org/ark:/61903/1:1:66XW-VQRT': [
     'G2HQ-YQS:firstName',
     'G2HQ-YQS:lastName',
@@ -616,8 +644,30 @@ const SOURCES = {
     'G2H7-Q75:GHB8-RCH:parentChild',
     'G2HQ-YQS:G2H7-Q75:partner',
   ],
+  // FamilySearch: Another record regarding Lolo Simplicio
+  'https://www.familysearch.org/ark:/61903/1:1:66X6-LG3J': [
+    'G2HQ-YQS:firstName',
+    'G2HQ-YQS:lastName',
+    'G2HQ-YQS:gender',
+    'G2H7-Q75:firstName',
+    'G2H7-Q75:lastName',
+    'G2H7-Q75:gender',
+    'G2HQ-YQS:GHB8-RCH:parentChild',
+    'G2H7-Q75:GHB8-RCH:parentChild',
+    'G2HQ-YQS:G2H7-Q75:partner',
+  ],
+  // FamilySearch: Record of Lola Trinidad, another daughter of Lolo Bio
+  'https://www.familysearch.org/ark:/61903/1:1:HBBS-S7W2': [
+    'GHBZ-TM4:firstName',
+    'GHBZ-TM4:lastName',
+    'GHBZ-TM4:gender',
+    'GHBZ-P5Q:firstName',
+    'GHBZ-P5Q:lastName',
+    'GHBZ-P5Q:gender',
+    'GHBZ-TM4:GHBZ-P5Q:partner',
+  ],
   // Records regarding Adela Sison and Lolo Estanislao
-  'https://www.familysearch.org/ark:/61903/1:1:FN4G-JSH': [
+  'https://www.familysearch.org/ark:/61903/1:1:FN4G-JSW': [
     'GNNH-JLM:firstName',
     'GNNH-JLM:lastName',
     'GNNH-JLM:gender',
@@ -635,6 +685,36 @@ const SOURCES = {
     'GHB8-M86:lastName',
     'GHB8-M86:gender',
     'GHB8-M8D:GHB8-M86:partner',
+  ],
+  // Old parish article regarding Don Agustin Bautista where he
+  // donated a bell for a church in Santa Barbara, Pangasinan and
+  // it was mentioned that he was an Alcalde as well
+  'http://www.oocities.org/hfamilyparishpang/history.html': [
+    'GC7T-H59:firstName',
+    'GC7T-H59:lastName',
+    'GC7T-H59:gender',
+    'GC7T-H59:prefix',
+    'GC7T-H59:marker',
+  ],
+  // Guillermo Maramba from Daniel Maramba's biology
+  'https://drive.google.com/file/d/1dDJs3rrAsbMSo_qp6my6J-wxE676FMEa/view?usp=drive_link': [
+    'LLQS-6YC:firstName',
+    'LLQS-6YC:lastName',
+    'LLQS-6YC:gender',
+    'LLQS-6YC:marker',
+    'LLQS-6YC:marker2',
+
+    'L281-614:firstName',
+    'L281-614:lastName',
+    'L281-614:gender',
+
+    'GC7T-H59:firstName',
+    'GC7T-H59:lastName',
+    'GC7T-H59:L281-614:parentChild',
+    'GC7T-1PK:firstName',
+    'GC7T-1PK:lastName',
+    'GC7T-1PK:L281-614:parentChild',
+    'GC7T-H59:GC7T-1PK:partner',
   ],
   // Felipe A. Mia
   'https://www.familysearch.org/ark:/61903/1:1:FK6J-3YC': [
