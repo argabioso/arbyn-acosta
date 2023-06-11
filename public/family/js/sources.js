@@ -109,18 +109,6 @@ const SOURCES = {
 
     // Directly from Tita Mylen (daughter)
     'GH12-Z3C:living',
-
-    // Airecel Bongco, another descendant from my Bongo line
-    // She mentioned in her Ancestry direct message and her grandfather
-    // told a lot of story about their Bongco family and that's where
-    // Lolo Fabian and Lola Lucina Cahanding's names came up
-    'G4MF-WD8:firstName',
-    'G4MF-WD8:lastName',
-    'G4MF-WD8:GHB8-5K8:parentChild',
-    'G4MF-S3R:firstName',
-    'G4MF-S3R:lastName',
-    'G4MF-S3R:GHB8-5K8:parentChild',
-    'G4MF-WD8:G4MF-S3R:partner',
   ],
   // Usual suffix verification
   "Son's existance": [
@@ -141,16 +129,12 @@ const SOURCES = {
     'GHB8-M86:living',
     'GHB8-SQN:living',
     'GHB8-5K8:living',
-    'G4MF-WD8:living',
-    'G4MF-S3R:living',
     'GHB8-LCC:living',
     'GHB8-H7K:living',
     'LLQS-641:living',
     'LLQS-6YC:living',
     'L281-614:living',
     'GC7T-H59:living',
-    'L66T-WY8:living',
-    'L6HC-MMX:living',
     'GC7T-1PK:living',
     'LLQS-6F1:living',
     'G7C3-B6P:living',
@@ -270,10 +254,6 @@ const SOURCES = {
     'GH12-DRN:lastName',
     'GH12-DRN:deathPlace',
     'GH12-DRN:deathDate',
-  ],
-  'https://www.familysearch.org/tree/pedigree/landscape/G4MF-WD8': [
-    'GHB8-5K8:G4MF-S3R:parentChild',
-    'GHB8-5K8:G4MF-WD8:parentChild',
   ],
   // Manuel Ajesta and Ursula badoles in son's catholic record
   'https://www.familysearch.org/ark:/61903/1:1:6JG6-3YRH': [
