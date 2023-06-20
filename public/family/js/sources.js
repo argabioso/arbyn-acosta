@@ -225,6 +225,12 @@ const SOURCES = {
   ],
   'https://www.familysearch.org/ark:/61903/1:1:FV6D-SZH': [
     'GHB8-SQN:deathDate',
+    'GHB8-SQN:deathPlace',
+    'GHB8-SQN:gender',
+    'GHB8-SQN:firstName',
+    'GHB8-SQN:lastName',
+    'GHB8-SQN:GHB8-5K8:partner',
+    'GHB8-5K8:gender',
   ],
   'https://www.familysearch.org/ark:/61903/1:1:66HQ-VJGQ': [
     'LLQS-641:LLQS-6F1:partner',
