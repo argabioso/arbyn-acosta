@@ -1,0 +1,9 @@
+.hero:first-of-type {
+  background-image: url('../images/background.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.hero .wedding-logo {
+  width: 80px;
+}
