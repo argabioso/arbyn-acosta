@@ -1,9 +1,56 @@
-.hero:first-of-type {
+.directors-cut.hero {
   background-image: url('../images/background.jpg');
   background-size: cover;
   background-position: center;
 }
 
-.hero .wedding-logo {
-  width: 128px;
+.wedding-logo {
+  width: 120px;
+}
+
+.engagement-ring.hero {
+  background-color: #f6f6f6;
+}
+
+.animation {
+  position: relative;
+  overflow: hidden;
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+}
+
+.animation__images {
+  display: block;
+  width: 100%;
+  height: 100%;
+
+  list-style-type: none;
+  padding: 0;
+  margin: 0 auto;
+  border: 0;
+
+  position: relative;
+}
+
+.animation__images > li > img {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.engagement-ring.animation,
+.engagement-ring.animation .engagement__images img {
+  width: 700px;
+  height: 700px;
+}
+
+.hidden {
+  opacity: 0 !important;
+  visibility: hidden !important;
+}
+
+.visible {
+  opacity: 1 !important;
+  visibility: visible !important;
 }
