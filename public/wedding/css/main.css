@@ -1,3 +1,15 @@
+.title {
+  font-family: 'Partsold', serif;
+  font-size: 6rem;
+  font-weight: 400;
+}
+
+.title-symbol {
+  font-family: Kristi, serif;
+  font-size: 6rem;
+  font-weight: 400;
+}
+
 .directors-cut.hero {
   background-image: url('../images/background.jpg');
   background-size: cover;
@@ -16,20 +28,14 @@
   position: relative;
   overflow: hidden;
   margin: 0 auto;
-  width: 100%;
-  height: 100%;
 }
 
 .animation__images {
   display: block;
-  width: 100%;
-  height: 100%;
-
   list-style-type: none;
   padding: 0;
   margin: 0 auto;
   border: 0;
-
   position: relative;
 }
 
@@ -39,10 +45,22 @@
   top: 0;
 }
 
-.engagement-ring.animation,
-.engagement-ring.animation .engagement__images img {
-  width: 700px;
-  height: 700px;
+.animation,
+.animation .animation__images,
+.animation .animation__images > li,
+.animation .animation__images > li > img {
+  width: 100%;
+  height: 100%;
+}
+
+@media screen and (min-width: 800px) {
+  .engagement-ring.animation,
+  .engagement-ring.animation .animation__images,
+  .engagement-ring.animation .animation__images > li,
+  .engagement-ring.animation .animation__images > li > img {
+    width: 748px;
+    height: 748px;
+  }
 }
 
 .hidden {

@@ -23,7 +23,7 @@ for(let i = 0; i < images.length - 1; i++) {
 new ScrollMagic.Scene({
         triggerElement: ".engagement-ring.hero",
         triggerHook: "onLeave",
-        duration: "300%"
+        duration: "200%"
     })
     .setPin(".engagement-ring.animation")
     .setTween(engagementRingTimeline)
