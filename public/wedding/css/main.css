@@ -59,6 +59,10 @@
   width: 100%;
 }
 
+#title {
+  width: 650px;
+}
+
 .subtitle {
   opacity: 0.25;
   text-transform: uppercase;
@@ -80,7 +84,7 @@
 
 .engagement-ring.hero {
   transition: background 0.25s ease-in-out;
-  background-color: #f6f6f6;
+  background-color: #f4f4f4;
 }
 
 .animation {
