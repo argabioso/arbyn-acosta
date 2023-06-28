@@ -25,6 +25,6 @@ new ScrollMagic.Scene({
     triggerHook: "onLeave",
     duration: "200%"
   })
-  .setPin(".engagement-ring.animation")
+  .setPin(".engagement-ring.hero")
   .setTween(engagementRingTimeline)
   .addTo(controller);
