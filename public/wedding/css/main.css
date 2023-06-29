@@ -54,9 +54,9 @@
   display: flex;
 }
 
-.container > .navbar-end {
-  display: none;
-  visibility: hidden;
+#desktop-rsvp {
+  display: none !important;
+  visibility: hidden !important;
 }
 
 /*
@@ -140,14 +140,14 @@ ol.animation__images {
 }
 
 @media all and (min-width: 1024px) {
-  .navbar-brand > .navbar-item:last-child {
-    display: none;
-    visibility: hidden;
+  #mobile-rsvp {
+    display: none !important;
+    visibility: hidden !important;
   }
 
-  .container > .navbar-end {
-    display: flex;
-    visibility: visible;
+  #desktop-rsvp {
+    display: flex !important;
+    visibility: visible !important;
   }
 }
 
