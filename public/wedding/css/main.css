@@ -118,28 +118,28 @@ ol.animation__images {
   text-align: center;
 }
 
-@media screen and (min-width: 400px) {
+@media all and (min-width: 400px) {
   .subtitle {
     letter-spacing: 1.22rem;
     font-size: 0.75rem;
   }
 }
 
-@media screen and (min-width: 500px) {
+@media all and (min-width: 500px) {
   .subtitle {
     letter-spacing: 1.4rem;
     font-size: 1.02rem;
   }
 }
 
-@media screen and (min-width: 600px) {
+@media all and (min-width: 600px) {
   .subtitle {
     letter-spacing: 1.9rem;
     font-size: 1.2rem;
   }
 }
 
-@media screen and (min-width: 1024px) {
+@media all and (min-width: 1024px) {
   .navbar-brand > .navbar-item:last-child {
     display: none;
     visibility: hidden;
