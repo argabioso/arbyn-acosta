@@ -33,7 +33,7 @@
   z-index: 2;
 }
 
-#rsvp,
+.rsvp-button,
 .navbar-brand h1 {
   font-family: 'Google Sans', serif;
 }
@@ -52,6 +52,11 @@
   margin-left: auto;
   align-items: stretch;
   display: flex;
+}
+
+.container > .navbar-end {
+  display: none;
+  visibility: hidden;
 }
 
 /*
@@ -131,6 +136,18 @@ ol.animation__images {
   .subtitle {
     letter-spacing: 1.9rem;
     font-size: 1.2rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .navbar-brand > .navbar-item:last-child {
+    display: none;
+    visibility: hidden;
+  }
+
+  .container > .navbar-end {
+    display: flex;
+    visibility: visible;
   }
 }
 
