@@ -115,6 +115,7 @@ ol.animation__images {
 
 @media all and (min-width: 400px) {
   .subtitle {
+    color: blue !important;
     letter-spacing: 1.22rem;
     font-size: 0.75rem;
   }
@@ -122,6 +123,7 @@ ol.animation__images {
 
 @media all and (min-width: 500px) {
   .subtitle {
+    color: red !important;
     letter-spacing: 1.4rem;
     font-size: 1.02rem;
   }
@@ -129,6 +131,7 @@ ol.animation__images {
 
 @media all and (min-width: 600px) {
   .subtitle {
+    color: green !important;
     letter-spacing: 1.9rem;
     font-size: 1.2rem;
   }
