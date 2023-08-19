@@ -165,7 +165,8 @@ template['BirthDeathPlace2'] = function() {
         if (nodeData.deathPlace == null || nodeData.birthPlace == null) {
           return "";
         }
-        return `D: ${nodeData.deathPlace}`;
+        let prefixLetter = nodeData.living ? 'L' : 'D';
+        return `${prefixLetter}: ${nodeData.deathPlace}`;
       }),
     ),
     $(
@@ -194,6 +195,9 @@ template['BirthDeathPlace2'] = function() {
       new bino.Binding("text", function(nodeData) {
         if (nodeData.deathPlace == null || nodeData.birthPlace == null) {
           return "";
+        }
+        if (nodeData.living) {
+          return 'L:';
         }
         return 'D:';
       }),
