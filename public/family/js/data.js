@@ -35,7 +35,7 @@ var TREE_DATA = [
               { key: 'G7C3-B6P',     child: 'LLQS-6F1', prefix: '',    firstName: 'Gregorio',           middleName: '',            lastName: 'Reyes',       suffix: '',    gender: 'M', birthDate: null,          deathDate: null,               living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                deathPlace: null,                                livingPlace: null,                },
               { key: 'G7C3-J9S',     child: 'LLQS-6F1', prefix: '',    firstName: 'Leocadia',           middleName: '',            lastName: 'Novilla',     suffix: '',    gender: 'F', birthDate: null,          deathDate: null,               living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                deathPlace: null,                                livingPlace: null,                },
           { key: 'GHBD-9LY',         child: 'GHB8-J1B', prefix: '',    firstName: 'Cresencia',          middleName: '',            lastName: 'Dumantay',    suffix: '',    gender: 'F', birthDate: '1918-04-19',  deathDate: '1990-04-16',       living: false, hasDNA: false, hasImage: true,   birthPlace: null,                                deathPlace: 'Sangandaan, Caloocan, PHL',         livingPlace: null,                },
-            { key: 'TEMP-001',       child: 'GHBD-9LY', prefix: '',    firstName: 'Unknown',            middleName: '',            lastName: 'name',        suffix: '',    gender: 'F', birthDate: 'before 1905', deathDate: null,               living: false, hasDNA: false, hasImage: true,   birthPlace: null,                                deathPlace: null,                                livingPlace: null,                },
+            { key: 'TEMP-001',       child: 'GHBD-9LY', prefix: '',    firstName: 'Unknown',            middleName: '',            lastName: 'name',        suffix: '',    gender: 'F', birthDate: 'before 1905', deathDate: null,               living: false, hasDNA: false, hasImage: true,   birthPlace: null,                                deathPlace: 'PHL',                               livingPlace: null,                },
     { key: 'GHB5-TWN',               child: 'TEMP-000', prefix: '',    firstName: 'Mitchie',            middleName: 'Ajesta',      lastName: 'Adanza',      suffix: '',    gender: 'F', birthDate: '1994-12-16',  deathDate: null,               living: true,  hasDNA: true,  hasImage: true,   birthPlace: 'Santa Cruz, Manila, PHL',           deathPlace: null,                                livingPlace: 'Metro Manila, PHL', },
       { key: 'GHB5-XTZ',             child: 'GHB5-TWN', prefix: '',    firstName: 'Darne',              middleName: 'Elican',      lastName: 'Adanza',      suffix: '',    gender: 'M', birthDate: '1964-06-22',  deathDate: null,               living: true,  hasDNA: false, hasImage: true,   birthPlace: 'Balingasag, Misamis Oriental, PHL', deathPlace: null,                                livingPlace: 'Metro Manila, PHL', marker: 'manufacturing' },
         { key: 'GH12-SVQ',           child: 'GHB5-XTZ', prefix: '',    firstName: 'Nestor',             middleName: 'Ladera',      lastName: 'Adanza',      suffix: '',    gender: 'M', birthDate: '1938-02-26',  deathDate: '2018-09-28',       living: false, hasDNA: false, hasImage: true,   birthPlace: 'Balingasag, Misamis Oriental, PHL', deathPlace: 'Balingasag, Misamis Oriental, PHL', livingPlace: null,                marker: 'farming' },
@@ -60,6 +60,31 @@ var TREE_DATA = [
 // Add "parent" from "child" value since GoJS works that way
 for (var i = TREE_DATA.length - 1; i >= 0; i--) {
   TREE_DATA[i]["parent"] = TREE_DATA[i]["child"];
+}
+
+function convertCountryCode(input) {
+  if (input === null || input === undefined) {
+    return input;
+  }
+
+  const lookup = {
+    'USA': 'United States of America',
+    'PHL': 'Philippines',
+    'BHR': 'Bahrain',
+    // ... add other country codes and names as needed
+  };
+
+  const segments = input.split(',').map(segment => segment.trim());
+
+  if (segments.length === 1 && lookup[segments[0]]) {
+    return lookup[segments[0]];
+  }
+
+  if (segments.length === 2 && lookup[segments[1]]) {
+    segments[1] = lookup[segments[1]];
+  }
+
+  return segments.join(', ');
 }
 
 for (const [i, person] of Object.entries(TREE_DATA)) {
@@ -95,6 +120,10 @@ for (const [i, person] of Object.entries(TREE_DATA)) {
     suffix
   );
 
+  TREE_DATA[i]['birthPlace'] = convertCountryCode(person.birthPlace);
+  TREE_DATA[i]['deathPlace'] = convertCountryCode(person.deathPlace);
+  TREE_DATA[i]['livingPlace'] = convertCountryCode(person.livingPlace);
+
   // Replace death place with living place for quicker size changes
   if (person.living) {
     TREE_DATA[i]['deathPlace'] = person.livingPlace;
@@ -120,6 +149,7 @@ TREE_DATA.forEach(node => {
     node.partner = childToParents[node.child].find(parentKey => parentKey !== node.key);
   }
 });
+
 
 // const TREE_DATA = TREE_DATA;
 /*
