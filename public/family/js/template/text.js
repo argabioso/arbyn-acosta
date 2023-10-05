@@ -244,11 +244,35 @@ function getLifeSpan(nodeData, isPrivate) {
   }
 
   if (deathDate.includes('after')) {
-    age = `${rawAge}+`;
+    if (birthDate.includes('after')) {
+      age = `~${rawAge}`;
+    } else if (birthDate.includes('before')) {
+      age = `${rawAge}+`;
+    } else if (birthDate.includes('about')) {
+      age = `~${rawAge}`;
+    } else {
+      age = `${rawAge}+`;
+    }
   } else if (deathDate.includes('before')) {
-    age = `${rawAge}-`;
+    if (birthDate.includes('after')) {
+      age = `${rawAge}-`;
+    } else if (birthDate.includes('before')) {
+      age = `~${rawAge}`;
+    } else if (birthDate.includes('about')) {
+      age = `~${rawAge}`;
+    } else {
+      age = `${rawAge}-`;
+    }
   } else if (deathDate.includes('about')) {
     age = `~${rawAge}`;
+  } else {
+    if (birthDate.includes('after')) {
+      age = `${rawAge}-`;
+    } else if (birthDate.includes('before')) {
+      age = `${rawAge}+`;
+    } else if (birthDate.includes('about')) {
+      age = `~${rawAge}`;
+    }
   }
 
   // If both birthYear and deathYear exist,
