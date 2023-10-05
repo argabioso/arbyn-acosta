@@ -69,10 +69,10 @@ const ui = {
       margin: 6,
     },
     node: {
-      margin: 11,
+      margin: 9,
       padding: 10,
       height: 80,
-      width: 305,
+      width: 310,
     },
   },
 };
