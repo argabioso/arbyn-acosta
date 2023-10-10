@@ -3608,7 +3608,7 @@ template['CheckFill'] = function() {
     $(
       bino.TextBlock,
       {
-        font: `700 ${ui.font.size.name * 0.92}px "Google Sans", sans-serif`,
+        font: `700 ${ui.font.size.name * 0.92}px Google Sans, sans-serif`,
         height: ui.font.size.name + 2,
         textAlign: 'center',
         opacity: 0.55,
@@ -3648,7 +3648,7 @@ template['CheckFill'] = function() {
     $(
       bino.TextBlock,
       {
-        font: `700 8px Google Sans, sans-serif`,
+        font: `700 8px Roboto, sans-serif`,
         height: ui.font.size.details + 2,
         textAlign: 'center',
         opacity: 0.6,
@@ -4020,7 +4020,7 @@ template['BirthDeathPlace1'] = function() {
     $(
       bino.TextBlock,
       {
-        font: `700 ${ui.font.size.details}px "Google Sans", sans-serif`,
+        font: `700 ${ui.font.size.details}px Roboto, sans-serif`,
         height: ui.font.size.details + 2,
       },
       new bino.Binding("width", function(nodeData) {
@@ -4091,7 +4091,7 @@ template['BirthDeathPlace2'] = function() {
     $(
       bino.TextBlock,
       {
-        font: `700 ${ui.font.size.details}px "Google Sans", sans-serif`,
+        font: `700 ${ui.font.size.details}px Roboto, sans-serif`,
         height: ui.font.size.details + 2,
       },
       new bino.Binding("width", function(nodeData) {
