@@ -30,7 +30,7 @@ template['Photo'] = function() {
           return ui.photo.none;
         }
         if (nodeData.hasImage) {
-          return 'images/' + nodeData.key + '.jpg';
+          return 'images/people/' + nodeData.key + '.jpg';
         }
         if (nodeData.gender.toUpperCase() == 'M') {
           return ui.photo.male;

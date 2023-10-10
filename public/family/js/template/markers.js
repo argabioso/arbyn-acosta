@@ -44,9 +44,9 @@ template["DNAMarker"] = function() {
           return '';
         }
         if (isDark) {
-          return 'images/dna.dark.svg';
+          return 'images/icons/dna.dark.svg';
         }
-        return `images/dna.svg`;
+        return `images/icons/dna.svg`;
       }),
       new bino.Binding("margin", function(nodeData) {
         return new bino.Margin(2, 0, 0, 2);
@@ -89,9 +89,9 @@ template["FirstMarker"] = function() {
           return '';
         }
         if (isDark) {
-          return `images/${nodeData.marker}.dark.svg`;
+          return `images/icons/${nodeData.marker}.dark.svg`;
         }
-        return `images/${nodeData.marker}.svg`;
+        return `images/icons/${nodeData.marker}.svg`;
       }),
       new bino.Binding("margin", function(nodeData) {
         return marginConditions(nodeData.marker);
@@ -131,9 +131,9 @@ template["SecondMarker"] = function() {
           return '';
         }
         if (isDark && nodeData.marker2 !== 3) {
-          return `images/${nodeData.marker2}.dark.svg`;
+          return `images/icons/${nodeData.marker2}.dark.svg`;
         }
-        return `images/${nodeData.marker2}.svg`;
+        return `images/icons/${nodeData.marker2}.svg`;
       }),
       new bino.Binding("margin", function(nodeData) {
         return marginConditions(nodeData.marker2);
