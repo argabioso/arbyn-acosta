@@ -240,6 +240,10 @@ function getLifeSpan(nodeData, isPrivate) {
   // `birthYear` with a separator and "Living" or "Deceased"
   // based on the living flag.
   if (!deathYear) {
+    if (nodeData.deathAge) {
+      age = nodeData.deathAge;
+    }
+
     return `${birthYear}${separator}${living ? 'Living' : 'Deceased'}` + (living ? ` (${age})` : '');
   }
 
@@ -273,6 +277,10 @@ function getLifeSpan(nodeData, isPrivate) {
     } else if (birthDate.includes('about')) {
       age = `~${rawAge}`;
     }
+  }
+
+  if (nodeData.deathAge) {
+    age = nodeData.deathAge;
   }
 
   // If both birthYear and deathYear exist,
