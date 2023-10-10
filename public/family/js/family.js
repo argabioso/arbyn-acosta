@@ -85,7 +85,7 @@ const ui = {
       margin: 9,
       padding: 10,
       height: 80,
-      width: 310,
+      width: 311,
     },
   },
 };
@@ -2487,9 +2487,9 @@ for (const [i, person] of Object.entries(TREE_DATA)) {
   if (person.suffix !== undefined && person.suffix != '') suffix = ` ${person.suffix}`;
 
   let firstName = person.firstName;
-  if (firstName.includes('Crispolon')) {
-    firstName = firstName.replace("Crispolon", "C.");
-  }
+  // if (firstName.includes('Crispolon')) {
+  //   firstName = firstName.replace("Crispolon", "C.");
+  // }
 
   // Add "fullName" to each person
   TREE_DATA[i]['fullName'] = (
