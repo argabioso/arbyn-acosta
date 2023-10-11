@@ -4323,3 +4323,16 @@ tree.model = model;
 
 // Show the copyright once everything loads up
 document.querySelector('footer').classList.remove("hidden");
+
+window.addEventListener('resize', function() {
+  if (isAndroid) {
+    const gojsContainer = document.getElementById('tree');
+    gojsContainer.style.height = `calc(100vh - 56px)`; // or use a different value
+  }
+});
+
+window.addEventListener('load', function () {
+  console.log("TEST")
+  const gojsContainer = document.getElementById('tree');
+  gojsContainer.style.height = `calc(100vh - 56px)`; // or use a different value
+});
