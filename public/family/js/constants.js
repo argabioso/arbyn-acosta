@@ -69,6 +69,7 @@ const ui = {
   },
   measure: {
     padding: 40,
+    bottomPadding: 56,
     genderBand: {
       width: 2.6,
     },

@@ -3,7 +3,6 @@ var tree = $(
   "tree",
   {
     isReadOnly: true,
-    padding: ui.measure.padding,
     scale: ui.scale,
     layout: $(
       bino.TreeLayout, {
@@ -18,6 +17,12 @@ var tree = $(
     allowSelect: false,
     allowVerticalScroll: true,
     allowZoom: true,
+    padding: new bino.Margin(
+      ui.measure.padding,
+      ui.measure.padding,
+      isAndroid ? ui.measure.bottomPadding : ui.measure.padding,
+      ui.measure.padding,
+    )
   }
 );
 
