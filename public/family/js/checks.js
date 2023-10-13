@@ -29,9 +29,24 @@ function checkPerPerson(person) {
   if (person.living) {
     attributesToIgnore.push('deathDate');
     attributesToIgnore.push('deathPlace');
+    attributesToIgnore.push('deathAge');
 
-    sourceCount += 2;
-    expectedSourceCount += 2;
+    sourceCount += 3;
+    expectedSourceCount += 3;
+  }
+
+  if (!person.living) {
+    attributesToIgnore.push('livingPlace');
+
+    sourceCount += 1;
+    expectedSourceCount += 1;
+  }
+
+  if (person.deathAge === null) {
+    attributesToIgnore.push('deathAge');
+
+    sourceCount += 1;
+    expectedSourceCount += 1;
   }
 
   if (isEmpty(person.middleName)) {
