@@ -70,14 +70,14 @@ template['BirthDeathPlace1'] = function() {
         height: ui.font.size.details + 2,
       },
       new bino.Binding("width", function(nodeData) {
-        return ui.measure.node.width - 94;
+        return (ui.measure.node.width - 94) - 14;
       }),
       new bino.Binding("margin", function(nodeData) {
         return new bino.Margin(
           39 + parseInt(ui.measure.node.padding / 2),
           0,
           0,
-          ui.measure.node.height + ui.font.size.details,
+          ui.measure.node.height + ui.font.size.details + 14,
         );
       }),
       new bino.Binding("stroke", function(nodeData) {
@@ -91,17 +91,17 @@ template['BirthDeathPlace1'] = function() {
           return "";
         }
         if (nodeData.birthPlace != null) {
-          return `B: ${nodeData.birthPlace}`;
+          return `    ${nodeData.birthPlace}`;
         }
         if (nodeData.deathPlace != null) {
-          return `D: ${nodeData.deathPlace}`;
+          return `    ${nodeData.deathPlace}`;
         }
       }),
     ),
     $(
       bino.TextBlock,
       {
-        font: `700 ${ui.font.size.details}px Roboto, sans-serif`,
+        font: `700 ${ui.font.size.details}px Google Sans, sans-serif`,
         height: ui.font.size.details + 2,
       },
       new bino.Binding("width", function(nodeData) {
@@ -145,14 +145,14 @@ template['BirthDeathPlace2'] = function() {
         height: ui.font.size.details + 2,
       },
       new bino.Binding("width", function(nodeData) {
-        return ui.measure.node.width - 94;
+        return (ui.measure.node.width - 94) - 14;
       }),
       new bino.Binding("margin", function(nodeData) {
         return new bino.Margin(
           54.5 + parseInt(ui.measure.node.padding / 2),
           0,
           0,
-          ui.measure.node.height + ui.font.size.details,
+          ui.measure.node.height + ui.font.size.details + 14,
         );
       }),
       new bino.Binding("stroke", function(nodeData) {
@@ -166,13 +166,13 @@ template['BirthDeathPlace2'] = function() {
           return "";
         }
         let prefixLetter = nodeData.living ? 'L' : 'D';
-        return `${prefixLetter}: ${nodeData.deathPlace}`;
+        return `    ${nodeData.deathPlace}`;
       }),
     ),
     $(
       bino.TextBlock,
       {
-        font: `700 ${ui.font.size.details}px Roboto, sans-serif`,
+        font: `700 ${ui.font.size.details}px Google Sans, sans-serif`,
         height: ui.font.size.details + 2,
       },
       new bino.Binding("width", function(nodeData) {
