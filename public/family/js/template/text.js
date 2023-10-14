@@ -329,9 +329,9 @@ function formatDate(raw, isPrivate) {
     return `${prefix}${day}${months[parseInt(month, 10) - 1]} ${year}`;
   }
 
-  if (month) {
-    return `${prefix}${longMonths[parseInt(month, 10) - 1]} ${year}`;
-  }
+  // if (month) {
+  //   return `${prefix}${longMonths[parseInt(month, 10) - 1]} ${year}`;
+  // }
 
   return `${prefix}${year}`;
 };
