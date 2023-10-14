@@ -6,7 +6,6 @@ template['Node'] = function() {
       fill: ui.color.node.background,
       stroke: null,
       strokeWidth: 0,
-      shadowVisible: true
     },
     new bino.Binding('desiredSize', function(nodeData) {
       return new bino.Size(ui.measure.node.width, nodeData.height);
@@ -48,7 +47,6 @@ template['CheckFill'] = function() {
         figure: 'Rectangle',
         stroke: null,
         strokeWidth: 0,
-        shadowVisible: true,
         opacity: 0.7,
         margin: new bino.Margin(0.2, 0, 0, 0.2),
       },
