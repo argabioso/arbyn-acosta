@@ -106,7 +106,7 @@ template['CheckFill'] = function() {
     $(
       bino.TextBlock,
       {
-        font: `700 8px Roboto, sans-serif`,
+        font: `700 8px "Google Sans Text", sans-serif`,
         height: ui.font.size.details + 2,
         textAlign: 'center',
         opacity: 0.6,

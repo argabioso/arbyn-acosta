@@ -1,3 +1,19 @@
+@font-face {
+  font-family: 'Google Sans Text';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Google Sans Text Regular'), local('GoogleSansText-Regular'), url(../fonts/googlesanstext-regular-webfont.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'Google Sans Text';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local('Google Sans Text Bold'), local('GoogleSansText-Bold'), url(../fonts/googlesanstext-bold-webfont.woff) format('woff');
+}
+
 /*@font-face {
   font-family: 'Google Sans';
   font-style: italic;

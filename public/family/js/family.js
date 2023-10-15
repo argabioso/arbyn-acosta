@@ -3661,7 +3661,7 @@ template['CheckFill'] = function() {
     $(
       bino.TextBlock,
       {
-        font: `700 8px Roboto, sans-serif`,
+        font: `700 8px "Google Sans Text", sans-serif`,
         height: ui.font.size.details + 2,
         textAlign: 'center',
         opacity: 0.6,
@@ -3964,7 +3964,7 @@ template['Lifespan'] = function() {
   return $(
     bino.TextBlock,
     {
-      font: `400 ${ui.font.size.details}px Roboto, sans-serif`,
+      font: `400 ${ui.font.size.details}px "Google Sans Text", sans-serif`,
       height: ui.font.size.details + 2,
     },
     new bino.Binding("width", function(nodeData) {
@@ -3998,18 +3998,18 @@ template['BirthDeathPlace1'] = function() {
     $(
       bino.TextBlock,
       {
-        font: `400 ${ui.font.size.details}px Roboto, sans-serif`,
+        font: `400 ${ui.font.size.details}px "Google Sans Text", sans-serif`,
         height: ui.font.size.details + 2,
       },
       new bino.Binding("width", function(nodeData) {
-        return (ui.measure.node.width - 94) - 14;
+        return (ui.measure.node.width - 94) - 15;
       }),
       new bino.Binding("margin", function(nodeData) {
         return new bino.Margin(
           39 + parseInt(ui.measure.node.padding / 2),
           0,
           0,
-          ui.measure.node.height + ui.font.size.details + 14,
+          ui.measure.node.height + ui.font.size.details + 15,
         );
       }),
       new bino.Binding("stroke", function(nodeData) {
@@ -4073,18 +4073,18 @@ template['BirthDeathPlace2'] = function() {
     $(
       bino.TextBlock,
       {
-        font: `400 ${ui.font.size.details}px Roboto, sans-serif`,
+        font: `400 ${ui.font.size.details}px "Google Sans Text", sans-serif`,
         height: ui.font.size.details + 2,
       },
       new bino.Binding("width", function(nodeData) {
-        return (ui.measure.node.width - 94) - 14;
+        return (ui.measure.node.width - 94) - 15;
       }),
       new bino.Binding("margin", function(nodeData) {
         return new bino.Margin(
           54.5 + parseInt(ui.measure.node.padding / 2),
           0,
           0,
-          ui.measure.node.height + ui.font.size.details + 14,
+          ui.measure.node.height + ui.font.size.details + 15,
         );
       }),
       new bino.Binding("stroke", function(nodeData) {
