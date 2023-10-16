@@ -199,7 +199,8 @@ h1, h2, h3, h4, h5 {
 
 .resume__content-section div > header p {
   font-size: 16px;
-  width: 70%;
+  width: 65%;
+  padding-right: 20px;
   word-break: break-word;
 }
 
