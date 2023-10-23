@@ -61,3 +61,11 @@
   font-display: swap;
   src: local('Google Sans Bold'), local('GoogleSans-Bold'), url(../fonts/googlesans/v16/4UabrENHsxJlGDuGo1OIlLV157t3.woff) format('woff');
 }
+
+@font-face {
+  font-family: 'Google Sans Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Google Sans Mono Regular'), local('GoogleSansMono-Regular'), url(../fonts/google-sans-mono-regular-webfont.woff) format('woff');
+}
