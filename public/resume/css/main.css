@@ -41,6 +41,14 @@ h1, h2, h3, h4, h5 {
   text-rendering: optimizeLegibility;
 }
 
+.resume__content-section ul.single-description {
+  padding-left: 0;
+}
+
+.resume__content-section ul.single-description li {
+  text-indent: 0;
+}
+
 .resume__content-section ul.single-description li:before {
   content: "";
   margin: 0;
