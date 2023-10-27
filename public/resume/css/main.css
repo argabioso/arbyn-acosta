@@ -13,6 +13,8 @@ html {
 }
 
 body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   background: #f3f4f5;
   color: #202124;
   font-family: "Google Sans Text", Arial, Helvetica, sans-serif;
@@ -248,7 +250,7 @@ h1, h2, h3, h4, h5 {
 
 .resume__content-section li {
   margin-bottom: .5em;
-  text-indent: -16px;
+  text-indent: -17px;
 }
 
 .resume__content-section li:before {
@@ -430,7 +432,7 @@ h1, h2, h3, h4, h5 {
 
   .resume__content-section li {
     margin-bottom: 0;
-    text-indent: -18px;
+    text-indent: -19px;
   }
 
   .resume__content-section li:before {
