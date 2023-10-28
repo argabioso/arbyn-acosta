@@ -13,8 +13,6 @@ html {
 }
 
 body {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   background: #f3f4f5;
   color: #202124;
   font-family: "Google Sans Text", Arial, Helvetica, sans-serif;
