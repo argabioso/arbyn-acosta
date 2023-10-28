@@ -4064,10 +4064,13 @@ template["FirstMarker"] = function() {
         if (nodeData.marker === undefined) {
           return '';
         }
-        if (isDark) {
-          return `images/icons/${nodeData.marker}.dark.svg`;
+        if (MARKERS[nodeData.marker] === undefined) {
+          if (isDark) {
+            return `images/icons/${nodeData.marker}.dark.svg`;
+          }
+          return `images/icons/${nodeData.marker}.svg`;
         }
-        return `images/icons/${nodeData.marker}.svg`;
+        return MARKERS[nodeData.marker];
       }),
       new bino.Binding("margin", function(nodeData) {
         return marginConditions(nodeData.marker);
@@ -4106,10 +4109,13 @@ template["SecondMarker"] = function() {
         if (nodeData.marker2 === undefined) {
           return '';
         }
-        if (isDark && nodeData.marker2 !== 3) {
-          return `images/icons/${nodeData.marker2}.dark.svg`;
+        if (MARKERS[nodeData.marker2] === undefined) {
+          if (isDark && nodeData.marker2 !== 3) {
+            return `images/icons/${nodeData.marker2}.dark.svg`;
+          }
+          return `images/icons/${nodeData.marker2}.svg`;
         }
-        return `images/icons/${nodeData.marker2}.svg`;
+        return MARKERS[nodeData.marker2];
       }),
       new bino.Binding("margin", function(nodeData) {
         return marginConditions(nodeData.marker2);
