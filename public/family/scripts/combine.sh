@@ -2,6 +2,7 @@ filename="js/family.js"
 echo "" > $filename
 cat js/constants.js >> $filename
 cat js/chart.js >> $filename
+cat js/markers.js >> $filename
 cat js/data.js >> $filename
 cat js/sources.js >> $filename
 cat js/checks.js >> $filename
