@@ -462,7 +462,12 @@ var TREE_DATA = [
           { key: 'GH12-DD8',         child: 'GH12-W17', prefix: '',     firstName: 'Enoria',             middleName: '',            lastName: 'Borja',       suffix: '',    gender: 'F', birthDate: 'before 1928', deathDate: 'after 1997-12-16', deathAge: "90+", living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                deathPlace: null,                                livingPlace: null,                },
 ];
 
-// Add "parent" from "child" value since GoJS works that way
+
+// const TREE_DATA = TREE_DATA;
+/*
+  Grumaduate si Nanay ng May 30, 1994 ng BS Accounting sa UE Caloocan
+  Grumaduate si Nanay ng March 22, 1990 ng Highschool
+*/// Add "parent" from "child" value since GoJS works that way
 for (var i = TREE_DATA.length - 1; i >= 0; i--) {
   TREE_DATA[i]["parent"] = TREE_DATA[i]["child"];
 }
@@ -554,13 +559,7 @@ TREE_DATA.forEach(node => {
     node.partner = childToParents[node.child].find(parentKey => parentKey !== node.key);
   }
 });
-
-
-// const TREE_DATA = TREE_DATA;
-/*
-  Grumaduate si Nanay ng May 30, 1994 ng BS Accounting sa UE Caloocan
-  Grumaduate si Nanay ng March 22, 1990 ng Highschool
-*/const SOURCES = {
+const SOURCES = {
   'Present and Direct Interactions': [
     'GHB5-TWN:birthDate',
     'GHB5-TWN:firstName',

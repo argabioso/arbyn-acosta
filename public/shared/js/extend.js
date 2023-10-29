@@ -250,3 +250,21 @@ const interval = setInterval(applyBodyClasses, 1800000);
 
 applyBodyClasses();
 clearInterval(interval);
+
+
+function get_all_descendants(personId, treeData) {
+    let descendants = [];
+
+    function findDescendants(id) {
+        if (treeData[id]) {
+            treeData[id].forEach(childId => {
+                descendants.push(childId);
+                findDescendants(childId);
+            });
+        }
+    }
+
+    findDescendants(personId);
+    return descendants;
+}
+
