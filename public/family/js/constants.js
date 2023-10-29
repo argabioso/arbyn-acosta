@@ -34,6 +34,7 @@ const ui = {
         manufacturing: !isDark ? '#f0f0f0' : '#393939',
         buysell: !isDark ? '#f0f0f0' : '#393939',
         beautician: !isDark ? '#fde8f0' : '#462c36',
+        apparel: !isDark ? '#fde8f0' : '#462c36',
         housewife: !isDark ? '#fde8f0' : '#462c36',
         retail: !isDark ? '#fde8f0' : '#462c36',
         farming: !isDark ? '#dff1e0' : '#2e4030',
