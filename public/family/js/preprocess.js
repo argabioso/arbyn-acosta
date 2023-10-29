@@ -72,7 +72,7 @@ for (const [i, person] of Object.entries(TREE_DATA)) {
 }
 
 // Create a map of child to parents.
-let childToParents = {};
+var childToParents = {};
 TREE_DATA.forEach(node => {
   if (node.child) {
     if (childToParents[node.child]) {
