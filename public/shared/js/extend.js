@@ -252,8 +252,11 @@ applyBodyClasses();
 clearInterval(interval);
 
 
-function get_all_descendants(personId, treeData) {
+function get_all_descendants(personId, treeData, include=true) {
     let descendants = [];
+    if (include) {
+      descendants.push(personId);
+    }
 
     function findDescendants(id) {
         if (treeData[id]) {
