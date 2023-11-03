@@ -147,15 +147,27 @@ const SOURCES = {
   ],
   // Arbyn Argabioso birth certificate
   'https://drive.google.com/file/d/1B1umw_xm5i-AmNp9YzshX2DebSAhj3cz/view?usp=sharing': [
+    'GQX8-CQP:firstName',
+    'GQX8-CQP:middleName',
+    'GQX8-CQP:gender',
     'GQX8-CQP:birthDate',
     'GQX8-CQP:birthPlace',
-    'GQX8-CQP:firstName',
-    'GQX8-CQP:gender',
-    'GQX8-CQP:middleName',
+
     'GQX8-CQP:GQJK-G8W:parentChild',
+    'GQJK-G8W:firstName',
+    'GQJK-G8W:middleName',
+    'GQJK-G8W:lastName',
+    'GQJK-G8W:gender',
+
     'GQX8-CQP:GQJK-L51:parentChild',
+    'GQJK-L51:firstName',
+    'GQJK-L51:middleName',
+    'GQJK-L51:lastName',
+    'GQJK-L51:gender',
+
     'GQJK-L51:GQJK-G8W:partner',
   ],
+  // My Engagement: Proposal to Mitchie
   'https://web.facebook.com/arbyn.argabioso/posts/pfbid02U3X7BU11Lb41vrbLQKrAyGe8oCEvd8SSqbY8rcCZ2MEQzcb3BUQJWL8UPhF1ZttYl': [
     'GQX8-CQP:GHB5-TWN:partner',
   ],
@@ -190,50 +202,103 @@ const SOURCES = {
     'GQJK-L51:gender',
     'GQJK-L51:lastName',
     'GQJK-L51:middleName',
+
     'GQJK-L51:GQJK-LCT:parentChild',
-    'GQJK-L51:GHBZ-YVX:parentChild',
+    'GQJK-LCT:birthPlace',
     'GQJK-LCT:firstName',
     'GQJK-LCT:middleName',
     'GQJK-LCT:lastName',
+    'GQJK-LCT:gender',
+
+    'GQJK-L51:GHBZ-YVX:parentChild',
+    'GHBZ-YVX:birthPlace',
+    'GHBZ-YVX:firstName',
+    'GHBZ-YVX:middleName',
+    'GHBZ-YVX:lastName',
+    'GHBZ-YVX:gender',
+
+    'GQJK-LCT:GHBZ-YVX:partner',
   ],
   // Inquirer.net's article about Tatay Roland's NBI work
   'https://drive.google.com/file/d/1Zw8fzrh9ELRvIx1W7ncqT010edcT6hpK/view?usp=sharing': [
+    'GQJK-L51:firstName',
+    'GQJK-L51:lastName',
     'GQJK-L51:marker',
   ],
   // Nanay's birth certificate
   'https://drive.google.com/file/d/1Db5lGDp-mhJH7LAXnuijFXBc1c1vA07j/view?usp=sharing': [
+    'GQJK-G8W:firstName',
+    'GQJK-G8W:middleName',
+    'GQJK-G8W:lastName',
+    'GQJK-G8W:gender',
     'GQJK-G8W:birthDate',
     'GQJK-G8W:birthPlace',
-    'GQJK-G8W:firstName',
-    'GQJK-G8W:gender',
-    'GQJK-G8W:lastName',
-    'GQJK-G8W:middleName',
+
     'GQJK-G8W:GHBD-7M4:parentChild',
     'GHBD-7M4:firstName',
     'GHBD-7M4:middleName',
     'GHBD-7M4:lastName',
+
     'GQJK-G8W:GHB8-J1B:parentChild',
     'GHB8-J1B:firstName',
     'GHB8-J1B:middleName',
     'GHB8-J1B:lastName',
+
+    'GHBD-7M4:GHB8-J1B:partner',
   ],
   // Nanay's death certificate
   'https://drive.google.com/file/d/1JArFl6_m-kuvyPf-LqDLU3_SapZzCvkt/view?usp=sharing': [
+    'GQJK-G8W:firstName',
+    'GQJK-G8W:middleName',
+    'GQJK-G8W:lastName',
+    'GQJK-G8W:gender',
+    'GQJK-G8W:birthDate',
     'GQJK-G8W:deathDate',
     'GQJK-G8W:deathPlace',
     'GQJK-G8W:living',
   ],
+  // Family Search: Lolo Ligorio Death Record
   'https://www.familysearch.org/ark:/61903/1:1:FV6D-SZH': [
-    'GHB8-SQN:deathDate',
-    'GHB8-SQN:deathPlace',
-    'GHB8-SQN:gender',
     'GHB8-SQN:firstName',
     'GHB8-SQN:lastName',
+    'GHB8-SQN:gender',
+    'GHB8-SQN:deathDate',
+    'GHB8-SQN:deathPlace',
+    'GHB8-SQN:living',
+
     'GHB8-SQN:GHB8-5K8:partner',
+    'GHB8-5K8:firstName',
+    'GHB8-5K8:lastName',
     'GHB8-5K8:gender',
   ],
+  // Family Search: José Pedro Maramba Reyes christening record
+  // includes lolo Miguel Maramba's and parents' details
   'https://www.familysearch.org/ark:/61903/1:1:66HQ-VJGQ': [
     'LLQS-641:LLQS-6F1:partner',
+
+    'LLQS-641:firstName',
+    'LLQS-641:lastName',
+    'LLQS-641:gender',
+
+    'LLQS-6F1:firstName',
+    'LLQS-6F1:lastName',
+    'LLQS-6F1:gender',
+
+    'L281-614:LLQS-641:parentChild',
+    'L281-614:firstName',
+    'L281-614:lastName',
+    'L281-614:gender',
+
+    'LLQS-6F1:G7C3-B6P:parentChild',
+    'G7C3-B6P:firstName',
+    'G7C3-B6P:gender',
+
+    'LLQS-6F1:G7C3-J9S:parentChild',
+    'G7C3-J9S:firstName',
+    'G7C3-J9S:lastName',
+    'G7C3-J9S:gender',
+
+    'G7C3-B6P:G7C3-J9S:partner',
   ],
   // Geni Record for Lolo Miguel Maramba
   'https://www.geni.com/people/Miguel-Maramba/4012194445110022663': [
@@ -242,16 +307,37 @@ const SOURCES = {
     'LLQS-641:lastName',
     'LLQS-641:birthDate',
     'LLQS-641:gender',
+
     'GHB8-GB6:LLQS-641:parentChild',
+    'GHB8-GB6:firstName',
+    'GHB8-GB6:middleName',
+    'GHB8-GB6:lastName',
+
     'LLQS-641:L281-614:parentChild',
+    'L281-614:firstName',
+    'L281-614:middleName',
+    'L281-614:lastName',
+
     'LLQS-641:LLQS-6YC:parentChild',
+    'LLQS-6YC:firstName',
+    'LLQS-6YC:middleName',
+    'LLQS-6YC:lastName',
+
+    'LLQS-641:LLQS-6F1:partner',
+    'LLQS-6F1:firstName',
+    'LLQS-6F1:middleName',
+    'LLQS-6F1:lastName',
   ],
   // Official Gazette ni Lolo Miguel
   'https://drive.google.com/file/d/1Ik8lFHm_F4-FaKOs4qL4CNiq-Il2WfLR/view?usp=drive_link': [
+    'LLQS-641:firstName',
+    'LLQS-641:lastName',
     'LLQS-641:marker',
   ],
   // Another Official Gazette entry for Lolo Miguel
   'https://drive.google.com/file/d/1CNF4lEbL4vfjbhMnTOEk02KFDhaO-Xwa/view?usp=drive_link': [
+    'LLQS-641:firstName',
+    'LLQS-641:lastName',
     'LLQS-641:prefix',
   ],
   // FamilySearch: Lolo Felomino death record
@@ -265,17 +351,21 @@ const SOURCES = {
   'https://www.familysearch.org/ark:/61903/1:1:6JG6-3YRH': [
     'GH12-XX4:firstName',
     'GH12-XX4:gender',
+
     'GH12-HQN:firstName',
     'GH12-HQN:lastName',
     'GH12-HQN:gender',
 
     'GKBR-M9Y:firstName',
     'GKBR-M9Y:lastName',
+
     'GKBR-7P7:firstName',
     'GKBR-7P7:lastName',
     'GKBR-7P7:gender',
+
     'GKBT-9GD:firstName',
     'GKBT-9GD:lastName',
+
     'K2GJ-YY3:firstName',
     'K2GJ-YY3:lastName',
     'K2GJ-YY3:gender',
@@ -286,12 +376,13 @@ const SOURCES = {
   ],
   // Lola Estebana Death Certificate
   'https://drive.google.com/file/d/1yf_M5CJgnXsHGFvFmF5Uzfp4YrsAnfUY/view?usp=sharing': [
+    'GHB8-RCH:firstName',
+    'GHB8-RCH:lastName',
+    'GHB8-RCH:gender',
+
     'GHB8-RCH:birthPlace',
     'GHB8-RCH:deathDate',
     'GHB8-RCH:deathPlace',
-    'GHB8-RCH:firstName',
-    'GHB8-RCH:gender',
-    'GHB8-RCH:lastName',
     'GHB8-RCH:living',
   ],
   // Lola Lydia Birth Certificate
@@ -299,40 +390,89 @@ const SOURCES = {
     'GHBZ-YVX:birthDate',
     'GHBZ-YVX:birthPlace',
     'GHBZ-YVX:firstName',
-    'GHBZ-YVX:gender',
-    'GHBZ-YVX:lastName',
-    'GHBZ-YVX:living',
     'GHBZ-YVX:middleName',
+    'GHBZ-YVX:lastName',
+    'GHBZ-YVX:gender',
+    'GHBZ-YVX:living',
+
     'GHBZ-YVX:GHB8-7T6:parentChild',
+    'GHB8-7T6:firstName',
+    'GHB8-7T6:middleName',
+    'GHB8-7T6:lastName',
+    'GHB8-7T6:marker',
+
     'GHBZ-YVX:GHB8-GZL:parentChild',
+    'GHB8-GZL:firstName',
+    'GHB8-GZL:middleName',
+    'GHB8-GZL:lastName',
+    'GHB8-GZL:marker',
+
+    'GHB8-7T6:GHB8-GZL:partner',
   ],
   // Lola Lydia marriage certificate with Lolo Marcial
   'https://drive.google.com/file/d/1C2TFs8kVvf6lWq-ANjEEG165f7bWUZCs/view?usp=sharing': [
+    'GHBZ-YVX:firstName',
+    'GHBZ-YVX:lastName',
+    'GHBZ-YVX:gender',
+
+    'GQJK-LCT:firstName',
+    'GQJK-LCT:lastName',
+    'GQJK-LCT:gender',
+
+    'GHBZ-TM4:GQJK-LCT:parentChild',
+    'GHBZ-TM4:firstName',
+    'GHBZ-TM4:lastName',
+    'GHBZ-TM4:gender',
+
+    'GHBZ-P5Q:GQJK-LCT:parentChild',
+    'GHBZ-P5Q:firstName',
+    'GHBZ-P5Q:lastName',
+    'GHBZ-P5Q:gender',
+
+    'GHB8-7T6:GHBZ-YVX:parentChild',
+    'GHB8-7T6:firstName',
+    'GHB8-7T6:lastName',
+    'GHB8-7T6:gender',
+
+    'GHB8-GZL:GHBZ-YVX:parentChild',
+    'GHB8-GZL:firstName',
+    'GHB8-GZL:lastName',
+    'GHB8-GZL:gender',
+
+    'GHBZ-P5Q:GHBZ-TM4:partner',
+    'GHB8-7T6:GHB8-GZL:partner',
     'GHBZ-YVX:GQJK-LCT:partner',
   ],
   // FamilySearch: Lola Marcial marriage record
   'https://www.familysearch.org/ark:/61903/1:1:HBBK-QDMM': [
     'GHBZ-TM4:firstName',
     'GHBZ-TM4:lastName',
+    'GHBZ-TM4:gender',
+
     'GHBZ-P5Q:firstName',
     'GHBZ-P5Q:lastName',
+    'GHBZ-P5Q:gender',
+
     'GHB8-7T6:firstName',
     'GHB8-7T6:lastName',
+    'GHB8-7T6:gender',
+
     'GHB8-GZL:firstName',
     'GHB8-GZL:lastname',
+    'GHB8-GZL:gender',
+
     'GHBZ-YVX:firstName',
     'GHBZ-YVX:lastName',
+    'GHBZ-YVX:gender',
+
     'GQJK-LCT:firstName',
     'GQJK-LCT:lastName',
     'GQJK-LCT:gender',
-    'GHBZ-YVX:gender',
-    'GHBZ-P5Q:gender',
-    'GHBZ-TM4:gender',
-    'GHB8-7T6:gender',
-    'GHB8-GZL:gender',
+
     'GHB8-7T6:GHB8-GZL:partner',
     'GHBZ-TM4:GHBZ-P5Q:partner',
     'GHBZ-YVX:GQJK-LCT:partner',
+
     'GHBZ-YVX:GHB8-7T6:parentChild',
     'GHBZ-YVX:GHB8-GZL:parentChild',
     'GQJK-LCT:GHBZ-P5Q:parentChild',
@@ -342,8 +482,9 @@ const SOURCES = {
   'https://drive.google.com/file/d/1x1M6Z1asZU99nMTdtKYdfDxY_w_s2Gnc/view?usp=share_link': [
     'GQJK-LCT:birthDate',
     'GQJK-LCT:deathDate',
-    'GQJK-LCT:deathPlace', // Photo was taken by Arbyn Argabioso (Me)
+    'GQJK-LCT:deathPlace', // I visited Lolo Marcial in his final days in Saint Lukes
     'GQJK-LCT:firstName',
+    'GQJK-LCT:middleName',
     'GQJK-LCT:lastName',
     'GQJK-LCT:living',
   ],
@@ -356,12 +497,18 @@ const SOURCES = {
     'GHB8-GB6:deathPlace', // Photo was taken by Arbyn Argabioso (Me)
     'GHB8-GB6:living',
     'GHB8-GB6:firstName',
+    'GHB8-GB6:middleName',
     'GHB8-GB6:lastName',
+
+    'GHB8-GB6:GHBD-9LY:partner',
+
     'GHBD-9LY:firstName',
+    'GHBD-9LY:lastName',
     'GHBD-9LY:birthDate',
     'GHBD-9LY:deathDate',
     'GHBD-9LY:living',
     'GHBD-9LY:deathPlace', // Photo was taken by Arbyn Argabioso (Me)
+
     'GHB8-J1B:firstName',
     'GHB8-J1B:deathPlace', // Photo was taken by Arbyn Argabioso (Me)
     'GHB8-J1B:living',
@@ -371,14 +518,17 @@ const SOURCES = {
     'GHB8-J1B:firstName',
     'GHB8-J1B:lastName',
     'GHB8-J1B:gender',
+
     'GHBD-7M4:firstName',
     'GHBD-7M4:lastName',
     'GHBD-7M4:gender',
+
     'GHBD-7M4:GHB8-DXY:parentChild',
     'GHBD-7M4:GHBD-9L6:parentChild',
     'GHB8-J1B:GHBD-7M4:partner',
     'GHB8-DXY:GHBD-9L6:partner',
     'GHB8-GB6:GHBD-9LY:partner',
+
     'GHB8-J1B:GHB8-GB6:parentChild',
     'GHB8-J1B:GHBD-9LY:parentChild',
     'GHB8-DXY:gender',
@@ -393,33 +543,60 @@ const SOURCES = {
     'GHBD-7M4:deathDate',
     'GHBD-7M4:birthPlace',
     'GHBD-7M4:deathPlace',
+    'GHBD-7M4:firstName',
+    'GHBD-7M4:lastName',
+    'GHBD-7M4:suffix',
+    'GHBD-7M4:gender',
+
     'GHBD-7M4:GHB8-DXY:parentChild',
+    'GHB8-DXY:firstName',
+    'GHB8-DXY:gender',
+
     'GHBD-7M4:GHBD-9L6:parentChild',
+    'GHBD-9L6:firstName',
+    'GHBD-9L6:lastName',
+    'GHBD-9L6:gender',
   ],
   // Death Certificate ni Lolo Manuel Sr.
   'https://drive.google.com/file/d/1JuyRHuSaar2p3RM0nUjWX-KPMAGjk2FK/view?usp=sharing': [
     'GHBD-9L6:firstName',
-    'GHBD-9L6:lastName',
     'GHBD-9L6:middleName',
+    'GHBD-9L6:lastName',
+    'GHBD-9L6:gender',
+
     'GHBD-9L6:birthDate',
     'GHBD-9L6:deathDate',
     'GHBD-9L6:deathPlace',
     'GHBD-9L6:living',
     'GHBD-9L6:marker',
     'GHBD-9L6:marker2',
+
+    'GHB8-DXY:firstName',
+    'GHB8-DXY:lastName',
+    'GHB8-DXY:gender',
+
+    'GHB8-SQN:lastName',
+    'GHB8-SQN:gender',
+    'GHB8-5K8:lastName',
+    'GHB8-5K8:gender',
   ],
   // Birth certificate ni Lolo Ben
   'https://drive.google.com/file/d/1u-7tnWjKdZ5-GrdLKuKi-NOAVvty25Qo/view?usp=sharing': [
     'GHBD-9L6:birthPlace',
     'GHBD-9L6:firstName',
     'GHBD-9L6:lastName',
+
     'GHB8-DXY:birthPlace',
     'GHB8-DXY:firstName',
     'GHB8-DXY:lastName',
+
     'GHBD-9L6:GHB8-DXY:partner',
   ],
   // Social Security index ni Lola Nati
   'https://www.myheritage.com/research/record-10002-81189365-/natividad-san-agustin-acosta-in-us-social-security-death-index-ssdi': [
+    'GHB8-DXY:firstName',
+    'GHB8-DXY:middleName',
+    'GHB8-DXY:lastName',
     'GHB8-DXY:birthDate',
     'GHB8-DXY:deathDate',
     'GHB8-DXY:living',
@@ -465,6 +642,7 @@ const SOURCES = {
     'GHBZ-TM4:deathDate',
     'GHBZ-TM4:deathPlace',
     'GHBZ-TM4:living',
+    'GHBZ-TM4:gender',
   ],
   // Death certificate ni Lolo Bio
   'https://drive.google.com/file/d/1SQy34nGR1Z5-AqNSZDInfkewArzP_xqp/view?usp=share_link': [
@@ -474,9 +652,12 @@ const SOURCES = {
     'GHBZ-TM4:deathDate',
     'GHBZ-TM4:deathPlace',
     'GHBZ-TM4:living',
-    'GHBZ-TM4:GHB8-RCH:parentChild',
     'GHBZ-TM4:marker',
     'GHBZ-TM4:gender',
+
+    'GHBZ-TM4:GHB8-RCH:parentChild',
+    'GHB8-RCH:firstName',
+    'GHB8-RCH:lastName',
   ],
   // Death certificate ni Lolo Felomino
   'https://drive.google.com/file/d/1BK3uw-U_2ONst68_V7wUXFQWzzlu0pFc/view?usp=share_link': [
@@ -488,9 +669,18 @@ const SOURCES = {
     'GH12-DRN:living',
     'GH12-DRN:gender',
     'GH12-DRN:marker',
+
     'GH12-DRN:GH12-3GN:partner',
+    'GH12-3GN:firstName',
+    'GH12-3GN:lastName',
+
     'GH12-SVQ:GH12-DRN:parentChild',
+    'GH12-SVQ:firstName',
+    'GH12-SVQ:lastName',
   ],
+
+  // TODO: Re-check all sources starting here
+
   // Tito Darne's birth certificate
   'https://drive.google.com/file/d/1jYZqUHatNlvgDuyFw7jxSwgZsE6jy_9V/view?usp=sharing': [
     'GHB5-XTZ:middleName',

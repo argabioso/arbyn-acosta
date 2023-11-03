@@ -30,9 +30,10 @@ function checkPerPerson(person) {
     attributesToIgnore.push('deathDate');
     attributesToIgnore.push('deathPlace');
     attributesToIgnore.push('deathAge');
+    attributesToIgnore.push('livingPlace');
 
-    sourceCount += 3;
-    expectedSourceCount += 3;
+    sourceCount += 4;
+    expectedSourceCount += 4;
   }
 
   if (!person.living) {
@@ -131,7 +132,10 @@ function isUniqueObjectArray(arr, key) {
     let values = new Set();
 
     for(let i = 0; i < arr.length; i++) {
-        if(values.has(arr[i][key])) return false;
+        if(values.has(arr[i][key])) {
+          console.invalid(`Found duplicate source: ${arr[i][key]}`);
+          return false;
+        }
         values.add(arr[i][key]);
     }
 
@@ -159,7 +163,12 @@ function checkSources() {
 
   let hasDuplicateSource = false;
   for (const [url, sourceKeys] of Object.entries(SOURCES)) {
+    oldDuplicateSource = hasDuplicateSource;
     hasDuplicateSource = hasDuplicateSource || !isUniqueStringArray(sourceKeys);
+
+    if (!oldDuplicateSource && hasDuplicateSource) {
+      console.invalid(`Found duplicate source: ${url}`);
+    }
   }
   if (hasDuplicateSource) {
     console.invalid('Dataset contains duplicate sources');
