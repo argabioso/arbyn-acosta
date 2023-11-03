@@ -428,7 +428,7 @@ var TREE_DATA = [
             { key: 'GHB8-M86',       child: 'GHB8-GZL', prefix: '',     firstName: 'Genoveba',           middleName: '',            lastName: 'Gutierrez',   suffix: '',    gender: 'F', birthDate: null,          deathDate: null,               deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                deathPlace: null,                                livingPlace: null,                },
       { key: 'GQJK-G8W',             child: 'GQX8-CQP', prefix: '',     firstName: 'Corazon',            middleName: 'Maramba',     lastName: 'Acosta',      suffix: '',    gender: 'F', birthDate: '1971-03-10',  deathDate: '2018-05-25',       deathAge: null,  living: false, hasDNA: false, hasImage: true,   birthPlace: 'Sampaloc, Manila, PHL',             deathPlace: 'Santa Cruz, Laguna, PHL',           livingPlace: null,                marker: 'housewife' },
         { key: 'GHBD-7M4',           child: 'GQJK-G8W', prefix: '',     firstName: 'Manuel',             middleName: 'San Agustin', lastName: 'Acosta',      suffix: 'Jr.', gender: 'M', birthDate: '1948-07-06',  deathDate: '1979-06-07',       deathAge: null,  living: false, hasDNA: false, hasImage: true,   birthPlace: 'Manila, PHL',                       deathPlace: 'Pasadena, Los Angeles, CA, USA',    livingPlace: null,                marker: 'seaman' },
-          { key: 'GHBD-9L6',         child: 'GHBD-7M4', prefix: '',     firstName: 'Manuel',             middleName: 'Bongco',      lastName: 'Acosta',      suffix: 'Sr.', gender: 'M', birthDate: '1913-11-10',  deathDate: '1994-11-20',       deathAge: null,  living: false, hasDNA: false, hasImage: true,   birthPlace: 'Orani, Bataan, PHL',                deathPlace: 'San Dimas, Los Angeles, CA, USA',   livingPlace: null,                marker: 'police', marker2: 'investigate' },
+          { key: 'GHBD-9L6',         child: 'GHBD-7M4', prefix: '',     firstName: 'Manuel',             middleName: 'Bongco',      lastName: 'Acosta',      suffix: 'Sr.', gender: 'M', birthDate: '1913-11-10',  deathDate: '1994-11-20',       deathAge: null,  living: false, hasDNA: false, hasImage: true,   birthPlace: 'Orani, Bataan, PHL',                deathPlace: 'San Dimas, LA, CA, USA',            livingPlace: null,                marker: 'police', marker2: 'investigate' },
             { key: 'GHB8-SQN',       child: 'GHBD-9L6', prefix: '',     firstName: 'Ligorio',            middleName: '',            lastName: 'Acosta',      suffix: '',    gender: 'M', birthDate: 'about 1871',  deathDate: '1948-07-07',       deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                deathPlace: 'Manila, PHL',                       livingPlace: null,                },
             { key: 'GHB8-5K8',       child: 'GHBD-9L6', prefix: '',     firstName: 'Maximiana',          middleName: '',            lastName: 'Bongco',      suffix: '',    gender: 'F', birthDate: null,          deathDate: null,               deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                deathPlace: null,                                livingPlace: null,                },
           { key: 'GHB8-DXY',         child: 'GHBD-7M4', prefix: '',     firstName: 'Natividad',          middleName: 'Villacorta',  lastName: 'San Agustin', suffix: '',    gender: 'F', birthDate: '1925-12-21',  deathDate: '2008-10-09',       deathAge: null,  living: false, hasDNA: false, hasImage: true,   birthPlace: 'Ermita, Manila, PHL',               deathPlace: 'San Dimas, LA, CA, USA',            livingPlace: null,                marker: 'housewife', marker2: 'housekeeper' },
@@ -1244,9 +1244,6 @@ const SOURCES = {
     'GH12-SVQ:firstName',
     'GH12-SVQ:lastName',
   ],
-
-  // TODO: Re-check all sources starting here
-
   // Tito Darne's birth certificate
   'https://drive.google.com/file/d/1jYZqUHatNlvgDuyFw7jxSwgZsE6jy_9V/view?usp=sharing': [
     'GHB5-XTZ:middleName',
@@ -1311,15 +1308,25 @@ const SOURCES = {
     'GH12-Z3C:GH12-W17:partner',
   ],
   // FamilySearch: record of Corazon Maramba including her parents
+  // nanay ni Tita Cherry
   'https://www.familysearch.org/ark:/61903/1:1:HBNK-LY2M': [
     'GHB8-GB6:firstName',
     'GHB8-GB6:middleName',
     'GHB8-GB6:lastName',
+    'GHB8-GB6:gender',
+
+    'GHBD-9LY:firstName',
+    'GHBD-9LY:middleName',
     'GHBD-9LY:lastName',
+    'GHBD-9LY:gender',
+
+    'GHB8-GB6:GHBD-9LY:partner',
   ],
   // News article regarding Lolo Sotero being the chief in the police force
   // caputuring some trouble makers near a train station
   'https://drive.google.com/file/d/15o0fdYYMYTzXQ3ikiMCOqy-YlfAND76C/view?usp=sharing': [
+    'GHB8-GB6:firstName',
+    'GHB8-GB6:lastName',
     'GHB8-GB6:marker',
     'GHB8-GB6:marker2',
   ],
@@ -1328,8 +1335,14 @@ const SOURCES = {
     'LLQS-6YC:firstName',
     'LLQS-6YC:lastName',
     'LLQS-6YC:gender',
+
     'LLQS-6YC:LLQS-641:parentChild',
+    'LLQS-641:firstName',
+    'LLQS-641:lastName',
+
     'LLQS-6YC:L281-614:partner',
+    'L281-614:firstName',
+    'L281-614:lastName',
   ],
   // Geni: Maria Garcia Bautista
   'https://www.geni.com/people/Maria-Maramba/6000000017013425750': [

@@ -678,9 +678,6 @@ const SOURCES = {
     'GH12-SVQ:firstName',
     'GH12-SVQ:lastName',
   ],
-
-  // TODO: Re-check all sources starting here
-
   // Tito Darne's birth certificate
   'https://drive.google.com/file/d/1jYZqUHatNlvgDuyFw7jxSwgZsE6jy_9V/view?usp=sharing': [
     'GHB5-XTZ:middleName',
@@ -745,15 +742,25 @@ const SOURCES = {
     'GH12-Z3C:GH12-W17:partner',
   ],
   // FamilySearch: record of Corazon Maramba including her parents
+  // nanay ni Tita Cherry
   'https://www.familysearch.org/ark:/61903/1:1:HBNK-LY2M': [
     'GHB8-GB6:firstName',
     'GHB8-GB6:middleName',
     'GHB8-GB6:lastName',
+    'GHB8-GB6:gender',
+
+    'GHBD-9LY:firstName',
+    'GHBD-9LY:middleName',
     'GHBD-9LY:lastName',
+    'GHBD-9LY:gender',
+
+    'GHB8-GB6:GHBD-9LY:partner',
   ],
   // News article regarding Lolo Sotero being the chief in the police force
   // caputuring some trouble makers near a train station
   'https://drive.google.com/file/d/15o0fdYYMYTzXQ3ikiMCOqy-YlfAND76C/view?usp=sharing': [
+    'GHB8-GB6:firstName',
+    'GHB8-GB6:lastName',
     'GHB8-GB6:marker',
     'GHB8-GB6:marker2',
   ],
@@ -762,8 +769,14 @@ const SOURCES = {
     'LLQS-6YC:firstName',
     'LLQS-6YC:lastName',
     'LLQS-6YC:gender',
+
     'LLQS-6YC:LLQS-641:parentChild',
+    'LLQS-641:firstName',
+    'LLQS-641:lastName',
+
     'LLQS-6YC:L281-614:partner',
+    'L281-614:firstName',
+    'L281-614:lastName',
   ],
   // Geni: Maria Garcia Bautista
   'https://www.geni.com/people/Maria-Maramba/6000000017013425750': [
