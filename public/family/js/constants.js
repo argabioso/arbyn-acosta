@@ -26,6 +26,7 @@ const ui = {
         dna: !isDark ? '#f2e6f9' : '#403148',
         software: !isDark ? '#f0f0f0' : '#393939',
         government: !isDark ? '#f0f0f0' : '#393939',
+        manager: !isDark ? '#f0f0f0' : '#393939',
         housekeeper: !isDark ? '#f3ede9' : '#393939',
         cattle: !isDark ? '#f3ede9' : '#393939',
         investigate: !isDark ? '#f0f0f0' : '#393939',

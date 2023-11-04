@@ -1,5 +1,8 @@
+echo "Creating family.js"
 filename="js/family.js"
 echo "" > $filename
+
+echo "Appending modules to family.js"
 cat js/constants.js >> $filename
 cat js/chart.js >> $filename
 cat js/markers.js >> $filename
@@ -14,3 +17,6 @@ cat js/template/photo.js >> $filename
 cat js/template/markers.js >> $filename
 cat js/template/text.js >> $filename
 cat js/main.js >> $filename
+
+echo "Creating family.min.js"
+uglifyjs --compress --mangle --output js/family.min.js -- js/family.js
