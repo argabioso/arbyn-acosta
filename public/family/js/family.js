@@ -2570,3 +2570,12 @@ tree.model = model;
 
 // Show the copyright once everything loads up
 document.querySelector('footer').classList.remove("hidden");
+
+
+tree.addDiagramListener("ObjectSingleClicked", (e) => {
+    var clicked = e.subject.part;  // Get the clicked part, which could be a Node, a Link, etc.
+    if (clicked instanceof bino.Node) {  // Check if the clicked part is actually a node
+        // Perform the action you want, in this case, an alert
+        alert("Clicked on node with key: " + clicked.data.key);
+    }
+});
