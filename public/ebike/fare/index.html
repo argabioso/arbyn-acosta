@@ -14,14 +14,29 @@
 </head>
 
 <body>
-  <h1>TEST</h1>
+  <h1>eBike Fare Calculator</h1>
   <button id="startStopButton">Start/Stop Tracking</button>
 
   <div id="map" style="width: 600px; height: 400px;"></div>
   <p id="hmmm"></p>
   <script>
-
     document.addEventListener("DOMContentLoaded", (event) => {
+    // Get the dimensions
+    let viewableWidth = (window.innerWidth - 15);
+    let viewableHeight = (window.innerHeight - 122);
+
+    // Select the element you want to resize
+    let myElement = document.getElementById('map');
+
+    // Set the dimensions to the element
+    myElement.style.width = viewableWidth + 'px';
+    myElement.style.height = viewableHeight + 'px';
+
+    window.addEventListener('resize', function() {
+        myElement.style.width = (window.innerWidth - 15) + 'px';
+        myElement.style.height = (window.innerHeight - 122) + 'px';
+    });
+
     const map = L.map('map').setView([14.599732043846203, 120.98514882838623], 17);
 
     const tiles = L.tileLayer('http://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}', {
