@@ -18,6 +18,7 @@
   <button id="startStopButton">Start/Stop Tracking</button>
 
   <div id="map" style="width: 600px; height: 400px;"></div>
+  <p id="hmmm"></p>
   <script>
 
     document.addEventListener("DOMContentLoaded", (event) => {
@@ -104,6 +105,7 @@
           // Calculate distance between startPosition and endPosition
           // Apply fare calculation logic
           // Display fare in an alert or on the page
+          document.getElementById('hmmm').innerText = allPositions;
           alert(allPositions);
       }
     });
