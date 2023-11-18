@@ -38,6 +38,8 @@
           maximumAge: 0 // Set to 0 to ensure the device doesn't return a cached position
       };
 
+      var pathLine = L.polyline([], {color: 'blue'}).addTo(map);
+
       let allPositions = [];
 
       let currentLatitude = null;
@@ -79,6 +81,7 @@
               startMarker = L.marker(startPosition).addTo(map);
           }
 
+          pathLine.addLatLng(coords);
           allPositions.push(coords);
           map.setView(coords);
 
