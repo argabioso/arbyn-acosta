@@ -6,10 +6,10 @@ const CustomMarker = L.Icon.extend({
   }
 });
 
-const blueMarker = new CustomMarker({iconUrl: '../images/marker-blue.png'});
-const redMarker = new CustomMarker({iconUrl: '../images/marker-red.png'});
+const blueMarker = new CustomMarker({iconUrl: 'https://arbyn.argabioso.com/ebike/fare/images/marker-blue.png'});
+const redMarker = new CustomMarker({iconUrl: 'https://arbyn.argabioso.com/ebike/fare/images/marker-red.png'});
 var personMarkerIcon = L.icon({
-    iconUrl: '../images/person.png',
+    iconUrl: 'https://arbyn.argabioso.com/ebike/fare/images/person.png',
     iconSize:     [24, 24], // size of the icon
     iconAnchor:   [12, 12], // point of the icon which will correspond to marker's location
 });
