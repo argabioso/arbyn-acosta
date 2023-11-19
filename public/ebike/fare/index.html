@@ -12,109 +12,31 @@
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 
   <style>
-    html, body { margin: 0; padding: 0; }
-    #startStopButton {top: 20px; right: 20px; position: fixed; z-index: 999;}
+    html, body {
+      margin: 0;
+      padding: 0;
+    }
+
+    #map {
+      height: 100vh;
+      width: 100vw;
+    }
+
+    #start-stop-btn {
+      right: 20px;
+      bottom: 20px;
+      position: fixed;
+      z-index: 9999;
+    }
   </style>
 </head>
 
 <body>
-  <button id="startStopButton">Start/Stop Tracking</button>
+  <button id="start-stop-btn">Start Tracking</button>
+  <div id="map"></div>
 
-  <div id="map" style="width: 100%; height: 100vh;"></div>
-  <p id="hmmm"></p>
-  <script>
-    document.addEventListener("DOMContentLoaded", (event) => {
-    const map = L.map('map').setView([14.599732043846203, 120.98514882838623], 17);
-
-    const tiles = L.tileLayer('http://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}', {
-      maxZoom: 19,
-      subdomains:['mt0','mt1','mt2','mt3'],
-      attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-    }).addTo(map);
-      let watchID;
-      let positionOptions = {
-          enableHighAccuracy: true, // Uses GPS if available
-          timeout: 5000, // Milliseconds to wait before timeout if no position is received
-          maximumAge: 0 // Set to 0 to ensure the device doesn't return a cached position
-      };
-
-      var pathLine = L.polyline([], {color: 'blue'}).addTo(map);
-
-      let allPositions = [];
-
-      let currentLatitude = null;
-      let currentLongitude = null;
-
-      let isTracking = false;
-      let startPosition = null;
-      let endPosition = null;
-
-      let startMarker = null;
-      let stopMarker = null;
-
-      document.getElementById('startStopButton').addEventListener('click', function() {
-          if (!isTracking) {
-              startTracking();
-          } else {
-              stopTracking();
-              calculateFare();
-          }
-      });
-
-      function startTracking() {
-          if (navigator.geolocation) {
-              watchID = navigator.geolocation.watchPosition(positionUpdate, positionError, positionOptions);
-              isTracking = true;
-          } else {
-              console.log("Geolocation is not supported by this browser.");
-          }
-      }
-
-      function positionUpdate(position) {
-          currentLatitude = position.coords.latitude;
-          currentLongitude = position.coords.longitude;
-
-          let coords = [currentLatitude, currentLongitude];
-
-          if (startPosition === null) {
-              startPosition = coords;
-              startMarker = L.marker(startPosition).addTo(map);
-          }
-
-          pathLine.addLatLng(coords);
-          allPositions.push(coords);
-          map.setView(coords);
-
-          // Update the position on your map or perform your calculations here
-
-          console.log("Latitude: " + currentLatitude + ", Longitude: " + currentLongitude);
-      }
-
-      function positionError(error) {
-          console.warn('ERROR(' + error.code + '): ' + error.message);
-      }
-
-      function stopTracking() {
-          isTracking = false;
-          if (navigator.geolocation) {
-              navigator.geolocation.clearWatch(watchID);
-              stopPosition = [currentLatitude, currentLongitude];
-
-              startMarker = L.marker(stopPosition).addTo(map);
-              map.setView(stopPosition);
-              console.log("Latitude: " + currentLatitude + ", Longitude: " + currentLongitude);
-          }
-      }
-
-      function calculateFare() {
-          // Calculate distance between startPosition and endPosition
-          // Apply fare calculation logic
-          // Display fare in an alert or on the page
-          document.getElementById('hmmm').innerText = allPositions;
-          alert(allPositions);
-      }
-    });
-  </script>
+  <script src="js/plugins.js"></script>
+  <script src="js/main.js"></script>
 </body>
 
 </html>
