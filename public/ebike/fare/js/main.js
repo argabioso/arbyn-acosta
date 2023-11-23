@@ -21,7 +21,7 @@ const IP_GEOLOCATION__API_KEY = [
 ].join("")
 
 document.addEventListener("DOMContentLoaded", (event) => {
-  const map = L.map('map').setView(
+  const map = L.map('map', { zoomControl: false }).setView(
     [14.655215189590614, 120.96979574916335],
     APP_ZOOM,
   );
@@ -32,16 +32,6 @@ document.addEventListener("DOMContentLoaded", (event) => {
         {
           elementType: 'labels',
           stylers: [{visibility: 'on'}],
-        },
-        {
-          featureType: 'road.highway',
-          elementType: 'geometry.fill',
-          stylers: [{color: '#f0f0f0'}],
-        },
-        {
-          featureType: 'road.highway',
-          elementType: 'geometry.stroke',
-          stylers: [{color: '#6f444444'}],
         },
       ],
     ),
@@ -89,6 +79,9 @@ document.addEventListener("DOMContentLoaded", (event) => {
       if (navigator.geolocation) {
           watchID = navigator.geolocation.watchPosition(positionUpdate, positionError, positionOptions);
           isTracking = true;
+
+        document.querySelector("#start-stop-btn .btn-label").textContent = "Stop Tracking";
+        document.querySelector("#start-stop-btn .material-icon").textContent = "stop_circle";
       } else {
           console.log("Geolocation is not supported by this browser.");
       }
@@ -134,6 +127,9 @@ document.addEventListener("DOMContentLoaded", (event) => {
           map.setView(stopPosition);
           // console.log("Latitude: " + currentLatitude + ", Longitude: " + currentLongitude);
       }
+
+      document.querySelector("#start-stop-btn .btn-label").textContent = "Start Tracking";
+      document.querySelector("#start-stop-btn .material-icon").textContent = "transportation";
   }
 
   function calculateFare() {
