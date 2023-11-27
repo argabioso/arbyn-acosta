@@ -602,6 +602,7 @@ TREE_DATA.forEach(node => {
 // Ursula Badoles
 //   = Birth is 10 years before known children's birth
 //   = Death is time after known children's birth
+// Unknown name = Death date is after photo taken
 
 const SOURCES = {
   'Present and Direct Interactions': [
@@ -624,6 +625,7 @@ const SOURCES = {
     'GHBZ-YVX:marker',
     'GHB5-XTZ:marker',
     'GHBR-FK3:marker',
+    'GHBR-FK3:marker2',
   ],
   // Should only be used on ancestors with living children
   // since this type of source would have a bigger "mistake chance"

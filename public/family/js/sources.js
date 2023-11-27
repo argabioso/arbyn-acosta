@@ -52,6 +52,7 @@ const SOURCES = {
     'GHBZ-YVX:marker',
     'GHB5-XTZ:marker',
     'GHBR-FK3:marker',
+    'GHBR-FK3:marker2',
   ],
   // Should only be used on ancestors with living children
   // since this type of source would have a bigger "mistake chance"
