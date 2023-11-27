@@ -1,3 +1,36 @@
+// Age for Mothers (youngest ever was 9) so let's use 10
+// Age for Fathers (youngest ever was 5) so let's use 6
+
+// Birth estimates
+// Lolo Bio = Estimate birth year from Death Certificate and age
+// Lola Estebana = Estimate birth year from Death Certificate and age
+// Lola Francisca
+//   = Birth was 10 years from earliest daughter birth year estimate
+//   = Death was 4 years after Lolo Marcial's birth (Lolo Marcial is youngest)
+// Lolo Ligorio = Estimate birth year from Death Certificate and age
+// Lolo Don Miguel = Estimate death is 10 months before Lolo Sotero was born
+// Lolo Guillermo Maramba = Estimate birth from Lolo Miguel's birth - 6
+// Lola Maria Baustista = Estimate birth from Lolo Miguel's birth - 10
+
+// Lolo Felomino = Estimate birth year from Death Certificate and age
+// Lola Consuelo Ladera
+//   = Estimate birth from Lolo Nestor's birth - 10
+//   = Estimate death is any time after Lolo Felomino's death
+// Lolo Napoleon
+//   = Estimate birth from Tita Mylen's birth - 6
+//   = Estimate death is time after Tita Cecil was born
+// Lola Enoria
+//   = Estimate birth from Mamang's birth - 10
+//   = Estimate death is time after Mitch reached 3 years old
+// Lola Leoncia = Estimate birth year from Death record and age
+// Lolo Manuel Ajesta
+//   = Birth is 6 years before known children's birth
+//   = Death is time after known children's birth
+// Ursula Badoles
+//   = Birth is 10 years before known children's birth
+//   = Death is time after known children's birth
+// Unknown name = Death date is after photo taken
+
 const SOURCES = {
   'Present and Direct Interactions': [
     'GHB5-TWN:birthDate',
