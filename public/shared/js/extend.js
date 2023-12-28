@@ -161,6 +161,10 @@ console.valid = function (message) {
   console.log(`%c[✓] ${message}`, 'background-color: #b1e0c8; color: #054021; padding: 2px 5px; border-radius: 3px; font-weight: bold;');
 };
 
+console.warning = function (message) {
+  console.log(`%c[!] ${message}`, 'background-color: #f6dabe; color: #45140e; padding: 2px 5px; border-radius: 3px; font-weight: bold;');
+};
+
 console.invalid = function (message) {
   console.log(`%c[✕] ${message}`, 'background-color: #f4c8c3; color: #45140e; padding: 2px 5px; border-radius: 3px; font-weight: bold;');
 };

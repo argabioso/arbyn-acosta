@@ -15,6 +15,7 @@ function isEmpty(value) {
 }
 
 function checkPerPerson(person) {
+  let weirdCount = 0;
   let sourceCount = 0;
   let expectedSourceCount = 0;
   let unverifiedAttributes = [];
@@ -79,12 +80,6 @@ function checkPerPerson(person) {
   }
 
   for (const [attributeName, attributeValue] of Object.entries(person)) {
-    if (attributesToIgnore.includes(attributeName)) {
-      continue;
-    }
-
-    expectedSourceCount += 1;
-
     let verified = false;
     let sourceKey = `${person.key}:${attributeName}`;
     let sourceKeyAlternative = null;
@@ -109,7 +104,30 @@ function checkPerPerson(person) {
 
     currentSourceCount += KEYS_IN_SOURCE.occurrences(sourceKey);
     currentSourceCount += KEYS_IN_SOURCE.occurrences(sourceKeyAlternative);
+
+    let stringAttributeValue = String(attributeValue);
+    if (isEmpty(stringAttributeValue) && currentSourceCount != 0) {
+      weirdCount += 1;
+      console.invalid(`Found source for empty field: ${sourceKey || sourceKeyAlternative}`);
+    }
+
+    let isEstimated = (
+      stringAttributeValue.includes("before") ||
+      stringAttributeValue.includes("after") ||
+      stringAttributeValue.includes("about")
+    );
+
+    if (isEstimated && currentSourceCount != 0) {
+      weirdCount += 1;
+      console.warning(`Found source for estimated field: ${sourceKey || sourceKeyAlternative}. Value: ${stringAttributeValue}`);
+    }
+
+    if (attributesToIgnore.includes(attributeName)) {
+      continue;
+    }
+
     sourceCount += currentSourceCount;
+    expectedSourceCount += 1;
 
     // An attribute is unverified if there are no current
     // sources found for that specific attribute
@@ -122,6 +140,7 @@ function checkPerPerson(person) {
 
   return [
     sourceCount,
+    weirdCount,
     expectedSourceCount,
     unverifiedAttributes,
     KEYS_IN_SENTIMENT_SOURCE.occurrences(person.key),
@@ -176,6 +195,7 @@ function checkSources() {
     console.valid('All the source in the dataset are unique');
   }
 
+  let totalWeirdCount = 0;
   let sortedPeople = [];
   let peopleWithSources = [];
   let peopleWithNoSources = [];
@@ -189,8 +209,10 @@ function checkSources() {
       continue;
     }
 
-    let [sourceCount, expectedSourceCount, unverifiedAttributes, sentimentSourceCount] = checkPerPerson(person);
-    if (sourceCount == expectedSourceCount) {
+    let [sourceCount, weirdCount, expectedSourceCount, unverifiedAttributes, sentimentSourceCount] = checkPerPerson(person);
+    totalWeirdCount += weirdCount;
+
+    if (sourceCount >= expectedSourceCount) {
       fullyVerifiedPeople.push(person.fullName);
     }
     if (sourceCount <= 0) {
@@ -243,6 +265,11 @@ function checkSources() {
   for (const [i, personFullName] of Object.entries(peopleWithNoSources)) {
     console.log(`%c${personFullName}`, 'font-weight: 700;');
   }
+
+  if (totalWeirdCount != 0) {
+    console.warning('Dataset contains sources for empty/estimated data fields');
+  }
+
   console.groupEnd();
   console.groupEnd();
 }

@@ -339,7 +339,6 @@ const SOURCES = {
     'LLQS-641:firstName',
     'LLQS-641:middleName',
     'LLQS-641:lastName',
-    'LLQS-641:birthDate',
     'LLQS-641:gender',
 
     'GHB8-GB6:LLQS-641:parentChild',
@@ -784,7 +783,6 @@ const SOURCES = {
     'GHB8-GB6:gender',
 
     'GHBD-9LY:firstName',
-    'GHBD-9LY:middleName',
     'GHBD-9LY:lastName',
     'GHBD-9LY:gender',
 
