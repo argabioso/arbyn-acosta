@@ -1,5 +1,5 @@
 
-const isPrivate = !(window.location.get("private") == "false");
+const isPrivate = !isDebugging && !(window.location.get("private") == "false");
 var isChecking = false; // overridden by checks.js if imported
 
 const ui = {
@@ -1533,7 +1533,7 @@ const SOURCES = {
     ''
   ],
 };
-isChecking = window.location.get("check") == "true";
+isChecking = isDebugging || (window.location.get("check") == "true");
 
 var KEYS_IN_SOURCE = '';
 for (const [url, originalSourceKeys] of Object.entries(SOURCES)) {

@@ -1,4 +1,4 @@
-isChecking = window.location.get("check") == "true";
+isChecking = isDebugging || (window.location.get("check") == "true");
 
 var KEYS_IN_SOURCE = '';
 for (const [url, originalSourceKeys] of Object.entries(SOURCES)) {

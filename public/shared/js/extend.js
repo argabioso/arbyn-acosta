@@ -200,6 +200,8 @@ if (isDarkQuery !== null || isLightQuery !== null) {
   }
 }
 
+var isDebugging = window.location.get("debug") == 'true';
+
 // Version 4.0
 const pSBC=(p,c0,c1,l)=>{
     let r,g,b,P,f,t,h,i=parseInt,m=Math.round,a=typeof(c1)=="string";
