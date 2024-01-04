@@ -444,7 +444,7 @@ var TREE_DATA = [
             { key: 'GHB8-5K8',       child: 'GHBD-9L6', prefix: '',     firstName: 'Maximiana',          middleName: '',            lastName: 'Bongco',      suffix: '',    gender: 'F', birthDate: null,          deathDate: 'after 1951-03-05', deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                deathPlace: null,                                livingPlace: null,                },
           { key: 'GHB8-DXY',         child: 'GHBD-7M4', prefix: '',     firstName: 'Natividad',          middleName: '',            lastName: 'San Agustin', suffix: '',    gender: 'F', birthDate: '1925-12-21',  deathDate: '2008-10-09',       deathAge: null,  living: false, hasDNA: false, hasImage: true,   birthPlace: 'Ermita, Manila, PHL',               deathPlace: 'San Dimas, California, USA',        livingPlace: null,                marker: 'housewife' },
             { key: 'GHB8-LCC',       child: 'GHB8-DXY', prefix: '',     firstName: 'Vicente',            middleName: '',            lastName: 'San Agustin', suffix: '',    gender: 'M', birthDate: null,          deathDate: null,               deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                deathPlace: null,                                livingPlace: null,                },
-            { key: 'GHB8-H7K',       child: 'GHB8-DXY', prefix: '',     firstName: 'Nena',               middleName: '',            lastName: 'Villacorta',  suffix: '',    gender: 'F', birthDate: null,          deathDate: null,               deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                deathPlace: null,                                livingPlace: null,                },
+            { key: 'GHB8-H7K',       child: 'GHB8-DXY', prefix: '',     firstName: 'Nena',               middleName: '',            lastName: '',            suffix: '',    gender: 'F', birthDate: null,          deathDate: null,               deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                deathPlace: null,                                livingPlace: null,                },
         { key: 'GHB8-J1B',           child: 'GQJK-G8W', prefix: '',     firstName: 'Catalina',           middleName: 'Dumantay',    lastName: 'Maramba',     suffix: '',    gender: 'F', birthDate: '1943-01-28',  deathDate: '1974-08-10',       deathAge: null,  living: false, hasDNA: false, hasImage: true,   birthPlace: 'Sta. Barbara, Pangasinan, PHL',     deathPlace: 'Sangandaan, Caloocan, PHL',         livingPlace: null,                },
           { key: 'GHB8-GB6',         child: 'GHB8-J1B', prefix: '',     firstName: 'Sotero',             middleName: 'Reyes',       lastName: 'Maramba',     suffix: 'Sr.', gender: 'M', birthDate: '1903-04-22',  deathDate: '1969-12-12',       deathAge: null,  living: false, hasDNA: false, hasImage: true,   birthPlace: 'Sta. Barbara, Pangasinan, PHL',     deathPlace: 'Sangandaan, Caloocan, PHL',         livingPlace: null,                marker: 'police', marker2: 'train' },
             { key: 'LLQS-641',       child: 'GHB8-GB6', prefix: 'Don',  firstName: 'Miguel',             middleName: 'Bautista',    lastName: 'Maramba',     suffix: '',    gender: 'M', birthDate: 'about 1858',  deathDate: 'after 1902-06',    deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: 'Sta. Barbara, Pangasinan, PHL',     deathPlace: 'Sta. Barbara, Pangasinan, PHL',     livingPlace: null,                marker: 'government' },
@@ -1205,7 +1205,6 @@ const SOURCES = {
   // Social Security index ni Lola Nati
   'https://www.myheritage.com/research/record-10002-81189365-/natividad-san-agustin-acosta-in-us-social-security-death-index-ssdi': [
     'GHB8-DXY:firstName',
-    'GHB8-DXY:middleName',
     'GHB8-DXY:lastName',
     'GHB8-DXY:birthDate',
     'GHB8-DXY:deathDate',
@@ -1228,7 +1227,6 @@ const SOURCES = {
     'GHB8-LCC:gender',
 
     'GHB8-H7K:firstName',
-    'GHB8-H7K:lastName',
     'GHB8-H7K:gender',
 
     'GHB8-LCC:GHB8-H7K:partner',

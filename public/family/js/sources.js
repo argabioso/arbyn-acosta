@@ -628,7 +628,6 @@ const SOURCES = {
   // Social Security index ni Lola Nati
   'https://www.myheritage.com/research/record-10002-81189365-/natividad-san-agustin-acosta-in-us-social-security-death-index-ssdi': [
     'GHB8-DXY:firstName',
-    'GHB8-DXY:middleName',
     'GHB8-DXY:lastName',
     'GHB8-DXY:birthDate',
     'GHB8-DXY:deathDate',
@@ -651,7 +650,6 @@ const SOURCES = {
     'GHB8-LCC:gender',
 
     'GHB8-H7K:firstName',
-    'GHB8-H7K:lastName',
     'GHB8-H7K:gender',
 
     'GHB8-LCC:GHB8-H7K:partner',
