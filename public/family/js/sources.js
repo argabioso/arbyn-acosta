@@ -292,7 +292,8 @@ const SOURCES = {
     'GQJK-G8W:living',
   ],
   // Family Search: Lolo Ligorio Death Record
-  'https://www.familysearch.org/ark:/61903/1:1:FV6D-SZH': [
+  // 'https://www.familysearch.org/ark:/61903/1:1:FV6D-SZH': [
+  'https://drive.google.com/file/d/1AL6hsO1Snvv-_aOovfP88-w0oxPjQs4i/view?usp=sharing': [
     'GHB8-SQN:firstName',
     'GHB8-SQN:lastName',
     'GHB8-SQN:gender',
@@ -307,7 +308,8 @@ const SOURCES = {
   ],
   // Family Search: José Pedro Maramba Reyes christening record
   // includes lolo Miguel Maramba's and parents' details
-  'https://www.familysearch.org/ark:/61903/1:1:66HQ-VJGQ': [
+  // 'https://www.familysearch.org/ark:/61903/1:1:66HQ-VJGQ': [
+  'https://drive.google.com/file/d/1EZnFrq2uHZVgfDSItdUrxBqy7Wzkto7o/view?usp=sharing': [
     'LLQS-641:LLQS-6F1:partner',
 
     'LLQS-641:firstName',
@@ -374,7 +376,8 @@ const SOURCES = {
     'LLQS-641:prefix',
   ],
   // FamilySearch: Lolo Felomino death record
-  'https://www.familysearch.org/ark:/61903/1:1:HYTD-R5ZM': [
+  // 'https://www.familysearch.org/ark:/61903/1:1:HYTD-R5ZM': [
+  'https://drive.google.com/file/d/1Iu-cO6zNvD--hQoozbIXFQVPA3CXeAAm/view?usp=sharing': [
     'GH12-DRN:firstName',
     'GH12-DRN:lastName',
     'GH12-DRN:deathPlace',
@@ -477,7 +480,8 @@ const SOURCES = {
     'GHBZ-YVX:GQJK-LCT:partner',
   ],
   // FamilySearch: Lola Marcial marriage record
-  'https://www.familysearch.org/ark:/61903/1:1:HBBK-QDMM': [
+  // 'https://www.familysearch.org/ark:/61903/1:1:HBBK-QDMM': [
+  'https://drive.google.com/file/d/1VQzDD8JzFMEdsN8xm1EaWsYsQqgUYuBz/view?usp=sharing': [
     'GHBZ-TM4:firstName',
     'GHBZ-TM4:lastName',
     'GHBZ-TM4:gender',
