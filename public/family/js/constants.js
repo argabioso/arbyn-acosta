@@ -44,6 +44,8 @@ const ui = {
         police: !isDark ? '#e3edfd' : '#323b48',
         military: !isDark ? '#fcf3e2' : '#3e382e',
         sales: !isDark ? '#fcf3e2' : '#3e382e',
+        'male-twin': !isDark ? '#e3edfd' : '#323b48',
+        'female-twin': !isDark ? '#fde8f0' : '#462c36',
       },
       symbol: {
         default: 'white',

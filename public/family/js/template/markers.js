@@ -143,6 +143,12 @@ function marginConditions(marker) {
   if (marker === 'farming') {
     return new bino.Margin(2, 0, 0, 1);
   }
+  if (marker === 'male-twin') {
+    return new bino.Margin(-0.2, 0, 0, 2.35);
+  }
+  if (marker === 'female-twin') {
+    return new bino.Margin(-0.2, 0, 0, 2.35);
+  }
   if (marker === 'train') {
     return new bino.Margin(3, 0, 0, 2);
   }
