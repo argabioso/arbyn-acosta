@@ -175,10 +175,14 @@ const SOURCES = {
   ],
 
   // =======================================================================
-  // Birth Records
+  // Argabioso, Arbyn Acosta
+  //
+  // GQX8-CQP - Argabioso, Arbyn Acosta
+  // GQJK-L51 - Argabioso, Rolando Saplala
+  // GQJK-G8W - Acosta, Corazon Maramba
   // =======================================================================
 
-  // Argabioso, Arbyn Acosta: Certificate of Birth
+  // Certificate of Birth
   'https://drive.google.com/file/d/1B1umw_xm5i-AmNp9YzshX2DebSAhj3cz/view?usp=sharing': [
     'GQX8-CQP:birthPlace',
     'GQX8-CQP:firstName',
@@ -202,193 +206,7 @@ const SOURCES = {
     'GQJK-L51:GQJK-G8W:partner',
   ],
 
-  // Adanza, Mitchie Ajesta: Certificate of Birth
-  'https://drive.google.com/file/d/19s_gdN98AQ1sZ5lhqSf8GrpJJIpFhsdf/view?usp=sharing': [
-    'GHB5-TWN:birthPlace',
-    'GHB5-TWN:firstName',
-    'GHB5-TWN:middleName',
-    'GHB5-TWN:lastName',
-    'GHB5-TWN:gender',
-    'GHB5-TWN:birthDate',
-
-    'GHB5-TWN:GHB5-XTZ:parentChild',
-    'GHB5-XTZ:gender',
-    'GHB5-XTZ:firstName',
-    'GHB5-XTZ:middleName',
-    'GHB5-XTZ:lastName',
-
-    'GHB5-TWN:GHBR-FK3:parentChild',
-    'GHBR-FK3:gender',
-    'GHBR-FK3:firstName',
-    'GHBR-FK3:middleName',
-    'GHBR-FK3:lastName',
-    'GHBR-FK3:marker',
-
-    'GHB5-XTZ:GHBR-FK3:partner',
-    'GHB5-XTZ:marriageDate',
-    'GHBR-FK3:marriageDate',
-  ],
-
-  // Argabioso, Rolando Saplala: Certificate of Birth
-  'https://drive.google.com/file/d/1degLEAa8cBBxJrRsWwz0t6wHh9vs29cH/view?usp=sharing': [
-    'GQJK-L51:birthPlace',
-    'GQJK-L51:firstName',
-    'GQJK-L51:middleName',
-    'GQJK-L51:lastName',
-    'GQJK-L51:gender',
-    'GQJK-L51:birthDate',
-
-    'GQJK-L51:GQJK-LCT:parentChild',
-    'GQJK-LCT:gender',
-    'GQJK-LCT:firstName',
-    'GQJK-LCT:middleName',
-    'GQJK-LCT:lastName',
-    'GQJK-LCT:birthPlace',
-
-    'GQJK-L51:GHBZ-YVX:parentChild',
-    'GHBZ-YVX:gender',
-    'GHBZ-YVX:firstName',
-    'GHBZ-YVX:middleName',
-    'GHBZ-YVX:lastName',
-    'GHBZ-YVX:birthPlace',
-
-    'GQJK-LCT:GHBZ-YVX:partner',
-    'GQJK-LCT:marriageDate',
-    'GQJK-LCT:marriagePlace',
-    'GHBZ-YVX:marriageDate',
-    'GHBZ-YVX:marriagePlace',
-  ],
-
-  // Acosta, Corazon Maramba: Certificate of Live Birth
-  'https://drive.google.com/file/d/1Db5lGDp-mhJH7LAXnuijFXBc1c1vA07j/view?usp=sharing': [
-    'GQJK-G8W:birthPlace',
-    'GQJK-G8W:firstName',
-    'GQJK-G8W:middleName',
-    'GQJK-G8W:lastName',
-    'GQJK-G8W:birthDate',
-
-    'GQJK-G8W:GHBD-7M4:parentChild',
-    'GHBD-7M4:firstName',
-    'GHBD-7M4:middleName',
-    'GHBD-7M4:lastName',
-    'GHBD-7M4:birthPlace',
-    'GHBD-7M4:marker2',
-
-    'GQJK-G8W:GHB8-J1B:parentChild',
-    'GHB8-J1B:firstName',
-    'GHB8-J1B:middleName',
-    'GHB8-J1B:lastName',
-
-    'GHBD-7M4:GHB8-J1B:partner',
-    'GHBD-7M4:marriageDate',
-    'GHBD-7M4:marriagePlace',
-    'GHB8-J1B:marriageDate',
-    'GHB8-J1B:marriagePlace',
-  ],
-
-  // Adanza, Darne Elican: Certificate of Birth
-  'https://drive.google.com/file/d/1jYZqUHatNlvgDuyFw7jxSwgZsE6jy_9V/view?usp=sharing': [
-    'GHB5-XTZ:firstName',
-    'GHB5-XTZ:middleName',
-    'GHB5-XTZ:lastName',
-    'GHB5-XTZ:gender',
-    'GHB5-XTZ:birthDate',
-    'GHB5-XTZ:birthPlace',
-
-    'GHB5-XTZ:GH12-9F6:parentChild',
-    'GH12-9F6:gender',
-    'GH12-9F6:firstName',
-    'GH12-9F6:lastName',
-
-    'GHB5-XTZ:GH12-SVQ:parentChild',
-    'GH12-SVQ:gender',
-    'GH12-SVQ:firstName',
-    'GH12-SVQ:lastName',
-
-    'GH12-9F6:GH12-SVQ:partner',
-  ],
-
-  // Ajesta, Mylen Vergara: Certificate of Live Birth
-  'https://drive.google.com/file/d/1J6wUo6AwrS5aO9LJWbh8CUReaRTkUEFF/view?usp=sharing': [
-    'GHBR-FK3:firstName',
-    'GHBR-FK3:middleName',
-    'GHBR-FK3:lastName',
-    'GHBR-FK3:gender',
-    'GHBR-FK3:birthDate',
-    'GHBR-FK3:birthPlace',
-
-    'GHBR-FK3:GH12-Z3C:parentChild',
-    'GH12-Z3C:gender',
-    'GH12-Z3C:firstName',
-    'GH12-Z3C:lastName',
-
-    'GHBR-FK3:GH12-W17:parentChild',
-    'GH12-W17:gender',
-    'GH12-W17:firstName',
-    'GH12-W17:lastName',
-
-    'GH12-Z3C:GH12-W17:partner',
-  ],
-
-  // Ajesta, Mylen Vergara: Certificate of Birth
-  'https://drive.google.com/file/d/18MFv7G6xKBJj9M4ewH8a3GgcpFW4VSht/view?usp=sharing': [
-    'GHBR-FK3:birthPlace',
-    'GHBR-FK3:firstName',
-    'GHBR-FK3:middleName',
-    'GHBR-FK3:lastName',
-    'GHBR-FK3:gender',
-    'GHBR-FK3:birthDate',
-
-    'GHBR-FK3:GH12-Z3C:parentChild',
-    'GH12-Z3C:gender',
-    'GH12-Z3C:firstName',
-    'GH12-Z3C:middleName',
-    'GH12-Z3C:lastName',
-
-    'GHBR-FK3:GH12-W17:parentChild',
-    'GH12-W17:gender',
-    'GH12-W17:firstName',
-    'GH12-W17:middleName',
-    'GH12-W17:lastName',
-
-    'GH12-Z3C:GH12-W17:partner',
-    'GH12-Z3C:marriageDate',
-    'GH12-W17:marriageDate',
-  ],
-
-  // Saplala, Lydia Perez: Certificate of Birth
-  'https://drive.google.com/file/d/1Yy9S1Y4NOilHHulCeejkeeY1BUbzgRyn/view?usp=sharing': [
-    'GHBZ-YVX:firstName',
-    'GHBZ-YVX:middleName',
-    'GHBZ-YVX:lastName',
-    'GHBZ-YVX:gender',
-    'GHBZ-YVX:birthDate',
-    'GHBZ-YVX:birthPlace',
-    'GHBZ-YVX:living',
-
-    'GHBZ-YVX:GHB8-GZL:parentChild',
-    'GHB8-GZL:gender',
-    'GHB8-GZL:firstName',
-    'GHB8-GZL:middleName',
-    'GHB8-GZL:lastName',
-    'GHB8-GZL:marker',
-
-    'GHBZ-YVX:GHB8-7T6:parentChild',
-    'GHB8-7T6:gender',
-    'GHB8-7T6:firstName',
-    'GHB8-7T6:middleName',
-    'GHB8-7T6:lastName',
-    'GHB8-7T6:marker',
-
-    'GHB8-7T6:GHB8-GZL:partner',
-    'GQJK-LCT:GHBZ-YVX:partner',
-  ],
-
-  // =======================================================================
-  // Baptism Records
-  // =======================================================================
-
-  // Argabioso, Arbyn Acosta: Certificate of Baptism
+  // Certificate of Baptism
   'https://drive.google.com/file/d/1nJVXB-p0ZM0OUXsXK4TyI7JRwvbDln53/view?usp=sharing': [
     'GQX8-CQP:firstName',
     'GQX8-CQP:middleName',
@@ -425,19 +243,240 @@ const SOURCES = {
     // Cynthia Haber
   ],
 
-  // Acosta, Corazon Maramba: Certificate of Baptism
+  // =======================================================================
+  // Argabioso, Rolando Saplala
+  //
+  // GQJK-L51 - Argabioso, Rolando Saplala
+  // GQJK-LCT - Argabioso, Marcial Mia
+  // GHBZ-YVX - Saplala, Lydia Perez
+  // =======================================================================
+
+  // Certificate of Birth
+  'https://drive.google.com/file/d/1degLEAa8cBBxJrRsWwz0t6wHh9vs29cH/view?usp=sharing': [
+    'GQJK-L51:birthPlace',
+    'GQJK-L51:firstName',
+    'GQJK-L51:middleName',
+    'GQJK-L51:lastName',
+    'GQJK-L51:gender',
+    'GQJK-L51:birthDate',
+
+    'GQJK-L51:GQJK-LCT:parentChild',
+    'GQJK-LCT:gender',
+    'GQJK-LCT:firstName',
+    'GQJK-LCT:middleName',
+    'GQJK-LCT:lastName',
+    'GQJK-LCT:birthPlace',
+
+    'GQJK-L51:GHBZ-YVX:parentChild',
+    'GHBZ-YVX:gender',
+    'GHBZ-YVX:firstName',
+    'GHBZ-YVX:middleName',
+    'GHBZ-YVX:lastName',
+    'GHBZ-YVX:birthPlace',
+
+    'GQJK-LCT:GHBZ-YVX:partner',
+    'GQJK-LCT:marriageDate',
+    'GQJK-LCT:marriagePlace',
+    'GHBZ-YVX:marriageDate',
+    'GHBZ-YVX:marriagePlace',
+  ],
+
+  // Certificate of Marriage
+  'https://drive.google.com/file/d/1kMHiW0mbPuPGyGOBm08qY6yWgvnHd82K/view?usp=sharing': [
+    'GQJK-L51:gender',
+    'GQJK-L51:firstName',
+    'GQJK-L51:middleName',
+    'GQJK-L51:lastName',
+    'GQJK-L51:birthDate',
+    'GQJK-L51:birthPlace',
+
+    'GQJK-LCT:GQJK-L51:parentChild',
+    'GQJK-LCT:gender',
+    'GQJK-LCT:firstName',
+    'GQJK-LCT:middleName',
+    'GQJK-LCT:lastName',
+
+    'GHBZ-YVX:GQJK-L51:parentChild',
+    'GHBZ-YVX:gender',
+    'GHBZ-YVX:firstName',
+    'GHBZ-YVX:middleName',
+    'GHBZ-YVX:lastName',
+
+    'GQJK-LCT:GHBZ-YVX:partner',
+
+    'GQJK-L51:marriagePlace',
+    'GQJK-L51:marriageDate',
+  ],
+
+  // =======================================================================
+  // Argabioso, Marcial Mia
+  //
+  // GQJK-LCT - Argabioso, Marcial Mia
+  // GHBZ-TM4 - Argabioso, Eusebio Lopecillo
+  // GHBZ-P5Q - Mia, Francisca
+  // =======================================================================
+
+  // Certificate of Marriage
+  'https://drive.google.com/file/d/1C2TFs8kVvf6lWq-ANjEEG165f7bWUZCs/view?usp=sharing&side=argabioso': [
+    'GQJK-LCT:GHBZ-YVX:partner',
+
+    'GQJK-LCT:marriagePlace',
+    'GQJK-LCT:gender',
+    'GQJK-LCT:firstName',
+    'GQJK-LCT:lastName',
+
+    'GHBZ-TM4:GQJK-LCT:parentChild',
+    'GHBZ-TM4:gender',
+    'GHBZ-TM4:firstName',
+    'GHBZ-TM4:lastName',
+
+    'GHBZ-P5Q:GQJK-LCT:parentChild',
+    'GHBZ-P5Q:gender',
+    'GHBZ-P5Q:firstName',
+    'GHBZ-P5Q:lastName',
+
+    'GHBZ-TM4:GHBZ-P5Q:partner',
+
+    'GQJK-LCT:marriageDate',
+
+    // Witnesses
+    // Florencio Arcenal
+    // Constweino Bajo
+    // Andrea Araza
+    // Mrs. Regina R. Cayco
+    // Perpetua A. Maliwat
+    // Consuelo N. Aquino
+  ],
+
+  // Grave Marker
+  'https://drive.google.com/file/d/1x1M6Z1asZU99nMTdtKYdfDxY_w_s2Gnc/view?usp=share_link': [
+    // The grave marker is in a different city compared to where Lolo
+    // Marcial died. He died in St. Luke's Medical Center in Quezon City
+    'GQJK-LCT:living',
+    'GQJK-LCT:firstName',
+    'GQJK-LCT:middleName',
+    'GQJK-LCT:lastName',
+    'GQJK-LCT:birthDate',
+    'GQJK-LCT:deathDate',
+    'GQJK-LCT:gender',
+  ],
+
+  // =======================================================================
+  // Saplala, Lydia Saplala
+  //
+  // GHBZ-YVX - Saplala, Lydia Saplala
+  // GHB8-7T6 - Saplala, Fernando Sison
+  // GHB8-GZL - Perez, Lucina Gutierrez
+  // =======================================================================
+
+  // Certificate of Birth
+  'https://drive.google.com/file/d/1Yy9S1Y4NOilHHulCeejkeeY1BUbzgRyn/view?usp=sharing': [
+    'GHBZ-YVX:firstName',
+    'GHBZ-YVX:middleName',
+    'GHBZ-YVX:lastName',
+    'GHBZ-YVX:gender',
+    'GHBZ-YVX:birthDate',
+    'GHBZ-YVX:birthPlace',
+    'GHBZ-YVX:living',
+
+    'GHB8-GZL:GHBZ-YVX:parentChild',
+    'GHB8-GZL:gender',
+    'GHB8-GZL:firstName',
+    'GHB8-GZL:middleName',
+    'GHB8-GZL:lastName',
+    'GHB8-GZL:marker',
+
+    'GHB8-7T6:GHBZ-YVX:parentChild',
+    'GHB8-7T6:gender',
+    'GHB8-7T6:firstName',
+    'GHB8-7T6:middleName',
+    'GHB8-7T6:lastName',
+    'GHB8-7T6:marker',
+
+    'GHB8-7T6:GHB8-GZL:partner',
+    'GQJK-LCT:GHBZ-YVX:partner',
+  ],
+
+  // Certificate of Marriage
+  'https://drive.google.com/file/d/1C2TFs8kVvf6lWq-ANjEEG165f7bWUZCs/view?usp=sharing&side=saplala': [
+    'GQJK-LCT:GHBZ-YVX:partner',
+
+    'GHBZ-YVX:marriagePlace',
+    'GHBZ-YVX:gender',
+    'GHBZ-YVX:firstName',
+    'GHBZ-YVX:lastName',
+
+    'GHB8-7T6:GHBZ-YVX:parentChild',
+    'GHB8-7T6:gender',
+    'GHB8-7T6:firstName',
+    'GHB8-7T6:lastName',
+
+    'GHB8-GZL:GHBZ-YVX:parentChild',
+    'GHB8-GZL:gender',
+    'GHB8-GZL:firstName',
+    'GHB8-GZL:lastName',
+
+    'GHB8-7T6:GHB8-GZL:partner',
+
+    'GHBZ-YVX:marriageDate',
+
+    // Witnesses
+    // Florencio Arcenal
+    // Constweino Bajo
+    // Andrea Araza
+    // Mrs. Regina R. Cayco
+    // Perpetua A. Maliwat
+    // Consuelo N. Aquino
+  ],
+
+  // =======================================================================
+  // Acosta, Corazon Maramba
+  //
+  // GQJK-G8W - Acosta, Corazon Maramba
+  // GHBD-7M4 - Acosta, Manuel San Agustin Jr.
+  // GHB8-J1B - Maramba, Catalina Dumantay
+  // =======================================================================
+
+  // Certificate of Live Birth
+  'https://drive.google.com/file/d/1Db5lGDp-mhJH7LAXnuijFXBc1c1vA07j/view?usp=sharing': [
+    'GQJK-G8W:birthPlace',
+    'GQJK-G8W:firstName',
+    'GQJK-G8W:middleName',
+    'GQJK-G8W:lastName',
+    'GQJK-G8W:birthDate',
+
+    'GHBD-7M4:GQJK-G8W:parentChild',
+    'GHBD-7M4:firstName',
+    'GHBD-7M4:middleName',
+    'GHBD-7M4:lastName',
+    'GHBD-7M4:birthPlace',
+    'GHBD-7M4:marker2',
+
+    'GHB8-J1B:GQJK-G8W:parentChild',
+    'GHB8-J1B:firstName',
+    'GHB8-J1B:middleName',
+    'GHB8-J1B:lastName',
+
+    'GHBD-7M4:GHB8-J1B:partner',
+    'GHBD-7M4:marriageDate',
+    'GHBD-7M4:marriagePlace',
+    'GHB8-J1B:marriageDate',
+    'GHB8-J1B:marriagePlace',
+  ],
+
+  // Certificate of Baptism
   'https://drive.google.com/file/d/1yqWECbcDTyhFig6IiK_AqPwXfL7gk0e0/view?usp=sharing': [
     'GQJK-G8W:firstName',
     'GQJK-G8W:lastName',
     'GQJK-G8W:birthDate',
 
-    'GQJK-G8W:GHBD-7M4:parentChild',
+    'GHBD-7M4:GQJK-G8W:parentChild',
     'GHBD-7M4:gender',
     'GHBD-7M4:firstName',
     'GHBD-7M4:lastName',
     'GHBD-7M4:birthPlace',
 
-    'GQJK-G8W:GHB8-J1B:parentChild',
+    'GHB8-J1B:GQJK-G8W:parentChild',
     'GHB8-J1B:gender',
     'GHB8-J1B:firstName',
     'GHB8-J1B:lastName',
@@ -456,188 +495,80 @@ const SOURCES = {
     // Susana Benavides
   ],
 
-  // =======================================================================
-  // Marriage Records
-  // =======================================================================
+  // Certificate of Marriage
+  'https://drive.google.com/file/d/17vMMCyBJ2qOyjFYCtb7UWkIJrRymiz8_/view?usp=sharing': [
+    'GQJK-G8W:gender',
+    'GQJK-G8W:firstName',
+    'GQJK-G8W:middleName',
+    'GQJK-G8W:lastName',
+    'GQJK-G8W:birthPlace',
 
-  // Argabioso, Marcial Mia: Certificate of Marriage
-  // Saplala, Lydia Perez: Certificate of Marriage
-  'https://drive.google.com/file/d/1C2TFs8kVvf6lWq-ANjEEG165f7bWUZCs/view?usp=sharing': [
-    'GQJK-LCT:marriagePlace',
-    'GHBZ-YVX:marriagePlace',
-
-    'GQJK-LCT:gender',
-    'GHBZ-YVX:gender',
-
-    'GQJK-LCT:firstName',
-    'GQJK-LCT:lastName',
-    'GHBZ-YVX:firstName',
-    'GHBZ-YVX:lastName',
-
-    'GHBZ-TM4:gender',
-    'GHBZ-TM4:GQJK-LCT:parentChild',
-    'GHB8-7T6:gender',
-    'GHB8-7T6:GHBZ-YVX:parentChild',
-
-    'GHBZ-P5Q:gender',
-    'GHBZ-P5Q:GQJK-LCT:parentChild',
-    'GHB8-GZL:gender',
-    'GHB8-GZL:GHBZ-YVX:parentChild',
-
-    'GQJK-LCT:marriageDate',
-    'GHBZ-YVX:marriageDate',
-
-    // Witnesses
-    // Florencio Arcenal
-    // Constweino Bajo
-    // Andrea Araza
-    // Mrs. Regina R. Cayco
-    // Perpetua A. Maliwat
-    // Consuelo N. Aquino
-  ],
-
-  // Acosta, Manuel San Agustin Jr.: Certificate of Marriage - Page 1
-  // Maramba, Catalina Dumantay: Certificate of Marriage - Page 1
-  'https://drive.google.com/file/d/1_3rvIfv82-KWjBsaZawQV4lMFUYSB_NK/view?usp=share_link': [
+    'GHBD-7M4:GQJK-G8W:parentChild',
     'GHBD-7M4:gender',
     'GHBD-7M4:firstName',
-    'GHBD-7M4:middleName',
     'GHBD-7M4:lastName',
-    'GHBD-7M4:suffix',
 
+    'GHB8-J1B:GQJK-G8W:parentChild',
     'GHB8-J1B:gender',
     'GHB8-J1B:firstName',
     'GHB8-J1B:lastName',
-    'GHB8-J1B:middleName',
 
-    'GHBD-9L6:GHBD-7M4:parentChild',
-    'GHBD-9L6:gender',
-    'GHBD-9L6:firstName',
-    'GHBD-9L6:lastName',
-    'GHB8-GB6:GHB8-J1B:parentChild',
-    'GHB8-GB6:gender',
-    'GHB8-GB6:firstName',
-    'GHB8-GB6:lastName',
+    'GHBD-7M4:GHB8-J1B:partner',
 
-    'GHB8-DXY:GHBD-7M4:parentChild',
-    'GHB8-DXY:gender',
-    'GHB8-DXY:firstName',
-    'GHB8-DXY:lastName',
-    'GHBD-9LY:GHB8-J1B:parentChild',
-    'GHBD-9LY:gender',
-    'GHBD-9LY:firstName',
-    'GHBD-9LY:lastName',
-
-    'GHB8-J1B:GHBD-7M4:partner',
-    'GHB8-DXY:GHBD-9L6:partner',
-    'GHB8-GB6:GHBD-9LY:partner',
-
-    'GHBD-7M4:marriagePlace',
-    'GHBD-7M4:marriageDate',
+    'GQJK-G8W:marriagePlace',
+    'GQJK-G8W:marriageDate',
   ],
 
-  // Acosta, Manuel San Agustin Jr.: Certificate of Marriage - Complete
-  // Maramba, Catalina Dumantay: Certificate of Marriage - Complete
-  'https://drive.google.com/file/d/16SOA-h6729Zochb7g906v_LH7Mej7dn6/view?usp=sharing': [
-    'GHBD-7M4:gender',
-    'GHBD-7M4:firstName',
-    'GHBD-7M4:middleName',
-    'GHBD-7M4:lastName',
-    'GHBD-7M4:suffix',
-
-    'GHB8-J1B:gender',
-    'GHB8-J1B:firstName',
-    'GHB8-J1B:lastName',
-    'GHB8-J1B:middleName',
-
-    'GHBD-9L6:GHBD-7M4:parentChild',
-    'GHBD-9L6:gender',
-    'GHBD-9L6:firstName',
-    'GHBD-9L6:lastName',
-    'GHB8-GB6:GHB8-J1B:parentChild',
-    'GHB8-GB6:gender',
-    'GHB8-GB6:firstName',
-    'GHB8-GB6:lastName',
-
-    'GHB8-DXY:GHBD-7M4:parentChild',
-    'GHB8-DXY:gender',
-    'GHB8-DXY:firstName',
-    'GHB8-DXY:lastName',
-    'GHBD-9LY:GHB8-J1B:parentChild',
-    'GHBD-9LY:gender',
-    'GHBD-9LY:firstName',
-    'GHBD-9LY:lastName',
-
-    'GHB8-J1B:GHBD-7M4:partner',
-    'GHB8-DXY:GHBD-9L6:partner',
-    'GHB8-GB6:GHBD-9LY:partner',
-
-    'GHBD-7M4:marriagePlace',
-    'GHBD-7M4:marriageDate',
-
-    'GHBD-7M4:birthDate',
-    'GHBD-7M4:marker',
-  ],
-
-  // =======================================================================
-  // Death Records
-  // =======================================================================
-
-  // Acosta, Corazon Maramba: Certificate of Death
+  // Certificate of Death
   'https://drive.google.com/file/d/1JArFl6_m-kuvyPf-LqDLU3_SapZzCvkt/view?usp=sharing': [
     'GQJK-G8W:living',
     'GQJK-G8W:firstName',
     'GQJK-G8W:lastName',
     'GQJK-G8W:gender',
     'GQJK-G8W:deathDate',
-    'GQJK-G8W:birthPlace',
+    'GQJK-G8W:birthDate',
     'GQJK-G8W:deathPlace',
   ],
 
-  // Argabioso, Marcial Mia: Grave Marker
-  'https://drive.google.com/file/d/1x1M6Z1asZU99nMTdtKYdfDxY_w_s2Gnc/view?usp=share_link': [
-    // The grave marker is in a different city compared to where Lolo
-    // Marcial died. He died in St. Luke's Medical Center in Quezon City
-    'GQJK-LCT:living',
-    'GQJK-LCT:firstName',
-    'GQJK-LCT:lastName',
-    'GQJK-LCT:gender',
-    'GQJK-LCT:birthDate',
-    'GQJK-LCT:deathDate',
+  // Grave Marker
+  'https://drive.google.com/file/d/1sIWWgh8zfcIYtQfk2rIm4iW97sGzgK-x/view?usp=sharing': [
+    // Photo taken in Magdalena, Laguna. Nanay died in Santa Cruz, Laguna
+    'GQJK-G8W:living',
+    'GQJK-G8W:firstName',
+    'GQJK-G8W:middleName',
+    'GQJK-G8W:lastName',
+    'GQJK-G8W:birthDate',
+    'GQJK-G8W:deathDate',
   ],
 
-  // Maramba, Catalina Dumantay: Grave Marker
-  'https://drive.google.com/file/d/1AeoNewX7fEeAaihfBI3Tz6kNA9ia0m-D/view?usp=sharing': [
-    // I took the photo from Sangandaan Cemetery
-    'GHB8-J1B:deathPlace',
-    'GHB8-GB6:deathPlace',
+  // =======================================================================
+  // Adanza, Mitchie Ajesta
+  // =======================================================================
 
-    'GHB8-J1B:living',
-    'GHB8-J1B:firstName',
+  // Certificate of Birth
+  'https://drive.google.com/file/d/19s_gdN98AQ1sZ5lhqSf8GrpJJIpFhsdf/view?usp=sharing': [
+    'GHB5-TWN:birthPlace',
+    'GHB5-TWN:firstName',
+    'GHB5-TWN:middleName',
+    'GHB5-TWN:lastName',
+    'GHB5-TWN:gender',
+    'GHB5-TWN:birthDate',
 
-    'GHB8-GB6:living',
-    'GHB8-GB6:firstName',
-    'GHB8-GB6:middleName',
-    'GHB8-GB6:lastName',
-    'GHB8-GB6:suffix',
-    'GHB8-GB6:birthDate',
-    'GHB8-GB6:deathDate',
-  ],
+    'GHB5-TWN:GHB5-XTZ:parentChild',
+    'GHB5-XTZ:gender',
+    'GHB5-XTZ:firstName',
+    'GHB5-XTZ:middleName',
+    'GHB5-XTZ:lastName',
 
-  // Argabioso, Eusebio Lopecillo: Certificate of Death
-  'https://drive.google.com/file/d/1SQy34nGR1Z5-AqNSZDInfkewArzP_xqp/view?usp=share_link': [
-    'GHBZ-TM4:living',
-    'GHBZ-TM4:deathPlace',
-    'GHBZ-TM4:firstName',
-    'GHBZ-TM4:middleName',
-    'GHBZ-TM4:lastName',
-    'GHBZ-TM4:deathDate',
-    'GHBZ-TM4:gender',
-    'GHBZ-TM4:marker',
+    'GHB5-TWN:GHBR-FK3:parentChild',
+    'GHBR-FK3:gender',
+    'GHBR-FK3:firstName',
+    'GHBR-FK3:middleName',
+    'GHBR-FK3:lastName',
+    'GHBR-FK3:marker',
 
-    'GHB8-RCH:GHBZ-TM4:parentChild',
-    'GHB8-RCH:firstName',
-    'GHB8-RCH:lastName',
-    'GHB8-RCH:gender',
+    'GHB5-XTZ:GHBR-FK3:partner',
+    'GHB5-XTZ:marriageDate',
+    'GHBR-FK3:marriageDate',
   ],
 };

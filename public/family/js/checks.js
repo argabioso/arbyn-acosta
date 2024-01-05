@@ -192,6 +192,12 @@ function checkSources() {
     console.invalid('Dataset contains duplicate people');
   }
 
+  if (areKeysUnique(SOURCES)) {
+    console.valid('All the sources in the dataset are unique');
+  } else {
+    console.invalid('Dataset contains duplicate sources');
+  }
+
   let hasDuplicateSource = false;
   for (const [url, sourceKeys] of Object.entries(SOURCES)) {
     oldDuplicateSource = hasDuplicateSource;
@@ -202,9 +208,9 @@ function checkSources() {
     }
   }
   if (hasDuplicateSource) {
-    console.invalid('Dataset contains duplicate sources');
+    console.invalid('Dataset contains duplicate source keys');
   } else {
-    console.valid('All the source in the dataset are unique');
+    console.valid('All the source keys in the dataset are unique');
   }
 
   let totalWeirdCount = 0;
@@ -284,6 +290,13 @@ function checkSources() {
 
   console.groupEnd();
   console.groupEnd();
+}
+
+function areKeysUnique(obj) {
+  const keysArray = Object.keys(obj);
+  const uniqueKeys = new Set(keysArray);
+
+  return keysArray.length === uniqueKeys.size;
 }
 
 if (isChecking) {
