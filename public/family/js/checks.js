@@ -51,6 +51,18 @@ function checkPerPerson(person) {
     expectedSourceCount += 1;
   }
 
+  if (isEmpty(person.marriageDate)) {
+    attributesToIgnore.push('marriageDate');
+  }
+
+  if (isEmpty(person.marriagePlace)) {
+    attributesToIgnore.push('marriagePlace');
+  }
+
+  if (isEmpty(person.twin)) {
+    attributesToIgnore.push('twin');
+  }
+
   if (isEmpty(person.middleName)) {
     attributesToIgnore.push('middleName');
   }

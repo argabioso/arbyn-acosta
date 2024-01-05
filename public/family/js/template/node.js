@@ -39,7 +39,7 @@ template['CheckFill'] = function() {
   return $(
     bino.Panel,
     new bino.Binding("visible", function(nodeData) {
-      return isChecking;
+      return isChecking && !isDebugging;
     }),
     $(
       bino.Shape,
