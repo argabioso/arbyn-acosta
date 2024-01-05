@@ -542,6 +542,111 @@ const SOURCES = {
   ],
 
   // =======================================================================
+  // Acosta, Manuel San Agustin Jr.
+  //
+  // GHBD-7M4 - Acosta, Manuel San Agustin Jr.
+  // GHBD-9L6 - Acosta, Manuel Bongco Sr.
+  // GHB8-DXY - San Agustin, Natividad
+  // =======================================================================
+
+  // Certificate of Marriage
+  'https://drive.google.com/file/d/1_3rvIfv82-KWjBsaZawQV4lMFUYSB_NK/view?usp=sharing&side=acosta': [
+    'GHBD-7M4:GHB8-J1B:partner',
+
+    'GHBD-7M4:marriagePlace',
+    'GHBD-7M4:gender',
+    'GHBD-7M4:firstName',
+    'GHBD-7M4:lastName',
+    'GHBD-7M4:suffix',
+
+    'GHBD-9L6:GHBD-7M4:parentChild',
+    'GHBD-9L6:gender',
+    'GHBD-9L6:firstName',
+    'GHBD-9L6:lastName',
+
+    'GHB8-DXY:GHBD-7M4:parentChild',
+    'GHB8-DXY:gender',
+    'GHB8-DXY:firstName',
+    'GHB8-DXY:lastName',
+
+    'GHBD-9L6:GHB8-DXY:partner',
+
+    'GHBD-7M4:marriageDate',
+
+    // Witnesses
+    // Josue Syquimsiam
+    // Aquilino Crame
+    // Milagros Caguioa
+    // Cresencia Maramba
+    // Jenerining Reyes
+  ],
+
+  // =======================================================================
+  // Maramba, Catalina Dumantay
+  //
+  // GHB8-J1B - Maramba, Catalina Dumantay
+  // GHB8-GB6 - Maramba, Sotero Reyes Sr.
+  // GHBD-9LY - Dumantay, Cresencia
+  // =======================================================================
+
+  // Certificate of Marriage
+  'https://drive.google.com/file/d/1_3rvIfv82-KWjBsaZawQV4lMFUYSB_NK/view?usp=sharing&side=maramba': [
+    'GHBD-7M4:GHB8-J1B:partner',
+
+    'GHB8-J1B:marriagePlace',
+    'GHB8-J1B:gender',
+    'GHB8-J1B:firstName',
+    'GHB8-J1B:middleName',
+    'GHB8-J1B:lastName',
+
+    'GHB8-GB6:GHB8-J1B:parentChild',
+    'GHB8-GB6:gender',
+    'GHB8-GB6:firstName',
+    'GHB8-GB6:lastName',
+
+    'GHBD-9LY:GHB8-J1B:parentChild',
+    'GHBD-9LY:gender',
+    'GHBD-9LY:firstName',
+    'GHBD-9LY:lastName',
+
+    'GHB8-GB6:GHBD-9LY:partner',
+
+    'GHB8-J1B:marriageDate',
+
+    // Witnesses
+    // Josue Syquimsiam
+    // Aquilino Crame
+    // Milagros Caguioa
+    // Cresencia Maramba
+    // Jenerining Reyes
+  ],
+
+  // Grave Marker
+  'https://drive.google.com/file/d/1AeoNewX7fEeAaihfBI3Tz6kNA9ia0m-D/view?usp=sharing': [
+    // I took the photo from Sangandaan Cemetery
+    'GHB8-J1B:deathPlace',
+    'GHB8-GB6:deathPlace',
+    'GHBD-9LY:deathPlace',
+
+    'GHB8-J1B:living',
+    'GHB8-J1B:firstName',
+
+    'GHB8-GB6:living',
+    'GHB8-GB6:firstName',
+    'GHB8-GB6:middleName',
+    'GHB8-GB6:lastName',
+    'GHB8-GB6:suffix',
+    'GHB8-GB6:birthDate',
+    'GHB8-GB6:deathDate',
+
+    'GHBD-9LY:living',
+    'GHBD-9LY:firstName',
+    'GHBD-9LY:lastName',
+    'GHBD-9LY:birthDate',
+    'GHBD-9LY:deathDate',
+  ],
+
+  // =======================================================================
   // Adanza, Mitchie Ajesta
   // =======================================================================
 

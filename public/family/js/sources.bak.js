@@ -554,29 +554,6 @@ const SOURCES = {
     'GHB8-J1B:deathPlace', // Photo was taken by Arbyn Argabioso (Me)
     'GHB8-J1B:living',
   ],
-  // Lolo Manuel and Lola Catalina's marriage certificate
-  'https://drive.google.com/file/d/1_3rvIfv82-KWjBsaZawQV4lMFUYSB_NK/view?usp=share_link': [
-    'GHB8-J1B:firstName',
-    'GHB8-J1B:lastName',
-    'GHB8-J1B:gender',
-
-    'GHBD-7M4:firstName',
-    'GHBD-7M4:lastName',
-    'GHBD-7M4:gender',
-
-    'GHBD-7M4:GHB8-DXY:parentChild',
-    'GHBD-7M4:GHBD-9L6:parentChild',
-    'GHB8-J1B:GHBD-7M4:partner',
-    'GHB8-DXY:GHBD-9L6:partner',
-    'GHB8-GB6:GHBD-9LY:partner',
-
-    'GHB8-J1B:GHB8-GB6:parentChild',
-    'GHB8-J1B:GHBD-9LY:parentChild',
-    'GHB8-DXY:gender',
-    'GHBD-9L6:gender',
-    'GHB8-GB6:gender',
-    'GHBD-9LY:gender',
-  ],
   // Lolo Manuel Jr. California deaths and burials record
   'https://www.familysearch.org/ark:/61903/1:1:HGZ8-33ZM': [
     'GHBD-7M4:living',
