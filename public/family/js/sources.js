@@ -47,9 +47,6 @@ const SOURCES = {
     'GHBD-7M4:marker2',
 
     // Directly from Nanay (daughter of Lola Catalina)
-    'GHB8-J1B:firstName',
-    'GHB8-J1B:lastName',
-    'GHB8-J1B:birthDate',
     'GHB8-J1B:deathDate',
 
     // Directly from Tito Darne (son of Lolo Nestor)
@@ -928,6 +925,27 @@ const SOURCES = {
   // GHB8-GB6 - Maramba, Sotero Reyes Sr.
   // GHBD-9LY - Dumantay, Cresencia
   // =======================================================================
+
+  // Philippines, Manila, Civil Registration, 1899-1984, FamilySearch
+  // https://www.familysearch.org/ark:/61903/1:1:QKJT-S44Z
+  'https://drive.google.com/file/d/1gKlJX95oRihP2yIJ9ukp-0gFKWAAGiIL/view': [
+    'GHB8-J1B:firstName',
+    'GHB8-J1B:lastName',
+    'GHB8-J1B:gender',
+    'GHB8-J1B:birthDate',
+
+    'GHB8-GB6:GHB8-J1B:parentChild',
+    'GHB8-GB6:gender',
+    'GHB8-GB6:firstName',
+    'GHB8-GB6:lastName',
+
+    'GHBD-9LY:GHB8-J1B:parentChild',
+    'GHBD-9LY:gender',
+    'GHBD-9LY:firstName',
+    'GHBD-9LY:lastName',
+
+    'GHB8-GB6:GHBD-9LY:partner',
+  ],
 
   // Certificate of Marriage, City
   'https://drive.google.com/file/d/1_3rvIfv82-KWjBsaZawQV4lMFUYSB_NK/view?side=maramba': [
