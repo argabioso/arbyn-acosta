@@ -59,13 +59,13 @@ const SOURCES = {
     'GH12-SVQ:birthPlace',
 
     // Directly from Lolo Marcial (son of Lola Francisca)
-    'GHBZ-P5Q:firstName',
+    // According to Lola Lydia and Lolo Marcial, Lola Francisca
+    // died around the time Lolo Marcial was 4 years old
     'GHBZ-P5Q:living',
+    'GHBZ-P5Q:deathDate',
 
     // Directly from Lola Lydia and Lolo Boning (children of Lolo Andong)
-    'GHB8-7T6:firstName',
     'GHB8-7T6:middleName',
-    'GHB8-7T6:lastName',
     'GHB8-7T6:birthDate',
     'GHB8-7T6:birthPlace',
     'GHB8-7T6:deathDate',
@@ -74,7 +74,6 @@ const SOURCES = {
     'GHB8-7T6:marker',
 
     // Directly from Lola Lydia and Lolo Boning (children of Lola Lucing)
-    'GHB8-GZL:firstName',
     'GHB8-GZL:middleName',
     'GHB8-GZL:lastName',
     'GHB8-GZL:birthDate',
@@ -1035,7 +1034,7 @@ const SOURCES = {
   // =======================================================================
 
   // Certificate of Birth
-  'https://drive.google.com/file/d/1u-7tnWjKdZ5-GrdLKuKi-NOAVvty25Qo/view?usp=sharing': [
+  'https://drive.google.com/file/d/1u-7tnWjKdZ5-GrdLKuKi-NOAVvty25Qo/view': [
     'GHBD-9L6:gender',
     'GHBD-9L6:firstName',
     'GHBD-9L6:lastName',
@@ -1051,4 +1050,42 @@ const SOURCES = {
     'GHBD-9L6:GHB8-DXY:partner',
   ],
 
+  // =======================================================================
+  // Saplala, Hilaria Sison
+  //
+  // GNNH-2HX - Saplala, Hilaria Sison
+  // GNNH-JLM - Saplala, Estanislao
+  // GJJX-1SG - Adela Sison
+  // =======================================================================
+
+  // Philippines Marriages, 1723-1957, FamilySearch
+  // https://www.familysearch.org/ark:/61903/1:1:FN4G-JSW
+  'https://drive.google.com/file/d/1g_6PxiUEuhW_jvUU3p8TySDi9u-7hlwG/view': [
+    'GNNH-JLM:firstName',
+    'GNNH-JLM:lastName',
+    'GNNH-JLM:gender',
+
+    'GJJX-1SG:firstName',
+    'GJJX-1SG:lastName',
+    'GJJX-1SG:gender',
+
+    'GNNH-JLM:GJJX-1SG:partner',
+  ],
+
+  // =======================================================================
+  // Unknown
+  // =======================================================================
+
+  // FamilySearch: Record regarding Lolo Victor and Lola Genoveba (TODO)
+  'https://www.familysearch.org/ark:/61903/1:1:HBP6-8VZM': [
+    'GHB8-M8D:firstName',
+    'GHB8-M8D:lastName',
+    'GHB8-M8D:gender',
+
+    'GHB8-M86:firstName',
+    'GHB8-M86:lastName',
+    'GHB8-M86:gender',
+
+    'GHB8-M8D:GHB8-M86:partner',
+  ],
 };
