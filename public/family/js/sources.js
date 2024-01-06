@@ -183,7 +183,7 @@ const SOURCES = {
   // =======================================================================
 
   // Certificate of Birth
-  'https://drive.google.com/file/d/1B1umw_xm5i-AmNp9YzshX2DebSAhj3cz/view?usp=sharing': [
+  'https://drive.google.com/file/d/1B1umw_xm5i-AmNp9YzshX2DebSAhj3cz/view': [
     'GQX8-CQP:birthPlace',
     'GQX8-CQP:firstName',
     'GQX8-CQP:middleName',
@@ -207,7 +207,7 @@ const SOURCES = {
   ],
 
   // Certificate of Baptism
-  'https://drive.google.com/file/d/1nJVXB-p0ZM0OUXsXK4TyI7JRwvbDln53/view?usp=sharing': [
+  'https://drive.google.com/file/d/1nJVXB-p0ZM0OUXsXK4TyI7JRwvbDln53/view': [
     'GQX8-CQP:firstName',
     'GQX8-CQP:middleName',
     'GQX8-CQP:lastName',
@@ -252,7 +252,7 @@ const SOURCES = {
   // =======================================================================
 
   // Certificate of Birth
-  'https://drive.google.com/file/d/1degLEAa8cBBxJrRsWwz0t6wHh9vs29cH/view?usp=sharing': [
+  'https://drive.google.com/file/d/1degLEAa8cBBxJrRsWwz0t6wHh9vs29cH/view': [
     'GQJK-L51:birthPlace',
     'GQJK-L51:firstName',
     'GQJK-L51:middleName',
@@ -282,7 +282,7 @@ const SOURCES = {
   ],
 
   // Certificate of Marriage
-  'https://drive.google.com/file/d/1kMHiW0mbPuPGyGOBm08qY6yWgvnHd82K/view?usp=sharing': [
+  'https://drive.google.com/file/d/1kMHiW0mbPuPGyGOBm08qY6yWgvnHd82K/view': [
     'GQJK-L51:gender',
     'GQJK-L51:firstName',
     'GQJK-L51:middleName',
@@ -317,7 +317,7 @@ const SOURCES = {
   // =======================================================================
 
   // Certificate of Marriage
-  'https://drive.google.com/file/d/1C2TFs8kVvf6lWq-ANjEEG165f7bWUZCs/view?usp=sharing&side=argabioso': [
+  'https://drive.google.com/file/d/1C2TFs8kVvf6lWq-ANjEEG165f7bWUZCs/view?side=argabioso': [
     'GQJK-LCT:GHBZ-YVX:partner',
 
     'GQJK-LCT:marriagePlace',
@@ -348,8 +348,17 @@ const SOURCES = {
     // Consuelo N. Aquino
   ],
 
+  // Petition for Reconstitution of Title, Official Gazette
+  'https://drive.google.com/file/d/1tu21m1RMRjiTwPfzp1VrFENbPUhLsEKq/view': [
+    'GQJK-LCT:firstName',
+    'GQJK-LCT:lastName',
+
+    'GHBZ-TM4:firstName',
+    'GHBZ-TM4:lastName',
+  ],
+
   // Grave Marker
-  'https://drive.google.com/file/d/1x1M6Z1asZU99nMTdtKYdfDxY_w_s2Gnc/view?usp=share_link': [
+  'https://drive.google.com/file/d/1x1M6Z1asZU99nMTdtKYdfDxY_w_s2Gnc/view': [
     // The grave marker is in a different city compared to where Lolo
     // Marcial died. He died in St. Luke's Medical Center in Quezon City
     'GQJK-LCT:living',
@@ -362,6 +371,34 @@ const SOURCES = {
   ],
 
   // =======================================================================
+  // Argabioso, Eusebio Lopecillo
+  //
+  // GHBZ-TM4 - Argabioso, Eusebio Lopecillo
+  // GHB8-RCH - Lopecillo, Estebana
+  // =======================================================================
+
+  // Certificate of Death
+  'https://drive.google.com/file/d/1SQy34nGR1Z5-AqNSZDInfkewArzP_xqp/view': [
+    'GHBZ-TM4:living',
+    'GHBZ-TM4:deathPlace',
+    'GHBZ-TM4:firstName',
+    'GHBZ-TM4:middleName',
+    'GHBZ-TM4:lastName',
+    'GHBZ-TM4:deathDate',
+    'GHBZ-TM4:gender',
+
+    'GHBZ-P5Q:living',
+
+    'GHBZ-TM4:birthDate',
+    'GHBZ-TM4:marker',
+    'GHBZ-TM4:birthPlace',
+
+    'GHB8-RCH:GHBZ-TM4:parentChild',
+    'GHB8-RCH:firstName',
+    'GHB8-RCH:lastName',
+  ],
+
+  // =======================================================================
   // Saplala, Lydia Saplala
   //
   // GHBZ-YVX - Saplala, Lydia Saplala
@@ -370,7 +407,7 @@ const SOURCES = {
   // =======================================================================
 
   // Certificate of Birth
-  'https://drive.google.com/file/d/1Yy9S1Y4NOilHHulCeejkeeY1BUbzgRyn/view?usp=sharing': [
+  'https://drive.google.com/file/d/1Yy9S1Y4NOilHHulCeejkeeY1BUbzgRyn/view': [
     'GHBZ-YVX:firstName',
     'GHBZ-YVX:middleName',
     'GHBZ-YVX:lastName',
@@ -398,7 +435,7 @@ const SOURCES = {
   ],
 
   // Certificate of Marriage
-  'https://drive.google.com/file/d/1C2TFs8kVvf6lWq-ANjEEG165f7bWUZCs/view?usp=sharing&side=saplala': [
+  'https://drive.google.com/file/d/1C2TFs8kVvf6lWq-ANjEEG165f7bWUZCs/view?side=saplala': [
     'GQJK-LCT:GHBZ-YVX:partner',
 
     'GHBZ-YVX:marriagePlace',
@@ -438,7 +475,7 @@ const SOURCES = {
   // =======================================================================
 
   // Certificate of Live Birth
-  'https://drive.google.com/file/d/1Db5lGDp-mhJH7LAXnuijFXBc1c1vA07j/view?usp=sharing': [
+  'https://drive.google.com/file/d/1Db5lGDp-mhJH7LAXnuijFXBc1c1vA07j/view': [
     'GQJK-G8W:birthPlace',
     'GQJK-G8W:firstName',
     'GQJK-G8W:middleName',
@@ -465,7 +502,7 @@ const SOURCES = {
   ],
 
   // Certificate of Baptism
-  'https://drive.google.com/file/d/1yqWECbcDTyhFig6IiK_AqPwXfL7gk0e0/view?usp=sharing': [
+  'https://drive.google.com/file/d/1yqWECbcDTyhFig6IiK_AqPwXfL7gk0e0/view': [
     'GQJK-G8W:firstName',
     'GQJK-G8W:lastName',
     'GQJK-G8W:birthDate',
@@ -496,7 +533,7 @@ const SOURCES = {
   ],
 
   // Certificate of Marriage
-  'https://drive.google.com/file/d/17vMMCyBJ2qOyjFYCtb7UWkIJrRymiz8_/view?usp=sharing': [
+  'https://drive.google.com/file/d/17vMMCyBJ2qOyjFYCtb7UWkIJrRymiz8_/view': [
     'GQJK-G8W:gender',
     'GQJK-G8W:firstName',
     'GQJK-G8W:middleName',
@@ -520,7 +557,7 @@ const SOURCES = {
   ],
 
   // Certificate of Death
-  'https://drive.google.com/file/d/1JArFl6_m-kuvyPf-LqDLU3_SapZzCvkt/view?usp=sharing': [
+  'https://drive.google.com/file/d/1JArFl6_m-kuvyPf-LqDLU3_SapZzCvkt/view': [
     'GQJK-G8W:living',
     'GQJK-G8W:firstName',
     'GQJK-G8W:lastName',
@@ -531,7 +568,7 @@ const SOURCES = {
   ],
 
   // Grave Marker
-  'https://drive.google.com/file/d/1sIWWgh8zfcIYtQfk2rIm4iW97sGzgK-x/view?usp=sharing': [
+  'https://drive.google.com/file/d/1sIWWgh8zfcIYtQfk2rIm4iW97sGzgK-x/view': [
     // Photo taken in Magdalena, Laguna. Nanay died in Santa Cruz, Laguna
     'GQJK-G8W:living',
     'GQJK-G8W:firstName',
@@ -549,8 +586,8 @@ const SOURCES = {
   // GHB8-DXY - San Agustin, Natividad
   // =======================================================================
 
-  // Certificate of Marriage
-  'https://drive.google.com/file/d/1_3rvIfv82-KWjBsaZawQV4lMFUYSB_NK/view?usp=sharing&side=acosta': [
+  // Certificate of Marriage, City
+  'https://drive.google.com/file/d/1_3rvIfv82-KWjBsaZawQV4lMFUYSB_NK/view?side=acosta': [
     'GHBD-7M4:GHB8-J1B:partner',
 
     'GHBD-7M4:marriagePlace',
@@ -581,6 +618,15 @@ const SOURCES = {
     // Jenerining Reyes
   ],
 
+  // Certifacte of Marriage, Church
+  'https://drive.google.com/file/d/1zjeJs9azWMLnnEjulRpAnBi8Vno4H_9U/view?side=acosta': [
+    'GHBD-7M4:marriagePlace',
+    'GHBD-7M4:marriageDate',
+    'GHBD-7M4:firstName',
+    'GHBD-7M4:middleName',
+    'GHBD-7M4:lastName',
+  ],
+
   // =======================================================================
   // Maramba, Catalina Dumantay
   //
@@ -589,8 +635,8 @@ const SOURCES = {
   // GHBD-9LY - Dumantay, Cresencia
   // =======================================================================
 
-  // Certificate of Marriage
-  'https://drive.google.com/file/d/1_3rvIfv82-KWjBsaZawQV4lMFUYSB_NK/view?usp=sharing&side=maramba': [
+  // Certificate of Marriage, City
+  'https://drive.google.com/file/d/1_3rvIfv82-KWjBsaZawQV4lMFUYSB_NK/view?side=maramba': [
     'GHBD-7M4:GHB8-J1B:partner',
 
     'GHB8-J1B:marriagePlace',
@@ -621,8 +667,17 @@ const SOURCES = {
     // Jenerining Reyes
   ],
 
+  // Certifacte of Marriage, Church
+  'https://drive.google.com/file/d/1zjeJs9azWMLnnEjulRpAnBi8Vno4H_9U/view?side=maramba': [
+    'GHB8-J1B:marriagePlace',
+    'GHB8-J1B:marriageDate',
+    'GHB8-J1B:firstName',
+    'GHB8-J1B:middleName',
+    'GHB8-J1B:lastName',
+  ],
+
   // Grave Marker
-  'https://drive.google.com/file/d/1AeoNewX7fEeAaihfBI3Tz6kNA9ia0m-D/view?usp=sharing': [
+  'https://drive.google.com/file/d/1AeoNewX7fEeAaihfBI3Tz6kNA9ia0m-D/view': [
     // I took the photo from Sangandaan Cemetery
     'GHB8-J1B:deathPlace',
     'GHB8-GB6:deathPlace',
@@ -651,7 +706,7 @@ const SOURCES = {
   // =======================================================================
 
   // Certificate of Birth
-  'https://drive.google.com/file/d/19s_gdN98AQ1sZ5lhqSf8GrpJJIpFhsdf/view?usp=sharing': [
+  'https://drive.google.com/file/d/19s_gdN98AQ1sZ5lhqSf8GrpJJIpFhsdf/view': [
     'GHB5-TWN:birthPlace',
     'GHB5-TWN:firstName',
     'GHB5-TWN:middleName',

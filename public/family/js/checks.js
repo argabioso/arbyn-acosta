@@ -192,26 +192,7 @@ function checkSources() {
     console.invalid('Dataset contains duplicate people');
   }
 
-  if (areKeysUnique(SOURCES)) {
-    console.valid('All the sources in the dataset are unique');
-  } else {
-    console.invalid('Dataset contains duplicate sources');
-  }
-
-  let hasDuplicateSource = false;
-  for (const [url, sourceKeys] of Object.entries(SOURCES)) {
-    oldDuplicateSource = hasDuplicateSource;
-    hasDuplicateSource = hasDuplicateSource || !isUniqueStringArray(sourceKeys);
-
-    if (!oldDuplicateSource && hasDuplicateSource) {
-      console.invalid(`Found duplicate source: ${url}`);
-    }
-  }
-  if (hasDuplicateSource) {
-    console.invalid('Dataset contains duplicate source keys');
-  } else {
-    console.valid('All the source keys in the dataset are unique');
-  }
+  areUniqueSources(SOURCES)
 
   let totalWeirdCount = 0;
   let sortedPeople = [];
@@ -292,11 +273,30 @@ function checkSources() {
   console.groupEnd();
 }
 
-function areKeysUnique(obj) {
-  const keysArray = Object.keys(obj);
-  const uniqueKeys = new Set(keysArray);
+function areUniqueSources(obj) {
+  let sideCounts = {}
+  for (let key in obj) {
+    if (!key.includes("side=")) {
+      continue;
+    }
 
-  return keysArray.length === uniqueKeys.size;
+    let idx = key.indexOf("side=") + 5;
+    let baseUrl = key.substring(0, idx);
+    let sideValue = key.substring(idx);
+
+    if (baseUrl in sideCounts) {
+      sideCounts[baseUrl].push(sideValue);
+    } else {
+      sideCounts[baseUrl] = [sideValue];
+    }
+  }
+
+  for (let baseUrl in sideCounts) {
+    let sides = new Set(obj[baseUrl]);
+    if (sides.size == 1) {
+      console.invalid(`Source might contain duplicate sides: ${baseUrl}`);
+    }
+  }
 }
 
 if (isChecking) {
