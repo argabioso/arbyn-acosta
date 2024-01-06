@@ -51,7 +51,6 @@ const SOURCES = {
     'GHB8-J1B:lastName',
     'GHB8-J1B:birthDate',
     'GHB8-J1B:deathDate',
-    'GHB8-J1B:birthPlace',
 
     // Directly from Tito Darne (son of Lolo Nestor)
     'GH12-SVQ:firstName',
@@ -128,6 +127,11 @@ const SOURCES = {
 
     // Directly from Tita Mylen (daughter of Lolo Napoleon)
     'GH12-Z3C:living',
+
+    // Directly from Lola Becky
+    // (daughter of Lola Cresencia, sister of Lola Catalina)
+    'GHBD-9LY:birthPlace',
+    'GHBD-9LY:marker',  // saws or creates clothes
   ],
 
   // Suffix verification: Existence of same-name son
@@ -992,6 +996,40 @@ const SOURCES = {
   ],
 
   // =======================================================================
+  // Maramba, Sotero Reyes Sr.
+  //
+  // GHB8-GB6 - Maramba, Sotero Reyes Sr.
+  // LLQS-641 - Maramba, Miguel Bautista
+  // LLQS-6F1 - Reyes, Mercedes Novilla
+  // =======================================================================
+
+  // News Article, The Malaya Tribune
+  'https://drive.google.com/file/d/15o0fdYYMYTzXQ3ikiMCOqy-YlfAND76C/view': [
+    'GHB8-GB6:firstName',
+    'GHB8-GB6:lastName',
+    'GHB8-GB6:marker',
+    'GHB8-GB6:marker2',
+  ],
+
+  // Certificate of Death
+  'https://drive.google.com/file/d/1Pn6Xvn7ucwnzTgNTcFBsQq9hzAnARp51/view': [
+    'GHB8-GB6:living',
+
+    'GHB8-GB6:firstName',
+    'GHB8-GB6:lastName',
+    'GHB8-GB6:deathDate',
+    'GHB8-GB6:gender',
+    'GHB8-GB6:birthDate',
+    'GHB8-GB6:marker2',
+    'GHB8-GB6:birthPlace',
+
+    'GHBD-9LY:GHB8-GB6:partner',
+    'GHBD-9LY:gender',
+    'GHBD-9LY:firstName',
+    'GHBD-9LY:lastName',
+  ],
+
+  // =======================================================================
   // Adanza, Mitchie Ajesta
   // =======================================================================
 
@@ -1028,6 +1066,8 @@ const SOURCES = {
 
   // =======================================================================
   // Acosta, Benjamin San Agustin Sr.
+  // - male sibling of Lolo Manuel Acosta Jr.
+  // - uncle of Nanay
   //
   // GHBD-9L6 - Acosta, Manuel Bongco Sr.
   // GHB8-DXY - San Agustin, Natividad
@@ -1052,6 +1092,8 @@ const SOURCES = {
 
   // =======================================================================
   // Saplala, Hilaria Sison
+  // - female sibling of Lolo Fernando Saplala
+  // - aunt of Lola Lydia Saplala
   //
   // GNNH-2HX - Saplala, Hilaria Sison
   // GNNH-JLM - Saplala, Estanislao
@@ -1070,6 +1112,30 @@ const SOURCES = {
     'GJJX-1SG:gender',
 
     'GNNH-JLM:GJJX-1SG:partner',
+  ],
+
+  // =======================================================================
+  // Maramba, Corazon Dumantay
+  // - female sibling of Lola Catalina Maramba
+  // - aunt of Nanay
+  //
+  // GHB8-GB6 - Maramba, Sotero Reyes Sr.
+  // GHBD-9LY - Dumantay, Cresencia
+  // =======================================================================
+
+  // Philippine Marriages, 1723-1957, FamilySearch
+  // https://www.familysearch.org/ark:/61903/1:1:HBNK-LY2M
+  'https://drive.google.com/file/d/1n_6mEB9oGikZeRXw71-_buL1cIoT8X9p/view': [
+    'GHB8-GB6:gender',
+    'GHB8-GB6:firstName',
+    'GHB8-GB6:middleName',
+    'GHB8-GB6:lastName',
+
+    'GHBD-9LY:gender',
+    'GHBD-9LY:firstName',
+    'GHBD-9LY:lastName',
+
+    'GHB8-GB6:GHBD-9LY:partner',
   ],
 
   // =======================================================================
