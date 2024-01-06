@@ -139,7 +139,9 @@ const SOURCES = {
   ],
   // Doesn't make sense for them to be alive
   // Everyone in Lola Estebana's generation is probably dead
+  // or everyone born on 1900s and older
   'PROBABLY NOT LIVING ANYMORE': [
+    'GHBZ-TM4:living',
     'GHB8-RCH:living',
     'G2HQ-YQS:living',
     'G2H7-Q75:living',
@@ -308,6 +310,13 @@ const SOURCES = {
     'GQJK-L51:marriageDate',
   ],
 
+  // News Article, Inquirer.NET
+  'https://drive.google.com/file/d/1Zw8fzrh9ELRvIx1W7ncqT010edcT6hpK/view': [
+    'GQJK-L51:marker',
+    'GQJK-L51:firstName',
+    'GQJK-L51:lastName',
+  ],
+
   // =======================================================================
   // Argabioso, Marcial Mia
   //
@@ -394,8 +403,59 @@ const SOURCES = {
     'GHBZ-TM4:birthPlace',
 
     'GHB8-RCH:GHBZ-TM4:parentChild',
+    'GHB8-RCH:gender',
     'GHB8-RCH:firstName',
     'GHB8-RCH:lastName',
+  ],
+
+  // =======================================================================
+  // Lopecillo, Estebana
+  //
+  // GHB8-RCH - Lopecillo, Estebana
+  // G2HQ-YQS - Lopecillo, Simplicio
+  // G2H7-Q75 - Villarubin, Gregoria
+  // =======================================================================
+
+  // Certificate of Death
+  'https://drive.google.com/file/d/1yf_M5CJgnXsHGFvFmF5Uzfp4YrsAnfUY/view': [
+    'GHB8-RCH:living',
+    'GHB8-RCH:deathPlace',
+    'GHB8-RCH:firstName',
+    'GHB8-RCH:lastName',
+    'GHB8-RCH:gender',
+    'GHB8-RCH:deathDate',
+    'GHB8-RCH:birthDate',
+    'GHB8-RCH:birthPlace',
+  ],
+
+  // FamilySearch: Simplicio Lopecillo and Gregoria Villarubin (TOFIX)
+  'https://www.familysearch.org/ark:/61903/1:1:66XW-VQRT': [
+    'G2HQ-YQS:GHB8-RCH:parentChild',
+    'G2HQ-YQS:firstName',
+    'G2HQ-YQS:lastName',
+    'G2HQ-YQS:gender',
+
+    'G2H7-Q75:GHB8-RCH:parentChild',
+    'G2H7-Q75:firstName',
+    'G2H7-Q75:lastName',
+    'G2H7-Q75:gender',
+
+    'G2HQ-YQS:G2H7-Q75:partner',
+  ],
+
+  // FamilySearch: Another record regarding Lolo Simplicio
+  'https://www.familysearch.org/ark:/61903/1:1:66X6-LG3J': [
+    'G2HQ-YQS:GHB8-RCH:parentChild',
+    'G2HQ-YQS:firstName',
+    'G2HQ-YQS:lastName',
+    'G2HQ-YQS:gender',
+
+    'G2H7-Q75:GHB8-RCH:parentChild',
+    'G2H7-Q75:firstName',
+    'G2H7-Q75:lastName',
+    'G2H7-Q75:gender',
+
+    'G2HQ-YQS:G2H7-Q75:partner',
   ],
 
   // =======================================================================
