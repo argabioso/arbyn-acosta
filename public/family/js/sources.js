@@ -3,9 +3,9 @@
 
 const SOURCES = {
 
-  // =======================================================================
-  // Other sources
-  // =======================================================================
+  // ___________________________________________________________________________
+  // ===========================================================================
+  // Undocumented Sources
 
   'Present and Direct Interactions': [
     'TEMP-000:GHB5-TWN:parentChild', // aesthetic data consideration
@@ -32,6 +32,7 @@ const SOURCES = {
     'GHBR-FK3:marker',
     'GHBR-FK3:marker2',
   ],
+
   // Should only be used on ancestors with living children / grand children
   // since this type of source would have a bigger "mistake chance"
   // as the generation gets older (Family Tree started on March 2020)
@@ -129,14 +130,17 @@ const SOURCES = {
     // Directly from Tita Mylen (daughter of Lolo Napoleon)
     'GH12-Z3C:living',
   ],
+
   // Suffix verification: Existence of same-name son
   "Existance of same-name son": [
     'GHBD-9L6:suffix',
     'GHB8-GB6:suffix',
   ],
+
   "Existance of same-name father": [
     'GHBD-7M4:suffix',
   ],
+
   // Doesn't make sense for them to be alive
   // Everyone in Lola Estebana's generation is probably dead
   // or everyone born on 1900s and older
@@ -167,14 +171,10 @@ const SOURCES = {
     'GKBT-9GD:living',
     'K2GJ-YY3:living',
   ],
-  // My Engagement: Proposal to Mitchie (Facebook Post)
-  'https://www.facebook.com/arbyn.argabioso/posts/pfbid02U3X7BU11Lb41vrbLQKrAyGe8oCEvd8SSqbY8rcCZ2MEQzcb3BUQJWL8UPhF1ZttYl': [
-    'GQX8-CQP:GHB5-TWN:partner',
-  ],
-  // My Engagement: Proposal to Mitchie (Video)
-  'https://www.youtube.com/watch?v=LNkv-M1TMtg': [
-    'GQX8-CQP:GHB5-TWN:partner',
-  ],
+
+  // ___________________________________________________________________________
+  // ===========================================================================
+  // Me, Mitch, and Direct Ancestors
 
   // =======================================================================
   // Argabioso, Arbyn Acosta
@@ -243,6 +243,15 @@ const SOURCES = {
     // Cynthia Bagadiong
     // Aurora Ocampo
     // Cynthia Haber
+  ],
+
+  // Proposal to Mitchie, Facebook
+  'https://www.facebook.com/arbyn.argabioso/posts/pfbid02U3X7BU11Lb41vrbLQKrAyGe8oCEvd8SSqbY8rcCZ2MEQzcb3BUQJWL8UPhF1ZttYl': [
+    'GQX8-CQP:GHB5-TWN:partner',
+  ],
+  // Proposal to Mitchie, YouTube
+  'https://www.youtube.com/watch?v=LNkv-M1TMtg': [
+    'GQX8-CQP:GHB5-TWN:partner',
   ],
 
   // =======================================================================
@@ -428,7 +437,7 @@ const SOURCES = {
     'GHB8-RCH:birthPlace',
   ],
 
-  // FamilySearch: Simplicio Lopecillo and Gregoria Villarubin (TOFIX)
+  // FamilySearch: Simplicio Lopecillo and Gregoria Villarubin (TODO)
   'https://www.familysearch.org/ark:/61903/1:1:66XW-VQRT': [
     'G2HQ-YQS:GHB8-RCH:parentChild',
     'G2HQ-YQS:firstName',
@@ -443,7 +452,7 @@ const SOURCES = {
     'G2HQ-YQS:G2H7-Q75:partner',
   ],
 
-  // FamilySearch: Another record regarding Lolo Simplicio
+  // FamilySearch: Another record regarding Lolo Simplicio (TODO)
   'https://www.familysearch.org/ark:/61903/1:1:66X6-LG3J': [
     'G2HQ-YQS:GHB8-RCH:parentChild',
     'G2HQ-YQS:firstName',
@@ -687,6 +696,228 @@ const SOURCES = {
     'GHBD-7M4:lastName',
   ],
 
+  // California Deaths and Burials, FamilySearch
+  // https://www.familysearch.org/ark:/61903/1:1:HGZ8-33ZM
+  'https://drive.google.com/file/d/194CO9-EnmMLwhHPGe0qTO1d3G7HGtTZl/view': [
+    'GHBD-7M4:living',
+    'GHBD-7M4:firstName',
+    'GHBD-7M4:middleName',
+    'GHBD-7M4:lastName',
+    'GHBD-7M4:suffix',
+    'GHBD-7M4:birthDate',
+    'GHBD-7M4:birthPlace',
+    'GHBD-7M4:deathDate',
+    'GHBD-7M4:deathPlace',
+
+    'GHBD-9L6:GHBD-7M4:parentChild',
+    'GHBD-9L6:firstName',
+    'GHBD-9L6:lastName',
+    'GHBD-9L6:gender',
+    'GHBD-9L6:birthPlace',
+
+    'GHB8-DXY:GHBD-7M4:parentChild',
+    'GHB8-DXY:firstName',
+    'GHB8-DXY:gender',
+    'GHB8-DXY:birthPlace',
+
+    'GHBD-9L6:GHB8-DXY:partner',
+  ],
+
+  // California Death Index, FamilySearch
+  // https://www.familysearch.org/ark:/61903/1:1:VP27-9XM
+  'https://drive.google.com/file/d/1Yclt46UY9IV4Pp4xyfuZitegj4B5iXN7/view': [
+    'GHBD-7M4:living',
+    'GHBD-7M4:firstName',
+    'GHBD-7M4:middleName',
+    'GHBD-7M4:lastName',
+    'GHBD-7M4:deathDate',
+    'GHBD-7M4:deathPlace',
+    'GHBD-7M4:birthDate',
+    'GHBD-7M4:birthPlace',
+  ],
+
+  // =======================================================================
+  // Acosta, Manuel Bongco Sr.
+  //
+  // GHBD-9L6 - Acosta, Manuel Bongco Sr.
+  // GHB8-SQN - Acosta, Ligorio
+  // GHB8-5K8 - Bongco, Maximiana
+  // =======================================================================
+
+  // Certificate of Marriage - Page 1
+  'https://drive.google.com/file/d/1L4zy5f_l9gYFBQQ68WdVFLDunwFoKgru/view?side=acosta': [
+    'GHBD-9L6:GHB8-DXY:partner',
+
+    'GHBD-9L6:gender',
+    'GHBD-9L6:firstName',
+    'GHBD-9L6:middleName',
+    'GHBD-9L6:lastName',
+
+    'GHB8-SQN:GHBD-9L6:parentChild',
+    'GHB8-SQN:gender',
+    'GHB8-SQN:firstName',
+    'GHB8-SQN:lastName',
+
+    'GHB8-5K8:GHBD-9L6:parentChild',
+    'GHB8-5K8:gender',
+    'GHB8-5K8:firstName',
+    'GHB8-5K8:lastName',
+
+    'GHB8-SQN:GHB8-5K8:partner',
+
+    'GHBD-9L6:marriagePlace',
+    'GHBD-9L6:marriageDate',
+  ],
+
+  // Certificate of Marriage - Complete
+  'https://drive.google.com/file/d/16SOA-h6729Zochb7g906v_LH7Mej7dn6/view?side=acosta': [
+    // All details from page 1 are sourced from a better copy. So this
+    // source only include sources from page 2 and 3.
+
+    'GHBD-9L6:GHB8-DXY:partner',
+
+    'GHBD-9L6:firstName',
+    'GHBD-9L6:middleName',
+    'GHBD-9L6:lastName',
+
+    'GHBD-9L6:GHBD-7M4:parentChild',
+    'GHB8-DXY:GHBD-7M4:parentChild',
+
+    'GHBD-7M4:firstName',
+    'GHBD-7M4:birthDate',
+    'GHBD-7M4:marker',
+  ],
+
+  // Certificate of Death
+  'https://drive.google.com/file/d/1JuyRHuSaar2p3RM0nUjWX-KPMAGjk2FK/view': [
+    'GHBD-9L6:living',
+
+    'GHBD-9L6:firstName',
+    'GHBD-9L6:middleName',
+    'GHBD-9L6:lastName',
+    'GHBD-9L6:birthDate',
+    'GHBD-9L6:gender',
+    'GHBD-9L6:deathDate',
+    'GHBD-9L6:birthPlace',
+    'GHBD-9L6:marker',
+    'GHBD-9L6:marker2',
+
+    'GHB8-DXY:GHBD-9L6:partner',
+    'GHB8-DXY:gender',
+    'GHB8-DXY:firstName',
+    'GHB8-DXY:lastName',
+
+    'GHB8-SQN:GHBD-9L6:parentChild',
+    'GHB8-SQN:gender',
+    'GHB8-SQN:lastName',
+    'GHB8-SQN:birthPlace',
+
+    'GHB8-5K8:GHBD-9L6:parentChild',
+    'GHB8-5K8:gender',
+    'GHB8-5K8:lastName',
+    'GHB8-5K8:birthPlace',
+
+    'GHB8-SQN:GHB8-5K8:partner',
+
+    'GHBD-9L6:deathPlace',
+  ],
+
+  // =======================================================================
+  // Acosta, Ligorio
+  //
+  // GHB8-SQN - Acosta, Ligorio
+  // =======================================================================
+
+  // Certificate of Death
+  'https://drive.google.com/file/d/1MIuMf7Q89LU89gmeNNZlH8lgKeMUR_yU/view': [
+    'GHB8-SQN:living',
+
+    'GHB8-SQN:firstName',
+    'GHB8-SQN:lastName',
+    'GHB8-SQN:gender',
+    'GHB8-SQN:deathDate',
+    'GHB8-SQN:birthDate',
+    'GHB8-SQN:deathPlace',
+
+    'GHB8-5K8:firstName',
+    'GHB8-5K8:lastName',
+
+    'GHBD-9L6:firstName',
+    'GHBD-9L6:middleName',
+    'GHBD-9L6:lastName',
+  ],
+
+  // Family Search: Lolo Ligorio Death Record
+  // 'https://www.familysearch.org/ark:/61903/1:1:FV6D-SZH': [
+  'https://drive.google.com/file/d/1AL6hsO1Snvv-_aOovfP88-w0oxPjQs4i/view': [
+    'GHB8-SQN:living',
+
+    'GHB8-SQN:deathPlace',
+    'GHB8-SQN:firstName',
+    'GHB8-SQN:lastName',
+    'GHB8-SQN:birthDate',
+    'GHB8-SQN:gender',
+    'GHB8-SQN:deathDate',
+    'GHB8-SQN:birthPlace',
+
+    'GHB8-DXY:firstName',
+    'GHB8-DXY:lastName',
+  ],
+
+  // =======================================================================
+  // San Agustin, Natividad
+  //
+  // GHB8-DXY - San Agustin, Natividad
+  // GHB8-LCC - San Agustin, Vicente
+  // GHB8-H7K - Nena
+  // =======================================================================
+
+  // Certificate of Marriage - Page 1
+  'https://drive.google.com/file/d/1L4zy5f_l9gYFBQQ68WdVFLDunwFoKgru/view?side=san+agustin': [
+    'GHBD-9L6:GHB8-DXY:partner',
+
+    'GHB8-DXY:gender',
+    'GHB8-DXY:firstName',
+    'GHB8-DXY:lastName',
+
+    'GHB8-LCC:GHB8-DXY:parentChild',
+    'GHB8-LCC:gender',
+    'GHB8-LCC:firstName',
+    'GHB8-LCC:lastName',
+
+    'GHB8-H7K:GHB8-DXY:parentChild',
+    'GHB8-H7K:gender',
+    'GHB8-H7K:firstName',
+
+    'GHB8-LCC:GHB8-H7K:partner',
+
+    'GHB8-DXY:marriagePlace',
+    'GHB8-DXY:marriageDate',
+  ],
+
+  // U.S. Social Security Death Index, MyHeritage
+  // https://www.myheritage.com/research/record-10002-81189365/
+  'https://drive.google.com/file/d/19m_AfnmTfHEdEy_IsgSWB9g1tREZnoJp/view': [
+    'GHB8-DXY:living',
+    'GHB8-DXY:firstName',
+    'GHB8-DXY:lastName',
+    'GHB8-DXY:birthDate',
+    'GHB8-DXY:deathDate',
+    'GHB8-DXY:deathPlace',
+  ],
+
+  // Grave Marker
+  'https://drive.google.com/file/d/10Z0kurjxNy0s7M0um4w5SxFMAFWA8Ivm/view': [
+    'GHB8-DXY:living',
+    'GHB8-DXY:firstName',
+
+    // Married Lastname
+    'GHB8-DXY:GHBD-9L6:partner',
+
+    'GHB8-DXY:birthDate',
+    'GHB8-DXY:deathDate',
+  ],
+
   // =======================================================================
   // Maramba, Catalina Dumantay
   //
@@ -791,4 +1022,33 @@ const SOURCES = {
     'GHB5-XTZ:marriageDate',
     'GHBR-FK3:marriageDate',
   ],
+
+  // ___________________________________________________________________________
+  // ===========================================================================
+  // Other People
+
+  // =======================================================================
+  // Acosta, Benjamin San Agustin Sr.
+  //
+  // GHBD-9L6 - Acosta, Manuel Bongco Sr.
+  // GHB8-DXY - San Agustin, Natividad
+  // =======================================================================
+
+  // Certificate of Birth
+  'https://drive.google.com/file/d/1u-7tnWjKdZ5-GrdLKuKi-NOAVvty25Qo/view?usp=sharing': [
+    'GHBD-9L6:gender',
+    'GHBD-9L6:firstName',
+    'GHBD-9L6:lastName',
+    'GHBD-9L6:birthPlace',
+    'GHBD-9L6:marker2',
+
+    'GHB8-DXY:gender',
+    'GHB8-DXY:firstName',
+    'GHB8-DXY:lastName',
+    'GHB8-DXY:birthPlace',
+    'GHB8-DXY:marker',
+
+    'GHBD-9L6:GHB8-DXY:partner',
+  ],
+
 };
