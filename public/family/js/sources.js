@@ -104,6 +104,7 @@ const SOURCES = {
     // Lola Consuelo, Lolo Cecilio, and Lola Jovita)
     'GH12-DRN:firstName',
     'GH12-DRN:lastName',
+    'GH12-DRN:birthPlace',
     'GH12-3GN:firstName',
     'GH12-3GN:lastName',
     'GH12-9JZ:firstName',
@@ -1210,6 +1211,10 @@ const SOURCES = {
 
   // =======================================================================
   // Adanza, Mitchie Ajesta
+  //
+  // GHB5-TWN - Adanza, Mitchie Ajesta
+  // GHB5-XTZ - Adanza, Darne Elican
+  // GHBR-FK3 - Ajesta, Mylen Vergara
   // =======================================================================
 
   // Certificate of Birth
@@ -1236,6 +1241,206 @@ const SOURCES = {
 
     'GHB5-XTZ:GHBR-FK3:partner',
     'GHB5-XTZ:marriageDate',
+    'GHBR-FK3:marriageDate',
+  ],
+
+  // =======================================================================
+  // Adanza, Darne Elican
+  //
+  // GHB5-XTZ - Adanza, Darne Elican
+  // GH12-SVQ - Adanza, Nestor Ladera
+  // GH12-9F6 - Elican, Rufa Acerto
+  // =======================================================================
+
+  // Certificate of Birth
+  'https://drive.google.com/file/d/1jYZqUHatNlvgDuyFw7jxSwgZsE6jy_9V/view': [
+    'GHB5-XTZ:firstName',
+    'GHB5-XTZ:middleName',
+    'GHB5-XTZ:lastName',
+    'GHB5-XTZ:gender',
+    'GHB5-XTZ:birthDate',
+    'GHB5-XTZ:birthPlace',
+
+    'GH12-9F6:GHB5-XTZ:parentChild',
+    'GH12-9F6:gender',
+    'GH12-9F6:firstName',
+    'GH12-9F6:lastName',
+
+    'GH12-SVQ:GHB5-XTZ:parentChild',
+    'GH12-SVQ:gender',
+    'GH12-SVQ:firstName',
+    'GH12-SVQ:lastName',
+
+    'GH12-9F6:GH12-SVQ:partner',
+  ],
+
+  // Certificate of Marriage
+  'https://drive.google.com/file/d/1rVr3RKFXqxPfw--yVwacLYGwyQFf6LzQ/view?side=adanza': [
+    'GHB5-XTZ:GHBR-FK3:partner',
+
+    'GHB5-XTZ:gender',
+    'GHB5-XTZ:firstName',
+    'GHB5-XTZ:lastName',
+    'GHB5-XTZ:birthPlace',
+
+    'GH12-SVQ:GHB5-XTZ:parentChild',
+    'GH12-SVQ:gender',
+    'GH12-SVQ:firstName',
+    'GH12-SVQ:lastName',
+
+    'GH12-9F6:GHB5-XTZ:parentChild',
+    'GH12-9F6:gender',
+    'GH12-9F6:firstName',
+    'GH12-9F6:lastName',
+
+    'GH12-9F6:GH12-SVQ:partner',
+
+    'GHB5-XTZ:marriagePlace',
+    'GHB5-XTZ:marriageDate',
+  ],
+
+  // =======================================================================
+  // Adanza, Nestor Ladera
+  //
+  // GH12-SVQ - Adanza, Nestor Ladera
+  // GH12-DRN - Adanza, Felomino R.
+  // GH12-3GN - Ladera, Consuelo
+  // =======================================================================
+
+  // Certificate of Death
+  'https://drive.google.com/file/d/1peIClAbyWzZV_kWcxPKAVBPDnVqFXG2Q/view': [
+    'GH12-SVQ:living',
+
+    'GH12-SVQ:firstName',
+    'GH12-SVQ:middleName',
+    'GH12-SVQ:lastName',
+    'GH12-SVQ:gender',
+    'GH12-SVQ:deathDate',
+    'GH12-SVQ:birthDate',
+    'GH12-SVQ:deathPlace',
+    'GH12-SVQ:marker',
+
+    'GH12-DRN:GH12-SVQ:parentChild',
+    'GH12-DRN:gender',
+    'GH12-DRN:firstName',
+    'GH12-DRN:lastName',
+
+    'GH12-3GN:GH12-SVQ:parentChild',
+    'GH12-3GN:gender',
+    'GH12-3GN:firstName',
+    'GH12-3GN:lastName',
+  ],
+
+  // =======================================================================
+  // Adanza, Felomino R.
+  //
+  // GH12-DRN - Adanza, Felomino R.
+  // =======================================================================
+
+  // Certificate of Death
+  'https://drive.google.com/file/d/1BK3uw-U_2ONst68_V7wUXFQWzzlu0pFc/view': [
+    'GH12-DRN:living',
+
+    'GH12-DRN:firstName',
+    'GH12-DRN:middleName',
+    'GH12-DRN:lastName',
+    'GH12-DRN:gender',
+    'GH12-DRN:birthDate',
+    'GH12-DRN:marker',
+    'GH12-DRN:deathDate',
+    'GH12-DRN:deathPlace',
+
+    'GH12-3GN:GH12-DRN:partner',
+    'GH12-3GN:gender',
+    'GH12-3GN:firstName',
+    'GH12-3GN:lastName',
+
+    'GH12-3GN:deathDate',
+
+    'GH12-SVQ:GH12-DRN:parentChild',
+    'GH12-SVQ:firstName',
+    'GH12-SVQ:lastName',
+  ],
+
+  // =======================================================================
+  // Ajesta, Mylen Vergara
+  //
+  // GHBR-FK3 - Ajesta, Mylen Vergara
+  // GH12-Z3C - Ajesta, Napoleon Cripolon Badoles
+  // GH12-W17 - Vergara, Celma Borja
+  // =======================================================================
+
+  // Certificate of Live Birth
+  'https://drive.google.com/file/d/1J6wUo6AwrS5aO9LJWbh8CUReaRTkUEFF/view': [
+    'GHBR-FK3:firstName',
+    'GHBR-FK3:middleName',
+    'GHBR-FK3:lastName',
+    'GHBR-FK3:gender',
+    'GHBR-FK3:birthDate',
+    'GHBR-FK3:birthPlace',
+
+    'GH12-Z3C:GHBR-FK3:parentChild',
+    'GH12-Z3C:gender',
+    'GH12-Z3C:firstName',
+    'GH12-Z3C:lastName',
+
+    'GH12-W17:GHBR-FK3:parentChild',
+    'GH12-W17:gender',
+    'GH12-W17:firstName',
+    'GH12-W17:lastName',
+
+    'GH12-Z3C:GH12-W17:partner',
+  ],
+
+  // Certificate of Birth
+  'https://drive.google.com/file/d/18MFv7G6xKBJj9M4ewH8a3GgcpFW4VSht/view': [
+    'GHBR-FK3:birthPlace',
+    'GHBR-FK3:firstName',
+    'GHBR-FK3:middleName',
+    'GHBR-FK3:lastName',
+    'GHBR-FK3:gender',
+    'GHBR-FK3:birthDate',
+
+    'GH12-Z3C:GHBR-FK3:parentChild',
+    'GH12-Z3C:gender',
+    'GH12-Z3C:firstName',
+    'GH12-Z3C:middleName',
+    'GH12-Z3C:lastName',
+
+    'GH12-W17:GHBR-FK3:parentChild',
+    'GH12-W17:gender',
+    'GH12-W17:firstName',
+    'GH12-W17:middleName',
+    'GH12-W17:lastName',
+
+    'GH12-Z3C:GH12-W17:partner',
+
+    'GH12-Z3C:marriageDate',
+    'GH12-W17:marriageDate',
+  ],
+
+  // Certificate of Marriage
+  'https://drive.google.com/file/d/1rVr3RKFXqxPfw--yVwacLYGwyQFf6LzQ/view?side=ajesta': [
+    'GHB5-XTZ:GHBR-FK3:partner',
+
+    'GHBR-FK3:gender',
+    'GHBR-FK3:firstName',
+    'GHBR-FK3:lastName',
+    'GHBR-FK3:birthPlace',
+
+    'GH12-Z3C:GHBR-FK3:parentChild',
+    'GH12-Z3C:gender',
+    'GH12-Z3C:firstName',
+    'GH12-Z3C:lastName',
+
+    'GH12-W17:GHBR-FK3:parentChild',
+    'GH12-W17:gender',
+    'GH12-W17:firstName',
+    'GH12-W17:lastName',
+
+    'GH12-W17:GH12-Z3C:partner',
+
+    'GHBR-FK3:marriagePlace',
     'GHBR-FK3:marriageDate',
   ],
 
@@ -1370,4 +1575,73 @@ const SOURCES = {
 
     'GHB8-M8D:GHB8-M86:partner',
   ],
+
+  // FamilySearch: Manuel Ajesta and Ursula badoles in son's catholic record (TODO)
+  'https://www.familysearch.org/ark:/61903/1:1:6JG6-3YRH': [
+    'GH12-XX4:firstName',
+    'GH12-XX4:gender',
+
+    'GH12-HQN:firstName',
+    'GH12-HQN:lastName',
+    'GH12-HQN:gender',
+
+    'GKBR-M9Y:firstName',
+    'GKBR-M9Y:lastName',
+
+    'GKBR-7P7:firstName',
+    'GKBR-7P7:lastName',
+    'GKBR-7P7:gender',
+
+    'GKBT-9GD:firstName',
+    'GKBT-9GD:lastName',
+
+    'K2GJ-YY3:firstName',
+    'K2GJ-YY3:lastName',
+    'K2GJ-YY3:gender',
+
+    'GH12-XX4:GH12-HQN:partner',
+    'GH12-HQN:GKBT-9GD:parentChild',
+    'GH12-XX4:GKBR-M9Y:parentChild',
+  ],
+
+  // FamilySearch: Record of Lola Trinidad, another daughter of Lolo Bio (TODO)
+  'https://www.familysearch.org/ark:/61903/1:1:HBBS-S7W2': [
+    'GHBZ-TM4:firstName',
+    'GHBZ-TM4:lastName',
+    'GHBZ-TM4:gender',
+    'GHBZ-P5Q:firstName',
+    'GHBZ-P5Q:lastName',
+    'GHBZ-P5Q:gender',
+    'GHBZ-TM4:GHBZ-P5Q:partner',
+  ],
 };
+
+// Birth estimates
+// Lolo Bio = Estimate birth year from Death Certificate and age
+// Lola Estebana = Estimate birth year from Death Certificate and age
+// Lola Francisca
+//   = Birth was 10 years from earliest daughter birth year estimate
+//   = Death was 4 years after Lolo Marcial's birth (Lolo Marcial is youngest)
+// Lolo Ligorio = Estimate birth year from Death Certificate and age
+// Lolo Don Miguel = Estimate death is 10 months before Lolo Sotero was born
+// Lolo Guillermo Maramba = Estimate birth from Lolo Miguel's birth - 6
+// Lola Maria Baustista = Estimate birth from Lolo Miguel's birth - 10
+
+// Lolo Felomino = Estimate birth year from Death Certificate and age
+// Lola Consuelo Ladera
+//   = Estimate birth from Lolo Nestor's birth - 10
+//   = Estimate death is any time after Lolo Felomino's death
+// Lolo Napoleon
+//   = Estimate birth from Tita Mylen's birth - 6
+//   = Estimate death is time after Tita Cecil was born
+// Lola Enoria
+//   = Estimate birth from Mamang's birth - 10
+//   = Estimate death is time after Mitch reached 3 years old
+// Lola Leoncia = Estimate birth year from Death record and age
+// Lolo Manuel Ajesta
+//   = Birth is 6 years before known children's birth
+//   = Death is time after known children's birth
+// Ursula Badoles
+//   = Birth is 10 years before known children's birth
+//   = Death is time after known children's birth
+// Unknown name = Death date is after photo taken

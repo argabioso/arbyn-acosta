@@ -126,7 +126,8 @@ function checkPerPerson(person) {
     let isEstimated = (
       stringAttributeValue.includes("before") ||
       stringAttributeValue.includes("after") ||
-      stringAttributeValue.includes("about")
+      stringAttributeValue.includes("about") ||
+      stringAttributeValue.includes("from")
     );
 
     if (isEstimated && currentSourceCount != 0) {
