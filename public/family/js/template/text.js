@@ -244,6 +244,9 @@ function getLifeSpan(nodeData, isPrivate) {
       age = nodeData.deathAge;
     }
 
+    if (String(age).includes("NaN")) {
+      return `${birthYear}${separator}${living ? 'Living' : 'Deceased'}`;
+    }
     return `${birthYear}${separator}${living ? 'Living' : 'Deceased'}` + (living ? ` (${age})` : '');
   }
 
@@ -283,6 +286,10 @@ function getLifeSpan(nodeData, isPrivate) {
     age = nodeData.deathAge;
   }
 
+  if (String(age).includes("NaN")) {
+    return `${birthYear}${separator}${deathYear}`;
+  }
+
   // If both birthYear and deathYear exist,
   // return the formatted lifespan string.
   return `${birthYear}${separator}${deathYear} (${age})`;
@@ -307,6 +314,10 @@ function formatDate(raw, isPrivate) {
 
   if (!raw) {
     return null;
+  }
+
+  if (raw.includes("from ") && raw.includes(" to ")) {
+    return raw;
   }
 
   // Check for prefix words

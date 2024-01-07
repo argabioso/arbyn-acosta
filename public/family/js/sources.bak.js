@@ -33,75 +33,6 @@
 
 const SOURCES = {
 
-  // Family Search: José Pedro Maramba Reyes christening record
-  // includes lolo Miguel Maramba's and parents' details
-  // 'https://www.familysearch.org/ark:/61903/1:1:66HQ-VJGQ': [
-  'https://drive.google.com/file/d/1EZnFrq2uHZVgfDSItdUrxBqy7Wzkto7o/view?usp=sharing': [
-    'LLQS-641:LLQS-6F1:partner',
-
-    'LLQS-641:firstName',
-    'LLQS-641:lastName',
-    'LLQS-641:gender',
-
-    'LLQS-6F1:firstName',
-    'LLQS-6F1:lastName',
-    'LLQS-6F1:gender',
-
-    'L281-614:LLQS-641:parentChild',
-    'L281-614:firstName',
-    'L281-614:lastName',
-    'L281-614:gender',
-
-    'LLQS-6F1:G7C3-B6P:parentChild',
-    'G7C3-B6P:firstName',
-    'G7C3-B6P:gender',
-
-    'LLQS-6F1:G7C3-J9S:parentChild',
-    'G7C3-J9S:firstName',
-    'G7C3-J9S:lastName',
-    'G7C3-J9S:gender',
-
-    'G7C3-B6P:G7C3-J9S:partner',
-  ],
-  // Geni Record for Lolo Miguel Maramba
-  'https://www.geni.com/people/Miguel-Maramba/4012194445110022663': [
-    'LLQS-641:firstName',
-    'LLQS-641:middleName',
-    'LLQS-641:lastName',
-    'LLQS-641:gender',
-
-    'GHB8-GB6:LLQS-641:parentChild',
-    'GHB8-GB6:firstName',
-    'GHB8-GB6:middleName',
-    'GHB8-GB6:lastName',
-
-    'LLQS-641:L281-614:parentChild',
-    'L281-614:firstName',
-    'L281-614:middleName',
-    'L281-614:lastName',
-
-    'LLQS-641:LLQS-6YC:parentChild',
-    'LLQS-6YC:firstName',
-    'LLQS-6YC:middleName',
-    'LLQS-6YC:lastName',
-
-    'LLQS-641:LLQS-6F1:partner',
-    'LLQS-6F1:firstName',
-    'LLQS-6F1:middleName',
-    'LLQS-6F1:lastName',
-  ],
-  // Official Gazette ni Lolo Miguel
-  'https://drive.google.com/file/d/1Ik8lFHm_F4-FaKOs4qL4CNiq-Il2WfLR/view?usp=drive_link': [
-    'LLQS-641:firstName',
-    'LLQS-641:lastName',
-    'LLQS-641:marker',
-  ],
-  // Another Official Gazette entry for Lolo Miguel
-  'https://drive.google.com/file/d/1CNF4lEbL4vfjbhMnTOEk02KFDhaO-Xwa/view?usp=drive_link': [
-    'LLQS-641:firstName',
-    'LLQS-641:lastName',
-    'LLQS-641:prefix',
-  ],
   // FamilySearch: Lolo Felomino death record
   // 'https://www.familysearch.org/ark:/61903/1:1:HYTD-R5ZM': [
   'https://drive.google.com/file/d/1Iu-cO6zNvD--hQoozbIXFQVPA3CXeAAm/view?usp=sharing': [
@@ -136,27 +67,6 @@ const SOURCES = {
     'GH12-XX4:GH12-HQN:partner',
     'GH12-HQN:GKBT-9GD:parentChild',
     'GH12-XX4:GKBR-M9Y:parentChild',
-  ],
-  // Lolo Manuel Jr. California deaths and burials record
-  'https://www.familysearch.org/ark:/61903/1:1:HGZ8-33ZM': [
-    'GHBD-7M4:living',
-    'GHBD-7M4:birthDate',
-    'GHBD-7M4:deathDate',
-    'GHBD-7M4:birthPlace',
-    'GHBD-7M4:deathPlace',
-    'GHBD-7M4:firstName',
-    'GHBD-7M4:lastName',
-    'GHBD-7M4:suffix',
-    'GHBD-7M4:gender',
-
-    'GHBD-7M4:GHB8-DXY:parentChild',
-    'GHB8-DXY:firstName',
-    'GHB8-DXY:gender',
-
-    'GHBD-7M4:GHBD-9L6:parentChild',
-    'GHBD-9L6:firstName',
-    'GHBD-9L6:lastName',
-    'GHBD-9L6:gender',
   ],
   // Death certificate ni Lolo Felomino
   'https://drive.google.com/file/d/1BK3uw-U_2ONst68_V7wUXFQWzzlu0pFc/view?usp=share_link': [
@@ -239,78 +149,6 @@ const SOURCES = {
     'GH12-W17:gender',
 
     'GH12-Z3C:GH12-W17:partner',
-  ],
-  // FamilySearch: record of Corazon Maramba including her parents
-  // nanay ni Tita Cherry
-  // 'https://www.familysearch.org/ark:/61903/1:1:HBNK-LY2M': [
-  'https://drive.google.com/file/d/1n_6mEB9oGikZeRXw71-_buL1cIoT8X9p/view?usp=sharing': [
-    'GHB8-GB6:firstName',
-    'GHB8-GB6:middleName',
-    'GHB8-GB6:lastName',
-    'GHB8-GB6:gender',
-
-    'GHBD-9LY:firstName',
-    'GHBD-9LY:lastName',
-    'GHBD-9LY:gender',
-
-    'GHB8-GB6:GHBD-9LY:partner',
-  ],
-  // News article regarding Lolo Sotero being the chief in the police force
-  // caputuring some trouble makers near a train station
-  'https://drive.google.com/file/d/15o0fdYYMYTzXQ3ikiMCOqy-YlfAND76C/view?usp=sharing': [
-    'GHB8-GB6:firstName',
-    'GHB8-GB6:lastName',
-    'GHB8-GB6:marker',
-    'GHB8-GB6:marker2',
-  ],
-  // Geni: Guillermo Maramba
-  'https://www.geni.com/people/Guillermo-Maramba/6000000010495044375': [
-    'LLQS-6YC:firstName',
-    'LLQS-6YC:lastName',
-    'LLQS-6YC:gender',
-
-    'LLQS-6YC:LLQS-641:parentChild',
-    'LLQS-641:firstName',
-    'LLQS-641:lastName',
-
-    'LLQS-6YC:L281-614:partner',
-    'L281-614:firstName',
-    'L281-614:lastName',
-  ],
-  // Geni: Maria Garcia Bautista
-  'https://www.geni.com/people/Maria-Maramba/6000000017013425750': [
-    'L281-614:firstName',
-    'L281-614:middleName',
-    'L281-614:lastName',
-    'L281-614:gender',
-    'L281-614:LLQS-641:parentChild',
-    'LLQS-6YC:L281-614:partner',
-
-    'GC7T-H59:L281-614:parentChild',
-    'GC7T-1PK:L281-614:parentChild',
-  ],
-  // Geni: Don Agustin Bautista
-  'https://www.geni.com/people/Agustin-Bautista/6000000017013722083': [
-    'GC7T-H59:firstName',
-    'GC7T-H59:lastName',
-    'GC7T-H59:gender',
-  ],
-  // Geni: Felipa Garcia
-  'https://www.geni.com/people/Felipa-Bautista/6000000010494358163': [
-    'GC7T-1PK:firstName',
-    'GC7T-1PK:lastName',
-    'GC7T-1PK:gender',
-  ],
-  // Lolo Sotero's death certificate
-  'https://drive.google.com/file/d/1Pn6Xvn7ucwnzTgNTcFBsQq9hzAnARp51/view?usp=sharing': [
-    'GHB8-GB6:birthDate',
-    'GHB8-GB6:birthPlace',
-    'GHB8-GB6:deathDate',
-    'GHB8-GB6:deathPlace',
-    'GHB8-GB6:firstName',
-    'GHB8-GB6:gender',
-    'GHB8-GB6:lastName',
-    'GHB8-GB6:living',
   ],
   // Lolo Nestor death certificate
   'https://drive.google.com/file/d/1peIClAbyWzZV_kWcxPKAVBPDnVqFXG2Q/view?usp=drive_link': [

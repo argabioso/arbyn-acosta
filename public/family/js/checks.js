@@ -192,6 +192,21 @@ function checkSources() {
     console.invalid('Dataset contains duplicate people');
   }
 
+  let hasDuplicateSource = false;
+  for (const [url, sourceKeys] of Object.entries(SOURCES)) {
+    oldDuplicateSource = hasDuplicateSource;
+    hasDuplicateSource = hasDuplicateSource || !isUniqueStringArray(sourceKeys);
+
+    if (!oldDuplicateSource && hasDuplicateSource) {
+      console.invalid(`Found duplicate source: ${url}`);
+    }
+  }
+  if (hasDuplicateSource) {
+    console.invalid('Dataset contains duplicate sources');
+  } else {
+    console.valid('All the source in the dataset are unique');
+  }
+
   areUniqueSources(SOURCES)
 
   let totalWeirdCount = 0;

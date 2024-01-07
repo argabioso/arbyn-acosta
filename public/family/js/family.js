@@ -421,61 +421,61 @@ for (const [key, svg] of Object.entries(isDark ? DARK_MARKERS : LIGHT_MARKERS)) 
 // Age for Fathers (youngest ever was 5) so let's use 6
 
 var TREE_DATA = [
-  { key: 'TEMP-000',                                                                                                                                                        gender: '',  birthDate: null,          deathDate: null,               marriageDate: null,         deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                deathPlace: null,                                livingPlace: null,                marriagePlace: null,                        height: 0, width: 0 },
-    { key: 'GQX8-CQP',               child: 'TEMP-000', prefix: '',     firstName: 'Arbyn',              middleName: 'Acosta',      lastName: 'Argabioso',   suffix: '',    gender: 'M', birthDate: '1995-04-19',  deathDate: null,               marriageDate: null,         deathAge: null,  living: true,  hasDNA: true,  hasImage: true,   birthPlace: 'Santa Cruz, Manila, PHL',           deathPlace: null,                                livingPlace: 'Metro Manila, PHL', marriagePlace: null,                        marker: 'software' },
-      { key: 'GQJK-L51',             child: 'GQX8-CQP', prefix: '',     firstName: 'Rolando',            middleName: 'Saplala',     lastName: 'Argabioso',   suffix: '',    gender: 'M', birthDate: '1965-10-09',  deathDate: null,               marriageDate: '2002-04-26', deathAge: null,  living: true,  hasDNA: true,  hasImage: true,   birthPlace: 'Poblacion, Caloocan, PHL',          deathPlace: null,                                livingPlace: 'Metro Manila, PHL', marriagePlace: 'Diliman, Quezon City, PHL', marker: 'government' },
-        { key: 'GQJK-LCT',           child: 'GQJK-L51', prefix: '',     firstName: 'Marcial',            middleName: 'Mia',         lastName: 'Argabioso',   suffix: '',    gender: 'M', birthDate: '1932-10-13',  deathDate: '2020-02-27',       marriageDate: '1963-01-23', deathAge: null,  living: false, hasDNA: false, hasImage: true,   birthPlace: 'Majayjay, Laguna, PHL',             deathPlace: 'Quezon City, PHL',                  livingPlace: null,                marriagePlace: 'Butuan, Laguna, PHL',       },
-          { key: 'GHBZ-TM4',         child: 'GQJK-LCT', prefix: '',     firstName: 'Eusebio',            middleName: 'Lopecillo',   lastName: 'Argabioso',   suffix: '',    gender: 'M', birthDate: 'about 1895',  deathDate: '1972-10-27',       marriageDate: null,         deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: 'Majayjay, Laguna, PHL',             deathPlace: 'Majayjay, Laguna, PHL',             livingPlace: null,                marriagePlace: null,                        marker: 'farming' },
-            { key: 'GHB8-RCH',       child: 'GHBZ-TM4', prefix: '',     firstName: 'Estebana',           middleName: '',            lastName: 'Lopecillo',   suffix: '',    gender: 'F', birthDate: 'about 1861',  deathDate: '1951-08-30',       marriageDate: null,         deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: 'Majayjay, Laguna, PHL',             deathPlace: 'Majayjay, Laguna, PHL',             livingPlace: null,                marriagePlace: null,                        },
-              { key: 'G2HQ-YQS',     child: 'GHB8-RCH', prefix: '',     firstName: 'Simplicio',          middleName: '',            lastName: 'Lopecillo',   suffix: '',    gender: 'M', birthDate: null,          deathDate: null,               marriageDate: null,         deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                deathPlace: null,                                livingPlace: null,                marriagePlace: null,                        },
-              { key: 'G2H7-Q75',     child: 'GHB8-RCH', prefix: '',     firstName: 'Gregoria',           middleName: '',            lastName: 'Villarubin',  suffix: '',    gender: 'F', birthDate: null,          deathDate: null,               marriageDate: null,         deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                deathPlace: null,                                livingPlace: null,                marriagePlace: null,                        },
-          { key: 'GHBZ-P5Q',         child: 'GQJK-LCT', prefix: '',     firstName: 'Francisca',          middleName: '',            lastName: 'Mia',         suffix: '',    gender: 'F', birthDate: 'before 1910', deathDate: 'after 1936-10-13', marriageDate: null,         deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                deathPlace: null,                                livingPlace: null,                marriagePlace: null,                        },
-        { key: 'GHBZ-YVX',           child: 'GQJK-L51', prefix: '',     firstName: 'Lydia',              middleName: 'Perez',       lastName: 'Saplala',     suffix: '',    gender: 'F', birthDate: '1944-11-24',  deathDate: null,               marriageDate: '1963-01-23', deathAge: null,  living: true,  hasDNA: true,  hasImage: true,   birthPlace: 'Lubao, Pampanga, PHL',              deathPlace: null,                                livingPlace: 'Metro Manila, PHL', marriagePlace: 'Butuan, Laguna, PHL',       marker: 'retail' },
-          { key: 'GHB8-7T6',         child: 'GHBZ-YVX', prefix: '',     firstName: 'Fernando',           middleName: 'Sison',       lastName: 'Saplala',     suffix: '',    gender: 'M', birthDate: '1916-05-30',  deathDate: '1993-05-03',       marriageDate: null,         deathAge: null,  living: false, hasDNA: false, hasImage: true,   birthPlace: 'Lubao, Pampanga, PHL',              deathPlace: 'Caloocan, PHL',                     livingPlace: null,                marriagePlace: null,                        marker: 'military' },
-            { key: 'GNNH-JLM',       child: 'GHB8-7T6', prefix: '',     firstName: 'Estanislao',         middleName: '',            lastName: 'Saplala',     suffix: '',    gender: 'M', birthDate: null,          deathDate: null,               marriageDate: null,         deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                deathPlace: null,                                livingPlace: null,                marriagePlace: null,                        },
-            { key: 'GJJX-1SG',       child: 'GHB8-7T6', prefix: '',     firstName: 'Adela',              middleName: '',            lastName: 'Sison',       suffix: '',    gender: 'F', birthDate: null,          deathDate: null,               marriageDate: null,         deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                deathPlace: null,                                livingPlace: null,                marriagePlace: null,                        },
-          { key: 'GHB8-GZL',         child: 'GHBZ-YVX', prefix: '',     firstName: 'Lucina',             middleName: 'Gutierrez',   lastName: 'Perez',       suffix: '',    gender: 'F', birthDate: '1919-11-16',  deathDate: '1986-10-02',       marriageDate: null,         deathAge: null,  living: false, hasDNA: false, hasImage: true,   birthPlace: 'Orani, Bataan, PHL',                deathPlace: 'Dinalupihan, Bataan, PHL',          livingPlace: null,                marriagePlace: null,                        marker: 'housewife' },
-            { key: 'GHB8-M8D',       child: 'GHB8-GZL', prefix: '',     firstName: 'Victor',             middleName: '',            lastName: 'Perez',       suffix: '',    gender: 'M', birthDate: null,          deathDate: null,               marriageDate: null,         deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                deathPlace: null,                                livingPlace: null,                marriagePlace: null,                        },
-            { key: 'GHB8-M86',       child: 'GHB8-GZL', prefix: '',     firstName: 'Genoveba',           middleName: '',            lastName: 'Gutierrez',   suffix: '',    gender: 'F', birthDate: null,          deathDate: null,               marriageDate: null,         deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                deathPlace: null,                                livingPlace: null,                marriagePlace: null,                        },
-      { key: 'GQJK-G8W',             child: 'GQX8-CQP', prefix: '',     firstName: 'Corazon',            middleName: 'Maramba',     lastName: 'Acosta',      suffix: '',    gender: 'F', birthDate: '1971-03-10',  deathDate: '2018-05-25',       marriageDate: '2003-02-03', deathAge: null,  living: false, hasDNA: false, hasImage: true,   birthPlace: 'Sampaloc, Manila, PHL',             deathPlace: 'Santa Cruz, Laguna, PHL',           livingPlace: null,                marriagePlace: 'Pasig City, PHL',           marker: 'housewife' },
-        { key: 'GHBD-7M4',           child: 'GQJK-G8W', prefix: '',     firstName: 'Manuel',             middleName: 'San Agustin', lastName: 'Acosta',      suffix: 'Jr.', gender: 'M', birthDate: '1948-07-06',  deathDate: '1979-06-07',       marriageDate: '1966-03-26', deathAge: null,  living: false, hasDNA: false, hasImage: true,   birthPlace: 'España, Manila, PHL',               deathPlace: 'Pasadena, California, USA',         livingPlace: null,                marriagePlace: 'Santa Cruz, Manila, PHL',   marker: 'male-twin', marker2: 'seaman' },
-          { key: 'GHBD-9L6',         child: 'GHBD-7M4', prefix: '',     firstName: 'Manuel',             middleName: 'Bongco',      lastName: 'Acosta',      suffix: 'Sr.', gender: 'M', birthDate: '1913-11-10',  deathDate: '1994-11-20',       marriageDate: null,         deathAge: null,  living: false, hasDNA: false, hasImage: true,   birthPlace: 'Orani, Bataan, PHL',                deathPlace: 'San Dimas, California, USA',        livingPlace: null,                marriagePlace: null,                        marker: 'police', marker2: 'investigate' },
-            { key: 'GHB8-SQN',       child: 'GHBD-9L6', prefix: '',     firstName: 'Ligorio',            middleName: '',            lastName: 'Acosta',      suffix: '',    gender: 'M', birthDate: 'about 1871',  deathDate: '1948-07-07',       marriageDate: null,         deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: 'Orani, Bataan, PHL',                deathPlace: 'Santa Cruz, Manila, PHL',           livingPlace: null,                marriagePlace: null,                        },
-            { key: 'GHB8-5K8',       child: 'GHBD-9L6', prefix: '',     firstName: 'Maximiana',          middleName: '',            lastName: 'Bongco',      suffix: '',    gender: 'F', birthDate: null,          deathDate: 'after 1951-03-05', marriageDate: null,         deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                deathPlace: null,                                livingPlace: null,                marriagePlace: null,                        },
-          { key: 'GHB8-DXY',         child: 'GHBD-7M4', prefix: '',     firstName: 'Natividad',          middleName: '',            lastName: 'San Agustin', suffix: '',    gender: 'F', birthDate: '1925-12-21',  deathDate: '2008-10-09',       marriageDate: null,         deathAge: null,  living: false, hasDNA: false, hasImage: true,   birthPlace: 'Ermita, Manila, PHL',               deathPlace: 'San Dimas, California, USA',        livingPlace: null,                marriagePlace: null,                        marker: 'housewife' },
-            { key: 'GHB8-LCC',       child: 'GHB8-DXY', prefix: '',     firstName: 'Vicente',            middleName: '',            lastName: 'San Agustin', suffix: '',    gender: 'M', birthDate: null,          deathDate: null,               marriageDate: null,         deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                deathPlace: null,                                livingPlace: null,                marriagePlace: null,                        },
-            { key: 'GHB8-H7K',       child: 'GHB8-DXY', prefix: '',     firstName: 'Nena',               middleName: '',            lastName: '',            suffix: '',    gender: 'F', birthDate: null,          deathDate: null,               marriageDate: null,         deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                deathPlace: null,                                livingPlace: null,                marriagePlace: null,                        },
-        { key: 'GHB8-J1B',           child: 'GQJK-G8W', prefix: '',     firstName: 'Catalina',           middleName: 'Dumantay',    lastName: 'Maramba',     suffix: '',    gender: 'F', birthDate: '1943-01-28',  deathDate: '1974-08-10',       marriageDate: '1966-03-26', deathAge: null,  living: false, hasDNA: false, hasImage: true,   birthPlace: 'Sta. Barbara, Pangasinan, PHL',     deathPlace: 'Sangandaan, Caloocan, PHL',         livingPlace: null,                marriagePlace: 'Santa Cruz, Manila, PHL',   },
-          { key: 'GHB8-GB6',         child: 'GHB8-J1B', prefix: '',     firstName: 'Sotero',             middleName: 'Reyes',       lastName: 'Maramba',     suffix: 'Sr.', gender: 'M', birthDate: '1903-04-22',  deathDate: '1969-12-12',       marriageDate: null,         deathAge: null,  living: false, hasDNA: false, hasImage: true,   birthPlace: 'Sta. Barbara, Pangasinan, PHL',     deathPlace: 'Sangandaan, Caloocan, PHL',         livingPlace: null,                marriagePlace: null,                        marker: 'police', marker2: 'train' },
-            { key: 'LLQS-641',       child: 'GHB8-GB6', prefix: 'Don',  firstName: 'Miguel',             middleName: 'Bautista',    lastName: 'Maramba',     suffix: '',    gender: 'M', birthDate: 'about 1858',  deathDate: 'after 1902-06',    marriageDate: null,         deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: 'Sta. Barbara, Pangasinan, PHL',     deathPlace: 'Sta. Barbara, Pangasinan, PHL',     livingPlace: null,                marriagePlace: null,                        marker: 'government' },
-              { key: 'LLQS-6YC',     child: 'LLQS-641', prefix: '',     firstName: 'Guillermo',          middleName: 'Bautista',    lastName: 'Maramba',     suffix: '',    gender: 'M', birthDate: null,          deathDate: null,               marriageDate: null,         deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                deathPlace: 'Sta. Barbara, Pangasinan, PHL',     livingPlace: null,                marriagePlace: null,                        marker: 'sales', marker2: 'cattle' },
-              { key: 'L281-614',     child: 'LLQS-641', prefix: '',     firstName: 'Maria',              middleName: 'Garcia',      lastName: 'Bautista',    suffix: '',    gender: 'F', birthDate: null,          deathDate: null,               marriageDate: null,         deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                deathPlace: 'Sta. Barbara, Pangasinan, PHL',     livingPlace: null,                marriagePlace: null,                        },
-                { key: 'GC7T-H59',   child: 'L281-614', prefix: 'Don',  firstName: 'Agustin',            middleName: '',            lastName: 'Bautista',    suffix: '',    gender: 'M', birthDate: '1812-05-29',  deathDate: null,               marriageDate: null,         deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: 'Sta. Barbara, Pangasinan, PHL',     deathPlace: 'Sta. Barbara, Pangasinan, PHL',     livingPlace: null,                marriagePlace: null,                        marker: 'government' },
-                { key: 'GC7T-1PK',   child: 'L281-614', prefix: 'Doña', firstName: 'Felipa',             middleName: '',            lastName: 'Garcia',      suffix: '',    gender: 'F', birthDate: null,          deathDate: null,               marriageDate: null,         deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                deathPlace: null,                                livingPlace: null,                marriagePlace: null,                        },
-            { key: 'LLQS-6F1',       child: 'GHB8-GB6', prefix: '',     firstName: 'Mercedes',           middleName: 'Novilla',     lastName: 'Reyes',       suffix: '',    gender: 'F', birthDate: null,          deathDate: null,               marriageDate: null,         deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                deathPlace: null,                                livingPlace: null,                marriagePlace: null,                        },
-              { key: 'G7C3-B6P',     child: 'LLQS-6F1', prefix: '',     firstName: 'Gregorio',           middleName: '',            lastName: 'Reyes',       suffix: '',    gender: 'M', birthDate: null,          deathDate: null,               marriageDate: null,         deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                deathPlace: null,                                livingPlace: null,                marriagePlace: null,                        },
-              { key: 'G7C3-J9S',     child: 'LLQS-6F1', prefix: '',     firstName: 'Leocadia',           middleName: '',            lastName: 'Novilla',     suffix: '',    gender: 'F', birthDate: null,          deathDate: null,               marriageDate: null,         deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                deathPlace: null,                                livingPlace: null,                marriagePlace: null,                        },
-          { key: 'GHBD-9LY',         child: 'GHB8-J1B', prefix: '',     firstName: 'Cresencia',          middleName: '',            lastName: 'Dumantay',    suffix: '',    gender: 'F', birthDate: '1918-04-19',  deathDate: '1990-04-16',       marriageDate: null,         deathAge: null,  living: false, hasDNA: false, hasImage: true,   birthPlace: 'PHL',                               deathPlace: 'Sangandaan, Caloocan, PHL',         livingPlace: null,                marriagePlace: null,                        marker: 'apparel' },
-            { key: 'TEMP-001',       child: 'GHBD-9LY', prefix: '',     firstName: 'Unknown',            middleName: '',            lastName: 'name',        suffix: '',    gender: 'F', birthDate: 'before 1908', deathDate: 'after 1918-04-19', marriageDate: null,         deathAge: "50+", living: false, hasDNA: false, hasImage: true,   birthPlace: 'PHL',                               deathPlace: 'PHL',                               livingPlace: null,                marriagePlace: null,                        },
-    { key: 'GHB5-TWN',               child: 'TEMP-000', prefix: '',     firstName: 'Mitchie',            middleName: 'Ajesta',      lastName: 'Adanza',      suffix: '',    gender: 'F', birthDate: '1994-12-16',  deathDate: null,               marriageDate: null,         deathAge: null,  living: true,  hasDNA: true,  hasImage: true,   birthPlace: 'Santa Cruz, Manila, PHL',           deathPlace: null,                                livingPlace: 'Metro Manila, PHL', marriagePlace: null,                        },
-      { key: 'GHB5-XTZ',             child: 'GHB5-TWN', prefix: '',     firstName: 'Darne',              middleName: 'Elican',      lastName: 'Adanza',      suffix: '',    gender: 'M', birthDate: '1964-06-22',  deathDate: null,               marriageDate: '1994-01-25', deathAge: null,  living: true,  hasDNA: false, hasImage: true,   birthPlace: 'Balingasag, Misamis Oriental, PHL', deathPlace: null,                                livingPlace: 'Metro Manila, PHL', marriagePlace: null,                        marker: 'manufacturing' },
-        { key: 'GH12-SVQ',           child: 'GHB5-XTZ', prefix: '',     firstName: 'Nestor',             middleName: 'Ladera',      lastName: 'Adanza',      suffix: '',    gender: 'M', birthDate: '1938-02-26',  deathDate: '2018-09-28',       marriageDate: null,         deathAge: null,  living: false, hasDNA: false, hasImage: true,   birthPlace: 'Balingasag, Misamis Oriental, PHL', deathPlace: 'Balingasag, Misamis Oriental, PHL', livingPlace: null,                marriagePlace: null,                        marker: 'farming' },
-          { key: 'GH12-DRN',         child: 'GH12-SVQ', prefix: '',     firstName: 'Felomino',           middleName: 'R',           lastName: 'Adanza',      suffix: '',    gender: 'M', birthDate: 'about 1901',  deathDate: '1990-11-03',       marriageDate: null,         deathAge: null,  living: false, hasDNA: false, hasImage: true,   birthPlace: 'Dumaguete, Negros Oriental, PHL',   deathPlace: 'Balingasag, Misamis Oriental, PHL', livingPlace: null,                marriagePlace: null,                        marker: 'farming' },
-          { key: 'GH12-3GN',         child: 'GH12-SVQ', prefix: '',     firstName: 'Consuelo',           middleName: '',            lastName: 'Ladera',      suffix: '',    gender: 'F', birthDate: null,          deathDate: 'after 1990-11-03', marriageDate: null,         deathAge: null,  living: false, hasDNA: false, hasImage: true,   birthPlace: 'PHL',                               deathPlace: 'PHL',                               livingPlace: null,                marriagePlace: null,                        },
-        { key: 'GH12-9F6',           child: 'GHB5-XTZ', prefix: '',     firstName: 'Rufa',               middleName: 'Acerto',      lastName: 'Elican',      suffix: '',    gender: 'F', birthDate: '1939-11-28',  deathDate: '2015-04-02',       marriageDate: null,         deathAge: null,  living: false, hasDNA: false, hasImage: true,   birthPlace: 'Balingasag, Misamis Oriental, PHL', deathPlace: 'Balingasag, Misamis Oriental, PHL', livingPlace: null,                marriagePlace: null,                        marker: 'farming' },
-          { key: 'GH12-9JZ',         child: 'GH12-9F6', prefix: '',     firstName: 'Cecilio',            middleName: '',            lastName: 'Elican',      suffix: '',    gender: 'M', birthDate: null,          deathDate: null,               marriageDate: null,         deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                deathPlace: null,                                livingPlace: null,                marriagePlace: null,                        marker: 'military' },
-          { key: 'GH12-35H',         child: 'GH12-9F6', prefix: '',     firstName: 'Jovita',             middleName: '',            lastName: 'Acerto',      suffix: '',    gender: 'F', birthDate: null,          deathDate: null,               marriageDate: null,         deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                deathPlace: null,                                livingPlace: null,                marriagePlace: null,                        },
-      { key: 'GHBR-FK3',             child: 'GHB5-TWN', prefix: '',     firstName: 'Mylen',              middleName: 'Vergara',     lastName: 'Ajesta',      suffix: '',    gender: 'F', birthDate: '1974-04-13',  deathDate: null,               marriageDate: '1994-01-25', deathAge: null,  living: true,  hasDNA: false, hasImage: true,   birthPlace: 'Sinamongan, Pilar, Capiz, PHL',     deathPlace: null,                                livingPlace: 'Manama, BHR',       marriagePlace: null,                        marker: 'beautician', marker2: 'manager' },
-        { key: 'GH12-Z3C',           child: 'GHBR-FK3', prefix: '',     firstName: 'Napoleon Crispolon', middleName: 'Badoles',     lastName: 'Ajesta',      suffix: '',    gender: 'M', birthDate: 'before 1968', deathDate: 'after 1980-02-26', marriageDate: '1962-08',    deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: 'Binaobawan, Pilar, Capiz, PHL',     deathPlace: "PHL",                               livingPlace: null,                marriagePlace: 'Pilar, Capiza, PHL',        },
-          { key: 'GH12-XX4',         child: 'GH12-Z3C', prefix: '',     firstName: 'Manuel',             middleName: 'Bermúdez',    lastName: 'Ajesta',      suffix: '',    gender: 'M', birthDate: null,          deathDate: null,               marriageDate: null,         deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: 'Pilar, Capiz, PHL',                 deathPlace: null,                                livingPlace: null,                marriagePlace: null,                        },
-            { key: 'GKBR-M9Y',       child: 'GH12-XX4', prefix: '',     firstName: 'Eustaquio',          middleName: '',            lastName: 'Ajesta',      suffix: '',    gender: 'M', birthDate: null,          deathDate: null,               marriageDate: null,         deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                deathPlace: null,                                livingPlace: null,                marriagePlace: null,                        },
-            { key: 'GKBR-7P7',       child: 'GH12-XX4', prefix: '',     firstName: 'Florencia',          middleName: '',            lastName: 'Bermúdez',    suffix: '',    gender: 'F', birthDate: null,          deathDate: null,               marriageDate: null,         deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                deathPlace: null,                                livingPlace: null,                marriagePlace: null,                        },
-          { key: 'GH12-HQN',         child: 'GH12-Z3C', prefix: '',     firstName: 'Ursula',             middleName: 'Villanes',    lastName: 'Badoles',     suffix: '',    gender: 'F', birthDate: null,          deathDate: null,               marriageDate: null,         deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                deathPlace: null,                                livingPlace: null,                marriagePlace: null,                        },
-            { key: 'GKBT-9GD',       child: 'GH12-HQN', prefix: '',     firstName: 'Pedro Benjamin',     middleName: '',            lastName: 'Badoles',     suffix: '',    gender: 'M', birthDate: null,          deathDate: null,               marriageDate: null,         deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                deathPlace: null,                                livingPlace: null,                marriagePlace: null,                        },
-            { key: 'K2GJ-YY3',       child: 'GH12-HQN', prefix: '',     firstName: 'Leoncia',            middleName: '',            lastName: 'Villanes',    suffix: '',    gender: 'F', birthDate: 'about 1852',  deathDate: '1922-01-08',       marriageDate: null,         deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: 'Panay, Capiz, PHL',                 deathPlace: 'Panay, Capiz, PHL',                 livingPlace: null,                marriagePlace: null,                        },
-        { key: 'GH12-W17',           child: 'GHBR-FK3', prefix: '',     firstName: 'Zelma',              middleName: 'Borja',       lastName: 'Vergara',     suffix: '',    gender: 'F', birthDate: '1941-07-08',  deathDate: '2020-02-16',       marriageDate: '1962-08',    deathAge: null,  living: false, hasDNA: false, hasImage: true,   birthPlace: 'Dulangan, Pilar, Capiz, PHL',       deathPlace: 'Santa Maria, Bulacan, PHL',         livingPlace: null,                marriagePlace: 'Pilar, Capiza, PHL',        marker: 'farming' },
-          { key: 'GH12-6YL',         child: 'GH12-W17', prefix: '',     firstName: 'Benigno',            middleName: '',            lastName: 'Vergara',     suffix: '',    gender: 'M', birthDate: null,          deathDate: null,               marriageDate: null,         deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                deathPlace: null,                                livingPlace: null,                marriagePlace: null,                        },
-          { key: 'GH12-DD8',         child: 'GH12-W17', prefix: '',     firstName: 'Enoria',             middleName: '',            lastName: 'Borja',       suffix: '',    gender: 'F', birthDate: null,          deathDate: 'after 1997-12-16', marriageDate: null,         deathAge: "90+", living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                deathPlace: null,                                livingPlace: null,                marriagePlace: null,                        },
+  { key: 'TEMP-000',                                                                                                                                                        gender: '',  birthDate: null,                deathDate: null,               marriageDate: null,         deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                deathPlace: null,                                livingPlace: null,                marriagePlace: null,                        height: 0, width: 0 },
+    { key: 'GQX8-CQP',               child: 'TEMP-000', prefix: '',     firstName: 'Arbyn',              middleName: 'Acosta',      lastName: 'Argabioso',   suffix: '',    gender: 'M', birthDate: '1995-04-19',        deathDate: null,               marriageDate: null,         deathAge: null,  living: true,  hasDNA: true,  hasImage: true,   birthPlace: 'Santa Cruz, Manila, PHL',           deathPlace: null,                                livingPlace: 'Metro Manila, PHL', marriagePlace: null,                        marker: 'software' },
+      { key: 'GQJK-L51',             child: 'GQX8-CQP', prefix: '',     firstName: 'Rolando',            middleName: 'Saplala',     lastName: 'Argabioso',   suffix: '',    gender: 'M', birthDate: '1965-10-09',        deathDate: null,               marriageDate: '2002-04-26', deathAge: null,  living: true,  hasDNA: true,  hasImage: true,   birthPlace: 'Poblacion, Caloocan, PHL',          deathPlace: null,                                livingPlace: 'Metro Manila, PHL', marriagePlace: 'Diliman, Quezon City, PHL', marker: 'government' },
+        { key: 'GQJK-LCT',           child: 'GQJK-L51', prefix: '',     firstName: 'Marcial',            middleName: 'Mia',         lastName: 'Argabioso',   suffix: '',    gender: 'M', birthDate: '1932-10-13',        deathDate: '2020-02-27',       marriageDate: '1963-01-23', deathAge: null,  living: false, hasDNA: false, hasImage: true,   birthPlace: 'Majayjay, Laguna, PHL',             deathPlace: 'Quezon City, PHL',                  livingPlace: null,                marriagePlace: 'Butuan, Laguna, PHL',       },
+          { key: 'GHBZ-TM4',         child: 'GQJK-LCT', prefix: '',     firstName: 'Eusebio',            middleName: 'Lopecillo',   lastName: 'Argabioso',   suffix: '',    gender: 'M', birthDate: 'about 1895',        deathDate: '1972-10-27',       marriageDate: null,         deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: 'Majayjay, Laguna, PHL',             deathPlace: 'Majayjay, Laguna, PHL',             livingPlace: null,                marriagePlace: null,                        marker: 'farming' },
+            { key: 'GHB8-RCH',       child: 'GHBZ-TM4', prefix: '',     firstName: 'Estebana',           middleName: '',            lastName: 'Lopecillo',   suffix: '',    gender: 'F', birthDate: 'about 1861',        deathDate: '1951-08-30',       marriageDate: null,         deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: 'Majayjay, Laguna, PHL',             deathPlace: 'Majayjay, Laguna, PHL',             livingPlace: null,                marriagePlace: null,                        },
+              { key: 'G2HQ-YQS',     child: 'GHB8-RCH', prefix: '',     firstName: 'Simplicio',          middleName: '',            lastName: 'Lopecillo',   suffix: '',    gender: 'M', birthDate: null,                deathDate: null,               marriageDate: null,         deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                deathPlace: null,                                livingPlace: null,                marriagePlace: null,                        },
+              { key: 'G2H7-Q75',     child: 'GHB8-RCH', prefix: '',     firstName: 'Gregoria',           middleName: '',            lastName: 'Villarubin',  suffix: '',    gender: 'F', birthDate: null,                deathDate: null,               marriageDate: null,         deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                deathPlace: null,                                livingPlace: null,                marriagePlace: null,                        },
+          { key: 'GHBZ-P5Q',         child: 'GQJK-LCT', prefix: '',     firstName: 'Francisca',          middleName: '',            lastName: 'Mia',         suffix: '',    gender: 'F', birthDate: 'before 1910',       deathDate: 'after 1936-10-13', marriageDate: null,         deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                deathPlace: null,                                livingPlace: null,                marriagePlace: null,                        },
+        { key: 'GHBZ-YVX',           child: 'GQJK-L51', prefix: '',     firstName: 'Lydia',              middleName: 'Perez',       lastName: 'Saplala',     suffix: '',    gender: 'F', birthDate: '1944-11-24',        deathDate: null,               marriageDate: '1963-01-23', deathAge: null,  living: true,  hasDNA: true,  hasImage: true,   birthPlace: 'Lubao, Pampanga, PHL',              deathPlace: null,                                livingPlace: 'Metro Manila, PHL', marriagePlace: 'Butuan, Laguna, PHL',       marker: 'retail' },
+          { key: 'GHB8-7T6',         child: 'GHBZ-YVX', prefix: '',     firstName: 'Fernando',           middleName: 'Sison',       lastName: 'Saplala',     suffix: '',    gender: 'M', birthDate: '1916-05-30',        deathDate: '1993-05-03',       marriageDate: null,         deathAge: null,  living: false, hasDNA: false, hasImage: true,   birthPlace: 'Lubao, Pampanga, PHL',              deathPlace: 'Caloocan, PHL',                     livingPlace: null,                marriagePlace: null,                        marker: 'military' },
+            { key: 'GNNH-JLM',       child: 'GHB8-7T6', prefix: '',     firstName: 'Estanislao',         middleName: '',            lastName: 'Saplala',     suffix: '',    gender: 'M', birthDate: null,                deathDate: null,               marriageDate: null,         deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                deathPlace: null,                                livingPlace: null,                marriagePlace: null,                        },
+            { key: 'GJJX-1SG',       child: 'GHB8-7T6', prefix: '',     firstName: 'Adela',              middleName: '',            lastName: 'Sison',       suffix: '',    gender: 'F', birthDate: null,                deathDate: null,               marriageDate: null,         deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                deathPlace: null,                                livingPlace: null,                marriagePlace: null,                        },
+          { key: 'GHB8-GZL',         child: 'GHBZ-YVX', prefix: '',     firstName: 'Lucina',             middleName: 'Gutierrez',   lastName: 'Perez',       suffix: '',    gender: 'F', birthDate: '1919-11-16',        deathDate: '1986-10-02',       marriageDate: null,         deathAge: null,  living: false, hasDNA: false, hasImage: true,   birthPlace: 'Orani, Bataan, PHL',                deathPlace: 'Dinalupihan, Bataan, PHL',          livingPlace: null,                marriagePlace: null,                        marker: 'housewife' },
+            { key: 'GHB8-M8D',       child: 'GHB8-GZL', prefix: '',     firstName: 'Victor',             middleName: '',            lastName: 'Perez',       suffix: '',    gender: 'M', birthDate: null,                deathDate: null,               marriageDate: null,         deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                deathPlace: null,                                livingPlace: null,                marriagePlace: null,                        },
+            { key: 'GHB8-M86',       child: 'GHB8-GZL', prefix: '',     firstName: 'Genoveba',           middleName: '',            lastName: 'Gutierrez',   suffix: '',    gender: 'F', birthDate: null,                deathDate: null,               marriageDate: null,         deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                deathPlace: null,                                livingPlace: null,                marriagePlace: null,                        },
+      { key: 'GQJK-G8W',             child: 'GQX8-CQP', prefix: '',     firstName: 'Corazon',            middleName: 'Maramba',     lastName: 'Acosta',      suffix: '',    gender: 'F', birthDate: '1971-03-10',        deathDate: '2018-05-25',       marriageDate: '2003-02-03', deathAge: null,  living: false, hasDNA: false, hasImage: true,   birthPlace: 'Sampaloc, Manila, PHL',             deathPlace: 'Santa Cruz, Laguna, PHL',           livingPlace: null,                marriagePlace: 'Pasig City, PHL',           marker: 'housewife' },
+        { key: 'GHBD-7M4',           child: 'GQJK-G8W', prefix: '',     firstName: 'Manuel',             middleName: 'San Agustin', lastName: 'Acosta',      suffix: 'Jr.', gender: 'M', birthDate: '1948-07-06',        deathDate: '1979-06-07',       marriageDate: '1966-03-26', deathAge: null,  living: false, hasDNA: false, hasImage: true,   birthPlace: 'España, Manila, PHL',               deathPlace: 'Pasadena, California, USA',         livingPlace: null,                marriagePlace: 'Santa Cruz, Manila, PHL',   marker: 'male-twin', marker2: 'seaman' },
+          { key: 'GHBD-9L6',         child: 'GHBD-7M4', prefix: '',     firstName: 'Manuel',             middleName: 'Bongco',      lastName: 'Acosta',      suffix: 'Sr.', gender: 'M', birthDate: '1913-11-10',        deathDate: '1994-11-20',       marriageDate: '1951-03-05', deathAge: null,  living: false, hasDNA: false, hasImage: true,   birthPlace: 'Orani, Bataan, PHL',                deathPlace: 'San Dimas, California, USA',        livingPlace: null,                marriagePlace: 'Tondo, Manila, PHL',        marker: 'police', marker2: 'investigate' },
+            { key: 'GHB8-SQN',       child: 'GHBD-9L6', prefix: '',     firstName: 'Ligorio',            middleName: '',            lastName: 'Acosta',      suffix: '',    gender: 'M', birthDate: 'about 1871',        deathDate: '1948-07-07',       marriageDate: null,         deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: 'Orani, Bataan, PHL',                deathPlace: 'Santa Cruz, Manila, PHL',           livingPlace: null,                marriagePlace: null,                        },
+            { key: 'GHB8-5K8',       child: 'GHBD-9L6', prefix: '',     firstName: 'Maximiana',          middleName: '',            lastName: 'Bongco',      suffix: '',    gender: 'F', birthDate: null,                deathDate: 'after 1951-03-05', marriageDate: null,         deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: 'PHL',                               deathPlace: null,                                livingPlace: null,                marriagePlace: null,                        },
+          { key: 'GHB8-DXY',         child: 'GHBD-7M4', prefix: '',     firstName: 'Natividad',          middleName: '',            lastName: 'San Agustin', suffix: '',    gender: 'F', birthDate: '1925-12-21',        deathDate: '2008-10-09',       marriageDate: '1951-03-05', deathAge: null,  living: false, hasDNA: false, hasImage: true,   birthPlace: 'Ermita, Manila, PHL',               deathPlace: 'San Dimas, California, USA',        livingPlace: null,                marriagePlace: 'Tondo, Manila, PHL',        marker: 'housewife' },
+            { key: 'GHB8-LCC',       child: 'GHB8-DXY', prefix: '',     firstName: 'Vicente',            middleName: '',            lastName: 'San Agustin', suffix: '',    gender: 'M', birthDate: null,                deathDate: null,               marriageDate: null,         deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                deathPlace: null,                                livingPlace: null,                marriagePlace: null,                        },
+            { key: 'GHB8-H7K',       child: 'GHB8-DXY', prefix: '',     firstName: 'Nena',               middleName: '',            lastName: '',            suffix: '',    gender: 'F', birthDate: null,                deathDate: null,               marriageDate: null,         deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                deathPlace: null,                                livingPlace: null,                marriagePlace: null,                        },
+        { key: 'GHB8-J1B',           child: 'GQJK-G8W', prefix: '',     firstName: 'Catalina',           middleName: 'Dumantay',    lastName: 'Maramba',     suffix: '',    gender: 'F', birthDate: '1943-01-28',        deathDate: '1974-08-10',       marriageDate: '1966-03-26', deathAge: null,  living: false, hasDNA: false, hasImage: true,   birthPlace: 'Sta. Barbara, Pangasinan, PHL',     deathPlace: 'Sangandaan, Caloocan, PHL',         livingPlace: null,                marriagePlace: 'Santa Cruz, Manila, PHL',   },
+          { key: 'GHB8-GB6',         child: 'GHB8-J1B', prefix: '',     firstName: 'Sotero',             middleName: 'Reyes',       lastName: 'Maramba',     suffix: 'Sr.', gender: 'M', birthDate: '1903-04-22',        deathDate: '1969-12-12',       marriageDate: null,         deathAge: null,  living: false, hasDNA: false, hasImage: true,   birthPlace: 'Sta. Barbara, Pangasinan, PHL',     deathPlace: 'Sangandaan, Caloocan, PHL',         livingPlace: null,                marriagePlace: null,                        marker: 'police', marker2: 'train' },
+            { key: 'LLQS-641',       child: 'GHB8-GB6', prefix: 'Don',  firstName: 'Miguel',             middleName: 'Bautista',    lastName: 'Maramba',     suffix: '',    gender: 'M', birthDate: 'about 1858',        deathDate: 'after 1902-06',    marriageDate: null,         deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: 'Sta. Barbara, Pangasinan, PHL',     deathPlace: 'Sta. Barbara, Pangasinan, PHL',     livingPlace: null,                marriagePlace: null,                        marker: 'government' },
+              { key: 'LLQS-6YC',     child: 'LLQS-641', prefix: '',     firstName: 'Guillermo',          middleName: 'Bautista',    lastName: 'Maramba',     suffix: '',    gender: 'M', birthDate: 'from 1800 to 1858', deathDate: null,               marriageDate: null,         deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                deathPlace: 'Sta. Barbara, Pangasinan, PHL',     livingPlace: null,                marriagePlace: null,                        marker: 'sales', marker2: 'cattle' },
+              { key: 'L281-614',     child: 'LLQS-641', prefix: '',     firstName: 'Maria',              middleName: 'Garcia',      lastName: 'Bautista',    suffix: '',    gender: 'F', birthDate: 'from 1800 to 1858', deathDate: null,               marriageDate: null,         deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                deathPlace: 'Sta. Barbara, Pangasinan, PHL',     livingPlace: null,                marriagePlace: null,                        },
+                { key: 'GC7T-H59',   child: 'L281-614', prefix: 'Don',  firstName: 'Agustin',            middleName: '',            lastName: 'Bautista',    suffix: '',    gender: 'M', birthDate: 'from 1735 to 1853', deathDate: 'after 1881',       marriageDate: null,         deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: 'Sta. Barbara, Pangasinan, PHL',     deathPlace: 'Sta. Barbara, Pangasinan, PHL',     livingPlace: null,                marriagePlace: null,                        marker: 'government' },
+                { key: 'GC7T-1PK',   child: 'L281-614', prefix: 'Doña', firstName: 'Felipa',             middleName: '',            lastName: 'Garcia',      suffix: '',    gender: 'F', birthDate: null,                deathDate: null,               marriageDate: null,         deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                deathPlace: null,                                livingPlace: null,                marriagePlace: null,                        },
+            { key: 'LLQS-6F1',       child: 'GHB8-GB6', prefix: '',     firstName: 'Mercedes',           middleName: 'Novilla',     lastName: 'Reyes',       suffix: '',    gender: 'F', birthDate: null,                deathDate: null,               marriageDate: null,         deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                deathPlace: null,                                livingPlace: null,                marriagePlace: null,                        },
+              { key: 'G7C3-B6P',     child: 'LLQS-6F1', prefix: '',     firstName: 'Gregorio',           middleName: '',            lastName: 'Reyes',       suffix: '',    gender: 'M', birthDate: null,                deathDate: null,               marriageDate: null,         deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                deathPlace: null,                                livingPlace: null,                marriagePlace: null,                        },
+              { key: 'G7C3-J9S',     child: 'LLQS-6F1', prefix: '',     firstName: 'Leocadia',           middleName: '',            lastName: 'Novilla',     suffix: '',    gender: 'F', birthDate: null,                deathDate: null,               marriageDate: null,         deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                deathPlace: null,                                livingPlace: null,                marriagePlace: null,                        },
+          { key: 'GHBD-9LY',         child: 'GHB8-J1B', prefix: '',     firstName: 'Cresencia',          middleName: '',            lastName: 'Dumantay',    suffix: '',    gender: 'F', birthDate: '1918-04-19',        deathDate: '1990-04-16',       marriageDate: null,         deathAge: null,  living: false, hasDNA: false, hasImage: true,   birthPlace: 'PHL',                               deathPlace: 'Sangandaan, Caloocan, PHL',         livingPlace: null,                marriagePlace: null,                        marker: 'apparel' },
+            { key: 'TEMP-001',       child: 'GHBD-9LY', prefix: '',     firstName: 'Unknown',            middleName: '',            lastName: 'name',        suffix: '',    gender: 'F', birthDate: 'before 1908',       deathDate: 'after 1918-04-19', marriageDate: null,         deathAge: "50+", living: false, hasDNA: false, hasImage: true,   birthPlace: 'PHL',                               deathPlace: 'PHL',                               livingPlace: null,                marriagePlace: null,                        },
+    { key: 'GHB5-TWN',               child: 'TEMP-000', prefix: '',     firstName: 'Mitchie',            middleName: 'Ajesta',      lastName: 'Adanza',      suffix: '',    gender: 'F', birthDate: '1994-12-16',        deathDate: null,               marriageDate: null,         deathAge: null,  living: true,  hasDNA: true,  hasImage: true,   birthPlace: 'Santa Cruz, Manila, PHL',           deathPlace: null,                                livingPlace: 'Metro Manila, PHL', marriagePlace: null,                        },
+      { key: 'GHB5-XTZ',             child: 'GHB5-TWN', prefix: '',     firstName: 'Darne',              middleName: 'Elican',      lastName: 'Adanza',      suffix: '',    gender: 'M', birthDate: '1964-06-22',        deathDate: null,               marriageDate: '1994-01-25', deathAge: null,  living: true,  hasDNA: false, hasImage: true,   birthPlace: 'Balingasag, Misamis Oriental, PHL', deathPlace: null,                                livingPlace: 'Metro Manila, PHL', marriagePlace: null,                        marker: 'manufacturing' },
+        { key: 'GH12-SVQ',           child: 'GHB5-XTZ', prefix: '',     firstName: 'Nestor',             middleName: 'Ladera',      lastName: 'Adanza',      suffix: '',    gender: 'M', birthDate: '1938-02-26',        deathDate: '2018-09-28',       marriageDate: null,         deathAge: null,  living: false, hasDNA: false, hasImage: true,   birthPlace: 'Balingasag, Misamis Oriental, PHL', deathPlace: 'Balingasag, Misamis Oriental, PHL', livingPlace: null,                marriagePlace: null,                        marker: 'farming' },
+          { key: 'GH12-DRN',         child: 'GH12-SVQ', prefix: '',     firstName: 'Felomino',           middleName: 'R',           lastName: 'Adanza',      suffix: '',    gender: 'M', birthDate: 'about 1901',        deathDate: '1990-11-03',       marriageDate: null,         deathAge: null,  living: false, hasDNA: false, hasImage: true,   birthPlace: 'Dumaguete, Negros Oriental, PHL',   deathPlace: 'Balingasag, Misamis Oriental, PHL', livingPlace: null,                marriagePlace: null,                        marker: 'farming' },
+          { key: 'GH12-3GN',         child: 'GH12-SVQ', prefix: '',     firstName: 'Consuelo',           middleName: '',            lastName: 'Ladera',      suffix: '',    gender: 'F', birthDate: null,                deathDate: 'after 1990-11-03', marriageDate: null,         deathAge: null,  living: false, hasDNA: false, hasImage: true,   birthPlace: 'PHL',                               deathPlace: 'PHL',                               livingPlace: null,                marriagePlace: null,                        },
+        { key: 'GH12-9F6',           child: 'GHB5-XTZ', prefix: '',     firstName: 'Rufa',               middleName: 'Acerto',      lastName: 'Elican',      suffix: '',    gender: 'F', birthDate: '1939-11-28',        deathDate: '2015-04-02',       marriageDate: null,         deathAge: null,  living: false, hasDNA: false, hasImage: true,   birthPlace: 'Balingasag, Misamis Oriental, PHL', deathPlace: 'Balingasag, Misamis Oriental, PHL', livingPlace: null,                marriagePlace: null,                        marker: 'farming' },
+          { key: 'GH12-9JZ',         child: 'GH12-9F6', prefix: '',     firstName: 'Cecilio',            middleName: '',            lastName: 'Elican',      suffix: '',    gender: 'M', birthDate: null,                deathDate: null,               marriageDate: null,         deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                deathPlace: null,                                livingPlace: null,                marriagePlace: null,                        marker: 'military' },
+          { key: 'GH12-35H',         child: 'GH12-9F6', prefix: '',     firstName: 'Jovita',             middleName: '',            lastName: 'Acerto',      suffix: '',    gender: 'F', birthDate: null,                deathDate: null,               marriageDate: null,         deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                deathPlace: null,                                livingPlace: null,                marriagePlace: null,                        },
+      { key: 'GHBR-FK3',             child: 'GHB5-TWN', prefix: '',     firstName: 'Mylen',              middleName: 'Vergara',     lastName: 'Ajesta',      suffix: '',    gender: 'F', birthDate: '1974-04-13',        deathDate: null,               marriageDate: '1994-01-25', deathAge: null,  living: true,  hasDNA: false, hasImage: true,   birthPlace: 'Sinamongan, Pilar, Capiz, PHL',     deathPlace: null,                                livingPlace: 'Manama, BHR',       marriagePlace: null,                        marker: 'beautician', marker2: 'manager' },
+        { key: 'GH12-Z3C',           child: 'GHBR-FK3', prefix: '',     firstName: 'Napoleon Crispolon', middleName: 'Badoles',     lastName: 'Ajesta',      suffix: '',    gender: 'M', birthDate: 'before 1968',       deathDate: 'after 1980-02-26', marriageDate: '1962-08',    deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: 'Binaobawan, Pilar, Capiz, PHL',     deathPlace: "PHL",                               livingPlace: null,                marriagePlace: 'Pilar, Capiza, PHL',        },
+          { key: 'GH12-XX4',         child: 'GH12-Z3C', prefix: '',     firstName: 'Manuel',             middleName: 'Bermúdez',    lastName: 'Ajesta',      suffix: '',    gender: 'M', birthDate: null,                deathDate: null,               marriageDate: null,         deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: 'Pilar, Capiz, PHL',                 deathPlace: null,                                livingPlace: null,                marriagePlace: null,                        },
+            { key: 'GKBR-M9Y',       child: 'GH12-XX4', prefix: '',     firstName: 'Eustaquio',          middleName: '',            lastName: 'Ajesta',      suffix: '',    gender: 'M', birthDate: null,                deathDate: null,               marriageDate: null,         deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                deathPlace: null,                                livingPlace: null,                marriagePlace: null,                        },
+            { key: 'GKBR-7P7',       child: 'GH12-XX4', prefix: '',     firstName: 'Florencia',          middleName: '',            lastName: 'Bermúdez',    suffix: '',    gender: 'F', birthDate: null,                deathDate: null,               marriageDate: null,         deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                deathPlace: null,                                livingPlace: null,                marriagePlace: null,                        },
+          { key: 'GH12-HQN',         child: 'GH12-Z3C', prefix: '',     firstName: 'Ursula',             middleName: 'Villanes',    lastName: 'Badoles',     suffix: '',    gender: 'F', birthDate: null,                deathDate: null,               marriageDate: null,         deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                deathPlace: null,                                livingPlace: null,                marriagePlace: null,                        },
+            { key: 'GKBT-9GD',       child: 'GH12-HQN', prefix: '',     firstName: 'Pedro Benjamin',     middleName: '',            lastName: 'Badoles',     suffix: '',    gender: 'M', birthDate: null,                deathDate: null,               marriageDate: null,         deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                deathPlace: null,                                livingPlace: null,                marriagePlace: null,                        },
+            { key: 'K2GJ-YY3',       child: 'GH12-HQN', prefix: '',     firstName: 'Leoncia',            middleName: '',            lastName: 'Villanes',    suffix: '',    gender: 'F', birthDate: 'about 1852',        deathDate: '1922-01-08',       marriageDate: null,         deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: 'Panay, Capiz, PHL',                 deathPlace: 'Panay, Capiz, PHL',                 livingPlace: null,                marriagePlace: null,                        },
+        { key: 'GH12-W17',           child: 'GHBR-FK3', prefix: '',     firstName: 'Zelma',              middleName: 'Borja',       lastName: 'Vergara',     suffix: '',    gender: 'F', birthDate: '1941-07-08',        deathDate: '2020-02-16',       marriageDate: '1962-08',    deathAge: null,  living: false, hasDNA: false, hasImage: true,   birthPlace: 'Dulangan, Pilar, Capiz, PHL',       deathPlace: 'Santa Maria, Bulacan, PHL',         livingPlace: null,                marriagePlace: 'Pilar, Capiza, PHL',        marker: 'farming' },
+          { key: 'GH12-6YL',         child: 'GH12-W17', prefix: '',     firstName: 'Benigno',            middleName: '',            lastName: 'Vergara',     suffix: '',    gender: 'M', birthDate: null,                deathDate: null,               marriageDate: null,         deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                deathPlace: null,                                livingPlace: null,                marriagePlace: null,                        },
+          { key: 'GH12-DD8',         child: 'GH12-W17', prefix: '',     firstName: 'Enoria',             middleName: '',            lastName: 'Borja',       suffix: '',    gender: 'F', birthDate: null,                deathDate: 'after 1997-12-16', marriageDate: null,         deathAge: "90+", living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                deathPlace: null,                                livingPlace: null,                marriagePlace: null,                        },
 ];
 
 
@@ -580,9 +580,9 @@ TREE_DATA.forEach(node => {
 
 const SOURCES = {
 
-  // =======================================================================
-  // Other sources
-  // =======================================================================
+  // ___________________________________________________________________________
+  // ===========================================================================
+  // Undocumented Sources
 
   'Present and Direct Interactions': [
     'TEMP-000:GHB5-TWN:parentChild', // aesthetic data consideration
@@ -609,6 +609,7 @@ const SOURCES = {
     'GHBR-FK3:marker',
     'GHBR-FK3:marker2',
   ],
+
   // Should only be used on ancestors with living children / grand children
   // since this type of source would have a bigger "mistake chance"
   // as the generation gets older (Family Tree started on March 2020)
@@ -623,11 +624,7 @@ const SOURCES = {
     'GHBD-7M4:marker2',
 
     // Directly from Nanay (daughter of Lola Catalina)
-    'GHB8-J1B:firstName',
-    'GHB8-J1B:lastName',
-    'GHB8-J1B:birthDate',
     'GHB8-J1B:deathDate',
-    'GHB8-J1B:birthPlace',
 
     // Directly from Tito Darne (son of Lolo Nestor)
     'GH12-SVQ:firstName',
@@ -635,13 +632,13 @@ const SOURCES = {
     'GH12-SVQ:birthPlace',
 
     // Directly from Lolo Marcial (son of Lola Francisca)
-    'GHBZ-P5Q:firstName',
+    // According to Lola Lydia and Lolo Marcial, Lola Francisca
+    // died around the time Lolo Marcial was 4 years old
     'GHBZ-P5Q:living',
+    'GHBZ-P5Q:deathDate',
 
     // Directly from Lola Lydia and Lolo Boning (children of Lolo Andong)
-    'GHB8-7T6:firstName',
     'GHB8-7T6:middleName',
-    'GHB8-7T6:lastName',
     'GHB8-7T6:birthDate',
     'GHB8-7T6:birthPlace',
     'GHB8-7T6:deathDate',
@@ -650,7 +647,6 @@ const SOURCES = {
     'GHB8-7T6:marker',
 
     // Directly from Lola Lydia and Lolo Boning (children of Lola Lucing)
-    'GHB8-GZL:firstName',
     'GHB8-GZL:middleName',
     'GHB8-GZL:lastName',
     'GHB8-GZL:birthDate',
@@ -705,18 +701,30 @@ const SOURCES = {
 
     // Directly from Tita Mylen (daughter of Lolo Napoleon)
     'GH12-Z3C:living',
+
+    // Directly from Lola Becky
+    // (daughter of Lola Cresencia, sister of Lola Catalina)
+    'GHBD-9LY:birthPlace',
+    'GHBD-9LY:marker',  // saws or creates clothes
+    'LLQS-641:firstName',
+    'LLQS-641:GHB8-GB6:parentChild',
   ],
+
   // Suffix verification: Existence of same-name son
   "Existance of same-name son": [
     'GHBD-9L6:suffix',
     'GHB8-GB6:suffix',
   ],
+
   "Existance of same-name father": [
     'GHBD-7M4:suffix',
   ],
+
   // Doesn't make sense for them to be alive
   // Everyone in Lola Estebana's generation is probably dead
+  // or everyone born on 1900s and older
   'PROBABLY NOT LIVING ANYMORE': [
+    'GHBZ-TM4:living',
     'GHB8-RCH:living',
     'G2HQ-YQS:living',
     'G2H7-Q75:living',
@@ -742,14 +750,10 @@ const SOURCES = {
     'GKBT-9GD:living',
     'K2GJ-YY3:living',
   ],
-  // My Engagement: Proposal to Mitchie (Facebook Post)
-  'https://www.facebook.com/arbyn.argabioso/posts/pfbid02U3X7BU11Lb41vrbLQKrAyGe8oCEvd8SSqbY8rcCZ2MEQzcb3BUQJWL8UPhF1ZttYl': [
-    'GQX8-CQP:GHB5-TWN:partner',
-  ],
-  // My Engagement: Proposal to Mitchie (Video)
-  'https://www.youtube.com/watch?v=LNkv-M1TMtg': [
-    'GQX8-CQP:GHB5-TWN:partner',
-  ],
+
+  // ___________________________________________________________________________
+  // ===========================================================================
+  // Me, Mitch, and Direct Ancestors
 
   // =======================================================================
   // Argabioso, Arbyn Acosta
@@ -760,7 +764,7 @@ const SOURCES = {
   // =======================================================================
 
   // Certificate of Birth
-  'https://drive.google.com/file/d/1B1umw_xm5i-AmNp9YzshX2DebSAhj3cz/view?usp=sharing': [
+  'https://drive.google.com/file/d/1B1umw_xm5i-AmNp9YzshX2DebSAhj3cz/view': [
     'GQX8-CQP:birthPlace',
     'GQX8-CQP:firstName',
     'GQX8-CQP:middleName',
@@ -784,7 +788,7 @@ const SOURCES = {
   ],
 
   // Certificate of Baptism
-  'https://drive.google.com/file/d/1nJVXB-p0ZM0OUXsXK4TyI7JRwvbDln53/view?usp=sharing': [
+  'https://drive.google.com/file/d/1nJVXB-p0ZM0OUXsXK4TyI7JRwvbDln53/view': [
     'GQX8-CQP:firstName',
     'GQX8-CQP:middleName',
     'GQX8-CQP:lastName',
@@ -820,6 +824,15 @@ const SOURCES = {
     // Cynthia Haber
   ],
 
+  // Proposal to Mitchie, Facebook
+  'https://www.facebook.com/arbyn.argabioso/posts/pfbid02U3X7BU11Lb41vrbLQKrAyGe8oCEvd8SSqbY8rcCZ2MEQzcb3BUQJWL8UPhF1ZttYl': [
+    'GQX8-CQP:GHB5-TWN:partner',
+  ],
+  // Proposal to Mitchie, YouTube
+  'https://www.youtube.com/watch?v=LNkv-M1TMtg': [
+    'GQX8-CQP:GHB5-TWN:partner',
+  ],
+
   // =======================================================================
   // Argabioso, Rolando Saplala
   //
@@ -829,7 +842,7 @@ const SOURCES = {
   // =======================================================================
 
   // Certificate of Birth
-  'https://drive.google.com/file/d/1degLEAa8cBBxJrRsWwz0t6wHh9vs29cH/view?usp=sharing': [
+  'https://drive.google.com/file/d/1degLEAa8cBBxJrRsWwz0t6wHh9vs29cH/view': [
     'GQJK-L51:birthPlace',
     'GQJK-L51:firstName',
     'GQJK-L51:middleName',
@@ -859,7 +872,7 @@ const SOURCES = {
   ],
 
   // Certificate of Marriage
-  'https://drive.google.com/file/d/1kMHiW0mbPuPGyGOBm08qY6yWgvnHd82K/view?usp=sharing': [
+  'https://drive.google.com/file/d/1kMHiW0mbPuPGyGOBm08qY6yWgvnHd82K/view': [
     'GQJK-L51:gender',
     'GQJK-L51:firstName',
     'GQJK-L51:middleName',
@@ -885,6 +898,13 @@ const SOURCES = {
     'GQJK-L51:marriageDate',
   ],
 
+  // News Article, Inquirer.NET
+  'https://drive.google.com/file/d/1Zw8fzrh9ELRvIx1W7ncqT010edcT6hpK/view': [
+    'GQJK-L51:marker',
+    'GQJK-L51:firstName',
+    'GQJK-L51:lastName',
+  ],
+
   // =======================================================================
   // Argabioso, Marcial Mia
   //
@@ -894,7 +914,7 @@ const SOURCES = {
   // =======================================================================
 
   // Certificate of Marriage
-  'https://drive.google.com/file/d/1C2TFs8kVvf6lWq-ANjEEG165f7bWUZCs/view?usp=sharing&side=argabioso': [
+  'https://drive.google.com/file/d/1C2TFs8kVvf6lWq-ANjEEG165f7bWUZCs/view?side=argabioso': [
     'GQJK-LCT:GHBZ-YVX:partner',
 
     'GQJK-LCT:marriagePlace',
@@ -925,8 +945,17 @@ const SOURCES = {
     // Consuelo N. Aquino
   ],
 
+  // Petition for Reconstitution of Title, Official Gazette
+  'https://drive.google.com/file/d/1tu21m1RMRjiTwPfzp1VrFENbPUhLsEKq/view': [
+    'GQJK-LCT:firstName',
+    'GQJK-LCT:lastName',
+
+    'GHBZ-TM4:firstName',
+    'GHBZ-TM4:lastName',
+  ],
+
   // Grave Marker
-  'https://drive.google.com/file/d/1x1M6Z1asZU99nMTdtKYdfDxY_w_s2Gnc/view?usp=share_link': [
+  'https://drive.google.com/file/d/1x1M6Z1asZU99nMTdtKYdfDxY_w_s2Gnc/view': [
     // The grave marker is in a different city compared to where Lolo
     // Marcial died. He died in St. Luke's Medical Center in Quezon City
     'GQJK-LCT:living',
@@ -939,6 +968,85 @@ const SOURCES = {
   ],
 
   // =======================================================================
+  // Argabioso, Eusebio Lopecillo
+  //
+  // GHBZ-TM4 - Argabioso, Eusebio Lopecillo
+  // GHB8-RCH - Lopecillo, Estebana
+  // =======================================================================
+
+  // Certificate of Death
+  'https://drive.google.com/file/d/1SQy34nGR1Z5-AqNSZDInfkewArzP_xqp/view': [
+    'GHBZ-TM4:living',
+    'GHBZ-TM4:deathPlace',
+    'GHBZ-TM4:firstName',
+    'GHBZ-TM4:middleName',
+    'GHBZ-TM4:lastName',
+    'GHBZ-TM4:deathDate',
+    'GHBZ-TM4:gender',
+
+    'GHBZ-P5Q:living',
+
+    'GHBZ-TM4:birthDate',
+    'GHBZ-TM4:marker',
+    'GHBZ-TM4:birthPlace',
+
+    'GHB8-RCH:GHBZ-TM4:parentChild',
+    'GHB8-RCH:gender',
+    'GHB8-RCH:firstName',
+    'GHB8-RCH:lastName',
+  ],
+
+  // =======================================================================
+  // Lopecillo, Estebana
+  //
+  // GHB8-RCH - Lopecillo, Estebana
+  // G2HQ-YQS - Lopecillo, Simplicio
+  // G2H7-Q75 - Villarubin, Gregoria
+  // =======================================================================
+
+  // Certificate of Death
+  'https://drive.google.com/file/d/1yf_M5CJgnXsHGFvFmF5Uzfp4YrsAnfUY/view': [
+    'GHB8-RCH:living',
+    'GHB8-RCH:deathPlace',
+    'GHB8-RCH:firstName',
+    'GHB8-RCH:lastName',
+    'GHB8-RCH:gender',
+    'GHB8-RCH:deathDate',
+    'GHB8-RCH:birthDate',
+    'GHB8-RCH:birthPlace',
+  ],
+
+  // FamilySearch: Simplicio Lopecillo and Gregoria Villarubin (TODO)
+  'https://www.familysearch.org/ark:/61903/1:1:66XW-VQRT': [
+    'G2HQ-YQS:GHB8-RCH:parentChild',
+    'G2HQ-YQS:firstName',
+    'G2HQ-YQS:lastName',
+    'G2HQ-YQS:gender',
+
+    'G2H7-Q75:GHB8-RCH:parentChild',
+    'G2H7-Q75:firstName',
+    'G2H7-Q75:lastName',
+    'G2H7-Q75:gender',
+
+    'G2HQ-YQS:G2H7-Q75:partner',
+  ],
+
+  // FamilySearch: Another record regarding Lolo Simplicio (TODO)
+  'https://www.familysearch.org/ark:/61903/1:1:66X6-LG3J': [
+    'G2HQ-YQS:GHB8-RCH:parentChild',
+    'G2HQ-YQS:firstName',
+    'G2HQ-YQS:lastName',
+    'G2HQ-YQS:gender',
+
+    'G2H7-Q75:GHB8-RCH:parentChild',
+    'G2H7-Q75:firstName',
+    'G2H7-Q75:lastName',
+    'G2H7-Q75:gender',
+
+    'G2HQ-YQS:G2H7-Q75:partner',
+  ],
+
+  // =======================================================================
   // Saplala, Lydia Saplala
   //
   // GHBZ-YVX - Saplala, Lydia Saplala
@@ -947,7 +1055,7 @@ const SOURCES = {
   // =======================================================================
 
   // Certificate of Birth
-  'https://drive.google.com/file/d/1Yy9S1Y4NOilHHulCeejkeeY1BUbzgRyn/view?usp=sharing': [
+  'https://drive.google.com/file/d/1Yy9S1Y4NOilHHulCeejkeeY1BUbzgRyn/view': [
     'GHBZ-YVX:firstName',
     'GHBZ-YVX:middleName',
     'GHBZ-YVX:lastName',
@@ -975,7 +1083,7 @@ const SOURCES = {
   ],
 
   // Certificate of Marriage
-  'https://drive.google.com/file/d/1C2TFs8kVvf6lWq-ANjEEG165f7bWUZCs/view?usp=sharing&side=saplala': [
+  'https://drive.google.com/file/d/1C2TFs8kVvf6lWq-ANjEEG165f7bWUZCs/view?side=saplala': [
     'GQJK-LCT:GHBZ-YVX:partner',
 
     'GHBZ-YVX:marriagePlace',
@@ -1015,7 +1123,7 @@ const SOURCES = {
   // =======================================================================
 
   // Certificate of Live Birth
-  'https://drive.google.com/file/d/1Db5lGDp-mhJH7LAXnuijFXBc1c1vA07j/view?usp=sharing': [
+  'https://drive.google.com/file/d/1Db5lGDp-mhJH7LAXnuijFXBc1c1vA07j/view': [
     'GQJK-G8W:birthPlace',
     'GQJK-G8W:firstName',
     'GQJK-G8W:middleName',
@@ -1042,7 +1150,7 @@ const SOURCES = {
   ],
 
   // Certificate of Baptism
-  'https://drive.google.com/file/d/1yqWECbcDTyhFig6IiK_AqPwXfL7gk0e0/view?usp=sharing': [
+  'https://drive.google.com/file/d/1yqWECbcDTyhFig6IiK_AqPwXfL7gk0e0/view': [
     'GQJK-G8W:firstName',
     'GQJK-G8W:lastName',
     'GQJK-G8W:birthDate',
@@ -1073,7 +1181,7 @@ const SOURCES = {
   ],
 
   // Certificate of Marriage
-  'https://drive.google.com/file/d/17vMMCyBJ2qOyjFYCtb7UWkIJrRymiz8_/view?usp=sharing': [
+  'https://drive.google.com/file/d/17vMMCyBJ2qOyjFYCtb7UWkIJrRymiz8_/view': [
     'GQJK-G8W:gender',
     'GQJK-G8W:firstName',
     'GQJK-G8W:middleName',
@@ -1097,7 +1205,7 @@ const SOURCES = {
   ],
 
   // Certificate of Death
-  'https://drive.google.com/file/d/1JArFl6_m-kuvyPf-LqDLU3_SapZzCvkt/view?usp=sharing': [
+  'https://drive.google.com/file/d/1JArFl6_m-kuvyPf-LqDLU3_SapZzCvkt/view': [
     'GQJK-G8W:living',
     'GQJK-G8W:firstName',
     'GQJK-G8W:lastName',
@@ -1108,7 +1216,7 @@ const SOURCES = {
   ],
 
   // Grave Marker
-  'https://drive.google.com/file/d/1sIWWgh8zfcIYtQfk2rIm4iW97sGzgK-x/view?usp=sharing': [
+  'https://drive.google.com/file/d/1sIWWgh8zfcIYtQfk2rIm4iW97sGzgK-x/view': [
     // Photo taken in Magdalena, Laguna. Nanay died in Santa Cruz, Laguna
     'GQJK-G8W:living',
     'GQJK-G8W:firstName',
@@ -1119,11 +1227,570 @@ const SOURCES = {
   ],
 
   // =======================================================================
+  // Acosta, Manuel San Agustin Jr.
+  //
+  // GHBD-7M4 - Acosta, Manuel San Agustin Jr.
+  // GHBD-9L6 - Acosta, Manuel Bongco Sr.
+  // GHB8-DXY - San Agustin, Natividad
+  // =======================================================================
+
+  // Certificate of Marriage, City
+  'https://drive.google.com/file/d/1_3rvIfv82-KWjBsaZawQV4lMFUYSB_NK/view?side=acosta': [
+    'GHBD-7M4:GHB8-J1B:partner',
+
+    'GHBD-7M4:marriagePlace',
+    'GHBD-7M4:gender',
+    'GHBD-7M4:firstName',
+    'GHBD-7M4:lastName',
+    'GHBD-7M4:suffix',
+
+    'GHBD-9L6:GHBD-7M4:parentChild',
+    'GHBD-9L6:gender',
+    'GHBD-9L6:firstName',
+    'GHBD-9L6:lastName',
+
+    'GHB8-DXY:GHBD-7M4:parentChild',
+    'GHB8-DXY:gender',
+    'GHB8-DXY:firstName',
+    'GHB8-DXY:lastName',
+
+    'GHBD-9L6:GHB8-DXY:partner',
+
+    'GHBD-7M4:marriageDate',
+
+    // Witnesses
+    // Josue Syquimsiam
+    // Aquilino Crame
+    // Milagros Caguioa
+    // Cresencia Maramba
+    // Jenerining Reyes
+  ],
+
+  // Certifacte of Marriage, Church
+  'https://drive.google.com/file/d/1zjeJs9azWMLnnEjulRpAnBi8Vno4H_9U/view?side=acosta': [
+    'GHBD-7M4:marriagePlace',
+    'GHBD-7M4:marriageDate',
+    'GHBD-7M4:firstName',
+    'GHBD-7M4:middleName',
+    'GHBD-7M4:lastName',
+  ],
+
+  // California Deaths and Burials, FamilySearch
+  // https://www.familysearch.org/ark:/61903/1:1:HGZ8-33ZM
+  'https://drive.google.com/file/d/194CO9-EnmMLwhHPGe0qTO1d3G7HGtTZl/view': [
+    'GHBD-7M4:living',
+    'GHBD-7M4:firstName',
+    'GHBD-7M4:middleName',
+    'GHBD-7M4:lastName',
+    'GHBD-7M4:suffix',
+    'GHBD-7M4:birthDate',
+    'GHBD-7M4:birthPlace',
+    'GHBD-7M4:deathDate',
+    'GHBD-7M4:deathPlace',
+
+    'GHBD-9L6:GHBD-7M4:parentChild',
+    'GHBD-9L6:firstName',
+    'GHBD-9L6:lastName',
+    'GHBD-9L6:gender',
+    'GHBD-9L6:birthPlace',
+
+    'GHB8-DXY:GHBD-7M4:parentChild',
+    'GHB8-DXY:firstName',
+    'GHB8-DXY:gender',
+    'GHB8-DXY:birthPlace',
+
+    'GHBD-9L6:GHB8-DXY:partner',
+  ],
+
+  // California Death Index, FamilySearch
+  // https://www.familysearch.org/ark:/61903/1:1:VP27-9XM
+  'https://drive.google.com/file/d/1Yclt46UY9IV4Pp4xyfuZitegj4B5iXN7/view': [
+    'GHBD-7M4:living',
+    'GHBD-7M4:firstName',
+    'GHBD-7M4:middleName',
+    'GHBD-7M4:lastName',
+    'GHBD-7M4:deathDate',
+    'GHBD-7M4:deathPlace',
+    'GHBD-7M4:birthDate',
+    'GHBD-7M4:birthPlace',
+  ],
+
+  // =======================================================================
+  // Acosta, Manuel Bongco Sr.
+  //
+  // GHBD-9L6 - Acosta, Manuel Bongco Sr.
+  // GHB8-SQN - Acosta, Ligorio
+  // GHB8-5K8 - Bongco, Maximiana
+  // =======================================================================
+
+  // Certificate of Marriage - Page 1
+  'https://drive.google.com/file/d/1L4zy5f_l9gYFBQQ68WdVFLDunwFoKgru/view?side=acosta': [
+    'GHBD-9L6:GHB8-DXY:partner',
+
+    'GHBD-9L6:gender',
+    'GHBD-9L6:firstName',
+    'GHBD-9L6:middleName',
+    'GHBD-9L6:lastName',
+
+    'GHB8-SQN:GHBD-9L6:parentChild',
+    'GHB8-SQN:gender',
+    'GHB8-SQN:firstName',
+    'GHB8-SQN:lastName',
+
+    'GHB8-5K8:GHBD-9L6:parentChild',
+    'GHB8-5K8:gender',
+    'GHB8-5K8:firstName',
+    'GHB8-5K8:lastName',
+
+    'GHB8-SQN:GHB8-5K8:partner',
+
+    'GHBD-9L6:marriagePlace',
+    'GHBD-9L6:marriageDate',
+  ],
+
+  // Certificate of Marriage - Complete
+  'https://drive.google.com/file/d/16SOA-h6729Zochb7g906v_LH7Mej7dn6/view?side=acosta': [
+    // All details from page 1 are sourced from a better copy. So this
+    // source only include sources from page 2 and 3.
+
+    'GHBD-9L6:GHB8-DXY:partner',
+
+    'GHBD-9L6:firstName',
+    'GHBD-9L6:middleName',
+    'GHBD-9L6:lastName',
+
+    'GHBD-9L6:GHBD-7M4:parentChild',
+    'GHB8-DXY:GHBD-7M4:parentChild',
+
+    'GHBD-7M4:firstName',
+    'GHBD-7M4:birthDate',
+    'GHBD-7M4:marker',
+  ],
+
+  // Certificate of Death
+  'https://drive.google.com/file/d/1JuyRHuSaar2p3RM0nUjWX-KPMAGjk2FK/view': [
+    'GHBD-9L6:living',
+
+    'GHBD-9L6:firstName',
+    'GHBD-9L6:middleName',
+    'GHBD-9L6:lastName',
+    'GHBD-9L6:birthDate',
+    'GHBD-9L6:gender',
+    'GHBD-9L6:deathDate',
+    'GHBD-9L6:birthPlace',
+    'GHBD-9L6:marker',
+    'GHBD-9L6:marker2',
+
+    'GHB8-DXY:GHBD-9L6:partner',
+    'GHB8-DXY:gender',
+    'GHB8-DXY:firstName',
+    'GHB8-DXY:lastName',
+
+    'GHB8-SQN:GHBD-9L6:parentChild',
+    'GHB8-SQN:gender',
+    'GHB8-SQN:lastName',
+    'GHB8-SQN:birthPlace',
+
+    'GHB8-5K8:GHBD-9L6:parentChild',
+    'GHB8-5K8:gender',
+    'GHB8-5K8:lastName',
+    'GHB8-5K8:birthPlace',
+
+    'GHB8-SQN:GHB8-5K8:partner',
+
+    'GHBD-9L6:deathPlace',
+  ],
+
+  // =======================================================================
+  // Acosta, Ligorio
+  //
+  // GHB8-SQN - Acosta, Ligorio
+  // =======================================================================
+
+  // Certificate of Death
+  'https://drive.google.com/file/d/1MIuMf7Q89LU89gmeNNZlH8lgKeMUR_yU/view': [
+    'GHB8-SQN:living',
+
+    'GHB8-SQN:firstName',
+    'GHB8-SQN:lastName',
+    'GHB8-SQN:gender',
+    'GHB8-SQN:deathDate',
+    'GHB8-SQN:birthDate',
+    'GHB8-SQN:deathPlace',
+
+    'GHB8-5K8:firstName',
+    'GHB8-5K8:lastName',
+
+    'GHBD-9L6:firstName',
+    'GHBD-9L6:middleName',
+    'GHBD-9L6:lastName',
+  ],
+
+  // Family Search: Lolo Ligorio Death Record
+  // 'https://www.familysearch.org/ark:/61903/1:1:FV6D-SZH': [
+  'https://drive.google.com/file/d/1AL6hsO1Snvv-_aOovfP88-w0oxPjQs4i/view': [
+    'GHB8-SQN:living',
+
+    'GHB8-SQN:deathPlace',
+    'GHB8-SQN:firstName',
+    'GHB8-SQN:lastName',
+    'GHB8-SQN:birthDate',
+    'GHB8-SQN:gender',
+    'GHB8-SQN:deathDate',
+    'GHB8-SQN:birthPlace',
+
+    'GHB8-DXY:firstName',
+    'GHB8-DXY:lastName',
+  ],
+
+  // =======================================================================
+  // San Agustin, Natividad
+  //
+  // GHB8-DXY - San Agustin, Natividad
+  // GHB8-LCC - San Agustin, Vicente
+  // GHB8-H7K - Nena
+  // =======================================================================
+
+  // Certificate of Marriage - Page 1
+  'https://drive.google.com/file/d/1L4zy5f_l9gYFBQQ68WdVFLDunwFoKgru/view?side=san+agustin': [
+    'GHBD-9L6:GHB8-DXY:partner',
+
+    'GHB8-DXY:gender',
+    'GHB8-DXY:firstName',
+    'GHB8-DXY:lastName',
+
+    'GHB8-LCC:GHB8-DXY:parentChild',
+    'GHB8-LCC:gender',
+    'GHB8-LCC:firstName',
+    'GHB8-LCC:lastName',
+
+    'GHB8-H7K:GHB8-DXY:parentChild',
+    'GHB8-H7K:gender',
+    'GHB8-H7K:firstName',
+
+    'GHB8-LCC:GHB8-H7K:partner',
+
+    'GHB8-DXY:marriagePlace',
+    'GHB8-DXY:marriageDate',
+  ],
+
+  // U.S. Social Security Death Index, MyHeritage
+  // https://www.myheritage.com/research/record-10002-81189365/
+  'https://drive.google.com/file/d/19m_AfnmTfHEdEy_IsgSWB9g1tREZnoJp/view': [
+    'GHB8-DXY:living',
+    'GHB8-DXY:firstName',
+    'GHB8-DXY:lastName',
+    'GHB8-DXY:birthDate',
+    'GHB8-DXY:deathDate',
+    'GHB8-DXY:deathPlace',
+  ],
+
+  // Grave Marker
+  'https://drive.google.com/file/d/10Z0kurjxNy0s7M0um4w5SxFMAFWA8Ivm/view': [
+    'GHB8-DXY:living',
+    'GHB8-DXY:firstName',
+
+    // Married Lastname
+    'GHB8-DXY:GHBD-9L6:partner',
+
+    'GHB8-DXY:birthDate',
+    'GHB8-DXY:deathDate',
+  ],
+
+  // =======================================================================
+  // Maramba, Catalina Dumantay
+  //
+  // GHB8-J1B - Maramba, Catalina Dumantay
+  // GHB8-GB6 - Maramba, Sotero Reyes Sr.
+  // GHBD-9LY - Dumantay, Cresencia
+  // =======================================================================
+
+  // Philippines, Manila, Civil Registration, 1899-1984, FamilySearch
+  // https://www.familysearch.org/ark:/61903/1:1:QKJT-S44Z
+  'https://drive.google.com/file/d/1gKlJX95oRihP2yIJ9ukp-0gFKWAAGiIL/view': [
+    'GHB8-J1B:firstName',
+    'GHB8-J1B:lastName',
+    'GHB8-J1B:gender',
+    'GHB8-J1B:birthDate',
+
+    'GHB8-GB6:GHB8-J1B:parentChild',
+    'GHB8-GB6:gender',
+    'GHB8-GB6:firstName',
+    'GHB8-GB6:lastName',
+
+    'GHBD-9LY:GHB8-J1B:parentChild',
+    'GHBD-9LY:gender',
+    'GHBD-9LY:firstName',
+    'GHBD-9LY:lastName',
+
+    'GHB8-GB6:GHBD-9LY:partner',
+  ],
+
+  // Certificate of Marriage, City
+  'https://drive.google.com/file/d/1_3rvIfv82-KWjBsaZawQV4lMFUYSB_NK/view?side=maramba': [
+    'GHBD-7M4:GHB8-J1B:partner',
+
+    'GHB8-J1B:marriagePlace',
+    'GHB8-J1B:gender',
+    'GHB8-J1B:firstName',
+    'GHB8-J1B:middleName',
+    'GHB8-J1B:lastName',
+
+    'GHB8-GB6:GHB8-J1B:parentChild',
+    'GHB8-GB6:gender',
+    'GHB8-GB6:firstName',
+    'GHB8-GB6:lastName',
+
+    'GHBD-9LY:GHB8-J1B:parentChild',
+    'GHBD-9LY:gender',
+    'GHBD-9LY:firstName',
+    'GHBD-9LY:lastName',
+
+    'GHB8-GB6:GHBD-9LY:partner',
+
+    'GHB8-J1B:marriageDate',
+
+    // Witnesses
+    // Josue Syquimsiam
+    // Aquilino Crame
+    // Milagros Caguioa
+    // Cresencia Maramba
+    // Jenerining Reyes
+  ],
+
+  // Certifacte of Marriage, Church
+  'https://drive.google.com/file/d/1zjeJs9azWMLnnEjulRpAnBi8Vno4H_9U/view?side=maramba': [
+    'GHB8-J1B:marriagePlace',
+    'GHB8-J1B:marriageDate',
+    'GHB8-J1B:firstName',
+    'GHB8-J1B:middleName',
+    'GHB8-J1B:lastName',
+  ],
+
+  // Grave Marker
+  'https://drive.google.com/file/d/1AeoNewX7fEeAaihfBI3Tz6kNA9ia0m-D/view': [
+    // I took the photo from Sangandaan Cemetery
+    'GHB8-J1B:deathPlace',
+    'GHB8-GB6:deathPlace',
+    'GHBD-9LY:deathPlace',
+
+    'GHB8-J1B:living',
+    'GHB8-J1B:firstName',
+
+    'GHB8-GB6:living',
+    'GHB8-GB6:firstName',
+    'GHB8-GB6:middleName',
+    'GHB8-GB6:lastName',
+    'GHB8-GB6:suffix',
+    'GHB8-GB6:birthDate',
+    'GHB8-GB6:deathDate',
+
+    'GHBD-9LY:living',
+    'GHBD-9LY:firstName',
+    'GHBD-9LY:lastName',
+    'GHBD-9LY:birthDate',
+    'GHBD-9LY:deathDate',
+  ],
+
+  // =======================================================================
+  // Maramba, Sotero Reyes Sr.
+  //
+  // GHB8-GB6 - Maramba, Sotero Reyes Sr.
+  // LLQS-641 - Maramba, Miguel Bautista
+  // LLQS-6F1 - Reyes, Mercedes Novilla
+  // =======================================================================
+
+  // News Article, The Malaya Tribune
+  'https://drive.google.com/file/d/15o0fdYYMYTzXQ3ikiMCOqy-YlfAND76C/view': [
+    'GHB8-GB6:firstName',
+    'GHB8-GB6:lastName',
+    'GHB8-GB6:marker',
+    'GHB8-GB6:marker2',
+  ],
+
+  // Certificate of Death
+  'https://drive.google.com/file/d/1Pn6Xvn7ucwnzTgNTcFBsQq9hzAnARp51/view': [
+    'GHB8-GB6:living',
+
+    'GHB8-GB6:firstName',
+    'GHB8-GB6:lastName',
+    'GHB8-GB6:deathDate',
+    'GHB8-GB6:gender',
+    'GHB8-GB6:birthDate',
+    'GHB8-GB6:marker2',
+    'GHB8-GB6:birthPlace',
+
+    'GHBD-9LY:GHB8-GB6:partner',
+    'GHBD-9LY:gender',
+    'GHBD-9LY:firstName',
+    'GHBD-9LY:lastName',
+  ],
+
+  // =======================================================================
+  // Maramba, Miguel Bautista
+  //
+  // LLQS-641 - Maramba, Miguel Bautista
+  // LLQS-6YC - Maramba, Guillermo Bautista
+  // L281-614 - Bautista, Maria Garcia
+  // =======================================================================
+
+  // Geni Profile
+  // https://www.geni.com/people/Miguel-Maramba/4012194445110022663
+  'https://drive.google.com/file/d/1PGx6mKequtCtKWRjEAdJ999OX78Rgmvq/view': [
+    'LLQS-641:firstName',
+    'LLQS-641:middleName',
+    'LLQS-641:lastName',
+    'LLQS-641:gender',
+    'LLQS-641:birthDate',
+
+    'LLQS-6YC:LLQS-641:parentChild',
+    'LLQS-6YC:firstName',
+    'LLQS-6YC:middleName',
+    'LLQS-6YC:lastName',
+
+    'L281-614:LLQS-641:parentChild',
+    'L281-614:firstName',
+    'L281-614:middleName',
+    'L281-614:lastName',
+
+    'LLQS-6YC:L281-614:partner',
+
+    'LLQS-6F1:LLQS-641:partner',
+    'LLQS-6F1:gender',
+    'LLQS-6F1:firstName',
+    'LLQS-6F1:lastName',
+
+    'GHB8-GB6:LLQS-641:parentChild',
+    'GHB8-GB6:firstName',
+    'GHB8-GB6:lastName',
+  ],
+
+  // Page 266, Daniel Maramba: His Life and Times
+  'https://drive.google.com/file/d/1CNF4lEbL4vfjbhMnTOEk02KFDhaO-Xwa/view': [
+    'LLQS-641:prefix',
+    'LLQS-641:firstName',
+    'LLQS-641:lastName',
+
+    'LLQS-6YC:LLQS-641:parentChild',
+    'L281-614:LLQS-641:parentChild',
+  ],
+
+  // Registration of Titles, Province of Pangasinan
+  'https://drive.google.com/file/d/1Ik8lFHm_F4-FaKOs4qL4CNiq-Il2WfLR/view': [
+    'LLQS-641:firstName',
+    'LLQS-641:lastName',
+    'LLQS-641:marker',
+  ],
+
+  // =======================================================================
+  // Maramba, Guillermo Bautista
+  //
+  // LLQS-6YC - Maramba, Guillermo Bautista
+  // =======================================================================
+
+  // Geni Profile
+  // https://www.geni.com/people/Guillermo-Maramba/6000000010495044375
+  'https://drive.google.com/file/d/1cIXCw6wvKrPjzTYfpAfS3ri_Ms8ihSAS/view': [
+    // We don't want to include all details because we already added
+    // them in Lolo Miguel's sources. Since its a profile, and not an
+    // individual document, it probably came from a single database and
+    // we would be duplicating redundant information
+
+    'LLQS-6YC:gender',
+    'LLQS-6YC:birthDate',
+  ],
+
+  // Page 5-7, Daniel Maramba: His Life and Times
+  'https://drive.google.com/file/d/1dDJs3rrAsbMSo_qp6my6J-wxE676FMEa/view': [
+    'LLQS-6YC:gender',
+    'LLQS-6YC:firstName',
+    'LLQS-6YC:lastName',
+    'LLQS-6YC:marker',
+    'LLQS-6YC:marker2',
+    'LLQS-6YC:deathPlace',
+
+    'L281-614:firstName',
+    'L281-614:lastName',
+    'L281-614:gender',
+    'L281-614:deathPlace',
+
+    'GC7T-H59:L281-614:parentChild',
+    'GC7T-H59:firstName',
+    'GC7T-H59:lastName',
+
+    'GC7T-1PK:L281-614:parentChild',
+    'GC7T-1PK:firstName',
+    'GC7T-1PK:lastName',
+
+    'GC7T-H59:GC7T-1PK:partner',
+  ],
+
+  // =======================================================================
+  // Bautista, Maria Garcia
+  //
+  // L281-614 - Bautista, Maria Garcia
+  // GC7T-H59 - Bautista, Agustin
+  // GC7T-1PK - Garcia, Felipa
+  // =======================================================================
+
+  // Geni Profile
+  // https://www.geni.com/people/Maria-Maramba/6000000017013425750
+  'https://drive.google.com/file/d/1eURb38MuWvI0RVG9IaHxEzs-rOt0vBgb/view': [
+    // We don't want to include all details because we already added
+    // them in Lolo Miguel's sources. Since its a profile, and not an
+    // individual document, it probably came from a single database and
+    // we would be duplicating redundant information
+
+    'L281-614:gender',
+    'L281-614:birthDate',
+
+    'GC7T-H59:L281-614:parentChild',
+    'GC7T-H59:gender',
+    'GC7T-H59:firstName',
+    'GC7T-H59:lastName',
+
+    'GC7T-1PK:L281-614:parentChild',
+    'GC7T-1PK:gender',
+    'GC7T-1PK:firstName',
+    'GC7T-1PK:lastName',
+
+    'GC7T-H59:GC7T-1PK:partner',
+  ],
+
+  // =======================================================================
+  // Bautista, Agustin
+  //
+  // GC7T-H59 - Bautista, Agustin
+  // =======================================================================
+
+  // Geni Profile
+  // https://www.geni.com/people/Agustin-Bautista/6000000017013722083
+  'https://drive.google.com/file/d/1fU_c4Ew4h9R85zZLDe5QQR-R2DDHT1Mq/view': [
+    // We don't want to include all details because we already added
+    // them in Lola Maria's sources. Since its a profile, and not an
+    // individual document, it probably came from a single database and
+    // we would be duplicating redundant information
+
+    'GC7T-H59:birthDate',
+  ],
+
+  // Article, Parish of the Holy Family
+  // http://www.oocities.org/hfamilyparishpang/history.html
+  'https://drive.google.com/file/d/1ReDCDspaaaXQ4JoLgYcEznm-bGxhzc54/view': [
+    'GC7T-H59:firstName',
+    'GC7T-H59:lastName',
+    'GC7T-H59:gender',
+    'GC7T-H59:prefix',
+    'GC7T-H59:marker',
+    'GC7T-H59:deathDate',
+  ],
+
+  // =======================================================================
   // Adanza, Mitchie Ajesta
   // =======================================================================
 
   // Certificate of Birth
-  'https://drive.google.com/file/d/19s_gdN98AQ1sZ5lhqSf8GrpJJIpFhsdf/view?usp=sharing': [
+  'https://drive.google.com/file/d/19s_gdN98AQ1sZ5lhqSf8GrpJJIpFhsdf/view': [
     'GHB5-TWN:birthPlace',
     'GHB5-TWN:firstName',
     'GHB5-TWN:middleName',
@@ -1147,6 +1814,138 @@ const SOURCES = {
     'GHB5-XTZ:GHBR-FK3:partner',
     'GHB5-XTZ:marriageDate',
     'GHBR-FK3:marriageDate',
+  ],
+
+  // ___________________________________________________________________________
+  // ===========================================================================
+  // Other People
+
+  // =======================================================================
+  // Acosta, Benjamin San Agustin Sr.
+  // - male sibling of Lolo Manuel Acosta Jr.
+  // - uncle of Nanay
+  //
+  // GHBD-9L6 - Acosta, Manuel Bongco Sr.
+  // GHB8-DXY - San Agustin, Natividad
+  // =======================================================================
+
+  // Certificate of Birth
+  'https://drive.google.com/file/d/1u-7tnWjKdZ5-GrdLKuKi-NOAVvty25Qo/view': [
+    'GHBD-9L6:gender',
+    'GHBD-9L6:firstName',
+    'GHBD-9L6:lastName',
+    'GHBD-9L6:birthPlace',
+    'GHBD-9L6:marker2',
+
+    'GHB8-DXY:gender',
+    'GHB8-DXY:firstName',
+    'GHB8-DXY:lastName',
+    'GHB8-DXY:birthPlace',
+    'GHB8-DXY:marker',
+
+    'GHBD-9L6:GHB8-DXY:partner',
+  ],
+
+  // =======================================================================
+  // Saplala, Hilaria Sison
+  // - female sibling of Lolo Fernando Saplala
+  // - aunt of Lola Lydia Saplala
+  //
+  // GNNH-2HX - Saplala, Hilaria Sison
+  // GNNH-JLM - Saplala, Estanislao
+  // GJJX-1SG - Adela Sison
+  // =======================================================================
+
+  // Philippines Marriages, 1723-1957, FamilySearch
+  // https://www.familysearch.org/ark:/61903/1:1:FN4G-JSW
+  'https://drive.google.com/file/d/1g_6PxiUEuhW_jvUU3p8TySDi9u-7hlwG/view': [
+    'GNNH-JLM:firstName',
+    'GNNH-JLM:lastName',
+    'GNNH-JLM:gender',
+
+    'GJJX-1SG:firstName',
+    'GJJX-1SG:lastName',
+    'GJJX-1SG:gender',
+
+    'GNNH-JLM:GJJX-1SG:partner',
+  ],
+
+  // =======================================================================
+  // Maramba, Corazon Dumantay
+  // - female sibling of Lola Catalina Maramba
+  // - aunt of Nanay
+  //
+  // GHB8-GB6 - Maramba, Sotero Reyes Sr.
+  // GHBD-9LY - Dumantay, Cresencia
+  // =======================================================================
+
+  // Philippine Marriages, 1723-1957, FamilySearch
+  // https://www.familysearch.org/ark:/61903/1:1:HBNK-LY2M
+  'https://drive.google.com/file/d/1n_6mEB9oGikZeRXw71-_buL1cIoT8X9p/view': [
+    'GHB8-GB6:gender',
+    'GHB8-GB6:firstName',
+    'GHB8-GB6:middleName',
+    'GHB8-GB6:lastName',
+
+    'GHBD-9LY:gender',
+    'GHBD-9LY:firstName',
+    'GHBD-9LY:lastName',
+
+    'GHB8-GB6:GHBD-9LY:partner',
+  ],
+
+  // =======================================================================
+  // Maramba, Jose Reyes
+  //
+  // LLQS-641 - Maramba, Miguel Bautista
+  // LLQS-6F1 - Reyes, Mercedes Novilla
+  // =======================================================================
+
+  // Christening Record, FamilySearch
+  // https://www.familysearch.org/ark:/61903/1:1:66HQ-VJGQ
+  'https://drive.google.com/file/d/1EZnFrq2uHZVgfDSItdUrxBqy7Wzkto7o/view': [
+    'LLQS-641:LLQS-6F1:partner',
+
+    'LLQS-641:firstName',
+    'LLQS-641:lastName',
+    'LLQS-641:gender',
+
+    'LLQS-6F1:firstName',
+    'LLQS-6F1:lastName',
+    'LLQS-6F1:gender',
+
+    'L281-614:LLQS-641:parentChild',
+    'L281-614:firstName',
+    'L281-614:lastName',
+    'L281-614:gender',
+
+    'LLQS-6F1:G7C3-B6P:parentChild',
+    'G7C3-B6P:firstName',
+    'G7C3-B6P:gender',
+
+    'LLQS-6F1:G7C3-J9S:parentChild',
+    'G7C3-J9S:firstName',
+    'G7C3-J9S:lastName',
+    'G7C3-J9S:gender',
+
+    'G7C3-B6P:G7C3-J9S:partner',
+  ],
+
+  // =======================================================================
+  // Unknown
+  // =======================================================================
+
+  // FamilySearch: Record regarding Lolo Victor and Lola Genoveba (TODO)
+  'https://www.familysearch.org/ark:/61903/1:1:HBP6-8VZM': [
+    'GHB8-M8D:firstName',
+    'GHB8-M8D:lastName',
+    'GHB8-M8D:gender',
+
+    'GHB8-M86:firstName',
+    'GHB8-M86:lastName',
+    'GHB8-M86:gender',
+
+    'GHB8-M8D:GHB8-M86:partner',
   ],
 };
 isChecking = isDebugging || (window.location.get("check") == "true");
@@ -1343,12 +2142,6 @@ function checkSources() {
     console.invalid('Dataset contains duplicate people');
   }
 
-  if (areKeysUnique(SOURCES)) {
-    console.valid('All the sources in the dataset are unique');
-  } else {
-    console.invalid('Dataset contains duplicate sources');
-  }
-
   let hasDuplicateSource = false;
   for (const [url, sourceKeys] of Object.entries(SOURCES)) {
     oldDuplicateSource = hasDuplicateSource;
@@ -1359,10 +2152,12 @@ function checkSources() {
     }
   }
   if (hasDuplicateSource) {
-    console.invalid('Dataset contains duplicate source keys');
+    console.invalid('Dataset contains duplicate sources');
   } else {
-    console.valid('All the source keys in the dataset are unique');
+    console.valid('All the source in the dataset are unique');
   }
+
+  areUniqueSources(SOURCES)
 
   let totalWeirdCount = 0;
   let sortedPeople = [];
@@ -1443,11 +2238,30 @@ function checkSources() {
   console.groupEnd();
 }
 
-function areKeysUnique(obj) {
-  const keysArray = Object.keys(obj);
-  const uniqueKeys = new Set(keysArray);
+function areUniqueSources(obj) {
+  let sideCounts = {}
+  for (let key in obj) {
+    if (!key.includes("side=")) {
+      continue;
+    }
 
-  return keysArray.length === uniqueKeys.size;
+    let idx = key.indexOf("side=") + 5;
+    let baseUrl = key.substring(0, idx);
+    let sideValue = key.substring(idx);
+
+    if (baseUrl in sideCounts) {
+      sideCounts[baseUrl].push(sideValue);
+    } else {
+      sideCounts[baseUrl] = [sideValue];
+    }
+  }
+
+  for (let baseUrl in sideCounts) {
+    let sides = new Set(obj[baseUrl]);
+    if (sides.size == 1) {
+      console.invalid(`Source might contain duplicate sides: ${baseUrl}`);
+    }
+  }
 }
 
 if (isChecking) {
@@ -2119,6 +2933,9 @@ function getLifeSpan(nodeData, isPrivate) {
       age = nodeData.deathAge;
     }
 
+    if (String(age).includes("NaN")) {
+      return `${birthYear}${separator}${living ? 'Living' : 'Deceased'}`;
+    }
     return `${birthYear}${separator}${living ? 'Living' : 'Deceased'}` + (living ? ` (${age})` : '');
   }
 
@@ -2158,6 +2975,10 @@ function getLifeSpan(nodeData, isPrivate) {
     age = nodeData.deathAge;
   }
 
+  if (String(age).includes("NaN")) {
+    return `${birthYear}${separator}${deathYear}`;
+  }
+
   // If both birthYear and deathYear exist,
   // return the formatted lifespan string.
   return `${birthYear}${separator}${deathYear} (${age})`;
@@ -2182,6 +3003,10 @@ function formatDate(raw, isPrivate) {
 
   if (!raw) {
     return null;
+  }
+
+  if (raw.includes("from ") && raw.includes(" to ")) {
+    return raw;
   }
 
   // Check for prefix words

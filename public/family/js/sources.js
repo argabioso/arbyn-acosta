@@ -129,6 +129,8 @@ const SOURCES = {
     // (daughter of Lola Cresencia, sister of Lola Catalina)
     'GHBD-9LY:birthPlace',
     'GHBD-9LY:marker',  // saws or creates clothes
+    'LLQS-641:firstName',
+    'LLQS-641:GHB8-GB6:parentChild',
   ],
 
   // Suffix verification: Existence of same-name son
@@ -1048,6 +1050,165 @@ const SOURCES = {
   ],
 
   // =======================================================================
+  // Maramba, Miguel Bautista
+  //
+  // LLQS-641 - Maramba, Miguel Bautista
+  // LLQS-6YC - Maramba, Guillermo Bautista
+  // L281-614 - Bautista, Maria Garcia
+  // =======================================================================
+
+  // Geni Profile
+  // https://www.geni.com/people/Miguel-Maramba/4012194445110022663
+  'https://drive.google.com/file/d/1PGx6mKequtCtKWRjEAdJ999OX78Rgmvq/view': [
+    'LLQS-641:firstName',
+    'LLQS-641:middleName',
+    'LLQS-641:lastName',
+    'LLQS-641:gender',
+    'LLQS-641:birthDate',
+
+    'LLQS-6YC:LLQS-641:parentChild',
+    'LLQS-6YC:firstName',
+    'LLQS-6YC:middleName',
+    'LLQS-6YC:lastName',
+
+    'L281-614:LLQS-641:parentChild',
+    'L281-614:firstName',
+    'L281-614:middleName',
+    'L281-614:lastName',
+
+    'LLQS-6YC:L281-614:partner',
+
+    'LLQS-6F1:LLQS-641:partner',
+    'LLQS-6F1:gender',
+    'LLQS-6F1:firstName',
+    'LLQS-6F1:lastName',
+
+    'GHB8-GB6:LLQS-641:parentChild',
+    'GHB8-GB6:firstName',
+    'GHB8-GB6:lastName',
+  ],
+
+  // Page 266, Daniel Maramba: His Life and Times
+  'https://drive.google.com/file/d/1CNF4lEbL4vfjbhMnTOEk02KFDhaO-Xwa/view': [
+    'LLQS-641:prefix',
+    'LLQS-641:firstName',
+    'LLQS-641:lastName',
+
+    'LLQS-6YC:LLQS-641:parentChild',
+    'L281-614:LLQS-641:parentChild',
+  ],
+
+  // Registration of Titles, Province of Pangasinan
+  'https://drive.google.com/file/d/1Ik8lFHm_F4-FaKOs4qL4CNiq-Il2WfLR/view': [
+    'LLQS-641:firstName',
+    'LLQS-641:lastName',
+    'LLQS-641:marker',
+  ],
+
+  // =======================================================================
+  // Maramba, Guillermo Bautista
+  //
+  // LLQS-6YC - Maramba, Guillermo Bautista
+  // =======================================================================
+
+  // Geni Profile
+  // https://www.geni.com/people/Guillermo-Maramba/6000000010495044375
+  'https://drive.google.com/file/d/1cIXCw6wvKrPjzTYfpAfS3ri_Ms8ihSAS/view': [
+    // We don't want to include all details because we already added
+    // them in Lolo Miguel's sources. Since its a profile, and not an
+    // individual document, it probably came from a single database and
+    // we would be duplicating redundant information
+
+    'LLQS-6YC:gender',
+    'LLQS-6YC:birthDate',
+  ],
+
+  // Page 5-7, Daniel Maramba: His Life and Times
+  'https://drive.google.com/file/d/1dDJs3rrAsbMSo_qp6my6J-wxE676FMEa/view': [
+    'LLQS-6YC:gender',
+    'LLQS-6YC:firstName',
+    'LLQS-6YC:lastName',
+    'LLQS-6YC:marker',
+    'LLQS-6YC:marker2',
+    'LLQS-6YC:deathPlace',
+
+    'L281-614:firstName',
+    'L281-614:lastName',
+    'L281-614:gender',
+    'L281-614:deathPlace',
+
+    'GC7T-H59:L281-614:parentChild',
+    'GC7T-H59:firstName',
+    'GC7T-H59:lastName',
+
+    'GC7T-1PK:L281-614:parentChild',
+    'GC7T-1PK:firstName',
+    'GC7T-1PK:lastName',
+
+    'GC7T-H59:GC7T-1PK:partner',
+  ],
+
+  // =======================================================================
+  // Bautista, Maria Garcia
+  //
+  // L281-614 - Bautista, Maria Garcia
+  // GC7T-H59 - Bautista, Agustin
+  // GC7T-1PK - Garcia, Felipa
+  // =======================================================================
+
+  // Geni Profile
+  // https://www.geni.com/people/Maria-Maramba/6000000017013425750
+  'https://drive.google.com/file/d/1eURb38MuWvI0RVG9IaHxEzs-rOt0vBgb/view': [
+    // We don't want to include all details because we already added
+    // them in Lolo Miguel's sources. Since its a profile, and not an
+    // individual document, it probably came from a single database and
+    // we would be duplicating redundant information
+
+    'L281-614:gender',
+    'L281-614:birthDate',
+
+    'GC7T-H59:L281-614:parentChild',
+    'GC7T-H59:gender',
+    'GC7T-H59:firstName',
+    'GC7T-H59:lastName',
+
+    'GC7T-1PK:L281-614:parentChild',
+    'GC7T-1PK:gender',
+    'GC7T-1PK:firstName',
+    'GC7T-1PK:lastName',
+
+    'GC7T-H59:GC7T-1PK:partner',
+  ],
+
+  // =======================================================================
+  // Bautista, Agustin
+  //
+  // GC7T-H59 - Bautista, Agustin
+  // =======================================================================
+
+  // Geni Profile
+  // https://www.geni.com/people/Agustin-Bautista/6000000017013722083
+  'https://drive.google.com/file/d/1fU_c4Ew4h9R85zZLDe5QQR-R2DDHT1Mq/view': [
+    // We don't want to include all details because we already added
+    // them in Lola Maria's sources. Since its a profile, and not an
+    // individual document, it probably came from a single database and
+    // we would be duplicating redundant information
+
+    'GC7T-H59:birthDate',
+  ],
+
+  // Article, Parish of the Holy Family
+  // http://www.oocities.org/hfamilyparishpang/history.html
+  'https://drive.google.com/file/d/1ReDCDspaaaXQ4JoLgYcEznm-bGxhzc54/view': [
+    'GC7T-H59:firstName',
+    'GC7T-H59:lastName',
+    'GC7T-H59:gender',
+    'GC7T-H59:prefix',
+    'GC7T-H59:marker',
+    'GC7T-H59:deathDate',
+  ],
+
+  // =======================================================================
   // Adanza, Mitchie Ajesta
   // =======================================================================
 
@@ -1154,6 +1315,43 @@ const SOURCES = {
     'GHBD-9LY:lastName',
 
     'GHB8-GB6:GHBD-9LY:partner',
+  ],
+
+  // =======================================================================
+  // Maramba, Jose Reyes
+  //
+  // LLQS-641 - Maramba, Miguel Bautista
+  // LLQS-6F1 - Reyes, Mercedes Novilla
+  // =======================================================================
+
+  // Christening Record, FamilySearch
+  // https://www.familysearch.org/ark:/61903/1:1:66HQ-VJGQ
+  'https://drive.google.com/file/d/1EZnFrq2uHZVgfDSItdUrxBqy7Wzkto7o/view': [
+    'LLQS-641:LLQS-6F1:partner',
+
+    'LLQS-641:firstName',
+    'LLQS-641:lastName',
+    'LLQS-641:gender',
+
+    'LLQS-6F1:firstName',
+    'LLQS-6F1:lastName',
+    'LLQS-6F1:gender',
+
+    'L281-614:LLQS-641:parentChild',
+    'L281-614:firstName',
+    'L281-614:lastName',
+    'L281-614:gender',
+
+    'LLQS-6F1:G7C3-B6P:parentChild',
+    'G7C3-B6P:firstName',
+    'G7C3-B6P:gender',
+
+    'LLQS-6F1:G7C3-J9S:parentChild',
+    'G7C3-J9S:firstName',
+    'G7C3-J9S:lastName',
+    'G7C3-J9S:gender',
+
+    'G7C3-B6P:G7C3-J9S:partner',
   ],
 
   // =======================================================================
