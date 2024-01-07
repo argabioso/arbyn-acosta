@@ -12,7 +12,6 @@ const SOURCES = {
     'TEMP-000:GQX8-CQP:parentChild', // aesthetic data consideration
 
     'GHB5-TWN:GQX8-CQP:partner',
-    'GHB5-TWN:birthDate',
     'GHB5-TWN:firstName',
     'GHB5-TWN:gender',
     'GHB5-TWN:lastName',
@@ -22,7 +21,6 @@ const SOURCES = {
     'GQX8-CQP:gender',
     'GQX8-CQP:lastName',
     'GQX8-CQP:middleName',
-    'GQJK-LCT:birthPlace',
     'GQJK-LCT:deathPlace',
     'GQX8-CQP:marker',
     'GQJK-G8W:marker',
@@ -31,6 +29,10 @@ const SOURCES = {
     'GHB5-XTZ:marker',
     'GHBR-FK3:marker',
     'GHBR-FK3:marker2',
+
+    'GH12-W17:deathDate',
+    'GH12-W17:deathPlace',
+    'GH12-W17:living',
   ],
 
   // Should only be used on ancestors with living children / grand children
