@@ -711,6 +711,7 @@ const SOURCES = {
     'GHBD-9LY:marker',  // saws or creates clothes
     'LLQS-641:firstName',
     'LLQS-641:GHB8-GB6:parentChild',
+    'TEMP-001:GHBD-9LY:parentChild',
   ],
 
   // Suffix verification: Existence of same-name son
@@ -774,14 +775,14 @@ const SOURCES = {
     'GQX8-CQP:gender',
     'GQX8-CQP:birthDate',
 
-    'GQX8-CQP:GQJK-G8W:parentChild',
+    'GQJK-G8W:GQX8-CQP:parentChild',
     'GQJK-G8W:gender',
     'GQJK-G8W:firstName',
     'GQJK-G8W:middleName',
     'GQJK-G8W:lastName',
     'GQJK-G8W:marker',
 
-    'GQX8-CQP:GQJK-L51:parentChild',
+    'GQJK-L51:GQX8-CQP:parentChild',
     'GQJK-L51:gender',
     'GQJK-L51:firstName',
     'GQJK-L51:middleName',
@@ -797,13 +798,13 @@ const SOURCES = {
     'GQX8-CQP:lastName',
     'GQX8-CQP:birthDate',
 
-    'GQX8-CQP:GQJK-G8W:parentChild',
+    'GQJK-G8W:GQX8-CQP:parentChild',
     'GQJK-G8W:gender',
     'GQJK-G8W:firstName',
     'GQJK-G8W:lastName',
     'GQJK-G8W:birthPlace',
 
-    'GQX8-CQP:GQJK-L51:parentChild',
+    'GQJK-L51:GQX8-CQP:parentChild',
     'GQJK-L51:gender',
     'GQJK-L51:firstName',
     'GQJK-L51:lastName',
@@ -853,14 +854,14 @@ const SOURCES = {
     'GQJK-L51:gender',
     'GQJK-L51:birthDate',
 
-    'GQJK-L51:GQJK-LCT:parentChild',
+    'GQJK-LCT:GQJK-L51:parentChild',
     'GQJK-LCT:gender',
     'GQJK-LCT:firstName',
     'GQJK-LCT:middleName',
     'GQJK-LCT:lastName',
     'GQJK-LCT:birthPlace',
 
-    'GQJK-L51:GHBZ-YVX:parentChild',
+    'GHBZ-YVX:GQJK-L51:parentChild',
     'GHBZ-YVX:gender',
     'GHBZ-YVX:firstName',
     'GHBZ-YVX:middleName',
@@ -1611,6 +1612,10 @@ const SOURCES = {
     'GHB8-GB6:marker2',
   ],
 
+  // Family Photo
+  'https://drive.google.com/file/d/1jorhb44fg6jrJcUDctHNB2BhVGUwDki7/view': [
+  ],
+
   // Certificate of Death
   'https://drive.google.com/file/d/1Pn6Xvn7ucwnzTgNTcFBsQq9hzAnARp51/view': [
     'GHB8-GB6:living',
@@ -1663,7 +1668,7 @@ const SOURCES = {
     'LLQS-6F1:firstName',
     'LLQS-6F1:lastName',
 
-    'GHB8-GB6:LLQS-641:parentChild',
+    'LLQS-641:GHB8-GB6:parentChild',
     'GHB8-GB6:firstName',
     'GHB8-GB6:lastName',
   ],
@@ -1805,13 +1810,13 @@ const SOURCES = {
     'GHB5-TWN:gender',
     'GHB5-TWN:birthDate',
 
-    'GHB5-TWN:GHB5-XTZ:parentChild',
+    'GHB5-XTZ:GHB5-TWN:parentChild',
     'GHB5-XTZ:gender',
     'GHB5-XTZ:firstName',
     'GHB5-XTZ:middleName',
     'GHB5-XTZ:lastName',
 
-    'GHB5-TWN:GHBR-FK3:parentChild',
+    'GHBR-FK3:GHB5-TWN:parentChild',
     'GHBR-FK3:gender',
     'GHBR-FK3:firstName',
     'GHBR-FK3:middleName',
@@ -1936,7 +1941,7 @@ const SOURCES = {
 
     'GH12-3GN:deathDate',
 
-    'GH12-SVQ:GH12-DRN:parentChild',
+    'GH12-DRN:GH12-SVQ:parentChild',
     'GH12-SVQ:firstName',
     'GH12-SVQ:lastName',
   ],
@@ -2126,11 +2131,11 @@ const SOURCES = {
     'L281-614:lastName',
     'L281-614:gender',
 
-    'LLQS-6F1:G7C3-B6P:parentChild',
+    'G7C3-B6P:LLQS-6F1:parentChild',
     'G7C3-B6P:firstName',
     'G7C3-B6P:gender',
 
-    'LLQS-6F1:G7C3-J9S:parentChild',
+    'G7C3-J9S:LLQS-6F1:parentChild',
     'G7C3-J9S:firstName',
     'G7C3-J9S:lastName',
     'G7C3-J9S:gender',
@@ -2179,8 +2184,8 @@ const SOURCES = {
     'K2GJ-YY3:gender',
 
     'GH12-XX4:GH12-HQN:partner',
-    'GH12-HQN:GKBT-9GD:parentChild',
-    'GH12-XX4:GKBR-M9Y:parentChild',
+    'GKBT-9GD:GH12-HQN:parentChild',
+    'GKBR-M9Y:GH12-XX4:parentChild',
   ],
 
   // FamilySearch: Record of Lola Trinidad, another daughter of Lolo Bio (TODO)
