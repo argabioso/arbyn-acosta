@@ -2198,6 +2198,14 @@ const SOURCES = {
     'GHBZ-P5Q:gender',
     'GHBZ-TM4:GHBZ-P5Q:partner',
   ],
+
+  // Twin of Lolo Manuel, Certificate of Death
+  // since this is a twin of Lolo Manuel, they are born in the
+  // same hospital, same city, same country, same time
+  'https://drive.google.com/file/d/13-RZPCmG9h3jLf4L-8yMIl7Fi-jdiAbg/view': [
+    'GHBD-7M4:birthDate',
+    'GHBD-7M4:birthPlace',
+  ],
 };
 
 // Birth estimates
