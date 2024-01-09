@@ -3235,7 +3235,7 @@ function getLifeSpan(nodeData, isPrivate) {
     } else if (birthDate.includes('before')) {
       age = `${rawAge}+`;
     } else if (birthDate.includes('about')) {
-      age = `~${rawAge}`;
+      age = `${rawAge}+`;
     } else {
       age = `${rawAge}+`;
     }
@@ -3245,7 +3245,7 @@ function getLifeSpan(nodeData, isPrivate) {
     } else if (birthDate.includes('before')) {
       age = `~${rawAge}`;
     } else if (birthDate.includes('about')) {
-      age = `~${rawAge}`;
+      age = `${rawAge}-`;
     } else {
       age = `${rawAge}-`;
     }
