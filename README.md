@@ -22,3 +22,8 @@ A quick portfolio I made when I was applying as freelancer back in 2017. You can
 Due to some of my relatives and friends passing away these past few years, I've decided to remember them by creating this family tree web page that dynamically changes based on the available data provided. You can visit the live webpage on <a href="https://arbyn.argabioso.com/family?q=arbyn" target="_blank">https://arbyn.argabioso.com/family</a>.
 
 <img src="external/images/family-screenshot.png" style="border: 1px solid rgba(0, 0, 0, 0.15); border-radius: 4px;" />
+
+1. testing
+
+<br/>
+<img src="external/images/how-to--clone-repository.gif" alt="Clone the smooth-python-backend repository" />
