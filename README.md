@@ -24,6 +24,5 @@ Due to some of my relatives and friends passing away these past few years, I've 
 <img src="external/images/family-screenshot.png" style="border: 1px solid rgba(0, 0, 0, 0.15); border-radius: 4px;" />
 
 1. testing
-
 <br/>
 <img src="external/images/how-to--clone-repository.gif" alt="Clone the smooth-python-backend repository" />
