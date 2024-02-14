@@ -25,4 +25,4 @@ Due to some of my relatives and friends passing away these past few years, I've 
 
 1. testing
 <br/>
-<img src="external/images/how-to--clone-repository.gif" alt="Clone the smooth-python-backend repository" />
+<img src="external/images/how-to--clone-a-repository.gif" alt="Clone the smooth-python-backend repository" />
