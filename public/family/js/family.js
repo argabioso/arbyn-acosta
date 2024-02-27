@@ -2786,6 +2786,9 @@ template['Photo'] = function() {
           return ui.photo.none;
         }
         if (nodeData.hasImage) {
+          if (nodeData.key == "GHBD-9L6" || nodeData.key == "GHB8-DXY" || nodeData.key == "GQJK-G8W") {
+            return 'images/people/' + nodeData.key + '.lossy.webp';
+          }
           return 'images/people/' + nodeData.key + '.jpg';
         }
         if (nodeData.gender.toUpperCase() == 'M') {
@@ -2811,6 +2814,9 @@ function calculatePhotoScale(nodeData) {
     return 0.47;
   }
   if (nodeData.birthPlace != null && nodeData.deathPlace != null) {
+    if (nodeData.key == "GHBD-9L6" || nodeData.key == "GHB8-DXY" || nodeData.key == "GQJK-G8W") {
+      return 0.128;
+    }
     return 0.52;
   }
   return 1;
