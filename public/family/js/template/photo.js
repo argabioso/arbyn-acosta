@@ -1,3 +1,20 @@
+const IDS = [
+  "TEMP-001",
+  "GHBD-9LY",
+  "GHB8-GB6",
+  "GHB8-GZL",
+  "GHB8-7T6",
+  "GQJK-LCT",
+  "GHBZ-YVX",
+  "GQJK-L51",
+  "GQX8-CQP",
+  "GHB8-J1B",
+  "GHBD-7M4",
+  "GHBD-9L6",
+  "GHB8-DXY",
+  "GQJK-G8W",
+]
+
 template['Photo'] = function() {
   return $(bino.Panel, 'Spot',
     { isClipping: true, margin: new bino.Margin(0.2, 0, 0, 0.2) },
@@ -30,7 +47,7 @@ template['Photo'] = function() {
           return ui.photo.none;
         }
         if (nodeData.hasImage) {
-          if (nodeData.key == "GHBD-9L6" || nodeData.key == "GHB8-DXY" || nodeData.key == "GQJK-G8W") {
+          if (IDS.includes(nodeData.key)) {
             return 'images/people/' + nodeData.key + '.lossy.webp';
           }
           return 'images/people/' + nodeData.key + '.jpg';
@@ -49,16 +66,25 @@ function calculatePhotoScale(nodeData) {
     return 1;
   }
   if (nodeData.birthPlace == null && nodeData.deathPlace == null) {
+    if (IDS.includes(nodeData.key)) {
+      return 0.08615385
+    }
     return 0.35;
   }
   if (nodeData.birthPlace == null && nodeData.deathPlace != null) {
+    if (IDS.includes(nodeData.key)) {
+      return 0.11569231;
+    }
     return 0.47;
   }
   if (nodeData.birthPlace != null && nodeData.deathPlace == null) {
+    if (IDS.includes(nodeData.key)) {
+      return 0.11569231;
+    }
     return 0.47;
   }
   if (nodeData.birthPlace != null && nodeData.deathPlace != null) {
-    if (nodeData.key == "GHBD-9L6" || nodeData.key == "GHB8-DXY" || nodeData.key == "GQJK-G8W") {
+    if (IDS.includes(nodeData.key)) {
       return 0.128;
     }
     return 0.52;

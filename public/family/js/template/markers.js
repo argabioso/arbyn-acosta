@@ -43,9 +43,15 @@ template["DNAMarker"] = function() {
         if (nodeData.hasDNA === undefined) {
           return '';
         }
+        if (nodeData.key == "GQJK-L51") {
+          return MARKERS["intelligence"];
+        }
         return MARKERS["dna"];
       }),
       new bino.Binding("margin", function(nodeData) {
+        if (nodeData.key == "GQJK-L51") {
+          return new bino.Margin(2, 0, 0, 1);
+        }
         return new bino.Margin(2, 0, 0, 2);
       }),
     ),
@@ -134,6 +140,9 @@ template["SecondMarker"] = function() {
 }
 
 function marginConditions(marker) {
+  if (marker === 'intelligence') {
+    return new bino.Margin(1.5, 0, 0, -0.5);
+  }
   if (marker === 'military') {
     return new bino.Margin(1.5, 0, 0, 2);
   }
