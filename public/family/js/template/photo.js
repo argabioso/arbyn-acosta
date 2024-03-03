@@ -47,10 +47,7 @@ template['Photo'] = function() {
           return ui.photo.none;
         }
         if (nodeData.hasImage) {
-          if (IDS.includes(nodeData.key)) {
-            return 'images/people/' + nodeData.key + '.lossy.webp';
-          }
-          return 'images/people/' + nodeData.key + '.jpg';
+          return 'images/people/' + nodeData.key + '.lossy.webp';
         }
         if (nodeData.gender.toUpperCase() == 'M') {
           return ui.photo.male;
