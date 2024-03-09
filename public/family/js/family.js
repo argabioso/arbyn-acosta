@@ -2757,6 +2757,7 @@ template['Link'] = function() {
   );
 }
 const IDS = [
+  "GH12-DRN",
   "TEMP-001",
   "GHBD-9LY",
   "GHB8-GB6",
