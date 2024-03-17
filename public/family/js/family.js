@@ -2757,6 +2757,9 @@ template['Link'] = function() {
   );
 }
 const IDS = [
+  "GH12-W17",
+  "GH12-SVQ",
+  "GH12-9F6",
   "GHBR-FK3",
   "GHB5-TWN",
   "GHB5-XTZ",
