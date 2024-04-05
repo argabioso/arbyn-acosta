@@ -43,15 +43,9 @@ template["DNAMarker"] = function() {
         if (nodeData.hasDNA === undefined) {
           return '';
         }
-        if (nodeData.key == "GQJK-L51") {
-          return MARKERS["intelligence"];
-        }
         return MARKERS["dna"];
       }),
       new bino.Binding("margin", function(nodeData) {
-        if (nodeData.key == "GQJK-L51") {
-          return new bino.Margin(2, 0, 0, 1);
-        }
         return new bino.Margin(2, 0, 0, 2);
       }),
     ),
@@ -139,9 +133,48 @@ template["SecondMarker"] = function() {
   );
 }
 
+template["ThirdMarker"] = function() {
+  return $(
+    bino.Panel,
+    new bino.Binding("margin", function(nodeData) {
+      let topMargin = ui.measure.marker.margin + ((ui.measure.marker.width + ui.measure.marker.margin) - 3) * 2;
+      return new bino.Margin(
+        topMargin, 0, 0,
+        ui.measure.node.width - (ui.measure.marker.width + ui.measure.marker.margin),
+      )
+    }),
+    new bino.Binding("visible", function(nodeData) {
+      return nodeData.marker3 !== undefined;
+    }),
+    $(
+      bino.Shape,
+      { figure: 'Circle', stroke: null, width: ui.measure.marker.width },
+      new bino.Binding("fill", function(nodeData) {
+        if (ui.color.marker.background[nodeData.marker3] !== undefined) {
+          return ui.color.marker.background[nodeData.marker3];
+        }
+        return ui.color.marker.background.default;
+      }),
+    ),
+    $(
+      bino.Picture,
+      { scale: ui.measure.marker.scale },
+      new bino.Binding("source", function(nodeData) {
+        if (nodeData.marker3 === undefined) {
+          return '';
+        }
+        return MARKERS[nodeData.marker3];
+      }),
+      new bino.Binding("margin", function(nodeData) {
+        return marginConditions(nodeData.marker3);
+      }),
+    ),
+  );
+}
+
 function marginConditions(marker) {
   if (marker === 'intelligence') {
-    return new bino.Margin(1.5, 0, 0, -0.5);
+    return new bino.Margin(1, 0, 0, 1);
   }
   if (marker === 'military') {
     return new bino.Margin(1.5, 0, 0, 2);
@@ -165,7 +198,7 @@ function marginConditions(marker) {
     return new bino.Margin(-0.25, 0, 0, 0.75);
   }
   if (marker === 'sales') {
-    return new bino.Margin(3, 0, 0, 3);
+    return new bino.Margin(3, 0, 0, 2.5);
   }
   return new bino.Margin(2, 0, 0, 2);
 }

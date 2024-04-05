@@ -36,6 +36,7 @@ tree.nodeTemplate = $(
   template.DNAMarker(),
   template.FirstMarker(),
   template.SecondMarker(),
+  template.ThirdMarker(),
   template.GenderBand(),
   template.CheckFill(),
   template.TopLeftBorderRadius(),
