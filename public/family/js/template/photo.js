@@ -47,25 +47,25 @@ function calculatePhotoScale(nodeData) {
   }
   if (nodeData.birthPlace == null && nodeData.deathPlace == null) {
     if (nodeData.hasImage) {
-      return 0.08615385
+      return 0.08830769625;
     }
     return 0.35;
   }
   if (nodeData.birthPlace == null && nodeData.deathPlace != null) {
     if (nodeData.hasImage) {
-      return 0.11569231;
+      return 0.11858461775;
     }
     return 0.47;
   }
   if (nodeData.birthPlace != null && nodeData.deathPlace == null) {
     if (nodeData.hasImage) {
-      return 0.11569231;
+      return 0.11858461775;
     }
     return 0.47;
   }
   if (nodeData.birthPlace != null && nodeData.deathPlace != null) {
     if (nodeData.hasImage) {
-      return 0.128;
+      return 0.13119999999;
     }
     return 0.52;
   }
