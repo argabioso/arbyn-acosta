@@ -173,6 +173,15 @@ template["ThirdMarker"] = function() {
 }
 
 function marginConditions(marker) {
+  if (marker === 'computer') {
+    return new bino.Margin(2, 0, 0, 2.05);
+  }
+  if (marker === 'software') {
+    return new bino.Margin(1.5, 0, 0, 1.5);
+  }
+  if (marker === 'prelations') {
+    return new bino.Margin(3, 0, 0, 2);
+  }
   if (marker === 'intelligence') {
     return new bino.Margin(1, 0, 0, 1);
   }
