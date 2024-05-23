@@ -54,7 +54,7 @@ const ui = {
         default: 'white',
       },
     },
-    link: '#9f9f9f',
+    link: !isDark ? '#afafaf' : '#7f7f7f',
     female: '#ea1a68',
     male: '#2799fd',
   },

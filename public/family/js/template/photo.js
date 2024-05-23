@@ -7,7 +7,7 @@ template['Photo'] = function() {
         width: ui.measure.node.height - 0.4,
         strokeWidth: 0,
       },
-      new bino.Binding('height', function(nodeData) {
+      new bino.Binding('height', '', function(nodeData) {
         return nodeData.height - 0.4;
       }),
     ),
@@ -16,16 +16,16 @@ template['Photo'] = function() {
       {
         margin: new bino.Margin(0.2, 0, 0, 0.2),
       },
-      new bino.Binding('imageStretch', function(nodeData) {
+      new bino.Binding('imageStretch', '', function(nodeData) {
         if (nodeData.useNonePhoto) {
           return bino.GraphObject.Fill;
         }
         return bino.GraphObject.UniformToFill;
       }),
-      new bino.Binding('scale', function(nodeData) {
+      new bino.Binding('scale', '', function(nodeData) {
         return calculatePhotoScale(nodeData);
       }),
-      new bino.Binding('source', function(nodeData) {
+      new bino.Binding('source', '', function(nodeData) {
         if (nodeData.useNonePhoto) {
           return ui.photo.none;
         }

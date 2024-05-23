@@ -7,10 +7,10 @@ template['GenderBand'] = function() {
       stroke: null,
       strokeWidth: 0,
     },
-    new bino.Binding("desiredSize", function(nodeData) {
+    new bino.Binding("desiredSize", '', function(nodeData) {
       return new bino.Size(ui.measure.genderBand.width, nodeData.height);
     }),
-    new bino.Binding("fill", function(nodeData) {
+    new bino.Binding("fill", '', function(nodeData) {
       return nodeData.gender.toUpperCase() == 'M' ? ui.color.male : ui.color.female;
     })
   );
@@ -19,33 +19,33 @@ template['GenderBand'] = function() {
 template["DNAMarker"] = function() {
   return $(
     bino.Panel,
-    new bino.Binding("margin", function(nodeData) {
+    new bino.Binding("margin", '', function(nodeData) {
       let topMargin = ui.measure.marker.margin;
       return new bino.Margin(
         topMargin, 0, 0,
         ui.measure.node.width - (ui.measure.marker.width + ui.measure.marker.margin),
       )
     }),
-    new bino.Binding("visible", function(nodeData) {
+    new bino.Binding("visible", '', function(nodeData) {
       return nodeData.hasDNA !== undefined && nodeData.hasDNA;
     }),
     $(
       bino.Shape,
       { figure: 'Circle', stroke: null, width: ui.measure.marker.width },
-      new bino.Binding("fill", function(nodeData) {
+      new bino.Binding("fill", '', function(nodeData) {
         return ui.color.marker.background.dna;
       }),
     ),
     $(
       bino.Picture,
       { scale: ui.measure.marker.scale },
-      new bino.Binding("source", function(nodeData) {
+      new bino.Binding("source", '', function(nodeData) {
         if (nodeData.hasDNA === undefined) {
           return '';
         }
         return MARKERS["dna"];
       }),
-      new bino.Binding("margin", function(nodeData) {
+      new bino.Binding("margin", '', function(nodeData) {
         return new bino.Margin(2, 0, 0, 2);
       }),
     ),
@@ -55,7 +55,7 @@ template["DNAMarker"] = function() {
 template["FirstMarker"] = function() {
   return $(
     bino.Panel,
-    new bino.Binding("margin", function(nodeData) {
+    new bino.Binding("margin", '', function(nodeData) {
       let topMargin = ui.measure.marker.margin + (ui.measure.marker.width + ui.measure.marker.margin) - 3;
       if (!nodeData.hasDNA) {
         topMargin = ui.measure.marker.margin;
@@ -65,13 +65,13 @@ template["FirstMarker"] = function() {
         ui.measure.node.width - (ui.measure.marker.width + ui.measure.marker.margin),
       )
     }),
-    new bino.Binding("visible", function(nodeData) {
+    new bino.Binding("visible", '', function(nodeData) {
       return nodeData.marker !== undefined;
     }),
     $(
       bino.Shape,
       { figure: 'Circle', stroke: null, width: ui.measure.marker.width },
-      new bino.Binding("fill", function(nodeData) {
+      new bino.Binding("fill", '', function(nodeData) {
         if (ui.color.marker.background[nodeData.marker] !== undefined) {
           return ui.color.marker.background[nodeData.marker];
         }
@@ -81,13 +81,13 @@ template["FirstMarker"] = function() {
     $(
       bino.Picture,
       { scale: ui.measure.marker.scale },
-      new bino.Binding("source", function(nodeData) {
+      new bino.Binding("source", '', function(nodeData) {
         if (nodeData.marker === undefined) {
           return '';
         }
         return MARKERS[nodeData.marker];
       }),
-      new bino.Binding("margin", function(nodeData) {
+      new bino.Binding("margin", '', function(nodeData) {
         return marginConditions(nodeData.marker);
       }),
     ),
@@ -97,20 +97,20 @@ template["FirstMarker"] = function() {
 template["SecondMarker"] = function() {
   return $(
     bino.Panel,
-    new bino.Binding("margin", function(nodeData) {
+    new bino.Binding("margin", '', function(nodeData) {
       let topMargin = ui.measure.marker.margin + (ui.measure.marker.width + ui.measure.marker.margin) - 3;
       return new bino.Margin(
         topMargin, 0, 0,
         ui.measure.node.width - (ui.measure.marker.width + ui.measure.marker.margin),
       )
     }),
-    new bino.Binding("visible", function(nodeData) {
+    new bino.Binding("visible", '', function(nodeData) {
       return nodeData.marker2 !== undefined && !nodeData.hasDNA;
     }),
     $(
       bino.Shape,
       { figure: 'Circle', stroke: null, width: ui.measure.marker.width },
-      new bino.Binding("fill", function(nodeData) {
+      new bino.Binding("fill", '', function(nodeData) {
         if (ui.color.marker.background[nodeData.marker2] !== undefined) {
           return ui.color.marker.background[nodeData.marker2];
         }
@@ -120,13 +120,13 @@ template["SecondMarker"] = function() {
     $(
       bino.Picture,
       { scale: ui.measure.marker.scale },
-      new bino.Binding("source", function(nodeData) {
+      new bino.Binding("source", '', function(nodeData) {
         if (nodeData.marker2 === undefined) {
           return '';
         }
         return MARKERS[nodeData.marker2];
       }),
-      new bino.Binding("margin", function(nodeData) {
+      new bino.Binding("margin", '', function(nodeData) {
         return marginConditions(nodeData.marker2);
       }),
     ),
@@ -136,20 +136,20 @@ template["SecondMarker"] = function() {
 template["ThirdMarker"] = function() {
   return $(
     bino.Panel,
-    new bino.Binding("margin", function(nodeData) {
+    new bino.Binding("margin", '', function(nodeData) {
       let topMargin = ui.measure.marker.margin + ((ui.measure.marker.width + ui.measure.marker.margin) - 3) * 2;
       return new bino.Margin(
         topMargin, 0, 0,
         ui.measure.node.width - (ui.measure.marker.width + ui.measure.marker.margin),
       )
     }),
-    new bino.Binding("visible", function(nodeData) {
+    new bino.Binding("visible", '', function(nodeData) {
       return nodeData.marker3 !== undefined;
     }),
     $(
       bino.Shape,
       { figure: 'Circle', stroke: null, width: ui.measure.marker.width },
-      new bino.Binding("fill", function(nodeData) {
+      new bino.Binding("fill", '', function(nodeData) {
         if (ui.color.marker.background[nodeData.marker3] !== undefined) {
           return ui.color.marker.background[nodeData.marker3];
         }
@@ -159,13 +159,13 @@ template["ThirdMarker"] = function() {
     $(
       bino.Picture,
       { scale: ui.measure.marker.scale },
-      new bino.Binding("source", function(nodeData) {
+      new bino.Binding("source", '', function(nodeData) {
         if (nodeData.marker3 === undefined) {
           return '';
         }
         return MARKERS[nodeData.marker3];
       }),
-      new bino.Binding("margin", function(nodeData) {
+      new bino.Binding("margin", '', function(nodeData) {
         return marginConditions(nodeData.marker3);
       }),
     ),
