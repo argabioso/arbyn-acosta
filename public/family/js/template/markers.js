@@ -174,31 +174,31 @@ template["ThirdMarker"] = function() {
 
 function marginConditions(marker) {
   if (marker === 'computer') {
-    return new bino.Margin(2, 0, 0, 2.05);
+    return new bino.Margin(2, 0, 0, 2);
   }
   if (marker === 'software') {
-    return new bino.Margin(1.5, 0, 0, 1.5);
+    return new bino.Margin(2, 0, 0, 2);
   }
   if (marker === 'prelations') {
     return new bino.Margin(3, 0, 0, 2);
   }
   if (marker === 'intelligence') {
-    return new bino.Margin(1, 0, 0, 1);
+    return new bino.Margin(1.95, 0, 0, 1.85);
   }
   if (marker === 'military') {
-    return new bino.Margin(1.5, 0, 0, 2);
-  }
-  if (marker === 'housewife') {
-    return new bino.Margin(0.5, 0, 0, 0.5);
-  }
-  if (marker === 'farming') {
     return new bino.Margin(2, 0, 0, 1);
   }
+  if (marker === 'housewife') {
+    return new bino.Margin(2, 0, 0, 1.95);
+  }
+  if (marker === 'farming') {
+    return new bino.Margin(2.25, 0, 0, 1.95);
+  }
   if (marker === 'male-twin') {
-    return new bino.Margin(0, 0, 0, 2.35);
+    return new bino.Margin(0, 0, 0, 2);
   }
   if (marker === 'female-twin') {
-    return new bino.Margin(0, 0, 0, 2.35);
+    return new bino.Margin(0, 0, 0, 2);
   }
   if (marker === 'train') {
     return new bino.Margin(3, 0, 0, 2);

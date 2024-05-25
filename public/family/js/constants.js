@@ -49,6 +49,7 @@ const ui = {
         prelations: !isDark ? '#fcf3e2' : '#3e382e',
         'male-twin': !isDark ? '#e3edfd' : '#323b48',
         'female-twin': !isDark ? '#fde8f0' : '#462c36',
+        beer: !isDark ? '#f3ede9' : '#393939',
       },
       symbol: {
         default: 'white',
