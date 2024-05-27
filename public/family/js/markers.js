@@ -37,9 +37,9 @@ const DARK_MARKERS = {
 
     // With changes
     "train": LIGHT_MARKERS["train"].replace("#333333", "#EAEAEA"),
-    "beer": LIGHT_MARKERS["beer"].replace("#BD5C17", "#D7AD8F"),
+    "beer": LIGHT_MARKERS["beer"].replace("#BD5C17", "#C29370"),
     "buysell": LIGHT_MARKERS["buysell"].replace("#333333", "#EAEAEA"),
-    "cattle": LIGHT_MARKERS["cattle"].replace("#BD5C17", "#D7AD8F"),
+    "cattle": LIGHT_MARKERS["cattle"].replace("#BD5C17", "#C29370"),
     "church": LIGHT_MARKERS["church"].replace("#333333", "#EAEAEA"),
     "dna": LIGHT_MARKERS["dna"].replace("#9831CF", "#B73DF9"),
     "intelligence": LIGHT_MARKERS["intelligence"].replace("#4285F4", "#4B8FFF"),
