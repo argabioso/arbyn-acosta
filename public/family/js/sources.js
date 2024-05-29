@@ -1629,6 +1629,66 @@ const SOURCES = {
     'GHBD-7M4:birthDate',
     'GHBD-7M4:birthPlace',
   ],
+
+  // =======================================================================
+  // Ajesta, Emmanuel
+  //
+  // GKBR-M9Y - Ajesta, Eustaquio
+  // GKBR-7P7 - Bermúdez, Florencia
+  // =======================================================================
+
+  // MyHeritage: Marriage Record of Lolo Emmanuel and Lola Ursula
+  'https://drive.google.com/file/d/1irYmUaWoR44n7p-33kxmaI0H9HkWqDrY/view?side=ajesta': [
+    'GH12-XX4:gender',
+    'GH12-XX4:firstName',
+    'GH12-XX4:lastName',
+    'GH12-XX4:birthDate',
+
+    'GKBR-M9Y:GH12-XX4:parentChild',
+    'GKBR-M9Y:gender',
+    'GKBR-M9Y:firstName',
+    'GKBR-M9Y:lastName',
+
+    'GKBR-7P7:GH12-XX4:parentChild',
+    'GKBR-7P7:gender',
+    'GKBR-7P7:firstName',
+    'GKBR-7P7:lastName',
+
+    'GKBR-M9Y:GKBR-7P7:partner',
+
+    'GH12-XX4:marriagePlace',
+    'GH12-XX4:marriageDate',
+  ],
+
+  // =======================================================================
+  // Badoles, Ursula
+  //
+  // GKBT-9GD - Badoles, Pedro
+  // K2GJ-YY3 - Villanes, Leoncia
+  // =======================================================================
+
+  // MyHeritage: Marriage Record of Lolo Emmanuel and Lola Ursula
+  'https://drive.google.com/file/d/1irYmUaWoR44n7p-33kxmaI0H9HkWqDrY/view?side=badoles': [
+    'GH12-HQN:gender',
+    'GH12-HQN:firstName',
+    'GH12-HQN:lastName',
+    'GH12-HQN:birthDate',
+
+    'GKBT-9GD:GH12-HQN:parentChild',
+    'GKBT-9GD:gender',
+    'GKBT-9GD:firstName',
+    'GKBT-9GD:lastName',
+
+    'K2GJ-YY3:GH12-HQN:parentChild',
+    'K2GJ-YY3:gender',
+    'K2GJ-YY3:firstName',
+    'K2GJ-YY3:lastName',
+
+    'GKBT-9GD:K2GJ-YY3:partner',
+
+    'GH12-HQN:marriagePlace',
+    'GH12-HQN:marriageDate',
+  ],
 };
 
 // Birth estimates
