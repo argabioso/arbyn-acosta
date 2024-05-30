@@ -5,7 +5,7 @@ const ui = {
   scale: 0.937,
   font: {
     size: {
-      name: 15,
+      name: 14.3,
       details: 12,
     },
   },
@@ -94,7 +94,7 @@ const ui = {
       margin: 9,
       padding: 10,
       height: 81,
-      width: 312,
+      width: 308,
     },
   },
 };
