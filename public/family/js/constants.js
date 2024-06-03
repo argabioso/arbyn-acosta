@@ -35,7 +35,7 @@ const ui = {
         train: !isDark ? '#f0f0f0' : '#393939',
         church: !isDark ? '#f0f0f0' : '#393939',
         seaman: !isDark ? '#e3edfd' : '#323a4a',
-        manufacturing: !isDark ? '#fdeee8' : '#46352c',
+        manufacturing: !isDark ? '#f0f0f0' : '#393939',
         buysell: !isDark ? '#f0f0f0' : '#393939',
         beautician: !isDark ? '#fde8f0' : '#4b303b',
         apparel: !isDark ? '#fdeee8' : '#46352c',
