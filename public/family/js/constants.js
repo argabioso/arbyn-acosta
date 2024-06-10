@@ -2,7 +2,7 @@ const isPrivate = !isDebugging && !(window.location.get("private") == "false");
 var isChecking = false; // overridden by checks.js if imported
 
 const ui = {
-  scale: 1,
+  scale: 0.937,
   font: {
     size: {
       name: 14.3,
