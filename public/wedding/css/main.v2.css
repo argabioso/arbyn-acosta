@@ -30,6 +30,7 @@ html {
 body {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
+  padding-bottom: 100px;
 }
 
 html, body {
@@ -819,6 +820,10 @@ section.attire-younger h2 {
 @media screen and (max-width: 359px) {
   html {
     font-size: 13px;
+  }
+
+  body {
+    padding-bottom: 80px;
   }
 
   section h2 {
