@@ -48,7 +48,7 @@ const ui = {
         prelations: !isDark ? '#fcf3e2' : '#40392c',
         retail: !isDark ? '#fde8f0' : '#4b303b',
         sales: !isDark ? '#fcf3e2' : '#40392c',
-        seaman: !isDark ? '#e3edfd' : '#323a4a',
+        seaman: !isDark ? '#f0f0f0' : '#393939',
         software: !isDark ? '#f0f0f0' : '#393939',
         train: !isDark ? '#f0f0f0' : '#393939',
       },
