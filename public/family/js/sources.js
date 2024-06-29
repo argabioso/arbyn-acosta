@@ -754,6 +754,8 @@ const SOURCES = {
   'https://drive.google.com/file/d/1L4zy5f_l9gYFBQQ68WdVFLDunwFoKgru/view?side=acosta': [
     'GHBD-9L6:GHB8-DXY:partner',
 
+    'GHB8-5K8:deathDate',
+
     'GHBD-9L6:gender',
     'GHBD-9L6:firstName',
     'GHBD-9L6:middleName',

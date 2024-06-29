@@ -1,6 +1,10 @@
 // Age for Mothers (youngest ever was 9) so let's use 10
 // Age for Fathers (youngest ever was 5) so let's use 6
 
+// Lola Fransisca Mia is estimated to be born before 1910 because her youngest known daughter is born around 1920. Subtract 10, you get 1910.
+// Lola Fransisca Mia is estimated to die after October 13, 1936 because it is said that Lolo Marcial was around 4 years old when Lola Francisca died.
+// Lola Maximiana is estimated to die after March 5, 1951 because she was a signatory in Lola Nati's wedding on said date.
+
 var TREE_DATA = [
   { key: 'TEMP-000',                                    prefix: '',     firstName: 'Yuseff Llue',        middleName: 'Adanza',      lastName: 'Argabioso',   suffix: '',    gender: 'M', birthDate: '2024-12-16',        deathDate: null,               marriageDate: null,         deathAge: null,  living: true,  hasDNA: false, hasImage: false,  birthPlace: null,                                deathPlace: null,                                livingPlace: null,                marriagePlace: null,                        height: 0, width: 0 },
     { key: 'GQX8-CQP',               child: 'TEMP-000', prefix: '',     firstName: 'Arbyn',              middleName: 'Acosta',      lastName: 'Argabioso',   suffix: '',    gender: 'M', birthDate: '1995-04-19',        deathDate: null,               marriageDate: null,         deathAge: null,  living: true,  hasDNA: true,  hasImage: true,   birthPlace: 'Santa Cruz, Manila, PHL',           deathPlace: null,                                livingPlace: 'Metro Manila, PHL', marriagePlace: null,                        marker: 'computer', marker3: 'software' },
