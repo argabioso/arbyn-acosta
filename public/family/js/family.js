@@ -1,104 +1,4 @@
 
-const isPrivate = !isDebugging && !(window.location.get("private") == "false");
-var isChecking = false; // overridden by checks.js if imported
-
-const ui = {
-  scale: 0.937,
-  font: {
-    size: {
-      name: 14.3,
-      details: 12,
-    },
-  },
-  color: {
-    background: !isDark ? '#f3f4f5' : '#202124',
-    node: {
-      background: !isDark ? '#ffffff' : '#2f2f2f',
-      name: !isDark ? '#000000' : '#fefefe',
-      details: !isDark ? '#222222' : '#bdc1c6',
-      nameless: {
-        name: !isDark ? '#bdbdbd' : '#909090',
-        details: !isDark ? '#b0b0b0' : '#929292',
-      },
-    },
-    marker: {
-      background: {
-        'female-twin': !isDark ? '#fde8f0' : '#4b303b',
-        'male-twin': !isDark ? '#e3edfd' : '#323a4a',
-        apparel: !isDark ? '#fdeee8' : '#46352c',
-        beautician: !isDark ? '#fde8f0' : '#4b303b',
-        beer: !isDark ? '#f3ede9' : '#3e3834',
-        buysell: !isDark ? '#f0f0f0' : '#393939',
-        cattle: !isDark ? '#f3ede9' : '#3e3834',
-        church: !isDark ? '#f0f0f0' : '#393939',
-        computer: !isDark ? '#f0f0f0' : '#393939',
-        default: !isDark ? '#ffffff' : '#2f2f2f',
-        dna: !isDark ? '#f2e6f9' : '#41324b',
-        farming: !isDark ? '#dff1e0' : '#31402e',
-        government: !isDark ? '#f0f0f0' : '#393939',
-        househusband: !isDark ? '#e3edfd' : '#323a4a',
-        housekeeper: !isDark ? '#f3ede9' : '#393939',
-        housewife: !isDark ? '#fde8f0' : '#4b303b',
-        intelligence: !isDark ? '#e3edfd' : '#323a4a',
-        investigate: !isDark ? '#f0f0f0' : '#393939',
-        land: !isDark ? '#f2ebe6' : '#393633',
-        manager: !isDark ? '#f0f0f0' : '#393939',
-        manufacturing: !isDark ? '#f0f0f0' : '#393939',
-        military: !isDark ? '#fcf3e2' : '#40392c',
-        police: !isDark ? '#e3edfd' : '#323a4a',
-        prelations: !isDark ? '#fcf3e2' : '#40392c',
-        retail: !isDark ? '#fde8f0' : '#4b303b',
-        sales: !isDark ? '#fcf3e2' : '#40392c',
-        seaman: !isDark ? '#f0f0f0' : '#393939',
-        software: !isDark ? '#f0f0f0' : '#393939',
-        train: !isDark ? '#f0f0f0' : '#393939',
-      },
-      symbol: {
-        default: 'white',
-      },
-    },
-    link: !isDark ? '#afafaf' : '#7f7f7f',
-    female: '#ea1a68',
-    male: '#2799fd',
-  },
-  photo: {
-    none: (
-      !isDark
-      ? 'data:image/jpeg;base64,/9j/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wgARCAB9APoDASIAAhEBAxEB/8QAGQABAQEBAQEAAAAAAAAAAAAAAAQDAQIG/8QAFAEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEAMQAAAB+5wqEKyczAAAAAAAAAAAAABcADzhSIVmBkAAAAAAAAAAAC4AAAHnCkQrMDIAAAAAAAAAFwAAAAAPOFIhW4GIAAAAAAALgAAAAAAAcwoEK3AxAAAAABcAAAAAAAAADmFAhW4GIAAALgAAAAAAAAAAAcx3EXLcTB3gBcAAAAAAAAAAAAADmO4i5dmf/8QAGhABAAMBAQEAAAAAAAAAAAAAAQACUBESMf/aAAgBAQABBQJqMaJgtRjRMFqMaOCgxo4KDGmCgxpgoMaYKdjTBTsaYKdjTBTsaYKdjTBTsaYP2NMJpheCf//EABQRAQAAAAAAAAAAAAAAAAAAAHD/2gAIAQMBAT8BAP/EABQRAQAAAAAAAAAAAAAAAAAAAHD/2gAIAQIBAT8BAP/EABYQAQEBAAAAAAAAAAAAAAAAACFQcP/aAAgBAQAGPwLKyEQiEQiEQiEQiEQ//8QAHRABAAICAwEBAAAAAAAAAAAAAQAxIVAQEVFx4f/aAAgBAQABPyH7EqMmhuLlRk0NxCVk0N4QlZNDeRis6G0Ix60NoRj1oRsRj1oQsRz1E6vQBYjnqJ1egCxHhOr0AWOMnV6ALHGRHOgQscZEcmgQTJPzxEvQIJmfWf/aAAwDAQACAAMAAAAQ8EAAAAAAAAAAAAAA88MAAAAAAAAAAAAA88888MAAAAAAAAAA8888888gIAAAAAAA88888888MgIAAAAA8888888888csIAAA888888888888sIAA888888888888888A/8QAFBEBAAAAAAAAAAAAAAAAAAAAcP/aAAgBAwEBPxAA/8QAFBEBAAAAAAAAAAAAAAAAAAAAcP/aAAgBAgEBPxAA/8QAIBABAAEEAwEAAwAAAAAAAAAAAREAMVBRIUFhgXGh8P/aAAgBAQABPxDlUjYqQR+K+BsKNipB+K+BsKHZepF+K9PGA2psvUi/NenjhvgBePOy9cvx/ukhhvgDe7ZepdUdd0iMJDgCe7fdcsoa7pEUSHAF8T73UoqGu6RGER04A+Cfe65Bw03pFAR04A+Ca5Bw03pFAR04AaCaBy5NN6RQEdOACgkpDlyaaRwEfcAFBJSErnxqJBH3AGQSV2P41GmH3ARok9q4r6p2Cj7gI0RPa/o1/9k='
-      : 'data:image/jpeg;base64,/9j/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wgARCAB9APoDASIAAhEBAxEB/8QAGAABAQEBAQAAAAAAAAAAAAAAAAQDAgX/xAAUAQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIQAxAAAAHwtpxWm2OwAAAAAAAAAAAAASAA71nFafU7AAAAAAAAAAABIAAADvWcVp9TsAAAAAAAAAEgAAAAAO9ZxWn1OwAAAAAAASAAAAAAAA71nFafU7AAAAABIAAAAAAAAADvWcVp9TsAAAEgAAAAAAAAAAAO9ZxWm2OwASAAAAAAAAAAAAAA62nFafU//8QAGBABAQEBAQAAAAAAAAAAAAAAAQIAUBH/2gAIAQEAAQUCFMUcEUxRwRTFHBFMUcEUxRwRTFHBFMUcEUxRwRTFHBFMUcEUxRwSvMUPBK8xQ8EpMUPBKTFDwRTe7//EABQRAQAAAAAAAAAAAAAAAAAAAHD/2gAIAQMBAT8BAP/EABQRAQAAAAAAAAAAAAAAAAAAAHD/2gAIAQIBAT8BAP/EABQQAQAAAAAAAAAAAAAAAAAAAJD/2gAIAQEABj8CAD//xAAZEAACAwEAAAAAAAAAAAAAAAAAAVBhcTH/2gAIAQEAAT8h4nBinA8TgxTgcQYpwOIMU4HEGKcDiDFOBxBinA4gxTgcQYpwOIMU4HEGKcCzBQOBZgoHA2CKBwNgigcDiGT/2gAMAwEAAgADAAAAEDMPPPPPPPPPPPPPPPPDMPPPPPPPPPPPPPPPPHNPPPPPPPPPPPPPPPPHNPPPPPPPPPPPPPPPPHNPPPPPPPPPPPPPPPPHNPPPPPPPPPPPPPPPPHPPPPPPPPPPPPPPPPPPNP/EABQRAQAAAAAAAAAAAAAAAAAAAHD/2gAIAQMBAT8QAP/EABQRAQAAAAAAAAAAAAAAAAAAAHD/2gAIAQIBAT8QAP/EAB8QAQABAwUBAQAAAAAAAAAAAAEhABExUFFxkdFhQf/aAAgBAQABPxDOL7HFRrxOO9BjFfY4qNeJx3oMYN9jio14nHegxg32OKjXicd6DGDfY4qNeJx3oMYN9jio14nHegxg32OKjXicd6DGDfY4qNeJx3oMYN9jio14n3QYwb7HFRrxPugxg32NRq/B90GKG+xqMX4PugxQ32NRi/J90GIH4NRi/B90GIH4NRl/g+6DbAbr8ZoCe6//2Q=='
-    ),
-    female: (
-      !isDark
-      ? 'data:image/jpeg;base64,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'
-      : 'data:image/jpeg;base64,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'
-    ),
-    male: (
-      !isDark
-      ? 'data:image/jpeg;base64,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'
-      : 'data:image/jpeg;base64,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'
-    ),
-  },
-  measure: {
-    padding: 40,
-    genderBand: {
-      width: 2.6,
-    },
-    marker: {
-      // scale: 0.3,
-      // width: 21,
-      // margin: 6,
-      scale: 0.4,
-      width: 22,
-      margin: 5,
-    },
-    node: {
-      margin: 9,
-      padding: 10,
-      height: 81,
-      width: 308,
-    },
-  },
-};
 /* BinoJS v3.0.2 */
 (function() {const root=typeof globalThis=="object"&&globalThis||typeof global=="object"&&global.global===global&&global||typeof self=="object"&&self.self===self&&self||{};root.requestAnimationFrame===void 0&&(root.setImmediate===void 0?root.requestAnimationFrame=w=>root.setTimeout(w,0):root.requestAnimationFrame=root.setImmediate);const Debug={boundsInfoEnabled:!1,drawLocationsEnabled:!1,drawClipEnabled:!1,drawLinkpointsEnabled:!1,nodeInspector:!1,handleMessages:!1,drawFrames:!1,defaultDiagram:null,trace:function(w){root.console&&root.console.log(w)},drawDiagramBounds(w,t,i,e){w.strokeStyle="red",w.fillStyle="red",w.font="8px sans-serif",w.beginPath(),w.moveTo(-10,0),w.lineTo(10,0),w.moveTo(0,-10),w.lineTo(0,10),w.stroke(),w.setTransform(1,0,0,1,0,0),w.scale(i,i),w.transform(t.m11,t.m12,t.m21,t.m22,t.dx,t.dy),w.lineWidth=2,w.beginPath(),w.moveTo(e.left,e.top+20),w.lineTo(e.left,e.top),w.lineTo(e.left+20,e.top),w.moveTo(e.right,e.bottom-20),w.lineTo(e.right,e.bottom),w.lineTo(e.right-20,e.bottom),w.stroke(),w.fillText("DB: "+Math.round(e.x)+", "+Math.round(e.y)+", "+Math.round(e.width)+", "+Math.round(e.height),e.left,e.top-5)},attachReadonlyWarnings:function(w){for(const t in w){if(t==="licenseKey")continue;const i=w[t];if(i.prototype===void 0)continue;const e=Object.getOwnPropertyNames(i.prototype);for(let s=0;s<e.length;s++){const n=Object.getOwnPropertyDescriptor(i.prototype,e[s]);n.get!==void 0&&n.set===void 0&&Object.defineProperty(i.prototype,e[s],{set:function(o){throw new Error("Property "+e[s]+" of "+t+" is read-only.")}})}}}};class Util{static dr=root.navigator!==void 0&&root.navigator.platform!==void 0&&root.navigator.platform.match(/(iPhone|iPod|iPad|Mac)/i)!==null;static Rk(t,i,e){let s=-1;return function(){const n=this,o=arguments;s!==-1&&Util.Gg(s),s=Util.Xh(()=>{s=-1,e||t.apply(n,o)},i),e&&!s&&t.apply(n,o)}}static Xh(t,i){return root.setTimeout(t,i)}static Gg(t){root.clearTimeout(t)}static hn(t){return root.document.createElement(t)}static n(t){throw new Error(t)}static O(t,i){let e="The object is frozen, so its properties cannot be set: "+t.toString();i!==void 0&&(e+="  to value: "+i),Util.n(e)}static s(t,i,e,s){if(!(t instanceof i)){let n=Util.hu(e);s!==void 0&&(n+="."+s),Util.Bi(t,i,n)}}static t(t,i,e,s){if(typeof t!==i){let n=Util.hu(e);s!==void 0&&(n+="."+s),Util.Bi(t,i,n)}}static r(t,i,e){if(typeof t!="number"||!isFinite(t)){let s=Util.hu(i);e!==void 0&&(s+="."+e),Util.n(s+" must be a real number type, and not NaN or Infinity: "+t)}}static it(t,i,e){t in i||Util.n(`${t} is not a valid value in enumeration: ${e}`)}static Bi(t,i,e,s){const n=" value is not an instance of "+Util.hu(i)+": ";let o=Util.hu(e);s!==void 0&&(o+="."+s),typeof t=="string"&&(t='"'+t+'"'),Util.n(o+n+t)}static G(t,i,e,s){let n=Util.hu(e);s!==void 0&&(n+="."+s),Util.n(n+" is not in the range "+i+": "+t)}static Ke(t){Util.n("Collection was modified during iteration: "+t.toString()+`
   Perhaps you should iterate over a copy of the collection,
@@ -206,6 +106,335 @@ bino.Shape.defineFigureGenerator('BottomLeftBorderRadius', (shape) => {
 
 // For conciseness. See the "Building Parts" intro page for more
 var $ = bino.GraphObject.make;
+/**
+ * Returns a boolean value indicating whether the node should have a "none" photo displayed.
+ *
+ * @param {object} nodeData - An object representing a node in a family tree.
+ * @returns {boolean} - `true` if the node should have a "none" photo displayed, otherwise `false`.
+ */
+bino.useNonePhoto = function(nodeData) {
+  return (
+    !nodeData.hasImage
+    && !nodeData.living
+    && nodeData.birthDate == null
+    && nodeData.deathDate == null
+    && nodeData.birthPlace == null
+    && nodeData.deathPlace == null
+  );
+}
+
+/**
+ * Get lifespan information from given nodeData.
+ * @param {Object} nodeData - Contains living, birthDate, and deathDate data.
+ * @return {string} Formatted lifespan string.
+ */
+bino.getRelativeDates = function(nodeData, isPrivate) {
+  if (nodeData.useNonePhoto) {
+    return "";
+  }
+
+  const separator = ' — ';
+  const { living, birthDate, marriageDate, deathDate } = nodeData;
+
+  let rawAge = bino.calculateAge(birthDate, deathDate)
+  let age = rawAge;
+
+  const birthYear = bino.formatDate(birthDate, isPrivate);
+  const marriageYear = bino.formatDate(marriageDate, true);
+  const deathYear = bino.formatDate(deathDate);
+
+  // If both birthYear and deathYear do not exist, return
+  // "Living" or "Deceased" based on the living flag.
+  if (!birthYear && !deathYear) {
+    return living ? 'Living' : 'Deceased';
+  }
+
+  // If birthYear does not exist, return the
+  // formatted deathYear with a separator.
+  if (!birthYear) {
+    return `${separator}${deathYear}`;
+  }
+
+  // If deathYear does not exist, return the formatted
+  // `birthYear` with a separator and "Living" or "Deceased"
+  // based on the living flag.
+  if (!deathYear) {
+    if (nodeData.deathAge) {
+      age = nodeData.deathAge;
+    }
+
+    if (String(age).includes("NaN")) {
+      return `${birthYear}${separator}${living ? 'Living' : 'Deceased'}`;
+    }
+    return `${birthYear}${separator}${living ? 'Living' : 'Deceased'}` + (living ? ` (${age})` : '');
+  }
+
+  if (deathDate.includes('after')) {
+    if (birthDate.includes('after')) {
+      age = `~${rawAge}`;
+    } else if (birthDate.includes('before')) {
+      age = `${rawAge}+`;
+    } else if (birthDate.includes('about')) {
+      age = `${rawAge}+`;
+    } else {
+      age = `${rawAge}+`;
+    }
+  } else if (deathDate.includes('before')) {
+    if (birthDate.includes('after')) {
+      age = `${rawAge}-`;
+    } else if (birthDate.includes('before')) {
+      age = `~${rawAge}`;
+    } else if (birthDate.includes('about')) {
+      age = `${rawAge}-`;
+    } else {
+      age = `${rawAge}-`;
+    }
+  } else if (deathDate.includes('about')) {
+    age = `~${rawAge}`;
+  } else {
+    if (birthDate.includes('after')) {
+      age = `${rawAge}-`;
+    } else if (birthDate.includes('before')) {
+      age = `${rawAge}+`;
+    } else if (birthDate.includes('about')) {
+      age = `~${rawAge}`;
+    }
+  }
+
+  if (nodeData.deathAge) {
+    age = nodeData.deathAge;
+  }
+
+  if (String(age).includes("NaN")) {
+    return `${birthYear}${separator}${deathYear}`;
+  }
+
+  // If both birthYear and deathYear exist,
+  // return the formatted lifespan string.
+  return `${birthYear}${separator}${deathYear} (${age})`;
+}
+
+/**
+ * Converts country codes in the input string to their full country names.
+ *
+ * @param {string|null|undefined} input - The input string potentially containing a country code.
+ * @returns {string|null|undefined} - The input with country codes replaced by full country names.
+ */
+bino.convertCountryCode = function(input) {
+  if (!input) {
+    return input;
+  }
+
+  const lookup = {
+    'USA': 'United States of America',
+    'PHL': 'Philippines',
+    'BHR': 'Bahrain',
+    // ... add other country codes and names as needed
+  };
+
+  const segments = input.split(',').map(segment => segment.trim());
+
+  // If only one segment and it's a known country code, return the full name
+  if (segments.length === 1 && lookup[segments[0]]) {
+    return lookup[segments[0]];
+  }
+
+  // If two segments and the second one is a known country code, replace it with the full name
+  if (segments.length === 2 && lookup[segments[1]]) {
+    segments[1] = lookup[segments[1]];
+  }
+
+  return segments.join(', ');
+}
+
+/**
+ * Calculates the age based on the birth date and optionally the death date.
+ * If the death date is not provided, the current date is used.
+ *
+ * @param {string} birthDateString - The birth date in a string format.
+ * @param {string} [deathDateString] - The optional death date in a string format.
+ * @returns {number} - The calculated age.
+ */
+bino.calculateAge = function(birthDateString, deathDateString) {
+    const birthDate = new Date(birthDateString);
+    const deathDate = deathDateString ? new Date(deathDateString) : new Date();
+
+    let age = deathDate.getFullYear() - birthDate.getFullYear();
+    const monthDifference = deathDate.getMonth() - birthDate.getMonth();
+
+    // Adjust age if birth month hasn't occurred in the death year
+    if (monthDifference < 0 || (monthDifference === 0 && deathDate.getDate() < birthDate.getDate())) {
+        age--;
+    }
+
+    return age;
+}
+
+/**
+ * Format date string as 'day month year'.
+ * @param {string} dateString - Date in 'YYYY-MM-DD' format.
+ * @return {string|null} Formatted date or null if dateString is falsy.
+ */
+bino.formatDate = function(raw, isPrivate, noDay) {
+  const months = [
+    'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+    'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec',
+  ];
+  const longMonths = [
+    'January', 'February', 'March',
+    'April', 'May', 'June', 'July',
+    'August', 'September', 'October',
+    'November', 'December',
+  ];
+
+  if (!raw) {
+    return null;
+  }
+
+  if (raw.includes("from ") && raw.includes(" to ")) {
+    return raw;
+  }
+
+  // Check for prefix words
+  let [prefix, dateString] = raw.includes(' ') ? raw.split(' ') : ["", raw];
+  let [year, month, day] = dateString.split('-', 3);
+
+  // Add a separating space for prefix if its populated
+  if (prefix != '') {
+    prefix += ' ';
+  }
+
+  if (month && !isPrivate) {
+    day = (day === undefined) ? "" : day + " ";
+
+    // Remove leading zero from days
+    if (day.startsWith('0')) {
+      day = day.slice(1);
+    }
+
+    if (!noDay) {
+      return `${prefix}${day}${months[parseInt(month, 10) - 1]} ${year}`;
+    }
+    return `${prefix}${months[parseInt(month, 10) - 1]} ${year}`;
+  }
+
+  // if (month) {
+  //   return `${prefix}${longMonths[parseInt(month, 10) - 1]} ${year}`;
+  // }
+
+  return `${prefix}${year}`;
+};
+const isPrivate = !isDebugging && !(window.location.get("private") == "false");
+var isChecking = false; // overridden by checks.js if imported
+
+const COLORS = {
+  RED: {fg: '#EA1A68', bg: !isDark ? '#FDE8F0' : '#4B303B'},
+  BLUE: {fg: '#4285F4', bg: !isDark ? '#E3EDFD' : '#323A4A'},
+  YELLOW: {fg: '#EA1A68', bg: !isDark ? '#FCF3E2' : '#40392C'},
+  ORANGE: {fg: '#FE6F00', bg: !isDark ? '#FDEEE8' : '#46352C'},
+  BROWN: {fg: !isDark ? '#BD5C17' : '#C29370', bg: !isDark ? '#F3EDE9' : '#3E3834'},
+  PURPLE: {fg: !isDark ? '#9831CF' : '#B73DF9', bg: !isDark ? '#F2E6F9' : '#41324B'},
+  GREEN: {fg: !isDark ? '#259F31' : '#28BC36', bg: !isDark ? '#DFF1E0' : '#31402E'},
+  PLAIN: {fg: !isDark ? '#333333' : '#EAEAEA', bg: !isDark ? '#F0F0F0' : '#393939'},
+}
+
+const ui = {
+  scale: 0.937,
+  font: {
+    size: {
+      name: 14.3,
+      details: 12,
+    },
+  },
+  color: {
+    background: !isDark ? '#f3f4f5' : '#202124',
+    node: {
+      background: !isDark ? '#ffffff' : '#2f2f2f',
+      name: !isDark ? '#000000' : '#fefefe',
+      details: !isDark ? '#222222' : '#bdc1c6',
+      nameless: {
+        name: !isDark ? '#bdbdbd' : '#909090',
+        details: !isDark ? '#b0b0b0' : '#929292',
+      },
+    },
+    marker: {
+      background: {
+        'female-twin': COLORS.RED.bg,
+        'male-twin': COLORS.BLUE.bg,
+        apparel: COLORS.ORANGE.bg,
+        beautician: COLORS.RED.bg,
+        beer: COLORS.BROWN.bg,
+        buysell: COLORS.PLAIN.bg,
+        cattle: COLORS.BROWN.bg,
+        church: COLORS.PLAIN.bg,
+        computer: COLORS.PLAIN.bg,
+        default: !isDark ? '#ffffff' : '#2f2f2f',
+        dna: COLORS.PURPLE.bg,
+        farming: COLORS.GREEN.bg,
+        government: COLORS.PLAIN.bg,
+        househusband: COLORS.BLUE.bg,
+        housekeeper: COLORS.RED.bg,
+        housewife: COLORS.RED.bg,
+        intelligence: COLORS.BLUE.bg,
+        investigate: COLORS.PLAIN.bg,
+        land: !isDark ? '#f2ebe6' : '#393633',
+        manager: COLORS.PLAIN.bg,
+        manufacturing: COLORS.PLAIN.bg,
+        military: COLORS.YELLOW.bg,
+        police: COLORS.BLUE.bg,
+        prelations: COLORS.YELLOW.bg,
+        retail: COLORS.RED.bg,
+        sales: COLORS.YELLOW.bg,
+        seaman: COLORS.PLAIN.bg,
+        software: COLORS.PLAIN.bg,
+        train: COLORS.PLAIN.bg,
+      },
+      symbol: {
+        default: 'white',
+      },
+    },
+    link: !isDark ? '#afafaf' : '#7f7f7f',
+    female: '#ea1a68',
+    male: '#2799fd',
+  },
+  photo: {
+    none: (
+      !isDark
+      ? 'data:image/jpeg;base64,/9j/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wgARCAB9APoDASIAAhEBAxEB/8QAGQABAQEBAQEAAAAAAAAAAAAAAAQDAQIG/8QAFAEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEAMQAAAB+5wqEKyczAAAAAAAAAAAAABcADzhSIVmBkAAAAAAAAAAAC4AAAHnCkQrMDIAAAAAAAAAFwAAAAAPOFIhW4GIAAAAAAALgAAAAAAAcwoEK3AxAAAAABcAAAAAAAAADmFAhW4GIAAALgAAAAAAAAAAAcx3EXLcTB3gBcAAAAAAAAAAAAADmO4i5dmf/8QAGhABAAMBAQEAAAAAAAAAAAAAAQACUBESMf/aAAgBAQABBQJqMaJgtRjRMFqMaOCgxo4KDGmCgxpgoMaYKdjTBTsaYKdjTBTsaYKdjTBTsaYP2NMJpheCf//EABQRAQAAAAAAAAAAAAAAAAAAAHD/2gAIAQMBAT8BAP/EABQRAQAAAAAAAAAAAAAAAAAAAHD/2gAIAQIBAT8BAP/EABYQAQEBAAAAAAAAAAAAAAAAACFQcP/aAAgBAQAGPwLKyEQiEQiEQiEQiEQ//8QAHRABAAICAwEBAAAAAAAAAAAAAQAxIVAQEVFx4f/aAAgBAQABPyH7EqMmhuLlRk0NxCVk0N4QlZNDeRis6G0Ix60NoRj1oRsRj1oQsRz1E6vQBYjnqJ1egCxHhOr0AWOMnV6ALHGRHOgQscZEcmgQTJPzxEvQIJmfWf/aAAwDAQACAAMAAAAQ8EAAAAAAAAAAAAAA88MAAAAAAAAAAAAA88888MAAAAAAAAAA8888888gIAAAAAAA88888888MgIAAAAA8888888888csIAAA888888888888sIAA888888888888888A/8QAFBEBAAAAAAAAAAAAAAAAAAAAcP/aAAgBAwEBPxAA/8QAFBEBAAAAAAAAAAAAAAAAAAAAcP/aAAgBAgEBPxAA/8QAIBABAAEEAwEAAwAAAAAAAAAAAREAMVBRIUFhgXGh8P/aAAgBAQABPxDlUjYqQR+K+BsKNipB+K+BsKHZepF+K9PGA2psvUi/NenjhvgBePOy9cvx/ukhhvgDe7ZepdUdd0iMJDgCe7fdcsoa7pEUSHAF8T73UoqGu6RGER04A+Cfe65Bw03pFAR04A+Ca5Bw03pFAR04AaCaBy5NN6RQEdOACgkpDlyaaRwEfcAFBJSErnxqJBH3AGQSV2P41GmH3ARok9q4r6p2Cj7gI0RPa/o1/9k='
+      : 'data:image/jpeg;base64,/9j/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wgARCAB9APoDASIAAhEBAxEB/8QAGAABAQEBAQAAAAAAAAAAAAAAAAQDAgX/xAAUAQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIQAxAAAAHwtpxWm2OwAAAAAAAAAAAAASAA71nFafU7AAAAAAAAAAABIAAADvWcVp9TsAAAAAAAAAEgAAAAAO9ZxWn1OwAAAAAAASAAAAAAAA71nFafU7AAAAABIAAAAAAAAADvWcVp9TsAAAEgAAAAAAAAAAAO9ZxWm2OwASAAAAAAAAAAAAAA62nFafU//8QAGBABAQEBAQAAAAAAAAAAAAAAAQIAUBH/2gAIAQEAAQUCFMUcEUxRwRTFHBFMUcEUxRwRTFHBFMUcEUxRwRTFHBFMUcEUxRwSvMUPBK8xQ8EpMUPBKTFDwRTe7//EABQRAQAAAAAAAAAAAAAAAAAAAHD/2gAIAQMBAT8BAP/EABQRAQAAAAAAAAAAAAAAAAAAAHD/2gAIAQIBAT8BAP/EABQQAQAAAAAAAAAAAAAAAAAAAJD/2gAIAQEABj8CAD//xAAZEAACAwEAAAAAAAAAAAAAAAAAAVBhcTH/2gAIAQEAAT8h4nBinA8TgxTgcQYpwOIMU4HEGKcDiDFOBxBinA4gxTgcQYpwOIMU4HEGKcCzBQOBZgoHA2CKBwNgigcDiGT/2gAMAwEAAgADAAAAEDMPPPPPPPPPPPPPPPPDMPPPPPPPPPPPPPPPPHNPPPPPPPPPPPPPPPPHNPPPPPPPPPPPPPPPPHNPPPPPPPPPPPPPPPPHNPPPPPPPPPPPPPPPPHPPPPPPPPPPPPPPPPPPNP/EABQRAQAAAAAAAAAAAAAAAAAAAHD/2gAIAQMBAT8QAP/EABQRAQAAAAAAAAAAAAAAAAAAAHD/2gAIAQIBAT8QAP/EAB8QAQABAwUBAQAAAAAAAAAAAAEhABExUFFxkdFhQf/aAAgBAQABPxDOL7HFRrxOO9BjFfY4qNeJx3oMYN9jio14nHegxg32OKjXicd6DGDfY4qNeJx3oMYN9jio14nHegxg32OKjXicd6DGDfY4qNeJx3oMYN9jio14n3QYwb7HFRrxPugxg32NRq/B90GKG+xqMX4PugxQ32NRi/J90GIH4NRi/B90GIH4NRl/g+6DbAbr8ZoCe6//2Q=='
+    ),
+    female: (
+      !isDark
+      ? 'data:image/jpeg;base64,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'
+      : 'data:image/jpeg;base64,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'
+    ),
+    male: (
+      !isDark
+      ? 'data:image/jpeg;base64,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'
+      : 'data:image/jpeg;base64,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'
+    ),
+  },
+  measure: {
+    padding: 40,
+    genderBand: {
+      width: 2.6,
+    },
+    marker: {
+      // scale: 0.3,
+      // width: 21,
+      // margin: 6,
+      scale: 0.4,
+      width: 22,
+      margin: 5,
+    },
+    node: {
+      margin: 9,
+      padding: 10,
+      height: 81,
+      width: 308,
+    },
+  },
+};
 const LIGHT_MARKERS = {
     "apparel": `<svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#FE6F00"><path d="m220.78-481.3-22.48 12.39q-17.39 6.87-36.78 1.74t-29.65-23.65L43.39-649.48q-10.83-19.09-5.41-39.89 5.41-20.8 24.5-31.63l242.43-138.22h78.48q15.22 0 25.52 10.31 10.31 10.3 10.31 25.52V-800q0 25.65 17.56 43.22 17.57 17.56 43.22 17.56t43.22-17.56q17.56-17.57 17.56-43.22v-23.39q0-15.22 10.31-25.52 10.3-10.31 25.52-10.31h78.48L897.52-721q19.09 10.83 24.5 31.63 5.42 20.8-5.41 39.89l-88.48 158.66q-9.69 17.39-28.87 22.86-19.17 5.48-37.56-1.39l-22.48-11.52V-160q0 24.35-18 41.78-18 17.44-42.35 17.44H280q-24.35 0-41.78-17.44-17.44-17.43-17.44-41.78v-321.3Zm106-178.09v452.61h306.44v-452.61l127.95 70.26 38.05-66.04-161.83-92.66q-17.26 49.87-59.32 82.24Q536-633.22 480-633.22q-56 0-98.07-32.37-42.06-32.37-59.32-82.24l-161.83 92.66 38.05 66.04 127.95-70.26ZM480-477.3Z"/></svg>`,
     "beautician": `<svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#EA1A68"><path d="M651.3-17.39q-18.69 0-32.17-13.48t-13.48-32.17q0-19.26 13.48-32.46t32.17-13.2h103.05v-40H651.3q-18.69 0-32.17-13.47-13.48-13.48-13.48-32.18 0-19.26 13.48-32.45Q632.61-240 651.3-240h103.05v-40H651.3q-18.69 0-32.17-13.48t-13.48-32.17q0-19.26 13.48-32.46 13.48-13.19 32.17-13.19h103.05v-40H651.3q-18.69 0-32.17-13.48t-13.48-32.18q0-19.26 13.48-32.45 13.48-13.2 32.17-13.2h103.05v-40H651.3q-18.69 0-32.17-13.48t-13.48-32.17q0-19.26 13.48-32.46 13.48-13.19 32.17-13.19h103.05v-40H651.3q-18.69 0-32.17-13.48t-13.48-32.18q0-19.26 13.48-32.45 13.48-13.2 32.17-13.2h154.35q35.83 0 60.74 24.91 24.91 24.92 24.91 60.74v576.53q0 35.26-24.91 60.45-24.91 25.2-60.74 25.2H651.3ZM320-380.35q59.78 0 102.54-60.76 42.76-60.76 42.76-144.54T422.54-730.2Q379.78-790.96 320-790.96q-59.78 0-102.54 60.76-42.76 60.77-42.76 144.55t42.76 144.54q42.76 60.76 102.54 60.76Zm0 362.96q-54.78 0-88.89-40.3Q197-98 204-151.09l17.13-148.34q-68-35.83-110.22-112.74Q68.7-489.09 68.7-585.65q0-130.09 73.39-220.7 73.39-90.61 177.91-90.61t177.91 90.61q73.39 90.61 73.39 220.7 0 96.56-42.21 173.48-42.22 76.91-110.22 112.74L436-150.52q7 53.09-27.67 93.11Q373.65-17.39 320-17.39Z"/></svg>`,
@@ -280,103 +509,86 @@ for (const [key, svg] of Object.entries(isDark ? DARK_MARKERS : LIGHT_MARKERS)) 
 // Lola Maximiana is estimated to die after March 5, 1951 because she was a signatory in Lola Nati's wedding on said date.
 
 var TREE_DATA = [
-  { key: 'TEMP-000',                                    prefix: '',     firstName: 'Yuseff Llue',        middleName: 'Adanza',      lastName: 'Argabioso',   suffix: '',    gender: 'M', birthDate: '2024-12-16',        baptismDate: null,         deathDate: null,               marriageDate: null,         deathAge: null,  living: true,  hasDNA: false, hasImage: false,  birthPlace: null,                                deathPlace: null,                                livingPlace: null,                marriagePlace: null,                                             height: 0, width: 0 },
-    { key: 'GQX8-CQP',               child: 'TEMP-000', prefix: '',     firstName: 'Arbyn',              middleName: 'Acosta',      lastName: 'Argabioso',   suffix: '',    gender: 'M', birthDate: '1995-04-19',        baptismDate: null,         deathDate: null,               marriageDate: '2024-06-15', deathAge: null,  living: true,  hasDNA: true,  hasImage: true,   birthPlace: 'Santa Cruz, Manila, PHL',           deathPlace: null,                                livingPlace: 'Metro Manila, PHL', marriagePlace: 'St. John Bosco Parish Church, Makati City, PHL', marker: 'computer', marker3: 'software' },
-      { key: 'GQJK-L51',             child: 'GQX8-CQP', prefix: '',     firstName: 'Rolando',            middleName: 'Saplala',     lastName: 'Argabioso',   suffix: '',    gender: 'M', birthDate: '1965-10-09',        baptismDate: null,         deathDate: null,               marriageDate: '2002-04-26', deathAge: null,  living: true,  hasDNA: true,  hasImage: true,   birthPlace: 'Poblacion, Caloocan, PHL',          deathPlace: null,                                livingPlace: 'Metro Manila, PHL', marriagePlace: 'Diliman, Quezon City, PHL',                      marker: 'intelligence', marker3: 'government' },
-        { key: 'GQJK-LCT',           child: 'GQJK-L51', prefix: '',     firstName: 'Marcial',            middleName: 'Mia',         lastName: 'Argabioso',   suffix: '',    gender: 'M', birthDate: '1932-10-13',        baptismDate: null,         deathDate: '2020-02-27',       marriageDate: '1963-01-23', deathAge: null,  living: false, hasDNA: false, hasImage: true,   birthPlace: 'Majayjay, Laguna, PHL',             deathPlace: 'Quezon City, PHL',                  livingPlace: null,                marriagePlace: 'Luisiana, Laguna, PHL',                          },
-          { key: 'GHBZ-TM4',         child: 'GQJK-LCT', prefix: '',     firstName: 'Eusebio',            middleName: 'Lopecillo',   lastName: 'Argabioso',   suffix: '',    gender: 'M', birthDate: 'about 1895',        baptismDate: null,         deathDate: '1972-10-27',       marriageDate: null,         deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: 'Majayjay, Laguna, PHL',             deathPlace: 'Majayjay, Laguna, PHL',             livingPlace: null,                marriagePlace: null,                                             marker: 'farming' },
-            { key: 'GHB8-RCH',       child: 'GHBZ-TM4', prefix: '',     firstName: 'Estebana',           middleName: '',            lastName: 'Lopecillo',   suffix: '',    gender: 'F', birthDate: 'about 1861',        baptismDate: null,         deathDate: '1951-08-30',       marriageDate: null,         deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: 'Majayjay, Laguna, PHL',             deathPlace: 'Majayjay, Laguna, PHL',             livingPlace: null,                marriagePlace: null,                                             },
-              { key: 'G2HQ-YQS',     child: 'GHB8-RCH', prefix: '',     firstName: 'Simplicio',          middleName: '',            lastName: 'Lopecillo',   suffix: '',    gender: 'M', birthDate: null,                baptismDate: null,         deathDate: null,               marriageDate: null,         deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                deathPlace: null,                                livingPlace: null,                marriagePlace: null,                                             },
-              { key: 'G2H7-Q75',     child: 'GHB8-RCH', prefix: '',     firstName: 'Gregoria',           middleName: '',            lastName: 'Villarubin',  suffix: '',    gender: 'F', birthDate: null,                baptismDate: null,         deathDate: null,               marriageDate: null,         deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                deathPlace: null,                                livingPlace: null,                marriagePlace: null,                                             },
-          { key: 'GHBZ-P5Q',         child: 'GQJK-LCT', prefix: '',     firstName: 'Francisca',          middleName: '',            lastName: 'Mia',         suffix: '',    gender: 'F', birthDate: 'before 1910',       baptismDate: null,         deathDate: 'after 1936-10-13', marriageDate: null,         deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                deathPlace: null,                                livingPlace: null,                marriagePlace: null,                                             },
-        { key: 'GHBZ-YVX',           child: 'GQJK-L51', prefix: '',     firstName: 'Lydia',              middleName: 'Perez',       lastName: 'Saplala',     suffix: '',    gender: 'F', birthDate: '1944-11-24',        baptismDate: null,         deathDate: null,               marriageDate: '1963-01-23', deathAge: null,  living: true,  hasDNA: true,  hasImage: true,   birthPlace: 'Lubao, Pampanga, PHL',              deathPlace: null,                                livingPlace: 'Metro Manila, PHL', marriagePlace: 'Luisiana, Laguna, PHL',                          marker: 'retail', marker3: 'sales' },
-          { key: 'GHB8-7T6',         child: 'GHBZ-YVX', prefix: '',     firstName: 'Fernando',           middleName: 'Sison',       lastName: 'Saplala',     suffix: '',    gender: 'M', birthDate: '1916-05-30',        baptismDate: null,         deathDate: '1993-05-03',       marriageDate: null,         deathAge: null,  living: false, hasDNA: false, hasImage: true,   birthPlace: 'Lubao, Pampanga, PHL',              deathPlace: 'Caloocan, PHL',                     livingPlace: null,                marriagePlace: null,                                             marker: 'military' },
-            { key: 'GNNH-JLM',       child: 'GHB8-7T6', prefix: '',     firstName: 'Estanislao',         middleName: '',            lastName: 'Saplala',     suffix: '',    gender: 'M', birthDate: null,                baptismDate: null,         deathDate: null,               marriageDate: null,         deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                deathPlace: null,                                livingPlace: null,                marriagePlace: null,                                             },
-            { key: 'GJJX-1SG',       child: 'GHB8-7T6', prefix: '',     firstName: 'Adela',              middleName: '',            lastName: 'Sison',       suffix: '',    gender: 'F', birthDate: null,                baptismDate: null,         deathDate: null,               marriageDate: null,         deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                deathPlace: null,                                livingPlace: null,                marriagePlace: null,                                             },
-          { key: 'GHB8-GZL',         child: 'GHBZ-YVX', prefix: '',     firstName: 'Lucina',             middleName: 'Gutierrez',   lastName: 'Perez',       suffix: '',    gender: 'F', birthDate: '1919-11-16',        baptismDate: null,         deathDate: '1986-10-02',       marriageDate: null,         deathAge: null,  living: false, hasDNA: false, hasImage: true,   birthPlace: 'Orani, Bataan, PHL',                deathPlace: 'Dinalupihan, Bataan, PHL',          livingPlace: null,                marriagePlace: null,                                             marker: 'housewife' },
-            { key: 'GHB8-M8D',       child: 'GHB8-GZL', prefix: '',     firstName: 'Victor',             middleName: '',            lastName: 'Perez',       suffix: '',    gender: 'M', birthDate: null,                baptismDate: null,         deathDate: null,               marriageDate: null,         deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                deathPlace: null,                                livingPlace: null,                marriagePlace: null,                                             },
-            { key: 'GHB8-M86',       child: 'GHB8-GZL', prefix: '',     firstName: 'Genoveba',           middleName: '',            lastName: 'Gutierrez',   suffix: '',    gender: 'F', birthDate: null,                baptismDate: null,         deathDate: null,               marriageDate: null,         deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                deathPlace: null,                                livingPlace: null,                marriagePlace: null,                                             },
-      { key: 'GQJK-G8W',             child: 'GQX8-CQP', prefix: '',     firstName: 'Corazon',            middleName: 'Maramba',     lastName: 'Acosta',      suffix: '',    gender: 'F', birthDate: '1971-03-10',        baptismDate: '1971-09-05', deathDate: '2018-05-25',       marriageDate: '2003-02-03', deathAge: null,  living: false, hasDNA: false, hasImage: true,   birthPlace: 'Sampaloc, Manila, PHL',             deathPlace: 'Santa Cruz, Laguna, PHL',           livingPlace: null,                marriagePlace: 'Pasig City, PHL',                                marker: 'housewife' },
-        { key: 'GHBD-7M4',           child: 'GQJK-G8W', prefix: '',     firstName: 'Manuel',             middleName: 'San Agustin', lastName: 'Acosta',      suffix: 'Jr.', gender: 'M', birthDate: '1948-07-06',        baptismDate: null,         deathDate: '1979-06-07',       marriageDate: '1966-03-26', deathAge: null,  living: false, hasDNA: false, hasImage: true,   birthPlace: 'España, Manila, PHL',               deathPlace: 'Pasadena, California, USA',         livingPlace: null,                marriagePlace: 'Santa Cruz, Manila, PHL',                        marker: 'male-twin', marker2: 'seaman' },
-          { key: 'GHBD-9L6',         child: 'GHBD-7M4', prefix: '',     firstName: 'Manuel',             middleName: 'Bongco',      lastName: 'Acosta',      suffix: 'Sr.', gender: 'M', birthDate: '1913-11-10',        baptismDate: null,         deathDate: '1994-11-20',       marriageDate: '1951-03-05', deathAge: null,  living: false, hasDNA: false, hasImage: true,   birthPlace: 'Orani, Bataan, PHL',                deathPlace: 'San Dimas, California, USA',        livingPlace: null,                marriagePlace: 'Tondo, Manila, PHL',                             marker: 'police', marker2: 'investigate' },
-            { key: 'GHB8-SQN',       child: 'GHBD-9L6', prefix: '',     firstName: 'Ligorio',            middleName: '',            lastName: 'Acosta',      suffix: '',    gender: 'M', birthDate: 'about 1871',        baptismDate: null,         deathDate: '1948-07-07',       marriageDate: null,         deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: 'Orani, Bataan, PHL',                deathPlace: 'Santa Cruz, Manila, PHL',           livingPlace: null,                marriagePlace: null,                                             },
-            { key: 'GHB8-5K8',       child: 'GHBD-9L6', prefix: '',     firstName: 'Maximiana',          middleName: '',            lastName: 'Bongco',      suffix: '',    gender: 'F', birthDate: null,                baptismDate: null,         deathDate: 'after 1951-03-05', marriageDate: null,         deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: 'PHL',                               deathPlace: null,                                livingPlace: null,                marriagePlace: null,                                             },
-          { key: 'GHB8-DXY',         child: 'GHBD-7M4', prefix: '',     firstName: 'Natividad',          middleName: '',            lastName: 'San Agustin', suffix: '',    gender: 'F', birthDate: '1925-12-21',        baptismDate: null,         deathDate: '2008-10-09',       marriageDate: '1951-03-05', deathAge: null,  living: false, hasDNA: false, hasImage: true,   birthPlace: 'Ermita, Manila, PHL',               deathPlace: 'San Dimas, California, USA',        livingPlace: null,                marriagePlace: 'Tondo, Manila, PHL',                             marker: 'housewife' },
-            { key: 'GHB8-LCC',       child: 'GHB8-DXY', prefix: '',     firstName: 'Vicente',            middleName: '',            lastName: 'San Agustin', suffix: '',    gender: 'M', birthDate: null,                baptismDate: null,         deathDate: null,               marriageDate: null,         deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                deathPlace: null,                                livingPlace: null,                marriagePlace: null,                                             },
-            { key: 'GHB8-H7K',       child: 'GHB8-DXY', prefix: '',     firstName: 'Nena',               middleName: '',            lastName: '',            suffix: '',    gender: 'F', birthDate: null,                baptismDate: null,         deathDate: null,               marriageDate: null,         deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                deathPlace: null,                                livingPlace: null,                marriagePlace: null,                                             },
-        { key: 'GHB8-J1B',           child: 'GQJK-G8W', prefix: '',     firstName: 'Catalina',           middleName: 'Dumantay',    lastName: 'Maramba',     suffix: '',    gender: 'F', birthDate: '1943-01-28',        baptismDate: null,         deathDate: '1974-08-10',       marriageDate: '1966-03-26', deathAge: null,  living: false, hasDNA: false, hasImage: true,   birthPlace: 'Sta. Barbara, Pangasinan, PHL',     deathPlace: 'Sangandaan, Caloocan, PHL',         livingPlace: null,                marriagePlace: 'Santa Cruz, Manila, PHL',                        marker: 'housewife' },
-          { key: 'GHB8-GB6',         child: 'GHB8-J1B', prefix: '',     firstName: 'Sotero',             middleName: 'Reyes',       lastName: 'Maramba',     suffix: 'Sr.', gender: 'M', birthDate: '1903-04-22',        baptismDate: null,         deathDate: '1969-12-12',       marriageDate: null,         deathAge: null,  living: false, hasDNA: false, hasImage: true,   birthPlace: 'Sta. Barbara, Pangasinan, PHL',     deathPlace: 'Sangandaan, Caloocan, PHL',         livingPlace: null,                marriagePlace: null,                                             marker: 'police', marker2: 'train' },
-            { key: 'LLQS-641',       child: 'GHB8-GB6', prefix: 'Don',  firstName: 'Miguel',             middleName: 'Bautista',    lastName: 'Maramba',     suffix: '',    gender: 'M', birthDate: 'about 1858',        baptismDate: null,         deathDate: 'after 1902-06',    marriageDate: null,         deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: 'Sta. Barbara, Pangasinan, PHL',     deathPlace: 'Sta. Barbara, Pangasinan, PHL',     livingPlace: null,                marriagePlace: null,                                             marker: 'government' },
-              { key: 'LLQS-6YC',     child: 'LLQS-641', prefix: '',     firstName: 'Guillermo',          middleName: 'Bautista',    lastName: 'Maramba',     suffix: '',    gender: 'M', birthDate: 'from 1800 to 1858', baptismDate: null,         deathDate: null,               marriageDate: null,         deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                deathPlace: 'Sta. Barbara, Pangasinan, PHL',     livingPlace: null,                marriagePlace: null,                                             marker: 'sales', marker2: 'cattle' },
-              { key: 'L281-614',     child: 'LLQS-641', prefix: '',     firstName: 'Maria',              middleName: 'Garcia',      lastName: 'Bautista',    suffix: '',    gender: 'F', birthDate: 'from 1800 to 1858', baptismDate: null,         deathDate: null,               marriageDate: null,         deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                deathPlace: 'Sta. Barbara, Pangasinan, PHL',     livingPlace: null,                marriagePlace: null,                                             },
-                { key: 'GC7T-H59',   child: 'L281-614', prefix: 'Don',  firstName: 'Agustin',            middleName: '',            lastName: 'Bautista',    suffix: '',    gender: 'M', birthDate: 'from 1735 to 1853', baptismDate: null,         deathDate: 'after 1881',       marriageDate: null,         deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                deathPlace: null,                                livingPlace: null,                marriagePlace: null,                                             marker: 'government' },
-                { key: 'GC7T-1PK',   child: 'L281-614', prefix: 'Doña', firstName: 'Felipa',             middleName: '',            lastName: 'Garcia',      suffix: '',    gender: 'F', birthDate: null,                baptismDate: null,         deathDate: null,               marriageDate: null,         deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                deathPlace: null,                                livingPlace: null,                marriagePlace: null,                                             },
-            { key: 'LLQS-6F1',       child: 'GHB8-GB6', prefix: '',     firstName: 'Mercedes',           middleName: 'Novilla',     lastName: 'Reyes',       suffix: '',    gender: 'F', birthDate: null,                baptismDate: null,         deathDate: null,               marriageDate: null,         deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                deathPlace: null,                                livingPlace: null,                marriagePlace: null,                                             },
-              { key: 'G7C3-B6P',     child: 'LLQS-6F1', prefix: '',     firstName: 'Gregorio',           middleName: '',            lastName: 'Reyes',       suffix: '',    gender: 'M', birthDate: null,                baptismDate: null,         deathDate: null,               marriageDate: null,         deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                deathPlace: null,                                livingPlace: null,                marriagePlace: null,                                             },
-              { key: 'G7C3-J9S',     child: 'LLQS-6F1', prefix: '',     firstName: 'Leocadia',           middleName: '',            lastName: 'Novilla',     suffix: '',    gender: 'F', birthDate: null,                baptismDate: null,         deathDate: null,               marriageDate: null,         deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                deathPlace: null,                                livingPlace: null,                marriagePlace: null,                                             },
-          { key: 'GHBD-9LY',         child: 'GHB8-J1B', prefix: '',     firstName: 'Cresencia',          middleName: '',            lastName: 'Dumantay',    suffix: '',    gender: 'F', birthDate: '1918-04-19',        baptismDate: null,         deathDate: '1990-04-16',       marriageDate: null,         deathAge: null,  living: false, hasDNA: false, hasImage: true,   birthPlace: 'PHL',                               deathPlace: 'Sangandaan, Caloocan, PHL',         livingPlace: null,                marriagePlace: null,                                             marker: 'apparel', marker2: 'sales' },
-            { key: 'TEMP-001',       child: 'GHBD-9LY', prefix: '',     firstName: 'Unknown',            middleName: '',            lastName: 'name',        suffix: '',    gender: 'F', birthDate: 'before 1908',       baptismDate: null,         deathDate: 'after 1918-04-19', marriageDate: null,         deathAge: "50+", living: false, hasDNA: false, hasImage: true,   birthPlace: 'PHL',                               deathPlace: 'PHL',                               livingPlace: null,                marriagePlace: null,                                             },
-    { key: 'GHB5-TWN',               child: 'TEMP-000', prefix: '',     firstName: 'Mitchie',            middleName: 'Ajesta',      lastName: 'Adanza',      suffix: '',    gender: 'F', birthDate: '1994-12-16',        baptismDate: null,         deathDate: null,               marriageDate: null,         deathAge: null,  living: true,  hasDNA: true,  hasImage: true,   birthPlace: 'Santa Cruz, Manila, PHL',           deathPlace: null,                                livingPlace: 'Metro Manila, PHL', marriagePlace: null,                                             marker: 'prelations' },
-      { key: 'GHB5-XTZ',             child: 'GHB5-TWN', prefix: '',     firstName: 'Darne',              middleName: 'Elican',      lastName: 'Adanza',      suffix: '',    gender: 'M', birthDate: '1964-06-22',        baptismDate: null,         deathDate: null,               marriageDate: '1994-01-25', deathAge: null,  living: true,  hasDNA: false, hasImage: true,   birthPlace: 'Balingasag, Misamis Or., PHL',      deathPlace: null,                                livingPlace: 'Metro Manila, PHL', marriagePlace: 'Sta. Maria, Bulacan, PHL',                       marker: 'manufacturing', marker3: 'prelations', marker2: 'househusband' },
-        { key: 'GH12-SVQ',           child: 'GHB5-XTZ', prefix: '',     firstName: 'Nestor',             middleName: 'Ladera',      lastName: 'Adanza',      suffix: '',    gender: 'M', birthDate: '1938-02-26',        baptismDate: null,         deathDate: '2018-09-28',       marriageDate: null,         deathAge: null,  living: false, hasDNA: false, hasImage: true,   birthPlace: 'Balingasag, Misamis Oriental, PHL', deathPlace: 'Balingasag, Misamis Oriental, PHL', livingPlace: null,                marriagePlace: null,                                             marker: 'farming' },
-          { key: 'GH12-DRN',         child: 'GH12-SVQ', prefix: '',     firstName: 'Felomino',           middleName: 'R',           lastName: 'Adanza',      suffix: '',    gender: 'M', birthDate: 'about 1901',        baptismDate: null,         deathDate: '1990-11-03',       marriageDate: null,         deathAge: null,  living: false, hasDNA: false, hasImage: true,   birthPlace: 'Dumaguete, Negros Oriental, PHL',   deathPlace: 'Balingasag, Misamis Oriental, PHL', livingPlace: null,                marriagePlace: null,                                             marker: 'farming' },
-          { key: 'GH12-3GN',         child: 'GH12-SVQ', prefix: '',     firstName: 'Consuelo',           middleName: '',            lastName: 'Ladera',      suffix: '',    gender: 'F', birthDate: null,                baptismDate: null,         deathDate: 'after 1990-11-03', marriageDate: null,         deathAge: null,  living: false, hasDNA: false, hasImage: true,   birthPlace: 'PHL',                               deathPlace: 'PHL',                               livingPlace: null,                marriagePlace: null,                                             },
-        { key: 'GH12-9F6',           child: 'GHB5-XTZ', prefix: '',     firstName: 'Rufa',               middleName: 'Acerto',      lastName: 'Elican',      suffix: '',    gender: 'F', birthDate: '1939-11-28',        baptismDate: null,         deathDate: '2015-04-02',       marriageDate: null,         deathAge: null,  living: false, hasDNA: false, hasImage: true,   birthPlace: 'Balingasag, Misamis Oriental, PHL', deathPlace: 'Balingasag, Misamis Oriental, PHL', livingPlace: null,                marriagePlace: null,                                             marker: 'farming' },
-          { key: 'GH12-9JZ',         child: 'GH12-9F6', prefix: '',     firstName: 'Cecilio',            middleName: '',            lastName: 'Elican',      suffix: '',    gender: 'M', birthDate: null,                baptismDate: null,         deathDate: null,               marriageDate: null,         deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                deathPlace: null,                                livingPlace: null,                marriagePlace: null,                                             marker: 'military' },
-          { key: 'GH12-35H',         child: 'GH12-9F6', prefix: '',     firstName: 'Jovita',             middleName: '',            lastName: 'Acerto',      suffix: '',    gender: 'F', birthDate: null,                baptismDate: null,         deathDate: null,               marriageDate: null,         deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                deathPlace: null,                                livingPlace: null,                marriagePlace: null,                                             },
-      { key: 'GHBR-FK3',             child: 'GHB5-TWN', prefix: '',     firstName: 'Mylen',              middleName: 'Vergara',     lastName: 'Ajesta',      suffix: '',    gender: 'F', birthDate: '1974-04-13',        baptismDate: null,         deathDate: null,               marriageDate: '1994-01-25', deathAge: null,  living: true,  hasDNA: false, hasImage: true,   birthPlace: 'Sinamongan, Pilar, Capiz, PHL',     deathPlace: null,                                livingPlace: 'Manama, BHR',       marriagePlace: 'Sta. Maria, Bulacan, PHL',                       marker: 'beautician', marker3: 'manager', marker2: 'prelations' },
-        { key: 'GH12-Z3C',           child: 'GHBR-FK3', prefix: '',     firstName: 'Napoleon Crispolon', middleName: 'Badoles',     lastName: 'Ajesta',      suffix: '',    gender: 'M', birthDate: 'before 1968',       baptismDate: null,         deathDate: 'after 1980-02-26', marriageDate: '1962-08-05', deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: 'Binaobawan, Pilar, Capiz, PHL',     deathPlace: "PHL",                               livingPlace: null,                marriagePlace: 'Pilar, Capiza, PHL',                             },
-          { key: 'GH12-XX4',         child: 'GH12-Z3C', prefix: '',     firstName: 'Emmanuel',           middleName: '',            lastName: 'Ajesta',      suffix: '',    gender: 'M', birthDate: 'around 1903',       baptismDate: null,         deathDate: 'after 1922-02-15', marriageDate: '1922-02-15', deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: 'Pilar, Capiz, PHL',                 deathPlace: null,                                livingPlace: null,                marriagePlace: 'Pontevedra, Capiz, PHL',                         },
-            { key: 'GKBR-M9Y',       child: 'GH12-XX4', prefix: '',     firstName: 'Eustaquio',          middleName: '',            lastName: 'Ajesta',      suffix: '',    gender: 'M', birthDate: null,                baptismDate: null,         deathDate: null,               marriageDate: null,         deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                deathPlace: null,                                livingPlace: null,                marriagePlace: null,                                             },
-            { key: 'GKBR-7P7',       child: 'GH12-XX4', prefix: '',     firstName: 'Florencia',          middleName: '',            lastName: 'Bermúdez',    suffix: '',    gender: 'F', birthDate: null,                baptismDate: null,         deathDate: null,               marriageDate: null,         deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                deathPlace: null,                                livingPlace: null,                marriagePlace: null,                                             },
-          { key: 'GH12-HQN',         child: 'GH12-Z3C', prefix: '',     firstName: 'Ursula',             middleName: '',            lastName: 'Badoles',     suffix: '',    gender: 'F', birthDate: 'around 1904',       baptismDate: null,         deathDate: 'after 1922-02-15', marriageDate: '1922-02-15', deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                deathPlace: null,                                livingPlace: null,                marriagePlace: 'Pontevedra, Capiz, PHL',                         },
-            { key: 'GKBT-9GD',       child: 'GH12-HQN', prefix: '',     firstName: 'Pedro Benjamin',     middleName: '',            lastName: 'Badoles',     suffix: '',    gender: 'M', birthDate: null,                baptismDate: null,         deathDate: null,               marriageDate: null,         deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                deathPlace: null,                                livingPlace: null,                marriagePlace: null,                                             },
-            { key: 'K2GJ-YY3',       child: 'GH12-HQN', prefix: '',     firstName: 'Leoncia',            middleName: '',            lastName: 'Villanes',    suffix: '',    gender: 'F', birthDate: 'about 1852',        baptismDate: null,         deathDate: '1922-01-08',       marriageDate: null,         deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: 'Panay, Capiz, PHL',                 deathPlace: 'Panay, Capiz, PHL',                 livingPlace: null,                marriagePlace: null,                                             },
-        { key: 'GH12-W17',           child: 'GHBR-FK3', prefix: '',     firstName: 'Celma',              middleName: 'Borja',       lastName: 'Vergara',     suffix: '',    gender: 'F', birthDate: '1941-07-08',        baptismDate: null,         deathDate: '2020-02-16',       marriageDate: '1962-08-05', deathAge: null,  living: false, hasDNA: false, hasImage: true,   birthPlace: 'Dulangan, Pilar, Capiz, PHL',       deathPlace: 'Santa Maria, Bulacan, PHL',         livingPlace: null,                marriagePlace: 'Pilar, Capiza, PHL',                             marker: 'farming' },
-          { key: 'GH12-6YL',         child: 'GH12-W17', prefix: '',     firstName: 'Benigno',            middleName: '',            lastName: 'Vergara',     suffix: '',    gender: 'M', birthDate: null,                baptismDate: null,         deathDate: null,               marriageDate: null,         deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                deathPlace: null,                                livingPlace: null,                marriagePlace: null,                                             marker: 'military' },
-          { key: 'GH12-DD8',         child: 'GH12-W17', prefix: '',     firstName: 'Enoria',             middleName: '',            lastName: 'Borja',       suffix: '',    gender: 'F', birthDate: null,                baptismDate: null,         deathDate: 'after 1997-12-16', marriageDate: null,         deathAge: "90+", living: false, hasDNA: false, hasImage: true,   birthPlace: 'PHL',                               deathPlace: 'PHL',                               livingPlace: null,                marriagePlace: null,                                             },
+  { key: 'TEMP-000',                                    prefix: null,   firstName: 'Yuseff Llue',        middleName: 'Adanza',      lastName: 'Argabioso',   suffix: null,  gender: 'M', birthDate: '2024-12-16',        baptismDate: null,         marriageDate: null,         deathDate: null,               deathAge: null,  living: true,  hasDNA: false, hasImage: false,  birthPlace: null,                                marriagePlace: null,                        livingPlace: null,                deathPlace: null,                                height: 0, width: 0 },
+    { key: 'GQX8-CQP',               child: 'TEMP-000', prefix: null,   firstName: 'Arbyn',              middleName: 'Acosta',      lastName: 'Argabioso',   suffix: null,  gender: 'M', birthDate: '1995-04-19',        baptismDate: null,         marriageDate: '2024-06-15', deathDate: null,               deathAge: null,  living: true,  hasDNA: true,  hasImage: true,   birthPlace: 'Santa Cruz, Manila, PHL',           marriagePlace: 'Makati City, PHL',          livingPlace: 'Metro Manila, PHL', deathPlace: null,                                marker: 'computer', marker3: 'software' },
+      { key: 'GQJK-L51',             child: 'GQX8-CQP', prefix: null,   firstName: 'Rolando',            middleName: 'Saplala',     lastName: 'Argabioso',   suffix: null,  gender: 'M', birthDate: '1965-10-09',        baptismDate: null,         marriageDate: '2002-04-26', deathDate: null,               deathAge: null,  living: true,  hasDNA: true,  hasImage: true,   birthPlace: 'Poblacion, Caloocan, PHL',          marriagePlace: 'Diliman, Quezon City, PHL', livingPlace: 'Metro Manila, PHL', deathPlace: null,                                marker: 'intelligence', marker3: 'government' },
+        { key: 'GQJK-LCT',           child: 'GQJK-L51', prefix: null,   firstName: 'Marcial',            middleName: 'Mia',         lastName: 'Argabioso',   suffix: null,  gender: 'M', birthDate: '1932-10-13',        baptismDate: null,         marriageDate: '1963-01-23', deathDate: '2020-02-27',       deathAge: null,  living: false, hasDNA: false, hasImage: true,   birthPlace: 'Majayjay, Laguna, PHL',             marriagePlace: 'Luisiana, Laguna, PHL',     livingPlace: null,                deathPlace: 'Quezon City, PHL',                  },
+          { key: 'GHBZ-TM4',         child: 'GQJK-LCT', prefix: null,   firstName: 'Eusebio',            middleName: 'Lopecillo',   lastName: 'Argabioso',   suffix: null,  gender: 'M', birthDate: 'about 1895',        baptismDate: null,         marriageDate: null,         deathDate: '1972-10-27',       deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: 'Majayjay, Laguna, PHL',             marriagePlace: null,                        livingPlace: null,                deathPlace: 'Majayjay, Laguna, PHL',             marker: 'farming' },
+            { key: 'GHB8-RCH',       child: 'GHBZ-TM4', prefix: null,   firstName: 'Estebana',           middleName: null,          lastName: 'Lopecillo',   suffix: null,  gender: 'F', birthDate: 'about 1861',        baptismDate: null,         marriageDate: null,         deathDate: '1951-08-30',       deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: 'Majayjay, Laguna, PHL',             marriagePlace: null,                        livingPlace: null,                deathPlace: 'Majayjay, Laguna, PHL',             },
+              { key: 'G2HQ-YQS',     child: 'GHB8-RCH', prefix: null,   firstName: 'Simplicio',          middleName: null,          lastName: 'Lopecillo',   suffix: null,  gender: 'M', birthDate: null,                baptismDate: null,         marriageDate: null,         deathDate: null,               deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                marriagePlace: null,                        livingPlace: null,                deathPlace: null,                                },
+              { key: 'G2H7-Q75',     child: 'GHB8-RCH', prefix: null,   firstName: 'Gregoria',           middleName: null,          lastName: 'Villarubin',  suffix: null,  gender: 'F', birthDate: null,                baptismDate: null,         marriageDate: null,         deathDate: null,               deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                marriagePlace: null,                        livingPlace: null,                deathPlace: null,                                },
+          { key: 'GHBZ-P5Q',         child: 'GQJK-LCT', prefix: null,   firstName: 'Francisca',          middleName: null,          lastName: 'Mia',         suffix: null,  gender: 'F', birthDate: 'before 1910',       baptismDate: null,         marriageDate: null,         deathDate: 'after 1936-10-13', deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                marriagePlace: null,                        livingPlace: null,                deathPlace: null,                                },
+        { key: 'GHBZ-YVX',           child: 'GQJK-L51', prefix: null,   firstName: 'Lydia',              middleName: 'Perez',       lastName: 'Saplala',     suffix: null,  gender: 'F', birthDate: '1944-11-24',        baptismDate: null,         marriageDate: '1963-01-23', deathDate: null,               deathAge: null,  living: true,  hasDNA: true,  hasImage: true,   birthPlace: 'Lubao, Pampanga, PHL',              marriagePlace: 'Luisiana, Laguna, PHL',     livingPlace: 'Metro Manila, PHL', deathPlace: null,                                marker: 'retail', marker3: 'sales' },
+          { key: 'GHB8-7T6',         child: 'GHBZ-YVX', prefix: null,   firstName: 'Fernando',           middleName: 'Sison',       lastName: 'Saplala',     suffix: null,  gender: 'M', birthDate: '1916-05-30',        baptismDate: null,         marriageDate: null,         deathDate: '1993-05-03',       deathAge: null,  living: false, hasDNA: false, hasImage: true,   birthPlace: 'Lubao, Pampanga, PHL',              marriagePlace: null,                        livingPlace: null,                deathPlace: 'Caloocan, PHL',                     marker: 'military' },
+            { key: 'GNNH-JLM',       child: 'GHB8-7T6', prefix: null,   firstName: 'Estanislao',         middleName: null,          lastName: 'Saplala',     suffix: null,  gender: 'M', birthDate: null,                baptismDate: null,         marriageDate: null,         deathDate: null,               deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                marriagePlace: null,                        livingPlace: null,                deathPlace: null,                                },
+            { key: 'GJJX-1SG',       child: 'GHB8-7T6', prefix: null,   firstName: 'Adela',              middleName: null,          lastName: 'Sison',       suffix: null,  gender: 'F', birthDate: null,                baptismDate: null,         marriageDate: null,         deathDate: null,               deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                marriagePlace: null,                        livingPlace: null,                deathPlace: null,                                },
+          { key: 'GHB8-GZL',         child: 'GHBZ-YVX', prefix: null,   firstName: 'Lucina',             middleName: 'Gutierrez',   lastName: 'Perez',       suffix: null,  gender: 'F', birthDate: '1919-11-16',        baptismDate: null,         marriageDate: null,         deathDate: '1986-10-02',       deathAge: null,  living: false, hasDNA: false, hasImage: true,   birthPlace: 'Orani, Bataan, PHL',                marriagePlace: null,                        livingPlace: null,                deathPlace: 'Dinalupihan, Bataan, PHL',          marker: 'housewife' },
+            { key: 'GHB8-M8D',       child: 'GHB8-GZL', prefix: null,   firstName: 'Victor',             middleName: null,          lastName: 'Perez',       suffix: null,  gender: 'M', birthDate: null,                baptismDate: null,         marriageDate: null,         deathDate: null,               deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                marriagePlace: null,                        livingPlace: null,                deathPlace: null,                                },
+            { key: 'GHB8-M86',       child: 'GHB8-GZL', prefix: null,   firstName: 'Genoveba',           middleName: null,          lastName: 'Gutierrez',   suffix: null,  gender: 'F', birthDate: null,                baptismDate: null,         marriageDate: null,         deathDate: null,               deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                marriagePlace: null,                        livingPlace: null,                deathPlace: null,                                },
+      { key: 'GQJK-G8W',             child: 'GQX8-CQP', prefix: null,   firstName: 'Corazon',            middleName: 'Maramba',     lastName: 'Acosta',      suffix: null,  gender: 'F', birthDate: '1971-03-10',        baptismDate: '1971-09-05', marriageDate: '2003-02-03', deathDate: '2018-05-25',       deathAge: null,  living: false, hasDNA: false, hasImage: true,   birthPlace: 'Sampaloc, Manila, PHL',             marriagePlace: 'Pasig City, PHL',           livingPlace: null,                deathPlace: 'Santa Cruz, Laguna, PHL',           marker: 'housewife' },
+        { key: 'GHBD-7M4',           child: 'GQJK-G8W', prefix: null,   firstName: 'Manuel',             middleName: 'San Agustin', lastName: 'Acosta',      suffix: 'Jr.', gender: 'M', birthDate: '1948-07-06',        baptismDate: null,         marriageDate: '1966-03-26', deathDate: '1979-06-07',       deathAge: null,  living: false, hasDNA: false, hasImage: true,   birthPlace: 'España, Manila, PHL',               marriagePlace: 'Santa Cruz, Manila, PHL',   livingPlace: null,                deathPlace: 'Pasadena, California, USA',         marker: 'male-twin', marker2: 'seaman' },
+          { key: 'GHBD-9L6',         child: 'GHBD-7M4', prefix: null,   firstName: 'Manuel',             middleName: 'Bongco',      lastName: 'Acosta',      suffix: 'Sr.', gender: 'M', birthDate: '1913-11-10',        baptismDate: null,         marriageDate: '1951-03-05', deathDate: '1994-11-20',       deathAge: null,  living: false, hasDNA: false, hasImage: true,   birthPlace: 'Orani, Bataan, PHL',                marriagePlace: 'Tondo, Manila, PHL',        livingPlace: null,                deathPlace: 'San Dimas, California, USA',        marker: 'police', marker2: 'investigate' },
+            { key: 'GHB8-SQN',       child: 'GHBD-9L6', prefix: null,   firstName: 'Ligorio',            middleName: null,          lastName: 'Acosta',      suffix: null,  gender: 'M', birthDate: 'about 1871',        baptismDate: null,         marriageDate: null,         deathDate: '1948-07-07',       deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: 'Orani, Bataan, PHL',                marriagePlace: null,                        livingPlace: null,                deathPlace: 'Santa Cruz, Manila, PHL',           },
+            { key: 'GHB8-5K8',       child: 'GHBD-9L6', prefix: null,   firstName: 'Maximiana',          middleName: null,          lastName: 'Bongco',      suffix: null,  gender: 'F', birthDate: null,                baptismDate: null,         marriageDate: null,         deathDate: 'after 1951-03-05', deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: 'PHL',                               marriagePlace: null,                        livingPlace: null,                deathPlace: null,                                },
+          { key: 'GHB8-DXY',         child: 'GHBD-7M4', prefix: null,   firstName: 'Natividad',          middleName: null,          lastName: 'San Agustin', suffix: null,  gender: 'F', birthDate: '1925-12-21',        baptismDate: null,         marriageDate: '1951-03-05', deathDate: '2008-10-09',       deathAge: null,  living: false, hasDNA: false, hasImage: true,   birthPlace: 'Ermita, Manila, PHL',               marriagePlace: 'Tondo, Manila, PHL',        livingPlace: null,                deathPlace: 'San Dimas, California, USA',        marker: 'housewife' },
+            { key: 'GHB8-LCC',       child: 'GHB8-DXY', prefix: null,   firstName: 'Vicente',            middleName: null,          lastName: 'San Agustin', suffix: null,  gender: 'M', birthDate: null,                baptismDate: null,         marriageDate: null,         deathDate: null,               deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                marriagePlace: null,                        livingPlace: null,                deathPlace: null,                                },
+            { key: 'GHB8-H7K',       child: 'GHB8-DXY', prefix: null,   firstName: 'Nena',               middleName: null,          lastName: null,          suffix: null,  gender: 'F', birthDate: null,                baptismDate: null,         marriageDate: null,         deathDate: null,               deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                marriagePlace: null,                        livingPlace: null,                deathPlace: null,                                },
+        { key: 'GHB8-J1B',           child: 'GQJK-G8W', prefix: null,   firstName: 'Catalina',           middleName: 'Dumantay',    lastName: 'Maramba',     suffix: null,  gender: 'F', birthDate: '1943-01-28',        baptismDate: null,         marriageDate: '1966-03-26', deathDate: '1974-08-10',       deathAge: null,  living: false, hasDNA: false, hasImage: true,   birthPlace: 'Sta. Barbara, Pangasinan, PHL',     marriagePlace: 'Santa Cruz, Manila, PHL',   livingPlace: null,                deathPlace: 'Sangandaan, Caloocan, PHL',         marker: 'housewife' },
+          { key: 'GHB8-GB6',         child: 'GHB8-J1B', prefix: null,   firstName: 'Sotero',             middleName: 'Reyes',       lastName: 'Maramba',     suffix: 'Sr.', gender: 'M', birthDate: '1903-04-22',        baptismDate: null,         marriageDate: null,         deathDate: '1969-12-12',       deathAge: null,  living: false, hasDNA: false, hasImage: true,   birthPlace: 'Sta. Barbara, Pangasinan, PHL',     marriagePlace: null,                        livingPlace: null,                deathPlace: 'Sangandaan, Caloocan, PHL',         marker: 'police', marker2: 'train' },
+            { key: 'LLQS-641',       child: 'GHB8-GB6', prefix: 'Don',  firstName: 'Miguel',             middleName: 'Bautista',    lastName: 'Maramba',     suffix: null,  gender: 'M', birthDate: 'about 1858',        baptismDate: null,         marriageDate: null,         deathDate: 'after 1902-06',    deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: 'Sta. Barbara, Pangasinan, PHL',     marriagePlace: null,                        livingPlace: null,                deathPlace: 'Sta. Barbara, Pangasinan, PHL',     marker: 'government' },
+              { key: 'LLQS-6YC',     child: 'LLQS-641', prefix: null,   firstName: 'Guillermo',          middleName: 'Bautista',    lastName: 'Maramba',     suffix: null,  gender: 'M', birthDate: 'from 1800 to 1858', baptismDate: null,         marriageDate: null,         deathDate: null,               deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                marriagePlace: null,                        livingPlace: null,                deathPlace: 'Sta. Barbara, Pangasinan, PHL',     marker: 'sales', marker2: 'cattle' },
+              { key: 'L281-614',     child: 'LLQS-641', prefix: null,   firstName: 'Maria',              middleName: 'Garcia',      lastName: 'Bautista',    suffix: null,  gender: 'F', birthDate: 'from 1800 to 1858', baptismDate: null,         marriageDate: null,         deathDate: null,               deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                marriagePlace: null,                        livingPlace: null,                deathPlace: 'Sta. Barbara, Pangasinan, PHL',     },
+                { key: 'GC7T-H59',   child: 'L281-614', prefix: 'Don',  firstName: 'Agustin',            middleName: null,          lastName: 'Bautista',    suffix: null,  gender: 'M', birthDate: 'from 1735 to 1853', baptismDate: null,         marriageDate: null,         deathDate: 'after 1881',       deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                marriagePlace: null,                        livingPlace: null,                deathPlace: null,                                marker: 'government' },
+                { key: 'GC7T-1PK',   child: 'L281-614', prefix: 'Doña', firstName: 'Felipa',             middleName: null,          lastName: 'Garcia',      suffix: null,  gender: 'F', birthDate: null,                baptismDate: null,         marriageDate: null,         deathDate: null,               deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                marriagePlace: null,                        livingPlace: null,                deathPlace: null,                                },
+            { key: 'LLQS-6F1',       child: 'GHB8-GB6', prefix: null,   firstName: 'Mercedes',           middleName: 'Novilla',     lastName: 'Reyes',       suffix: null,  gender: 'F', birthDate: null,                baptismDate: null,         marriageDate: null,         deathDate: null,               deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                marriagePlace: null,                        livingPlace: null,                deathPlace: null,                                },
+              { key: 'G7C3-B6P',     child: 'LLQS-6F1', prefix: null,   firstName: 'Gregorio',           middleName: null,          lastName: 'Reyes',       suffix: null,  gender: 'M', birthDate: null,                baptismDate: null,         marriageDate: null,         deathDate: null,               deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                marriagePlace: null,                        livingPlace: null,                deathPlace: null,                                },
+              { key: 'G7C3-J9S',     child: 'LLQS-6F1', prefix: null,   firstName: 'Leocadia',           middleName: null,          lastName: 'Novilla',     suffix: null,  gender: 'F', birthDate: null,                baptismDate: null,         marriageDate: null,         deathDate: null,               deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                marriagePlace: null,                        livingPlace: null,                deathPlace: null,                                },
+          { key: 'GHBD-9LY',         child: 'GHB8-J1B', prefix: null,   firstName: 'Cresencia',          middleName: null,          lastName: 'Dumantay',    suffix: null,  gender: 'F', birthDate: '1918-04-19',        baptismDate: null,         marriageDate: null,         deathDate: '1990-04-16',       deathAge: null,  living: false, hasDNA: false, hasImage: true,   birthPlace: 'PHL',                               marriagePlace: null,                        livingPlace: null,                deathPlace: 'Sangandaan, Caloocan, PHL',         marker: 'apparel', marker2: 'sales' },
+            { key: 'TEMP-001',       child: 'GHBD-9LY', prefix: null,   firstName: 'Unknown',            middleName: null,          lastName: 'name',        suffix: null,  gender: 'F', birthDate: 'before 1908',       baptismDate: null,         marriageDate: null,         deathDate: 'after 1918-04-19', deathAge: "50+", living: false, hasDNA: false, hasImage: true,   birthPlace: 'PHL',                               marriagePlace: null,                        livingPlace: null,                deathPlace: 'PHL',                               },
+    { key: 'GHB5-TWN',               child: 'TEMP-000', prefix: null,   firstName: 'Mitchie',            middleName: 'Ajesta',      lastName: 'Adanza',      suffix: null,  gender: 'F', birthDate: '1994-12-16',        baptismDate: null,         marriageDate: null,         deathDate: null,               deathAge: null,  living: true,  hasDNA: true,  hasImage: true,   birthPlace: 'Santa Cruz, Manila, PHL',           marriagePlace: null,                        livingPlace: 'Metro Manila, PHL', deathPlace: null,                                marker: 'prelations' },
+      { key: 'GHB5-XTZ',             child: 'GHB5-TWN', prefix: null,   firstName: 'Darne',              middleName: 'Elican',      lastName: 'Adanza',      suffix: null,  gender: 'M', birthDate: '1964-06-22',        baptismDate: null,         marriageDate: '1994-01-25', deathDate: null,               deathAge: null,  living: true,  hasDNA: false, hasImage: true,   birthPlace: 'Balingasag, Misamis Or., PHL',      marriagePlace: 'Sta. Maria, Bulacan, PHL',  livingPlace: 'Metro Manila, PHL', deathPlace: null,                                marker: 'manufacturing', marker3: 'prelations', marker2: 'househusband' },
+        { key: 'GH12-SVQ',           child: 'GHB5-XTZ', prefix: null,   firstName: 'Nestor',             middleName: 'Ladera',      lastName: 'Adanza',      suffix: null,  gender: 'M', birthDate: '1938-02-26',        baptismDate: null,         marriageDate: null,         deathDate: '2018-09-28',       deathAge: null,  living: false, hasDNA: false, hasImage: true,   birthPlace: 'Balingasag, Misamis Oriental, PHL', marriagePlace: null,                        livingPlace: null,                deathPlace: 'Balingasag, Misamis Oriental, PHL', marker: 'farming' },
+          { key: 'GH12-DRN',         child: 'GH12-SVQ', prefix: null,   firstName: 'Felomino',           middleName: 'R',           lastName: 'Adanza',      suffix: null,  gender: 'M', birthDate: 'about 1901',        baptismDate: null,         marriageDate: null,         deathDate: '1990-11-03',       deathAge: null,  living: false, hasDNA: false, hasImage: true,   birthPlace: 'Dumaguete, Negros Oriental, PHL',   marriagePlace: null,                        livingPlace: null,                deathPlace: 'Balingasag, Misamis Oriental, PHL', marker: 'farming' },
+          { key: 'GH12-3GN',         child: 'GH12-SVQ', prefix: null,   firstName: 'Consuelo',           middleName: null,          lastName: 'Ladera',      suffix: null,  gender: 'F', birthDate: null,                baptismDate: null,         marriageDate: null,         deathDate: 'after 1990-11-03', deathAge: null,  living: false, hasDNA: false, hasImage: true,   birthPlace: 'PHL',                               marriagePlace: null,                        livingPlace: null,                deathPlace: 'PHL',                               },
+        { key: 'GH12-9F6',           child: 'GHB5-XTZ', prefix: null,   firstName: 'Rufa',               middleName: 'Acerto',      lastName: 'Elican',      suffix: null,  gender: 'F', birthDate: '1939-11-28',        baptismDate: null,         marriageDate: null,         deathDate: '2015-04-02',       deathAge: null,  living: false, hasDNA: false, hasImage: true,   birthPlace: 'Balingasag, Misamis Oriental, PHL', marriagePlace: null,                        livingPlace: null,                deathPlace: 'Balingasag, Misamis Oriental, PHL', marker: 'farming' },
+          { key: 'GH12-9JZ',         child: 'GH12-9F6', prefix: null,   firstName: 'Cecilio',            middleName: null,          lastName: 'Elican',      suffix: null,  gender: 'M', birthDate: null,                baptismDate: null,         marriageDate: null,         deathDate: null,               deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                marriagePlace: null,                        livingPlace: null,                deathPlace: null,                                marker: 'military' },
+          { key: 'GH12-35H',         child: 'GH12-9F6', prefix: null,   firstName: 'Jovita',             middleName: null,          lastName: 'Acerto',      suffix: null,  gender: 'F', birthDate: null,                baptismDate: null,         marriageDate: null,         deathDate: null,               deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                marriagePlace: null,                        livingPlace: null,                deathPlace: null,                                },
+      { key: 'GHBR-FK3',             child: 'GHB5-TWN', prefix: null,   firstName: 'Mylen',              middleName: 'Vergara',     lastName: 'Ajesta',      suffix: null,  gender: 'F', birthDate: '1974-04-13',        baptismDate: null,         marriageDate: '1994-01-25', deathDate: null,               deathAge: null,  living: true,  hasDNA: false, hasImage: true,   birthPlace: 'Sinamongan, Pilar, Capiz, PHL',     marriagePlace: 'Sta. Maria, Bulacan, PHL',  livingPlace: 'Manama, BHR',       deathPlace: null,                                marker: 'beautician', marker3: 'manager', marker2: 'prelations' },
+        { key: 'GH12-Z3C',           child: 'GHBR-FK3', prefix: null,   firstName: 'Napoleon Crispolon', middleName: 'Badoles',     lastName: 'Ajesta',      suffix: null,  gender: 'M', birthDate: 'before 1968',       baptismDate: null,         marriageDate: '1962-08-05', deathDate: 'after 1980-02-26', deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: 'Binaobawan, Pilar, Capiz, PHL',     marriagePlace: 'Pilar, Capiza, PHL',        livingPlace: null,                deathPlace: "PHL",                               },
+          { key: 'GH12-XX4',         child: 'GH12-Z3C', prefix: null,   firstName: 'Emmanuel',           middleName: null,          lastName: 'Ajesta',      suffix: null,  gender: 'M', birthDate: 'around 1903',       baptismDate: null,         marriageDate: '1922-02-15', deathDate: 'after 1922-02-15', deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: 'Pilar, Capiz, PHL',                 marriagePlace: 'Pontevedra, Capiz, PHL',    livingPlace: null,                deathPlace: null,                                },
+            { key: 'GKBR-M9Y',       child: 'GH12-XX4', prefix: null,   firstName: 'Eustaquio',          middleName: null,          lastName: 'Ajesta',      suffix: null,  gender: 'M', birthDate: null,                baptismDate: null,         marriageDate: null,         deathDate: null,               deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                marriagePlace: null,                        livingPlace: null,                deathPlace: null,                                },
+            { key: 'GKBR-7P7',       child: 'GH12-XX4', prefix: null,   firstName: 'Florencia',          middleName: null,          lastName: 'Bermúdez',    suffix: null,  gender: 'F', birthDate: null,                baptismDate: null,         marriageDate: null,         deathDate: null,               deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                marriagePlace: null,                        livingPlace: null,                deathPlace: null,                                },
+          { key: 'GH12-HQN',         child: 'GH12-Z3C', prefix: null,   firstName: 'Ursula',             middleName: null,          lastName: 'Badoles',     suffix: null,  gender: 'F', birthDate: 'around 1904',       baptismDate: null,         marriageDate: '1922-02-15', deathDate: 'after 1922-02-15', deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                marriagePlace: 'Pontevedra, Capiz, PHL',    livingPlace: null,                deathPlace: null,                                },
+            { key: 'GKBT-9GD',       child: 'GH12-HQN', prefix: null,   firstName: 'Pedro Benjamin',     middleName: null,          lastName: 'Badoles',     suffix: null,  gender: 'M', birthDate: null,                baptismDate: null,         marriageDate: null,         deathDate: null,               deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                marriagePlace: null,                        livingPlace: null,                deathPlace: null,                                },
+            { key: 'K2GJ-YY3',       child: 'GH12-HQN', prefix: null,   firstName: 'Leoncia',            middleName: null,          lastName: 'Villanes',    suffix: null,  gender: 'F', birthDate: 'about 1852',        baptismDate: null,         marriageDate: null,         deathDate: '1922-01-08',       deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: 'Panay, Capiz, PHL',                 marriagePlace: null,                        livingPlace: null,                deathPlace: 'Panay, Capiz, PHL',                 },
+        { key: 'GH12-W17',           child: 'GHBR-FK3', prefix: null,   firstName: 'Celma',              middleName: 'Borja',       lastName: 'Vergara',     suffix: null,  gender: 'F', birthDate: '1941-07-08',        baptismDate: null,         marriageDate: '1962-08-05', deathDate: '2020-02-16',       deathAge: null,  living: false, hasDNA: false, hasImage: true,   birthPlace: 'Dulangan, Pilar, Capiz, PHL',       marriagePlace: 'Pilar, Capiza, PHL',        livingPlace: null,                deathPlace: 'Santa Maria, Bulacan, PHL',         marker: 'farming' },
+          { key: 'GH12-6YL',         child: 'GH12-W17', prefix: null,   firstName: 'Benigno',            middleName: null,          lastName: 'Vergara',     suffix: null,  gender: 'M', birthDate: null,                baptismDate: null,         marriageDate: null,         deathDate: null,               deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                marriagePlace: null,                        livingPlace: null,                deathPlace: null,                                marker: 'military' },
+          { key: 'GH12-DD8',         child: 'GH12-W17', prefix: null,   firstName: 'Enoria',             middleName: null,          lastName: 'Borja',       suffix: null,  gender: 'F', birthDate: null,                baptismDate: null,         marriageDate: null,         deathDate: 'after 1997-12-16', deathAge: "90+", living: false, hasDNA: false, hasImage: true,   birthPlace: 'PHL',                               marriagePlace: null,                        livingPlace: null,                deathPlace: 'PHL',                               },
 ];
 
 
-// const TREE_DATA = TREE_DATA;
 /*
   Grumaduate si Nanay ng May 30, 1994 ng BS Accounting sa UE Caloocan
   Grumaduate si Nanay ng March 22, 1990 ng Highschool
-*/// Add "parent" from "child" value since GoJS works that way
-for (var i = TREE_DATA.length - 1; i >= 0; i--) {
+*/for (const [i, person] of Object.entries(TREE_DATA)) {
+  // =======================================================================
+  // Add "parent" from "child" value since chart.js works that way
+  // =======================================================================
   TREE_DATA[i]["parent"] = TREE_DATA[i]["child"];
-}
-
-function convertCountryCode(input) {
-  if (input === null || input === undefined) {
-    return input;
-  }
-
-  const lookup = {
-    'USA': 'United States of America',
-    'PHL': 'Philippines',
-    'BHR': 'Bahrain',
-    // ... add other country codes and names as needed
-  };
-
-  const segments = input.split(',').map(segment => segment.trim());
-
-  if (segments.length === 1 && lookup[segments[0]]) {
-    return lookup[segments[0]];
-  }
-
-  if (segments.length === 2 && lookup[segments[1]]) {
-    segments[1] = lookup[segments[1]];
-  }
-
-  return segments.join(', ');
-}
-
-for (const [i, person] of Object.entries(TREE_DATA)) {
   if (person. firstName == undefined) {
     continue;
   }
-  let middleInitialsArray  = person.middleName.trim().split(' ');
+
+  // =======================================================================
+  // Add do we use none photo flag
+  // =======================================================================
+  let nodeData = TREE_DATA[i];
+  TREE_DATA[i]['useNonePhoto'] = bino.useNonePhoto(nodeData);
+
+  // =======================================================================
+  // Add "fullName" to each person
+  // =======================================================================
+  let middleInitialsArray  = ((!person.middleName) ? '' : person.middleName).trim().split(' ');
   let middleInitialsString = '';
 
   if (middleInitialsArray[0] != '') {
@@ -388,30 +600,38 @@ for (const [i, person] of Object.entries(TREE_DATA)) {
   let prefix = '';
   let suffix = '';
 
-  if (person.prefix !== undefined && person.prefix != '') prefix = `${person.prefix} `;
-  if (person.suffix !== undefined && person.suffix != '') suffix = ` ${person.suffix}`;
+  if (!!person.prefix) prefix = `${person.prefix} `;
+  if (!!person.suffix) suffix = ` ${person.suffix}`;
 
   let  firstName = person. firstName;
-  // if ( firstName.includes('Crispolon')) {
-  //    firstName =  firstName.replace("Crispolon", "C.");
-  // }
 
-  // Add "fullName" to each person
   TREE_DATA[i]['fullName'] = (
     prefix +
      firstName + " " +
     middleInitialsString +
-    person.lastName +
+    ((!person.lastName) ? '' : person.lastName) +
     suffix
   );
 
-  TREE_DATA[i]['birthPlace'] = convertCountryCode(person.birthPlace);
-  TREE_DATA[i]['deathPlace'] = convertCountryCode(person.deathPlace);
-  TREE_DATA[i]['livingPlace'] = convertCountryCode(person.livingPlace);
+  // =======================================================================
+  // Improve locations and make living the death place for easier UI change
+  // =======================================================================
+  TREE_DATA[i]['birthPlace'] = bino.convertCountryCode(person.birthPlace);
+  TREE_DATA[i]['deathPlace'] = bino.convertCountryCode(person.deathPlace);
+  TREE_DATA[i]['livingPlace'] = bino.convertCountryCode(person.livingPlace);
 
   // Replace death place with living place for quicker size changes
   if (person.living) {
     TREE_DATA[i]['deathPlace'] = person.livingPlace;
+  }
+
+  // =======================================================================
+  // Add relative dates to each person
+  // =======================================================================
+  if (person.living) {
+    TREE_DATA[i]['relativeDates'] = bino.getRelativeDates(person, isPrivate);
+  } else {
+    TREE_DATA[i]['relativeDates'] = bino.getRelativeDates(person, false);
   }
 }
 
@@ -2478,22 +2698,6 @@ function areUniqueSources(obj) {
 if (isChecking) {
   checkSources();
 }
-/**
- * Returns a boolean value indicating whether the node should have a "none" photo displayed.
- *
- * @param {object} nodeData - An object representing a node in a family tree.
- * @returns {boolean} - `true` if the node should have a "none" photo displayed, otherwise `false`.
- */
-function useNonePhoto(nodeData) {
-  return (
-    !nodeData.hasImage
-    && !nodeData.living
-    && nodeData.birthDate == null
-    && nodeData.deathDate == null
-    && nodeData.birthPlace == null
-    && nodeData.deathPlace == null
-  );
-}
 
 /**
  * Returns an adjusted height value for the node based on its biographical information.
@@ -2519,7 +2723,6 @@ function calculateAdjustedHeight(nodeData) {
 // Add height calculations to actual data for less function calls
 for (var i = TREE_DATA.length - 1; i >= 0; i--) {
   let nodeData = TREE_DATA[i];
-  TREE_DATA[i]['useNonePhoto'] = useNonePhoto(nodeData);
   TREE_DATA[i]['height'] = calculateAdjustedHeight(nodeData);
 }
 
@@ -3025,10 +3228,7 @@ template['Lifespan'] = function() {
       return ui.color.node.details;
     }),
     new bino.Binding("text", '', function(nodeData) {
-      if (nodeData.living) {
-        return getLifeSpan(nodeData, isPrivate);
-      }
-      return getLifeSpan(nodeData);
+      return nodeData.relativeDates;
     }),
   );
 }
@@ -3175,163 +3375,6 @@ template['BirthDeathPlace2'] = function() {
       }),
     ),
   );
-}
-
-/**
- * Get lifespan information from given nodeData.
- * @param {Object} nodeData - Contains living, birthDate, and deathDate data.
- * @return {string} Formatted lifespan string.
- */
-function getLifeSpan(nodeData, isPrivate) {
-  if (nodeData.useNonePhoto) {
-    return "";
-  }
-
-  const separator = ' — ';
-  const { living, birthDate, deathDate } = nodeData;
-
-  let rawAge = calculateAge(birthDate, deathDate)
-  let age = rawAge;
-
-  const birthYear = formatDate(birthDate, isPrivate);
-  const deathYear = formatDate(deathDate);
-
-  // If both birthYear and deathYear do not exist, return
-  // "Living" or "Deceased" based on the living flag.
-  if (!birthYear && !deathYear) {
-    return living ? 'Living' : 'Deceased';
-  }
-
-  // If birthYear does not exist, return the
-  // formatted deathYear with a separator.
-  if (!birthYear) {
-    return `${separator}${deathYear}`;
-  }
-
-  // If deathYear does not exist, return the formatted
-  // `birthYear` with a separator and "Living" or "Deceased"
-  // based on the living flag.
-  if (!deathYear) {
-    if (nodeData.deathAge) {
-      age = nodeData.deathAge;
-    }
-
-    if (String(age).includes("NaN")) {
-      return `${birthYear}${separator}${living ? 'Living' : 'Deceased'}`;
-    }
-    return `${birthYear}${separator}${living ? 'Living' : 'Deceased'}` + (living ? ` (${age})` : '');
-  }
-
-  if (deathDate.includes('after')) {
-    if (birthDate.includes('after')) {
-      age = `~${rawAge}`;
-    } else if (birthDate.includes('before')) {
-      age = `${rawAge}+`;
-    } else if (birthDate.includes('about')) {
-      age = `${rawAge}+`;
-    } else {
-      age = `${rawAge}+`;
-    }
-  } else if (deathDate.includes('before')) {
-    if (birthDate.includes('after')) {
-      age = `${rawAge}-`;
-    } else if (birthDate.includes('before')) {
-      age = `~${rawAge}`;
-    } else if (birthDate.includes('about')) {
-      age = `${rawAge}-`;
-    } else {
-      age = `${rawAge}-`;
-    }
-  } else if (deathDate.includes('about')) {
-    age = `~${rawAge}`;
-  } else {
-    if (birthDate.includes('after')) {
-      age = `${rawAge}-`;
-    } else if (birthDate.includes('before')) {
-      age = `${rawAge}+`;
-    } else if (birthDate.includes('about')) {
-      age = `~${rawAge}`;
-    }
-  }
-
-  if (nodeData.deathAge) {
-    age = nodeData.deathAge;
-  }
-
-  if (String(age).includes("NaN")) {
-    return `${birthYear}${separator}${deathYear}`;
-  }
-
-  // If both birthYear and deathYear exist,
-  // return the formatted lifespan string.
-  return `${birthYear}${separator}${deathYear} (${age})`;
-}
-
-/**
- * Format date string as 'day month year'.
- * @param {string} dateString - Date in 'YYYY-MM-DD' format.
- * @return {string|null} Formatted date or null if dateString is falsy.
- */
-function formatDate(raw, isPrivate) {
-  const months = [
-    'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
-    'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec',
-  ];
-  const longMonths = [
-    'January', 'February', 'March',
-    'April', 'May', 'June', 'July',
-    'August', 'September', 'October',
-    'November', 'December',
-  ];
-
-  if (!raw) {
-    return null;
-  }
-
-  if (raw.includes("from ") && raw.includes(" to ")) {
-    return raw;
-  }
-
-  // Check for prefix words
-  let [prefix, dateString] = raw.includes(' ') ? raw.split(' ') : ["", raw];
-  let [year, month, day] = dateString.split('-', 3);
-
-  // Add a separating space for prefix if its populated
-  if (prefix != '') {
-    prefix += ' ';
-  }
-
-  if (month && !isPrivate) {
-    day = (day === undefined) ? "" : day + " ";
-
-    // Remove leading zero from days
-    if (day.startsWith('0')) {
-      day = day.slice(1);
-    }
-
-    return `${prefix}${day}${months[parseInt(month, 10) - 1]} ${year}`;
-  }
-
-  // if (month) {
-  //   return `${prefix}${longMonths[parseInt(month, 10) - 1]} ${year}`;
-  // }
-
-  return `${prefix}${year}`;
-};
-
-function calculateAge(birthDateString, deathDateString) {
-    let deathDate = deathDateString ? new Date(deathDateString) : new Date();
-    let birthDate = new Date(birthDateString);
-
-    let age = deathDate.getFullYear() - birthDate.getFullYear();
-    let m = deathDate.getMonth() - birthDate.getMonth();
-
-    // adjust age if birth month hasn't occurred in the death year
-    if (m < 0 || (m === 0 && deathDate.getDate() < birthDate.getDate())) {
-        age--;
-    }
-
-    return age;
 }
 var tree = $(
   bino.Diagram,
