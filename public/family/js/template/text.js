@@ -51,7 +51,7 @@ template['DetailRow1'] = function() {
         if (nodeData.firstName.includes("nknown")) {
           return ui.color.node.nameless.details;
         }
-        return ui.color.node.details;
+        return ui.color.node.details.text;
       }),
       new bino.Binding("text", '', function(nodeData) {
         if (!nodeData.detailsRow1.text) return '';
@@ -79,7 +79,7 @@ template['DetailRow1'] = function() {
         if (nodeData.firstName.includes("nknown")) {
           return ui.color.node.nameless.details;
         }
-        return ui.color.node.details;
+        return ui.color.node.details.letter;
       }),
       new bino.Binding("text", '', function(nodeData) {
         if (!nodeData.detailsRow1.letter) return '';
@@ -112,7 +112,7 @@ template['DetailRow2'] = function() {
         if (nodeData.firstName.includes("nknown")) {
           return ui.color.node.nameless.details;
         }
-        return ui.color.node.details;
+        return ui.color.node.details.text;
       }),
       new bino.Binding("text", '', function(nodeData) {
         if (!nodeData.detailsRow2.text) return '';
@@ -140,7 +140,7 @@ template['DetailRow2'] = function() {
         if (nodeData.firstName.includes("nknown")) {
           return ui.color.node.nameless.details;
         }
-        return ui.color.node.details;
+        return ui.color.node.details.letter;
       }),
       new bino.Binding("text", '', function(nodeData) {
         if (!nodeData.detailsRow2.letter) return '';
@@ -173,7 +173,7 @@ template['DetailRow3'] = function() {
         if (nodeData.firstName.includes("nknown")) {
           return ui.color.node.nameless.details;
         }
-        return ui.color.node.details;
+        return ui.color.node.details.text;
       }),
       new bino.Binding("text", '', function(nodeData) {
         if (!nodeData.detailsRow3.text) return '';
@@ -201,7 +201,7 @@ template['DetailRow3'] = function() {
         if (nodeData.firstName.includes("nknown")) {
           return ui.color.node.nameless.details;
         }
-        return ui.color.node.details;
+        return ui.color.node.details.letter;
       }),
       new bino.Binding("text", '', function(nodeData) {
         if (!nodeData.detailsRow3.letter) return '';
@@ -234,7 +234,7 @@ template['DetailRow4'] = function() {
         if (nodeData.firstName.includes("nknown")) {
           return ui.color.node.nameless.details;
         }
-        return ui.color.node.details;
+        return ui.color.node.details.text;
       }),
       new bino.Binding("text", '', function(nodeData) {
         if (!nodeData.detailsRow4.text) return '';
@@ -262,7 +262,7 @@ template['DetailRow4'] = function() {
         if (nodeData.firstName.includes("nknown")) {
           return ui.color.node.nameless.details;
         }
-        return ui.color.node.details;
+        return ui.color.node.details.letter;
       }),
       new bino.Binding("text", '', function(nodeData) {
         if (!nodeData.detailsRow4.letter) return '';

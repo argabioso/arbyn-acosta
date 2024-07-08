@@ -25,7 +25,10 @@ const ui = {
     node: {
       background: !isDark ? '#ffffff' : '#2f2f2f',
       name: !isDark ? '#000000' : '#fefefe',
-      details: !isDark ? '#222222' : '#bdc1c6',
+      details: {
+        text: !isDark ? '#222222' : '#bdc1c6',
+        letter: !isDark ? '#222222' : '#c7cbd1',
+      },
       nameless: {
         name: !isDark ? '#bdbdbd' : '#909090',
         details: !isDark ? '#b0b0b0' : '#929292',

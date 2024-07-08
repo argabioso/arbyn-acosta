@@ -32,7 +32,7 @@ bino.getRelativeDates = function(nodeData, isPrivate) {
   let age = rawAge;
 
   const birthYear = bino.formatDate(nodeData.birthDate, isPrivate && nodeData.living);
-  const marriageYear = bino.formatDate(nodeData.marriageDate, false);
+  const marriageYear = bino.formatDate(nodeData.marriageDate, isPrivate && nodeData.living);
   const deathYear = bino.formatDate(nodeData.deathDate, false);
 
   // If both birthYear and deathYear do not exist, return

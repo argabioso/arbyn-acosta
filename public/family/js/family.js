@@ -140,7 +140,7 @@ bino.getRelativeDates = function(nodeData, isPrivate) {
   let age = rawAge;
 
   const birthYear = bino.formatDate(nodeData.birthDate, isPrivate && nodeData.living);
-  const marriageYear = bino.formatDate(nodeData.marriageDate, false);
+  const marriageYear = bino.formatDate(nodeData.marriageDate, isPrivate && nodeData.living);
   const deathYear = bino.formatDate(nodeData.deathDate, false);
 
   // If both birthYear and deathYear do not exist, return
@@ -373,7 +373,10 @@ const ui = {
     node: {
       background: !isDark ? '#ffffff' : '#2f2f2f',
       name: !isDark ? '#000000' : '#fefefe',
-      details: !isDark ? '#222222' : '#bdc1c6',
+      details: {
+        text: !isDark ? '#222222' : '#bdc1c6',
+        letter: !isDark ? '#222222' : '#c7cbd1',
+      },
       nameless: {
         name: !isDark ? '#bdbdbd' : '#909090',
         details: !isDark ? '#b0b0b0' : '#929292',
@@ -556,7 +559,7 @@ var TREE_DATA = [
             { key: 'GHB8-LCC',       child: 'GHB8-DXY', prefix: null,   firstName: 'Vicente',           nickname: null,         middleName: null,          lastName: 'San Agustin', suffix: null,  gender: 'M', birthDate: null,                baptismDate: null,         marriageDate: null,         deathDate: null,               deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                    marriagePlace: null,                                               livingPlace: null,                        deathPlace: null,                                           },
             { key: 'GHB8-H7K',       child: 'GHB8-DXY', prefix: null,   firstName: 'Nena',              nickname: null,         middleName: null,          lastName: null,          suffix: null,  gender: 'F', birthDate: null,                baptismDate: null,         marriageDate: null,         deathDate: null,               deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                    marriagePlace: null,                                               livingPlace: null,                        deathPlace: null,                                           },
         { key: 'GHB8-J1B',           child: 'GQJK-G8W', prefix: null,   firstName: 'Catalina',          nickname: 'Lina',       middleName: 'Dumantay',    lastName: 'Maramba',     suffix: null,  gender: 'F', birthDate: '1943-01-28',        baptismDate: null,         marriageDate: '1966-03-26', deathDate: '1974-08-10',       deathAge: null,  living: false, hasDNA: false, hasImage: true,   birthPlace: 'Santa Barbara, Pangasinan, PHL',        marriagePlace: 'Knox Methodist Church, Santa Cruz, Manila, PHL',   livingPlace: null,                        deathPlace: 'Sangandaan, Caloocan, PHL',                    marker: 'housewife' },
-          { key: 'GHB8-GB6',         child: 'GHB8-J1B', prefix: null,   firstName: 'Sotero',            nickname: null,         middleName: 'Reyes',       lastName: 'Maramba',     suffix: 'Sr.', gender: 'M', birthDate: '1903-04-22',        baptismDate: null,         marriageDate: null,         deathDate: '1969-12-12',       deathAge: null,  living: false, hasDNA: false, hasImage: true,   birthPlace: 'Santa Barbara, Pangasinan, PHL',        marriagePlace: null,                                               livingPlace: null,                        deathPlace: 'Sangandaan, Caloocan, PHL',                    marker: 'police', marker2: 'train' },
+          { key: 'GHB8-GB6',         child: 'GHB8-J1B', prefix: null,   firstName: 'Sotero',            nickname: 'Sotering',   middleName: 'Reyes',       lastName: 'Maramba',     suffix: 'Sr.', gender: 'M', birthDate: '1903-04-22',        baptismDate: null,         marriageDate: null,         deathDate: '1969-12-12',       deathAge: null,  living: false, hasDNA: false, hasImage: true,   birthPlace: 'Santa Barbara, Pangasinan, PHL',        marriagePlace: null,                                               livingPlace: null,                        deathPlace: 'Sangandaan, Caloocan, PHL',                    marker: 'police', marker2: 'train' },
             { key: 'LLQS-641',       child: 'GHB8-GB6', prefix: 'Don',  firstName: 'Miguel',            nickname: null,         middleName: 'Bautista',    lastName: 'Maramba',     suffix: null,  gender: 'M', birthDate: 'about 1858',        baptismDate: null,         marriageDate: null,         deathDate: 'after 1902-06',    deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: 'Santa Barbara, Pangasinan, PHL',        marriagePlace: null,                                               livingPlace: null,                        deathPlace: 'Santa Barbara, Pangasinan, PHL',               marker: 'government' },
               { key: 'LLQS-6YC',     child: 'LLQS-641', prefix: null,   firstName: 'Guillermo',         nickname: null,         middleName: 'Bautista',    lastName: 'Maramba',     suffix: null,  gender: 'M', birthDate: 'from 1800 to 1858', baptismDate: null,         marriageDate: null,         deathDate: null,               deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                    marriagePlace: null,                                               livingPlace: null,                        deathPlace: 'Santa Barbara, Pangasinan, PHL',               marker: 'sales', marker2: 'cattle' },
               { key: 'L281-614',     child: 'LLQS-641', prefix: null,   firstName: 'Maria',             nickname: null,         middleName: 'Garcia',      lastName: 'Bautista',    suffix: null,  gender: 'F', birthDate: 'from 1800 to 1858', baptismDate: null,         marriageDate: null,         deathDate: null,               deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                    marriagePlace: null,                                               livingPlace: null,                        deathPlace: 'Santa Barbara, Pangasinan, PHL',               },
@@ -567,7 +570,7 @@ var TREE_DATA = [
               { key: 'G7C3-J9S',     child: 'LLQS-6F1', prefix: null,   firstName: 'Leocadia',          nickname: null,         middleName: null,          lastName: 'Novilla',     suffix: null,  gender: 'F', birthDate: null,                baptismDate: null,         marriageDate: null,         deathDate: null,               deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                    marriagePlace: null,                                               livingPlace: null,                        deathPlace: null,                                           },
           { key: 'GHBD-9LY',         child: 'GHB8-J1B', prefix: null,   firstName: 'Cresencia',         nickname: 'Cresing',    middleName: null,          lastName: 'Dumantay',    suffix: null,  gender: 'F', birthDate: '1918-04-19',        baptismDate: null,         marriageDate: null,         deathDate: '1990-04-16',       deathAge: null,  living: false, hasDNA: false, hasImage: true,   birthPlace: 'PHL',                                   marriagePlace: null,                                               livingPlace: null,                        deathPlace: 'Sangandaan, Caloocan, PHL',                    marker: 'apparel', marker2: 'sales' },
             { key: 'TEMP-001',       child: 'GHBD-9LY', prefix: null,   firstName: 'Unknown',           nickname: null,         middleName: null,          lastName: 'name',        suffix: null,  gender: 'F', birthDate: 'before 1908',       baptismDate: null,         marriageDate: null,         deathDate: 'after 1918-04-19', deathAge: "50+", living: false, hasDNA: false, hasImage: true,   birthPlace: 'PHL',                                   marriagePlace: null,                                               livingPlace: null,                        deathPlace: 'PHL',                                          },
-    { key: 'GHB5-TWN',               child: 'TEMP-000', prefix: null,   firstName: 'Mitchie',           nickname: null,         middleName: 'Ajesta',      lastName: 'Adanza',      suffix: null,  gender: 'F', birthDate: '1994-12-16',        baptismDate: null,         marriageDate: null,         deathDate: null,               deathAge: null,  living: true,  hasDNA: true,  hasImage: true,   birthPlace: 'Santa Cruz, Manila, PHL',               marriagePlace: 'St. John Bosco Parish Church, Makati, PHL',        livingPlace: 'Sangandaan, Caloocan, PHL', deathPlace: null,                                           marker: 'prelations' },
+    { key: 'GHB5-TWN',               child: 'TEMP-000', prefix: null,   firstName: 'Mitchie',           nickname: null,         middleName: 'Ajesta',      lastName: 'Adanza',      suffix: null,  gender: 'F', birthDate: '1994-12-16',        baptismDate: null,         marriageDate: '2024-06-15', deathDate: null,               deathAge: null,  living: true,  hasDNA: true,  hasImage: true,   birthPlace: 'Santa Cruz, Manila, PHL',               marriagePlace: 'St. John Bosco Parish Church, Makati, PHL',        livingPlace: 'Sangandaan, Caloocan, PHL', deathPlace: null,                                           marker: 'prelations' },
       { key: 'GHB5-XTZ',             child: 'GHB5-TWN', prefix: null,   firstName: 'Darne',             nickname: 'Loloy',      middleName: 'Elican',      lastName: 'Adanza',      suffix: null,  gender: 'M', birthDate: '1964-06-22',        baptismDate: null,         marriageDate: '1994-01-25', deathDate: null,               deathAge: null,  living: true,  hasDNA: false, hasImage: true,   birthPlace: 'Balingasag, Misamis Oriental, PHL',     marriagePlace: 'Santa Maria, Bulacan, PHL',                        livingPlace: 'Sangandaan, Caloocan, PHL', deathPlace: null,                                           marker: 'manufacturing', marker3: 'prelations', marker2: 'househusband' },
         { key: 'GH12-SVQ',           child: 'GHB5-XTZ', prefix: null,   firstName: 'Nestor',            nickname: null,         middleName: 'Ladera',      lastName: 'Adanza',      suffix: null,  gender: 'M', birthDate: '1938-02-26',        baptismDate: null,         marriageDate: null,         deathDate: '2018-09-28',       deathAge: null,  living: false, hasDNA: false, hasImage: true,   birthPlace: 'Balingasag, Misamis Oriental, PHL',     marriagePlace: null,                                               livingPlace: null,                        deathPlace: 'Balingasag, Misamis Oriental, PHL',            marker: 'farming' },
           { key: 'GH12-DRN',         child: 'GH12-SVQ', prefix: null,   firstName: 'Felomino',          nickname: null,         middleName: 'R',           lastName: 'Adanza',      suffix: null,  gender: 'M', birthDate: 'about 1901',        baptismDate: null,         marriageDate: null,         deathDate: '1990-11-03',       deathAge: null,  living: false, hasDNA: false, hasImage: true,   birthPlace: 'Dumaguete, Negros Oriental, PHL',       marriagePlace: null,                                               livingPlace: null,                        deathPlace: 'Balingasag, Misamis Oriental, PHL',            marker: 'farming' },
@@ -3304,7 +3307,7 @@ template['DetailRow1'] = function() {
         if (nodeData.firstName.includes("nknown")) {
           return ui.color.node.nameless.details;
         }
-        return ui.color.node.details;
+        return ui.color.node.details.text;
       }),
       new bino.Binding("text", '', function(nodeData) {
         if (!nodeData.detailsRow1.text) return '';
@@ -3332,7 +3335,7 @@ template['DetailRow1'] = function() {
         if (nodeData.firstName.includes("nknown")) {
           return ui.color.node.nameless.details;
         }
-        return ui.color.node.details;
+        return ui.color.node.details.letter;
       }),
       new bino.Binding("text", '', function(nodeData) {
         if (!nodeData.detailsRow1.letter) return '';
@@ -3365,7 +3368,7 @@ template['DetailRow2'] = function() {
         if (nodeData.firstName.includes("nknown")) {
           return ui.color.node.nameless.details;
         }
-        return ui.color.node.details;
+        return ui.color.node.details.text;
       }),
       new bino.Binding("text", '', function(nodeData) {
         if (!nodeData.detailsRow2.text) return '';
@@ -3393,7 +3396,7 @@ template['DetailRow2'] = function() {
         if (nodeData.firstName.includes("nknown")) {
           return ui.color.node.nameless.details;
         }
-        return ui.color.node.details;
+        return ui.color.node.details.letter;
       }),
       new bino.Binding("text", '', function(nodeData) {
         if (!nodeData.detailsRow2.letter) return '';
@@ -3426,7 +3429,7 @@ template['DetailRow3'] = function() {
         if (nodeData.firstName.includes("nknown")) {
           return ui.color.node.nameless.details;
         }
-        return ui.color.node.details;
+        return ui.color.node.details.text;
       }),
       new bino.Binding("text", '', function(nodeData) {
         if (!nodeData.detailsRow3.text) return '';
@@ -3454,7 +3457,7 @@ template['DetailRow3'] = function() {
         if (nodeData.firstName.includes("nknown")) {
           return ui.color.node.nameless.details;
         }
-        return ui.color.node.details;
+        return ui.color.node.details.letter;
       }),
       new bino.Binding("text", '', function(nodeData) {
         if (!nodeData.detailsRow3.letter) return '';
@@ -3487,7 +3490,7 @@ template['DetailRow4'] = function() {
         if (nodeData.firstName.includes("nknown")) {
           return ui.color.node.nameless.details;
         }
-        return ui.color.node.details;
+        return ui.color.node.details.text;
       }),
       new bino.Binding("text", '', function(nodeData) {
         if (!nodeData.detailsRow4.text) return '';
@@ -3515,7 +3518,7 @@ template['DetailRow4'] = function() {
         if (nodeData.firstName.includes("nknown")) {
           return ui.color.node.nameless.details;
         }
-        return ui.color.node.details;
+        return ui.color.node.details.letter;
       }),
       new bino.Binding("text", '', function(nodeData) {
         if (!nodeData.detailsRow4.letter) return '';
