@@ -83,7 +83,7 @@ template['DetailRow1'] = function() {
       }),
       new bino.Binding("text", '', function(nodeData) {
         if (!nodeData.detailsRow1.letter) return '';
-        return `${nodeData.detailsRow1.letter}:`;
+        return `${nodeData.detailsRow1.letter}`;
       }),
     ),
   );
@@ -101,11 +101,12 @@ template['DetailRow2'] = function() {
         return (ui.measure.node.width - 94) - 33;
       }),
       new bino.Binding("margin", '', function(nodeData) {
+        let marginAdder = (nodeData.detailsRow2.letter == 'M' || nodeData.detailsRow3.letter == 'M') ? 13 : 11;
         return new bino.Margin(
           39 + parseInt(ui.measure.node.padding / 2),
           0,
           0,
-          ui.measure.node.height + ui.font.size.details + 17,
+          ui.measure.node.height + ui.font.size.details + marginAdder,
         );
       }),
       new bino.Binding("stroke", '', function(nodeData) {
@@ -116,7 +117,7 @@ template['DetailRow2'] = function() {
       }),
       new bino.Binding("text", '', function(nodeData) {
         if (!nodeData.detailsRow2.text) return '';
-        return nodeData.detailsRow2.text;
+        return `: ${nodeData.detailsRow2.text}`;
       }),
     ),
     $(
@@ -144,7 +145,7 @@ template['DetailRow2'] = function() {
       }),
       new bino.Binding("text", '', function(nodeData) {
         if (!nodeData.detailsRow2.letter) return '';
-        return `${nodeData.detailsRow2.letter}:`;
+        return `${nodeData.detailsRow2.letter}`;
       }),
     ),
   );
@@ -162,11 +163,12 @@ template['DetailRow3'] = function() {
         return (ui.measure.node.width - 94) - 33;
       }),
       new bino.Binding("margin", '', function(nodeData) {
+        let marginAdder = (nodeData.detailsRow2.letter == 'M' || nodeData.detailsRow3.letter == 'M') ? 13 : 11;
         return new bino.Margin(
           54.5 + parseInt(ui.measure.node.padding / 2),
           0,
           0,
-          ui.measure.node.height + ui.font.size.details + 17,
+          ui.measure.node.height + ui.font.size.details + marginAdder,
         );
       }),
       new bino.Binding("stroke", '', function(nodeData) {
@@ -177,7 +179,7 @@ template['DetailRow3'] = function() {
       }),
       new bino.Binding("text", '', function(nodeData) {
         if (!nodeData.detailsRow3.text) return '';
-        return nodeData.detailsRow3.text;
+        return `: ${nodeData.detailsRow3.text}`;
       }),
     ),
     $(
@@ -205,7 +207,7 @@ template['DetailRow3'] = function() {
       }),
       new bino.Binding("text", '', function(nodeData) {
         if (!nodeData.detailsRow3.letter) return '';
-        return `${nodeData.detailsRow3.letter}:`;
+        return `${nodeData.detailsRow3.letter}`;
       }),
     ),
   );
@@ -223,11 +225,12 @@ template['DetailRow4'] = function() {
         return (ui.measure.node.width - 94) - 33;
       }),
       new bino.Binding("margin", '', function(nodeData) {
+        let marginAdder = (nodeData.detailsRow2.letter == 'M' || nodeData.detailsRow3.letter == 'M') ? 13 : 11;
         return new bino.Margin(
           70 + parseInt(ui.measure.node.padding / 2),
           0,
           0,
-          ui.measure.node.height + ui.font.size.details + 17,
+          ui.measure.node.height + ui.font.size.details + marginAdder,
         );
       }),
       new bino.Binding("stroke", '', function(nodeData) {
@@ -238,7 +241,7 @@ template['DetailRow4'] = function() {
       }),
       new bino.Binding("text", '', function(nodeData) {
         if (!nodeData.detailsRow4.text) return '';
-        return nodeData.detailsRow4.text;
+        return `: ${nodeData.detailsRow4.text}`;
       }),
     ),
     $(
@@ -266,7 +269,7 @@ template['DetailRow4'] = function() {
       }),
       new bino.Binding("text", '', function(nodeData) {
         if (!nodeData.detailsRow4.letter) return '';
-        return `${nodeData.detailsRow4.letter}:`;
+        return `${nodeData.detailsRow4.letter}`;
       }),
     ),
   );

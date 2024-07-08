@@ -41,10 +41,41 @@ template['Photo'] = function() {
   );
 }
 
+const isNull = (value) => value === null;
+
 function calculatePhotoScale(nodeData) {
   if (nodeData.useNonePhoto) {
     return 0.3;
   }
+
+  const { birthPlace, deathPlace, marriagePlace } = nodeData;
+  let emptyCount = [birthPlace, deathPlace, marriagePlace].filter(isNull).length;
+
+  if (!nodeData.hasImage) emptyCount = (emptyCount + 1) * 4;
+
+  switch (emptyCount) {
+    case 0: // all places are available, has image
+      return 0.14825600;
+    case 1: // only two places are available, has image
+      return 0.13400100;
+    case 2: // only one place is available, has image
+      return 0.10978800;
+    case 3: // no place is available (maybe have dates), has image
+      return 0.09175700;
+
+    case 4:  // all places are available, NO image
+      return 0.63904221;
+    case 8:  // only two places are available, NO image
+      return 0.57759585;
+    case 12: // only one place is available, NO image
+      return 0.47322855;
+    case 16: // no place is available (maybe have dates), NO image
+      return 0.39550800;
+
+    default:
+      return 1.00000000;
+  }
+
   if (nodeData.birthPlace == null && nodeData.deathPlace == null) {
     if (nodeData.hasImage) {
       return 0.0997876967625;

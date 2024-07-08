@@ -22,9 +22,19 @@ function checkPerPerson(person) {
 
   let attributesToIgnore = [
     'key', // custom-information attribute, not verifiable
+
+    'useNonePhoto', // aesthetic attribute
     'hasDNA', // aesthetic attribute
+
     'parent', // derived attribute
+
+    'detailsRow1', // derived and aesthetic attribute
+    'detailsRow2', // derived and aesthetic attribute
+    'detailsRow3', // derived and aesthetic attribute
+    'detailsRow4', // derived and aesthetic attribute
+
     'fullName', // composite attribute
+    'nickname', // optional and usually not documented
   ];
 
   if (person.living) {
@@ -49,6 +59,10 @@ function checkPerPerson(person) {
 
     sourceCount += 1;
     expectedSourceCount += 1;
+  }
+
+  if (isEmpty(person.baptismDate)) {
+    attributesToIgnore.push('baptismDate');
   }
 
   if (isEmpty(person.marriageDate)) {

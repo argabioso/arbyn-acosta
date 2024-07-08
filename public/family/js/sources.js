@@ -7,7 +7,7 @@ const SOURCES = {
   // ===========================================================================
   // Undocumented Sources
 
-  'Present and Direct Interactions': [
+  'Present and Direct Interactions - by Arbyn Argabioso': [
     'TEMP-000:GHB5-TWN:parentChild', // aesthetic data consideration
     'TEMP-000:GQX8-CQP:parentChild', // aesthetic data consideration
 
@@ -23,9 +23,12 @@ const SOURCES = {
     'GQX8-CQP:middleName',
     'GQJK-LCT:deathPlace',
     'GQX8-CQP:marker',
+    'GQX8-CQP:marker3',
     'GQJK-G8W:marker',
     'GQJK-L51:marker',
+    'GQJK-L51:marker3',
     'GHBZ-YVX:marker',
+    'GHBZ-YVX:marker3',
     'GHB5-XTZ:marker',
     'GHBR-FK3:marker',
     'GHBR-FK3:marker2',

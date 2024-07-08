@@ -27,7 +27,7 @@ const ui = {
       name: !isDark ? '#000000' : '#fefefe',
       details: {
         text: !isDark ? '#222222' : '#bdc1c6',
-        letter: !isDark ? '#222222' : '#c7cbd1',
+        letter: !isDark ? '#222222' : '#dedede',
       },
       nameless: {
         name: !isDark ? '#bdbdbd' : '#909090',
@@ -107,7 +107,7 @@ const ui = {
     node: {
       margin: 9,
       padding: 10,
-      height: 96,
+      height: 95.5,
       width: 406,
     },
   },
