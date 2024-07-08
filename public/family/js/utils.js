@@ -44,10 +44,12 @@ bino.getRelativeDates = function(nodeData, isPrivate) {
   // If birthYear does not exist, return the
   // formatted deathYear with a separator.
   if (!birthYear) {
+    let age = (nodeData.deathAge) ? ` (${nodeData.deathAge})` : '';
+
     if (!marriageYear) {
-      return `${separator}${deathYear}`;
+      return `${separator}${deathYear}${age}`;
     }
-    return `${separator}${marriageYear}${separator}${deathYear}`;
+    return `${separator}${marriageYear}${separator}${deathYear}${age}`;
   }
 
   // If deathYear does not exist, return the formatted
