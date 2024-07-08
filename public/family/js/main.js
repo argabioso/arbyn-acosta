@@ -28,9 +28,10 @@ tree.nodeTemplate = $(
   template.Node(),
   template.Photo(),
   template.Name(),
-  template.Lifespan(),
-  template.BirthDeathPlace1(),
-  template.BirthDeathPlace2(),
+  template.DetailRow1(),
+  template.DetailRow2(),
+  template.DetailRow3(),
+  template.DetailRow4(),
 
   // Markers should always be at the end
   template.DNAMarker(),

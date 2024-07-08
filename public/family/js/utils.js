@@ -31,9 +31,9 @@ bino.getRelativeDates = function(nodeData, isPrivate) {
   let rawAge = bino.calculateAge(birthDate, deathDate)
   let age = rawAge;
 
-  const birthYear = bino.formatDate(birthDate, isPrivate);
-  const marriageYear = bino.formatDate(marriageDate, true);
-  const deathYear = bino.formatDate(deathDate);
+  const birthYear = bino.formatDate(nodeData.birthDate, isPrivate && nodeData.living);
+  const marriageYear = bino.formatDate(nodeData.marriageDate, false);
+  const deathYear = bino.formatDate(nodeData.deathDate, false);
 
   // If both birthYear and deathYear do not exist, return
   // "Living" or "Deceased" based on the living flag.
@@ -44,7 +44,10 @@ bino.getRelativeDates = function(nodeData, isPrivate) {
   // If birthYear does not exist, return the
   // formatted deathYear with a separator.
   if (!birthYear) {
-    return `${separator}${deathYear}`;
+    if (!marriageYear) {
+      return `${separator}${deathYear}`;
+    }
+    return `${separator}${marriageYear}${separator}${deathYear}`;
   }
 
   // If deathYear does not exist, return the formatted
@@ -56,9 +59,17 @@ bino.getRelativeDates = function(nodeData, isPrivate) {
     }
 
     if (String(age).includes("NaN")) {
-      return `${birthYear}${separator}${living ? 'Living' : 'Deceased'}`;
+      if (!marriageYear) {
+        return `${birthYear}${separator}${living ? 'Living' : 'Deceased'}`;
+      } else {
+        return `${birthYear}${separator}${marriageYear}${separator}${living ? 'Living' : 'Deceased'}`;
+      }
     }
-    return `${birthYear}${separator}${living ? 'Living' : 'Deceased'}` + (living ? ` (${age})` : '');
+    if (!marriageYear) {
+      return `${birthYear}${separator}${living ? 'Living' : 'Deceased'}` + (living ? ` (${age})` : '');
+    } else {
+      return `${birthYear}${separator}${marriageYear}${separator}${living ? 'Living' : 'Deceased'}` + (living ? ` (${age})` : '');
+    }
   }
 
   if (deathDate.includes('after')) {
@@ -98,12 +109,20 @@ bino.getRelativeDates = function(nodeData, isPrivate) {
   }
 
   if (String(age).includes("NaN")) {
-    return `${birthYear}${separator}${deathYear}`;
+    if (!marriageYear) {
+      return `${birthYear}${separator}${deathYear}`;
+    } else {
+      return `${birthYear}${separator}${marriageYear}${separator}${deathYear}`;
+    }
   }
 
   // If both birthYear and deathYear exist,
   // return the formatted lifespan string.
-  return `${birthYear}${separator}${deathYear} (${age})`;
+  if (!marriageYear) {
+    return `${birthYear}${separator}${deathYear} (${age})`;
+  } else {
+    return `${birthYear}${separator}${marriageYear}${separator}${deathYear} (${age})`;
+  }
 }
 
 /**
@@ -125,16 +144,19 @@ bino.convertCountryCode = function(input) {
   };
 
   const segments = input.split(',').map(segment => segment.trim());
-
-  // If only one segment and it's a known country code, return the full name
-  if (segments.length === 1 && lookup[segments[0]]) {
-    return lookup[segments[0]];
+  if (input.length < 36) {
+    segments[segments.length - 1] = lookup[segments[segments.length - 1]]
   }
 
-  // If two segments and the second one is a known country code, replace it with the full name
-  if (segments.length === 2 && lookup[segments[1]]) {
-    segments[1] = lookup[segments[1]];
-  }
+  // // If only one segment and it's a known country code, return the full name
+  // if (segments.length === 1 && lookup[segments[0]]) {
+  //   return lookup[segments[0]];
+  // }
+
+  // // If two segments and the second one is a known country code, replace it with the full name
+  // if (segments.length === 2 && lookup[segments[1]]) {
+  //   segments[1] = lookup[segments[1]];
+  // }
 
   return segments.join(', ');
 }

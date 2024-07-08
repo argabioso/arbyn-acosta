@@ -7,11 +7,14 @@
  */
 function calculateAdjustedHeight(nodeData) {
   if (nodeData.useNonePhoto) {
-    return ui.measure.node.height - 45;
+    return ui.measure.node.height - 60;
   }
 
   let adjustedHeight = ui.measure.node.height;
   if (nodeData.birthPlace == null) {
+    adjustedHeight -= 15;
+  }
+  if (nodeData.marriagePlace == null) {
     adjustedHeight -= 15;
   }
   if (nodeData.deathPlace == null) {

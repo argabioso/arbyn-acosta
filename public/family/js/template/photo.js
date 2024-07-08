@@ -43,31 +43,31 @@ template['Photo'] = function() {
 
 function calculatePhotoScale(nodeData) {
   if (nodeData.useNonePhoto) {
-    return 1;
+    return 0.3;
   }
   if (nodeData.birthPlace == null && nodeData.deathPlace == null) {
     if (nodeData.hasImage) {
-      return 0.08830769625;
+      return 0.0997876967625;
     }
-    return 0.35;
+    return 0.3955;
   }
   if (nodeData.birthPlace == null && nodeData.deathPlace != null) {
     if (nodeData.hasImage) {
-      return 0.11858461775;
+      return 0.1340006180575;
     }
-    return 0.47;
+    return 0.5311;
   }
   if (nodeData.birthPlace != null && nodeData.deathPlace == null) {
     if (nodeData.hasImage) {
-      return 0.11858461775;
+      return 0.1340006180575;
     }
-    return 0.47;
+    return 0.5311;
   }
   if (nodeData.birthPlace != null && nodeData.deathPlace != null) {
     if (nodeData.hasImage) {
-      return 0.13119999999;
+      return 0.1482559999887;
     }
-    return 0.52;
+    return 0.5876;
   }
   return 1;
 }

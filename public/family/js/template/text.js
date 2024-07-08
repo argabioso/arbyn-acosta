@@ -6,7 +6,7 @@ template['Name'] = function() {
       height: ui.font.size.name + 2,
     },
     new bino.Binding('width', '', function(nodeData) {
-      return ui.measure.node.width - 93;
+      return (ui.measure.node.width - 94) - 15;
     }),
     new bino.Binding('margin', '', function(nodeData) {
       return new bino.Margin(
@@ -28,37 +28,7 @@ template['Name'] = function() {
   );
 }
 
-template['Lifespan'] = function() {
-  return $(
-    bino.TextBlock,
-    {
-      font: `400 ${ui.font.size.details}px "Google Sans Text", sans-serif`,
-      height: ui.font.size.details + 2,
-    },
-    new bino.Binding("width", '', function(nodeData) {
-      return ui.measure.node.width - 94;
-    }),
-    new bino.Binding("margin", '', function(nodeData) {
-      return new bino.Margin(
-        24 + parseInt(ui.measure.node.padding / 2),
-        0,
-        0,
-        ui.measure.node.height + ui.font.size.details,
-      );
-    }),
-    new bino.Binding("stroke", '', function(nodeData) {
-      if (nodeData.firstName.includes("nknown")) {
-        return ui.color.node.nameless.details;
-      }
-      return ui.color.node.details;
-    }),
-    new bino.Binding("text", '', function(nodeData) {
-      return nodeData.relativeDates;
-    }),
-  );
-}
-
-template['BirthDeathPlace1'] = function() {
+template['DetailRow1'] = function() {
   return $(bino.Panel,
     $(
       bino.TextBlock,
@@ -71,10 +41,10 @@ template['BirthDeathPlace1'] = function() {
       }),
       new bino.Binding("margin", '', function(nodeData) {
         return new bino.Margin(
-          39 + parseInt(ui.measure.node.padding / 2),
+          24 + parseInt(ui.measure.node.padding / 2),
           0,
           0,
-          ui.measure.node.height + ui.font.size.details + 15,
+          ui.measure.node.height + ui.font.size.details,
         );
       }),
       new bino.Binding("stroke", '', function(nodeData) {
@@ -84,15 +54,8 @@ template['BirthDeathPlace1'] = function() {
         return ui.color.node.details;
       }),
       new bino.Binding("text", '', function(nodeData) {
-        if (nodeData.birthPlace == null && nodeData.deathPlace == null) {
-          return "";
-        }
-        if (nodeData.birthPlace != null) {
-          return `    ${nodeData.birthPlace}`;
-        }
-        if (nodeData.deathPlace != null) {
-          return `    ${nodeData.deathPlace}`;
-        }
+        if (!nodeData.detailsRow1.text) return '';
+        return nodeData.detailsRow1.text;
       }),
     ),
     $(
@@ -102,7 +65,68 @@ template['BirthDeathPlace1'] = function() {
         height: ui.font.size.details + 2,
       },
       new bino.Binding("width", '', function(nodeData) {
-        return ui.measure.node.width - 94;
+        return (ui.measure.node.width - 94) - 15;
+      }),
+      new bino.Binding("margin", '', function(nodeData) {
+        return new bino.Margin(
+          24 + parseInt(ui.measure.node.padding / 2),
+          0,
+          0,
+          ui.measure.node.height + ui.font.size.details,
+        );
+      }),
+      new bino.Binding("stroke", '', function(nodeData) {
+        if (nodeData.firstName.includes("nknown")) {
+          return ui.color.node.nameless.details;
+        }
+        return ui.color.node.details;
+      }),
+      new bino.Binding("text", '', function(nodeData) {
+        if (!nodeData.detailsRow1.letter) return '';
+        return `${nodeData.detailsRow1.letter}:`;
+      }),
+    ),
+  );
+}
+
+template['DetailRow2'] = function() {
+  return $(bino.Panel,
+    $(
+      bino.TextBlock,
+      {
+        font: `400 ${ui.font.size.details}px "Google Sans Text", sans-serif`,
+        height: ui.font.size.details + 2,
+      },
+      new bino.Binding("width", '', function(nodeData) {
+        return (ui.measure.node.width - 94) - 33;
+      }),
+      new bino.Binding("margin", '', function(nodeData) {
+        return new bino.Margin(
+          39 + parseInt(ui.measure.node.padding / 2),
+          0,
+          0,
+          ui.measure.node.height + ui.font.size.details + 17,
+        );
+      }),
+      new bino.Binding("stroke", '', function(nodeData) {
+        if (nodeData.firstName.includes("nknown")) {
+          return ui.color.node.nameless.details;
+        }
+        return ui.color.node.details;
+      }),
+      new bino.Binding("text", '', function(nodeData) {
+        if (!nodeData.detailsRow2.text) return '';
+        return nodeData.detailsRow2.text;
+      }),
+    ),
+    $(
+      bino.TextBlock,
+      {
+        font: `700 ${ui.font.size.details}px Google Sans, sans-serif`,
+        height: ui.font.size.details + 2,
+      },
+      new bino.Binding("width", '', function(nodeData) {
+        return (ui.measure.node.width - 94) - 15;
       }),
       new bino.Binding("margin", '', function(nodeData) {
         return new bino.Margin(
@@ -119,21 +143,14 @@ template['BirthDeathPlace1'] = function() {
         return ui.color.node.details;
       }),
       new bino.Binding("text", '', function(nodeData) {
-        if (nodeData.birthPlace == null && nodeData.deathPlace == null) {
-          return "";
-        }
-        if (nodeData.birthPlace != null) {
-          return 'B:';
-        }
-        if (nodeData.deathPlace != null) {
-          return 'D:';
-        }
+        if (!nodeData.detailsRow2.letter) return '';
+        return `${nodeData.detailsRow2.letter}:`;
       }),
     ),
   );
 }
 
-template['BirthDeathPlace2'] = function() {
+template['DetailRow3'] = function() {
   return $(bino.Panel,
     $(
       bino.TextBlock,
@@ -142,14 +159,14 @@ template['BirthDeathPlace2'] = function() {
         height: ui.font.size.details + 2,
       },
       new bino.Binding("width", '', function(nodeData) {
-        return (ui.measure.node.width - 94) - 15;
+        return (ui.measure.node.width - 94) - 33;
       }),
       new bino.Binding("margin", '', function(nodeData) {
         return new bino.Margin(
           54.5 + parseInt(ui.measure.node.padding / 2),
           0,
           0,
-          ui.measure.node.height + ui.font.size.details + 15,
+          ui.measure.node.height + ui.font.size.details + 17,
         );
       }),
       new bino.Binding("stroke", '', function(nodeData) {
@@ -159,11 +176,8 @@ template['BirthDeathPlace2'] = function() {
         return ui.color.node.details;
       }),
       new bino.Binding("text", '', function(nodeData) {
-        if (nodeData.deathPlace == null || nodeData.birthPlace == null) {
-          return "";
-        }
-        let prefixLetter = nodeData.living ? 'L' : 'D';
-        return `    ${nodeData.deathPlace}`;
+        if (!nodeData.detailsRow3.text) return '';
+        return nodeData.detailsRow3.text;
       }),
     ),
     $(
@@ -173,7 +187,7 @@ template['BirthDeathPlace2'] = function() {
         height: ui.font.size.details + 2,
       },
       new bino.Binding("width", '', function(nodeData) {
-        return ui.measure.node.width - 94;
+        return (ui.measure.node.width - 94) - 15;
       }),
       new bino.Binding("margin", '', function(nodeData) {
         return new bino.Margin(
@@ -190,13 +204,69 @@ template['BirthDeathPlace2'] = function() {
         return ui.color.node.details;
       }),
       new bino.Binding("text", '', function(nodeData) {
-        if (nodeData.deathPlace == null || nodeData.birthPlace == null) {
-          return "";
+        if (!nodeData.detailsRow3.letter) return '';
+        return `${nodeData.detailsRow3.letter}:`;
+      }),
+    ),
+  );
+}
+
+template['DetailRow4'] = function() {
+  return $(bino.Panel,
+    $(
+      bino.TextBlock,
+      {
+        font: `400 ${ui.font.size.details}px "Google Sans Text", sans-serif`,
+        height: ui.font.size.details + 2,
+      },
+      new bino.Binding("width", '', function(nodeData) {
+        return (ui.measure.node.width - 94) - 33;
+      }),
+      new bino.Binding("margin", '', function(nodeData) {
+        return new bino.Margin(
+          70 + parseInt(ui.measure.node.padding / 2),
+          0,
+          0,
+          ui.measure.node.height + ui.font.size.details + 17,
+        );
+      }),
+      new bino.Binding("stroke", '', function(nodeData) {
+        if (nodeData.firstName.includes("nknown")) {
+          return ui.color.node.nameless.details;
         }
-        if (nodeData.living) {
-          return 'L:';
+        return ui.color.node.details;
+      }),
+      new bino.Binding("text", '', function(nodeData) {
+        if (!nodeData.detailsRow4.text) return '';
+        return nodeData.detailsRow4.text;
+      }),
+    ),
+    $(
+      bino.TextBlock,
+      {
+        font: `700 ${ui.font.size.details}px Google Sans, sans-serif`,
+        height: ui.font.size.details + 2,
+      },
+      new bino.Binding("width", '', function(nodeData) {
+        return (ui.measure.node.width - 94) - 15;
+      }),
+      new bino.Binding("margin", '', function(nodeData) {
+        return new bino.Margin(
+          70 + parseInt(ui.measure.node.padding / 2),
+          0,
+          0,
+          ui.measure.node.height + ui.font.size.details,
+        );
+      }),
+      new bino.Binding("stroke", '', function(nodeData) {
+        if (nodeData.firstName.includes("nknown")) {
+          return ui.color.node.nameless.details;
         }
-        return 'D:';
+        return ui.color.node.details;
+      }),
+      new bino.Binding("text", '', function(nodeData) {
+        if (!nodeData.detailsRow4.letter) return '';
+        return `${nodeData.detailsRow4.letter}:`;
       }),
     ),
   );

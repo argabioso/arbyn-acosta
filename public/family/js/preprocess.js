@@ -3,7 +3,7 @@ for (const [i, person] of Object.entries(TREE_DATA)) {
   // Add "parent" from "child" value since chart.js works that way
   // =======================================================================
   TREE_DATA[i]["parent"] = TREE_DATA[i]["child"];
-  if (person. firstName == undefined) {
+  if (person.firstName == undefined) {
     continue;
   }
 
@@ -31,11 +31,13 @@ for (const [i, person] of Object.entries(TREE_DATA)) {
   if (!!person.prefix) prefix = `${person.prefix} `;
   if (!!person.suffix) suffix = ` ${person.suffix}`;
 
-  let  firstName = person. firstName;
+  let firstName = person.firstName;
+  let nickname = (!person.nickname) ? '' : `"${person.nickname}" `;
 
   TREE_DATA[i]['fullName'] = (
     prefix +
-     firstName + " " +
+    firstName + ' ' +
+    nickname +
     middleInitialsString +
     ((!person.lastName) ? '' : person.lastName) +
     suffix
@@ -45,6 +47,7 @@ for (const [i, person] of Object.entries(TREE_DATA)) {
   // Improve locations and make living the death place for easier UI change
   // =======================================================================
   TREE_DATA[i]['birthPlace'] = bino.convertCountryCode(person.birthPlace);
+  TREE_DATA[i]['marriagePlace'] = bino.convertCountryCode(person.marriagePlace);
   TREE_DATA[i]['deathPlace'] = bino.convertCountryCode(person.deathPlace);
   TREE_DATA[i]['livingPlace'] = bino.convertCountryCode(person.livingPlace);
 
@@ -54,12 +57,62 @@ for (const [i, person] of Object.entries(TREE_DATA)) {
   }
 
   // =======================================================================
-  // Add relative dates to each person
+  // Add details to each person
   // =======================================================================
-  if (person.living) {
-    TREE_DATA[i]['relativeDates'] = bino.getRelativeDates(person, isPrivate);
+  let birthUsed = false;
+  let deathUsed = false;
+  let marriageUsed = false;
+
+  const separator = ' — ';
+
+  TREE_DATA[i]['detailsRow1'] = {
+    'text': bino.getRelativeDates(person, isPrivate),
+    'letter': null,
+  }
+  TREE_DATA[i]['detailsRow2'] = {}
+  TREE_DATA[i]['detailsRow3'] = {}
+  TREE_DATA[i]['detailsRow4'] = {}
+
+  if (person.birthPlace != null && !birthUsed) {
+    birthUsed = true;
+    TREE_DATA[i]['detailsRow2']['text'] = `${person.birthPlace}`;
+    TREE_DATA[i]['detailsRow2']['letter'] = 'B';
   } else {
-    TREE_DATA[i]['relativeDates'] = bino.getRelativeDates(person, false);
+    TREE_DATA[i]['detailsRow2']['text'] = '';
+    TREE_DATA[i]['detailsRow2']['letter'] = '';
+  }
+
+  if (person.marriagePlace != null && !marriageUsed) {
+    marriageUsed = true;
+
+    if (!birthUsed) {
+      TREE_DATA[i]['detailsRow2']['text'] = `${person.marriagePlace}`;
+      TREE_DATA[i]['detailsRow2']['letter'] = 'M';
+    } else {
+      TREE_DATA[i]['detailsRow3']['text'] = `${person.marriagePlace}`;
+      TREE_DATA[i]['detailsRow3']['letter'] = 'M';
+    }
+  } else {
+    TREE_DATA[i]['detailsRow3']['text'] = '';
+    TREE_DATA[i]['detailsRow3']['letter'] = '';
+  }
+
+  if (((person.deathPlace != null || person.living)) && !deathUsed) {
+    deathUsed = true;
+
+    if (!birthUsed) {
+      TREE_DATA[i]['detailsRow2']['text'] = `${person.deathPlace}`;
+      TREE_DATA[i]['detailsRow2']['letter'] = (person.living) ? 'L' : 'D';
+    } else if (!marriageUsed) {
+      TREE_DATA[i]['detailsRow3']['text'] = `${person.deathPlace}`;
+      TREE_DATA[i]['detailsRow3']['letter'] = (person.living) ? 'L' : 'D';
+    } else {
+      TREE_DATA[i]['detailsRow4']['text'] = `${person.deathPlace}`;
+      TREE_DATA[i]['detailsRow4']['letter'] = (person.living) ? 'L' : 'D';
+    }
+  } else {
+    TREE_DATA[i]['detailsRow4']['text'] = '';
+    TREE_DATA[i]['detailsRow4']['letter'] = '';
   }
 }
 
