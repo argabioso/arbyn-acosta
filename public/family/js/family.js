@@ -755,6 +755,7 @@ const SOURCES = {
     'GHB5-TWN:gender',
     'GHB5-TWN:lastName',
     'GHB5-TWN:middleName',
+    'GHB5-TWN:marker',
     'GQX8-CQP:birthDate',
     'GQX8-CQP:firstName',
     'GQX8-CQP:gender',
@@ -769,8 +770,11 @@ const SOURCES = {
     'GHBZ-YVX:marker',
     'GHBZ-YVX:marker3',
     'GHB5-XTZ:marker',
+    'GHB5-XTZ:marker2',
+    'GHB5-XTZ:marker3',
     'GHBR-FK3:marker',
     'GHBR-FK3:marker2',
+    'GHBR-FK3:marker3',
 
     'GH12-W17:deathDate',
     'GH12-W17:deathPlace',
@@ -874,6 +878,7 @@ const SOURCES = {
     // (daughter of Lola Cresencia, sister of Lola Catalina)
     'GHBD-9LY:birthPlace',
     'GHBD-9LY:marker',  // saws or creates clothes
+    'GHBD-9LY:marker2',  // saws or creates clothes
     'LLQS-641:firstName',
     'LLQS-641:GHB8-GB6:parentChild',
     'TEMP-001:GHBD-9LY:parentChild',
@@ -962,6 +967,7 @@ const SOURCES = {
     'GQX8-CQP:middleName',
     'GQX8-CQP:lastName',
     'GQX8-CQP:birthDate',
+    'GQX8-CQP:baptismDate',
 
     'GQJK-G8W:GQX8-CQP:parentChild',
     'GQJK-G8W:gender',
@@ -991,6 +997,34 @@ const SOURCES = {
     // Cynthia Bagadiong
     // Aurora Ocampo
     // Cynthia Haber
+  ],
+
+  // Certificate of Marriage
+  'https://drive.google.com/file/d/1JugnGovmYL6q7yhPtoovnGNcoaKR2kYa/view?side=argabioso': [
+    'GQX8-CQP:GHB5-TWN:partner',
+
+    'GQX8-CQP:marriagePlace',
+    'GQX8-CQP:gender',
+    'GQX8-CQP:firstName',
+    'GQX8-CQP:middleName',
+    'GQX8-CQP:lastName',
+
+    'GQJK-G8W:GQX8-CQP:parentChild',
+    'GQJK-G8W:gender',
+    'GQJK-G8W:firstName',
+    'GQJK-G8W:middleName',
+    'GQJK-G8W:lastName',
+
+    'GQJK-L51:GQX8-CQP:parentChild',
+    'GQJK-L51:gender',
+    'GQJK-L51:firstName',
+    'GQJK-L51:middleName',
+    'GQJK-L51:lastName',
+
+    'GQJK-G8W:GQJK-L51:partner',
+
+    'GQX8-CQP:marriageDate',
+    'GQX8-CQP:marriagePlace',
   ],
 
   // Proposal to Mitchie, Facebook
@@ -1323,6 +1357,7 @@ const SOURCES = {
     'GQJK-G8W:firstName',
     'GQJK-G8W:lastName',
     'GQJK-G8W:birthDate',
+    'GQJK-G8W:baptismDate',
 
     'GHBD-7M4:GQJK-G8W:parentChild',
     'GHBD-7M4:gender',
@@ -1993,6 +2028,33 @@ const SOURCES = {
     'GHB5-XTZ:GHBR-FK3:partner',
     'GHB5-XTZ:marriageDate',
     'GHBR-FK3:marriageDate',
+  ],
+
+  // Certificate of Marriage
+  'https://drive.google.com/file/d/1JugnGovmYL6q7yhPtoovnGNcoaKR2kYa/view?side=adanza': [
+    'GHB5-TWN:GQX8-CQP:partner',
+
+    'GHB5-TWN:firstName',
+    'GHB5-TWN:middleName',
+    'GHB5-TWN:lastName',
+    'GHB5-TWN:gender',
+
+    'GHB5-XTZ:GHB5-TWN:parentChild',
+    'GHB5-XTZ:gender',
+    'GHB5-XTZ:firstName',
+    'GHB5-XTZ:middleName',
+    'GHB5-XTZ:lastName',
+
+    'GHBR-FK3:GHB5-TWN:parentChild',
+    'GHBR-FK3:gender',
+    'GHBR-FK3:firstName',
+    'GHBR-FK3:middleName',
+    'GHBR-FK3:lastName',
+
+    'GHB5-XTZ:GHBR-FK3:partner',
+
+    'GHB5-TWN:marriageDate',
+    'GHB5-TWN:marriagePlace',
   ],
 
   // =======================================================================
