@@ -189,7 +189,10 @@ function marginConditions(marker) {
     return new bino.Margin(0.9, 0, 0, 1.1);
   }
   if (marker === 'housewife') {
-    return new bino.Margin(2, 0, 0, 1.95);
+    return new bino.Margin(1.8, 0, 0, 1.5);
+  }
+  if (marker === 'househusband') {
+    return new bino.Margin(1.8, 0, 0, 1.5);
   }
   if (marker === 'farming') {
     return new bino.Margin(2.25, 0, 0, 1.95);
