@@ -6,7 +6,7 @@ template['Name'] = function() {
       height: ui.font.size.name + 2,
     },
     new bino.Binding('width', '', function(nodeData) {
-      return (ui.measure.node.width - 94) - 15;
+      return (ui.measure.node.widths[nodeData.generation] - 94) - 15;
     }),
     new bino.Binding('margin', '', function(nodeData) {
       return new bino.Margin(
@@ -37,7 +37,7 @@ template['DetailRow1'] = function() {
         height: ui.font.size.details + 2,
       },
       new bino.Binding("width", '', function(nodeData) {
-        return (ui.measure.node.width - 94) - 15;
+        return (ui.measure.node.widths[nodeData.generation] - 94) - 15;
       }),
       new bino.Binding("margin", '', function(nodeData) {
         return new bino.Margin(
@@ -65,7 +65,7 @@ template['DetailRow1'] = function() {
         height: ui.font.size.details + 2,
       },
       new bino.Binding("width", '', function(nodeData) {
-        return (ui.measure.node.width - 94) - 15;
+        return (ui.measure.node.widths[nodeData.generation] - 94) - 15;
       }),
       new bino.Binding("margin", '', function(nodeData) {
         return new bino.Margin(
@@ -98,7 +98,7 @@ template['DetailRow2'] = function() {
         height: ui.font.size.details + 2,
       },
       new bino.Binding("width", '', function(nodeData) {
-        return (ui.measure.node.width - 94) - 33;
+        return (ui.measure.node.widths[nodeData.generation] - 94) - 33;
       }),
       new bino.Binding("margin", '', function(nodeData) {
         let marginAdder = (nodeData.detailsRow2.letter == 'M' || nodeData.detailsRow3.letter == 'M') ? 13 : 11;
@@ -127,7 +127,7 @@ template['DetailRow2'] = function() {
         height: ui.font.size.details + 2,
       },
       new bino.Binding("width", '', function(nodeData) {
-        return (ui.measure.node.width - 94) - 15;
+        return (ui.measure.node.widths[nodeData.generation] - 94) - 15;
       }),
       new bino.Binding("margin", '', function(nodeData) {
         return new bino.Margin(
@@ -160,7 +160,7 @@ template['DetailRow3'] = function() {
         height: ui.font.size.details + 2,
       },
       new bino.Binding("width", '', function(nodeData) {
-        return (ui.measure.node.width - 94) - 33;
+        return (ui.measure.node.widths[nodeData.generation] - 94) - 33;
       }),
       new bino.Binding("margin", '', function(nodeData) {
         let marginAdder = (nodeData.detailsRow2.letter == 'M' || nodeData.detailsRow3.letter == 'M') ? 13 : 11;
@@ -189,7 +189,7 @@ template['DetailRow3'] = function() {
         height: ui.font.size.details + 2,
       },
       new bino.Binding("width", '', function(nodeData) {
-        return (ui.measure.node.width - 94) - 15;
+        return (ui.measure.node.widths[nodeData.generation] - 94) - 15;
       }),
       new bino.Binding("margin", '', function(nodeData) {
         return new bino.Margin(
@@ -222,7 +222,7 @@ template['DetailRow4'] = function() {
         height: ui.font.size.details + 2,
       },
       new bino.Binding("width", '', function(nodeData) {
-        return (ui.measure.node.width - 94) - 33;
+        return (ui.measure.node.widths[nodeData.generation] - 94) - 33;
       }),
       new bino.Binding("margin", '', function(nodeData) {
         let marginAdder = (nodeData.detailsRow2.letter == 'M' || nodeData.detailsRow3.letter == 'M') ? 13 : 11;
@@ -251,7 +251,7 @@ template['DetailRow4'] = function() {
         height: ui.font.size.details + 2,
       },
       new bino.Binding("width", '', function(nodeData) {
-        return (ui.measure.node.width - 94) - 15;
+        return (ui.measure.node.widths[nodeData.generation] - 94) - 15;
       }),
       new bino.Binding("margin", '', function(nodeData) {
         return new bino.Margin(

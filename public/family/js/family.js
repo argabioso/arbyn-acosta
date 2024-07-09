@@ -459,6 +459,18 @@ const ui = {
       padding: 10,
       height: 95.5,
       width: 410,
+      widths: {
+        0: 410,
+        1: 396,
+        2: 411,
+        3: 402,
+        4: 410,
+        5: 366,
+        6: 373,
+        7: 302,
+        8: 410,
+        9: 410,
+      }
     },
   },
 };
@@ -717,6 +729,32 @@ var TREE_DATA = [
     TREE_DATA[i]['detailsRow4']['letter'] = '';
   }
 }
+
+function addGeneration(data) {
+    // Create a map to easily find each person by their key
+    let keyMap = {};
+    data.forEach(person => {
+        keyMap[person.key] = person;
+        person.generation = 0; // Default generation, will be adjusted later
+    });
+
+    // Function to update the generation for a person and their ancestors
+    function updateGeneration(key, generation) {
+        if (keyMap[key]) {
+            keyMap[key].generation = generation;
+            data.filter(person => person.child === key).forEach(child => {
+                updateGeneration(child.key, generation + 1);
+            });
+        }
+    }
+
+    // Start from the root nodes and update their generations
+    data.filter(person => !person.child).forEach(root => {
+        updateGeneration(root.key, 0);
+    });
+}
+
+addGeneration(TREE_DATA);
 
 // Create a map of child to parents.
 var childToParents = {};
@@ -2902,7 +2940,7 @@ template['Node'] = function() {
       strokeWidth: 0,
     },
     new bino.Binding('desiredSize', '', function(nodeData) {
-      return new bino.Size(ui.measure.node.width, nodeData.height);
+      return new bino.Size(ui.measure.node.widths[nodeData.generation], nodeData.height);
     }),
   );
 }
@@ -3181,7 +3219,7 @@ template["DNAMarker"] = function() {
       let topMargin = ui.measure.marker.margin;
       return new bino.Margin(
         topMargin, 0, 0,
-        ui.measure.node.width - (ui.measure.marker.width + ui.measure.marker.margin),
+        ui.measure.node.widths[nodeData.generation] - (ui.measure.marker.width + ui.measure.marker.margin),
       )
     }),
     new bino.Binding("visible", '', function(nodeData) {
@@ -3220,7 +3258,7 @@ template["FirstMarker"] = function() {
       }
       return new bino.Margin(
         topMargin, 0, 0,
-        ui.measure.node.width - (ui.measure.marker.width + ui.measure.marker.margin),
+        ui.measure.node.widths[nodeData.generation] - (ui.measure.marker.width + ui.measure.marker.margin),
       )
     }),
     new bino.Binding("visible", '', function(nodeData) {
@@ -3259,7 +3297,7 @@ template["SecondMarker"] = function() {
       let topMargin = ui.measure.marker.margin + (ui.measure.marker.width + ui.measure.marker.margin) - 3;
       return new bino.Margin(
         topMargin, 0, 0,
-        ui.measure.node.width - (ui.measure.marker.width + ui.measure.marker.margin),
+        ui.measure.node.widths[nodeData.generation] - (ui.measure.marker.width + ui.measure.marker.margin),
       )
     }),
     new bino.Binding("visible", '', function(nodeData) {
@@ -3298,7 +3336,7 @@ template["ThirdMarker"] = function() {
       let topMargin = ui.measure.marker.margin + ((ui.measure.marker.width + ui.measure.marker.margin) - 3) * 2;
       return new bino.Margin(
         topMargin, 0, 0,
-        ui.measure.node.width - (ui.measure.marker.width + ui.measure.marker.margin),
+        ui.measure.node.widths[nodeData.generation] - (ui.measure.marker.width + ui.measure.marker.margin),
       )
     }),
     new bino.Binding("visible", '', function(nodeData) {
@@ -3380,7 +3418,7 @@ template['Name'] = function() {
       height: ui.font.size.name + 2,
     },
     new bino.Binding('width', '', function(nodeData) {
-      return (ui.measure.node.width - 94) - 15;
+      return (ui.measure.node.widths[nodeData.generation] - 94) - 15;
     }),
     new bino.Binding('margin', '', function(nodeData) {
       return new bino.Margin(
@@ -3411,7 +3449,7 @@ template['DetailRow1'] = function() {
         height: ui.font.size.details + 2,
       },
       new bino.Binding("width", '', function(nodeData) {
-        return (ui.measure.node.width - 94) - 15;
+        return (ui.measure.node.widths[nodeData.generation] - 94) - 15;
       }),
       new bino.Binding("margin", '', function(nodeData) {
         return new bino.Margin(
@@ -3439,7 +3477,7 @@ template['DetailRow1'] = function() {
         height: ui.font.size.details + 2,
       },
       new bino.Binding("width", '', function(nodeData) {
-        return (ui.measure.node.width - 94) - 15;
+        return (ui.measure.node.widths[nodeData.generation] - 94) - 15;
       }),
       new bino.Binding("margin", '', function(nodeData) {
         return new bino.Margin(
@@ -3472,7 +3510,7 @@ template['DetailRow2'] = function() {
         height: ui.font.size.details + 2,
       },
       new bino.Binding("width", '', function(nodeData) {
-        return (ui.measure.node.width - 94) - 33;
+        return (ui.measure.node.widths[nodeData.generation] - 94) - 33;
       }),
       new bino.Binding("margin", '', function(nodeData) {
         let marginAdder = (nodeData.detailsRow2.letter == 'M' || nodeData.detailsRow3.letter == 'M') ? 13 : 11;
@@ -3501,7 +3539,7 @@ template['DetailRow2'] = function() {
         height: ui.font.size.details + 2,
       },
       new bino.Binding("width", '', function(nodeData) {
-        return (ui.measure.node.width - 94) - 15;
+        return (ui.measure.node.widths[nodeData.generation] - 94) - 15;
       }),
       new bino.Binding("margin", '', function(nodeData) {
         return new bino.Margin(
@@ -3534,7 +3572,7 @@ template['DetailRow3'] = function() {
         height: ui.font.size.details + 2,
       },
       new bino.Binding("width", '', function(nodeData) {
-        return (ui.measure.node.width - 94) - 33;
+        return (ui.measure.node.widths[nodeData.generation] - 94) - 33;
       }),
       new bino.Binding("margin", '', function(nodeData) {
         let marginAdder = (nodeData.detailsRow2.letter == 'M' || nodeData.detailsRow3.letter == 'M') ? 13 : 11;
@@ -3563,7 +3601,7 @@ template['DetailRow3'] = function() {
         height: ui.font.size.details + 2,
       },
       new bino.Binding("width", '', function(nodeData) {
-        return (ui.measure.node.width - 94) - 15;
+        return (ui.measure.node.widths[nodeData.generation] - 94) - 15;
       }),
       new bino.Binding("margin", '', function(nodeData) {
         return new bino.Margin(
@@ -3596,7 +3634,7 @@ template['DetailRow4'] = function() {
         height: ui.font.size.details + 2,
       },
       new bino.Binding("width", '', function(nodeData) {
-        return (ui.measure.node.width - 94) - 33;
+        return (ui.measure.node.widths[nodeData.generation] - 94) - 33;
       }),
       new bino.Binding("margin", '', function(nodeData) {
         let marginAdder = (nodeData.detailsRow2.letter == 'M' || nodeData.detailsRow3.letter == 'M') ? 13 : 11;
@@ -3625,7 +3663,7 @@ template['DetailRow4'] = function() {
         height: ui.font.size.details + 2,
       },
       new bino.Binding("width", '', function(nodeData) {
-        return (ui.measure.node.width - 94) - 15;
+        return (ui.measure.node.widths[nodeData.generation] - 94) - 15;
       }),
       new bino.Binding("margin", '', function(nodeData) {
         return new bino.Margin(

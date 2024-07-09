@@ -116,6 +116,32 @@ for (const [i, person] of Object.entries(TREE_DATA)) {
   }
 }
 
+function addGeneration(data) {
+    // Create a map to easily find each person by their key
+    let keyMap = {};
+    data.forEach(person => {
+        keyMap[person.key] = person;
+        person.generation = 0; // Default generation, will be adjusted later
+    });
+
+    // Function to update the generation for a person and their ancestors
+    function updateGeneration(key, generation) {
+        if (keyMap[key]) {
+            keyMap[key].generation = generation;
+            data.filter(person => person.child === key).forEach(child => {
+                updateGeneration(child.key, generation + 1);
+            });
+        }
+    }
+
+    // Start from the root nodes and update their generations
+    data.filter(person => !person.child).forEach(root => {
+        updateGeneration(root.key, 0);
+    });
+}
+
+addGeneration(TREE_DATA);
+
 // Create a map of child to parents.
 var childToParents = {};
 TREE_DATA.forEach(node => {

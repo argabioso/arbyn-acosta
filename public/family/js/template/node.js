@@ -8,7 +8,7 @@ template['Node'] = function() {
       strokeWidth: 0,
     },
     new bino.Binding('desiredSize', '', function(nodeData) {
-      return new bino.Size(ui.measure.node.width, nodeData.height);
+      return new bino.Size(ui.measure.node.widths[nodeData.generation], nodeData.height);
     }),
   );
 }

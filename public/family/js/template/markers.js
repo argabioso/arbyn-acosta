@@ -23,7 +23,7 @@ template["DNAMarker"] = function() {
       let topMargin = ui.measure.marker.margin;
       return new bino.Margin(
         topMargin, 0, 0,
-        ui.measure.node.width - (ui.measure.marker.width + ui.measure.marker.margin),
+        ui.measure.node.widths[nodeData.generation] - (ui.measure.marker.width + ui.measure.marker.margin),
       )
     }),
     new bino.Binding("visible", '', function(nodeData) {
@@ -62,7 +62,7 @@ template["FirstMarker"] = function() {
       }
       return new bino.Margin(
         topMargin, 0, 0,
-        ui.measure.node.width - (ui.measure.marker.width + ui.measure.marker.margin),
+        ui.measure.node.widths[nodeData.generation] - (ui.measure.marker.width + ui.measure.marker.margin),
       )
     }),
     new bino.Binding("visible", '', function(nodeData) {
@@ -101,7 +101,7 @@ template["SecondMarker"] = function() {
       let topMargin = ui.measure.marker.margin + (ui.measure.marker.width + ui.measure.marker.margin) - 3;
       return new bino.Margin(
         topMargin, 0, 0,
-        ui.measure.node.width - (ui.measure.marker.width + ui.measure.marker.margin),
+        ui.measure.node.widths[nodeData.generation] - (ui.measure.marker.width + ui.measure.marker.margin),
       )
     }),
     new bino.Binding("visible", '', function(nodeData) {
@@ -140,7 +140,7 @@ template["ThirdMarker"] = function() {
       let topMargin = ui.measure.marker.margin + ((ui.measure.marker.width + ui.measure.marker.margin) - 3) * 2;
       return new bino.Margin(
         topMargin, 0, 0,
-        ui.measure.node.width - (ui.measure.marker.width + ui.measure.marker.margin),
+        ui.measure.node.widths[nodeData.generation] - (ui.measure.marker.width + ui.measure.marker.margin),
       )
     }),
     new bino.Binding("visible", '', function(nodeData) {
