@@ -24,6 +24,8 @@ function checkPerPerson(person) {
     'key', // custom-information attribute, not verifiable
 
     'useNonePhoto', // aesthetic attribute
+    'generation', // aesthetic attribute
+    'hasImage', // aesthetic attribute
     'hasDNA', // aesthetic attribute
 
     'parent', // derived attribute
@@ -35,23 +37,18 @@ function checkPerPerson(person) {
 
     'fullName', // composite attribute
     'nickname', // optional and usually not documented
+
+    'living', // personal choice, no need to verify this
+    'livingPlace', // personal choice, no need to verify this
   ];
 
   if (person.living) {
     attributesToIgnore.push('deathDate');
     attributesToIgnore.push('deathPlace');
     attributesToIgnore.push('deathAge');
-    attributesToIgnore.push('livingPlace');
 
     sourceCount += 4;
     expectedSourceCount += 4;
-  }
-
-  if (!person.living) {
-    attributesToIgnore.push('livingPlace');
-
-    sourceCount += 1;
-    expectedSourceCount += 1;
   }
 
   if (person.deathAge === null) {
@@ -61,48 +58,29 @@ function checkPerPerson(person) {
     expectedSourceCount += 1;
   }
 
-  if (isEmpty(person.baptismDate)) {
-    attributesToIgnore.push('baptismDate');
-  }
+  let nullValueIgnoreAttributes = [
+    'prefix',
+    'middleName',
+    'lastName',
+    'suffix',
+    'birthDate',
+    'birthPlace',
+    'baptismDate',
+    'marriageDate',
+    'marriagePlace',
+    'deathDate',
+    'deathPlace',
+    'twin',
+    'marker',
+    'marker2',
+    'marker3',
+    'partner',
+  ];
 
-  if (isEmpty(person.marriageDate)) {
-    attributesToIgnore.push('marriageDate');
-  }
-
-  if (isEmpty(person.marriagePlace)) {
-    attributesToIgnore.push('marriagePlace');
-  }
-
-  if (isEmpty(person.twin)) {
-    attributesToIgnore.push('twin');
-  }
-
-  if (isEmpty(person.middleName)) {
-    attributesToIgnore.push('middleName');
-  }
-
-  if (isEmpty(person.marker)) {
-    attributesToIgnore.push('marker');
-  }
-
-  if (isEmpty(person.prefix)) {
-    attributesToIgnore.push('prefix');
-  }
-
-  if (isEmpty(person.suffix)) {
-    attributesToIgnore.push('suffix');
-  }
-
-  if (isEmpty(person.partner)) {
-    attributesToIgnore.push('partner');
-  }
-
-  if (person.living) {
-    attributesToIgnore.push('living');
-  }
-
-  if (!person.hasImage) {
-    attributesToIgnore.push('hasImage');
+  for (const [i, attributeName] of Object.entries(nullValueIgnoreAttributes)) {
+    if (isEmpty(person[attributeName])) {
+      attributesToIgnore.push(attributeName);
+    }
   }
 
   for (const [attributeName, attributeValue] of Object.entries(person)) {

@@ -52,6 +52,9 @@ const SOURCES = {
     'GHBZ-TM4:birthPlace',
     'GHB8-RCH:birthPlace',
 
+    // From Tito Manolo (son of Lola Catalina)
+    'GHB8-J1B:marker',
+
     // From Tita Susan (daughter of Lolo Manuel)
     'GHBD-7M4:marker2',
 
@@ -121,7 +124,7 @@ const SOURCES = {
     'GH12-35H:firstName',
     'GH12-35H:lastName',
 
-    // Directly from Tita Mylen (granddaughter of Lolo Manuel,
+    // Directly from mama Mylen (granddaughter of Lolo Manuel,
     // Lola Ursua, Lolo Benigno, and Lola Enoria)
     'GH12-XX4:firstName',
     'GH12-XX4:lastName',
@@ -131,8 +134,10 @@ const SOURCES = {
     'GH12-6YL:lastName',
     'GH12-DD8:firstName',
     'GH12-DD8:lastName',
+    'GH12-HQN:GH12-Z3C:parentChild',
+    'GH12-W17:marker',
 
-    // Directly from Tita Mylen (daughter of Lolo Napoleon)
+    // Directly from mama Mylen (daughter of Lolo Napoleon)
     'GH12-Z3C:living',
 
     // Directly from Lola Becky
@@ -264,7 +269,6 @@ const SOURCES = {
   'https://drive.google.com/file/d/1JugnGovmYL6q7yhPtoovnGNcoaKR2kYa/view?side=argabioso': [
     'GQX8-CQP:GHB5-TWN:partner',
 
-    'GQX8-CQP:marriagePlace',
     'GQX8-CQP:gender',
     'GQX8-CQP:firstName',
     'GQX8-CQP:middleName',
@@ -1491,6 +1495,7 @@ const SOURCES = {
 
     'GH12-Z3C:marriageDate',
     'GH12-W17:marriageDate',
+    'GH12-W17:marriagePlace',
   ],
 
   // Certificate of Marriage
@@ -1774,7 +1779,7 @@ const SOURCES = {
 //   = Estimate birth from Lolo Nestor's birth - 10
 //   = Estimate death is any time after Lolo Felomino's death
 // Lolo Napoleon
-//   = Estimate birth from Tita Mylen's birth - 6
+//   = Estimate birth from mama Mylen's birth - 6
 //   = Estimate death is time after Tita Cecil was born
 // Lola Enoria
 //   = Estimate birth from Mamang's birth - 10

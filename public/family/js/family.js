@@ -467,7 +467,7 @@ const ui = {
         4: 410,
         5: 366,
         6: 373,
-        7: 302,
+        7: 305,
         8: 410,
         9: 410,
       }
@@ -829,6 +829,9 @@ const SOURCES = {
     'GHBZ-TM4:birthPlace',
     'GHB8-RCH:birthPlace',
 
+    // From Tito Manolo (son of Lola Catalina)
+    'GHB8-J1B:marker',
+
     // From Tita Susan (daughter of Lolo Manuel)
     'GHBD-7M4:marker2',
 
@@ -898,7 +901,7 @@ const SOURCES = {
     'GH12-35H:firstName',
     'GH12-35H:lastName',
 
-    // Directly from Tita Mylen (granddaughter of Lolo Manuel,
+    // Directly from mama Mylen (granddaughter of Lolo Manuel,
     // Lola Ursua, Lolo Benigno, and Lola Enoria)
     'GH12-XX4:firstName',
     'GH12-XX4:lastName',
@@ -908,8 +911,10 @@ const SOURCES = {
     'GH12-6YL:lastName',
     'GH12-DD8:firstName',
     'GH12-DD8:lastName',
+    'GH12-HQN:GH12-Z3C:parentChild',
+    'GH12-W17:marker',
 
-    // Directly from Tita Mylen (daughter of Lolo Napoleon)
+    // Directly from mama Mylen (daughter of Lolo Napoleon)
     'GH12-Z3C:living',
 
     // Directly from Lola Becky
@@ -1041,7 +1046,6 @@ const SOURCES = {
   'https://drive.google.com/file/d/1JugnGovmYL6q7yhPtoovnGNcoaKR2kYa/view?side=argabioso': [
     'GQX8-CQP:GHB5-TWN:partner',
 
-    'GQX8-CQP:marriagePlace',
     'GQX8-CQP:gender',
     'GQX8-CQP:firstName',
     'GQX8-CQP:middleName',
@@ -2268,6 +2272,7 @@ const SOURCES = {
 
     'GH12-Z3C:marriageDate',
     'GH12-W17:marriageDate',
+    'GH12-W17:marriagePlace',
   ],
 
   // Certificate of Marriage
@@ -2551,7 +2556,7 @@ const SOURCES = {
 //   = Estimate birth from Lolo Nestor's birth - 10
 //   = Estimate death is any time after Lolo Felomino's death
 // Lolo Napoleon
-//   = Estimate birth from Tita Mylen's birth - 6
+//   = Estimate birth from mama Mylen's birth - 6
 //   = Estimate death is time after Tita Cecil was born
 // Lola Enoria
 //   = Estimate birth from Mamang's birth - 10
@@ -2590,6 +2595,8 @@ function checkPerPerson(person) {
     'key', // custom-information attribute, not verifiable
 
     'useNonePhoto', // aesthetic attribute
+    'generation', // aesthetic attribute
+    'hasImage', // aesthetic attribute
     'hasDNA', // aesthetic attribute
 
     'parent', // derived attribute
@@ -2601,23 +2608,18 @@ function checkPerPerson(person) {
 
     'fullName', // composite attribute
     'nickname', // optional and usually not documented
+
+    'living', // personal choice, no need to verify this
+    'livingPlace', // personal choice, no need to verify this
   ];
 
   if (person.living) {
     attributesToIgnore.push('deathDate');
     attributesToIgnore.push('deathPlace');
     attributesToIgnore.push('deathAge');
-    attributesToIgnore.push('livingPlace');
 
     sourceCount += 4;
     expectedSourceCount += 4;
-  }
-
-  if (!person.living) {
-    attributesToIgnore.push('livingPlace');
-
-    sourceCount += 1;
-    expectedSourceCount += 1;
   }
 
   if (person.deathAge === null) {
@@ -2627,48 +2629,29 @@ function checkPerPerson(person) {
     expectedSourceCount += 1;
   }
 
-  if (isEmpty(person.baptismDate)) {
-    attributesToIgnore.push('baptismDate');
-  }
+  let nullValueIgnoreAttributes = [
+    'prefix',
+    'middleName',
+    'lastName',
+    'suffix',
+    'birthDate',
+    'birthPlace',
+    'baptismDate',
+    'marriageDate',
+    'marriagePlace',
+    'deathDate',
+    'deathPlace',
+    'twin',
+    'marker',
+    'marker2',
+    'marker3',
+    'partner',
+  ];
 
-  if (isEmpty(person.marriageDate)) {
-    attributesToIgnore.push('marriageDate');
-  }
-
-  if (isEmpty(person.marriagePlace)) {
-    attributesToIgnore.push('marriagePlace');
-  }
-
-  if (isEmpty(person.twin)) {
-    attributesToIgnore.push('twin');
-  }
-
-  if (isEmpty(person.middleName)) {
-    attributesToIgnore.push('middleName');
-  }
-
-  if (isEmpty(person.marker)) {
-    attributesToIgnore.push('marker');
-  }
-
-  if (isEmpty(person.prefix)) {
-    attributesToIgnore.push('prefix');
-  }
-
-  if (isEmpty(person.suffix)) {
-    attributesToIgnore.push('suffix');
-  }
-
-  if (isEmpty(person.partner)) {
-    attributesToIgnore.push('partner');
-  }
-
-  if (person.living) {
-    attributesToIgnore.push('living');
-  }
-
-  if (!person.hasImage) {
-    attributesToIgnore.push('hasImage');
+  for (const [i, attributeName] of Object.entries(nullValueIgnoreAttributes)) {
+    if (isEmpty(person[attributeName])) {
+      attributesToIgnore.push(attributeName);
+    }
   }
 
   for (const [attributeName, attributeValue] of Object.entries(person)) {
