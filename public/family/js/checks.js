@@ -146,10 +146,6 @@ function checkPerPerson(person) {
     }
   }
 
-  if (sourceCount >= expectedSourceCount) {
-    person['isFullyVerified'] = true;
-  }
-
   return [
     sourceCount,
     weirdCount,
