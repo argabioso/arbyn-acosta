@@ -4,11 +4,15 @@ template['Node'] = function() {
     {
       figure: 'RoundedRectangle',
       fill: ui.color.node.background,
-      stroke: null,
-      strokeWidth: 0,
     },
     new bino.Binding('desiredSize', '', function(nodeData) {
-      return new bino.Size(ui.measure.node.widths[nodeData.generation], nodeData.height);
+      return new bino.Size(ui.measure.node.widths[nodeData.generation], nodeData.height - 1);
+    }),
+    new bino.Binding('stroke', '', function(nodeData) {
+      return (nodeData.isFullyVerified && isChecking) ? ((!isDark) ? '#429537' : '#2E8A21') : null;
+    }),
+    new bino.Binding('strokeWidth', '', function(nodeData) {
+      return (nodeData.isFullyVerified && isChecking) ? 1 : 0;
     }),
   );
 }

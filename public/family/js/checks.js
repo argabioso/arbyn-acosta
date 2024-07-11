@@ -23,10 +23,13 @@ function checkPerPerson(person) {
   let attributesToIgnore = [
     'key', // custom-information attribute, not verifiable
 
+    'isFullyVerified', // aesthetic attribute
     'useNonePhoto', // aesthetic attribute
     'generation', // aesthetic attribute
     'hasImage', // aesthetic attribute
     'hasDNA', // aesthetic attribute
+    'height', // aesthetic attribute
+    'width', // aesthetic attribute
 
     'parent', // derived attribute
 
@@ -141,6 +144,10 @@ function checkPerPerson(person) {
     } else if (currentSourceCount > 1) {
       expectedSourceCount += (currentSourceCount - 1);
     }
+  }
+
+  if (sourceCount >= expectedSourceCount) {
+    person['isFullyVerified'] = true;
   }
 
   return [

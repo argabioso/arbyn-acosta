@@ -11,32 +11,41 @@ const SOURCES = {
     'TEMP-000:GHB5-TWN:parentChild', // aesthetic data consideration
     'TEMP-000:GQX8-CQP:parentChild', // aesthetic data consideration
 
-    'GHB5-TWN:GQX8-CQP:partner',
-    'GHB5-TWN:firstName',
-    'GHB5-TWN:gender',
-    'GHB5-TWN:lastName',
-    'GHB5-TWN:middleName',
+    // Mitchie: observation within the family and back in college
     'GHB5-TWN:marker',
-    'GQX8-CQP:birthDate',
-    'GQX8-CQP:firstName',
-    'GQX8-CQP:gender',
-    'GQX8-CQP:lastName',
-    'GQX8-CQP:middleName',
+
+    // Lolo Marcial: I was there on his death wake and when he was buried
     'GQJK-LCT:deathPlace',
+
+    // Personal: This is my work the whole time, Software Engineering
     'GQX8-CQP:marker',
     'GQX8-CQP:marker3',
+
+    // Nanay: My whole life, I never saw her work. She's always been a house
+    // wife and our relatives and my father helped with finance.
     'GQJK-G8W:marker',
+
+    // Tatay: He has worked in intelligence companies ever since
+    // (NBI and logistics) he was also a high government official
+    // just before he left NBI
     'GQJK-L51:marker',
     'GQJK-L51:marker3',
-    'GHBZ-YVX:marker',
-    'GHBZ-YVX:marker3',
+
+    // Papa Darne: Majority of his career experience revolves around
+    // Manila plastic. He also has the same "people-person" demeanor like
+    // Mitchie and Mama Mylen.
     'GHB5-XTZ:marker',
     'GHB5-XTZ:marker2',
     'GHB5-XTZ:marker3',
+
+    // Mama Mylen: Majority of her career experience revolves around
+    // salons and being a beautician. She also has the same "people-person"
+    // demeanor like Mitchie and Papa Darne.
     'GHBR-FK3:marker',
     'GHBR-FK3:marker2',
     'GHBR-FK3:marker3',
 
+    // Mamang: I was there on his death wake and when he was buried
     'GH12-W17:deathDate',
     'GH12-W17:deathPlace',
     'GH12-W17:living',
@@ -52,6 +61,10 @@ const SOURCES = {
     'GHBZ-TM4:birthPlace',
     'GHB8-RCH:birthPlace',
 
+    // Lola Lydia: Stories from Tatay, Tita Dulce, and Lola Lydia herself
+    'GHBZ-YVX:marker',
+    'GHBZ-YVX:marker3',
+
     // From Tito Manolo (son of Lola Catalina)
     'GHB8-J1B:marker',
 
@@ -61,7 +74,7 @@ const SOURCES = {
     // Directly from Nanay (daughter of Lola Catalina)
     'GHB8-J1B:deathDate',
 
-    // Directly from Tito Darne (son of Lolo Nestor)
+    // Directly from Papa Darne (son of Lolo Nestor)
     'GH12-SVQ:firstName',
     'GH12-SVQ:lastName',
     'GH12-SVQ:birthPlace',
@@ -70,7 +83,6 @@ const SOURCES = {
     // According to Lola Lydia and Lolo Marcial, Lola Francisca
     // died around the time Lolo Marcial was 4 years old
     'GHBZ-P5Q:living',
-    'GHBZ-P5Q:deathDate',
 
     // Directly from Lola Lydia and Lolo Boning (children of Lolo Andong)
     'GHB8-7T6:middleName',
@@ -112,17 +124,22 @@ const SOURCES = {
     'GHB8-M86:GHB8-GZL:parentChild',
     'GHB8-M8D:GHB8-M86:partner',
 
-    // Directly from Tito Darne (grandson of Lolo Felomino,
+    // Directly from Papa Darne (grandson of Lolo Felomino,
     // Lola Consuelo, Lolo Cecilio, and Lola Jovita)
     'GH12-DRN:firstName',
     'GH12-DRN:lastName',
     'GH12-DRN:birthPlace',
     'GH12-3GN:firstName',
     'GH12-3GN:lastName',
+    'GH12-DRN:GH12-SVQ:parentChild',
+    'GH12-3GN:GH12-SVQ:parentChild',
+
     'GH12-9JZ:firstName',
     'GH12-9JZ:lastName',
     'GH12-35H:firstName',
     'GH12-35H:lastName',
+    'GH12-9JZ:GH12-9F6:parentChild',
+    'GH12-35H:GH12-9F6:parentChild',
 
     // Directly from mama Mylen (granddaughter of Lolo Manuel,
     // Lola Ursua, Lolo Benigno, and Lola Enoria)
@@ -130,6 +147,7 @@ const SOURCES = {
     'GH12-XX4:lastName',
     'GH12-HQN:firstName',
     'GH12-HQN:lastName',
+
     'GH12-6YL:firstName',
     'GH12-6YL:lastName',
     'GH12-DD8:firstName',
@@ -369,6 +387,7 @@ const SOURCES = {
   // News Article, Inquirer.NET
   'https://drive.google.com/file/d/1Zw8fzrh9ELRvIx1W7ncqT010edcT6hpK/view': [
     'GQJK-L51:marker',
+    'GQJK-L51:marker3',
     'GQJK-L51:firstName',
     'GQJK-L51:lastName',
   ],
@@ -1494,6 +1513,8 @@ const SOURCES = {
     'GH12-Z3C:GH12-W17:partner',
 
     'GH12-Z3C:marriageDate',
+    'GH12-Z3C:marriagePlace',
+
     'GH12-W17:marriageDate',
     'GH12-W17:marriagePlace',
   ],
