@@ -23,7 +23,7 @@ function checkPerPerson(person) {
   let attributesToIgnore = [
     'key', // custom-information attribute, not verifiable
 
-    'isFullyVerified', // aesthetic attribute
+    'isManuallyVerified', // aesthetic attribute
     'useNonePhoto', // aesthetic attribute
     'generation', // aesthetic attribute
     'hasImage', // aesthetic attribute
