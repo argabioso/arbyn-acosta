@@ -1782,6 +1782,20 @@ const SOURCES = {
     'GH12-HQN:marriagePlace',
     'GH12-HQN:marriageDate',
   ],
+
+  // =======================================================================
+  // Elican, Cecelio
+  // =======================================================================
+
+  // Military Service Record
+  'https://drive.google.com/file/d/1BKgRfbr-OYGuVgyYOxQR-_QlBhZ9tfRg/view': [
+    'GH12-9JZ:firstName',
+    'GH12-9JZ:lastName',
+    'GH12-9JZ:deathDate',
+    'GH12-9JZ:marker',
+    'GH12-9JZ:prefix',
+    'GH12-9JZ:gender',
+  ],
 };
 
 // Birth estimates
