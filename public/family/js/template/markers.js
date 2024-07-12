@@ -188,6 +188,9 @@ function marginConditions(marker) {
   if (marker === 'military') {
     return new bino.Margin(0.9, 0, 0, 1.1);
   }
+  if (marker === 'sergeant') {
+    return new bino.Margin(0, 0, 0, 0.35);
+  }
   if (marker === 'housewife') {
     return new bino.Margin(1.8, 0, 0, 1.5);
   }
