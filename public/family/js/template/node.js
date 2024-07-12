@@ -9,10 +9,10 @@ template['Node'] = function() {
       return new bino.Size(ui.measure.node.widths[nodeData.generation], nodeData.height - 1);
     }),
     new bino.Binding('stroke', '', function(nodeData) {
-      return (nodeData.isManuallyVerified && isChecking) ? ((!isDark) ? '#429537' : '#2E8A21') : null;
+      return (nodeData.vitalsCompleteAndVerified && isChecking) ? ((!isDark) ? '#429537' : '#2E8A21') : null;
     }),
     new bino.Binding('strokeWidth', '', function(nodeData) {
-      return (nodeData.isManuallyVerified && isChecking) ? 1 : 0;
+      return (nodeData.vitalsCompleteAndVerified && isChecking) ? 1 : 0;
     }),
   );
 }
