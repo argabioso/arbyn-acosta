@@ -374,6 +374,7 @@ const ui = {
     background: !isDark ? '#f3f4f5' : '#202124',
     node: {
       background: !isDark ? '#ffffff' : '#2f2f2f',
+      stroke: !isDark ? '#429537' : '#2E8A21',
       name: !isDark ? '#000000' : '#fefefe',
       details: {
         text: !isDark ? '#222222' : '#bdc1c6',
@@ -555,7 +556,7 @@ for (const [key, svg] of Object.entries(isDark ? DARK_MARKERS : LIGHT_MARKERS)) 
 // Lolo Napoleon is estimated to die when Tita Cecil was 2 months old. Add two months to December 26, 1979, you get February 26, 1980.
 
 var TREE_DATA = [
-  { key: 'TEMP-000',                                    prefix: null,   firstName: 'Yuseff Llue',        nickname: null,         middleName: 'Adanza',      lastName: 'Argabioso',   suffix: null,  gender: 'M', birthDate: '2024-12-16',        baptismDate: null,         marriageDate: null,         deathDate: null,               deathAge: null,  living: true,  hasDNA: false, hasImage: false,  birthPlace: null,                                        marriagePlace: null,                                               livingPlace: null,                        deathPlace: null,                                                   vitalsCompleteAndVerified: false, height: 0, width: 0 },
+  { key: 'TEMP-000',                                    prefix: null,   firstName: 'Yuseff Llue',        nickname: null,         middleName: 'Adanza',      lastName: 'Argabioso',   suffix: null,  gender: 'M', birthDate: '2024-12-16',        baptismDate: null,         marriageDate: null,         deathDate: null,               deathAge: null,  living: true,  hasDNA: false, hasImage: false,  birthPlace: null,                                        marriagePlace: null,                                               livingPlace: null,                        deathPlace: null,                                                   vitalsCompleteAndVerified: true,  height: 0, width: 0 },
     { key: 'GQX8-CQP',               child: 'TEMP-000', prefix: null,   firstName: 'Arbyn',              nickname: 'Bino',       middleName: 'Acosta',      lastName: 'Argabioso',   suffix: null,  gender: 'M', birthDate: '1995-04-19',        baptismDate: null,         marriageDate: '2024-06-15', deathDate: null,               deathAge: null,  living: true,  hasDNA: true,  hasImage: true,   birthPlace: 'Chinese General Hospital, Manila, PHL',     marriagePlace: 'St. John Bosco Parish Church, Makati, PHL',        livingPlace: 'Sangandaan, Caloocan, PHL', deathPlace: null,                                                   vitalsCompleteAndVerified: true,  marker: 'computer', marker3: 'software' },
       { key: 'GQJK-L51',             child: 'GQX8-CQP', prefix: null,   firstName: 'Rolando',            nickname: 'Olan',       middleName: 'Saplala',     lastName: 'Argabioso',   suffix: null,  gender: 'M', birthDate: '1965-10-09',        baptismDate: null,         marriageDate: '2002-04-26', deathDate: null,               deathAge: null,  living: true,  hasDNA: true,  hasImage: true,   birthPlace: 'Maternity House, Poblacion, Caloocan, PHL', marriagePlace: 'Regional Trial Court BR 226, Quezon City, PHL',    livingPlace: 'Malolos, Bulacan, PHL',     deathPlace: null,                                                   vitalsCompleteAndVerified: true,  marker: 'intelligence', marker3: 'government' },
         { key: 'GQJK-LCT',           child: 'GQJK-L51', prefix: null,   firstName: 'Marcial',            nickname: null,         middleName: 'Mia',         lastName: 'Argabioso',   suffix: null,  gender: 'M', birthDate: '1932-10-13',        baptismDate: null,         marriageDate: '1963-01-23', deathDate: '2020-02-27',       deathAge: null,  living: false, hasDNA: false, hasImage: true,   birthPlace: 'Majayjay, Laguna, PHL',                     marriagePlace: 'Luisiana, Laguna, PHL',                            livingPlace: null,                        deathPlace: 'Manila Memorial Park, Plaridel, Bulacan, PHL',         vitalsCompleteAndVerified: true,  },
@@ -2947,15 +2948,13 @@ template['Node'] = function() {
     {
       figure: 'RoundedRectangle',
       fill: ui.color.node.background,
+      strokeWidth: 1,
     },
     new bino.Binding('desiredSize', '', function(nodeData) {
-      return new bino.Size(ui.measure.node.widths[nodeData.generation], nodeData.height - 1);
+      return new bino.Size(ui.measure.node.widths[nodeData.generation], nodeData.height - ((nodeData.vitalsCompleteAndVerified && isChecking) ? 1 : 0));
     }),
     new bino.Binding('stroke', '', function(nodeData) {
-      return (nodeData.vitalsCompleteAndVerified && isChecking) ? ((!isDark) ? '#429537' : '#2E8A21') : null;
-    }),
-    new bino.Binding('strokeWidth', '', function(nodeData) {
-      return (nodeData.vitalsCompleteAndVerified && isChecking) ? 1 : 0;
+      return (nodeData.vitalsCompleteAndVerified && isChecking) ? ui.color.node.stroke : ui.color.node.background;
     }),
   );
 }
@@ -3102,7 +3101,15 @@ template['Link'] = function() {
   return $(
     bino.Link,
     { selectable: false, routing: bino.Link.Orthogonal },
-    $(bino.Shape, { strokeWidth: 1, stroke: ui.color.link }),
+    $(
+      bino.Shape,
+      {
+        strokeWidth: 1,
+      },
+      new bino.Binding('stroke', '', function(nodeData) {
+        return (nodeData.vitalsCompleteAndVerified && isChecking) ? ui.color.node.stroke : ui.color.link;
+      }),
+    ),
   );
 }
 template['Photo'] = function() {
@@ -3110,12 +3117,17 @@ template['Photo'] = function() {
     { isClipping: true, margin: new bino.Margin(0.2, 0, 0, 0.2) },
     $(
       bino.Shape, 'Rectangle',
-      {
-        width: ui.measure.node.height - 0.4,
-        strokeWidth: 0,
-      },
+      new bino.Binding('width', '', function(nodeData) {
+        return ui.measure.node.height - 0.4 - ((nodeData.vitalsCompleteAndVerified && isChecking) ? 1 : 0);
+      }),
       new bino.Binding('height', '', function(nodeData) {
-        return nodeData.height - 0.4;
+        return nodeData.height - 0.4 - ((nodeData.vitalsCompleteAndVerified && isChecking) ? 1 : 0);
+      }),
+      new bino.Binding('stroke', '', function(nodeData) {
+        return (nodeData.vitalsCompleteAndVerified && isChecking) ? ui.color.node.stroke : null;
+      }),
+      new bino.Binding('strokeWidth', '', function(nodeData) {
+        return (nodeData.vitalsCompleteAndVerified && isChecking) ? 1 : 0;
       }),
     ),
     $(

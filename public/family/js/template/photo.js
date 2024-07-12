@@ -3,12 +3,17 @@ template['Photo'] = function() {
     { isClipping: true, margin: new bino.Margin(0.2, 0, 0, 0.2) },
     $(
       bino.Shape, 'Rectangle',
-      {
-        width: ui.measure.node.height - 0.4,
-        strokeWidth: 0,
-      },
+      new bino.Binding('width', '', function(nodeData) {
+        return ui.measure.node.height - 0.4 - ((nodeData.vitalsCompleteAndVerified && isChecking) ? 1 : 0);
+      }),
       new bino.Binding('height', '', function(nodeData) {
-        return nodeData.height - 0.4;
+        return nodeData.height - 0.4 - ((nodeData.vitalsCompleteAndVerified && isChecking) ? 1 : 0);
+      }),
+      new bino.Binding('stroke', '', function(nodeData) {
+        return (nodeData.vitalsCompleteAndVerified && isChecking) ? ui.color.node.stroke : null;
+      }),
+      new bino.Binding('strokeWidth', '', function(nodeData) {
+        return (nodeData.vitalsCompleteAndVerified && isChecking) ? 1 : 0;
       }),
     ),
     $(

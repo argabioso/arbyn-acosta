@@ -24,6 +24,7 @@ const ui = {
     background: !isDark ? '#f3f4f5' : '#202124',
     node: {
       background: !isDark ? '#ffffff' : '#2f2f2f',
+      stroke: !isDark ? '#429537' : '#2E8A21',
       name: !isDark ? '#000000' : '#fefefe',
       details: {
         text: !isDark ? '#222222' : '#bdc1c6',
