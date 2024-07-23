@@ -14,7 +14,8 @@ body {
   left: 0;
   width: 100vw; /* 100% of viewport width */
   height: 100vh; /* 100% of viewport height */
-  overflow: hidden;
+  overflow: auto; /* or scroll */
+  -webkit-overflow-scrolling: touch; /* Enables smooth scrolling on iOS */
 }
 
 #tree > canvas {
@@ -46,7 +47,7 @@ body > footer {
   color: #202124;
   font-family: 'Google Sans Text', sans-serif;
   font-size: 0.65rem;
-  position: fixed;
+  position: absolute;
   bottom: 0;
   padding: 0.1rem 0.4rem;
   right: 0;

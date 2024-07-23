@@ -132,7 +132,7 @@ body > footer {
   color: #202124;
   font-family: "Roboto", sans-serif;
   font-size: 10.5px;
-  position: fixed;
+  position: absolute;
   bottom: 0;
   padding: 0.1rem 0.4rem;
   right: 0;
