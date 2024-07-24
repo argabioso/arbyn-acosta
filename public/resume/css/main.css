@@ -68,7 +68,7 @@ h1, h2, h3, h4, h5 {
 .tdc .resume__header {
   background-color: #fff;
   position: fixed;
-  width: calc(100% - 40px);
+  width: calc(100% - 48px);
   top: 0;
   z-index: 999;
 }
@@ -328,7 +328,7 @@ h1, h2, h3, h4, h5 {
   }
 
   .resume__programming-languages li {
-    margin: 0 2px 4px;
+    margin: 8px 2px 4px;
   }
 
   .resume__programming-languages ul {
@@ -359,8 +359,8 @@ h1, h2, h3, h4, h5 {
   }
 
   .resume__header {
-    margin: 0 40px;
-    padding: 32px 0 16px;
+    margin: 0 48px;
+    padding: 40px 0 16px;
   }
 
   .tdc .resume__header {
@@ -395,7 +395,7 @@ h1, h2, h3, h4, h5 {
   }
 
   .resume__content {
-    padding: 20px 40px 40px;
+    padding: 20px 48px 48px;
   }
 
   .tdc .resume__content {
@@ -417,7 +417,7 @@ h1, h2, h3, h4, h5 {
   }
 
   .resume__content-section ul {
-    padding-left: 40px;
+    padding-left: 48px;
   }
 
   .resume__content-section li {
