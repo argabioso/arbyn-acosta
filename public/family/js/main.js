@@ -22,7 +22,12 @@ var tree = $(
 );
 
 tree.nodeTemplate = $(
-  bino.Node, { selectable: false },
+  bino.Node, {
+    selectable: false,
+    click: function(e, node) {
+      showSidebar(node)
+    },
+  },
   new bino.Binding('height', 'height'),
   new bino.Binding('width', 'width'),
   template.Node(),
