@@ -9,9 +9,10 @@ cat js/constants.js >> $filename
 cat js/markers.js >> $filename
 cat js/data.js >> $filename
 cat js/preprocess.js >> $filename
+cat js/stories.js >> $filename
+cat js/sidebar.js >> $filename
 cat js/sources.js >> $filename
 cat js/checks.js >> $filename
-cat js/sidebar.js >> $filename
 cat js/template/utils.js >> $filename
 cat js/template/node.js >> $filename
 cat js/template/link.js >> $filename

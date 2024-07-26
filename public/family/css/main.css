@@ -42,6 +42,50 @@ body {
   outline: 0;
 }
 
+body.mobile .offcanvas-backdrop.show {
+  display: none; /* Prevent blinking by hiding backdrop */
+}
+
+#personName {
+  font-family: 'Google Sans', sans-serif;
+}
+
+#personDetailsDesc {
+  padding-top: 0;
+}
+
+#personDetailsDesc img {
+  width: 100%;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+}
+
+#personDetailsDesc p {
+  font-size: 14px;
+  line-height: 22px;
+}
+
+#personDetailsDesc h5 {
+  line-height: 28px;
+}
+
+#personDetailsDesc p.centered {
+  text-align: center;
+}
+
+#personDetailsDesc p,
+#personDetailsDesc h5 {
+  font-family: 'Google Sans Text', sans-serif;
+}
+
+body.dark #personDetailsDesc p {
+  color: #bdc1c6;
+}
+
+body.dark .offcanvas .btn-close {
+  filter: invert(1);
+}
+
 body > footer {
   background-color: #f3f4f5;
   color: #202124;
