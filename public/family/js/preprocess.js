@@ -43,6 +43,12 @@ for (const [i, person] of Object.entries(TREE_DATA)) {
     suffix
   );
 
+  TREE_DATA[i]['fullName2'] = (
+    firstName +
+    ((!person.middleName) ? '' : ` ${person.middleName}`) +
+    ((!person.lastName) ? '' : ` ${person.lastName}`)
+  );
+
   // =======================================================================
   // Improve locations and make living the death place for easier UI change
   // =======================================================================

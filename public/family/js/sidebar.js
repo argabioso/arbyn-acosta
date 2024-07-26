@@ -23,13 +23,17 @@ function modifyPersonDetails(node) {
   const nodeTitle = document.getElementById("personName");
   const nodeDescription = document.getElementById("personDetailsDesc");
 
+  let headline = STORIES[node.key]['headline'];
+  headline = headline.replace(/\$\{([^}]+)\}/g, (match, attrName) => {
+    return node.data[attrName] !== undefined ? node.data[attrName] : match;
+  });
+
   // Update sidebar content
   nodeTitle.textContent = node.data.fullName;
-  // nodeDescription.textContent = node.data.detailsRow1.text;
   nodeDescription.innerHTML = `<img class="headshot" alt="headshot" src="images/people/${node.key}.lossy.webp" />`
-  nodeDescription.innerHTML += `<p class="centered"><em>Family Tree Portrait</em></p>`
+  nodeDescription.innerHTML += `<p class="centered"><em>${headline}</em></p>`
 
-  for (const [i, story] of Object.entries(STORIES[node.key])) {
+  for (const [i, story] of Object.entries(STORIES[node.key]['stories'])) {
     nodeDescription.innerHTML += story;
   }
 }
