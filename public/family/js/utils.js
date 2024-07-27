@@ -240,3 +240,33 @@ bino.formatDate = function(raw, isPrivate, noDay) {
 
   return `${prefix}${year}`;
 };
+
+function addQueryParam(key, value) {
+  const url = new URL(window.location);
+  url.searchParams.set(key, value);
+
+  // This will add the new parameter to the URL without reloading the page
+  window.history.pushState({}, '', url);
+}
+
+function decodeUrlSafeBase64ToUtf8(base64Str) {
+  // Convert from URL-safe Base64 to standard Base64
+  let base64 = base64Str.replace(/-/g, '+').replace(/_/g, '/');
+  // Add padding if necessary
+  while (base64.length % 4) {
+      base64 += '=';
+  }
+  const binaryString = atob(base64);
+  const utf8Bytes = Uint8Array.from(binaryString, char => char.charCodeAt(0));
+  const utf8String = new TextDecoder().decode(utf8Bytes);
+  return utf8String;
+}
+
+function encodeUtf8ToUrlSafeBase64(str) {
+  const utf8Bytes = new TextEncoder().encode(str);
+  const binaryString = String.fromCharCode(...utf8Bytes);
+  let base64String = btoa(binaryString);
+  // Convert to URL-safe Base64
+  base64String = base64String.replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
+  return base64String;
+}

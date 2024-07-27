@@ -2,10 +2,11 @@
 
 function showSidebar(node) {
   // Don't do anything if the person doesn't have any story
-  if (!STORIES[node['key']] || (isPrivate && node.data['living'])) {
+  if (!STORIES[node.data['key']] || (isPrivate && node.data['living'])) {
     return;
   }
 
+  addQueryParam('id', encodeUtf8ToUrlSafeBase64(node.data.key));
   modifyPersonDetails(node);
 
   var offcanvasElement = document.getElementById('personDetails');
@@ -31,17 +32,17 @@ function modifyPersonDetails(node) {
   const nodeTitle = document.getElementById("personName");
   const nodeDescription = document.getElementById("personDetailsDesc");
 
-  let headline = STORIES[node.key]['headline'];
+  let headline = STORIES[node.data.key]['headline'];
   headline = headline.replace(/\$\{([^}]+)\}/g, (match, attrName) => {
     return node.data[attrName] !== undefined ? node.data[attrName] : match;
   });
 
   // Determine headshot to use
   let headshotFilename;
-  if (!STORIES[node.key]['headshot']) {
-    headshotFilename = `${node.key}.lossy.webp`;
+  if (!STORIES[node.data.key]['headshot']) {
+    headshotFilename = `${node.data.key}.lossy.webp`;
   } else {
-    headshotFilename = STORIES[node.key]['headshot'];
+    headshotFilename = STORIES[node.data.key]['headshot'];
   }
 
   // Update sidebar content
@@ -49,7 +50,7 @@ function modifyPersonDetails(node) {
   nodeDescription.innerHTML = `<img class="headshot" alt="headshot" src="images/people/${headshotFilename}" />`
   nodeDescription.innerHTML += `<p class="headline">${headline}</p>`
 
-  for (const [i, story] of Object.entries(STORIES[node.key]['stories'])) {
+  for (const [i, story] of Object.entries(STORIES[node.data.key]['stories'])) {
     nodeDescription.innerHTML += '<hr />';
     nodeDescription.innerHTML += story;
   }

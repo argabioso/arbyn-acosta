@@ -57,9 +57,20 @@ let model = $(bino.TreeModel);
 model.nodeDataArray = TREE_DATA;
 tree.model = model;
 
-// Show the copyright once everything loads up
-document.querySelector('footer').classList.remove("hidden");
+window.onload = function() {
+  // Show the copyright once everything loads up
+  document.querySelector('footer').classList.remove("hidden");
 
+  let Id = window.location.get("id");
+  if (Id) {
+    let decodedId = decodeUrlSafeBase64ToUtf8(Id);
+
+    if (TREE_KEYMAP[decodedId]) {
+      let node = {'data': TREE_KEYMAP[decodedId]}
+      showSidebar(node);
+    }
+  }
+};
 
 // tree.addDiagramListener("ObjectSingleClicked", (e) => {
 //     var clicked = e.subject.part;  // Get the clicked part, which could be a Node, a Link, etc.

@@ -348,6 +348,36 @@ bino.formatDate = function(raw, isPrivate, noDay) {
 
   return `${prefix}${year}`;
 };
+
+function addQueryParam(key, value) {
+  const url = new URL(window.location);
+  url.searchParams.set(key, value);
+
+  // This will add the new parameter to the URL without reloading the page
+  window.history.pushState({}, '', url);
+}
+
+function decodeUrlSafeBase64ToUtf8(base64Str) {
+  // Convert from URL-safe Base64 to standard Base64
+  let base64 = base64Str.replace(/-/g, '+').replace(/_/g, '/');
+  // Add padding if necessary
+  while (base64.length % 4) {
+      base64 += '=';
+  }
+  const binaryString = atob(base64);
+  const utf8Bytes = Uint8Array.from(binaryString, char => char.charCodeAt(0));
+  const utf8String = new TextDecoder().decode(utf8Bytes);
+  return utf8String;
+}
+
+function encodeUtf8ToUrlSafeBase64(str) {
+  const utf8Bytes = new TextEncoder().encode(str);
+  const binaryString = String.fromCharCode(...utf8Bytes);
+  let base64String = btoa(binaryString);
+  // Convert to URL-safe Base64
+  base64String = base64String.replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
+  return base64String;
+}
 const isPrivate = !isDebugging && !(window.location.get("private") == "false");
 var isChecking = false; // overridden by checks.js if imported
 
@@ -622,7 +652,9 @@ var TREE_DATA = [
 /*
   Grumaduate si Nanay ng May 30, 1994 ng BS Accounting sa UE Caloocan
   Grumaduate si Nanay ng March 22, 1990 ng Highschool
-*/for (const [i, person] of Object.entries(TREE_DATA)) {
+*/var TREE_KEYMAP = {};
+
+for (const [i, person] of Object.entries(TREE_DATA)) {
   // =======================================================================
   // Add "parent" from "child" value since chart.js works that way
   // =======================================================================
@@ -763,16 +795,15 @@ var TREE_DATA = [
 
 function addGeneration(data) {
     // Create a map to easily find each person by their key
-    let keyMap = {};
     data.forEach(person => {
-        keyMap[person.key] = person;
+        TREE_KEYMAP[person.key] = person;
         person.generation = 0; // Default generation, will be adjusted later
     });
 
     // Function to update the generation for a person and their ancestors
     function updateGeneration(key, generation) {
-        if (keyMap[key]) {
-            keyMap[key].generation = generation;
+        if (TREE_KEYMAP[key]) {
+            TREE_KEYMAP[key].generation = generation;
             data.filter(person => person.child === key).forEach(child => {
                 updateGeneration(child.key, generation + 1);
             });
@@ -841,10 +872,11 @@ const STORIES = {
 
 function showSidebar(node) {
   // Don't do anything if the person doesn't have any story
-  if (!STORIES[node['key']] || (isPrivate && node.data['living'])) {
+  if (!STORIES[node.data['key']] || (isPrivate && node.data['living'])) {
     return;
   }
 
+  addQueryParam('id', encodeUtf8ToUrlSafeBase64(node.data.key));
   modifyPersonDetails(node);
 
   var offcanvasElement = document.getElementById('personDetails');
@@ -870,17 +902,17 @@ function modifyPersonDetails(node) {
   const nodeTitle = document.getElementById("personName");
   const nodeDescription = document.getElementById("personDetailsDesc");
 
-  let headline = STORIES[node.key]['headline'];
+  let headline = STORIES[node.data.key]['headline'];
   headline = headline.replace(/\$\{([^}]+)\}/g, (match, attrName) => {
     return node.data[attrName] !== undefined ? node.data[attrName] : match;
   });
 
   // Determine headshot to use
   let headshotFilename;
-  if (!STORIES[node.key]['headshot']) {
-    headshotFilename = `${node.key}.lossy.webp`;
+  if (!STORIES[node.data.key]['headshot']) {
+    headshotFilename = `${node.data.key}.lossy.webp`;
   } else {
-    headshotFilename = STORIES[node.key]['headshot'];
+    headshotFilename = STORIES[node.data.key]['headshot'];
   }
 
   // Update sidebar content
@@ -888,7 +920,7 @@ function modifyPersonDetails(node) {
   nodeDescription.innerHTML = `<img class="headshot" alt="headshot" src="images/people/${headshotFilename}" />`
   nodeDescription.innerHTML += `<p class="headline">${headline}</p>`
 
-  for (const [i, story] of Object.entries(STORIES[node.key]['stories'])) {
+  for (const [i, story] of Object.entries(STORIES[node.data.key]['stories'])) {
     nodeDescription.innerHTML += '<hr />';
     nodeDescription.innerHTML += story;
   }
@@ -3902,9 +3934,20 @@ let model = $(bino.TreeModel);
 model.nodeDataArray = TREE_DATA;
 tree.model = model;
 
-// Show the copyright once everything loads up
-document.querySelector('footer').classList.remove("hidden");
+window.onload = function() {
+  // Show the copyright once everything loads up
+  document.querySelector('footer').classList.remove("hidden");
 
+  let Id = window.location.get("id");
+  if (Id) {
+    let decodedId = decodeUrlSafeBase64ToUtf8(Id);
+
+    if (TREE_KEYMAP[decodedId]) {
+      let node = {'data': TREE_KEYMAP[decodedId]}
+      showSidebar(node);
+    }
+  }
+};
 
 // tree.addDiagramListener("ObjectSingleClicked", (e) => {
 //     var clicked = e.subject.part;  // Get the clicked part, which could be a Node, a Link, etc.
