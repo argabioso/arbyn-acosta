@@ -843,13 +843,23 @@ const STORIES = {
     headline: 'Leader of NBI\'s elite task forces and the brilliant strategist behind the nation\'s most controversial and top-priority cases.',
     stories: [
       `
-        <h5>NBI's Best Investigative Unit</h5>
-        <p>Rolando Argabioso held a significant position within the National Bureau of Investigation (NBI) in the Philippines. He served as the Assistant Regional Director of the NBI and was known for his role in high-profile investigations. Under his leadership, his team was recognized as the best investigative unit at the NBI headquarters in Manila in 2014.</p>
+        <h5>Rising Through the Ranks</h5>
+        <p>Tatay Roland's career story is one that inspires me the most, marked by unwavering dedication, remarkable leadership, and immense intelligence. Beginning as a bureau agent, to commanding task forces, to eventually achieving the esteemed position of <strong>Deputy Director in 2016</strong>. His story exemplifies the power of commitment and skill in reaching the pinnacle of professional success.</p>
+        <div class="youtube-container"><iframe class="youtube-embed" src="https://www.youtube.com/embed/TxdRfqjNKrE?si=xssTDges6qGaG9Rg&amp;start=96" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+        <p class="caption"><em>ABS-CBN interviewing Roland Argabioso regarding Robert Ponce immediately admitting his participation in murdering Ruby Rose.</em></p>
+        <h5>NBI’s ‘Rockstars’ in Pork Bust, Biggest Cases</h5>
+        <p>Tatay's Special Task Force investigated the P10-billion pork barrel scam in 2013, leading to the filing of plunder and graft and corruption charges against Senators Juan Ponce Enrile, Jinggoy Estrada, and Bong Revilla along with businesswoman Janet Lim-Napoles and 34 former and current government officials.</p>
+        <img alt="NBI: Pork Barrel Scam" src="images/stories/NBI_Rockstar.jpg" />
+        <p class="caption"><em>NBI Assistant Regional Director Rolando Argabioso (center) and his team posing with their plaques of recognition as best investigative unit at NBI headquarters in Manila on Nov. 13, 2014.</em></p>
+        <div class="youtube-container"><iframe class="youtube-embed" src="https://www.youtube.com/embed/wR6dx6CP6_E?si=SQZq5eblFocAAsSo&amp;start=91" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+        <p class="caption"><em>Roland Argabioso in Dennis Cunanan's testification before the Senate for the Pork Barrel Scam.</em></p>
       `,
       `
-        <h5>High-profile Criminal Investigations</h5>
-        <p>Argabioso led the NBI's Special Task Force, while his colleague Rommel Vallejo headed the Anti-Organized Crime Division. Together, they were responsible for investigating high-profile cases, and their work set them apart as notable figures within the bureau.</p>
-        <p>One of Argabioso's notable involvements was in the rescue of Benhur K. Luy, a key witness in a major scam case. Luy was rescued from a condominium unit in the South Wings Gardens of Pacific Plaza Tower at Bonifacio Global City by a special task force of NBI agents led by Argabioso​​​​. This operation underlines the critical and impactful role that Argabioso played in major criminal investigations in the Philippines.</p>
+        <h5>Troubled Teenage and Young Adult Years</h5>
+        <p>During his teenage years, Tatay Roland faced significant challenges, including a serious altercation with a neighbor that led to threats of murder. In response, Lola Lydia banished him to Bataan to live with his grandmother, Lola Lucing, where he completed his high school education.</p>
+        <p>For college, <strong>Tatay Roland enrolled at the University of the East - Caloocan, initially pursuing Mechanical Engineering</strong>. However, his grades were poor, filled with failures. After a serious conversation with Lola Lydia, he resolved to improve himself by shifting his focus to Accountancy. His dedication paid off as his academic performance greatly improved, culminating in passing the national board examination to become a Certified Public Accountant in the Philippines.</p>
+        <img alt="Baby Roland Argabioso" src="images/stories/Baby_Roland.lossy.webp" />
+        <p class="caption"><em>Tatay Roland when he was still a baby.</em></p>
       `
     ]
   },
