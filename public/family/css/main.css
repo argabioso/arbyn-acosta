@@ -79,8 +79,8 @@ body.mobile .offcanvas-backdrop.show {
 
 #personDetailsDesc .headline {
   font-family: "Montagu Slab", serif;
-  font-size: 1.125em;
-  font-weight: 400;
+  font-size: 1.15em;
+  font-weight: 500;
   opacity: 1;
   color: var(--bs-offcanvas-color);
 }
@@ -108,12 +108,8 @@ body.mobile .offcanvas-backdrop.show {
   font-weight: 500;
 }
 
-#personDetailsDesc p.centered {
-  text-align: center;
-}
-
 #personDetailsDesc p em {
-  opacity: 0.65;
+  opacity: 0.78;
 }
 
 #personDetailsDesc p {
