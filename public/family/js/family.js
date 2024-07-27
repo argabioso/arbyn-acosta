@@ -658,6 +658,20 @@ var TREE_DATA = [
   let firstName = person.firstName;
   let nickname = (!person.nickname) ? '' : `"${person.nickname}" `;
 
+  TREE_DATA[i]['basicName'] = (
+    firstName +
+    ((!person.lastName) ? '' : ` ${person.lastName}`) +
+    suffix
+  );
+
+  TREE_DATA[i]['nicklessFullName'] = (
+    prefix +
+    firstName + ' ' +
+    middleInitialsString +
+    ((!person.lastName) ? '' : person.lastName) +
+    suffix
+  );
+
   TREE_DATA[i]['fullName'] = (
     prefix +
     firstName + ' ' +
@@ -669,6 +683,7 @@ var TREE_DATA = [
 
   TREE_DATA[i]['fullName2'] = (
     firstName +
+    ((!person.nickname) ? '' : ` "${person.nickname}"`) +
     ((!person.middleName) ? '' : ` ${person.middleName}`) +
     ((!person.lastName) ? '' : ` ${person.lastName}`)
   );
@@ -792,6 +807,9 @@ TREE_DATA.forEach(node => {
   }
 });
 const STORIES = {
+  'GQJK-L51': {
+    headline: '${fullName2} was a kapampangan war veteran who served during the second World War.',
+  },
   'GHB8-7T6': {
     headline: '${fullName2} was a kapampangan war veteran who served during the second World War.',
     stories: [
@@ -838,11 +856,12 @@ function modifyPersonDetails(node) {
   });
 
   // Update sidebar content
-  nodeTitle.textContent = node.data.fullName;
+  nodeTitle.textContent = node.data.basicName;
   nodeDescription.innerHTML = `<img class="headshot" alt="headshot" src="images/people/${node.key}.lossy.webp" />`
   nodeDescription.innerHTML += `<p class="centered"><em>${headline}</em></p>`
 
   for (const [i, story] of Object.entries(STORIES[node.key]['stories'])) {
+    nodeDescription.innerHTML += '<hr />';
     nodeDescription.innerHTML += story;
   }
 }

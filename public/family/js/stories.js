@@ -1,4 +1,7 @@
 const STORIES = {
+  'GQJK-L51': {
+    headline: '${fullName2} was a kapampangan war veteran who served during the second World War.',
+  },
   'GHB8-7T6': {
     headline: '${fullName2} was a kapampangan war veteran who served during the second World War.',
     stories: [

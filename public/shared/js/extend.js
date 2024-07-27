@@ -62,7 +62,7 @@ window.location.get = function(name, defaultValue = null)
  * @return {boolean} Returns true if the current time falls within the
  *   'dark' time range, otherwise false.
  */
-window.isDark = function() {
+function isDarkFn() {
   const dark = '(prefers-color-scheme: dark)';
   const light = '(prefers-color-scheme: light)';
   const matchMedia = window.matchMedia;
@@ -189,17 +189,6 @@ console.dynamicGroup = function (message, count, total) {
   console.groupCollapsed(`%c[${dynamicStatusIcon(count / total * 100)}] ${message}`, `background-color: #${BG_COLORS[colorScaler(count / total * 100)]}; color: #${FG_COLORS[colorScaler(count / total * 100)]}; padding: 2px 5px; border-radius: 3px; font-weight: bold;`);
 };
 
-var isDark = window.isDark();
-var isDarkQuery = window.location.get("dark");
-var isLightQuery = window.location.get("light");
-if (isDarkQuery !== null || isLightQuery !== null) {
-  if (isDarkQuery == 'false' || isLightQuery == 'true') {
-    isDark = false;
-  } else if (isDarkQuery == 'true' || isLightQuery == 'false') {
-    isDark = true;
-  }
-}
-
 var isDebugging = window.location.get("debug") == 'true';
 
 // Version 4.0
@@ -228,35 +217,66 @@ const pSBC=(p,c0,c1,l)=>{
     else return"#"+(4294967296+r*16777216+g*65536+b*256+(f?m(a*255):0)).toString(16).slice(1,f?undefined:-2)
 }
 
-var agent = navigator.userAgent;
-var isWebkit = (agent.indexOf("AppleWebKit") > 0);
-var isIPad = (agent.indexOf("iPad") > 0);
-var isIOS = (agent.indexOf("iPhone") > 0 || agent.indexOf("iPod") > 0);
-var isAndroid = (agent.indexOf("Android")  > 0);
-var isNewBlackBerry = (agent.indexOf("AppleWebKit") > 0 && agent.indexOf("BlackBerry") > 0);
-var isWebOS = (agent.indexOf("webOS") > 0);
-var isWindowsMobile = (agent.indexOf("IEMobile") > 0);
-var isSmallScreen = (screen.width < 767 || (isAndroid && screen.width < 1000));
-var isUnknownMobile = (isWebkit && isSmallScreen);
-var isMobile = (isIOS || isAndroid || isNewBlackBerry || isWebOS || isWindowsMobile || isUnknownMobile);
-var isTablet = (isIPad || (isMobile && !isSmallScreen));
-
-
-// Add dark mode class to any page using extend.js
-const isMobileDevice = ( isMobile && isSmallScreen && document.cookie.indexOf( "mobileFullSiteClicked=") < 0 );
-function applyBodyClasses() {
-  if (isDark) {
-    document.querySelector("body").classList.add('dark');
-  }
-  if ( isMobileDevice ) {
-    document.querySelector("body").classList.add('mobile');
+let isDark = isDarkFn();
+let isDarkQuery = window.location.get("dark");
+let isLightQuery = window.location.get("light");
+if (isDarkQuery !== null || isLightQuery !== null) {
+  if (isDarkQuery == 'false' || isLightQuery == 'true') {
+    isDark = false;
+  } else if (isDarkQuery == 'true' || isLightQuery == 'false') {
+    isDark = true;
   }
 }
-const interval = setInterval(applyBodyClasses, 1800000);
 
-applyBodyClasses();
-clearInterval(interval);
+if (isDark) {
+  document.querySelector("body").classList.add('dark');
+}
 
+function applyDarkClass() {
+  if (!isDark) {
+    location.reload();
+  }
+}
+
+function applyLightClass() {
+  if (isDark) {
+    location.reload();
+  }
+}
+
+window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', applyDarkClass);
+window.matchMedia('(prefers-color-scheme: light)').addEventListener('change', applyLightClass);
+
+function handleResize() {
+  let agent = navigator.userAgent;
+  let isWebkit = (agent.indexOf("AppleWebKit") > 0);
+  let isIPad = (agent.indexOf("iPad") > 0);
+  let isIOS = (agent.indexOf("iPhone") > 0 || agent.indexOf("iPod") > 0);
+  let isAndroid = (agent.indexOf("Android")  > 0);
+  let isNewBlackBerry = (agent.indexOf("AppleWebKit") > 0 && agent.indexOf("BlackBerry") > 0);
+  let isWebOS = (agent.indexOf("webOS") > 0);
+  let isWindowsMobile = (agent.indexOf("IEMobile") > 0);
+  let isSmallScreen = (screen.width < 767 || (isAndroid && screen.width < 1000));
+  let isUnknownMobile = (isWebkit && isSmallScreen);
+  let isMobile = (isIOS || isAndroid || isNewBlackBerry || isWebOS || isWindowsMobile || isUnknownMobile);
+  let isTablet = (isIPad || (isMobile && !isSmallScreen));
+
+
+  // Add dark mode class to any page using extend.js
+  const isMobileDevice = ( isMobile && isSmallScreen && document.cookie.indexOf( "mobileFullSiteClicked=") < 0 );
+
+  if ( isMobileDevice ) {
+    document.querySelector("body").classList.add('mobile');
+  } else {
+    document.querySelector("body").classList.remove('mobile');
+  }
+}
+
+// Initial resize handling
+handleResize();
+
+// Listen for window resize events
+window.addEventListener('resize', handleResize);
 
 function get_all_descendants(personId, treeData, include=true) {
     let descendants = [];

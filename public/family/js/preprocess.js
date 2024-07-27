@@ -34,6 +34,20 @@ for (const [i, person] of Object.entries(TREE_DATA)) {
   let firstName = person.firstName;
   let nickname = (!person.nickname) ? '' : `"${person.nickname}" `;
 
+  TREE_DATA[i]['basicName'] = (
+    firstName +
+    ((!person.lastName) ? '' : ` ${person.lastName}`) +
+    suffix
+  );
+
+  TREE_DATA[i]['nicklessFullName'] = (
+    prefix +
+    firstName + ' ' +
+    middleInitialsString +
+    ((!person.lastName) ? '' : person.lastName) +
+    suffix
+  );
+
   TREE_DATA[i]['fullName'] = (
     prefix +
     firstName + ' ' +
@@ -45,6 +59,7 @@ for (const [i, person] of Object.entries(TREE_DATA)) {
 
   TREE_DATA[i]['fullName2'] = (
     firstName +
+    ((!person.nickname) ? '' : ` "${person.nickname}"`) +
     ((!person.middleName) ? '' : ` ${person.middleName}`) +
     ((!person.lastName) ? '' : ` ${person.lastName}`)
   );

@@ -29,11 +29,12 @@ function modifyPersonDetails(node) {
   });
 
   // Update sidebar content
-  nodeTitle.textContent = node.data.fullName;
+  nodeTitle.textContent = node.data.basicName;
   nodeDescription.innerHTML = `<img class="headshot" alt="headshot" src="images/people/${node.key}.lossy.webp" />`
   nodeDescription.innerHTML += `<p class="centered"><em>${headline}</em></p>`
 
   for (const [i, story] of Object.entries(STORIES[node.key]['stories'])) {
+    nodeDescription.innerHTML += '<hr />';
     nodeDescription.innerHTML += story;
   }
 }

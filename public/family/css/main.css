@@ -47,7 +47,11 @@ body.mobile .offcanvas-backdrop.show {
 }
 
 #personName {
-  font-family: 'Google Sans', sans-serif;
+  font-family: 'Iowan Old Style', 'Baskerville', 'Palatino Linotype', 'URW Palladio L', P052, serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  letter-spacing: -.02em;
+  font-variant: small-caps;
 }
 
 #personDetailsDesc {
@@ -60,9 +64,22 @@ body.mobile .offcanvas-backdrop.show {
   border-radius: 8px;
 }
 
+#personDetailsDesc .headline {
+  font-family: 'Google Sans Text', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 26px;
+  opacity: 1;
+}
+
 #personDetailsDesc p {
   font-size: 14px;
   line-height: 22px;
+  opacity: 0.85;
+}
+
+#personDetailsDesc p em {
+  font-family: 'Iowan Old Style', 'Baskerville', 'Palatino Linotype', 'URW Palladio L', P052, serif;
 }
 
 #personDetailsDesc h5 {
