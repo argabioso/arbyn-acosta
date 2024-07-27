@@ -2,7 +2,7 @@
 
 function showSidebar(node) {
   // Don't do anything if the person doesn't have any story
-  if (!STORIES[node['key']] || (isPrivate && node['living'])) {
+  if (!STORIES[node['key']] || (isPrivate && node.data['living'])) {
     return;
   }
 
@@ -19,6 +19,14 @@ function showSidebar(node) {
   }
 }
 
+function simulateSmallCaps(text) {
+  return text.split(' ').map(word => {
+    const firstLetter = word.charAt(0);
+    const laterLetters = word.slice(1);
+    return `<span class="first-letter">${firstLetter}</span><span class="later-letters">${laterLetters}</span>`;
+  }).join(' ');
+}
+
 function modifyPersonDetails(node) {
   const nodeTitle = document.getElementById("personName");
   const nodeDescription = document.getElementById("personDetailsDesc");
@@ -28,10 +36,18 @@ function modifyPersonDetails(node) {
     return node.data[attrName] !== undefined ? node.data[attrName] : match;
   });
 
+  // Determine headshot to use
+  let headshotFilename;
+  if (!STORIES[node.key]['headshot']) {
+    headshotFilename = `${node.key}.lossy.webp`;
+  } else {
+    headshotFilename = STORIES[node.key]['headshot'];
+  }
+
   // Update sidebar content
-  nodeTitle.textContent = node.data.basicName;
-  nodeDescription.innerHTML = `<img class="headshot" alt="headshot" src="images/people/${node.key}.lossy.webp" />`
-  nodeDescription.innerHTML += `<p class="centered"><em>${headline}</em></p>`
+  nodeTitle.innerHTML = simulateSmallCaps(node.data.basicName);
+  nodeDescription.innerHTML = `<img class="headshot" alt="headshot" src="images/people/${headshotFilename}" />`
+  nodeDescription.innerHTML += `<p class="headline">${headline}</p>`
 
   for (const [i, story] of Object.entries(STORIES[node.key]['stories'])) {
     nodeDescription.innerHTML += '<hr />';

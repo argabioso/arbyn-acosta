@@ -47,11 +47,24 @@ body.mobile .offcanvas-backdrop.show {
 }
 
 #personName {
-  font-family: 'Iowan Old Style', 'Baskerville', 'Palatino Linotype', 'URW Palladio L', P052, serif;
-  font-weight: 700;
+  font-family: "Montagu Slab", serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
   font-size: 1.5rem;
-  letter-spacing: -.02em;
-  font-variant: small-caps;
+  letter-spacing: 0.02em;
+/*  font-variant: small-caps;*/
+}
+
+.first-letter {
+  font-size: 1em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.later-letters {
+  font-size: 0.8em;
+  text-transform: uppercase;
+  font-weight: 600;
 }
 
 #personDetailsDesc {
@@ -65,42 +78,54 @@ body.mobile .offcanvas-backdrop.show {
 }
 
 #personDetailsDesc .headline {
-  font-family: 'Google Sans Text', sans-serif;
-  font-weight: 700;
-  font-size: 18px;
-  line-height: 26px;
+  font-family: "Montagu Slab", serif;
+  font-size: 1.125em;
+  font-weight: 400;
   opacity: 1;
+  color: var(--bs-offcanvas-color);
 }
 
 #personDetailsDesc p {
+  font-family: 'Google Sans Text', sans-serif;
   font-size: 14px;
   line-height: 22px;
   opacity: 0.85;
 }
 
 #personDetailsDesc p em {
-  font-family: 'Iowan Old Style', 'Baskerville', 'Palatino Linotype', 'URW Palladio L', P052, serif;
+  font-family: "Montagu Slab", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 20px;
+  letter-spacing: -0.03em;
 }
 
 #personDetailsDesc h5 {
-  line-height: 28px;
+  font-family: 'Google Sans', sans-serif;
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 500;
 }
 
 #personDetailsDesc p.centered {
   text-align: center;
 }
 
-#personDetailsDesc p,
-#personDetailsDesc h5 {
-  font-family: 'Google Sans Text', sans-serif;
-}
-
 #personDetailsDesc p em {
   opacity: 0.65;
 }
 
+#personDetailsDesc p {
+  color: #404143;
+}
+
 body.dark #personDetailsDesc p {
   color: #bdc1c6;
+}
+
+body.dark #personDetailsDesc .headline {
+  color: #fff;
 }
 
 body.dark .offcanvas .btn-close {
@@ -125,6 +150,10 @@ body.dark > footer {
 
 body.dark > footer {
   color: #bdc1c6;
+}
+
+#personDetailsDesc hr {
+  margin: 1.2rem 0;
 }
 
 .hidden {
