@@ -69,6 +69,7 @@ body.mobile .offcanvas-backdrop.show {
 
 #personDetailsDesc {
   padding-top: 0;
+  -webkit-font-smoothing: antialiased;
 }
 
 #personDetailsDesc img {
@@ -79,49 +80,57 @@ body.mobile .offcanvas-backdrop.show {
 
 #personDetailsDesc .headline {
   font-family: "Montagu Slab", serif;
-  font-size: 1.15em;
-  font-weight: 500;
+  font-size: 1.05em;
+  font-weight: 400;
+  color: #414447;
   opacity: 1;
   color: var(--bs-offcanvas-color);
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  line-height: 1.55;
 }
 
 #personDetailsDesc p {
   font-family: 'Google Sans Text', sans-serif;
-  font-size: 14px;
+  font-size: 15px;
   line-height: 22px;
-  opacity: 0.92;
+  margin-bottom: 1.5rem;
+}
+
+#personDetailsDesc figure {
+  margin-bottom: 1.5rem;
+}
+
+#personDetailsDesc .caption {
+  margin-top: -0.5rem;
 }
 
 #personDetailsDesc p em {
   font-family: "Montagu Slab", serif;
   font-optical-sizing: auto;
   font-weight: 400;
-  font-size: 13px;
-  line-height: 20px;
+  font-size: 12px;
+  line-height: 18px;
+  font-style: normal;
   letter-spacing: -0.03em;
+  display: block;
+  opacity: 0.6;
 }
 
 #personDetailsDesc h5 {
   font-family: 'Google Sans', sans-serif;
-  font-size: 16px;
+  font-size: 17px;
   line-height: 22px;
   font-weight: 500;
-}
-
-#personDetailsDesc p em {
-  opacity: 0.78;
-}
-
-#personDetailsDesc p {
-  color: #404143;
+  margin-bottom: 1rem;
 }
 
 body.dark #personDetailsDesc p {
-  color: #bdc1c6;
+  color: #e1e1e1;
 }
 
 body.dark #personDetailsDesc .headline {
-  color: #fff;
+  color: #e1e1e1;
 }
 
 body.dark .offcanvas .btn-close {
@@ -149,7 +158,13 @@ body.dark > footer {
 }
 
 #personDetailsDesc hr {
-  margin: 1.2rem 0;
+  margin: 1.5rem 0;
+}
+
+#personDetailsDesc hr.headshot-sep {
+  margin-top: 1.35rem;
+  border-top-width: 2px;
+  opacity: 1;
 }
 
 .youtube-container {

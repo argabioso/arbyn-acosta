@@ -51,7 +51,11 @@ function modifyPersonDetails(node) {
   nodeDescription.innerHTML += `<p class="headline">${headline}</p>`
 
   for (const [i, story] of Object.entries(STORIES[node.data.key]['stories'])) {
-    nodeDescription.innerHTML += '<hr />';
+    if (i == 0) {
+      nodeDescription.innerHTML += '<hr class="headshot-sep" />'
+    } else {
+      nodeDescription.innerHTML += '<hr />'
+    }
     nodeDescription.innerHTML += story;
   }
 }
