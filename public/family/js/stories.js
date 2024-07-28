@@ -18,7 +18,7 @@ const STORIES = {
       `
         <h5>Troubled Teenage and Young Adult Years</h5>
         <p>During his teenage years, Tatay Roland faced significant challenges, including a serious altercation with a neighbor that led to threats of murder. In response, Lola Lydia banished him to Bataan to live with his grandmother, Lola Lucing, where he completed his high school education.</p>
-        <p>For college, <strong>Tatay Roland enrolled at the University of the East - Caloocan, initially pursuing Mechanical Engineering</strong>. However, his grades were poor, filled with failures. After a serious conversation with Lola Lydia, he resolved to improve himself by shifting his focus to Accountancy. His dedication paid off as his academic performance greatly improved, culminating in passing the national board examination to become a Certified Public Accountant in the Philippines.</p>
+        <p>For college, Tatay Roland enrolled at the University of the East - Caloocan, initially pursuing Mechanical Engineering. However, his grades were poor, filled with failures. After a serious conversation with Lola Lydia, he resolved to improve himself by shifting his focus to Accountancy. His dedication paid off as his academic performance greatly improved, culminating in passing the national board examination to become a Certified Public Accountant in the Philippines.</p>
         <img alt="Baby Roland Argabioso" src="images/stories/Baby_Roland.lossy.webp" />
         <p class="caption"><em>Tatay Roland when he was still a baby.</em></p>
       `
