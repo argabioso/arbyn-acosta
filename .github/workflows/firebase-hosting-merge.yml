@@ -12,12 +12,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      # Minify all JavaScript files
-      - name: Run combine script
-        run: |
-          cd family
-          sh scripts/combine.sh
-
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
