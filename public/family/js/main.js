@@ -70,6 +70,11 @@ window.onload = function() {
       showSidebar(node);
     }
   }
+
+  const closeButton = document.getElementById('personDetails');
+  closeButton.addEventListener('hide.bs.offcanvas', () => {
+    removeQueryParam('id');
+  });
 };
 
 // tree.addDiagramListener("ObjectSingleClicked", (e) => {

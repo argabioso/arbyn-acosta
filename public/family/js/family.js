@@ -357,6 +357,14 @@ function addQueryParam(key, value) {
   window.history.pushState({}, '', url);
 }
 
+function removeQueryParam(key) {
+  const url = new URL(window.location);
+  url.searchParams.delete(key);
+
+  // This will remove the parameter from the URL without reloading the page
+  window.history.pushState({}, '', url);
+}
+
 function decodeUrlSafeBase64ToUtf8(base64Str) {
   // Convert from URL-safe Base64 to standard Base64
   let base64 = base64Str.replace(/-/g, '+').replace(/_/g, '/');
@@ -3986,6 +3994,11 @@ window.onload = function() {
       showSidebar(node);
     }
   }
+
+  const closeButton = document.getElementById('personDetails');
+  closeButton.addEventListener('hide.bs.offcanvas', () => {
+    removeQueryParam('id');
+  });
 };
 
 // tree.addDiagramListener("ObjectSingleClicked", (e) => {
