@@ -50,12 +50,18 @@ function modifyPersonDetails(node) {
   nodeDescription.innerHTML = `<img class="headshot" alt="headshot" src="images/people/${headshotFilename}" />`
   nodeDescription.innerHTML += `<p class="headline">${headline}</p>`
 
+  let storiesHTML = '';
   for (const [i, story] of Object.entries(STORIES[node.data.key]['stories'])) {
     if (i == 0) {
-      nodeDescription.innerHTML += '<hr class="headshot-sep" />'
+      storiesHTML += '<hr class="headshot-sep" />'
     } else {
-      nodeDescription.innerHTML += '<hr />'
+      storiesHTML += '<hr />'
     }
-    nodeDescription.innerHTML += story;
+
+    if (story.title) {
+      storiesHTML += `<h5>${story.title}</h5>`
+    }
+    storiesHTML += story.html
   }
+  nodeDescription.innerHTML += storiesHTML
 }
