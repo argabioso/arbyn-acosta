@@ -52,6 +52,31 @@ template["DNAMarker"] = function() {
   );
 }
 
+template["StoryMarker"] = function() {
+  return $(
+    bino.Panel,
+    new bino.Binding("margin", '', function(nodeData) {
+      return new bino.Margin(3, 0, 0, 3)
+    }),
+    $(
+      bino.Shape,
+      { figure: 'Circle', stroke: null },
+      new bino.Binding("fill", '', function(nodeData) {
+        if (isDark) {
+          return '#333333';
+        }
+        return '#EAEAEA';
+      }),
+      new bino.Binding("width", '', function(nodeData) {
+        if (STORIES[nodeData.key] && !(isPrivate && nodeData.living)) {
+          return 2;
+        }
+        return 0;
+      }),
+    ),
+  );
+}
+
 template["FirstMarker"] = function() {
   return $(
     bino.Panel,

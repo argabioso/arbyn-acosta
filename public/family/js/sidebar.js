@@ -47,21 +47,8 @@ function modifyPersonDetails(node) {
 
   // Update sidebar content
   nodeTitle.innerHTML = simulateSmallCaps(node.data.basicName);
-  nodeDescription.innerHTML = `<img class="headshot" alt="headshot" src="images/people/${headshotFilename}" />`
-  nodeDescription.innerHTML += `<p class="headline">${headline}</p>`
-
-  let storiesHTML = '';
-  for (const [i, story] of Object.entries(STORIES[node.data.key]['stories'])) {
-    if (i == 0) {
-      storiesHTML += '<hr class="headshot-sep" />'
-    } else {
-      storiesHTML += '<hr />'
-    }
-
-    if (story.title) {
-      storiesHTML += `<h5>${story.title}</h5>`
-    }
-    storiesHTML += story.html
-  }
-  nodeDescription.innerHTML += storiesHTML
+  nodeDescription.innerHTML = `<img class="headshot" alt="headshot" src="images/people/${headshotFilename}" />`;
+  nodeDescription.innerHTML += `<p class="headline">${headline}</p>`;
+  nodeDescription.innerHTML += `<hr class="headshot-sep" />`;
+  nodeDescription.innerHTML += STORIES[node.data.key]['stories'];
 }
