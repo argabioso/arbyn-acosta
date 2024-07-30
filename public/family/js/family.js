@@ -491,7 +491,7 @@ const ui = {
       // scale: 0.3,
       // width: 21,
       // margin: 6,
-      scale: 0.385,
+      scale: 0.38,
       width: 21,
       margin: 3.9,
     },
