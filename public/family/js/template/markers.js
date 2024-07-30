@@ -31,7 +31,10 @@ template["DNAMarker"] = function() {
     }),
     $(
       bino.Shape,
-      { figure: 'Circle', stroke: null, width: ui.measure.marker.width },
+      { figure: 'Circle', stroke: null, width: ui.measure.marker.width - 2 },
+      new bino.Binding("margin", '', function(nodeData) {
+        return new bino.Margin(1.2, 0, 0, 1.2);
+      }),
       new bino.Binding("fill", '', function(nodeData) {
         return ui.color.marker.background.dna;
       }),
@@ -70,7 +73,10 @@ template["FirstMarker"] = function() {
     }),
     $(
       bino.Shape,
-      { figure: 'Circle', stroke: null, width: ui.measure.marker.width },
+      { figure: 'Circle', stroke: null, width: ui.measure.marker.width - 2 },
+      new bino.Binding("margin", '', function(nodeData) {
+        return new bino.Margin(1.2, 0, 0, 1.2);
+      }),
       new bino.Binding("fill", '', function(nodeData) {
         if (ui.color.marker.background[nodeData.marker] !== undefined) {
           return ui.color.marker.background[nodeData.marker];
@@ -109,7 +115,10 @@ template["SecondMarker"] = function() {
     }),
     $(
       bino.Shape,
-      { figure: 'Circle', stroke: null, width: ui.measure.marker.width },
+      { figure: 'Circle', stroke: null, width: ui.measure.marker.width - 2 },
+      new bino.Binding("margin", '', function(nodeData) {
+        return new bino.Margin(1.2, 0, 0, 1.2);
+      }),
       new bino.Binding("fill", '', function(nodeData) {
         if (ui.color.marker.background[nodeData.marker2] !== undefined) {
           return ui.color.marker.background[nodeData.marker2];
@@ -148,7 +157,10 @@ template["ThirdMarker"] = function() {
     }),
     $(
       bino.Shape,
-      { figure: 'Circle', stroke: null, width: ui.measure.marker.width },
+      { figure: 'Circle', stroke: null, width: ui.measure.marker.width - 2 },
+      new bino.Binding("margin", '', function(nodeData) {
+        return new bino.Margin(1.2, 0, 0, 1.2);
+      }),
       new bino.Binding("fill", '', function(nodeData) {
         if (ui.color.marker.background[nodeData.marker3] !== undefined) {
           return ui.color.marker.background[nodeData.marker3];
@@ -187,7 +199,10 @@ template["FourthMarker"] = function() {
     }),
     $(
       bino.Shape,
-      { figure: 'Circle', stroke: null, width: ui.measure.marker.width },
+      { figure: 'Circle', stroke: null, width: ui.measure.marker.width - 2 },
+      new bino.Binding("margin", '', function(nodeData) {
+        return new bino.Margin(1.2, 0, 0, 1.2);
+      }),
       new bino.Binding("fill", '', function(nodeData) {
         if (ui.color.marker.background[nodeData.marker4] !== undefined) {
           return ui.color.marker.background[nodeData.marker4];

@@ -56,7 +56,9 @@ for (const [i, person] of Object.entries(TREE_DATA)) {
   // =======================================================================
   if (STORIES[person.key] && !(isPrivate && person.living)) {
     let counter = 0;
-    if (person.marker3) {
+    if (person.marker4) {
+      counter = 4;
+    } else if (person.marker3) {
       counter = 4;
     } else if (person.marker2) {
       counter = 3;
