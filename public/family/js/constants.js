@@ -67,6 +67,7 @@ const ui = {
         seaman: COLORS.PLAIN.bg,
         software: COLORS.PLAIN.bg,
         train: COLORS.PLAIN.bg,
+        book: COLORS.BROWN.bg,
       },
       symbol: {
         default: 'white',
@@ -102,9 +103,9 @@ const ui = {
       // scale: 0.3,
       // width: 21,
       // margin: 6,
-      scale: 0.4,
-      width: 22,
-      margin: 5,
+      scale: 0.385,
+      width: 21,
+      margin: 3.9,
     },
     node: {
       margin: 9,

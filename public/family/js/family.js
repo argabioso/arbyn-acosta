@@ -455,6 +455,7 @@ const ui = {
         seaman: COLORS.PLAIN.bg,
         software: COLORS.PLAIN.bg,
         train: COLORS.PLAIN.bg,
+        book: COLORS.BROWN.bg,
       },
       symbol: {
         default: 'white',
@@ -490,9 +491,9 @@ const ui = {
       // scale: 0.3,
       // width: 21,
       // margin: 6,
-      scale: 0.4,
-      width: 22,
-      margin: 5,
+      scale: 0.385,
+      width: 21,
+      margin: 3.9,
     },
     node: {
       margin: 9,
@@ -542,6 +543,7 @@ const LIGHT_MARKERS = {
     "sergeant": `<svg xmlns="http://www.w3.org/2000/svg" height="56px" viewBox="0 -960 960 960" width="56px" fill="#E99E0E"><path d="M480-259 315-94q-14 15-33 14.5T249-94q-14-14-14-32.5t14-33.5l165-165q28-27 66-27t66 27l165 165q14 15 14 34t-14 32q-14 15-33 15t-33-15L480-259Zm0-269L315-363q-14 14-33 14t-33-14q-14-14-14-33t14-33l165-165q28-27 66-27t66 27l165 165q14 14 14 33.5T711-363q-14 14-33 14t-33-14L480-528Zm0-269L315-631q-14 14-33 13.5T249-631q-14-14-14-33t14-33l165-165q28-28 66-28t66 28l198 198-66 66-198-199Z"/></svg>`,
     "software": `<svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#333333"><path d="m203.17-479.57 145.96 145.96q15.52 15.52 15.24 37.33-.28 21.8-15.8 37.32-15.53 15.53-37.05 15.24-21.52-.28-37.04-15.24l-184-183.43q-7.7-7.7-11.61-17.52-3.91-9.83-3.91-20.09t3.91-20.09q3.91-9.82 11.61-17.52l184-184q15.95-15.96 37.54-15.96t37.55 15.96q15.95 15.96 15.95 37.83 0 21.87-15.95 37.82l-146.4 146.39Zm553.66-.86L610.87-626.39q-15.52-15.52-15.24-37.33.28-21.8 15.8-37.32 15.53-15.53 37.05-15.24 21.52.28 37.04 15.24l184 183.43q7.7 7.7 11.61 17.52 3.91 9.83 3.91 20.09t-3.91 20.09q-3.91 9.82-11.61 17.52l-184 184q-15.95 15.96-37.32 15.74-21.37-.22-37.33-16.18-15.96-15.95-15.96-37.82t15.96-37.83l145.96-145.95Z"/></svg>`,
     "train": `<svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#333333"><path d="M140.78-348.48V-720q0-60.23 30.61-96.03 30.61-35.8 79-53.99 48.39-18.2 109-23.7t120.61-5.5q66 0 127.33 5.5 61.32 5.5 108.5 23.7 47.17 18.19 75.28 53.99T819.22-720v371.52q0 69.74-46.72 119.57-46.72 49.82-114.2 53.22l20 20q19.83 19.82 9.42 45-10.42 25.17-38.79 25.17-8.28 0-15.63-3.07-7.34-3.06-13.47-8.63L542.48-174H417.52l-77.35 76.78q-6.13 5.57-13.54 8.63-7.42 3.07-15.41 3.07-27.52 0-38.44-25.17-10.91-25.18 8.92-45l20-20q-67.48-3.4-114.2-53.22-46.72-49.83-46.72-119.57ZM480-793.22q-106 0-155 12.5t-67 27.5h441.22q-15-17-61.11-28.5T480-793.22Zm-233.22 240H440v-120H246.78v120Zm397.39 80H246.78h466.44-69.05Zm-124.17-80h193.22v-120H520v120ZM343.39-316.61q26 0 43-17t17-43q0-26-17-43t-43-17q-26 0-43 17t-17 43q0 26 17 43t43 17Zm273.22 0q26 0 43-17t17-43q0-26-17-43t-43-17q-26 0-43 17t-17 43q0 26 17 43t43 17ZM315.83-280h328.34q29.39 0 49.22-19.4t19.83-49.08v-124.74H246.78v124.74q0 29.68 19.83 49.08t49.22 19.4ZM480-753.22H699.22 258h222Z"/></svg>`,
+    "book": `<svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#BD5C17"><path d="M278-55q-59.79 0-101.39-41.61Q135-138.21 135-198v-564q0-60.2 41.61-102.1Q218.21-906 278-906h548v651q-21.5 0-34.25 17.19T779-198.06q0 22.56 12.75 39.31Q804.5-142 826-142v87H278Zm-56-273q11.8-6.23 25.78-10.12Q261.76-342 278-342h44v-477h-44q-24.67 0-40.33 16.17Q222-786.67 222-762v434Zm187-14h330v-477H409v477Zm-187 14v-491 491Zm55.54 186H706q-6.69-11.74-10.35-26.37Q692-183 692-197.88q0-16.12 3.88-30.19Q699.77-242.14 707-255H277.61q-23.81 0-39.71 16.17-15.9 16.16-15.9 40.77 0 24.26 15.9 40.16 15.9 15.9 39.64 15.9Z"/></svg>`
 };
 
 const DARK_MARKERS = {
@@ -557,6 +559,7 @@ const DARK_MARKERS = {
     // With changes
     "train": LIGHT_MARKERS["train"].replace("#333333", "#EAEAEA"),
     "beer": LIGHT_MARKERS["beer"].replace("#BD5C17", "#C29370"),
+    "book": LIGHT_MARKERS["book"].replace("#BD5C17", "#C29370"),
     "buysell": LIGHT_MARKERS["buysell"].replace("#333333", "#EAEAEA"),
     "cattle": LIGHT_MARKERS["cattle"].replace("#BD5C17", "#C29370"),
     "church": LIGHT_MARKERS["church"].replace("#333333", "#EAEAEA"),
@@ -660,7 +663,54 @@ var TREE_DATA = [
 /*
   Grumaduate si Nanay ng May 30, 1994 ng BS Accounting sa UE Caloocan
   Grumaduate si Nanay ng March 22, 1990 ng Highschool
-*/var TREE_KEYMAP = {};
+*/const STORIES = {
+  'GQJK-L51': {
+    headshot: 'GQJK-L51-2.lossy.webp',
+    headline: 'Leader of NBI\'s elite task forces and the brilliant strategist behind the nation\'s most controversial and top-priority cases.',
+    stories: `
+      <h5>Troubled Teenage and Young Adult Years</h5>
+      <p>During his teenage years, Roland faced significant challenges, including a serious altercation with a neighbor that led to threats of murder. In response, his mother Lydia banished him to Bataan to live with his grandmother, Lucina, where he completed his high school education.</p>
+      <p>For his college education, Roland enrolled at the University of the East - Caloocan, initially pursuing Mechanical Engineering. However, his grades were poor, filled with failures. After a serious conversation with his mother, he resolved to improve himself by shifting his focus to Accountancy. His dedication paid off as his academic performance greatly improved, culminating in passing the national board examination to become a Certified Public Accountant in the Philippines.</p>
+      <img alt="Baby Roland Argabioso" src="images/stories/Baby_Roland.lossy.webp" />
+      <p class="caption"><em>Roland Argabioso when he was still a baby.</em></p>
+
+      <h5>Rising Through The Ranks</h5>
+      <p>Roland's professional career is one that inspires us the most, marked by unwavering dedication, remarkable leadership, and immense intelligence. Beginning as a bureau agent, to commanding task forces, to eventually achieving the esteemed position of Deputy Director in 2016. His story exemplifies the power of commitment and skill in reaching the pinnacle of professional success.</p>
+      <figure>
+        <div class="youtube-container"><iframe class="youtube-embed" src="https://www.youtube.com/embed/LFA6QfK7ZMc?si=U4zn0Fo7ZmmnVxpZ&amp;start=96" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+        <p class="caption"><em>ABS-CBN interviewing Roland Argabioso regarding Robert Ponce immediately admitting his participation in murdering Ruby Rose.</em></p>
+      </figure>
+
+      <h5>NBI’s "Rockstars" in Pork Bust</h5>
+      <p>Roland's Special Task Force investigated the P10-billion pork barrel scam in 2013, leading to the filing of plunder and graft and corruption charges against Senators Juan Ponce Enrile, Jinggoy Estrada, and Bong Revilla along with businesswoman Janet Lim-Napoles and 34 former and current government officials.</p>
+      <figure>
+        <img alt="NBI: Pork Barrel Scam" src="images/stories/NBI_Rockstar.jpg" />
+        <p class="caption"><em>NBI Assistant Regional Director Rolando Argabioso (center) and his team posing with their plaques of recognition as best investigative unit at NBI headquarters in Manila on Nov. 13, 2014.</em></p>
+      </figure>
+      <figure>
+        <div class="youtube-container"><iframe class="youtube-embed" src="https://www.youtube.com/embed/XelM7m7V3FI?si=aLrttwYFY6x5m5xV&amp;start=6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+        <p class="caption"><em>Roland Argabioso in Dennis Cunanan's testification before the Senate for the Pork Barrel Scam.</em></p>
+      </figure>
+    `
+  },
+  'GHB8-7T6': {
+    headline: 'A war veteran who served his country against the Japanese forces in the second World War.',
+    stories: `
+      <h5>Against All Odds: Survival of the Death March During World War II</h5>
+      <p>Fernando's story is one of courage and resilience amidst the harrowing backdrop of World War II in the Philippines. Born on May 30, 1916, he fought bravely in the Battle of Bataan and survived the infamous Death March by ingeniously concealing himself in "nitchos" or death beds within a cemetery in Hermosa, Bataan. His quick thinking and bold moves were crucial to his survival during one of the darkest periods in Philippine history.</p>
+      <figure>
+        <img alt="Bataan Death March" src="images/stories/Photograph_of_American_Prisoners_Using_Improvised_Litters_to_Carry_Comrades,_05-1942_-_NARA_-_535564.lossy.webp" />
+        <p class="caption"><em>Prisoners of war on the Bataan Death March. (Photo owned by the U.S. Air Force)</em></p>
+      </figure>
+      <p>Fernando welcomed his eldest son, Bonifacio Saplala, around 1939. His second son, Claro Saplala, was born right after. Had Fernando not successfully evaded death during the March, the story of his family would have been starkly different. His return from the brink of death enabled him to continue his lineage, leading to the birth of his two daughters: Lydia Saplala on November 24, 1944; and Celia Saplala on March 2, 1946. Unfortunately, Fernando passed away on May 3, 1993, leaving behind a legacy of bravery and the enduring spirit of survival.</p>
+      <figure>
+        <img alt="Saplala Family Photo" src="images/stories/Saplala_Family.lossy.webp" />
+        <p class="caption"><em>Lucina and Fernando with their four children: (from left to right) Claro, Celia, Lydia, and Bonifacio.</em></p>
+      </figure>
+    `
+  }
+}
+var TREE_KEYMAP = {};
 
 for (const [i, person] of Object.entries(TREE_DATA)) {
   // =======================================================================
@@ -704,14 +754,6 @@ for (const [i, person] of Object.entries(TREE_DATA)) {
     suffix
   );
 
-  TREE_DATA[i]['nicklessFullName'] = (
-    prefix +
-    firstName + ' ' +
-    middleInitialsString +
-    ((!person.lastName) ? '' : person.lastName) +
-    suffix
-  );
-
   TREE_DATA[i]['fullName'] = (
     prefix +
     firstName + ' ' +
@@ -721,20 +763,30 @@ for (const [i, person] of Object.entries(TREE_DATA)) {
     suffix
   );
 
-  TREE_DATA[i]['nicklessFullName2'] = (
-    firstName +
-    ((!person.middleName) ? '' : ` ${person.middleName}`) +
-    ((!person.lastName) ? '' : ` ${person.lastName}`) +
-    suffix
-  );
+  // =======================================================================
+  // Auto-fill story marker
+  // =======================================================================
+  if (STORIES[person.key] && !(isPrivate && person.living)) {
+    let counter = 0;
+    if (person.marker3) {
+      counter = 4;
+    } else if (person.marker2) {
+      counter = 3;
+    } else if (person.marker && person.hasDNA) {
+      counter = 3;
+    } else if (person.marker && !person.hasDNA) {
+      counter = 2;
+    } else if (!person.marker && person.hasDNA) {
+      counter = 2;
+    } else {
+      counter = 1;
+    }
 
-  TREE_DATA[i]['fullName2'] = (
-    firstName +
-    ((!person.nickname) ? '' : ` "${person.nickname}"`) +
-    ((!person.middleName) ? '' : ` ${person.middleName}`) +
-    ((!person.lastName) ? '' : ` ${person.lastName}`) +
-    suffix
-  );
+    if (counter == 1) {
+      counter = '';
+    }
+    TREE_DATA[i][`marker${counter}`] = 'book';
+  }
 
   // =======================================================================
   // Improve locations and make living the death place for easier UI change
@@ -853,53 +905,6 @@ TREE_DATA.forEach(node => {
     node.partner = childToParents[node.child].find(parentKey => parentKey !== node.key);
   }
 });
-const STORIES = {
-  'GQJK-L51': {
-    headshot: 'GQJK-L51-2.lossy.webp',
-    headline: 'Leader of NBI\'s elite task forces and the brilliant strategist behind the nation\'s most controversial and top-priority cases.',
-    stories: `
-      <h5>Troubled Teenage and Young Adult Years</h5>
-      <p>During his teenage years, Roland faced significant challenges, including a serious altercation with a neighbor that led to threats of murder. In response, his mother Lydia banished him to Bataan to live with his grandmother, Lucina, where he completed his high school education.</p>
-      <p>For his college education, Roland enrolled at the University of the East - Caloocan, initially pursuing Mechanical Engineering. However, his grades were poor, filled with failures. After a serious conversation with his mother, he resolved to improve himself by shifting his focus to Accountancy. His dedication paid off as his academic performance greatly improved, culminating in passing the national board examination to become a Certified Public Accountant in the Philippines.</p>
-      <img alt="Baby Roland Argabioso" src="images/stories/Baby_Roland.lossy.webp" />
-      <p class="caption"><em>Roland Argabioso when he was still a baby.</em></p>
-
-      <h5>Rising Through The Ranks</h5>
-      <p>Roland's professional career is one that inspires us the most, marked by unwavering dedication, remarkable leadership, and immense intelligence. Beginning as a bureau agent, to commanding task forces, to eventually achieving the esteemed position of Deputy Director in 2016. His story exemplifies the power of commitment and skill in reaching the pinnacle of professional success.</p>
-      <figure>
-        <div class="youtube-container"><iframe class="youtube-embed" src="https://www.youtube.com/embed/LFA6QfK7ZMc?si=U4zn0Fo7ZmmnVxpZ&amp;start=96" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
-        <p class="caption"><em>ABS-CBN interviewing Roland Argabioso regarding Robert Ponce immediately admitting his participation in murdering Ruby Rose.</em></p>
-      </figure>
-
-      <h5>NBI’s "Rockstars" in Pork Bust</h5>
-      <p>Roland's Special Task Force investigated the P10-billion pork barrel scam in 2013, leading to the filing of plunder and graft and corruption charges against Senators Juan Ponce Enrile, Jinggoy Estrada, and Bong Revilla along with businesswoman Janet Lim-Napoles and 34 former and current government officials.</p>
-      <figure>
-        <img alt="NBI: Pork Barrel Scam" src="images/stories/NBI_Rockstar.jpg" />
-        <p class="caption"><em>NBI Assistant Regional Director Rolando Argabioso (center) and his team posing with their plaques of recognition as best investigative unit at NBI headquarters in Manila on Nov. 13, 2014.</em></p>
-      </figure>
-      <figure>
-        <div class="youtube-container"><iframe class="youtube-embed" src="https://www.youtube.com/embed/XelM7m7V3FI?si=aLrttwYFY6x5m5xV&amp;start=6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
-        <p class="caption"><em>Roland Argabioso in Dennis Cunanan's testification before the Senate for the Pork Barrel Scam.</em></p>
-      </figure>
-    `
-  },
-  'GHB8-7T6': {
-    headline: 'A war veteran who served his country against the Japanese forces in the second World War.',
-    stories: `
-      <h5>Against All Odds: Survival of the Death March During World War II</h5>
-      <p>Fernando's story is one of courage and resilience amidst the harrowing backdrop of World War II in the Philippines. Born on May 30, 1916, he fought bravely in the Battle of Bataan and survived the infamous Death March by ingeniously concealing himself in "nitchos" or death beds within a cemetery in Hermosa, Bataan. His quick thinking and bold moves were crucial to his survival during one of the darkest periods in Philippine history.</p>
-      <figure>
-        <img alt="Bataan Death March" src="images/stories/Photograph_of_American_Prisoners_Using_Improvised_Litters_to_Carry_Comrades,_05-1942_-_NARA_-_535564.lossy.webp" />
-        <p class="caption"><em>Prisoners of war on the Bataan Death March. (Photo owned by the U.S. Air Force)</em></p>
-      </figure>
-      <p>Fernando welcomed his eldest son, Bonifacio Saplala, around 1939. His second son, Claro Saplala, was born right after. Had Fernando not successfully evaded death during the March, the story of his family would have been starkly different. His return from the brink of death enabled him to continue his lineage, leading to the birth of his two daughters: Lydia Saplala on November 24, 1944; and Celia Saplala on March 2, 1946. Unfortunately, Fernando passed away on May 3, 1993, leaving behind a legacy of bravery and the enduring spirit of survival.</p>
-      <figure>
-        <img alt="Saplala Family Photo" src="images/stories/Saplala_Family.lossy.webp" />
-        <p class="caption"><em>Lucina and Fernando with their four children: (from left to right) Claro, Celia, Lydia, and Bonifacio.</em></p>
-      </figure>
-    `
-  }
-}
 // Function to handle the click event on a node and show the sidebar
 
 function showSidebar(node) {
@@ -3463,34 +3468,6 @@ template["DNAMarker"] = function() {
   );
 }
 
-template["StoryMarker"] = function() {
-  return $(
-    bino.Panel,
-    new bino.Binding("margin", '', function(nodeData) {
-      return new bino.Margin(3, 0, 0, 3)
-    }),
-    new bino.Binding("visible", '', function(nodeData) {
-      return STORIES[nodeData.key] && !(isPrivate && nodeData.living);
-    }),
-    $(
-      bino.Shape,
-      { figure: 'Circle', stroke: null },
-      new bino.Binding("fill", '', function(nodeData) {
-        if (isDark) {
-          return '#333333';
-        }
-        return '#EAEAEA';
-      }),
-      new bino.Binding("width", '', function(nodeData) {
-        if (STORIES[nodeData.key] && !(isPrivate && nodeData.living)) {
-          return 2;
-        }
-        return 0;
-      }),
-    ),
-  );
-}
-
 template["FirstMarker"] = function() {
   return $(
     bino.Panel,
@@ -3606,6 +3583,45 @@ template["ThirdMarker"] = function() {
       }),
       new bino.Binding("margin", '', function(nodeData) {
         return marginConditions(nodeData.marker3);
+      }),
+    ),
+  );
+}
+
+template["FourthMarker"] = function() {
+  return $(
+    bino.Panel,
+    new bino.Binding("margin", '', function(nodeData) {
+      let topMargin = ui.measure.marker.margin + ((ui.measure.marker.width + ui.measure.marker.margin) - 3) * 3;
+      return new bino.Margin(
+        topMargin, 0, 0,
+        ui.measure.node.widths[nodeData.generation] - (ui.measure.marker.width + ui.measure.marker.margin),
+      )
+    }),
+    new bino.Binding("visible", '', function(nodeData) {
+      return nodeData.marker4 !== undefined;
+    }),
+    $(
+      bino.Shape,
+      { figure: 'Circle', stroke: null, width: ui.measure.marker.width },
+      new bino.Binding("fill", '', function(nodeData) {
+        if (ui.color.marker.background[nodeData.marker4] !== undefined) {
+          return ui.color.marker.background[nodeData.marker4];
+        }
+        return ui.color.marker.background.default;
+      }),
+    ),
+    $(
+      bino.Picture,
+      { scale: ui.measure.marker.scale },
+      new bino.Binding("source", '', function(nodeData) {
+        if (nodeData.marker4 === undefined) {
+          return '';
+        }
+        return MARKERS[nodeData.marker4];
+      }),
+      new bino.Binding("margin", '', function(nodeData) {
+        return marginConditions(nodeData.marker4);
       }),
     ),
   );
@@ -3974,10 +3990,10 @@ tree.nodeTemplate = $(
 
   // Markers should always be at the end
   template.DNAMarker(),
-  template.StoryMarker(),
   template.FirstMarker(),
   template.SecondMarker(),
   template.ThirdMarker(),
+  template.FourthMarker(),
   template.GenderBand(),
   template.CheckFill(),
   template.TopLeftBorderRadius(),

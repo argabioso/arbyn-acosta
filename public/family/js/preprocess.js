@@ -52,6 +52,31 @@ for (const [i, person] of Object.entries(TREE_DATA)) {
   );
 
   // =======================================================================
+  // Auto-fill story marker
+  // =======================================================================
+  if (STORIES[person.key] && !(isPrivate && person.living)) {
+    let counter = 0;
+    if (person.marker3) {
+      counter = 4;
+    } else if (person.marker2) {
+      counter = 3;
+    } else if (person.marker && person.hasDNA) {
+      counter = 3;
+    } else if (person.marker && !person.hasDNA) {
+      counter = 2;
+    } else if (!person.marker && person.hasDNA) {
+      counter = 2;
+    } else {
+      counter = 1;
+    }
+
+    if (counter == 1) {
+      counter = '';
+    }
+    TREE_DATA[i][`marker${counter}`] = 'book';
+  }
+
+  // =======================================================================
   // Improve locations and make living the death place for easier UI change
   // =======================================================================
   TREE_DATA[i]['birthPlace'] = bino.convertCountryCode(person.birthPlace);

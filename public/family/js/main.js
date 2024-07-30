@@ -40,10 +40,10 @@ tree.nodeTemplate = $(
 
   // Markers should always be at the end
   template.DNAMarker(),
-  template.StoryMarker(),
   template.FirstMarker(),
   template.SecondMarker(),
   template.ThirdMarker(),
+  template.FourthMarker(),
   template.GenderBand(),
   template.CheckFill(),
   template.TopLeftBorderRadius(),

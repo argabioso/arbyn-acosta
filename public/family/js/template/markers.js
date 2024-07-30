@@ -52,31 +52,6 @@ template["DNAMarker"] = function() {
   );
 }
 
-template["StoryMarker"] = function() {
-  return $(
-    bino.Panel,
-    new bino.Binding("margin", '', function(nodeData) {
-      return new bino.Margin(3, 0, 0, 3)
-    }),
-    $(
-      bino.Shape,
-      { figure: 'Circle', stroke: null },
-      new bino.Binding("fill", '', function(nodeData) {
-        if (isDark) {
-          return '#333333';
-        }
-        return '#EAEAEA';
-      }),
-      new bino.Binding("width", '', function(nodeData) {
-        if (STORIES[nodeData.key] && !(isPrivate && nodeData.living)) {
-          return 2;
-        }
-        return 0;
-      }),
-    ),
-  );
-}
-
 template["FirstMarker"] = function() {
   return $(
     bino.Panel,
@@ -192,6 +167,45 @@ template["ThirdMarker"] = function() {
       }),
       new bino.Binding("margin", '', function(nodeData) {
         return marginConditions(nodeData.marker3);
+      }),
+    ),
+  );
+}
+
+template["FourthMarker"] = function() {
+  return $(
+    bino.Panel,
+    new bino.Binding("margin", '', function(nodeData) {
+      let topMargin = ui.measure.marker.margin + ((ui.measure.marker.width + ui.measure.marker.margin) - 3) * 3;
+      return new bino.Margin(
+        topMargin, 0, 0,
+        ui.measure.node.widths[nodeData.generation] - (ui.measure.marker.width + ui.measure.marker.margin),
+      )
+    }),
+    new bino.Binding("visible", '', function(nodeData) {
+      return nodeData.marker4 !== undefined;
+    }),
+    $(
+      bino.Shape,
+      { figure: 'Circle', stroke: null, width: ui.measure.marker.width },
+      new bino.Binding("fill", '', function(nodeData) {
+        if (ui.color.marker.background[nodeData.marker4] !== undefined) {
+          return ui.color.marker.background[nodeData.marker4];
+        }
+        return ui.color.marker.background.default;
+      }),
+    ),
+    $(
+      bino.Picture,
+      { scale: ui.measure.marker.scale },
+      new bino.Binding("source", '', function(nodeData) {
+        if (nodeData.marker4 === undefined) {
+          return '';
+        }
+        return MARKERS[nodeData.marker4];
+      }),
+      new bino.Binding("margin", '', function(nodeData) {
+        return marginConditions(nodeData.marker4);
       }),
     ),
   );
