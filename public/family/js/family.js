@@ -1131,8 +1131,8 @@ function modifyPersonDetails(node) {
   nodeDescription.innerHTML = `<img class="headshot" alt="headshot" src="images/people/${headshotFilename}" />`;
   if (headline) {
     nodeDescription.innerHTML += `<p class="headline">${headline}</p>`;
+    nodeDescription.innerHTML += `<hr class="headshot-sep" />`;
   }
-  nodeDescription.innerHTML += `<hr class="headshot-sep" />`;
   nodeDescription.innerHTML += STORIES[node.data.key]['stories'];
 }
 // Age for Mothers (youngest ever was 9) so let's use 10
