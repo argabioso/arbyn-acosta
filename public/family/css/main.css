@@ -67,11 +67,16 @@ body.mobile .offcanvas-backdrop.show {
   font-weight: 600;
 }
 
+.offcanvas-header {
+  background-color: #202124;
+}
+
 body:not(.dark) .offcanvas-header {
   background-color: #f3f4f5;
 }
 
 #personDetailsDesc {
+  background-color: #202124;
   padding-top: 0;
   -webkit-font-smoothing: antialiased;
   overflow-y: scroll;
