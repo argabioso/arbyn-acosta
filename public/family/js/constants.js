@@ -63,7 +63,7 @@ const ui = {
         sergeant: COLORS.YELLOW.bg,
         police: COLORS.BLUE.bg,
         prelations: COLORS.YELLOW.bg,
-        retail: COLORS.RED.bg,
+        retail: COLORS.ORANGE.bg,
         sales: COLORS.YELLOW.bg,
         seaman: COLORS.PLAIN.bg,
         software: COLORS.PLAIN.bg,
