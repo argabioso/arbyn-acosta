@@ -390,7 +390,7 @@ const COLORS = {
   BLUE: {fg: '#4285F4', bg: !isDark ? '#E3EDFD' : '#323A4A'},
   YELLOW: {fg: '#EA1A68', bg: !isDark ? '#FCF3E2' : '#40392C'},
   ORANGE: {fg: '#FE6F00', bg: !isDark ? '#FDEEE8' : '#46352C'},
-  BROWN: {fg: !isDark ? '#BD5C17' : '#C29370', bg: !isDark ? '#F3EDE9' : '#3E3834'},
+  BROWN: {fg: !isDark ? '#BD5C17' : '#B3825D', bg: !isDark ? '#F3EDE9' : '#3E3834'},
   PURPLE: {fg: !isDark ? '#9831CF' : '#B73DF9', bg: !isDark ? '#F2E6F9' : '#41324B'},
   GREEN: {fg: !isDark ? '#259F31' : '#28BC36', bg: !isDark ? '#DFF1E0' : '#31402E'},
   PLAIN: {fg: !isDark ? '#333333' : '#EAEAEA', bg: !isDark ? '#F0F0F0' : '#393939'},
@@ -428,7 +428,6 @@ const ui = {
         beer: COLORS.BROWN.bg,
         buysell: COLORS.PLAIN.bg,
         cattle: COLORS.BROWN.bg,
-        children: COLORS.RED.bg,
         church: COLORS.PLAIN.bg,
         computer: COLORS.PLAIN.bg,
         default: !isDark ? '#ffffff' : '#2f2f2f',
@@ -555,10 +554,10 @@ const DARK_MARKERS = {
 
     // With changes
     "train": LIGHT_MARKERS["train"].replace("#333333", "#EAEAEA"),
-    "beer": LIGHT_MARKERS["beer"].replace("#BD5C17", "#C29370"),
-    "book": LIGHT_MARKERS["book"].replace("#BD5C17", "#C29370"),
+    "beer": LIGHT_MARKERS["beer"].replace("#BD5C17", "#B3825D"),
+    "book": LIGHT_MARKERS["book"].replace("#BD5C17", "#B3825D"),
     "buysell": LIGHT_MARKERS["buysell"].replace("#333333", "#EAEAEA"),
-    "cattle": LIGHT_MARKERS["cattle"].replace("#BD5C17", "#C29370"),
+    "cattle": LIGHT_MARKERS["cattle"].replace("#BD5C17", "#B3825D"),
     "church": LIGHT_MARKERS["church"].replace("#333333", "#EAEAEA"),
     "dna": LIGHT_MARKERS["dna"].replace("#9831CF", "#B73DF9"),
     "intelligence": LIGHT_MARKERS["intelligence"].replace("#4285F4", "#4B8FFF"),
@@ -608,22 +607,22 @@ var TREE_DATA = [
               { key: 'G2HQ-YQS',     child: 'GHB8-RCH', prefix: null,   firstName: 'Simplicio',          nickname: null,         middleName: null,          lastName: 'Lopecillo',   suffix: null,  gender: 'M', birthDate: null,                baptismDate: null,         marriageDate: null,         deathDate: null,               deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                          marriagePlace: null,                                               livingPlace: null,                        deathPlace: null,                                                   vitalsCompleteAndVerified: false, },
               { key: 'G2H7-Q75',     child: 'GHB8-RCH', prefix: null,   firstName: 'Gregoria',           nickname: null,         middleName: null,          lastName: 'Villarubin',  suffix: null,  gender: 'F', birthDate: null,                baptismDate: null,         marriageDate: null,         deathDate: null,               deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                          marriagePlace: null,                                               livingPlace: null,                        deathPlace: null,                                                   vitalsCompleteAndVerified: false, },
           { key: 'GHBZ-P5Q',         child: 'GQJK-LCT', prefix: null,   firstName: 'Francisca',          nickname: null,         middleName: null,          lastName: 'Mia',         suffix: null,  gender: 'F', birthDate: 'before 1910',       baptismDate: null,         marriageDate: null,         deathDate: 'after 1936-10-13', deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                          marriagePlace: null,                                               livingPlace: null,                        deathPlace: null,                                                   vitalsCompleteAndVerified: false, },
-        { key: 'GHBZ-YVX',           child: 'GQJK-L51', prefix: null,   firstName: 'Lydia',              nickname: null,         middleName: 'Perez',       lastName: 'Saplala',     suffix: null,  gender: 'F', birthDate: '1944-11-24',        baptismDate: null,         marriageDate: '1963-01-23', deathDate: null,               deathAge: null,  living: true,  hasDNA: true,  hasImage: true,   birthPlace: 'San Rafael, Baruya, Lubao, Pampanga, PHL',    marriagePlace: 'Luisiana, Laguna, PHL',                            livingPlace: 'Malolos, Bulacan, PHL',     deathPlace: null,                                                   vitalsCompleteAndVerified: true,  marker: 'retail', marker3: 'children-3', marker4: 'sales' },
+        { key: 'GHBZ-YVX',           child: 'GQJK-L51', prefix: null,   firstName: 'Lydia',              nickname: null,         middleName: 'Perez',       lastName: 'Saplala',     suffix: null,  gender: 'F', birthDate: '1944-11-24',        baptismDate: null,         marriageDate: '1963-01-23', deathDate: null,               deathAge: null,  living: true,  hasDNA: true,  hasImage: true,   birthPlace: 'San Rafael, Baruya, Lubao, Pampanga, PHL',    marriagePlace: 'Luisiana, Laguna, PHL',                            livingPlace: 'Malolos, Bulacan, PHL',     deathPlace: null,                                                   vitalsCompleteAndVerified: true,  marker: 'retail', marker3: 'sales' },
           { key: 'GHB8-7T6',         child: 'GHBZ-YVX', prefix: null,   firstName: 'Fernando',           nickname: 'Andong',     middleName: 'Sison',       lastName: 'Saplala',     suffix: null,  gender: 'M', birthDate: '1916-05-30',        baptismDate: null,         marriageDate: '1937',       deathDate: '1993-05-03',       deathAge: null,  living: false, hasDNA: false, hasImage: true,   birthPlace: 'Lubao, Pampanga, PHL',                        marriagePlace: null,                                               livingPlace: null,                        deathPlace: 'Sangandaan, Caloocan, PHL',                            vitalsCompleteAndVerified: false, marker: 'military' },
             { key: 'GNNH-JLM',       child: 'GHB8-7T6', prefix: null,   firstName: 'Estanislao',         nickname: null,         middleName: null,          lastName: 'Saplala',     suffix: null,  gender: 'M', birthDate: null,                baptismDate: null,         marriageDate: null,         deathDate: null,               deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                          marriagePlace: null,                                               livingPlace: null,                        deathPlace: null,                                                   vitalsCompleteAndVerified: false, },
             { key: 'GJJX-1SG',       child: 'GHB8-7T6', prefix: null,   firstName: 'Adela',              nickname: null,         middleName: null,          lastName: 'Sison',       suffix: null,  gender: 'F', birthDate: null,                baptismDate: null,         marriageDate: null,         deathDate: null,               deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                          marriagePlace: null,                                               livingPlace: null,                        deathPlace: null,                                                   vitalsCompleteAndVerified: false, },
-          { key: 'GHB8-GZL',         child: 'GHBZ-YVX', prefix: null,   firstName: 'Lucina',             nickname: 'Lucing',     middleName: 'Gutierrez',   lastName: 'Perez',       suffix: null,  gender: 'F', birthDate: '1919-11-16',        baptismDate: null,         marriageDate: '1937',       deathDate: '1986-10-02',       deathAge: null,  living: false, hasDNA: false, hasImage: true,   birthPlace: 'Orani, Bataan, PHL',                          marriagePlace: null,                                               livingPlace: null,                        deathPlace: 'Dinalupihan, Bataan, PHL',                             vitalsCompleteAndVerified: false, marker: 'housewife', marker2: 'children-4' },
+          { key: 'GHB8-GZL',         child: 'GHBZ-YVX', prefix: null,   firstName: 'Lucina',             nickname: 'Lucing',     middleName: 'Gutierrez',   lastName: 'Perez',       suffix: null,  gender: 'F', birthDate: '1919-11-16',        baptismDate: null,         marriageDate: '1937',       deathDate: '1986-10-02',       deathAge: null,  living: false, hasDNA: false, hasImage: true,   birthPlace: 'Orani, Bataan, PHL',                          marriagePlace: null,                                               livingPlace: null,                        deathPlace: 'Dinalupihan, Bataan, PHL',                             vitalsCompleteAndVerified: false, marker: 'housewife' },
             { key: 'GHB8-M8D',       child: 'GHB8-GZL', prefix: null,   firstName: 'Victor',             nickname: null,         middleName: null,          lastName: 'Perez',       suffix: null,  gender: 'M', birthDate: 'before 1913',       baptismDate: null,         marriageDate: null,         deathDate: 'after 1952',       deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                          marriagePlace: null,                                               livingPlace: null,                        deathPlace: null,                                                   vitalsCompleteAndVerified: false, },
             { key: 'GHB8-M86',       child: 'GHB8-GZL', prefix: null,   firstName: 'Genoveba',           nickname: null,         middleName: null,          lastName: 'Gutierrez',   suffix: null,  gender: 'F', birthDate: null,                baptismDate: null,         marriageDate: null,         deathDate: null,               deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                          marriagePlace: null,                                               livingPlace: null,                        deathPlace: null,                                                   vitalsCompleteAndVerified: false, },
-      { key: 'GQJK-G8W',             child: 'GQX8-CQP', prefix: null,   firstName: 'Corazon',            nickname: 'Babycor',    middleName: 'Maramba',     lastName: 'Acosta',      suffix: null,  gender: 'F', birthDate: '1971-03-10',        baptismDate: '1971-09-05', marriageDate: '2003-02-03', deathDate: '2018-05-25',       deathAge: null,  living: false, hasDNA: false, hasImage: true,   birthPlace: 'The Family Clinic, Sampaloc, Manila, PHL',    marriagePlace: 'City Hall, Ermita, Manila, PHL',                   livingPlace: null,                        deathPlace: 'Municipal Cemetery, Magdalena, Laguna, PHL',           vitalsCompleteAndVerified: true,  marker: 'housewife', marker2: 'children-3' },
-        { key: 'GHBD-7M4',           child: 'GQJK-G8W', prefix: null,   firstName: 'Manuel',             nickname: null,         middleName: 'San Agustin', lastName: 'Acosta',      suffix: 'Jr.', gender: 'M', birthDate: '1948-07-06',        baptismDate: null,         marriageDate: '1966-03-26', deathDate: '1979-06-07',       deathAge: null,  living: false, hasDNA: false, hasImage: true,   birthPlace: 'North General Hospital, España, Manila, PHL', marriagePlace: 'Knox Methodist Church, Manila, PHL',   livingPlace: null,                        deathPlace: 'Forest Lawn, Covina , California, USA',                vitalsCompleteAndVerified: true,  marker: 'male-twin', marker2: 'seaman' },
+      { key: 'GQJK-G8W',             child: 'GQX8-CQP', prefix: null,   firstName: 'Corazon',            nickname: 'Babycor',    middleName: 'Maramba',     lastName: 'Acosta',      suffix: null,  gender: 'F', birthDate: '1971-03-10',        baptismDate: '1971-09-05', marriageDate: '2003-02-03', deathDate: '2018-05-25',       deathAge: null,  living: false, hasDNA: false, hasImage: true,   birthPlace: 'The Family Clinic, Sampaloc, Manila, PHL',    marriagePlace: 'City Hall, Ermita, Manila, PHL',                   livingPlace: null,                        deathPlace: 'Municipal Cemetery, Magdalena, Laguna, PHL',           vitalsCompleteAndVerified: true,  marker: 'housewife' },
+        { key: 'GHBD-7M4',           child: 'GQJK-G8W', prefix: null,   firstName: 'Manuel',             nickname: null,         middleName: 'San Agustin', lastName: 'Acosta',      suffix: 'Jr.', gender: 'M', birthDate: '1948-07-06',        baptismDate: null,         marriageDate: '1966-03-26', deathDate: '1979-06-07',       deathAge: null,  living: false, hasDNA: false, hasImage: true,   birthPlace: 'North General Hospital, España, Manila, PHL', marriagePlace: 'Knox Methodist Church, Manila, PHL',               livingPlace: null,                        deathPlace: 'Forest Lawn, Covina , California, USA',                vitalsCompleteAndVerified: true,  marker: 'male-twin', marker2: 'seaman' },
           { key: 'GHBD-9L6',         child: 'GHBD-7M4', prefix: null,   firstName: 'Manuel',             nickname: 'Tata',       middleName: 'Bongco',      lastName: 'Acosta',      suffix: 'Sr.', gender: 'M', birthDate: '1913-11-10',        baptismDate: null,         marriageDate: '1951-03-05', deathDate: '1994-11-20',       deathAge: null,  living: false, hasDNA: false, hasImage: true,   birthPlace: 'Orani, Bataan, PHL',                          marriagePlace: 'St. Paul\'s Methodist Church, Tondo, Manila, PHL', livingPlace: null,                        deathPlace: 'Forest Lawn, Via Verde St., Covina , California, USA', vitalsCompleteAndVerified: true,  marker: 'police', marker2: 'investigate' },
             { key: 'GHB8-SQN',       child: 'GHBD-9L6', prefix: null,   firstName: 'Ligorio',            nickname: null,         middleName: null,          lastName: 'Acosta',      suffix: null,  gender: 'M', birthDate: 'about 1871',        baptismDate: null,         marriageDate: null,         deathDate: '1948-07-07',       deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: 'Orani, Bataan, PHL',                          marriagePlace: null,                                               livingPlace: null,                        deathPlace: 'Orani, Bataan, PHL',                                   vitalsCompleteAndVerified: false, },
             { key: 'GHB8-5K8',       child: 'GHBD-9L6', prefix: null,   firstName: 'Maximiana',          nickname: null,         middleName: null,          lastName: 'Bongco',      suffix: null,  gender: 'F', birthDate: null,                baptismDate: null,         marriageDate: null,         deathDate: 'after 1951-03-05', deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: 'PHL',                                         marriagePlace: null,                                               livingPlace: null,                        deathPlace: null,                                                   vitalsCompleteAndVerified: false, },
-          { key: 'GHB8-DXY',         child: 'GHBD-7M4', prefix: null,   firstName: 'Natividad',          nickname: 'Nati',       middleName: null,          lastName: 'San Agustin', suffix: null,  gender: 'F', birthDate: '1925-12-21',        baptismDate: null,         marriageDate: '1951-03-05', deathDate: '2008-10-09',       deathAge: null,  living: false, hasDNA: false, hasImage: true,   birthPlace: 'Ermita, Manila, PHL',                         marriagePlace: 'St. Paul\'s Methodist Church, Tondo, Manila, PHL', livingPlace: null,                        deathPlace: 'Forest Lawn, Covina , California, USA',                vitalsCompleteAndVerified: true,  marker: 'housewife', marker2: 'children-5' },
+          { key: 'GHB8-DXY',         child: 'GHBD-7M4', prefix: null,   firstName: 'Natividad',          nickname: 'Nati',       middleName: null,          lastName: 'San Agustin', suffix: null,  gender: 'F', birthDate: '1925-12-21',        baptismDate: null,         marriageDate: '1951-03-05', deathDate: '2008-10-09',       deathAge: null,  living: false, hasDNA: false, hasImage: true,   birthPlace: 'Ermita, Manila, PHL',                         marriagePlace: 'St. Paul\'s Methodist Church, Tondo, Manila, PHL', livingPlace: null,                        deathPlace: 'Forest Lawn, Covina , California, USA',                vitalsCompleteAndVerified: true,  marker: 'housewife' },
             { key: 'GHB8-LCC',       child: 'GHB8-DXY', prefix: null,   firstName: 'Vicente',            nickname: null,         middleName: null,          lastName: 'San Agustin', suffix: null,  gender: 'M', birthDate: null,                baptismDate: null,         marriageDate: null,         deathDate: null,               deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                          marriagePlace: null,                                               livingPlace: null,                        deathPlace: null,                                                   vitalsCompleteAndVerified: false, },
             { key: 'GHB8-H7K',       child: 'GHB8-DXY', prefix: null,   firstName: 'Nena',               nickname: null,         middleName: null,          lastName: null,          suffix: null,  gender: 'F', birthDate: null,                baptismDate: null,         marriageDate: null,         deathDate: null,               deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                          marriagePlace: null,                                               livingPlace: null,                        deathPlace: null,                                                   vitalsCompleteAndVerified: false, },
-        { key: 'GHB8-J1B',           child: 'GQJK-G8W', prefix: null,   firstName: 'Catalina',           nickname: 'Lina',       middleName: 'Dumantay',    lastName: 'Maramba',     suffix: null,  gender: 'F', birthDate: '1943-01-28',        baptismDate: null,         marriageDate: '1966-03-26', deathDate: '1974-08-10',       deathAge: null,  living: false, hasDNA: false, hasImage: true,   birthPlace: 'Santa Barbara, Pangasinan, PHL',              marriagePlace: 'Knox Methodist Church, Santa Cruz, Manila, PHL',   livingPlace: null,                        deathPlace: 'Sangandaan Cemetery, Caloocan, PHL',                   vitalsCompleteAndVerified: true,  marker: 'housewife', marker2: 'children-3' },
+        { key: 'GHB8-J1B',           child: 'GQJK-G8W', prefix: null,   firstName: 'Catalina',           nickname: 'Lina',       middleName: 'Dumantay',    lastName: 'Maramba',     suffix: null,  gender: 'F', birthDate: '1943-01-28',        baptismDate: null,         marriageDate: '1966-03-26', deathDate: '1974-08-10',       deathAge: null,  living: false, hasDNA: false, hasImage: true,   birthPlace: 'Santa Barbara, Pangasinan, PHL',              marriagePlace: 'Knox Methodist Church, Santa Cruz, Manila, PHL',   livingPlace: null,                        deathPlace: 'Sangandaan Cemetery, Caloocan, PHL',                   vitalsCompleteAndVerified: true,  marker: 'housewife' },
           { key: 'GHB8-GB6',         child: 'GHB8-J1B', prefix: null,   firstName: 'Sotero',             nickname: 'Sotering',   middleName: 'Reyes',       lastName: 'Maramba',     suffix: 'Sr.', gender: 'M', birthDate: '1903-04-22',        baptismDate: null,         marriageDate: null,         deathDate: '1969-12-12',       deathAge: null,  living: false, hasDNA: false, hasImage: true,   birthPlace: 'Santa Barbara, Pangasinan, PHL',              marriagePlace: null,                                               livingPlace: null,                        deathPlace: 'Sangandaan Cemetery, Caloocan, PHL',                   vitalsCompleteAndVerified: false, marker: 'police', marker2: 'train' },
             { key: 'LLQS-641',       child: 'GHB8-GB6', prefix: 'Don',  firstName: 'Miguel',             nickname: null,         middleName: 'Bautista',    lastName: 'Maramba',     suffix: null,  gender: 'M', birthDate: 'about 1858',        baptismDate: null,         marriageDate: null,         deathDate: 'after 1902-06',    deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: 'Santa Barbara, Pangasinan, PHL',              marriagePlace: null,                                               livingPlace: null,                        deathPlace: 'Santa Barbara, Pangasinan, PHL',                       vitalsCompleteAndVerified: false, marker: 'government' },
               { key: 'LLQS-6YC',     child: 'LLQS-641', prefix: null,   firstName: 'Guillermo',          nickname: null,         middleName: 'Bautista',    lastName: 'Maramba',     suffix: null,  gender: 'M', birthDate: 'from 1800 to 1858', baptismDate: null,         marriageDate: null,         deathDate: null,               deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                          marriagePlace: null,                                               livingPlace: null,                        deathPlace: 'Santa Barbara, Pangasinan, PHL',                       vitalsCompleteAndVerified: false, marker: 'sales', marker2: 'cattle' },
@@ -633,17 +632,17 @@ var TREE_DATA = [
             { key: 'LLQS-6F1',       child: 'GHB8-GB6', prefix: null,   firstName: 'Mercedes',           nickname: 'Mitcher',    middleName: 'Novilla',     lastName: 'Reyes',       suffix: null,  gender: 'F', birthDate: null,                baptismDate: null,         marriageDate: null,         deathDate: null,               deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                          marriagePlace: null,                                               livingPlace: null,                        deathPlace: null,                                                   vitalsCompleteAndVerified: false, },
               { key: 'G7C3-B6P',     child: 'LLQS-6F1', prefix: null,   firstName: 'Gregorio',           nickname: null,         middleName: null,          lastName: 'Reyes',       suffix: null,  gender: 'M', birthDate: null,                baptismDate: null,         marriageDate: null,         deathDate: null,               deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                          marriagePlace: null,                                               livingPlace: null,                        deathPlace: null,                                                   vitalsCompleteAndVerified: false, },
               { key: 'G7C3-J9S',     child: 'LLQS-6F1', prefix: null,   firstName: 'Leocadia',           nickname: null,         middleName: null,          lastName: 'Novilla',     suffix: null,  gender: 'F', birthDate: null,                baptismDate: null,         marriageDate: null,         deathDate: null,               deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                          marriagePlace: null,                                               livingPlace: null,                        deathPlace: null,                                                   vitalsCompleteAndVerified: false, },
-          { key: 'GHBD-9LY',         child: 'GHB8-J1B', prefix: null,   firstName: 'Cresencia',          nickname: 'Cresing',    middleName: null,          lastName: 'Dumantay',    suffix: null,  gender: 'F', birthDate: '1918-04-19',        baptismDate: null,         marriageDate: null,         deathDate: '1990-04-16',       deathAge: null,  living: false, hasDNA: false, hasImage: true,   birthPlace: 'PHL',                                         marriagePlace: null,                                               livingPlace: null,                        deathPlace: 'Sangandaan Cemetery, Caloocan, PHL',                   vitalsCompleteAndVerified: false, marker: 'apparel', marker2: 'children-16', marker3: 'sales' },
+          { key: 'GHBD-9LY',         child: 'GHB8-J1B', prefix: null,   firstName: 'Cresencia',          nickname: 'Cresing',    middleName: null,          lastName: 'Dumantay',    suffix: null,  gender: 'F', birthDate: '1918-04-19',        baptismDate: null,         marriageDate: null,         deathDate: '1990-04-16',       deathAge: null,  living: false, hasDNA: false, hasImage: true,   birthPlace: 'PHL',                                         marriagePlace: null,                                               livingPlace: null,                        deathPlace: 'Sangandaan Cemetery, Caloocan, PHL',                   vitalsCompleteAndVerified: false, marker: 'apparel', marker2: 'sales' },
             { key: 'TEMP-001',       child: 'GHBD-9LY', prefix: null,   firstName: 'Unknown',            nickname: null,         middleName: null,          lastName: 'name',        suffix: null,  gender: 'F', birthDate: 'before 1908',       baptismDate: null,         marriageDate: null,         deathDate: 'after 1918-04-18', deathAge: "50+", living: false, hasDNA: false, hasImage: true,   birthPlace: null,                                          marriagePlace: null,                                               livingPlace: null,                        deathPlace: 'PHL',                                                  vitalsCompleteAndVerified: false, },
     { key: 'GHB5-TWN',               child: 'TEMP-000', prefix: null,   firstName: 'Mitchie',            nickname: null,         middleName: 'Ajesta',      lastName: 'Adanza',      suffix: null,  gender: 'F', birthDate: '1994-12-16',        baptismDate: null,         marriageDate: '2024-06-15', deathDate: null,               deathAge: null,  living: true,  hasDNA: true,  hasImage: true,   birthPlace: 'Santa Cruz, Manila, PHL',                     marriagePlace: 'St. John Bosco Parish Church, Makati, PHL',        livingPlace: 'Sangandaan, Caloocan, PHL', deathPlace: null,                                                   vitalsCompleteAndVerified: true,  marker: 'prelations' },
       { key: 'GHB5-XTZ',             child: 'GHB5-TWN', prefix: null,   firstName: 'Darne',              nickname: 'Loloy',      middleName: 'Elican',      lastName: 'Adanza',      suffix: null,  gender: 'M', birthDate: '1964-06-22',        baptismDate: null,         marriageDate: '1994-01-25', deathDate: null,               deathAge: null,  living: true,  hasDNA: false, hasImage: true,   birthPlace: 'Balingasag, Misamis Oriental, PHL',           marriagePlace: 'Santa Maria, Bulacan, PHL',                        livingPlace: 'Sangandaan, Caloocan, PHL', deathPlace: null,                                                   vitalsCompleteAndVerified: true,  marker: 'manufacturing', marker2: 'househusband', marker3: 'prelations' },
         { key: 'GH12-SVQ',           child: 'GHB5-XTZ', prefix: null,   firstName: 'Nestor',             nickname: null,         middleName: 'Ladera',      lastName: 'Adanza',      suffix: null,  gender: 'M', birthDate: '1938-02-26',        baptismDate: null,         marriageDate: null,         deathDate: '2018-09-28',       deathAge: null,  living: false, hasDNA: false, hasImage: true,   birthPlace: 'Balingasag, Misamis Oriental, PHL',           marriagePlace: null,                                               livingPlace: null,                        deathPlace: 'Balingasag, Misamis Oriental, PHL',                    vitalsCompleteAndVerified: false, marker: 'farming' },
           { key: 'GH12-DRN',         child: 'GH12-SVQ', prefix: null,   firstName: 'Felomino',           nickname: null,         middleName: 'R',           lastName: 'Adanza',      suffix: null,  gender: 'M', birthDate: 'about 1901',        baptismDate: null,         marriageDate: null,         deathDate: '1990-11-03',       deathAge: null,  living: false, hasDNA: false, hasImage: true,   birthPlace: 'Dumaguete, Negros Oriental, PHL',             marriagePlace: null,                                               livingPlace: null,                        deathPlace: 'Balingasag, Misamis Oriental, PHL',                    vitalsCompleteAndVerified: false, marker: 'farming' },
-          { key: 'GH12-3GN',         child: 'GH12-SVQ', prefix: null,   firstName: 'Consuelo',           nickname: null,         middleName: null,          lastName: 'Ladera',      suffix: null,  gender: 'F', birthDate: null,                baptismDate: null,         marriageDate: null,         deathDate: 'after 1990-11-03', deathAge: null,  living: false, hasDNA: false, hasImage: true,   birthPlace: 'PHL',                                         marriagePlace: null,                                               livingPlace: null,                        deathPlace: 'Balingasag, Misamis Oriental, PHL',                    vitalsCompleteAndVerified: false, marker: 'children-8' },
-        { key: 'GH12-9F6',           child: 'GHB5-XTZ', prefix: null,   firstName: 'Rufa',               nickname: null,         middleName: 'Acerto',      lastName: 'Elican',      suffix: null,  gender: 'F', birthDate: '1939-11-28',        baptismDate: null,         marriageDate: null,         deathDate: '2015-04-02',       deathAge: null,  living: false, hasDNA: false, hasImage: true,   birthPlace: 'Balingasag, Misamis Oriental, PHL',           marriagePlace: null,                                               livingPlace: null,                        deathPlace: 'Balingasag, Misamis Oriental, PHL',                    vitalsCompleteAndVerified: false, marker: 'farming', marker2: 'children-9' },
+          { key: 'GH12-3GN',         child: 'GH12-SVQ', prefix: null,   firstName: 'Consuelo',           nickname: null,         middleName: null,          lastName: 'Ladera',      suffix: null,  gender: 'F', birthDate: null,                baptismDate: null,         marriageDate: null,         deathDate: 'after 1990-11-03', deathAge: null,  living: false, hasDNA: false, hasImage: true,   birthPlace: 'PHL',                                         marriagePlace: null,                                               livingPlace: null,                        deathPlace: 'Balingasag, Misamis Oriental, PHL',                    vitalsCompleteAndVerified: false, },
+        { key: 'GH12-9F6',           child: 'GHB5-XTZ', prefix: null,   firstName: 'Rufa',               nickname: null,         middleName: 'Acerto',      lastName: 'Elican',      suffix: null,  gender: 'F', birthDate: '1939-11-28',        baptismDate: null,         marriageDate: null,         deathDate: '2015-04-02',       deathAge: null,  living: false, hasDNA: false, hasImage: true,   birthPlace: 'Balingasag, Misamis Oriental, PHL',           marriagePlace: null,                                               livingPlace: null,                        deathPlace: 'Balingasag, Misamis Oriental, PHL',                    vitalsCompleteAndVerified: false, marker: 'farming' },
           { key: 'GH12-9JZ',         child: 'GH12-9F6', prefix: 'Sgt.', firstName: 'Cecelio',            nickname: null,         middleName: null,          lastName: 'Elican',      suffix: null,  gender: 'M', birthDate: 'before 1933',       baptismDate: null,         marriageDate: null,         deathDate: 'after 1945-04-30', deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                          marriagePlace: null,                                               livingPlace: null,                        deathPlace: 'Misamis Oriental, PHL',                                vitalsCompleteAndVerified: false, marker: 'sergeant' },
-          { key: 'GH12-35H',         child: 'GH12-9F6', prefix: null,   firstName: 'Jovita',             nickname: null,         middleName: null,          lastName: 'Acerto',      suffix: null,  gender: 'F', birthDate: null,                baptismDate: null,         marriageDate: null,         deathDate: null,               deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                          marriagePlace: null,                                               livingPlace: null,                        deathPlace: null,                                                   vitalsCompleteAndVerified: false, marker: 'children-7' },
-      { key: 'GHBR-FK3',             child: 'GHB5-TWN', prefix: null,   firstName: 'Mylen',              nickname: null,         middleName: 'Vergara',     lastName: 'Ajesta',      suffix: null,  gender: 'F', birthDate: '1974-04-13',        baptismDate: null,         marriageDate: '1994-01-25', deathDate: null,               deathAge: null,  living: true,  hasDNA: false, hasImage: true,   birthPlace: 'Sinamongan, Pilar, Capiz, PHL',               marriagePlace: 'Santa Maria, Bulacan, PHL',                        livingPlace: 'Manama, BHR',               deathPlace: null,                                                   vitalsCompleteAndVerified: true,  marker: 'beautician', marker2: 'prelations', marker3: 'children-2', marker4: 'manager' },
+          { key: 'GH12-35H',         child: 'GH12-9F6', prefix: null,   firstName: 'Jovita',             nickname: null,         middleName: null,          lastName: 'Acerto',      suffix: null,  gender: 'F', birthDate: null,                baptismDate: null,         marriageDate: null,         deathDate: null,               deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                          marriagePlace: null,                                               livingPlace: null,                        deathPlace: null,                                                   vitalsCompleteAndVerified: false, },
+      { key: 'GHBR-FK3',             child: 'GHB5-TWN', prefix: null,   firstName: 'Mylen',              nickname: null,         middleName: 'Vergara',     lastName: 'Ajesta',      suffix: null,  gender: 'F', birthDate: '1974-04-13',        baptismDate: null,         marriageDate: '1994-01-25', deathDate: null,               deathAge: null,  living: true,  hasDNA: false, hasImage: true,   birthPlace: 'Sinamongan, Pilar, Capiz, PHL',               marriagePlace: 'Santa Maria, Bulacan, PHL',                        livingPlace: 'Manama, BHR',               deathPlace: null,                                                   vitalsCompleteAndVerified: true,  marker: 'beautician', marker2: 'prelations', marker3: 'manager' },
         { key: 'GH12-Z3C',           child: 'GHBR-FK3', prefix: null,   firstName: 'Napoleon Crispolon', nickname: null,         middleName: 'Badoles',     lastName: 'Ajesta',      suffix: null,  gender: 'M', birthDate: 'before 1953',       baptismDate: null,         marriageDate: '1962-08-05', deathDate: 'after 1980-02-26', deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: 'Binaobawan, Pilar, Capiz, PHL',               marriagePlace: 'Capiz, PHL',                                       livingPlace: null,                        deathPlace: "PHL",                                                  vitalsCompleteAndVerified: false, },
           { key: 'GH12-XX4',         child: 'GH12-Z3C', prefix: null,   firstName: 'Emmanuel',           nickname: null,         middleName: null,          lastName: 'Ajesta',      suffix: null,  gender: 'M', birthDate: 'around 1903',       baptismDate: null,         marriageDate: '1922-02-15', deathDate: 'after 1922-02-15', deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: 'Pilar, Capiz, PHL',                           marriagePlace: 'Pontevedra, Capiz, PHL',                           livingPlace: null,                        deathPlace: null,                                                   vitalsCompleteAndVerified: false, },
             { key: 'GKBR-M9Y',       child: 'GH12-XX4', prefix: null,   firstName: 'Eustaquio',          nickname: null,         middleName: null,          lastName: 'Ajesta',      suffix: null,  gender: 'M', birthDate: null,                baptismDate: null,         marriageDate: null,         deathDate: null,               deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                          marriagePlace: null,                                               livingPlace: null,                        deathPlace: null,                                                   vitalsCompleteAndVerified: false, },
@@ -651,7 +650,7 @@ var TREE_DATA = [
           { key: 'GH12-HQN',         child: 'GH12-Z3C', prefix: null,   firstName: 'Ursula',             nickname: null,         middleName: null,          lastName: 'Badoles',     suffix: null,  gender: 'F', birthDate: 'around 1904',       baptismDate: null,         marriageDate: '1922-02-15', deathDate: 'after 1922-02-15', deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                          marriagePlace: 'Pontevedra, Capiz, PHL',                           livingPlace: null,                        deathPlace: null,                                                   vitalsCompleteAndVerified: false, },
             { key: 'GKBT-9GD',       child: 'GH12-HQN', prefix: null,   firstName: 'Pedro Benjamin',     nickname: null,         middleName: null,          lastName: 'Badoles',     suffix: null,  gender: 'M', birthDate: null,                baptismDate: null,         marriageDate: null,         deathDate: null,               deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                          marriagePlace: null,                                               livingPlace: null,                        deathPlace: null,                                                   vitalsCompleteAndVerified: false, },
             { key: 'K2GJ-YY3',       child: 'GH12-HQN', prefix: null,   firstName: 'Leoncia',            nickname: null,         middleName: null,          lastName: 'Villanes',    suffix: null,  gender: 'F', birthDate: 'about 1852',        baptismDate: null,         marriageDate: null,         deathDate: '1922-01-08',       deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: 'Panay, Capiz, PHL',                           marriagePlace: null,                                               livingPlace: null,                        deathPlace: 'Panay, Capiz, PHL',                                    vitalsCompleteAndVerified: false, },
-        { key: 'GH12-W17',           child: 'GHBR-FK3', prefix: null,   firstName: 'Selma',              nickname: 'Mamang',     middleName: 'Borja',       lastName: 'Vergara',     suffix: null,  gender: 'F', birthDate: '1941-07-08',        baptismDate: null,         marriageDate: '1962-08-05', deathDate: '2020-02-16',       deathAge: null,  living: false, hasDNA: false, hasImage: true,   birthPlace: 'Dulangan, Pilar, Capiz, PHL',                 marriagePlace: 'Capiz, PHL',                                       livingPlace: null,                        deathPlace: 'Catholic Cemetery, Santa Maria, Bulacan, PHL',         vitalsCompleteAndVerified: false, marker: 'farming', marker2: 'children-6' },
+        { key: 'GH12-W17',           child: 'GHBR-FK3', prefix: null,   firstName: 'Selma',              nickname: 'Mamang',     middleName: 'Borja',       lastName: 'Vergara',     suffix: null,  gender: 'F', birthDate: '1941-07-08',        baptismDate: null,         marriageDate: '1962-08-05', deathDate: '2020-02-16',       deathAge: null,  living: false, hasDNA: false, hasImage: true,   birthPlace: 'Dulangan, Pilar, Capiz, PHL',                 marriagePlace: 'Capiz, PHL',                                       livingPlace: null,                        deathPlace: 'Catholic Cemetery, Santa Maria, Bulacan, PHL',         vitalsCompleteAndVerified: false, marker: 'farming' },
           { key: 'GH12-6YL',         child: 'GH12-W17', prefix: null,   firstName: 'Benigno',            nickname: null,         middleName: null,          lastName: 'Vergara',     suffix: null,  gender: 'M', birthDate: null,                baptismDate: null,         marriageDate: null,         deathDate: null,               deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                          marriagePlace: null,                                               livingPlace: null,                        deathPlace: null,                                                   vitalsCompleteAndVerified: false, marker: 'military' },
           { key: 'GH12-DD8',         child: 'GH12-W17', prefix: null,   firstName: 'Enoria',             nickname: null,         middleName: null,          lastName: 'Borja',       suffix: null,  gender: 'F', birthDate: 'before 1906',       baptismDate: null,         marriageDate: null,         deathDate: 'after 1996-12-16', deathAge: "90+", living: false, hasDNA: false, hasImage: true,   birthPlace: 'PHL',                                         marriagePlace: null,                                               livingPlace: null,                        deathPlace: 'PHL',                                                  vitalsCompleteAndVerified: false, },
 ];
@@ -3648,34 +3647,6 @@ template["DNAMarker"] = function() {
   );
 }
 
-function childCountTemplate(markerKey) {
-  return $(
-    bino.TextBlock,
-    {
-      font: `700 ${ui.font.size.name}px 'M PLUS Rounded 1c', monospace`,
-      height: ui.font.size.name + 2,
-    },
-    new bino.Binding("visible", '', function(nodeData) {
-      return nodeData[markerKey] !== undefined && nodeData[markerKey].startsWith('children');
-    }),
-    new bino.Binding('width', '', function(nodeData) {
-      return 21;
-    }),
-    new bino.Binding('margin', '', function(nodeData) {
-      return marginConditions(nodeData[markerKey]);
-    }),
-    new bino.Binding('stroke', '', function(nodeData) {
-      return COLORS.RED.fg;
-    }),
-    new bino.Binding('text', '', function(nodeData) {
-      if (nodeData[markerKey] !== undefined && nodeData[markerKey].startsWith('children')) {
-        return parseInt(nodeData[markerKey].split('-')[1], 10);
-      }
-      return '';
-    })
-  )
-}
-
 template["FirstMarker"] = function() {
   return $(
     bino.Panel,
@@ -3702,20 +3673,14 @@ template["FirstMarker"] = function() {
         if (ui.color.marker.background[nodeData.marker] !== undefined) {
           return ui.color.marker.background[nodeData.marker];
         }
-        if (nodeData.marker !== undefined && nodeData.marker.startsWith('children')) {
-          return ui.color.marker.background['children'];
-        }
         return ui.color.marker.background.default;
       }),
     ),
     $(
       bino.Picture,
       { scale: ui.measure.marker.scale },
-      new bino.Binding("visible", '', function(nodeData) {
-        return nodeData.marker !== undefined && !nodeData.marker.startsWith('children');
-      }),
       new bino.Binding("source", '', function(nodeData) {
-        if (nodeData.marker === undefined || nodeData.marker.startsWith('children')) {
+        if (nodeData.marker === undefined) {
           return '';
         }
         return MARKERS[nodeData.marker];
@@ -3724,7 +3689,6 @@ template["FirstMarker"] = function() {
         return marginConditions(nodeData.marker);
       }),
     ),
-    childCountTemplate('marker')
   );
 }
 
@@ -3751,20 +3715,14 @@ template["SecondMarker"] = function() {
         if (ui.color.marker.background[nodeData.marker2] !== undefined) {
           return ui.color.marker.background[nodeData.marker2];
         }
-        if (nodeData.marker2 !== undefined && nodeData.marker2.startsWith('children')) {
-          return ui.color.marker.background['children'];
-        }
         return ui.color.marker.background.default;
       }),
     ),
     $(
       bino.Picture,
       { scale: ui.measure.marker.scale },
-      new bino.Binding("visible", '', function(nodeData) {
-        return nodeData.marker2 !== undefined && !nodeData.marker2.startsWith('children');
-      }),
       new bino.Binding("source", '', function(nodeData) {
-        if (nodeData.marker2 === undefined || nodeData.marker2.startsWith('children')) {
+        if (nodeData.marker2 === undefined) {
           return '';
         }
         return MARKERS[nodeData.marker2];
@@ -3773,7 +3731,6 @@ template["SecondMarker"] = function() {
         return marginConditions(nodeData.marker2);
       }),
     ),
-    childCountTemplate('marker2')
   );
 }
 
@@ -3800,20 +3757,14 @@ template["ThirdMarker"] = function() {
         if (ui.color.marker.background[nodeData.marker3] !== undefined) {
           return ui.color.marker.background[nodeData.marker3];
         }
-        if (nodeData.marker3 !== undefined && nodeData.marker3.startsWith('children')) {
-          return ui.color.marker.background['children'];
-        }
         return ui.color.marker.background.default;
       }),
     ),
     $(
       bino.Picture,
       { scale: ui.measure.marker.scale },
-      new bino.Binding("visible", '', function(nodeData) {
-        return nodeData.marker3 !== undefined && !nodeData.marker3.startsWith('children');
-      }),
       new bino.Binding("source", '', function(nodeData) {
-        if (nodeData.marker3 === undefined || nodeData.marker3.startsWith('children')) {
+        if (nodeData.marker3 === undefined) {
           return '';
         }
         return MARKERS[nodeData.marker3];
@@ -3822,7 +3773,6 @@ template["ThirdMarker"] = function() {
         return marginConditions(nodeData.marker3);
       }),
     ),
-    childCountTemplate('marker3')
   );
 }
 
@@ -3849,20 +3799,14 @@ template["FourthMarker"] = function() {
         if (ui.color.marker.background[nodeData.marker4] !== undefined) {
           return ui.color.marker.background[nodeData.marker4];
         }
-        if (nodeData.marker4 !== undefined && nodeData.marker4.startsWith('children')) {
-          return ui.color.marker.background['children'];
-        }
         return ui.color.marker.background.default;
       }),
     ),
     $(
       bino.Picture,
       { scale: ui.measure.marker.scale },
-      new bino.Binding("visible", '', function(nodeData) {
-        return nodeData.marker4 !== undefined && !nodeData.marker4.startsWith('children');
-      }),
       new bino.Binding("source", '', function(nodeData) {
-        if (nodeData.marker4 === undefined || nodeData.marker4.startsWith('children')) {
+        if (nodeData.marker4 === undefined) {
           return '';
         }
         return MARKERS[nodeData.marker4];
@@ -3871,17 +3815,10 @@ template["FourthMarker"] = function() {
         return marginConditions(nodeData.marker4);
       }),
     ),
-    childCountTemplate('marker4')
   );
 }
 
 function marginConditions(marker) {
-  if (marker && marker.startsWith('children')) {
-    if (marker.length == 10) {
-      return new bino.Margin(8.3, 0, 0, 6.6);
-    }
-    return new bino.Margin(8.3, 0, 0, 1.5);
-  }
   if (marker === 'computer') {
     return new bino.Margin(2, 0, 0, 2);
   }
