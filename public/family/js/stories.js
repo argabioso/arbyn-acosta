@@ -37,7 +37,7 @@ const STORIES = {
           <div class="person-details">
             <span class="person-name">Riand Nikole "Ryan" M. Argabioso</span>
             <span class="relevant-dates">5 Nov 2003 — Living</span>
-            <span class="birth-place"><strong>B</strong> : St. Luke's Medical Center, Quezon City, PHL</span>
+            <span class="birth-place"><strong>B</strong> : St. Luke's Medical, Quezon City, PHL</span>
             <span class="birth-place"><strong>L</strong> : Malolos, Bulacan, Philippines</span>
           </div>
         </li>
