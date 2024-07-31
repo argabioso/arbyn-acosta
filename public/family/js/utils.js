@@ -242,19 +242,15 @@ bino.formatDate = function(raw, isPrivate, noDay) {
 };
 
 function addQueryParam(key, value) {
-  const url = new URL(window.location);
-  url.searchParams.set(key, value);
-
-  // This will add the new parameter to the URL without reloading the page
-  window.history.pushState({}, '', url);
+  const currentUrl = new URL(window.location);
+  currentUrl.searchParams.set(key, value);
+  window.history.replaceState({}, '', currentUrl);
 }
 
 function removeQueryParam(key) {
-  const url = new URL(window.location);
-  url.searchParams.delete(key);
-
-  // This will remove the parameter from the URL without reloading the page
-  window.history.pushState({}, '', url);
+  const currentUrl = new URL(window.location);
+  currentUrl.searchParams.delete(key);
+  window.history.replaceState({}, '', currentUrl);
 }
 
 function decodeUrlSafeBase64ToUtf8(base64Str) {

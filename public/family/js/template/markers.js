@@ -59,14 +59,14 @@ function childCountTemplate(markerKey) {
   return $(
     bino.TextBlock,
     {
-      font: `700 ${ui.font.size.name}px Google Sans, sans-serif`,
+      font: `700 ${ui.font.size.name}px 'M PLUS Rounded 1c', monospace`,
       height: ui.font.size.name + 2,
     },
     new bino.Binding("visible", '', function(nodeData) {
       return nodeData[markerKey] !== undefined && nodeData[markerKey].startsWith('children');
     }),
     new bino.Binding('width', '', function(nodeData) {
-      return 18;
+      return 21;
     }),
     new bino.Binding('margin', '', function(nodeData) {
       return marginConditions(nodeData[markerKey]);
@@ -284,16 +284,10 @@ template["FourthMarker"] = function() {
 
 function marginConditions(marker) {
   if (marker && marker.startsWith('children')) {
-    if (marker == 'children-4') {
-      return new bino.Margin(3.7, 0, 0, 6.5);
-    }
     if (marker.length == 10) {
-      return new bino.Margin(3.7, 0, 0, 7.2);
+      return new bino.Margin(8.3, 0, 0, 6.6);
     }
-    if (marker == 'children-14') {
-      return new bino.Margin(3.7, 0, 0, 3.5)
-    }
-    return new bino.Margin(3.7, 0, 0, 3.9);
+    return new bino.Margin(8.3, 0, 0, 1.5);
   }
   if (marker === 'computer') {
     return new bino.Margin(2, 0, 0, 2);
