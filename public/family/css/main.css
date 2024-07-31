@@ -182,6 +182,10 @@ body.dark > footer {
   opacity: 1;
 }
 
+.headshot:has(+ .headshot-sep) {
+  margin-bottom: 0 !important;
+}
+
 .siblings {
   padding: 0;
   margin: 0 0 1.5rem;
@@ -192,7 +196,7 @@ body.dark > footer {
   display: flex;
   list-style: none;
   background-color: #ffffff;
-  margin-bottom: 0.51rem;
+  margin-bottom: 10px;
   border-radius: 4px;
 }
 
@@ -203,7 +207,6 @@ body.dark > footer {
 #personDetailsDesc .siblings li img {
   border-bottom-left-radius: 4px;
   border-bottom-right-radius: 0;
-  border-right: 2.5px solid;
   border-top-left-radius: 4px;
   border-top-right-radius: 0;
   flex: 0 0 auto; /* Takes only the necessary space */
@@ -211,23 +214,24 @@ body.dark > footer {
 }
 
 #personDetailsDesc .siblings li.details-2 img {
-  width: 66px;
+  width: 65px;
 }
 
 #personDetailsDesc .siblings li.details-3 img {
-  width: 83px;
+  width: 75px;
 }
 
 .siblings li > .person-details {
+  border-left: 2.5px solid;
   flex: 1;
-  padding: 12px 10px 10px;
+  padding: 12px 10px 9px;
   line-height: 0.8;
 }
 
 .person-details .person-name {
   font-family: "Google Sans", sans-serif;
   font-weight: 700;
-  font-size: 14px;
+  font-size: 13.5px;
   display: block;
   margin-top: 0;
 }
@@ -235,17 +239,17 @@ body.dark > footer {
 .person-details span {
   font-family: "Google Sans Text", sans-serif;
   font-weight: 400;
-  font-size: 11.5px;
-  margin-top: 6px;
+  font-size: 11.3px;
+  margin-top: 5px;
   display: block;
 }
 
-#personDetailsDesc .siblings li.male img {
-  border-right-color: #2799fd;
+.siblings li.male .person-details {
+  border-left-color: #2799fd;
 }
 
-#personDetailsDesc .siblings li.female img {
-  border-right-color: #ea1a68;
+.siblings li.female .person-details {
+  border-left-color: #ea1a68;
 }
 
 .youtube-container {

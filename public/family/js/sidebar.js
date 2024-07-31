@@ -33,9 +33,11 @@ function modifyPersonDetails(node) {
   const nodeDescription = document.getElementById("personDetailsDesc");
 
   let headline = STORIES[node.data.key]['headline'];
-  headline = headline.replace(/\$\{([^}]+)\}/g, (match, attrName) => {
-    return node.data[attrName] !== undefined ? node.data[attrName] : match;
-  });
+  if (headline) {
+    headline = headline.replace(/\$\{([^}]+)\}/g, (match, attrName) => {
+      return node.data[attrName] !== undefined ? node.data[attrName] : match;
+    });
+  }
 
   // Determine headshot to use
   let headshotFilename;
@@ -48,7 +50,9 @@ function modifyPersonDetails(node) {
   // Update sidebar content
   nodeTitle.innerHTML = simulateSmallCaps(node.data.basicName);
   nodeDescription.innerHTML = `<img class="headshot" alt="headshot" src="images/people/${headshotFilename}" />`;
-  nodeDescription.innerHTML += `<p class="headline">${headline}</p>`;
+  if (headline) {
+    nodeDescription.innerHTML += `<p class="headline">${headline}</p>`;
+  }
   nodeDescription.innerHTML += `<hr class="headshot-sep" />`;
   nodeDescription.innerHTML += STORIES[node.data.key]['stories'];
 }

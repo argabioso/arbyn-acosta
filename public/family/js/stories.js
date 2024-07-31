@@ -1,10 +1,10 @@
 const STORIES = {
   'GQX8-CQP': { // Arbyn Argabioso
-    headline: 'Back-End and Data Software Engineer.',
+    headline: 'An Electronics-Engineering-graduate turned Software Engineer focused on recording his family\'s history.',
     stories: `
       <h5>Half Siblings <span class="chill">from Mother's Side</span></h5>
       <ul class="siblings">
-        <li class="female details-2">
+        <li class="female details-3">
           <div class="person-headshot">
             <img src="images/people/relatives/ira.lossy.webp" />
           </div>
@@ -12,9 +12,10 @@ const STORIES = {
             <span class="person-name">Ira Mae A. Ignacio</span>
             <span class="relevant-dates">5 Aug 2004 — Living</span>
             <span class="birth-place"><strong>B</strong> : Tondo, Manila, Philippines</span>
+            <span class="birth-place"><strong>L</strong> : Magdalena, Laguna, Philippines</span>
           </div>
         </li>
-        <li class="male details-2">
+        <li class="male details-3">
           <div class="person-headshot">
             <img src="images/people/relatives/caleb.lossy.webp" />
           </div>
@@ -22,13 +23,14 @@ const STORIES = {
             <span class="person-name">Joshua Caleb A. Ignacio</span>
             <span class="relevant-dates">1 Aug 2008 — Living</span>
             <span class="birth-place"><strong>B</strong> : Poblacion, Caloocan, Philippines</span>
+            <span class="birth-place"><strong>L</strong> : Magdalena, Laguna, Philippines</span>
           </div>
         </li>
       </ul>
 
       <h5>Half Siblings <span class="chill">from Father's Side</span></h5>
       <ul class="siblings">
-        <li class="female details-2">
+        <li class="female details-3">
           <div class="person-headshot">
             <img src="images/people/relatives/ryan.lossy.webp" />
           </div>
@@ -36,6 +38,7 @@ const STORIES = {
             <span class="person-name">Riand Nikole M. Argabioso</span>
             <span class="relevant-dates">5 Nov 2003 — Living</span>
             <span class="birth-place"><strong>B</strong> : Quezon City, Philippines</span>
+            <span class="birth-place"><strong>L</strong> : Malolos, Bulacan, Philippines</span>
           </div>
         </li>
       </ul>
@@ -47,7 +50,7 @@ const STORIES = {
     stories: `
       <h5>Siblings</h5>
       <ul class="siblings">
-        <li class="male details-2">
+        <li class="male details-3">
           <div class="person-headshot">
             <img src="images/people/relatives/toni.lossy.webp" />
           </div>
@@ -55,9 +58,10 @@ const STORIES = {
             <span class="person-name">Antonio "Tony" S. Argabioso</span>
             <span class="relevant-dates">14 Dec 1963 — Living</span>
             <span class="birth-place"><strong>B</strong> : Poblacion, Caloocan, Philippines</span>
+            <span class="birth-place"><strong>L</strong> : Quezon City, Philippines</span>
           </div>
         </li>
-        <li class="male details-2">
+        <li class="male details-3">
           <div class="person-headshot">
             <img src="images/people/relatives/dada.lossy.webp" />
           </div>
@@ -65,6 +69,7 @@ const STORIES = {
             <span class="person-name">Danilo "Dada" S. Argabioso</span>
             <span class="relevant-dates">31 Mar 1969 — Living</span>
             <span class="birth-place"><strong>B</strong> : Poblacion, Caloocan, Philippines</span>
+            <span class="birth-place"><strong>L</strong> : Singapore / Cavite, Philippines</span>
           </div>
         </li>
       </ul>
@@ -112,5 +117,105 @@ const STORIES = {
         <p class="caption"><em>Lucina and Fernando with their four children: (from left to right) Claro, Celia, Lydia, and Bonifacio.</em></p>
       </figure>
     `
-  }
+  },
+  'GQJK-G8W': { // Corazon Acosta
+    headline: 'A Graduate of University of the East - Caloocan with a Bachelor\'s Degree in Accountancy.',
+    stories: `
+      <h5>Siblings</h5>
+      <ul class="siblings">
+        <li class="male details-3">
+          <div class="person-headshot">
+            <img src="images/people/relatives/manolo.lossy.webp" />
+          </div>
+          <div class="person-details">
+            <span class="person-name">Manuel "Manolo" M. Acosta III</span>
+            <span class="relevant-dates">7 Nov 1966 — Living</span>
+            <span class="birth-place"><strong>B</strong> : Caloocan, Philippines</span>
+            <span class="birth-place"><strong>L</strong> : Sangandaan, Caloocan, Philippines</span>
+          </div>
+        </li>
+        <li class="female details-3">
+          <div class="person-headshot">
+            <img src="images/people/relatives/susan.lossy.webp" />
+          </div>
+          <div class="person-details">
+            <span class="person-name">Susan "Hiraishi" M. Acosta</span>
+            <span class="relevant-dates">21 Feb 1968 — Living</span>
+            <span class="birth-place"><strong>B</strong> : Caloocan, Philippines</span>
+            <span class="birth-place"><strong>L</strong> : Japan</span>
+          </div>
+        </li>
+      </ul>
+
+      <hr />
+      <h5>Orphaned at a Very Young Age</h5>
+      <p>When Babycor (shorthand for "Baby Corazon") was still three years old, her mother, Catalina Maramba, passed away because of an illness. Although her father, Manuel Acosta Jr., was still alive he wasn't always present because he worked as a Seaman.</p>
+      <img alt="Catalina Maramba with her children" src="images/stories/Lola_Catalina_Sick_with_Kids.webp" />
+      <p class="caption"><em>Photo of Catalina Maramba with her three children: (from left to right) Susan Acosta, Corazon Acosta, and Manuel Acosta III.</em></p>
+      <p>Three months after Babycor turned eight years old, her father died as well. She and her siblings were taken care for by their aunt: Vicky Acosta. While growing up, she was also close to and was taken care for by her step mother (Manuel Acosta Jr.'s girlfriend) Loren "Nene" Asis.</p>
+      <img alt="Loren Asis and Corazon Acosta" src="images/stories/Lola_Nene.webp" />
+      <p class="caption"><em>Corazon Acosta and Loren Asis in Loremei Asis' graduation in 1998.</em></p>
+
+      <hr />
+      <h5>Spent <strong>₱0</strong> for College</h5>
+      <p>It's probably not zero, but Corazon Acosta spent close to nothing when she studied Accountancy in the University of the East - Caloocan. Embarrassed and ashamed to accept money from her aunt: Amelia Acosta, she entered UE's Student Assistant program which acts as a "working student" type of scholarship.</p>
+      <p>The minimum requirement is you do the job required by what department you are assigned to and you don't get any failing grade. In turn, you will receive a small stipend and a full scholarship for that semester. Because of her hardwork and dedication, she actually graduated a semester earlier than expected and have spent nothing on school tuition.</p>
+      <img alt="Corazon in UE Caloocan's field" src="images/stories/Corazon_UE.webp" />
+      <p class="caption"><em>Babycor with some of her classmates in the Accountancy program.</em></p>
+      <img alt="Corazon's Diploma" src="images/stories/Corazon_Diploma.webp" />
+      <p class="caption"><em>Babycor's Diploma.</em></p>
+    `
+  },
+  'GHBD-7M4': { // Lolo Manuel Jr.
+    stories: `
+      <h5>Twin</h5>
+      <ul class="siblings">
+        <li class="male details-3">
+          <div class="person-details">
+            <span class="person-name">Benjamin S. A. Acosta</span>
+            <span class="relevant-dates">6 Jul 1948 — 7 Jul 1948</span>
+            <span class="birth-place"><strong>B</strong> : España, Manila, Philippines</span>
+            <span class="death-place"><strong>D</strong> : España, Manila, Philippines</span>
+          </div>
+        </li>
+      </ul>
+
+      <h5>Siblings</h5>
+      <ul class="siblings">
+        <li class="female details-3">
+          <div class="person-headshot">
+            <img src="images/people/relatives/vicky.lossy.webp" />
+          </div>
+          <div class="person-details">
+            <span class="person-name">Victoria "Vicky" S. A. Acosta</span>
+            <span class="relevant-dates">17 Jun 1945 — 19 Feb 2018</span>
+            <span class="birth-place"><strong>B</strong> : Manila, Philippines</span>
+            <span class="death-place"><strong>D</strong> : Mother Teresa Crematory, Caloocan, PHL</span>
+          </div>
+        </li>
+        <li class="female details-3">
+          <div class="person-headshot">
+            <img src="images/people/relatives/amelia.lossy.webp" />
+          </div>
+          <div class="person-details">
+            <span class="person-name">Amelia S. A. Acosta</span>
+            <span class="relevant-dates">12 Jun 1947 — 2 May 2021</span>
+            <span class="birth-place"><strong>B</strong> : Manila, Philippines</span>
+            <span class="death-place"><strong>D</strong> : United States of America</span>
+          </div>
+        </li>
+        <li class="female details-3">
+          <div class="person-headshot">
+            <img src="images/people/relatives/ben.lossy.webp" />
+          </div>
+          <div class="person-details">
+            <span class="person-name">Benjamin "Ben" S. A. Acosta Sr.</span>
+            <span class="relevant-dates">23 Oct 1949 — before 2020</span>
+            <span class="birth-place"><strong>B</strong> : Manila, Philippines</span>
+            <span class="death-place"><strong>D</strong> : United States of America</span>
+          </div>
+        </li>
+      </ul>
+    `
+  },
 }

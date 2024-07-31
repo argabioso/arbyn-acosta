@@ -616,7 +616,7 @@ var TREE_DATA = [
             { key: 'GHB8-M8D',       child: 'GHB8-GZL', prefix: null,   firstName: 'Victor',             nickname: null,         middleName: null,          lastName: 'Perez',       suffix: null,  gender: 'M', birthDate: 'before 1913',       baptismDate: null,         marriageDate: null,         deathDate: 'after 1952',       deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                          marriagePlace: null,                                               livingPlace: null,                        deathPlace: null,                                                   vitalsCompleteAndVerified: false, },
             { key: 'GHB8-M86',       child: 'GHB8-GZL', prefix: null,   firstName: 'Genoveba',           nickname: null,         middleName: null,          lastName: 'Gutierrez',   suffix: null,  gender: 'F', birthDate: null,                baptismDate: null,         marriageDate: null,         deathDate: null,               deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                          marriagePlace: null,                                               livingPlace: null,                        deathPlace: null,                                                   vitalsCompleteAndVerified: false, },
       { key: 'GQJK-G8W',             child: 'GQX8-CQP', prefix: null,   firstName: 'Corazon',            nickname: 'Babycor',    middleName: 'Maramba',     lastName: 'Acosta',      suffix: null,  gender: 'F', birthDate: '1971-03-10',        baptismDate: '1971-09-05', marriageDate: '2003-02-03', deathDate: '2018-05-25',       deathAge: null,  living: false, hasDNA: false, hasImage: true,   birthPlace: 'The Family Clinic, Sampaloc, Manila, PHL',    marriagePlace: 'City Hall, Ermita, Manila, PHL',                   livingPlace: null,                        deathPlace: 'Municipal Cemetery, Magdalena, Laguna, PHL',           vitalsCompleteAndVerified: true,  marker: 'housewife', marker2: 'children-3' },
-        { key: 'GHBD-7M4',           child: 'GQJK-G8W', prefix: null,   firstName: 'Manuel',             nickname: null,         middleName: 'San Agustin', lastName: 'Acosta',      suffix: 'Jr.', gender: 'M', birthDate: '1948-07-06',        baptismDate: null,         marriageDate: '1966-03-26', deathDate: '1979-06-07',       deathAge: null,  living: false, hasDNA: false, hasImage: true,   birthPlace: 'North General Hospital, España, Manila, PHL', marriagePlace: 'Knox Methodist Church, Santa Cruz, Manila, PHL',   livingPlace: null,                        deathPlace: 'Forest Lawn, Covina , California, USA',                vitalsCompleteAndVerified: true,  marker: 'male-twin', marker2: 'seaman' },
+        { key: 'GHBD-7M4',           child: 'GQJK-G8W', prefix: null,   firstName: 'Manuel',             nickname: null,         middleName: 'San Agustin', lastName: 'Acosta',      suffix: 'Jr.', gender: 'M', birthDate: '1948-07-06',        baptismDate: null,         marriageDate: '1966-03-26', deathDate: '1979-06-07',       deathAge: null,  living: false, hasDNA: false, hasImage: true,   birthPlace: 'North General Hospital, España, Manila, PHL', marriagePlace: 'Knox Methodist Church, Manila, PHL',   livingPlace: null,                        deathPlace: 'Forest Lawn, Covina , California, USA',                vitalsCompleteAndVerified: true,  marker: 'male-twin', marker2: 'seaman' },
           { key: 'GHBD-9L6',         child: 'GHBD-7M4', prefix: null,   firstName: 'Manuel',             nickname: 'Tata',       middleName: 'Bongco',      lastName: 'Acosta',      suffix: 'Sr.', gender: 'M', birthDate: '1913-11-10',        baptismDate: null,         marriageDate: '1951-03-05', deathDate: '1994-11-20',       deathAge: null,  living: false, hasDNA: false, hasImage: true,   birthPlace: 'Orani, Bataan, PHL',                          marriagePlace: 'St. Paul\'s Methodist Church, Tondo, Manila, PHL', livingPlace: null,                        deathPlace: 'Forest Lawn, Via Verde St., Covina , California, USA', vitalsCompleteAndVerified: true,  marker: 'police', marker2: 'investigate' },
             { key: 'GHB8-SQN',       child: 'GHBD-9L6', prefix: null,   firstName: 'Ligorio',            nickname: null,         middleName: null,          lastName: 'Acosta',      suffix: null,  gender: 'M', birthDate: 'about 1871',        baptismDate: null,         marriageDate: null,         deathDate: '1948-07-07',       deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: 'Orani, Bataan, PHL',                          marriagePlace: null,                                               livingPlace: null,                        deathPlace: 'Orani, Bataan, PHL',                                   vitalsCompleteAndVerified: false, },
             { key: 'GHB8-5K8',       child: 'GHBD-9L6', prefix: null,   firstName: 'Maximiana',          nickname: null,         middleName: null,          lastName: 'Bongco',      suffix: null,  gender: 'F', birthDate: null,                baptismDate: null,         marriageDate: null,         deathDate: 'after 1951-03-05', deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: 'PHL',                                         marriagePlace: null,                                               livingPlace: null,                        deathPlace: null,                                                   vitalsCompleteAndVerified: false, },
@@ -651,7 +651,7 @@ var TREE_DATA = [
           { key: 'GH12-HQN',         child: 'GH12-Z3C', prefix: null,   firstName: 'Ursula',             nickname: null,         middleName: null,          lastName: 'Badoles',     suffix: null,  gender: 'F', birthDate: 'around 1904',       baptismDate: null,         marriageDate: '1922-02-15', deathDate: 'after 1922-02-15', deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                          marriagePlace: 'Pontevedra, Capiz, PHL',                           livingPlace: null,                        deathPlace: null,                                                   vitalsCompleteAndVerified: false, },
             { key: 'GKBT-9GD',       child: 'GH12-HQN', prefix: null,   firstName: 'Pedro Benjamin',     nickname: null,         middleName: null,          lastName: 'Badoles',     suffix: null,  gender: 'M', birthDate: null,                baptismDate: null,         marriageDate: null,         deathDate: null,               deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                          marriagePlace: null,                                               livingPlace: null,                        deathPlace: null,                                                   vitalsCompleteAndVerified: false, },
             { key: 'K2GJ-YY3',       child: 'GH12-HQN', prefix: null,   firstName: 'Leoncia',            nickname: null,         middleName: null,          lastName: 'Villanes',    suffix: null,  gender: 'F', birthDate: 'about 1852',        baptismDate: null,         marriageDate: null,         deathDate: '1922-01-08',       deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: 'Panay, Capiz, PHL',                           marriagePlace: null,                                               livingPlace: null,                        deathPlace: 'Panay, Capiz, PHL',                                    vitalsCompleteAndVerified: false, },
-        { key: 'GH12-W17',           child: 'GHBR-FK3', prefix: null,   firstName: 'Celma',              nickname: 'Mamang',     middleName: 'Borja',       lastName: 'Vergara',     suffix: null,  gender: 'F', birthDate: '1941-07-08',        baptismDate: null,         marriageDate: '1962-08-05', deathDate: '2020-02-16',       deathAge: null,  living: false, hasDNA: false, hasImage: true,   birthPlace: 'Dulangan, Pilar, Capiz, PHL',                 marriagePlace: 'Capiz, PHL',                                       livingPlace: null,                        deathPlace: 'Catholic Cemetery, Santa Maria, Bulacan, PHL',         vitalsCompleteAndVerified: false, marker: 'farming', marker2: 'children-6' },
+        { key: 'GH12-W17',           child: 'GHBR-FK3', prefix: null,   firstName: 'Selma',              nickname: 'Mamang',     middleName: 'Borja',       lastName: 'Vergara',     suffix: null,  gender: 'F', birthDate: '1941-07-08',        baptismDate: null,         marriageDate: '1962-08-05', deathDate: '2020-02-16',       deathAge: null,  living: false, hasDNA: false, hasImage: true,   birthPlace: 'Dulangan, Pilar, Capiz, PHL',                 marriagePlace: 'Capiz, PHL',                                       livingPlace: null,                        deathPlace: 'Catholic Cemetery, Santa Maria, Bulacan, PHL',         vitalsCompleteAndVerified: false, marker: 'farming', marker2: 'children-6' },
           { key: 'GH12-6YL',         child: 'GH12-W17', prefix: null,   firstName: 'Benigno',            nickname: null,         middleName: null,          lastName: 'Vergara',     suffix: null,  gender: 'M', birthDate: null,                baptismDate: null,         marriageDate: null,         deathDate: null,               deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                          marriagePlace: null,                                               livingPlace: null,                        deathPlace: null,                                                   vitalsCompleteAndVerified: false, marker: 'military' },
           { key: 'GH12-DD8',         child: 'GH12-W17', prefix: null,   firstName: 'Enoria',             nickname: null,         middleName: null,          lastName: 'Borja',       suffix: null,  gender: 'F', birthDate: 'before 1906',       baptismDate: null,         marriageDate: null,         deathDate: 'after 1996-12-16', deathAge: "90+", living: false, hasDNA: false, hasImage: true,   birthPlace: 'PHL',                                         marriagePlace: null,                                               livingPlace: null,                        deathPlace: 'PHL',                                                  vitalsCompleteAndVerified: false, },
 ];
@@ -662,11 +662,11 @@ var TREE_DATA = [
   Grumaduate si Nanay ng March 22, 1990 ng Highschool
 */const STORIES = {
   'GQX8-CQP': { // Arbyn Argabioso
-    headline: 'Back-End and Data Software Engineer.',
+    headline: 'An Electronics-Engineering-graduate turned Software Engineer focused on recording his family\'s history.',
     stories: `
       <h5>Half Siblings <span class="chill">from Mother's Side</span></h5>
       <ul class="siblings">
-        <li class="female details-2">
+        <li class="female details-3">
           <div class="person-headshot">
             <img src="images/people/relatives/ira.lossy.webp" />
           </div>
@@ -674,9 +674,10 @@ var TREE_DATA = [
             <span class="person-name">Ira Mae A. Ignacio</span>
             <span class="relevant-dates">5 Aug 2004 — Living</span>
             <span class="birth-place"><strong>B</strong> : Tondo, Manila, Philippines</span>
+            <span class="birth-place"><strong>L</strong> : Magdalena, Laguna, Philippines</span>
           </div>
         </li>
-        <li class="male details-2">
+        <li class="male details-3">
           <div class="person-headshot">
             <img src="images/people/relatives/caleb.lossy.webp" />
           </div>
@@ -684,13 +685,14 @@ var TREE_DATA = [
             <span class="person-name">Joshua Caleb A. Ignacio</span>
             <span class="relevant-dates">1 Aug 2008 — Living</span>
             <span class="birth-place"><strong>B</strong> : Poblacion, Caloocan, Philippines</span>
+            <span class="birth-place"><strong>L</strong> : Magdalena, Laguna, Philippines</span>
           </div>
         </li>
       </ul>
 
       <h5>Half Siblings <span class="chill">from Father's Side</span></h5>
       <ul class="siblings">
-        <li class="female details-2">
+        <li class="female details-3">
           <div class="person-headshot">
             <img src="images/people/relatives/ryan.lossy.webp" />
           </div>
@@ -698,6 +700,7 @@ var TREE_DATA = [
             <span class="person-name">Riand Nikole M. Argabioso</span>
             <span class="relevant-dates">5 Nov 2003 — Living</span>
             <span class="birth-place"><strong>B</strong> : Quezon City, Philippines</span>
+            <span class="birth-place"><strong>L</strong> : Malolos, Bulacan, Philippines</span>
           </div>
         </li>
       </ul>
@@ -709,7 +712,7 @@ var TREE_DATA = [
     stories: `
       <h5>Siblings</h5>
       <ul class="siblings">
-        <li class="male details-2">
+        <li class="male details-3">
           <div class="person-headshot">
             <img src="images/people/relatives/toni.lossy.webp" />
           </div>
@@ -717,9 +720,10 @@ var TREE_DATA = [
             <span class="person-name">Antonio "Tony" S. Argabioso</span>
             <span class="relevant-dates">14 Dec 1963 — Living</span>
             <span class="birth-place"><strong>B</strong> : Poblacion, Caloocan, Philippines</span>
+            <span class="birth-place"><strong>L</strong> : Quezon City, Philippines</span>
           </div>
         </li>
-        <li class="male details-2">
+        <li class="male details-3">
           <div class="person-headshot">
             <img src="images/people/relatives/dada.lossy.webp" />
           </div>
@@ -727,6 +731,7 @@ var TREE_DATA = [
             <span class="person-name">Danilo "Dada" S. Argabioso</span>
             <span class="relevant-dates">31 Mar 1969 — Living</span>
             <span class="birth-place"><strong>B</strong> : Poblacion, Caloocan, Philippines</span>
+            <span class="birth-place"><strong>L</strong> : Singapore / Cavite, Philippines</span>
           </div>
         </li>
       </ul>
@@ -774,7 +779,107 @@ var TREE_DATA = [
         <p class="caption"><em>Lucina and Fernando with their four children: (from left to right) Claro, Celia, Lydia, and Bonifacio.</em></p>
       </figure>
     `
-  }
+  },
+  'GQJK-G8W': { // Corazon Acosta
+    headline: 'A Graduate of University of the East - Caloocan with a Bachelor\'s Degree in Accountancy.',
+    stories: `
+      <h5>Siblings</h5>
+      <ul class="siblings">
+        <li class="male details-3">
+          <div class="person-headshot">
+            <img src="images/people/relatives/manolo.lossy.webp" />
+          </div>
+          <div class="person-details">
+            <span class="person-name">Manuel "Manolo" M. Acosta III</span>
+            <span class="relevant-dates">7 Nov 1966 — Living</span>
+            <span class="birth-place"><strong>B</strong> : Caloocan, Philippines</span>
+            <span class="birth-place"><strong>L</strong> : Sangandaan, Caloocan, Philippines</span>
+          </div>
+        </li>
+        <li class="female details-3">
+          <div class="person-headshot">
+            <img src="images/people/relatives/susan.lossy.webp" />
+          </div>
+          <div class="person-details">
+            <span class="person-name">Susan "Hiraishi" M. Acosta</span>
+            <span class="relevant-dates">21 Feb 1968 — Living</span>
+            <span class="birth-place"><strong>B</strong> : Caloocan, Philippines</span>
+            <span class="birth-place"><strong>L</strong> : Japan</span>
+          </div>
+        </li>
+      </ul>
+
+      <hr />
+      <h5>Orphaned at a Very Young Age</h5>
+      <p>When Babycor (shorthand for "Baby Corazon") was still three years old, her mother, Catalina Maramba, passed away because of an illness. Although her father, Manuel Acosta Jr., was still alive he wasn't always present because he worked as a Seaman.</p>
+      <img alt="Catalina Maramba with her children" src="images/stories/Lola_Catalina_Sick_with_Kids.webp" />
+      <p class="caption"><em>Photo of Catalina Maramba with her three children: (from left to right) Susan Acosta, Corazon Acosta, and Manuel Acosta III.</em></p>
+      <p>Three months after Babycor turned eight years old, her father died as well. She and her siblings were taken care for by their aunt: Vicky Acosta. While growing up, she was also close to and was taken care for by her step mother (Manuel Acosta Jr.'s girlfriend) Loren "Nene" Asis.</p>
+      <img alt="Loren Asis and Corazon Acosta" src="images/stories/Lola_Nene.webp" />
+      <p class="caption"><em>Corazon Acosta and Loren Asis in Loremei Asis' graduation in 1998.</em></p>
+
+      <hr />
+      <h5>Spent <strong>₱0</strong> for College</h5>
+      <p>It's probably not zero, but Corazon Acosta spent close to nothing when she studied Accountancy in the University of the East - Caloocan. Embarrassed and ashamed to accept money from her aunt: Amelia Acosta, she entered UE's Student Assistant program which acts as a "working student" type of scholarship.</p>
+      <p>The minimum requirement is you do the job required by what department you are assigned to and you don't get any failing grade. In turn, you will receive a small stipend and a full scholarship for that semester. Because of her hardwork and dedication, she actually graduated a semester earlier than expected and have spent nothing on school tuition.</p>
+      <img alt="Corazon in UE Caloocan's field" src="images/stories/Corazon_UE.webp" />
+      <p class="caption"><em>Babycor with some of her classmates in the Accountancy program.</em></p>
+      <img alt="Corazon's Diploma" src="images/stories/Corazon_Diploma.webp" />
+      <p class="caption"><em>Babycor's Diploma.</em></p>
+    `
+  },
+  'GHBD-7M4': { // Lolo Manuel Jr.
+    stories: `
+      <h5>Twin</h5>
+      <ul class="siblings">
+        <li class="male details-3">
+          <div class="person-details">
+            <span class="person-name">Benjamin S. A. Acosta</span>
+            <span class="relevant-dates">6 Jul 1948 — 7 Jul 1948</span>
+            <span class="birth-place"><strong>B</strong> : España, Manila, Philippines</span>
+            <span class="death-place"><strong>D</strong> : España, Manila, Philippines</span>
+          </div>
+        </li>
+      </ul>
+
+      <h5>Siblings</h5>
+      <ul class="siblings">
+        <li class="female details-3">
+          <div class="person-headshot">
+            <img src="images/people/relatives/vicky.lossy.webp" />
+          </div>
+          <div class="person-details">
+            <span class="person-name">Victoria "Vicky" S. A. Acosta</span>
+            <span class="relevant-dates">17 Jun 1945 — 19 Feb 2018</span>
+            <span class="birth-place"><strong>B</strong> : Manila, Philippines</span>
+            <span class="death-place"><strong>D</strong> : Mother Teresa Crematory, Caloocan, PHL</span>
+          </div>
+        </li>
+        <li class="female details-3">
+          <div class="person-headshot">
+            <img src="images/people/relatives/amelia.lossy.webp" />
+          </div>
+          <div class="person-details">
+            <span class="person-name">Amelia S. A. Acosta</span>
+            <span class="relevant-dates">12 Jun 1947 — 2 May 2021</span>
+            <span class="birth-place"><strong>B</strong> : Manila, Philippines</span>
+            <span class="death-place"><strong>D</strong> : United States of America</span>
+          </div>
+        </li>
+        <li class="female details-3">
+          <div class="person-headshot">
+            <img src="images/people/relatives/ben.lossy.webp" />
+          </div>
+          <div class="person-details">
+            <span class="person-name">Benjamin "Ben" S. A. Acosta Sr.</span>
+            <span class="relevant-dates">23 Oct 1949 — before 2020</span>
+            <span class="birth-place"><strong>B</strong> : Manila, Philippines</span>
+            <span class="death-place"><strong>D</strong> : United States of America</span>
+          </div>
+        </li>
+      </ul>
+    `
+  },
 }
 var TREE_KEYMAP = {};
 
@@ -1008,9 +1113,11 @@ function modifyPersonDetails(node) {
   const nodeDescription = document.getElementById("personDetailsDesc");
 
   let headline = STORIES[node.data.key]['headline'];
-  headline = headline.replace(/\$\{([^}]+)\}/g, (match, attrName) => {
-    return node.data[attrName] !== undefined ? node.data[attrName] : match;
-  });
+  if (headline) {
+    headline = headline.replace(/\$\{([^}]+)\}/g, (match, attrName) => {
+      return node.data[attrName] !== undefined ? node.data[attrName] : match;
+    });
+  }
 
   // Determine headshot to use
   let headshotFilename;
@@ -1023,7 +1130,9 @@ function modifyPersonDetails(node) {
   // Update sidebar content
   nodeTitle.innerHTML = simulateSmallCaps(node.data.basicName);
   nodeDescription.innerHTML = `<img class="headshot" alt="headshot" src="images/people/${headshotFilename}" />`;
-  nodeDescription.innerHTML += `<p class="headline">${headline}</p>`;
+  if (headline) {
+    nodeDescription.innerHTML += `<p class="headline">${headline}</p>`;
+  }
   nodeDescription.innerHTML += `<hr class="headshot-sep" />`;
   nodeDescription.innerHTML += STORIES[node.data.key]['stories'];
 }
