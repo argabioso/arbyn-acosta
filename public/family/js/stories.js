@@ -12,7 +12,6 @@ const STORIES = {
             <span class="person-name">Ira Mae A. Ignacio</span>
             <span class="relevant-dates">5 Aug 2004 — Living</span>
             <span class="birth-place"><strong>B</strong> : Tondo, Manila, Philippines</span>
-            <span class="birth-place"><strong>L</strong> : Magdalena, Laguna, Philippines</span>
           </div>
         </li>
         <li class="male details-2">
@@ -23,7 +22,6 @@ const STORIES = {
             <span class="person-name">Joshua Caleb A. Ignacio</span>
             <span class="relevant-dates">1 Aug 2008 — Living</span>
             <span class="birth-place"><strong>B</strong> : Poblacion, Caloocan, Philippines</span>
-            <span class="birth-place"><strong>L</strong> : Magdalena, Laguna, Philippines</span>
           </div>
         </li>
       </ul>
@@ -35,10 +33,9 @@ const STORIES = {
             <img src="images/people/relatives/ryan.lossy.webp" />
           </div>
           <div class="person-details">
-            <span class="person-name">Riand Nikole "Ryan" M. Argabioso</span>
+            <span class="person-name">Riand Nikole M. Argabioso</span>
             <span class="relevant-dates">5 Nov 2003 — Living</span>
-            <span class="birth-place"><strong>B</strong> : St. Luke's Medical, Quezon City, PHL</span>
-            <span class="birth-place"><strong>L</strong> : Malolos, Bulacan, Philippines</span>
+            <span class="birth-place"><strong>B</strong> : Quezon City, Philippines</span>
           </div>
         </li>
       </ul>
@@ -58,7 +55,6 @@ const STORIES = {
             <span class="person-name">Antonio "Tony" S. Argabioso</span>
             <span class="relevant-dates">14 Dec 1963 — Living</span>
             <span class="birth-place"><strong>B</strong> : Poblacion, Caloocan, Philippines</span>
-            <span class="birth-place"><strong>L</strong> : Quezon City, Philippines</span>
           </div>
         </li>
         <li class="male details-2">
@@ -69,7 +65,6 @@ const STORIES = {
             <span class="person-name">Danilo "Dada" S. Argabioso</span>
             <span class="relevant-dates">31 Mar 1969 — Living</span>
             <span class="birth-place"><strong>B</strong> : Poblacion, Caloocan, Philippines</span>
-            <span class="birth-place"><strong>L</strong> : Cavite, Philippines</span>
           </div>
         </li>
       </ul>
