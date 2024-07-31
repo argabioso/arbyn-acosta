@@ -55,6 +55,34 @@ template["DNAMarker"] = function() {
   );
 }
 
+function childCountTemplate(markerKey) {
+  return $(
+    bino.TextBlock,
+    {
+      font: `700 ${ui.font.size.name}px Google Sans, sans-serif`,
+      height: ui.font.size.name + 2,
+    },
+    new bino.Binding("visible", '', function(nodeData) {
+      return nodeData[markerKey] !== undefined && nodeData[markerKey].startsWith('children');
+    }),
+    new bino.Binding('width', '', function(nodeData) {
+      return 18;
+    }),
+    new bino.Binding('margin', '', function(nodeData) {
+      return marginConditions(nodeData[markerKey]);
+    }),
+    new bino.Binding('stroke', '', function(nodeData) {
+      return COLORS.RED.fg;
+    }),
+    new bino.Binding('text', '', function(nodeData) {
+      if (nodeData[markerKey] !== undefined && nodeData[markerKey].startsWith('children')) {
+        return parseInt(nodeData[markerKey].split('-')[1], 10);
+      }
+      return '';
+    })
+  )
+}
+
 template["FirstMarker"] = function() {
   return $(
     bino.Panel,
@@ -81,14 +109,20 @@ template["FirstMarker"] = function() {
         if (ui.color.marker.background[nodeData.marker] !== undefined) {
           return ui.color.marker.background[nodeData.marker];
         }
+        if (nodeData.marker !== undefined && nodeData.marker.startsWith('children')) {
+          return ui.color.marker.background['children'];
+        }
         return ui.color.marker.background.default;
       }),
     ),
     $(
       bino.Picture,
       { scale: ui.measure.marker.scale },
+      new bino.Binding("visible", '', function(nodeData) {
+        return nodeData.marker !== undefined && !nodeData.marker.startsWith('children');
+      }),
       new bino.Binding("source", '', function(nodeData) {
-        if (nodeData.marker === undefined) {
+        if (nodeData.marker === undefined || nodeData.marker.startsWith('children')) {
           return '';
         }
         return MARKERS[nodeData.marker];
@@ -97,6 +131,7 @@ template["FirstMarker"] = function() {
         return marginConditions(nodeData.marker);
       }),
     ),
+    childCountTemplate('marker')
   );
 }
 
@@ -123,14 +158,20 @@ template["SecondMarker"] = function() {
         if (ui.color.marker.background[nodeData.marker2] !== undefined) {
           return ui.color.marker.background[nodeData.marker2];
         }
+        if (nodeData.marker2 !== undefined && nodeData.marker2.startsWith('children')) {
+          return ui.color.marker.background['children'];
+        }
         return ui.color.marker.background.default;
       }),
     ),
     $(
       bino.Picture,
       { scale: ui.measure.marker.scale },
+      new bino.Binding("visible", '', function(nodeData) {
+        return nodeData.marker2 !== undefined && !nodeData.marker2.startsWith('children');
+      }),
       new bino.Binding("source", '', function(nodeData) {
-        if (nodeData.marker2 === undefined) {
+        if (nodeData.marker2 === undefined || nodeData.marker2.startsWith('children')) {
           return '';
         }
         return MARKERS[nodeData.marker2];
@@ -139,6 +180,7 @@ template["SecondMarker"] = function() {
         return marginConditions(nodeData.marker2);
       }),
     ),
+    childCountTemplate('marker2')
   );
 }
 
@@ -165,14 +207,20 @@ template["ThirdMarker"] = function() {
         if (ui.color.marker.background[nodeData.marker3] !== undefined) {
           return ui.color.marker.background[nodeData.marker3];
         }
+        if (nodeData.marker3 !== undefined && nodeData.marker3.startsWith('children')) {
+          return ui.color.marker.background['children'];
+        }
         return ui.color.marker.background.default;
       }),
     ),
     $(
       bino.Picture,
       { scale: ui.measure.marker.scale },
+      new bino.Binding("visible", '', function(nodeData) {
+        return nodeData.marker3 !== undefined && !nodeData.marker3.startsWith('children');
+      }),
       new bino.Binding("source", '', function(nodeData) {
-        if (nodeData.marker3 === undefined) {
+        if (nodeData.marker3 === undefined || nodeData.marker3.startsWith('children')) {
           return '';
         }
         return MARKERS[nodeData.marker3];
@@ -181,6 +229,7 @@ template["ThirdMarker"] = function() {
         return marginConditions(nodeData.marker3);
       }),
     ),
+    childCountTemplate('marker3')
   );
 }
 
@@ -207,14 +256,20 @@ template["FourthMarker"] = function() {
         if (ui.color.marker.background[nodeData.marker4] !== undefined) {
           return ui.color.marker.background[nodeData.marker4];
         }
+        if (nodeData.marker4 !== undefined && nodeData.marker4.startsWith('children')) {
+          return ui.color.marker.background['children'];
+        }
         return ui.color.marker.background.default;
       }),
     ),
     $(
       bino.Picture,
       { scale: ui.measure.marker.scale },
+      new bino.Binding("visible", '', function(nodeData) {
+        return nodeData.marker4 !== undefined && !nodeData.marker4.startsWith('children');
+      }),
       new bino.Binding("source", '', function(nodeData) {
-        if (nodeData.marker4 === undefined) {
+        if (nodeData.marker4 === undefined || nodeData.marker4.startsWith('children')) {
           return '';
         }
         return MARKERS[nodeData.marker4];
@@ -223,10 +278,23 @@ template["FourthMarker"] = function() {
         return marginConditions(nodeData.marker4);
       }),
     ),
+    childCountTemplate('marker4')
   );
 }
 
 function marginConditions(marker) {
+  if (marker && marker.startsWith('children')) {
+    if (marker == 'children-4') {
+      return new bino.Margin(3.7, 0, 0, 6.5);
+    }
+    if (marker.length == 10) {
+      return new bino.Margin(3.7, 0, 0, 7.2);
+    }
+    if (marker == 'children-14') {
+      return new bino.Margin(3.7, 0, 0, 3.5)
+    }
+    return new bino.Margin(3.7, 0, 0, 3.9);
+  }
   if (marker === 'computer') {
     return new bino.Margin(2, 0, 0, 2);
   }

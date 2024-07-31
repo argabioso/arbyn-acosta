@@ -9,6 +9,7 @@ const STORIES = {
       <img alt="Baby Roland Argabioso" src="images/stories/Baby_Roland.lossy.webp" />
       <p class="caption"><em>Roland Argabioso when he was still a baby.</em></p>
 
+      <hr />
       <h5>Rising Through The Ranks</h5>
       <p>Roland's professional career is one that inspires us the most, marked by unwavering dedication, remarkable leadership, and immense intelligence. Beginning as a bureau agent, to commanding task forces, to eventually achieving the esteemed position of Deputy Director in 2016. His story exemplifies the power of commitment and skill in reaching the pinnacle of professional success.</p>
       <figure>
@@ -16,6 +17,7 @@ const STORIES = {
         <p class="caption"><em>ABS-CBN interviewing Roland Argabioso regarding Robert Ponce immediately admitting his participation in murdering Ruby Rose.</em></p>
       </figure>
 
+      <hr />
       <h5>NBI’s "Rockstars" in Pork Bust</h5>
       <p>Roland's Special Task Force investigated the P10-billion pork barrel scam in 2013, leading to the filing of plunder and graft and corruption charges against Senators Juan Ponce Enrile, Jinggoy Estrada, and Bong Revilla along with businesswoman Janet Lim-Napoles and 34 former and current government officials.</p>
       <figure>

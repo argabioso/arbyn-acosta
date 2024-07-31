@@ -44,6 +44,7 @@ const ui = {
         beer: COLORS.BROWN.bg,
         buysell: COLORS.PLAIN.bg,
         cattle: COLORS.BROWN.bg,
+        children: COLORS.RED.bg,
         church: COLORS.PLAIN.bg,
         computer: COLORS.PLAIN.bg,
         default: !isDark ? '#ffffff' : '#2f2f2f',
