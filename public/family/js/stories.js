@@ -128,10 +128,10 @@ const STORIES = {
             <img src="images/people/relatives/manolo.lossy.webp" />
           </div>
           <div class="person-details">
-            <span class="person-name">Manuel "Manolo" M. Acosta III</span>
+            <span class="person-name">Manuel M. Acosta III</span>
             <span class="relevant-dates">7 Nov 1966 — Living</span>
             <span class="birth-place"><strong>B</strong> : Caloocan, Philippines</span>
-            <span class="birth-place"><strong>L</strong> : Sangandaan, Caloocan, Philippines</span>
+            <span class="birth-place"><strong>L</strong> : Caloocan, Philippines</span>
           </div>
         </li>
         <li class="female details-3">
@@ -139,7 +139,7 @@ const STORIES = {
             <img src="images/people/relatives/susan.lossy.webp" />
           </div>
           <div class="person-details">
-            <span class="person-name">Susan "Hiraishi" M. Acosta</span>
+            <span class="person-name">Susan M. Acosta</span>
             <span class="relevant-dates">21 Feb 1968 — Living</span>
             <span class="birth-place"><strong>B</strong> : Caloocan, Philippines</span>
             <span class="birth-place"><strong>L</strong> : Japan</span>
@@ -201,7 +201,7 @@ const STORIES = {
             <span class="person-name">Victoria "Vicky" S. A. Acosta</span>
             <span class="relevant-dates">17 Jun 1945 — 19 Feb 2018</span>
             <span class="birth-place"><strong>B</strong> : Manila, Philippines</span>
-            <span class="death-place"><strong>D</strong> : Mother Teresa Crematory, Caloocan, PHL</span>
+            <span class="death-place"><strong>D</strong> : Caloocan, Philippines</span>
           </div>
         </li>
         <li class="female details-3">
@@ -220,7 +220,7 @@ const STORIES = {
             <img src="images/people/relatives/ben.lossy.webp" />
           </div>
           <div class="person-details">
-            <span class="person-name">Benjamin "Ben" S. A. Acosta Sr.</span>
+            <span class="person-name">Benjamin S. A. Acosta Sr.</span>
             <span class="relevant-dates">23 Oct 1949 — before 2020</span>
             <span class="birth-place"><strong>B</strong> : Manila, Philippines</span>
             <span class="death-place"><strong>D</strong> : United States of America</span>
