@@ -80,7 +80,7 @@ window.onload = function() {
     let decodedId = decodeUrlSafeBase64ToUtf8(Id);
 
     if (TREE_KEYMAP[decodedId]) {
-      let node = {'data': TREE_KEYMAP[decodedId]}
+      let node = {'key': decodedId, 'data': TREE_KEYMAP[decodedId]}
       showSidebar(node);
     }
   }

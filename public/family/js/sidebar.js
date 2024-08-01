@@ -2,12 +2,27 @@
 
 function showSidebar(node) {
   // Don't do anything if the person doesn't have any story
-  if (!STORIES[node.data['key']] || (isPrivate && node.data['living'])) {
+  if (!STORIES[node.key] || (isPrivate && node.data.living)) {
     return;
   }
 
+  // Check if the <div> for this node's details already exists
+  var existingDiv = document.getElementById("details-" + node.key);
+
+  // Hide all other div children
+  var sidebarContainer = document.getElementById("personDetailsDesc");
+  Array.from(sidebarContainer.children).forEach(function(childDiv) {
+    childDiv.style.display = "none";
+  });
+
+  if (existingDiv) {
+    // If it exists, show it
+    existingDiv.style.display = "block";
+  } else {
+    addPersonDetails(node);
+  }
+
   addQueryParam('id', encodeUtf8ToUrlSafeBase64(node.data.key));
-  modifyPersonDetails(node);
 
   var offcanvasElement = document.getElementById('personDetails');
   var offcanvas = new bootstrap.Offcanvas(offcanvasElement);
@@ -28,9 +43,13 @@ function simulateSmallCaps(text) {
   }).join(' ');
 }
 
-function modifyPersonDetails(node) {
+function addPersonDetails(node) {
   const nodeTitle = document.getElementById("personName");
   const nodeDescription = document.getElementById("personDetailsDesc");
+
+  // If it doesn't exist, create a new div and insert it
+  var newDiv = document.createElement("div");
+  newDiv.id = "details-" + node.key;
 
   let headline = STORIES[node.data.key]['headline'];
   if (headline) {
@@ -49,10 +68,13 @@ function modifyPersonDetails(node) {
 
   // Update sidebar content
   nodeTitle.innerHTML = simulateSmallCaps(node.data.basicName);
-  nodeDescription.innerHTML = `<img class="headshot" alt="headshot" src="images/people/${headshotFilename}" />`;
+  newDiv.innerHTML = `<img class="headshot" alt="headshot" src="images/people/${headshotFilename}" />`;
   if (headline) {
-    nodeDescription.innerHTML += `<p class="headline">${headline}</p>`;
-    nodeDescription.innerHTML += `<hr class="headshot-sep" />`;
+    newDiv.innerHTML += `<p class="headline">${headline}</p>`;
+    newDiv.innerHTML += `<hr class="headshot-sep" />`;
   }
-  nodeDescription.innerHTML += STORIES[node.data.key]['stories'];
+  newDiv.innerHTML += STORIES[node.data.key]['stories'];
+
+  // Insert the new div into the container
+  nodeDescription.appendChild(newDiv);
 }

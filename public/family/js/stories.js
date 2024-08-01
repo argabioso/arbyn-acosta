@@ -119,7 +119,7 @@ const STORIES = {
     `
   },
   'GQJK-G8W': { // Corazon Acosta
-    headline: 'A Graduate of University of the East - Caloocan with a Bachelor\'s Degree in Accountancy.',
+    headline: 'UE - Caloocan Accountancy graduate, housewife, and mother of three.',
     stories: `
       <h5>Siblings</h5>
       <ul class="siblings">
@@ -215,7 +215,7 @@ const STORIES = {
             <span class="death-place"><strong>D</strong> : United States of America</span>
           </div>
         </li>
-        <li class="female details-3">
+        <li class="male details-3">
           <div class="person-headshot">
             <img src="images/people/relatives/ben.lossy.webp" />
           </div>
