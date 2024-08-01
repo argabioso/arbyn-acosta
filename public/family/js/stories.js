@@ -75,14 +75,14 @@ const STORIES = {
       </ul>
 
       <hr />
-      <h5>Troubled Teenage and Young Adult Years</h5>
+      <h5>🤘🏼 Troubled Teenage and Young Adult Years</h5>
       <p>During his teenage years, Roland faced significant challenges, including a serious altercation with a neighbor that led to threats of murder. In response, his mother Lydia banished him to Bataan to live with his grandmother, Lucina, where he completed his high school education.</p>
       <p>For his college education, Roland enrolled at the University of the East - Caloocan, initially pursuing Mechanical Engineering. However, his grades were poor, filled with failures. After a serious conversation with his mother, he resolved to improve himself by shifting his focus to Accountancy. His dedication paid off as his academic performance greatly improved, culminating in passing the national board examination to become a Certified Public Accountant in the Philippines.</p>
       <img alt="Baby Roland Argabioso" src="images/stories/Baby_Roland.lossy.webp" />
       <p class="caption"><em>Roland Argabioso when he was still a baby.</em></p>
 
       <hr />
-      <h5>Rising Through The Ranks</h5>
+      <h5>⭐️ Rising Through The Ranks</h5>
       <p>Roland's professional career is one that inspires us the most, marked by unwavering dedication, remarkable leadership, and immense intelligence. Beginning as a bureau agent, to commanding task forces, to eventually achieving the esteemed position of Deputy Director in 2016. His story exemplifies the power of commitment and skill in reaching the pinnacle of professional success.</p>
       <figure>
         <div class="youtube-container"><iframe class="youtube-embed" src="https://www.youtube.com/embed/LFA6QfK7ZMc?si=U4zn0Fo7ZmmnVxpZ&amp;start=96" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
@@ -90,7 +90,7 @@ const STORIES = {
       </figure>
 
       <hr />
-      <h5>NBI’s "Rockstars" in Pork Bust</h5>
+      <h5>🕵🏼‍♂️ NBI’s "Rockstars" in Pork Bust</h5>
       <p>Roland's Special Task Force investigated the P10-billion pork barrel scam in 2013, leading to the filing of plunder and graft and corruption charges against Senators Juan Ponce Enrile, Jinggoy Estrada, and Bong Revilla along with businesswoman Janet Lim-Napoles and 34 former and current government officials.</p>
       <figure>
         <img alt="NBI: Pork Barrel Scam" src="images/stories/NBI_Rockstar.jpg" />
@@ -105,7 +105,7 @@ const STORIES = {
   'GHB8-7T6': { // Fernando Saplala
     headline: 'A war veteran who served his country against the Japanese forces in the second World War.',
     stories: `
-      <h5>Against All Odds: Survival of the Death March During World War II</h5>
+      <h5>🪖 Against All Odds: Survival of the Death March During World War II </h5>
       <p>Fernando's story is one of courage and resilience amidst the harrowing backdrop of World War II in the Philippines. Born on May 30, 1916, he fought bravely in the Battle of Bataan and survived the infamous Death March by ingeniously concealing himself in "nitchos" or death beds within a cemetery in Hermosa, Bataan. His quick thinking and bold moves were crucial to his survival during one of the darkest periods in Philippine history.</p>
       <figure>
         <img alt="Bataan Death March" src="images/stories/Photograph_of_American_Prisoners_Using_Improvised_Litters_to_Carry_Comrades,_05-1942_-_NARA_-_535564.lossy.webp" />
@@ -148,16 +148,27 @@ const STORIES = {
       </ul>
 
       <hr />
-      <h5>Orphaned at a Very Young Age</h5>
+      <h5>🍼 Orphaned at a Very Young Age</h5>
       <p>When Babycor (shorthand for "Baby Corazon") was still three years old, her mother, Catalina Maramba, passed away because of an illness. Although her father, Manuel Acosta Jr., was still alive he wasn't always present because he worked as a Seaman.</p>
       <img alt="Catalina Maramba with her children" src="images/stories/Lola_Catalina_Sick_with_Kids.webp" />
       <p class="caption"><em>Photo of Catalina Maramba with her three children: (from left to right) Susan Acosta, Corazon Acosta, and Manuel Acosta III.</em></p>
-      <p>Three months after Babycor turned eight years old, her father died as well. She and her siblings were taken care for by their aunt: Vicky Acosta. While growing up, she was also close to and was taken care for by her step mother (Manuel Acosta Jr.'s girlfriend) Loren "Nene" Asis.</p>
-      <img alt="Loren Asis and Corazon Acosta" src="images/stories/Lola_Nene.webp" />
-      <p class="caption"><em>Corazon Acosta and Loren Asis in Loremei Asis' graduation in 1998.</em></p>
+      <p>Three months after Babycor turned eight years old, her father died as well. According to Manuel Acosta III, Corazon's older brother, they were taken care for mostly by their grandparents: Manuel Acosta Sr. and Natividad San Agustin, and also their aunt: Vicky Acosta.</p>
+      <img alt="Acosta Family Swimming Together" src="images/stories/Acosta_Swimming.webp" />
+      <p class="caption"><em>Photo of the Acosta Family swimming together. From left to right: Vicky Acosta, Manuel Acosta III, Natividad San Agustin, Benjamin Acosta Jr., Corazon Acosta, and Manuel Acosta Sr.</em></p>
+      <p>Fortunately, specific only to Corazon though, she also grew up close to her step mother: Loren "Nene" Asis. Later, when Corazon was older, she also became the godmother of her younger step-sister Loremei Asis.</p>
+      <img alt="Loren Asis and Corazon Acosta" src="images/stories/Lola_Nene.lossy.webp" />
+      <p class="caption"><em>Loremei Asis' graduation. From left to right: Corazon Acosta, Loren "Nene" Asis, Arbyn Argabioso, and Loremei Asis.</em></p>
 
       <hr />
-      <h5>Spent <strong>₱0</strong> for College</h5>
+      <h5>🕹️ 90s Gamer Girl</h5>
+      <p>According to Darwin Acosta, Corazon's first cousin and youngest son of Benjamin Acosta Sr., Corazon was actually a great player of the original "Super Mario Bros." game. Without the advent of Social Media like what we have today, she discovered that she can gain unlimited lives in the game by doing what we now know as "Turtle Tipping"</p>
+      <figure>
+        <div class="youtube-container"><iframe class="youtube-embed" src="https://www.youtube.com/embed/_i0KzmOovqU?si=-01Wxzd-Z4rZn_0W" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+        <p class="caption"><em>Demo of how "Turtle Tipping" works.</em></p>
+      </figure>
+
+      <hr />
+      <h5>🎓 Spent <strong>₱0</strong> for College</h5>
       <p>It's probably not zero, but Corazon Acosta spent close to nothing when she studied Accountancy in the University of the East - Caloocan. Embarrassed and ashamed to accept money from her aunt: Amelia Acosta, she entered UE's Student Assistant program which acts as a "working student" type of scholarship.</p>
       <p>The minimum requirement is you do the job required by what department you are assigned to and you don't get any failing grade. In turn, you will receive a small stipend and a full scholarship for that semester. Because of her hardwork and dedication, she actually graduated a semester earlier than expected and have spent nothing on school tuition.</p>
       <img alt="Corazon in UE Caloocan's field" src="images/stories/Corazon_UE.webp" />

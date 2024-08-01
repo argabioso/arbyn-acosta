@@ -24,9 +24,22 @@ var tree = $(
 tree.nodeTemplate = $(
   bino.Node, {
     selectable: false,
-    click: function(e, node) {
+    click: (e, node) => {
       showSidebar(node)
     },
+    // Reset to pointer mouse cursor because
+    // people with stories are clickable
+    mouseEnter: (e, node) => {
+      if (STORIES[node.key] && (!isPrivate || (isPrivate && !node.data.living))) {
+        node.cursor = "pointer";
+      }
+    },
+    // Reset to default mouse cursor
+    mouseLeave: (e, node) => {
+      if (STORIES[node.key] && (!isPrivate || (isPrivate && !node.data.living))) {
+        node.cursor = "";
+      }
+    }
   },
   new bino.Binding('height', 'height'),
   new bino.Binding('width', 'width'),
