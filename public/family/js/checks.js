@@ -38,6 +38,7 @@ function checkPerPerson(person) {
     'detailsRow3', // derived and aesthetic attribute
     'detailsRow4', // derived and aesthetic attribute
 
+    'basicName', // composite attribute
     'fullName', // composite attribute
     'nickname', // optional and usually not documented
 

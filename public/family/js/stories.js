@@ -119,6 +119,7 @@ const STORIES = {
     `
   },
   'GQJK-G8W': { // Corazon Acosta
+    headshot: 'GQJK-G8W.signed.webp',
     headline: 'UE - Caloocan Accountancy graduate, housewife, and mother of three.',
     stories: `
       <h5>Siblings</h5>

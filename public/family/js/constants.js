@@ -4,6 +4,7 @@ var isChecking = false; // overridden by checks.js if imported
 const COLORS = {
   RED: {fg: '#EA1A68', bg: !isDark ? '#FDE8F0' : '#4B303B'},
   BLUE: {fg: '#4285F4', bg: !isDark ? '#E3EDFD' : '#323A4A'},
+  CYAN: {fg: '#22AAB6', bg: !isDark ? '#E8F6F7' : '#2E3C3D'},
   YELLOW: {fg: '#EA1A68', bg: !isDark ? '#FCF3E2' : '#40392C'},
   ORANGE: {fg: '#FE6F00', bg: !isDark ? '#FDEEE8' : '#46352C'},
   BROWN: {fg: !isDark ? '#BD5C17' : '#B3825D', bg: !isDark ? '#F3EDE9' : '#3E3834'},
@@ -67,7 +68,7 @@ const ui = {
         seaman: COLORS.PLAIN.bg,
         software: COLORS.PLAIN.bg,
         train: COLORS.PLAIN.bg,
-        book: COLORS.BROWN.bg,
+        book: COLORS.CYAN.bg,
       },
       symbol: {
         default: 'white',
