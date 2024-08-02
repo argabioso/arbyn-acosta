@@ -15,6 +15,8 @@ function showSidebar(node) {
     childDiv.style.display = "none";
   });
 
+  updatePersonName(node);
+
   if (existingDiv) {
     // If it exists, show it
     existingDiv.style.display = "block";
@@ -35,6 +37,12 @@ function showSidebar(node) {
   }
 }
 
+function updatePersonName(node) {
+  // Update the name in the sidebar
+  const nodeTitle = document.getElementById("personName");
+  nodeTitle.innerHTML = simulateSmallCaps(node.data.basicName);
+}
+
 function simulateSmallCaps(text) {
   return text.split(' ').map(word => {
     const firstLetter = word.charAt(0);
@@ -44,7 +52,6 @@ function simulateSmallCaps(text) {
 }
 
 function addPersonDetails(node) {
-  const nodeTitle = document.getElementById("personName");
   const nodeDescription = document.getElementById("personDetailsDesc");
 
   // If it doesn't exist, create a new div and insert it
@@ -67,7 +74,6 @@ function addPersonDetails(node) {
   }
 
   // Update sidebar content
-  nodeTitle.innerHTML = simulateSmallCaps(node.data.basicName);
   newDiv.innerHTML = `<img class="headshot" alt="headshot" src="images/people/${headshotFilename}" />`;
   if (headline) {
     newDiv.innerHTML += `<p class="headline">${headline}</p>`;
