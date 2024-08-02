@@ -72,6 +72,20 @@ model.nodeDataArray = TREE_DATA;
 tree.model = model;
 
 window.onload = function() {
+  // Loop through all localStorage keys
+  for (let i = 0; i < localStorage.length; i++) {
+      // Get the key name
+      let key = localStorage.key(i);
+
+      // Check if the key starts with "family-tree-"
+      if (key && key.startsWith('family-tree-')) {
+          // Remove the key from localStorage
+          localStorage.removeItem(key);
+          // Since we've removed an item, adjust the index to account for the shift in the keys
+          i--;
+      }
+  }
+
   // Show the copyright once everything loads up
   document.querySelector('footer').classList.remove("hidden");
 
@@ -87,6 +101,11 @@ window.onload = function() {
 
   const closeButton = document.getElementById('personDetails');
   closeButton.addEventListener('hide.bs.offcanvas', () => {
+    const encodedKey = window.location.get("id");
+    const sidebarContainer = document.getElementById('personDetailsDesc');
+
+    localStorage.setItem(`family-tree-id-${encodedKey}-scroll`, sidebarContainer.scrollTop);
+
     removeQueryParam('id');
   });
 };

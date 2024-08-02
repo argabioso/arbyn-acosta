@@ -1090,6 +1090,15 @@ TREE_DATA.forEach(node => {
 });
 // Function to handle the click event on a node and show the sidebar
 
+function setScrollPos(selector, scroll) {
+  var divs = document.querySelectorAll(selector);
+
+  for (var p = 0; p < divs.length; p++) {
+    // Reset the scroll position to the top-left corner
+    divs[p].scrollTop = scroll;
+  }
+}
+
 function showSidebar(node) {
   // Don't do anything if the person doesn't have any story
   if (!STORIES[node.key] || (isPrivate && node.data.living)) {
@@ -1114,7 +1123,14 @@ function showSidebar(node) {
     addPersonDetails(node);
   }
 
-  addQueryParam('id', encodeUtf8ToUrlSafeBase64(node.data.key));
+  let encodedKey = encodeUtf8ToUrlSafeBase64(node.data.key);
+  addQueryParam('id', encodedKey);
+
+  // Reset scroll if a different person is clicked
+  if (localStorage.getItem("family-tree-id") !== encodedKey) {
+    setScrollPos("#personDetailsDesc", parseInt(localStorage.getItem(`family-tree-id-${encodedKey}-scroll`)));
+  } else {
+  }
 
   var offcanvasElement = document.getElementById('personDetails');
   var offcanvas = new bootstrap.Offcanvas(offcanvasElement);
@@ -4252,6 +4268,20 @@ model.nodeDataArray = TREE_DATA;
 tree.model = model;
 
 window.onload = function() {
+  // Loop through all localStorage keys
+  for (let i = 0; i < localStorage.length; i++) {
+      // Get the key name
+      let key = localStorage.key(i);
+
+      // Check if the key starts with "family-tree-"
+      if (key && key.startsWith('family-tree-')) {
+          // Remove the key from localStorage
+          localStorage.removeItem(key);
+          // Since we've removed an item, adjust the index to account for the shift in the keys
+          i--;
+      }
+  }
+
   // Show the copyright once everything loads up
   document.querySelector('footer').classList.remove("hidden");
 
@@ -4267,6 +4297,11 @@ window.onload = function() {
 
   const closeButton = document.getElementById('personDetails');
   closeButton.addEventListener('hide.bs.offcanvas', () => {
+    const encodedKey = window.location.get("id");
+    const sidebarContainer = document.getElementById('personDetailsDesc');
+
+    localStorage.setItem(`family-tree-id-${encodedKey}-scroll`, sidebarContainer.scrollTop);
+
     removeQueryParam('id');
   });
 };

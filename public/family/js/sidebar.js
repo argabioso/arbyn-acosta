@@ -1,5 +1,14 @@
 // Function to handle the click event on a node and show the sidebar
 
+function setScrollPos(selector, scroll) {
+  var divs = document.querySelectorAll(selector);
+
+  for (var p = 0; p < divs.length; p++) {
+    // Reset the scroll position to the top-left corner
+    divs[p].scrollTop = scroll;
+  }
+}
+
 function showSidebar(node) {
   // Don't do anything if the person doesn't have any story
   if (!STORIES[node.key] || (isPrivate && node.data.living)) {
@@ -24,7 +33,14 @@ function showSidebar(node) {
     addPersonDetails(node);
   }
 
-  addQueryParam('id', encodeUtf8ToUrlSafeBase64(node.data.key));
+  let encodedKey = encodeUtf8ToUrlSafeBase64(node.data.key);
+  addQueryParam('id', encodedKey);
+
+  // Reset scroll if a different person is clicked
+  if (localStorage.getItem("family-tree-id") !== encodedKey) {
+    setScrollPos("#personDetailsDesc", parseInt(localStorage.getItem(`family-tree-id-${encodedKey}-scroll`)));
+  } else {
+  }
 
   var offcanvasElement = document.getElementById('personDetails');
   var offcanvas = new bootstrap.Offcanvas(offcanvasElement);
