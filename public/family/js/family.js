@@ -842,6 +842,7 @@ var TREE_DATA = [
     `
   },
   'GHBD-7M4': { // Lolo Manuel Jr.
+    headshot: 'GHBD-7M4.signed.webp',
     stories: `
       <h5>Twin</h5>
       <ul class="siblings">
