@@ -932,6 +932,9 @@ for (const [i, person] of Object.entries(TREE_DATA)) {
 
   let firstName = person.firstName;
   let nickname = (!person.nickname) ? '' : `"${person.nickname}" `;
+  if (isPrivate && person.living) {
+    nickname = '';
+  }
 
   TREE_DATA[i]['basicName'] = (
     firstName +
