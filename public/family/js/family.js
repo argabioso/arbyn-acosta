@@ -661,7 +661,7 @@ var TREE_DATA = [
 /*
   Grumaduate si Nanay ng May 30, 1994 ng BS Accounting sa UE Caloocan
   Grumaduate si Nanay ng March 22, 1990 ng Highschool
-*/const STORIES = {
+*/var STORIES = {
   'GQX8-CQP': { // Arbyn Argabioso
     headline: 'An Electronics-Engineering-graduate turned Software Engineer focused on recording his family\'s history.',
     stories: `

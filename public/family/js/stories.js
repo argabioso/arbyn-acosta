@@ -1,4 +1,4 @@
-const STORIES = {
+var STORIES = {
   'GQX8-CQP': { // Arbyn Argabioso
     headline: 'An Electronics-Engineering-graduate turned Software Engineer focused on recording his family\'s history.',
     stories: `
