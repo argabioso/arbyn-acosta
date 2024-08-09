@@ -90,13 +90,63 @@ function addPersonDetails(node) {
   }
 
   // Update sidebar content
-  newDiv.innerHTML = `<img class="headshot" alt="headshot" src="images/people/${headshotFilename}" />`;
-  if (headline) {
-    newDiv.innerHTML += `<p class="headline">${headline}</p>`;
-    newDiv.innerHTML += `<hr class="headshot-sep" />`;
+  let tempInnerHTML = `<img class="headshot" alt="headshot" src="images/people/${headshotFilename}" />`;
+  let hasBadges = false;
+
+  var storyMarkerLabel = {
+    'computer': 'IT',
+    'intelligence': 'Intelligence Officer',
+    'government': 'Government Official',
+    'software': 'Software Engineer',
+    'book': 'has stories',
+    'male-twin': 'has male twin',
+    'dna': 'DNA-tested',
+    'military': 'Military Veteran',
+    'housewife': 'Housewife',
   }
-  newDiv.innerHTML += STORIES[node.data.key]['stories'];
+
+  if (headline) {
+    tempInnerHTML += `<p class="headline">${headline}</p>`;
+    tempInnerHTML += `<hr class="headshot-sep" />`;
+  }
+
+  tempInnerHTML += '<div class="badges">'
+  if (node.data.hasDNA) {
+    tempInnerHTML += `
+      <span class="badge rounded-pill story-marker" style="background: ${ui.color.marker.background.dna}">
+        <img src=${MARKERS['dna']} />
+        ${storyMarkerLabel['dna']}
+      </span>
+    `
+    hasBadges = true;
+  }
+  for (let i = 1; i <= 4; i++) {
+    let markerKey = (i == 1) ? 'marker' : `marker${i}`;
+    let marker = node.data[markerKey];
+    let markerLabel = (storyMarkerLabel[marker] !== undefined) ? storyMarkerLabel[marker] : marker;
+    if (marker !== undefined) {
+      tempInnerHTML += `
+        <span class="badge rounded-pill story-marker" style="background: ${ui.color.marker.background[marker]}">
+          <img src=${MARKERS[marker]} />
+          ${markerLabel}
+        </span>
+      `
+      hasBadges = true;
+    }
+  }
+  tempInnerHTML += '</div>'
+
+  if (hasBadges && !headline) {
+    tempInnerHTML += `<hr class="headshot-sep" />`;
+  }
+
+  if (headline) {
+    tempInnerHTML += `<hr />`;
+  }
+  tempInnerHTML += STORIES[node.data.key]['stories'];
 
   // Insert the new div into the container
+
+  newDiv.innerHTML = tempInnerHTML;
   nodeDescription.appendChild(newDiv);
 }

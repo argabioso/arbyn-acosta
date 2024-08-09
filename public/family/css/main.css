@@ -280,3 +280,22 @@ h5 .chill {
   font-family: 'Google Sans Text', sans-serif;
   font-weight: 400;
 }
+
+div.badges {
+  margin-bottom: -4px;
+}
+
+#personDetailsDesc .badge.rounded-pill > img {
+  width: 19px;
+  margin: 0 var(--bs-badge-padding-y) 0 0;
+}
+
+#personDetailsDesc .badge {
+  font-family: 'Google Sans', sans-serif;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 11px;
+  margin-bottom: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
