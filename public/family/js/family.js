@@ -389,8 +389,8 @@ const COLORS = {
   RED: {fg: '#EA1A68', bg: !isDark ? '#FDE8F0' : '#4B303B'},
   BLUE: {fg: '#4285F4', bg: !isDark ? '#E3EDFD' : '#323A4A'},
   CYAN: {fg: '#22AAB6', bg: !isDark ? '#E8F6F7' : '#2E3C3D'},
-  YELLOW: {fg: '#EA1A68', bg: !isDark ? '#FCF3E2' : '#40392C'},
   ORANGE: {fg: '#FE6F00', bg: !isDark ? '#FDEEE8' : '#46352C'},
+  YELLOW: {fg: !isDark ? '#E99E0E' : '#FFB11B', bg: !isDark ? '#FCF3E2' : '#40392C'},
   BROWN: {fg: !isDark ? '#BD5C17' : '#B3825D', bg: !isDark ? '#F3EDE9' : '#3E3834'},
   PURPLE: {fg: !isDark ? '#9831CF' : '#B73DF9', bg: !isDark ? '#F2E6F9' : '#41324B'},
   GREEN: {fg: !isDark ? '#259F31' : '#28BC36', bg: !isDark ? '#DFF1E0' : '#31402E'},
@@ -453,6 +453,39 @@ const ui = {
         software: COLORS.PLAIN.bg,
         train: COLORS.PLAIN.bg,
         book: COLORS.CYAN.bg,
+      },
+      foreground: {
+        'female-twin': COLORS.RED.fg,
+        'male-twin': COLORS.BLUE.fg,
+        apparel: COLORS.ORANGE.fg,
+        beautician: COLORS.RED.fg,
+        beer: COLORS.BROWN.fg,
+        buysell: COLORS.PLAIN.fg,
+        cattle: COLORS.BROWN.fg,
+        church: COLORS.PLAIN.fg,
+        computer: COLORS.PLAIN.fg,
+        default: !isDark ? '#ffffff' : '#2f2f2f',
+        dna: COLORS.PURPLE.fg,
+        farming: COLORS.GREEN.fg,
+        government: COLORS.PLAIN.fg,
+        househusband: COLORS.BLUE.fg,
+        housekeeper: COLORS.RED.fg,
+        housewife: COLORS.RED.fg,
+        intelligence: COLORS.BLUE.fg,
+        investigate: COLORS.PLAIN.fg,
+        land: !isDark ? '#f2ebe6' : '#393633',
+        manager: COLORS.PLAIN.fg,
+        manufacturing: COLORS.PLAIN.fg,
+        military: COLORS.YELLOW.fg,
+        sergeant: COLORS.YELLOW.fg,
+        police: COLORS.BLUE.fg,
+        prelations: COLORS.YELLOW.fg,
+        retail: COLORS.ORANGE.fg,
+        sales: COLORS.YELLOW.fg,
+        seaman: COLORS.PLAIN.fg,
+        software: COLORS.PLAIN.fg,
+        train: COLORS.PLAIN.fg,
+        book: COLORS.CYAN.fg,
       },
       symbol: {
         default: 'white',
@@ -1210,7 +1243,10 @@ function addPersonDetails(node) {
   tempInnerHTML += '<div class="badges">'
   if (node.data.hasDNA) {
     tempInnerHTML += `
-      <span class="badge rounded-pill story-marker" style="background: ${ui.color.marker.background.dna}">
+      <span class="badge rounded-pill story-marker" style="
+        background: ${adjustBrightness(ui.color.marker.background.dna, 3 * (!isDark ? -1 : 1))};
+        color: ${adjustBrightness(ui.color.marker.foreground.dna, 5 * (!isDark ? -1 : 1))};
+      ">
         <img src=${MARKERS['dna']} />
         ${storyMarkerLabel['dna']}
       </span>
@@ -1223,7 +1259,10 @@ function addPersonDetails(node) {
     let markerLabel = (storyMarkerLabel[marker] !== undefined) ? storyMarkerLabel[marker] : marker;
     if (marker !== undefined) {
       tempInnerHTML += `
-        <span class="badge rounded-pill story-marker" style="background: ${ui.color.marker.background[marker]}">
+        <span class="badge rounded-pill story-marker" style="
+          background: ${adjustBrightness(ui.color.marker.background[marker], 3 * (!isDark ? -1 : 1))};
+          color: ${adjustBrightness(ui.color.marker.foreground[marker], 5 * (!isDark ? -1 : 1))};
+        ">
           <img src=${MARKERS[marker]} />
           ${markerLabel}
         </span>
@@ -1234,7 +1273,7 @@ function addPersonDetails(node) {
   tempInnerHTML += '</div>'
 
   if (hasBadges && !headline) {
-    tempInnerHTML += `<hr class="headshot-sep" />`;
+    tempInnerHTML += `<hr />`;
   }
 
   if (headline) {
@@ -1247,7 +1286,28 @@ function addPersonDetails(node) {
   newDiv.innerHTML = tempInnerHTML;
   nodeDescription.appendChild(newDiv);
 }
-// Age for Mothers (youngest ever was 9) so let's use 10
+
+function adjustBrightness(hex, percent) {
+  // Ensure hex is a valid 6-digit hex code
+  if (hex.length === 4) {
+    hex = `#${hex[1]}${hex[1]}${hex[2]}${hex[2]}${hex[3]}${hex[3]}`;
+  }
+
+  let rgb = "#";
+
+  for (let i = 1; i < 7; i += 2) {
+    // Convert each color component to a decimal
+    const component = parseInt(hex.substr(i, 2), 16);
+
+    // Adjust brightness by the percentage provided
+    const adjusted = Math.min(255, Math.max(0, Math.floor(component * (1 + percent / 100))));
+
+    // Convert back to hex and ensure it's always two digits
+    rgb += ("0" + adjusted.toString(16)).slice(-2);
+  }
+
+  return rgb;
+}// Age for Mothers (youngest ever was 9) so let's use 10
 // Age for Fathers (youngest ever was 5) so let's use 6
 
 const SOURCES = {

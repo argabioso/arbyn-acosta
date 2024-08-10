@@ -113,7 +113,10 @@ function addPersonDetails(node) {
   tempInnerHTML += '<div class="badges">'
   if (node.data.hasDNA) {
     tempInnerHTML += `
-      <span class="badge rounded-pill story-marker" style="background: ${ui.color.marker.background.dna}">
+      <span class="badge rounded-pill story-marker" style="
+        background: ${adjustBrightness(ui.color.marker.background.dna, 3 * (!isDark ? -1 : 1))};
+        color: ${adjustBrightness(ui.color.marker.foreground.dna, 5 * (!isDark ? -1 : 1))};
+      ">
         <img src=${MARKERS['dna']} />
         ${storyMarkerLabel['dna']}
       </span>
@@ -126,7 +129,10 @@ function addPersonDetails(node) {
     let markerLabel = (storyMarkerLabel[marker] !== undefined) ? storyMarkerLabel[marker] : marker;
     if (marker !== undefined) {
       tempInnerHTML += `
-        <span class="badge rounded-pill story-marker" style="background: ${ui.color.marker.background[marker]}">
+        <span class="badge rounded-pill story-marker" style="
+          background: ${adjustBrightness(ui.color.marker.background[marker], 3 * (!isDark ? -1 : 1))};
+          color: ${adjustBrightness(ui.color.marker.foreground[marker], 5 * (!isDark ? -1 : 1))};
+        ">
           <img src=${MARKERS[marker]} />
           ${markerLabel}
         </span>
@@ -137,7 +143,7 @@ function addPersonDetails(node) {
   tempInnerHTML += '</div>'
 
   if (hasBadges && !headline) {
-    tempInnerHTML += `<hr class="headshot-sep" />`;
+    tempInnerHTML += `<hr />`;
   }
 
   if (headline) {
@@ -149,4 +155,26 @@ function addPersonDetails(node) {
 
   newDiv.innerHTML = tempInnerHTML;
   nodeDescription.appendChild(newDiv);
+}
+
+function adjustBrightness(hex, percent) {
+  // Ensure hex is a valid 6-digit hex code
+  if (hex.length === 4) {
+    hex = `#${hex[1]}${hex[1]}${hex[2]}${hex[2]}${hex[3]}${hex[3]}`;
+  }
+
+  let rgb = "#";
+
+  for (let i = 1; i < 7; i += 2) {
+    // Convert each color component to a decimal
+    const component = parseInt(hex.substr(i, 2), 16);
+
+    // Adjust brightness by the percentage provided
+    const adjusted = Math.min(255, Math.max(0, Math.floor(component * (1 + percent / 100))));
+
+    // Convert back to hex and ensure it's always two digits
+    rgb += ("0" + adjusted.toString(16)).slice(-2);
+  }
+
+  return rgb;
 }
