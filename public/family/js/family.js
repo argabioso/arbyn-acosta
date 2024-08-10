@@ -434,6 +434,7 @@ const ui = {
         default: !isDark ? '#ffffff' : '#2f2f2f',
         dna: COLORS.PURPLE.bg,
         farming: COLORS.GREEN.bg,
+        fishery: COLORS.PLAIN.bg,
         government: COLORS.PLAIN.bg,
         househusband: COLORS.BLUE.bg,
         housekeeper: COLORS.RED.bg,
@@ -467,6 +468,7 @@ const ui = {
         default: !isDark ? '#ffffff' : '#2f2f2f',
         dna: COLORS.PURPLE.fg,
         farming: COLORS.GREEN.fg,
+        fishery: COLORS.PLAIN.fg,
         government: COLORS.PLAIN.fg,
         househusband: COLORS.BLUE.fg,
         housekeeper: COLORS.RED.fg,
@@ -573,7 +575,8 @@ const LIGHT_MARKERS = {
     "sergeant": `<svg xmlns="http://www.w3.org/2000/svg" height="56px" viewBox="0 -960 960 960" width="56px" fill="#E99E0E"><path d="M480-259 315-94q-14 15-33 14.5T249-94q-14-14-14-32.5t14-33.5l165-165q28-27 66-27t66 27l165 165q14 15 14 34t-14 32q-14 15-33 15t-33-15L480-259Zm0-269L315-363q-14 14-33 14t-33-14q-14-14-14-33t14-33l165-165q28-27 66-27t66 27l165 165q14 14 14 33.5T711-363q-14 14-33 14t-33-14L480-528Zm0-269L315-631q-14 14-33 13.5T249-631q-14-14-14-33t14-33l165-165q28-28 66-28t66 28l198 198-66 66-198-199Z"/></svg>`,
     "software": `<svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#333333"><path d="m203.17-479.57 145.96 145.96q15.52 15.52 15.24 37.33-.28 21.8-15.8 37.32-15.53 15.53-37.05 15.24-21.52-.28-37.04-15.24l-184-183.43q-7.7-7.7-11.61-17.52-3.91-9.83-3.91-20.09t3.91-20.09q3.91-9.82 11.61-17.52l184-184q15.95-15.96 37.54-15.96t37.55 15.96q15.95 15.96 15.95 37.83 0 21.87-15.95 37.82l-146.4 146.39Zm553.66-.86L610.87-626.39q-15.52-15.52-15.24-37.33.28-21.8 15.8-37.32 15.53-15.53 37.05-15.24 21.52.28 37.04 15.24l184 183.43q7.7 7.7 11.61 17.52 3.91 9.83 3.91 20.09t-3.91 20.09q-3.91 9.82-11.61 17.52l-184 184q-15.95 15.96-37.32 15.74-21.37-.22-37.33-16.18-15.96-15.95-15.96-37.82t15.96-37.83l145.96-145.95Z"/></svg>`,
     "train": `<svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#333333"><path d="M140.78-348.48V-720q0-60.23 30.61-96.03 30.61-35.8 79-53.99 48.39-18.2 109-23.7t120.61-5.5q66 0 127.33 5.5 61.32 5.5 108.5 23.7 47.17 18.19 75.28 53.99T819.22-720v371.52q0 69.74-46.72 119.57-46.72 49.82-114.2 53.22l20 20q19.83 19.82 9.42 45-10.42 25.17-38.79 25.17-8.28 0-15.63-3.07-7.34-3.06-13.47-8.63L542.48-174H417.52l-77.35 76.78q-6.13 5.57-13.54 8.63-7.42 3.07-15.41 3.07-27.52 0-38.44-25.17-10.91-25.18 8.92-45l20-20q-67.48-3.4-114.2-53.22-46.72-49.83-46.72-119.57ZM480-793.22q-106 0-155 12.5t-67 27.5h441.22q-15-17-61.11-28.5T480-793.22Zm-233.22 240H440v-120H246.78v120Zm397.39 80H246.78h466.44-69.05Zm-124.17-80h193.22v-120H520v120ZM343.39-316.61q26 0 43-17t17-43q0-26-17-43t-43-17q-26 0-43 17t-17 43q0 26 17 43t43 17Zm273.22 0q26 0 43-17t17-43q0-26-17-43t-43-17q-26 0-43 17t-17 43q0 26 17 43t43 17ZM315.83-280h328.34q29.39 0 49.22-19.4t19.83-49.08v-124.74H246.78v124.74q0 29.68 19.83 49.08t49.22 19.4ZM480-753.22H699.22 258h222Z"/></svg>`,
-    "book": `<svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#22AAB6"><path d="M481.6-140.56q-13.17 0-25.36-3.57-12.2-3.56-22.89-9.13-39.87-23.87-83.03-37.59-43.17-13.71-89.81-13.71-40.81 0-78.9 11t-73.6 29.87q-30.71 15.95-59.99-1.09t-29.28-50.78v-480.87q0-20.77 9.04-39.01 9.05-18.24 27.7-27.91 47.19-22.43 98.44-33.37 51.25-10.93 104.56-10.93 59.45 0 115.49 15 56.03 15 106.03 47v507.52q51-31.43 107-49.57 56-18.13 113-18.13 36 0 70.5 6.57 34.5 6.56 69.5 19.13v-508.35q16.65 5.57 32.78 11.91 16.13 6.35 32.87 13.22 18.65 8.65 27.13 27.45 8.48 18.79 8.48 39.47v490.78q0 31.09-29.28 44.5t-60.2-2.54q-35.3-18.87-73.49-29.87t-78.25-11q-45.78 0-88.24 13.85-42.45 13.86-81.76 37.45-10.13 5.57-22.7 9.13-12.57 3.57-25.74 3.57Zm129.88-249.48q-15.26 13.82-33.37 5.9Q560-392.07 560-412.43v-320.83q0-6.25 2.28-11.72 2.29-5.47 6.85-10.11l138.39-141.65q14.26-15.26 33.37-7.13Q760-895.74 760-875.35v335.78q0 6.33-2.85 11.66-2.86 5.32-7.28 10.08L611.48-390.04ZM378.74-286.91v-395.87q-29.48-13.18-58.09-18.11-28.61-4.94-60.51-4.94-38.85 0-73.21 6.52-34.36 6.51-66.93 17.66v402.26q33.38-13.41 67.76-19.92 34.37-6.52 71.74-6.52 33.41 0 61.37 3.87t57.87 15.05Zm0 0v-396.44 396.44Z"/></svg>`
+    "book": `<svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#22AAB6"><path d="M481.6-140.56q-13.17 0-25.36-3.57-12.2-3.56-22.89-9.13-39.87-23.87-83.03-37.59-43.17-13.71-89.81-13.71-40.81 0-78.9 11t-73.6 29.87q-30.71 15.95-59.99-1.09t-29.28-50.78v-480.87q0-20.77 9.04-39.01 9.05-18.24 27.7-27.91 47.19-22.43 98.44-33.37 51.25-10.93 104.56-10.93 59.45 0 115.49 15 56.03 15 106.03 47v507.52q51-31.43 107-49.57 56-18.13 113-18.13 36 0 70.5 6.57 34.5 6.56 69.5 19.13v-508.35q16.65 5.57 32.78 11.91 16.13 6.35 32.87 13.22 18.65 8.65 27.13 27.45 8.48 18.79 8.48 39.47v490.78q0 31.09-29.28 44.5t-60.2-2.54q-35.3-18.87-73.49-29.87t-78.25-11q-45.78 0-88.24 13.85-42.45 13.86-81.76 37.45-10.13 5.57-22.7 9.13-12.57 3.57-25.74 3.57Zm129.88-249.48q-15.26 13.82-33.37 5.9Q560-392.07 560-412.43v-320.83q0-6.25 2.28-11.72 2.29-5.47 6.85-10.11l138.39-141.65q14.26-15.26 33.37-7.13Q760-895.74 760-875.35v335.78q0 6.33-2.85 11.66-2.86 5.32-7.28 10.08L611.48-390.04ZM378.74-286.91v-395.87q-29.48-13.18-58.09-18.11-28.61-4.94-60.51-4.94-38.85 0-73.21 6.52-34.36 6.51-66.93 17.66v402.26q33.38-13.41 67.76-19.92 34.37-6.52 71.74-6.52 33.41 0 61.37 3.87t57.87 15.05Zm0 0v-396.44 396.44Z"/></svg>`,
+    "fishery": `<svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#333333"><path d="M438.67-92Q330-92 251-162.67 172-233.33 172-339v-229.33q0-17.11 16-23.23 16-6.11 28.5 5.49l163.17 158.4Q396-412.42 396-390.44q0 21.98-16.41 38.54-15.26 14.9-35.9 15.73-20.65.84-36.36-12.83l-31.66-29.67v45.34q0 61.33 49.36 99.66 49.36 38.34 113.83 38.34T552.17-236Q601-276.67 601-339v-138.33q-36.33-15.34-59.83-47.06-23.5-31.73-23.5-70.84 0-39.1 23.66-70.6Q565-697.33 601-713.67v-143q0-22.1 15.28-37.05 15.29-14.95 37.36-14.95t36.88 14.95q14.81 14.95 14.81 37.05v143q35.34 16.34 59.34 48.06 24 31.73 24 70.84 0 39.1-24 70.1-24 31-59.34 47.34v138.56q0 105.44-79.44 176.1Q546.44-92 438.67-92Zm214.55-449q22.78 0 38.61-15.72 15.84-15.71 15.84-38.16 0-22.45-15.72-38.29Q676.23-649 653.45-649t-38.62 15.81Q599-617.38 599-595.45q0 22.78 15.72 38.62Q630.43-541 653.22-541Zm.11-54.33Z"/></svg>`,
 };
 
 const DARK_MARKERS = {
@@ -597,6 +600,7 @@ const DARK_MARKERS = {
     "dna": LIGHT_MARKERS["dna"].replace("#9831CF", "#B73DF9"),
     "intelligence": LIGHT_MARKERS["intelligence"].replace("#4285F4", "#4B8FFF"),
     "farming": LIGHT_MARKERS["farming"].replace("#259F31", "#28BC36"),
+    "fishery": LIGHT_MARKERS["fishery"].replace("#333333", "#EAEAEA"),
     "government": LIGHT_MARKERS["government"].replace("#333333", "#EAEAEA"),
     "investigate": LIGHT_MARKERS["investigate"].replace("#333333", "#EAEAEA"),
     "manufacturing": LIGHT_MARKERS["manufacturing"].replace("#333333", "#EAEAEA"),
@@ -647,7 +651,7 @@ var TREE_DATA = [
             { key: 'GNNH-JLM',       child: 'GHB8-7T6', prefix: null,   firstName: 'Estanislao',         nickname: null,         middleName: null,          lastName: 'Saplala',     suffix: null,  gender: 'M', birthDate: null,                baptismDate: null,         marriageDate: null,         deathDate: null,               deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                               marriagePlace: null,                                               livingPlace: null,                        deathPlace: null,                                                   vitalsCompleteAndVerified: false, },
             { key: 'GJJX-1SG',       child: 'GHB8-7T6', prefix: null,   firstName: 'Adela',              nickname: null,         middleName: null,          lastName: 'Sison',       suffix: null,  gender: 'F', birthDate: null,                baptismDate: null,         marriageDate: null,         deathDate: null,               deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                               marriagePlace: null,                                               livingPlace: null,                        deathPlace: null,                                                   vitalsCompleteAndVerified: false, },
           { key: 'GHB8-GZL',         child: 'GHBZ-YVX', prefix: null,   firstName: 'Lucina',             nickname: 'Lucing',     middleName: 'Gutierrez',   lastName: 'Perez',       suffix: null,  gender: 'F', birthDate: '1919-11-16',        baptismDate: null,         marriageDate: '1937',       deathDate: '1986-10-02',       deathAge: null,  living: false, hasDNA: false, hasImage: true,   birthPlace: 'Orani, Bataan, PHL',                               marriagePlace: null,                                               livingPlace: null,                        deathPlace: 'Dinalupihan, Bataan, PHL',                             vitalsCompleteAndVerified: false, marker: 'housewife' },
-            { key: 'GHB8-M8D',       child: 'GHB8-GZL', prefix: null,   firstName: 'Victor',             nickname: null,         middleName: null,          lastName: 'Perez',       suffix: null,  gender: 'M', birthDate: 'before 1913',       baptismDate: null,         marriageDate: null,         deathDate: 'after 1952',       deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                               marriagePlace: null,                                               livingPlace: null,                        deathPlace: null,                                                   vitalsCompleteAndVerified: false, },
+            { key: 'GHB8-M8D',       child: 'GHB8-GZL', prefix: null,   firstName: 'Victor',             nickname: null,         middleName: null,          lastName: 'Perez',       suffix: null,  gender: 'M', birthDate: 'before 1913',       baptismDate: null,         marriageDate: null,         deathDate: 'after 1952',       deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                               marriagePlace: null,                                               livingPlace: null,                        deathPlace: null,                                                   vitalsCompleteAndVerified: false, marker: 'fishery' },
             { key: 'GHB8-M86',       child: 'GHB8-GZL', prefix: null,   firstName: 'Genoveba',           nickname: null,         middleName: null,          lastName: 'Gutierrez',   suffix: null,  gender: 'F', birthDate: null,                baptismDate: null,         marriageDate: null,         deathDate: null,               deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                               marriagePlace: null,                                               livingPlace: null,                        deathPlace: null,                                                   vitalsCompleteAndVerified: false, },
       { key: 'GQJK-G8W',             child: 'GQX8-CQP', prefix: null,   firstName: 'Corazon',            nickname: 'Babycor',    middleName: 'Maramba',     lastName: 'Acosta',      suffix: null,  gender: 'F', birthDate: '1971-03-10',        baptismDate: '1971-09-05', marriageDate: '2003-02-03', deathDate: '2018-05-25',       deathAge: null,  living: false, hasDNA: false, hasImage: true,   birthPlace: 'The Family Clinic, Sampaloc, Manila, PHL',         marriagePlace: 'City Hall, Ermita, Manila, PHL',                   livingPlace: null,                        deathPlace: 'Municipal Cemetery, Magdalena, Laguna, PHL',           vitalsCompleteAndVerified: true,  marker: 'housewife' },
         { key: 'GHBD-7M4',           child: 'GQJK-G8W', prefix: null,   firstName: 'Manuel',             nickname: null,         middleName: 'San Agustin', lastName: 'Acosta',      suffix: 'Jr.', gender: 'M', birthDate: '1948-07-06',        baptismDate: null,         marriageDate: '1966-03-26', deathDate: '1979-06-07',       deathAge: null,  living: false, hasDNA: false, hasImage: true,   birthPlace: 'North General Hospital, España, Manila, PHL',      marriagePlace: 'Knox Methodist Church, Manila, PHL',               livingPlace: null,                        deathPlace: 'Forest Lawn, Covina , California, USA',                vitalsCompleteAndVerified: true,  marker: 'male-twin', marker2: 'seaman' },
@@ -669,7 +673,7 @@ var TREE_DATA = [
               { key: 'G7C3-J9S',     child: 'LLQS-6F1', prefix: null,   firstName: 'Leocadia',           nickname: null,         middleName: null,          lastName: 'Novilla',     suffix: null,  gender: 'F', birthDate: null,                baptismDate: null,         marriageDate: null,         deathDate: null,               deathAge: null,  living: false, hasDNA: false, hasImage: false,  birthPlace: null,                                               marriagePlace: null,                                               livingPlace: null,                        deathPlace: null,                                                   vitalsCompleteAndVerified: false, },
           { key: 'GHBD-9LY',         child: 'GHB8-J1B', prefix: null,   firstName: 'Cresencia',          nickname: 'Cresing',    middleName: null,          lastName: 'Dumantay',    suffix: null,  gender: 'F', birthDate: '1918-04-19',        baptismDate: null,         marriageDate: null,         deathDate: '1990-04-16',       deathAge: null,  living: false, hasDNA: false, hasImage: true,   birthPlace: 'PHL',                                              marriagePlace: null,                                               livingPlace: null,                        deathPlace: 'Sangandaan Cemetery, Caloocan, PHL',                   vitalsCompleteAndVerified: false, marker: 'apparel', marker2: 'sales' },
             { key: 'TEMP-001',       child: 'GHBD-9LY', prefix: null,   firstName: 'Unknown',            nickname: null,         middleName: null,          lastName: 'name',        suffix: null,  gender: 'F', birthDate: 'before 1908',       baptismDate: null,         marriageDate: null,         deathDate: 'after 1918-04-18', deathAge: "50+", living: false, hasDNA: false, hasImage: true,   birthPlace: null,                                               marriagePlace: null,                                               livingPlace: null,                        deathPlace: 'PHL',                                                  vitalsCompleteAndVerified: false, },
-    { key: 'GHB5-TWN',               child: 'TEMP-000', prefix: null,   firstName: 'Mitchie',            nickname: null,         middleName: 'Ajesta',      lastName: 'Adanza',      suffix: null,  gender: 'F', birthDate: '1994-12-16',        baptismDate: null,         marriageDate: '2024-06-15', deathDate: null,               deathAge: null,  living: true,  hasDNA: true,  hasImage: true,   birthPlace: 'Santa Cruz, Manila, PHL',                          marriagePlace: 'St. John Bosco Parish Church, Makati, PHL',        livingPlace: 'Sangandaan, Caloocan, PHL', deathPlace: null,                                                   vitalsCompleteAndVerified: true,  marker: 'prelations' },
+    { key: 'GHB5-TWN',               child: 'TEMP-000', prefix: null,   firstName: 'Mitchie',            nickname: null,         middleName: 'Ajesta',      lastName: 'Adanza',      suffix: null,  gender: 'F', birthDate: '1994-12-16',        baptismDate: null,         marriageDate: '2024-06-15', deathDate: null,               deathAge: null,  living: true,  hasDNA: true,  hasImage: true,   birthPlace: 'Santa Cruz, Manila, PHL',                          marriagePlace: 'St. John Bosco Parish Church, Makati, PHL',        livingPlace: 'Sangandaan, Caloocan, PHL', deathPlace: null,                                                   vitalsCompleteAndVerified: true,  marker: 'prelations', marker3: 'housewife' },
       { key: 'GHB5-XTZ',             child: 'GHB5-TWN', prefix: null,   firstName: 'Darne',              nickname: 'Loloy',      middleName: 'Elican',      lastName: 'Adanza',      suffix: null,  gender: 'M', birthDate: '1964-06-22',        baptismDate: null,         marriageDate: '1994-01-25', deathDate: null,               deathAge: null,  living: true,  hasDNA: false, hasImage: true,   birthPlace: 'Balingasag, Misamis Oriental, PHL',                marriagePlace: 'Santa Maria, Bulacan, PHL',                        livingPlace: 'Sangandaan, Caloocan, PHL', deathPlace: null,                                                   vitalsCompleteAndVerified: true,  marker: 'manufacturing', marker2: 'househusband', marker3: 'prelations' },
         { key: 'GH12-SVQ',           child: 'GHB5-XTZ', prefix: null,   firstName: 'Nestor',             nickname: null,         middleName: 'Ladera',      lastName: 'Adanza',      suffix: null,  gender: 'M', birthDate: '1938-02-26',        baptismDate: null,         marriageDate: null,         deathDate: '2018-09-28',       deathAge: null,  living: false, hasDNA: false, hasImage: true,   birthPlace: 'Balingasag, Misamis Oriental, PHL',                marriagePlace: null,                                               livingPlace: null,                        deathPlace: 'Balingasag, Misamis Oriental, PHL',                    vitalsCompleteAndVerified: false, marker: 'farming' },
           { key: 'GH12-DRN',         child: 'GH12-SVQ', prefix: null,   firstName: 'Felomino',           nickname: null,         middleName: 'R',           lastName: 'Adanza',      suffix: null,  gender: 'M', birthDate: 'about 1901',        baptismDate: null,         marriageDate: null,         deathDate: '1990-11-03',       deathAge: null,  living: false, hasDNA: false, hasImage: true,   birthPlace: 'Dumaguete, Negros Oriental, PHL',                  marriagePlace: null,                                               livingPlace: null,                        deathPlace: 'Balingasag, Misamis Oriental, PHL',                    vitalsCompleteAndVerified: false, marker: 'farming' },
@@ -700,6 +704,9 @@ var TREE_DATA = [
     stories: `
       <h5>Half Siblings <span class="chill">from Mother's Side</span></h5>
       <ul class="siblings">
+        <li class="placeholder">
+          <span class="person-name">$\{fullName\}</span>
+        </li>
         <li class="female details-3">
           <div class="person-headshot">
             <img src="images/people/relatives/ira.lossy.webp" />
@@ -726,6 +733,9 @@ var TREE_DATA = [
 
       <h5>Half Siblings <span class="chill">from Father's Side</span></h5>
       <ul class="siblings">
+        <li class="placeholder">
+          <span class="person-name">$\{fullName\}</span>
+        </li>
         <li class="female details-3">
           <div class="person-headshot">
             <img src="images/people/relatives/ryan.lossy.webp" />
@@ -756,6 +766,9 @@ var TREE_DATA = [
             <span class="birth-place"><strong>B</strong> : Poblacion, Caloocan, Philippines</span>
             <span class="birth-place"><strong>L</strong> : Quezon City, Philippines</span>
           </div>
+        </li>
+        <li class="placeholder">
+          <span class="person-name">$\{fullName\}</span>
         </li>
         <li class="male details-3">
           <div class="person-headshot">
@@ -801,7 +814,7 @@ var TREE_DATA = [
   'GHB8-7T6': { // Fernando Saplala
     headline: 'A war veteran who served his country against the Japanese forces in the second World War.',
     stories: `
-      <h5>Against All Odds: Survival of the Death March During World War II </h5>
+      <h5>Against All Odds: Survival of the Death March During World War II</h5>
       <p>Fernando's story is one of courage and resilience amidst the harrowing backdrop of World War II in the Philippines. Born on May 30, 1916, he fought bravely in the Battle of Bataan and survived the infamous Death March by ingeniously concealing himself in "nitchos" or death beds within a cemetery in Hermosa, Bataan. His quick thinking and bold moves were crucial to his survival during one of the darkest periods in Philippine history.</p>
       <figure>
         <img alt="Bataan Death March" src="images/stories/Photograph_of_American_Prisoners_Using_Improvised_Litters_to_Carry_Comrades,_05-1942_-_NARA_-_535564.lossy.webp" />
@@ -812,6 +825,21 @@ var TREE_DATA = [
         <img alt="Saplala Family Photo" src="images/stories/Saplala_Family.lossy.webp" />
         <p class="caption"><em>Lucina and Fernando with their four children: (from left to right) Claro, Celia, Lydia, and Bonifacio.</em></p>
       </figure>
+
+      <hr />
+      <h5>Coming to Caloocan</h5>
+      <p>According to Lydia Saplala, Fernando’s eldest daughter, the journey to Caloocan began with Fernando's various military assignments. As a soldier, Fernando was often stationed in different locations, one of which was Caloocan. During their time there, the family learned that the local government was offering parcels of land to soldiers, provided they could afford the down payment. Seeing an opportunity, Lydia's husband, Marcial, stepped in and paid the down payment. This pivotal moment allowed the family to secure a piece of land in Caloocan, where they would eventually settle and build their lives.</p>
+      <p>At the time of writing <time datetime="2024-08-10 16:21:48">(August 11, 2024 PHT)</time>, only his grandson Claro Saplala Jr. and his family lives here. The house has also undergone multiple renovations already.</p>
+      <figure>
+        <img alt="Saplala Caloocan House" src="images/stories/Saplala_Caloocan_House.webp" />
+        <p class="caption"><em>What Fernando Saplala's land looks like in February 2021.</em></p>
+      </figure>
+    `
+  },
+  'GHB8-M8D': { // Victor Perez
+    stories: `
+      <h5>Swollen Testicles</h5>
+      <p>According to Lydia Saplala, his maternal grandfather, Victor Perez, got swollen testicles later on in his life. His husband Marcial Argabioso offered to pay for the treatment but Lydia's siblings opposed and declined this offer.</p>
     `
   },
   'GQJK-G8W': { // Corazon Acosta
@@ -841,6 +869,9 @@ var TREE_DATA = [
             <span class="birth-place"><strong>B</strong> : Caloocan, Philippines</span>
             <span class="birth-place"><strong>L</strong> : Japan</span>
           </div>
+        </li>
+        <li class="placeholder">
+          <span class="person-name">$\{fullName\}</span>
         </li>
       </ul>
 
@@ -913,6 +944,12 @@ var TREE_DATA = [
             <span class="death-place"><strong>D</strong> : United States of America</span>
           </div>
         </li>
+        <li class="placeholder">
+          <span class="person-name">$\{fullName\}</span>
+        </li>
+        <li class="placeholder">
+          <span class="person-name">Benjamin S. A. Acosta</span>
+        </li>
         <li class="male details-3">
           <div class="person-headshot">
             <img src="images/people/relatives/ben.lossy.webp" />
@@ -927,6 +964,26 @@ var TREE_DATA = [
       </ul>
     `
   },
+  'GHB5-TWN': { // Mitchie Adanza
+    stories: `
+      <h5>Siblings</h5>
+      <ul class="siblings">
+        <li class="placeholder">
+          <span class="person-name">$\{fullName\}</span>
+        </li>
+        <li class="male details-3">
+          <div class="person-headshot">
+            <img src="images/people/relatives/dm.png" />
+          </div>
+          <div class="person-details">
+            <span class="person-name">DM A. Adanza</span>
+            <span class="relevant-dates">13 Oct 2004 — Living</span>
+            <span class="birth-place"><strong>B</strong> : Manila, Philippines</span>
+            <span class="death-place"><strong>L</strong> : Sangandaa, Caloocan, Philippines</span>
+          </div>
+        </li>
+    `
+  }
 }
 var TREE_KEYMAP = {};
 
@@ -1220,7 +1277,10 @@ function addPersonDetails(node) {
   }
 
   // Update sidebar content
-  let tempInnerHTML = `<img class="headshot" alt="headshot" src="images/people/${headshotFilename}" />`;
+  let tempInnerHTML = '';
+  if (node.data.hasImage) {
+    tempInnerHTML += `<img class="headshot" alt="headshot" src="images/people/${headshotFilename}" />`;
+  }
   let hasBadges = false;
 
   var storyMarkerLabel = {
@@ -1233,6 +1293,8 @@ function addPersonDetails(node) {
     'dna': 'DNA-tested',
     'military': 'Military Veteran',
     'housewife': 'Housewife',
+    'fishery': 'has a fishery',
+    'prelations': 'PR Powers !'
   }
 
   if (headline) {
@@ -1272,14 +1334,17 @@ function addPersonDetails(node) {
   }
   tempInnerHTML += '</div>'
 
-  if (hasBadges && !headline) {
-    tempInnerHTML += `<hr />`;
-  }
+  // if (hasBadges && !headline) {
+  //   tempInnerHTML += `<hr />`;
+  // }
 
-  if (headline) {
-    tempInnerHTML += `<hr />`;
-  }
-  tempInnerHTML += STORIES[node.data.key]['stories'];
+  // if (headline) {
+  //   tempInnerHTML += `<hr />`;
+  // }
+  let story = STORIES[node.data.key]['stories'].replace(/\$\{([^}]+)\}/g, (match, attrName) => {
+    return node.data[attrName] !== undefined ? node.data[attrName] : match;
+  });
+  tempInnerHTML += story;
 
   // Insert the new div into the container
 
@@ -3992,49 +4057,24 @@ template["FourthMarker"] = function() {
 }
 
 function marginConditions(marker) {
-  if (marker === 'computer') {
-    return new bino.Margin(2, 0, 0, 2);
+  const defaultMargins = new bino.Margin(2, 0, 0, 2);
+  const margins = {
+    'fishery': new bino.Margin(2, 0, 0, 2.7),
+    'prelations': new bino.Margin(3, 0, 0, 2),
+    'intelligence': new bino.Margin(1.95, 0, 0, 1.85),
+    'military': new bino.Margin(0.9, 0, 0, 1.1),
+    'sergeant': new bino.Margin(0, 0, 0, 0.35),
+    'housewife': new bino.Margin(1.8, 0, 0, 1.5),
+    'househusband': new bino.Margin(1.8, 0, 0, 1.5),
+    'farming': new bino.Margin(2.25, 0, 0, 1.95),
+    'male-twin': new bino.Margin(0, 0, 0, 2),
+    'female-twin': new bino.Margin(0, 0, 0, 2),
+    'train': new bino.Margin(3, 0, 0, 2),
+    'cattle': new bino.Margin(-0.25, 0, 0, 0.75),
+    'sales': new bino.Margin(3, 0, 0, 2.5),
   }
-  if (marker === 'software') {
-    return new bino.Margin(2, 0, 0, 2);
-  }
-  if (marker === 'prelations') {
-    return new bino.Margin(3, 0, 0, 2);
-  }
-  if (marker === 'intelligence') {
-    return new bino.Margin(1.95, 0, 0, 1.85);
-  }
-  if (marker === 'military') {
-    return new bino.Margin(0.9, 0, 0, 1.1);
-  }
-  if (marker === 'sergeant') {
-    return new bino.Margin(0, 0, 0, 0.35);
-  }
-  if (marker === 'housewife') {
-    return new bino.Margin(1.8, 0, 0, 1.5);
-  }
-  if (marker === 'househusband') {
-    return new bino.Margin(1.8, 0, 0, 1.5);
-  }
-  if (marker === 'farming') {
-    return new bino.Margin(2.25, 0, 0, 1.95);
-  }
-  if (marker === 'male-twin') {
-    return new bino.Margin(0, 0, 0, 2);
-  }
-  if (marker === 'female-twin') {
-    return new bino.Margin(0, 0, 0, 2);
-  }
-  if (marker === 'train') {
-    return new bino.Margin(3, 0, 0, 2);
-  }
-  if (marker === 'cattle') {
-    return new bino.Margin(-0.25, 0, 0, 0.75);
-  }
-  if (marker === 'sales') {
-    return new bino.Margin(3, 0, 0, 2.5);
-  }
-  return new bino.Margin(2, 0, 0, 2);
+
+  return (margins[marker] || new bino.Margin(2, 0, 0, 2));
 }
 template['Name'] = function() {
   return $(

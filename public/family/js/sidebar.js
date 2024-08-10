@@ -90,7 +90,10 @@ function addPersonDetails(node) {
   }
 
   // Update sidebar content
-  let tempInnerHTML = `<img class="headshot" alt="headshot" src="images/people/${headshotFilename}" />`;
+  let tempInnerHTML = '';
+  if (node.data.hasImage) {
+    tempInnerHTML += `<img class="headshot" alt="headshot" src="images/people/${headshotFilename}" />`;
+  }
   let hasBadges = false;
 
   var storyMarkerLabel = {
@@ -103,6 +106,8 @@ function addPersonDetails(node) {
     'dna': 'DNA-tested',
     'military': 'Military Veteran',
     'housewife': 'Housewife',
+    'fishery': 'has a fishery',
+    'prelations': 'PR Powers !'
   }
 
   if (headline) {
@@ -142,14 +147,17 @@ function addPersonDetails(node) {
   }
   tempInnerHTML += '</div>'
 
-  if (hasBadges && !headline) {
-    tempInnerHTML += `<hr />`;
-  }
+  // if (hasBadges && !headline) {
+  //   tempInnerHTML += `<hr />`;
+  // }
 
-  if (headline) {
-    tempInnerHTML += `<hr />`;
-  }
-  tempInnerHTML += STORIES[node.data.key]['stories'];
+  // if (headline) {
+  //   tempInnerHTML += `<hr />`;
+  // }
+  let story = STORIES[node.data.key]['stories'].replace(/\$\{([^}]+)\}/g, (match, attrName) => {
+    return node.data[attrName] !== undefined ? node.data[attrName] : match;
+  });
+  tempInnerHTML += story;
 
   // Insert the new div into the container
 

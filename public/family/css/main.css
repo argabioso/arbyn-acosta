@@ -95,7 +95,7 @@ body:not(.dark) #personDetailsDesc {
 #personDetailsDesc .headline {
   font-family: "Montagu Slab", serif;
   font-size: 1.05em;
-  font-weight: 400;
+  font-weight: 500;
   color: #414447;
   opacity: 1;
   color: var(--bs-offcanvas-color);
@@ -198,10 +198,20 @@ body.dark > footer {
   background-color: #ffffff;
   margin-bottom: 10px;
   border-radius: 4px;
+  overflow: hidden;
 }
 
 .dark .siblings li {
   background-color: #2f2f2f;
+}
+
+.siblings .placeholder{
+  border: 1px dashed #7f7f7f;
+  padding: 10px 10px 9px;
+}
+
+.dark .siblings .placeholder{
+  border-color: #afafaf;
 }
 
 #personDetailsDesc .siblings li img {
@@ -228,6 +238,7 @@ body.dark > footer {
   line-height: 0.8;
 }
 
+.placeholder .person-name,
 .person-details .person-name {
   font-family: "Google Sans", sans-serif;
   font-weight: 700;
@@ -282,7 +293,7 @@ h5 .chill {
 }
 
 div.badges {
-  margin-bottom: -4px;
+  margin-bottom: 1rem;
 }
 
 #personDetailsDesc .badge.rounded-pill > img {

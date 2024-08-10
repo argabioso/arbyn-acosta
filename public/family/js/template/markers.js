@@ -227,47 +227,22 @@ template["FourthMarker"] = function() {
 }
 
 function marginConditions(marker) {
-  if (marker === 'computer') {
-    return new bino.Margin(2, 0, 0, 2);
+  const defaultMargins = new bino.Margin(2, 0, 0, 2);
+  const margins = {
+    'fishery': new bino.Margin(2, 0, 0, 2.7),
+    'prelations': new bino.Margin(3, 0, 0, 2),
+    'intelligence': new bino.Margin(1.95, 0, 0, 1.85),
+    'military': new bino.Margin(0.9, 0, 0, 1.1),
+    'sergeant': new bino.Margin(0, 0, 0, 0.35),
+    'housewife': new bino.Margin(1.8, 0, 0, 1.5),
+    'househusband': new bino.Margin(1.8, 0, 0, 1.5),
+    'farming': new bino.Margin(2.25, 0, 0, 1.95),
+    'male-twin': new bino.Margin(0, 0, 0, 2),
+    'female-twin': new bino.Margin(0, 0, 0, 2),
+    'train': new bino.Margin(3, 0, 0, 2),
+    'cattle': new bino.Margin(-0.25, 0, 0, 0.75),
+    'sales': new bino.Margin(3, 0, 0, 2.5),
   }
-  if (marker === 'software') {
-    return new bino.Margin(2, 0, 0, 2);
-  }
-  if (marker === 'prelations') {
-    return new bino.Margin(3, 0, 0, 2);
-  }
-  if (marker === 'intelligence') {
-    return new bino.Margin(1.95, 0, 0, 1.85);
-  }
-  if (marker === 'military') {
-    return new bino.Margin(0.9, 0, 0, 1.1);
-  }
-  if (marker === 'sergeant') {
-    return new bino.Margin(0, 0, 0, 0.35);
-  }
-  if (marker === 'housewife') {
-    return new bino.Margin(1.8, 0, 0, 1.5);
-  }
-  if (marker === 'househusband') {
-    return new bino.Margin(1.8, 0, 0, 1.5);
-  }
-  if (marker === 'farming') {
-    return new bino.Margin(2.25, 0, 0, 1.95);
-  }
-  if (marker === 'male-twin') {
-    return new bino.Margin(0, 0, 0, 2);
-  }
-  if (marker === 'female-twin') {
-    return new bino.Margin(0, 0, 0, 2);
-  }
-  if (marker === 'train') {
-    return new bino.Margin(3, 0, 0, 2);
-  }
-  if (marker === 'cattle') {
-    return new bino.Margin(-0.25, 0, 0, 0.75);
-  }
-  if (marker === 'sales') {
-    return new bino.Margin(3, 0, 0, 2.5);
-  }
-  return new bino.Margin(2, 0, 0, 2);
+
+  return (margins[marker] || new bino.Margin(2, 0, 0, 2));
 }

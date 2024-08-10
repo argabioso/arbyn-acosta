@@ -4,6 +4,9 @@ var STORIES = {
     stories: `
       <h5>Half Siblings <span class="chill">from Mother's Side</span></h5>
       <ul class="siblings">
+        <li class="placeholder">
+          <span class="person-name">$\{fullName\}</span>
+        </li>
         <li class="female details-3">
           <div class="person-headshot">
             <img src="images/people/relatives/ira.lossy.webp" />
@@ -30,6 +33,9 @@ var STORIES = {
 
       <h5>Half Siblings <span class="chill">from Father's Side</span></h5>
       <ul class="siblings">
+        <li class="placeholder">
+          <span class="person-name">$\{fullName\}</span>
+        </li>
         <li class="female details-3">
           <div class="person-headshot">
             <img src="images/people/relatives/ryan.lossy.webp" />
@@ -60,6 +66,9 @@ var STORIES = {
             <span class="birth-place"><strong>B</strong> : Poblacion, Caloocan, Philippines</span>
             <span class="birth-place"><strong>L</strong> : Quezon City, Philippines</span>
           </div>
+        </li>
+        <li class="placeholder">
+          <span class="person-name">$\{fullName\}</span>
         </li>
         <li class="male details-3">
           <div class="person-headshot">
@@ -105,7 +114,7 @@ var STORIES = {
   'GHB8-7T6': { // Fernando Saplala
     headline: 'A war veteran who served his country against the Japanese forces in the second World War.',
     stories: `
-      <h5>Against All Odds: Survival of the Death March During World War II </h5>
+      <h5>Against All Odds: Survival of the Death March During World War II</h5>
       <p>Fernando's story is one of courage and resilience amidst the harrowing backdrop of World War II in the Philippines. Born on May 30, 1916, he fought bravely in the Battle of Bataan and survived the infamous Death March by ingeniously concealing himself in "nitchos" or death beds within a cemetery in Hermosa, Bataan. His quick thinking and bold moves were crucial to his survival during one of the darkest periods in Philippine history.</p>
       <figure>
         <img alt="Bataan Death March" src="images/stories/Photograph_of_American_Prisoners_Using_Improvised_Litters_to_Carry_Comrades,_05-1942_-_NARA_-_535564.lossy.webp" />
@@ -116,6 +125,21 @@ var STORIES = {
         <img alt="Saplala Family Photo" src="images/stories/Saplala_Family.lossy.webp" />
         <p class="caption"><em>Lucina and Fernando with their four children: (from left to right) Claro, Celia, Lydia, and Bonifacio.</em></p>
       </figure>
+
+      <hr />
+      <h5>Coming to Caloocan</h5>
+      <p>According to Lydia Saplala, Fernando’s eldest daughter, the journey to Caloocan began with Fernando's various military assignments. As a soldier, Fernando was often stationed in different locations, one of which was Caloocan. During their time there, the family learned that the local government was offering parcels of land to soldiers, provided they could afford the down payment. Seeing an opportunity, Lydia's husband, Marcial, stepped in and paid the down payment. This pivotal moment allowed the family to secure a piece of land in Caloocan, where they would eventually settle and build their lives.</p>
+      <p>At the time of writing <time datetime="2024-08-10 16:21:48">(August 11, 2024 PHT)</time>, only his grandson Claro Saplala Jr. and his family lives here. The house has also undergone multiple renovations already.</p>
+      <figure>
+        <img alt="Saplala Caloocan House" src="images/stories/Saplala_Caloocan_House.webp" />
+        <p class="caption"><em>What Fernando Saplala's land looks like in February 2021.</em></p>
+      </figure>
+    `
+  },
+  'GHB8-M8D': { // Victor Perez
+    stories: `
+      <h5>Swollen Testicles</h5>
+      <p>According to Lydia Saplala, his maternal grandfather, Victor Perez, got swollen testicles later on in his life. His husband Marcial Argabioso offered to pay for the treatment but Lydia's siblings opposed and declined this offer.</p>
     `
   },
   'GQJK-G8W': { // Corazon Acosta
@@ -145,6 +169,9 @@ var STORIES = {
             <span class="birth-place"><strong>B</strong> : Caloocan, Philippines</span>
             <span class="birth-place"><strong>L</strong> : Japan</span>
           </div>
+        </li>
+        <li class="placeholder">
+          <span class="person-name">$\{fullName\}</span>
         </li>
       </ul>
 
@@ -217,6 +244,12 @@ var STORIES = {
             <span class="death-place"><strong>D</strong> : United States of America</span>
           </div>
         </li>
+        <li class="placeholder">
+          <span class="person-name">$\{fullName\}</span>
+        </li>
+        <li class="placeholder">
+          <span class="person-name">Benjamin S. A. Acosta</span>
+        </li>
         <li class="male details-3">
           <div class="person-headshot">
             <img src="images/people/relatives/ben.lossy.webp" />
@@ -231,4 +264,24 @@ var STORIES = {
       </ul>
     `
   },
+  'GHB5-TWN': { // Mitchie Adanza
+    stories: `
+      <h5>Siblings</h5>
+      <ul class="siblings">
+        <li class="placeholder">
+          <span class="person-name">$\{fullName\}</span>
+        </li>
+        <li class="male details-3">
+          <div class="person-headshot">
+            <img src="images/people/relatives/dm.png" />
+          </div>
+          <div class="person-details">
+            <span class="person-name">DM A. Adanza</span>
+            <span class="relevant-dates">13 Oct 2004 — Living</span>
+            <span class="birth-place"><strong>B</strong> : Manila, Philippines</span>
+            <span class="death-place"><strong>L</strong> : Sangandaa, Caloocan, Philippines</span>
+          </div>
+        </li>
+    `
+  }
 }
