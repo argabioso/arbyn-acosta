@@ -114,7 +114,7 @@ var STORIES = {
   'GHB8-7T6': { // Fernando Saplala
     headline: 'A war veteran who served his country against the Japanese forces in the second World War.',
     stories: `
-      <h5>Against All Odds: Survival of the Death March During World War II</h5>
+      <h5>Against All Odds</h5>
       <p>Fernando's story is one of courage and resilience amidst the harrowing backdrop of World War II in the Philippines. Born on May 30, 1916, he fought bravely in the Battle of Bataan and survived the infamous Death March by ingeniously concealing himself in "nitchos" or death beds within a cemetery in Hermosa, Bataan. His quick thinking and bold moves were crucial to his survival during one of the darkest periods in Philippine history.</p>
       <figure>
         <img alt="Bataan Death March" src="images/stories/Photograph_of_American_Prisoners_Using_Improvised_Litters_to_Carry_Comrades,_05-1942_-_NARA_-_535564.lossy.webp" />
