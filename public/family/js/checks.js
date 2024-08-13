@@ -46,6 +46,17 @@ function checkPerPerson(person) {
     'livingPlace', // personal choice, no need to verify this
   ];
 
+  // Ignore "has stories" marker
+  for (let i = 1; i <= 4; i++) {
+    let markerKey = (i == 1) ? 'marker' : `marker${i}`;
+    let marker = person[markerKey];
+
+    if (marker == 'book') {
+      attributesToIgnore.push(markerKey);
+      break;
+    }
+  }
+
   if (person.living) {
     attributesToIgnore.push('deathDate');
     attributesToIgnore.push('deathPlace');
