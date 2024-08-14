@@ -14,7 +14,7 @@ const COLORS = {
 }
 
 const ui = {
-  scale: 0.937,
+  scale: isMobileGlobal ? 0.68 : 0.937,
   font: {
     size: {
       name: 14.3,

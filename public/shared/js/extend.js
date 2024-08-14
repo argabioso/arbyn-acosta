@@ -247,6 +247,7 @@ function applyLightClass() {
 window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', applyDarkClass);
 window.matchMedia('(prefers-color-scheme: light)').addEventListener('change', applyLightClass);
 
+var isMobileGlobal = false;
 function handleResize() {
   let agent = navigator.userAgent;
   let isWebkit = (agent.indexOf("AppleWebKit") > 0);
@@ -261,6 +262,7 @@ function handleResize() {
   let isMobile = (isIOS || isAndroid || isNewBlackBerry || isWebOS || isWindowsMobile || isUnknownMobile);
   let isTablet = (isIPad || (isMobile && !isSmallScreen));
 
+  isMobileGlobal = isMobile;
 
   // Add dark mode class to any page using extend.js
   const isMobileDevice = ( isMobile && isSmallScreen && document.cookie.indexOf( "mobileFullSiteClicked=") < 0 );
