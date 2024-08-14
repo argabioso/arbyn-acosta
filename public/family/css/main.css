@@ -205,13 +205,13 @@ body.dark > footer {
   background-color: #2f2f2f;
 }
 
-.siblings .placeholder{
-  border: 1px dashed #7f7f7f;
+.siblings .person-placeholder{
+  border: 1px dashed #b5b5b5;
   padding: 10px 10px 9px;
 }
 
-.dark .siblings .placeholder{
-  border-color: #afafaf;
+.dark .siblings .person-placeholder{
+  border-color: #6c6c6c;
 }
 
 #personDetailsDesc .siblings li img {
@@ -238,7 +238,7 @@ body.dark > footer {
   line-height: 0.8;
 }
 
-.placeholder .person-name,
+.person-placeholder .person-name,
 .person-details .person-name {
   font-family: "Google Sans", sans-serif;
   font-weight: 700;

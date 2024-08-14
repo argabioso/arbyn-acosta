@@ -705,7 +705,7 @@ var TREE_DATA = [
     stories: `
       <h5>Half Siblings <span class="chill">from Mother's Side</span></h5>
       <ul class="siblings">
-        <li class="placeholder">
+        <li class="person-placeholder">
           <span class="person-name">$\{fullName\}</span>
         </li>
         <li class="female details-3">
@@ -734,7 +734,7 @@ var TREE_DATA = [
 
       <h5>Half Siblings <span class="chill">from Father's Side</span></h5>
       <ul class="siblings">
-        <li class="placeholder">
+        <li class="person-placeholder">
           <span class="person-name">$\{fullName\}</span>
         </li>
         <li class="female details-3">
@@ -768,7 +768,7 @@ var TREE_DATA = [
             <span class="birth-place"><strong>L</strong> : Quezon City, Philippines</span>
           </div>
         </li>
-        <li class="placeholder">
+        <li class="person-placeholder">
           <span class="person-name">$\{fullName\}</span>
         </li>
         <li class="male details-3">
@@ -871,7 +871,7 @@ var TREE_DATA = [
             <span class="birth-place"><strong>L</strong> : Japan</span>
           </div>
         </li>
-        <li class="placeholder">
+        <li class="person-placeholder">
           <span class="person-name">$\{fullName\}</span>
         </li>
       </ul>
@@ -945,10 +945,10 @@ var TREE_DATA = [
             <span class="death-place"><strong>D</strong> : United States of America</span>
           </div>
         </li>
-        <li class="placeholder">
+        <li class="person-placeholder">
           <span class="person-name">$\{fullName\}</span>
         </li>
-        <li class="placeholder">
+        <li class="person-placeholder">
           <span class="person-name">Benjamin S. A. Acosta</span>
         </li>
         <li class="male details-3">
@@ -969,7 +969,7 @@ var TREE_DATA = [
     stories: `
       <h5>Siblings</h5>
       <ul class="siblings">
-        <li class="placeholder">
+        <li class="person-placeholder">
           <span class="person-name">$\{fullName\}</span>
         </li>
         <li class="male details-3">
