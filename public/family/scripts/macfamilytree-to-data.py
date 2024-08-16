@@ -46,17 +46,24 @@ def main():
                             person["suffix"] = sub_record_2.value
                             is_suffix_found = True
 
-                if sub_record_1.tag == "SEX":
+                elif sub_record_1.tag == "SEX":
                     person["gender"] = sub_record_1.value
 
-                if sub_record_1.tag == "BIRT":
+                elif sub_record_1.tag == "BIRT":
                     process_date_record(sub_record_1, person, prefix="birth")
 
-                if sub_record_1.tag == "DEAT":
+                elif sub_record_1.tag == "BAPM":
+                    process_date_record(sub_record_1, person, prefix="baptism")
+
+                elif sub_record_1.tag == "DEAT":
+                    person["living"] = False
                     process_date_record(sub_record_1, person, prefix="death")
 
-                if sub_record_1.tag == "BURI":
+                elif sub_record_1.tag == "BURI":
                     process_date_record(sub_record_1, person, prefix="burial")
+
+            # Useless fields for now
+            person["deathAge"] = None
 
             data[xref_id] = person
 
