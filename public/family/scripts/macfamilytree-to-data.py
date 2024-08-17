@@ -67,7 +67,65 @@ def main():
 
             data[xref_id] = person
 
-    print(json.dumps(data, indent=2))
+        for record in parser.records0("FAM"):
+            father_key = None
+            mother_key = None
+            child_key = None
+
+            is_family_created = False
+
+            for sub_record_1 in record.sub_records:
+                if sub_record_1.value is None:
+                    continue
+
+                xref_id = sub_record_1.value.replace("@", "")
+
+                if sub_record_1.tag == "HUSB" and father_key is None and xref_id in data:
+                    father_key = xref_id
+
+                elif sub_record_1.tag == "WIFE" and mother_key is None and xref_id in data:
+                    mother_key = xref_id
+
+                elif sub_record_1.tag == "CHIL" and child_key is None and xref_id in data:
+                    child_key = xref_id
+
+                if father_key is not None and child_key is not None:
+                    data[father_key]["child"] = child_key
+                    is_family_created = True
+
+                if mother_key is not None and child_key is not None:
+                    data[mother_key]["child"] = child_key
+                    is_family_created = True
+
+
+    # print(json.dumps(data, indent=2))
+
+    file_output = '''
+        // Age for Mothers (youngest ever was 9) so let's use 10
+        // Age for Fathers (youngest ever was 5) so let's use 6
+
+        // Youngest man ever married was 9
+
+        // Lola Fransisca Mia is estimated to be born before 1910 because her youngest known daughter is born around 1920. Subtract 10, you get 1910.
+        // Lola Fransisca Mia is estimated to die after October 13, 1936 because it is said that Lolo Marcial was around 4 years old when Lola Francisca died.
+        // Lola Maximiana is estimated to be born before November 10, 1913 because her son is born on November 10, 1913. Subtract 10, you get 1903.
+        // Lola Maximiana is estimated to die after March 5, 1951 because she was a signatory in Lola Nati's wedding on said date.
+        // Lola Consuelo is estimated to die after November 3, 1990 because she died after Lolo Felomino (who died on November 3, 1990).
+        // Lola Cresing's mother is estimated to be born before 1908 because her youngest known daughter is born around 1918. Subtract 10, you get 1908.
+        // Lola Cresing's mother is estimated to die after April 18, 1918 because Lola Cresing was around born on April 19, 1918.
+        // Lolo Napoleon was married on 1962, the youngest married man is 9. Subtract 9 to 1962, you get 1953.
+        // Lolo Napoleon is estimated to die when Tita Cecil was 2 months old. Add two months to December 26, 1979, you get February 26, 1980.
+        // Lola Lydia told me that she was alive when Lolo Victor was old. Around the time she's in Elementary (around 8 years old + 1944 = 1952)
+        // Lolo Victor Perez is estimated to be born before 1919 because her daughter Lucing is born on 1919. Subtract 6, you get 1913.
+
+        var TREE_DATA =
+    '''
+
+    file_output += json.dumps(list(data.values()), indent=2)
+    file_output += ";"
+
+    with open("test.js", "w") as file:
+        file.write(file_output)
 
 
 def process_date_record(sub_record_1, person, prefix):
