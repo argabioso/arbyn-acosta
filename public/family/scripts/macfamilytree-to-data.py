@@ -1,5 +1,6 @@
 from datetime import datetime
 import json
+import re
 
 from ged4py import GedcomReader
 
@@ -98,7 +99,9 @@ def main():
                     is_family_created = True
 
 
+    data = build_family_tree(data)
     # print(json.dumps(data, indent=2))
+
 
     file_output = '''
         // Age for Mothers (youngest ever was 9) so let's use 10
@@ -121,11 +124,23 @@ def main():
         var TREE_DATA =
     '''
 
-    file_output += json.dumps(list(data.values()), indent=2)
+    file_output += json.dumps(data, indent=2)
     file_output += ";"
 
     with open("test.js", "w") as file:
         file.write(file_output)
+
+
+def get_people_with_standard_birthdate_format(tree_data):
+    # Regular expression to match birthDate in the format YYYY-MM-DD
+    date_format_regex = re.compile(r"^\d{4}-\d{2}-\d{2}$")
+
+    # Filter and return people with birthDate matching the pattern
+    return {
+        key: person
+        for key, person in tree_data.items()
+        if date_format_regex.match(person.get('birthDate', ''))
+    }
 
 
 def process_date_record(sub_record_1, person, prefix):
@@ -147,6 +162,26 @@ def process_date_record(sub_record_1, person, prefix):
                     if value.strip() != ""
                 ]
             )
+
+
+def build_family_tree(tree_data):
+    def build_branch(node_key):
+        node = tree_data[node_key]
+        father = next((k for k, n in tree_data.items() if n.get("child") == node_key and n.get("gender") == "M"), None)
+        mother = next((k for k, n in tree_data.items() if n.get("child") == node_key and n.get("gender") == "F"), None)
+
+        branch = [node]
+        if father:
+            branch.extend(build_branch(father))
+        if mother:
+            branch.extend(build_branch(mother))
+
+        return branch
+
+    potential_root_keys = get_people_with_standard_birthdate_format(tree_data)
+    root_child_key = max(potential_root_keys, key=lambda k: tree_data[k].get('birthDate', "1900-01-01"))
+
+    return build_branch(root_child_key)
 
 
 def convert_date_string(date_string):
