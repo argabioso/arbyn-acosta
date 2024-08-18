@@ -5,6 +5,9 @@ import re
 from ged4py import GedcomReader
 
 
+CURRENT_DATE = datetime.now().strftime('%Y-%m-%d')
+
+
 def main():
     path = "test/test.ged"
     data = {}
@@ -12,22 +15,29 @@ def main():
     with GedcomReader(path) as parser:
         for record in parser.records0("INDI"):
             xref_id = record.xref_id.replace("@", "")
-            person = {"key": xref_id}
+            person = {"key": xref_id, "living": True}
 
-            # Name-related checkers
+            # Person-related checkers
             is_prefix_found = False
             is_first_name_found = False
             is_nickname_found = False
             is_middle_name_found = False
             is_last_name_found = False
             is_suffix_found = False
+            is_residence_found = False
 
             for sub_record_1 in record.sub_records:
                 # if sub_record_1.tag == "_FID":
                 #     person["key"] = sub_record_1.value
 
+                sub_record_1_type = None
+
                 if sub_record_1.tag == "NAME":
+                    # is_married_name = "/" in sub_record_1.value
+                    # print(is_married_name)
                     for sub_record_2 in sub_record_1.sub_records:
+                        if sub_record_2.tag == "TYPE" and not sub_record_1_type:
+                            sub_record_1_type = sub_record_2.value
                         if sub_record_2.tag == "NPFX" and not is_prefix_found:
                             person["prefix"] = sub_record_2.value
                             is_prefix_found = True
@@ -41,11 +51,18 @@ def main():
                             person["middleName"] = sub_record_2.value
                             is_middle_name_found = True
                         if sub_record_2.tag == "SURN" and not is_last_name_found:
-                            person["lastName"] = sub_record_2.value
-                            is_last_name_found = True
+                            if sub_record_1_type != "married":
+                                person["lastName"] = sub_record_2.value
+                                is_last_name_found = True
                         if sub_record_2.tag == "NSFX" and not is_suffix_found:
                             person["suffix"] = sub_record_2.value
                             is_suffix_found = True
+
+                elif sub_record_1.tag == "RESI":
+                    for sub_record_2 in sub_record_1.sub_records:
+                        if sub_record_2.tag == "PLAC" and not is_residence_found:
+                            person["livingPlace"] = process_place(str(sub_record_2.value))
+                            is_residence_found = True
 
                 elif sub_record_1.tag == "SEX":
                     person["gender"] = sub_record_1.value
@@ -66,16 +83,38 @@ def main():
             # Useless fields for now
             person["deathAge"] = None
 
-            data[xref_id] = person
+            if "firstName" in person:
+                if "birthDate" in person and person["birthDate"] > CURRENT_DATE and len(person["birthDate"]) == 10 and len(person["birthDate"].split("-")) == 3:
+                    person["height"] = 0
+                    person["width"] = 0
+
+                if "burialPlace" in person:
+                    person["deathPlace"] = person["burialPlace"]
+                    del person["burialPlace"]
+
+                if "burialDate" in person:
+                    del person["burialDate"]
+
+                data[xref_id] = person
+            elif "birthDate" in person and "deathDate" in person:
+                person["firstName"] = "Unknown name"
+                data[xref_id] = person
 
         for record in parser.records0("FAM"):
             father_key = None
             mother_key = None
             child_key = None
 
+            is_marriage_found = False
             is_family_created = False
 
+            temp_person = {}
+
             for sub_record_1 in record.sub_records:
+                if sub_record_1.tag == "MARR" and not is_marriage_found:
+                    process_date_record(sub_record_1, temp_person, prefix="marriage")
+                    is_marriage_found = True
+
                 if sub_record_1.value is None:
                     continue
 
@@ -98,6 +137,17 @@ def main():
                     data[mother_key]["child"] = child_key
                     is_family_created = True
 
+            if father_key and is_marriage_found:
+                if "marriageDate" in temp_person:
+                    data[father_key]["marriageDate"] = temp_person["marriageDate"]
+                if "marriagePlace" in temp_person:
+                    data[father_key]["marriagePlace"] = temp_person["marriagePlace"]
+
+            if mother_key and is_marriage_found:
+                if "marriageDate" in temp_person:
+                    data[mother_key]["marriageDate"] = temp_person["marriageDate"]
+                if "marriagePlace" in temp_person:
+                    data[mother_key]["marriagePlace"] = temp_person["marriagePlace"]
 
     data = build_family_tree(data)
     # print(json.dumps(data, indent=2))
@@ -127,7 +177,7 @@ def main():
     file_output += json.dumps(data, indent=2)
     file_output += ";"
 
-    with open("test.js", "w") as file:
+    with open("../Development/Personal/arbyn-acosta/public/family/js/data.js", "w") as file:
         file.write(file_output)
 
 
@@ -149,19 +199,42 @@ def process_date_record(sub_record_1, person, prefix):
             datetype = sub_record_2.value.__class__.__name__
             if datetype == "DateValueSimple":
                 date = sub_record_2.value.date
-                person[f"{prefix}Date"] = f"{date.year}-{date.month_num:02d}-{date.day:02d}"
+
+                month = f"-{date.month_num:02d}" if date.month_num else ""
+                day = f"-{date.day:02d}" if date.day else ""
+
+                person[f"{prefix}Date"] = f"{date.year}{month}{day}"
             elif datetype == "DateValuePhrase":
                 person[f"{prefix}Date"] = convert_date_string(sub_record_2.value.phrase)
             else:
                 person[f"{prefix}Date"] = f"from {sub_record_2.value.date1} to {sub_record_2.value.date2}"
         if sub_record_2.tag == "PLAC":
-            person[f"{prefix}Place"] = ", ".join(
-                [
-                    value.strip()
-                    for value in sub_record_2.value.split(",")
-                    if value.strip() != ""
-                ]
-            )
+            person[f"{prefix}Place"] = process_place(str(sub_record_2.value))
+
+
+def process_place(raw_value):
+    place_shorthands = {
+        "Philippines": "PHL",
+        "United States": "USA",
+        "Bahrain": "BHR",
+    }
+
+    temp_place_parts = [
+        value.strip()
+        for value in raw_value.split(",")
+        if value.strip() != ""
+    ]
+
+    if raw_value.endswith("Philippines"):
+        temp_place = ", ".join(temp_place_parts[:-2] + [temp_place_parts[-1]])
+    else:
+        temp_place = ", ".join(temp_place_parts)
+
+    for original, shorthand in place_shorthands.items():
+        if temp_place.endswith(original):
+            temp_place = temp_place.replace(original, shorthand)
+
+    return temp_place
 
 
 def build_family_tree(tree_data):
@@ -208,14 +281,15 @@ def convert_date_string(date_string):
     # Convert the month to a number if it exists
     if month:
         month_number = datetime.strptime(month, "%b").month
+        month_str = f"-{month_number:02d}"
     else:
-        month_number = 1  # Default to January if month is missing
+        month_str = ""
 
     # Default to the first day of the month if day is missing
-    day = day if day else "01"
+    day = f"-{int(day):02d}" if day else ""
 
     # Format the date into the desired format
-    formatted_date = f"{prefix} {year}-{month_number:02d}-{int(day):02d}"
+    formatted_date = f"{prefix} {year}{month_str}{day}"
 
     return formatted_date
 

@@ -146,7 +146,7 @@ bino.convertCountryCode = function(input) {
   };
 
   const segments = input.split(',').map(segment => segment.trim());
-  if (input.length < 36) {
+  if (input.length < 37) {
     segments[segments.length - 1] = lookup[segments[segments.length - 1]]
   }
 
