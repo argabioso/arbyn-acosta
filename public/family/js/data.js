@@ -927,7 +927,7 @@
     "baptismDate": null,
     "birthDate": "before 1908",
     "birthPlace": null,
-    "deathAge": 50,
+    "deathAge": "50+",
     "deathDate": "after 1918-04-19",
     "deathPlace": "PHL",
     "gender": "F",
