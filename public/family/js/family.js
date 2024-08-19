@@ -2269,6 +2269,12 @@ for (const [key, svg] of Object.entries(isDark ? DARK_MARKERS : LIGHT_MARKERS)) 
       <p class="caption"><em>Babycor with some of her classmates in the Accountancy program.</em></p>
       <img alt="Corazon's Diploma" src="images/stories/Corazon_Diploma.webp" />
       <p class="caption"><em>Babycor's Diploma.</em></p>
+
+      <hr />
+      <h5>Last Family Photo</h5>
+      <p>For nanay's 47th birthday, we wanted to surpirse her by visiting them in Santa Cruz, Laguna. Little did we know that seven days after taking this photo, she would pass away.</p>
+      <img alt="Last photo in Santa Cruz, Laguna" src="images/stories/babycor_last_photo.webp" />
+      <p class="caption"><em>Last family photo with Nanay.</em></p>
     `
   },
   'GHBD-7M4': { // Lolo Manuel Jr.
