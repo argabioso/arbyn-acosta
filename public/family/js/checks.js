@@ -22,6 +22,7 @@ function checkPerPerson(person) {
 
   let attributesToIgnore = [
     'key', // custom-information attribute, not verifiable
+    'fid', // custom-information attribute, not verifiable
 
     'vitalsCompleteAndVerified', // aesthetic attribute
     'useNonePhoto', // aesthetic attribute
@@ -104,12 +105,14 @@ function checkPerPerson(person) {
     let sourceKeyAlternative = null;
 
     if (attributeName == "child") {
-      sourceKey = `${attributeValue}:${person.fid}:parentChild`;
-      sourceKeyAlternative = `${person.fid}:${attributeValue}:parentChild`;
+      let fid = treeToFid[attributeValue];
+      sourceKey = `${fid}:${person.fid}:parentChild`;
+      sourceKeyAlternative = `${person.fid}:${fid}:parentChild`;
     }
     if (attributeName == "partner") {
-      sourceKey = `${attributeValue}:${person.fid}:partner`;
-      sourceKeyAlternative = `${person.fid}:${attributeValue}:partner`;
+      let fid = treeToFid[attributeValue];
+      sourceKey = `${fid}:${person.fid}:partner`;
+      sourceKeyAlternative = `${person.fid}:${fid}:partner`;
     }
 
     let currentSourceCount = 0;

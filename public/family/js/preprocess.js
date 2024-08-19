@@ -179,9 +179,11 @@ function addGeneration(data) {
 
 addGeneration(TREE_DATA);
 
-// Create a map of child to parents.
+// Create a map of child to parents and the FamilySearch keys to MacFamilyTree IDs
+var treeToFid = {};
 var childToParents = {};
 TREE_DATA.forEach(node => {
+  treeToFid[node.key] = node.fid;
   if (node.child) {
     if (childToParents[node.child]) {
       childToParents[node.child].push(node.key);

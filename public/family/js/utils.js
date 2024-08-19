@@ -160,7 +160,12 @@ bino.convertCountryCode = function(input) {
   //   segments[1] = lookup[segments[1]];
   // }
 
-  return segments.join(', ');
+  let output = segments.join(', ');
+  if (output.length >= 44 && output.toLowerCase().includes("south caloocan")) {
+    output = output.replace("South Caloocan", "S. Caloocan");
+  }
+
+  return output;
 }
 
 /**

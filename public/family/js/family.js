@@ -268,7 +268,12 @@ bino.convertCountryCode = function(input) {
   //   segments[1] = lookup[segments[1]];
   // }
 
-  return segments.join(', ');
+  let output = segments.join(', ');
+  if (output.length >= 44 && output.toLowerCase().includes("south caloocan")) {
+    output = output.replace("South Caloocan", "S. Caloocan");
+  }
+
+  return output;
 }
 
 /**
@@ -696,7 +701,7 @@ for (const [key, svg] of Object.entries(isDark ? DARK_MARKERS : LIGHT_MARKERS)) 
   {
     "baptismDate": null,
     "birthDate": "1965-10-09",
-    "birthPlace": "Maternity House, Poblacion, Caloocan, PHL",
+    "birthPlace": "Maternity House, Poblacion, South Caloocan, PHL",
     "deathAge": null,
     "deathDate": null,
     "deathPlace": null,
@@ -2527,9 +2532,11 @@ function addGeneration(data) {
 
 addGeneration(TREE_DATA);
 
-// Create a map of child to parents.
+// Create a map of child to parents and the FamilySearch keys to MacFamilyTree IDs
+var treeToFid = {};
 var childToParents = {};
 TREE_DATA.forEach(node => {
+  treeToFid[node.key] = node.fid;
   if (node.child) {
     if (childToParents[node.child]) {
       childToParents[node.child].push(node.key);
@@ -4586,6 +4593,7 @@ function checkPerPerson(person) {
 
   let attributesToIgnore = [
     'key', // custom-information attribute, not verifiable
+    'fid', // custom-information attribute, not verifiable
 
     'vitalsCompleteAndVerified', // aesthetic attribute
     'useNonePhoto', // aesthetic attribute
@@ -4668,12 +4676,14 @@ function checkPerPerson(person) {
     let sourceKeyAlternative = null;
 
     if (attributeName == "child") {
-      sourceKey = `${attributeValue}:${person.fid}:parentChild`;
-      sourceKeyAlternative = `${person.fid}:${attributeValue}:parentChild`;
+      let fid = treeToFid[attributeValue];
+      sourceKey = `${fid}:${person.fid}:parentChild`;
+      sourceKeyAlternative = `${person.fid}:${fid}:parentChild`;
     }
     if (attributeName == "partner") {
-      sourceKey = `${attributeValue}:${person.fid}:partner`;
-      sourceKeyAlternative = `${person.fid}:${attributeValue}:partner`;
+      let fid = treeToFid[attributeValue];
+      sourceKey = `${fid}:${person.fid}:partner`;
+      sourceKeyAlternative = `${person.fid}:${fid}:partner`;
     }
 
     let currentSourceCount = 0;

@@ -74,7 +74,7 @@
   {
     "baptismDate": null,
     "birthDate": "1965-10-09",
-    "birthPlace": "Maternity House, Poblacion, Caloocan, PHL",
+    "birthPlace": "Maternity House, Poblacion, South Caloocan, PHL",
     "deathAge": null,
     "deathDate": null,
     "deathPlace": null,
