@@ -1549,7 +1549,7 @@ for (const [key, svg] of Object.entries(isDark ? DARK_MARKERS : LIGHT_MARKERS)) 
     "baptismDate": null,
     "birthDate": "before 1908",
     "birthPlace": null,
-    "deathAge": null,
+    "deathAge": 50,
     "deathDate": "after 1918-04-19",
     "deathPlace": "PHL",
     "gender": "F",

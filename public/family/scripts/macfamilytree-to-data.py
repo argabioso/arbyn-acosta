@@ -48,7 +48,7 @@ def main():
                 "nickname": None,
                 "prefix": None,
                 "suffix": None,
-                "vitalsCompleteAndVerified": False
+                "vitalsCompleteAndVerified": False,
             }
 
             # Person-related checkers
@@ -132,6 +132,9 @@ def main():
                                 suffix = i + 1 if i != 0 else ""
 
                             person[f"marker{suffix}"] = marker
+
+            if "fid" in person and person["fid"] == "GY85-YPS":
+                person["deathAge"] = 50
 
             if "firstName" in person:
                 if person["birthDate"] is not None and person["birthDate"] > CURRENT_DATE and len(person["birthDate"]) == 10 and len(person["birthDate"].split("-")) == 3:
