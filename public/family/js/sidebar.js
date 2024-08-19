@@ -11,7 +11,7 @@ function setScrollPos(selector, scroll) {
 
 function showSidebar(node) {
   // Don't do anything if the person doesn't have any story
-  if (!STORIES[node.key] || (isPrivate && node.data.living)) {
+  if (!STORIES[node.data.fid] || (isPrivate && node.data.living)) {
     return;
   }
 
@@ -74,7 +74,7 @@ function addPersonDetails(node) {
   var newDiv = document.createElement("div");
   newDiv.id = "details-" + node.key;
 
-  let headline = STORIES[node.data.key]['headline'];
+  let headline = STORIES[node.data.fid]['headline'];
   if (headline) {
     headline = headline.replace(/\$\{([^}]+)\}/g, (match, attrName) => {
       return node.data[attrName] !== undefined ? node.data[attrName] : match;
@@ -83,15 +83,15 @@ function addPersonDetails(node) {
 
   // Determine headshot to use
   let headshotFilename;
-  if (!STORIES[node.data.key]['headshot']) {
-    headshotFilename = `${node.data.key}.lossy.webp`;
+  if (!STORIES[node.data.fid]['headshot']) {
+    headshotFilename = `${node.data.fid}.lossy.webp`;
   } else {
-    headshotFilename = STORIES[node.data.key]['headshot'];
+    headshotFilename = STORIES[node.data.fid]['headshot'];
   }
 
   // Update sidebar content
   let tempInnerHTML = '';
-  if (node.data.hasImage) {
+  if (node.data.hasImage && node.data.fid !== undefined) {
     tempInnerHTML += `<img class="headshot" alt="headshot" src="images/people/${headshotFilename}" />`;
   }
   let hasBadges = false;
@@ -107,7 +107,7 @@ function addPersonDetails(node) {
     'military': 'Military Veteran',
     'housewife': 'Housewife',
     'fishery': 'has a fishery',
-    'prelations': 'PR Powers !'
+    'prelations': 'PR Skills'
   }
 
   if (headline) {
@@ -154,7 +154,7 @@ function addPersonDetails(node) {
   // if (headline) {
   //   tempInnerHTML += `<hr />`;
   // }
-  let story = STORIES[node.data.key]['stories'].replace(/\$\{([^}]+)\}/g, (match, attrName) => {
+  let story = STORIES[node.data.fid]['stories'].replace(/\$\{([^}]+)\}/g, (match, attrName) => {
     return node.data[attrName] !== undefined ? node.data[attrName] : match;
   });
   tempInnerHTML += story;

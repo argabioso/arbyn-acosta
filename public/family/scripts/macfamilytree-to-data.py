@@ -9,13 +9,47 @@ CURRENT_DATE = datetime.now().strftime('%Y-%m-%d')
 
 
 def main():
-    path = "test/test.ged"
+    path = "tree.ged"
+
+    print(f"Processing GEDCOM file: {path}")
+
     data = {}
+    has_photo = {}
+    markers = {}
 
     with GedcomReader(path) as parser:
+        for record in parser.records0("NOTE"):
+            note_id = record.xref_id.replace("@", "")
+            record_value = record.value.strip()
+
+            if record_value.startswith("markers:"):
+                markers[note_id] = record_value.lower().replace("markers:", "").split(",")
+
         for record in parser.records0("INDI"):
             xref_id = record.xref_id.replace("@", "")
-            person = {"key": xref_id, "living": True}
+
+            person = {
+                "baptismDate": None,
+                "birthDate": None,
+                "birthPlace": None,
+                "deathAge": None,
+                "deathDate": None,
+                "deathPlace": None,
+                "gender": "M",
+                "hasDNA": False,
+                "hasImage": False,
+                "key": xref_id,
+                "lastName": None,
+                "living": True,
+                "livingPlace": None,
+                "marriageDate": None,
+                "marriagePlace": None,
+                "middleName": None,
+                "nickname": None,
+                "prefix": None,
+                "suffix": None,
+                "vitalsCompleteAndVerified": False
+            }
 
             # Person-related checkers
             is_prefix_found = False
@@ -27,8 +61,8 @@ def main():
             is_residence_found = False
 
             for sub_record_1 in record.sub_records:
-                # if sub_record_1.tag == "_FID":
-                #     person["key"] = sub_record_1.value
+                if sub_record_1.tag == "_FID":
+                    person["fid"] = sub_record_1.value
 
                 sub_record_1_type = None
 
@@ -80,11 +114,27 @@ def main():
                 elif sub_record_1.tag == "BURI":
                     process_date_record(sub_record_1, person, prefix="burial")
 
-            # Useless fields for now
-            person["deathAge"] = None
+                elif sub_record_1.tag == "OBJE":
+                    obj_key = sub_record_1.value.replace("@", "")
+                    has_photo[obj_key] = xref_id
+
+                elif sub_record_1.tag == "NOTE":
+                    note_id = sub_record_1.value.replace("@", "")
+                    if note_id in markers:
+                        for i, marker in enumerate(markers[note_id]):
+                            if marker == "dna":
+                                person["hasDNA"] = True
+                                continue
+
+                            if i + 1 == 2 and person["hasDNA"]:
+                                suffix = ""
+                            else:
+                                suffix = i + 1 if i != 0 else ""
+
+                            person[f"marker{suffix}"] = marker
 
             if "firstName" in person:
-                if "birthDate" in person and person["birthDate"] > CURRENT_DATE and len(person["birthDate"]) == 10 and len(person["birthDate"].split("-")) == 3:
+                if person["birthDate"] is not None and person["birthDate"] > CURRENT_DATE and len(person["birthDate"]) == 10 and len(person["birthDate"].split("-")) == 3:
                     person["height"] = 0
                     person["width"] = 0
 
@@ -96,9 +146,15 @@ def main():
                     del person["burialDate"]
 
                 data[xref_id] = person
-            elif "birthDate" in person and "deathDate" in person:
+            elif person["birthDate"] is not None and person["deathDate"] is not None:
                 person["firstName"] = "Unknown name"
                 data[xref_id] = person
+
+        for record in parser.records0("OBJE"):
+            obj_key = record.xref_id.replace("@", "")
+            for sub_record_1 in record.sub_records:
+                if sub_record_1.tag == "FILE" and sub_record_1.value == f"{obj_key}.jpg" and obj_key in has_photo:
+                    data[has_photo[obj_key]]["hasImage"] = True
 
         for record in parser.records0("FAM"):
             father_key = None
@@ -177,7 +233,7 @@ def main():
     file_output += json.dumps(data, indent=2)
     file_output += ";"
 
-    with open("../Development/Personal/arbyn-acosta/public/family/js/data.js", "w") as file:
+    with open("../js/data.js", "w") as file:
         file.write(file_output)
 
 
@@ -189,7 +245,7 @@ def get_people_with_standard_birthdate_format(tree_data):
     return {
         key: person
         for key, person in tree_data.items()
-        if date_format_regex.match(person.get('birthDate', ''))
+        if date_format_regex.match(person.get('birthDate', "") or "")
     }
 
 
@@ -224,6 +280,17 @@ def process_place(raw_value):
         for value in raw_value.split(",")
         if value.strip() != ""
     ]
+
+    same_found = False
+    for i in range(len(temp_place_parts) - 1):
+        a = temp_place_parts[i]
+        b = temp_place_parts[i + 1]
+        if a == b:
+            same_found = True
+            break
+
+    if same_found:
+        del temp_place_parts[i]
 
     if raw_value.endswith("Philippines"):
         temp_place = ", ".join(temp_place_parts[:-2] + [temp_place_parts[-1]])

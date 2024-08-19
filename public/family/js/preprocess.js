@@ -57,7 +57,7 @@ for (const [i, person] of Object.entries(TREE_DATA)) {
   // =======================================================================
   // Auto-fill story marker
   // =======================================================================
-  if (STORIES[person.key] && !(isPrivate && person.living)) {
+  if (STORIES[person.fid] && !(isPrivate && person.living)) {
     let counter = 0;
     if (person.marker4) {
       counter = 4;

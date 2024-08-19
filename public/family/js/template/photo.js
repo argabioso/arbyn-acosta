@@ -34,8 +34,8 @@ template['Photo'] = function() {
         if (nodeData.useNonePhoto) {
           return ui.photo.none;
         }
-        if (nodeData.hasImage) {
-          return 'images/people/' + nodeData.key + '.lossy.webp';
+        if (nodeData.hasImage && nodeData.fid !== undefined) {
+          return 'images/people/' + nodeData.fid + '.lossy.webp';
         }
         if (nodeData.gender.toUpperCase() == 'M') {
           return ui.photo.male;
@@ -56,7 +56,7 @@ function calculatePhotoScale(nodeData) {
   const { birthPlace, deathPlace, marriagePlace } = nodeData;
   let emptyCount = [birthPlace, deathPlace, marriagePlace].filter(isNull).length;
 
-  if (!nodeData.hasImage) emptyCount = (emptyCount + 1) * 4;
+  if (!nodeData.hasImage || nodeData.fid === undefined) emptyCount = (emptyCount + 1) * 4;
 
   switch (emptyCount) {
     case 0: // all places are available, has image

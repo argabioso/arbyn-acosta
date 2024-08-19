@@ -100,16 +100,16 @@ function checkPerPerson(person) {
 
   for (const [attributeName, attributeValue] of Object.entries(person)) {
     let verified = false;
-    let sourceKey = `${person.key}:${attributeName}`;
+    let sourceKey = `${person.fid}:${attributeName}`;
     let sourceKeyAlternative = null;
 
     if (attributeName == "child") {
-      sourceKey = `${attributeValue}:${person.key}:parentChild`;
-      sourceKeyAlternative = `${person.key}:${attributeValue}:parentChild`;
+      sourceKey = `${attributeValue}:${person.fid}:parentChild`;
+      sourceKeyAlternative = `${person.fid}:${attributeValue}:parentChild`;
     }
     if (attributeName == "partner") {
-      sourceKey = `${attributeValue}:${person.key}:partner`;
-      sourceKeyAlternative = `${person.key}:${attributeValue}:partner`;
+      sourceKey = `${attributeValue}:${person.fid}:partner`;
+      sourceKeyAlternative = `${person.fid}:${attributeValue}:partner`;
     }
 
     let currentSourceCount = 0;
@@ -163,7 +163,7 @@ function checkPerPerson(person) {
     weirdCount,
     expectedSourceCount,
     unverifiedAttributes,
-    KEYS_IN_SENTIMENT_SOURCE.occurrences(person.key),
+    KEYS_IN_SENTIMENT_SOURCE.occurrences(person.fid),
   ];
 }
 
