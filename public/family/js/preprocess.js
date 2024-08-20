@@ -1,4 +1,5 @@
 var TREE_KEYMAP = {};
+var TREE_FIDMAP = {};
 
 for (const [i, person] of Object.entries(TREE_DATA)) {
   // =======================================================================
@@ -158,6 +159,7 @@ function addGeneration(data) {
     // Create a map to easily find each person by their key
     data.forEach(person => {
         TREE_KEYMAP[person.key] = person;
+        TREE_FIDMAP[person.fid] = person;
         person.generation = 0; // Default generation, will be adjusted later
     });
 

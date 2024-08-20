@@ -89,6 +89,14 @@ window.onload = function() {
   // Show the copyright once everything loads up
   document.querySelector('footer').classList.remove("hidden");
 
+  for (let fid in STORIES) {
+    let person = TREE_FIDMAP[fid];
+    if (isPrivate && person.living) {
+      continue;
+    }
+    addPersonDetails({"data": person, "key": person.key});
+  }
+
   let Id = window.location.get("id");
   if (Id) {
     let decodedId = decodeUrlSafeBase64ToUtf8(Id);

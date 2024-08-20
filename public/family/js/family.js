@@ -2210,7 +2210,7 @@ for (const [key, svg] of Object.entries(isDark ? DARK_MARKERS : LIGHT_MARKERS)) 
   },
   'GQJK-G8W': { // Corazon Acosta
     headshot: 'GQJK-G8W.signed.webp',
-    headline: 'UE - Caloocan Accountancy graduate, housewife, and mother of three.',
+    headline: 'University of the East - Caloocan Accountancy graduate, housewife, and mother of three.',
     stories: `
       <h5>Siblings</h5>
       <ul class="siblings">
@@ -2249,7 +2249,7 @@ for (const [key, svg] of Object.entries(isDark ? DARK_MARKERS : LIGHT_MARKERS)) 
       <p>Three months after Babycor turned eight years old, her father died as well. According to Manuel Acosta III, Corazon's older brother, they were taken care for mostly by their grandparents: Manuel Acosta Sr. and Natividad San Agustin, and also their aunt: Vicky Acosta.</p>
       <img alt="Acosta Family Swimming Together" src="images/stories/Acosta_Swimming.webp" />
       <p class="caption"><em>Photo of the Acosta Family swimming together. From left to right: Vicky Acosta, Manuel Acosta III, Natividad San Agustin, Benjamin Acosta Jr., Corazon Acosta, and Manuel Acosta Sr.</em></p>
-      <p>Fortunately, specific only to Corazon though, she also grew up close to her step mother: Loren "Nene" Asis. Later, when Corazon was older, she also became the godmother of her younger step-sister Loremei Asis.</p>
+      <p>Fortunately, she also grew up close to her step mother: Loren "Nene" Asis. Later, when Corazon was older, she also became the godmother of her younger step-sister Loremei Asis.</p>
       <img alt="Loren Asis and Corazon Acosta" src="images/stories/Lola_Nene.lossy.webp" />
       <p class="caption"><em>Loremei Asis' graduation. From left to right: Corazon Acosta, Loren "Nene" Asis, Arbyn Argabioso, and Loremei Asis.</em></p>
 
@@ -2268,13 +2268,13 @@ for (const [key, svg] of Object.entries(isDark ? DARK_MARKERS : LIGHT_MARKERS)) 
       <img alt="Corazon in UE Caloocan's field" src="images/stories/Corazon_UE.webp" />
       <p class="caption"><em>Babycor with some of her classmates in the Accountancy program.</em></p>
       <img alt="Corazon's Diploma" src="images/stories/Corazon_Diploma.webp" />
-      <p class="caption"><em>Babycor's Diploma.</em></p>
+      <p class="caption"><em>Babycor's Diploma for Bachelor of Science in Accountancy.</em></p>
 
       <hr />
       <h5>Last Family Photo</h5>
-      <p>For nanay's 47th birthday, we wanted to surpirse her by visiting them in Santa Cruz, Laguna. Little did we know that seven days after taking this photo, she would pass away.</p>
+      <p>For Babycor's 47th birthday, her son, Arbyn Argabioso, and her girlfriend, Mitchi Adanza, surprised her by visiting them in Santa Cruz, Laguna. Little did they know that seven days after taking this photo, Babycor would pass away.</p>
       <img alt="Last photo in Santa Cruz, Laguna" src="images/stories/babycor_last_photo.webp" />
-      <p class="caption"><em>Last family photo with Nanay.</em></p>
+      <p class="caption"><em>Babycor's last complete family photo.</em></p>
     `
   },
   'GHBD-7M4': { // Lolo Manuel Jr.
@@ -2358,6 +2358,7 @@ for (const [key, svg] of Object.entries(isDark ? DARK_MARKERS : LIGHT_MARKERS)) 
   }
 }
 var TREE_KEYMAP = {};
+var TREE_FIDMAP = {};
 
 for (const [i, person] of Object.entries(TREE_DATA)) {
   // =======================================================================
@@ -2517,6 +2518,7 @@ function addGeneration(data) {
     // Create a map to easily find each person by their key
     data.forEach(person => {
         TREE_KEYMAP[person.key] = person;
+        TREE_FIDMAP[person.fid] = person;
         person.generation = 0; // Default generation, will be adjusted later
     });
 
@@ -5830,6 +5832,14 @@ window.onload = function() {
 
   // Show the copyright once everything loads up
   document.querySelector('footer').classList.remove("hidden");
+
+  for (let fid in STORIES) {
+    let person = TREE_FIDMAP[fid];
+    if (isPrivate && person.living) {
+      continue;
+    }
+    addPersonDetails({"data": person, "key": person.key});
+  }
 
   let Id = window.location.get("id");
   if (Id) {
