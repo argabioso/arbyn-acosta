@@ -503,8 +503,8 @@ const SOURCES = {
     'GHB8-RCH:birthPlace',
   ],
 
-  // FamilySearch: Simplicio Lopecillo and Gregoria Villarubin (TODO)
-  'https://www.familysearch.org/ark:/61903/1:1:66XW-VQRT': [
+  // FamilySearch: Simplicio Lopecillo and Gregoria Villarubin
+  'https://drive.google.com/file/d/1_QL_-c5uIfBH8s0Y4ptLHaftJutdnW7Q/view': [
     'G2HQ-YQS:GHB8-RCH:parentChild',
     'G2HQ-YQS:firstName',
     'G2HQ-YQS:lastName',
