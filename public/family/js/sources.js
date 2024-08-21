@@ -628,6 +628,7 @@ const SOURCES = {
     'GHB8-J1B:firstName',
     'GHB8-J1B:middleName',
     'GHB8-J1B:lastName',
+    'GHB8-J1B:birthPlace',
 
     'GHBD-7M4:GHB8-J1B:partner',
     'GHBD-7M4:marriageDate',

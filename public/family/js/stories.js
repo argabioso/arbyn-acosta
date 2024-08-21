@@ -270,6 +270,14 @@ var STORIES = {
       </ul>
     `
   },
+  'GC7T-H59': {
+    stories: `
+      <h5>Coin Church Bell</h5>
+      <p>On February 15, 1882, a huge bell was hoisted to the five-meter tower of, now, Holy Family Parish Church in Santa Barbara, Pangasinan with the aid of wooden and bamboo scaffolds. The bell tower was donated by Don Agustin Bautista, former Alcalde, costing 450 pesos.</p>
+      <img alt="Holy Family Parish Church Bell" src="images/stories/Holy_Family_Church.webp" />
+      <p class="caption"><em>Holy Family Parish Church captured on March 2024.</em></p>
+    `
+  },
   'GHB5-TWN': { // Mitchie Adanza
     stories: `
       <h5>Siblings</h5>

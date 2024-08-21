@@ -295,7 +295,7 @@ def process_place(raw_value):
     if same_found:
         del temp_place_parts[i]
 
-    if raw_value.endswith("Philippines"):
+    if raw_value.endswith("Philippines") and len(temp_place_parts) > 2:
         temp_place = ", ".join(temp_place_parts[:-2] + [temp_place_parts[-1]])
     else:
         temp_place = ", ".join(temp_place_parts)

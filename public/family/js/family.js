@@ -545,7 +545,7 @@ const ui = {
         4: 410,
         5: 364,
         6: 370,
-        7: 302,
+        7: 308,
         8: 410,
         9: 410,
       }
@@ -1092,7 +1092,7 @@ for (const [key, svg] of Object.entries(isDark ? DARK_MARKERS : LIGHT_MARKERS)) 
     "birthPlace": "North General Hospital, Espa\u00f1a, Manila, PHL",
     "deathAge": null,
     "deathDate": "1979-06-07",
-    "deathPlace": "Forest Lawn, Covina, Los Angeles, California, USA",
+    "deathPlace": "Monterey Park, Los Angeles, California, USA",
     "gender": "M",
     "hasDNA": false,
     "hasImage": true,
@@ -1168,7 +1168,7 @@ for (const [key, svg] of Object.entries(isDark ? DARK_MARKERS : LIGHT_MARKERS)) 
   {
     "baptismDate": null,
     "birthDate": "before 1903",
-    "birthPlace": "PHL",
+    "birthPlace": "Luzon, PHL",
     "deathAge": null,
     "deathDate": "after 1951-03-05",
     "deathPlace": null,
@@ -1269,7 +1269,7 @@ for (const [key, svg] of Object.entries(isDark ? DARK_MARKERS : LIGHT_MARKERS)) 
   {
     "baptismDate": null,
     "birthDate": "1943-01-28",
-    "birthPlace": "Santa Barbara, Pangasinan, PHL",
+    "birthPlace": "Azcarraga, Binondo, Manila, PHL",
     "deathAge": null,
     "deathDate": "1974-08-10",
     "deathPlace": "Sangandaan Cemetery, South Caloocan, PHL",
@@ -1526,7 +1526,7 @@ for (const [key, svg] of Object.entries(isDark ? DARK_MARKERS : LIGHT_MARKERS)) 
   {
     "baptismDate": null,
     "birthDate": "1918-04-19",
-    "birthPlace": "PHL",
+    "birthPlace": "Luzon, PHL",
     "deathAge": null,
     "deathDate": "1990-04-16",
     "deathPlace": "Sangandaan Cemetery, South Caloocan, PHL",
@@ -1556,7 +1556,7 @@ for (const [key, svg] of Object.entries(isDark ? DARK_MARKERS : LIGHT_MARKERS)) 
     "birthPlace": null,
     "deathAge": "50+",
     "deathDate": "after 1918-04-19",
-    "deathPlace": "PHL",
+    "deathPlace": "Luzon, PHL",
     "gender": "F",
     "hasDNA": false,
     "hasImage": true,
@@ -1658,7 +1658,7 @@ for (const [key, svg] of Object.entries(isDark ? DARK_MARKERS : LIGHT_MARKERS)) 
   },
   {
     "baptismDate": null,
-    "birthDate": "about 1901",
+    "birthDate": "about 1909",
     "birthPlace": "Dumaguete, Negros Oriental, PHL",
     "deathAge": null,
     "deathDate": "1990-11-03",
@@ -1670,8 +1670,8 @@ for (const [key, svg] of Object.entries(isDark ? DARK_MARKERS : LIGHT_MARKERS)) 
     "lastName": "Adanza",
     "living": false,
     "livingPlace": null,
-    "marriageDate": null,
-    "marriagePlace": null,
+    "marriageDate": "1928-10-06",
+    "marriagePlace": "Balingasag, Misamis Oriental, PHL",
     "middleName": "R.",
     "nickname": null,
     "prefix": null,
@@ -1684,8 +1684,8 @@ for (const [key, svg] of Object.entries(isDark ? DARK_MARKERS : LIGHT_MARKERS)) 
   },
   {
     "baptismDate": null,
-    "birthDate": null,
-    "birthPlace": "PHL",
+    "birthDate": "about 1911",
+    "birthPlace": "Mindanao, PHL",
     "deathAge": null,
     "deathDate": "after 1990-11-03",
     "deathPlace": "Balingasag, Misamis Oriental, PHL",
@@ -1696,8 +1696,8 @@ for (const [key, svg] of Object.entries(isDark ? DARK_MARKERS : LIGHT_MARKERS)) 
     "lastName": "Ladera",
     "living": false,
     "livingPlace": null,
-    "marriageDate": null,
-    "marriagePlace": null,
+    "marriageDate": "1928-10-06",
+    "marriagePlace": "Balingasag, Misamis Oriental, PHL",
     "middleName": null,
     "nickname": null,
     "prefix": null,
@@ -1839,7 +1839,7 @@ for (const [key, svg] of Object.entries(isDark ? DARK_MARKERS : LIGHT_MARKERS)) 
   },
   {
     "baptismDate": null,
-    "birthDate": "around 1903",
+    "birthDate": "about 1903",
     "birthPlace": "Pilar, Capiz, PHL",
     "deathAge": null,
     "deathDate": "after 1922-02-15",
@@ -1914,7 +1914,7 @@ for (const [key, svg] of Object.entries(isDark ? DARK_MARKERS : LIGHT_MARKERS)) 
   },
   {
     "baptismDate": null,
-    "birthDate": "around 1904",
+    "birthDate": "about 1904",
     "birthPlace": null,
     "deathAge": null,
     "deathDate": "after 1922-02-15",
@@ -2334,6 +2334,14 @@ for (const [key, svg] of Object.entries(isDark ? DARK_MARKERS : LIGHT_MARKERS)) 
           </div>
         </li>
       </ul>
+    `
+  },
+  'GC7T-H59': {
+    stories: `
+      <h5>Coin Church Bell</h5>
+      <p>On February 15, 1882, a huge bell was hoisted to the five-meter tower of, now, Holy Family Parish Church in Santa Barbara, Pangasinan with the aid of wooden and bamboo scaffolds. The bell tower was donated by Don Agustin Bautista, former Alcalde, costing 450 pesos.</p>
+      <img alt="Holy Family Parish Church Bell" src="images/stories/Holy_Family_Church.webp" />
+      <p class="caption"><em>Holy Family Parish Church captured on March 2024.</em></p>
     `
   },
   'GHB5-TWN': { // Mitchie Adanza
@@ -3253,8 +3261,8 @@ const SOURCES = {
     'GHB8-RCH:birthPlace',
   ],
 
-  // FamilySearch: Simplicio Lopecillo and Gregoria Villarubin (TODO)
-  'https://www.familysearch.org/ark:/61903/1:1:66XW-VQRT': [
+  // FamilySearch: Simplicio Lopecillo and Gregoria Villarubin
+  'https://drive.google.com/file/d/1_QL_-c5uIfBH8s0Y4ptLHaftJutdnW7Q/view': [
     'G2HQ-YQS:GHB8-RCH:parentChild',
     'G2HQ-YQS:firstName',
     'G2HQ-YQS:lastName',
@@ -3378,6 +3386,7 @@ const SOURCES = {
     'GHB8-J1B:firstName',
     'GHB8-J1B:middleName',
     'GHB8-J1B:lastName',
+    'GHB8-J1B:birthPlace',
 
     'GHBD-7M4:GHB8-J1B:partner',
     'GHBD-7M4:marriageDate',
