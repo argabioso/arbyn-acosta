@@ -106,11 +106,19 @@ body:not(.dark) #personDetailsDesc {
   margin-bottom: 1rem;
 }
 
-#personDetailsDesc p {
+#personDetailsDesc p,
+#personDetailsDesc ol li {
   font-family: 'Google Sans Text', sans-serif;
   font-size: 15px;
   line-height: 22px;
+}
+
+#personDetailsDesc p {
   margin-bottom: 1.5rem;
+}
+
+#personDetailsDesc ol {
+  padding-left: 1.5rem;
 }
 
 #personDetailsDesc figure {
@@ -133,12 +141,20 @@ body:not(.dark) #personDetailsDesc {
   opacity: 0.6;
 }
 
-#personDetailsDesc h5 {
+#personDetailsDesc h5,
+#personDetailsDesc h6 {
   font-family: 'Google Sans', sans-serif;
+  font-weight: 500;
+}
+
+#personDetailsDesc h5 {
   font-size: 17px;
   line-height: 22px;
-  font-weight: 500;
   margin-bottom: 1rem;
+}
+
+#personDetailsDesc h6 {
+  font-size: 15px;
 }
 
 body.dark #personDetailsDesc p {

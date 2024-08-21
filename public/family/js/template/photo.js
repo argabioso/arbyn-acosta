@@ -60,7 +60,7 @@ function calculatePhotoScale(nodeData) {
 
   switch (emptyCount) {
     case 0: // all places are available, has image
-      return 0.14825600;
+      return 0.15525600;
     case 1: // only two places are available, has image
       return 0.13400100;
     case 2: // only one place is available, has image

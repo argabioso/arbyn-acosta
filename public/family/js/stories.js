@@ -2,7 +2,7 @@ var STORIES = {
   'GQX8-CQP': { // Arbyn Argabioso
     headline: 'An Electronics-Engineering-graduate turned Software Engineer focused on recording his family\'s history.',
     stories: `
-      <h5>Half Siblings <span class="chill">from Mother's Side</span></h5>
+      <h5>Half Siblings <span class="chill">from his Mother's Side</span></h5>
       <ul class="siblings">
         <li class="person-placeholder">
           <span class="person-name">$\{fullName\}</span>
@@ -25,13 +25,13 @@ var STORIES = {
           <div class="person-details">
             <span class="person-name">Joshua Caleb A. Ignacio</span>
             <span class="relevant-dates">1 Aug 2008 — Living</span>
-            <span class="birth-place"><strong>B</strong> : Poblacion, Caloocan, Philippines</span>
+            <span class="birth-place"><strong>B</strong> : Poblacion, South Caloocan, PHL</span>
             <span class="birth-place"><strong>L</strong> : Magdalena, Laguna, Philippines</span>
           </div>
         </li>
       </ul>
 
-      <h5>Half Siblings <span class="chill">from Father's Side</span></h5>
+      <h5>Half Siblings <span class="chill">from his Father's Side</span></h5>
       <ul class="siblings">
         <li class="person-placeholder">
           <span class="person-name">$\{fullName\}</span>
@@ -48,6 +48,13 @@ var STORIES = {
           </div>
         </li>
       </ul>
+
+      <hr />
+      <h5>Living Family Line</h5>
+      <figure>
+        <img alt="Living Family Line" src="images/stories/My_Family_Line.webp" />
+        <p class="caption"><em>Photo taken on June 15, 2024. Arbyn's family line on his wedding day: (from left to right) Lydia Saplala, Arbyn Argabioso, and Roland Argabioso.</em></p>
+      </figure>
     `
   },
   'GQJK-L51': { // Roland Argabioso
@@ -134,6 +141,18 @@ var STORIES = {
         <img alt="Saplala Caloocan House" src="images/stories/Saplala_Caloocan_House.webp" />
         <p class="caption"><em>What Fernando Saplala's land looks like in February 2021.</em></p>
       </figure>
+
+      <hr />
+      <h5>Saplala Descendants</h5>
+      <p>Fortunately for Fernando, having four children resulted in having at least eight grand children and more than a dozen great grandchildren.</p>
+      <figure>
+        <img alt="Saplala Caloocan House" src="images/stories/Saplala_Siblings.webp" />
+        <p class="caption"><em>Fernando's children. Photo was taken around 2016: (from left to right) Claro, Celia, Lydia, and Bonifacio.</em></p>
+      </figure>
+      <figure>
+        <img alt="Saplala Men" src="images/stories/Saplala_Men_2016.webp" />
+        <p class="caption"><em>Some of Fernando Saplala's male grandchildren and great grandchildren: (from left to right) Antonio Argabioso, Michael Argabioso, Mark Argabioso, Ferdie Franco, Danilo Argabioso, Ronaldo Saplala, Arbyn Argabioso, and Rolando Argabioso. Photo was taken on January 2016.</em></p>
+      </figure>
     `
   },
   'GHB8-M8D': { // Victor Perez
@@ -178,14 +197,20 @@ var STORIES = {
       <hr />
       <h5>Orphaned at a Very Young Age</h5>
       <p>When Babycor (shorthand for "Baby Corazon") was still three years old, her mother, Catalina Maramba, passed away because of an illness. Although her father, Manuel Acosta Jr., was still alive he wasn't always present because he worked as a Seaman.</p>
-      <img alt="Catalina Maramba with her children" src="images/stories/Lola_Catalina_Sick_with_Kids.webp" />
-      <p class="caption"><em>Photo of Catalina Maramba with her three children: (from left to right) Susan Acosta, Corazon Acosta, and Manuel Acosta III.</em></p>
+      <figure>
+        <img alt="Catalina Maramba with her children" src="images/stories/Lola_Catalina_Sick_with_Kids.webp" />
+        <p class="caption"><em>Photo of Catalina Maramba with her three children: (from left to right) Susan Acosta, Corazon Acosta, and Manuel Acosta III.</em></p>
+      </figure>
       <p>Three months after Babycor turned eight years old, her father died as well. According to Manuel Acosta III, Corazon's older brother, they were taken care for mostly by their grandparents: Manuel Acosta Sr. and Natividad San Agustin, and also their aunt: Vicky Acosta.</p>
-      <img alt="Acosta Family Swimming Together" src="images/stories/Acosta_Swimming.webp" />
-      <p class="caption"><em>Photo of the Acosta Family swimming together. From left to right: Vicky Acosta, Manuel Acosta III, Natividad San Agustin, Benjamin Acosta Jr., Corazon Acosta, and Manuel Acosta Sr.</em></p>
+      <figure>
+        <img alt="Acosta Family Swimming Together" src="images/stories/Acosta_Swimming.webp" />
+        <p class="caption"><em>Photo of the Acosta Family swimming together. From left to right: Vicky Acosta, Manuel Acosta III, Natividad San Agustin, Benjamin Acosta Jr., Corazon Acosta, and Manuel Acosta Sr.</em></p>
+      </figure>
       <p>Fortunately, she also grew up close to her step mother: Loren "Nene" Asis. Later, when Corazon was older, she also became the godmother of her younger step-sister Loremei Asis.</p>
-      <img alt="Loren Asis and Corazon Acosta" src="images/stories/Lola_Nene.lossy.webp" />
-      <p class="caption"><em>Loremei Asis' graduation. From left to right: Corazon Acosta, Loren "Nene" Asis, Arbyn Argabioso, and Loremei Asis.</em></p>
+      <figure>
+        <img alt="Loren Asis and Corazon Acosta" src="images/stories/Lola_Nene.lossy.webp" />
+        <p class="caption"><em>Loremei Asis' graduation. From left to right: Corazon Acosta, Loren "Nene" Asis, Arbyn Argabioso, and Loremei Asis.</em></p>
+      </figure>
 
       <hr />
       <h5>90s Gamer Girl</h5>
@@ -199,16 +224,22 @@ var STORIES = {
       <h5>Spent <strong>₱0</strong> for College</h5>
       <p>It's probably not zero, but Corazon Acosta spent close to nothing when she studied Accountancy in the University of the East - Caloocan. Embarrassed and ashamed to accept money from her aunt: Amelia Acosta, she entered UE's Student Assistant program which acts as a "working student" type of scholarship.</p>
       <p>The minimum requirement is you do the job required by what department you are assigned to and you don't get any failing grade. In turn, you will receive a small stipend and a full scholarship for that semester. Because of her hardwork and dedication, she actually graduated a semester earlier than expected and have spent nothing on school tuition.</p>
-      <img alt="Corazon in UE Caloocan's field" src="images/stories/Corazon_UE.webp" />
-      <p class="caption"><em>Babycor with some of her classmates in the Accountancy program.</em></p>
-      <img alt="Corazon's Diploma" src="images/stories/Corazon_Diploma.webp" />
-      <p class="caption"><em>Babycor's Diploma for Bachelor of Science in Accountancy.</em></p>
+      <figure>
+        <img alt="Corazon in UE Caloocan's field" src="images/stories/Corazon_UE.webp" />
+        <p class="caption"><em>Babycor with some of her classmates in the Accountancy program.</em></p>
+      </figure>
+      <figure>
+        <img alt="Corazon's Diploma" src="images/stories/Corazon_Diploma.webp" />
+        <p class="caption"><em>Babycor's Diploma for Bachelor of Science in Accountancy.</em></p>
+      </figure>
 
       <hr />
       <h5>Last Family Photo</h5>
       <p>For Babycor's 47th birthday, her son, Arbyn Argabioso, and her girlfriend, Mitchi Adanza, surprised her by visiting them in Santa Cruz, Laguna. Little did they know that seven days after taking this photo, Babycor would pass away.</p>
-      <img alt="Last photo in Santa Cruz, Laguna" src="images/stories/babycor_last_photo.webp" />
-      <p class="caption"><em>Babycor's last complete family photo.</em></p>
+      <figure>
+        <img alt="Last photo in Santa Cruz, Laguna" src="images/stories/babycor_last_photo.webp" />
+        <p class="caption"><em>Babycor's last complete family photo.</em></p>
+      </figure>
     `
   },
   'GHBD-7M4': { // Lolo Manuel Jr.
@@ -274,8 +305,10 @@ var STORIES = {
     stories: `
       <h5>Coin Church Bell</h5>
       <p>On February 15, 1882, a huge bell was hoisted to the five-meter tower of, now, Holy Family Parish Church in Santa Barbara, Pangasinan with the aid of wooden and bamboo scaffolds. The bell tower was donated by Don Agustin Bautista, former Alcalde, costing 450 pesos.</p>
-      <img alt="Holy Family Parish Church Bell" src="images/stories/Holy_Family_Church.webp" />
-      <p class="caption"><em>Holy Family Parish Church captured on March 2024.</em></p>
+      <figure>
+        <img alt="Holy Family Parish Church Bell" src="images/stories/Holy_Family_Church.webp" />
+        <p class="caption"><em>Holy Family Parish Church captured on March 2024.</em></p>
+      </figure>
     `
   },
   'GHB5-TWN': { // Mitchie Adanza
@@ -293,9 +326,29 @@ var STORIES = {
             <span class="person-name">DM A. Adanza</span>
             <span class="relevant-dates">13 Oct 2004 — Living</span>
             <span class="birth-place"><strong>B</strong> : Manila, Philippines</span>
-            <span class="death-place"><strong>L</strong> : Sangandaa, Caloocan, Philippines</span>
+            <span class="death-place"><strong>L</strong> : Sangandaan, Sout Caloocan, PHL</span>
           </div>
         </li>
+      </ul>
+
+      <hr />
+      <h5>Extra-curricular Super Star</h5>
+      <p>Back when Mitchie was still in college, she participated in <strong>a lot</strong> of extra-curricular activities. Sometimes ignoring more "practical" choices 😅 The very first official position that she ran for was the Public-relations Officer of the Engineering Student Council. She was in office from school year (S.Y.) 2013 to 2014.</p>
+      <p>After experiencing handling a student government position, she took on higher and more positions in more specific recognized student organizations (RSO). She also won awards for participating in internal and inter-school competitions.</p>
+      <figure>
+        <img alt="IECEP - QCSC Induction" src="images/stories/QCSC_Induction.webp" />
+        <p class="caption"><em>Mitchie's induction as Public Relations Officer of IECEP - QCSC (a regional organization for ECE students). Mitchie is in the middle, wearing a blue dress. Photo was taken around 2015.</em></p>
+      </figure>
+
+      <h5>List of Official Positions</h5>
+      <ol>
+        <li><strong>President</strong><br />Rotaract Club <em>(S.Y. 2014 - 15)</em></li>
+        <li><strong>Secretary of External Affairs</strong><br />ECES - IECEP <em>(S.Y. 2014 - 15)</em></li>
+        <li><strong>School Representative</strong><br />IECEP - QCSC <em>(S.Y. 2014 - 15)</em></li>
+        <li><strong>Vice President of External Affairs</strong><br />ECES - IECEP <em>(S.Y. 2015 - 16)</em></li>
+        <li><strong>Public Relations Officer</strong><br />IECEP - QCSC <em>(S.Y. 2015 - 16)</em></li>
+        <li><strong>Chairman</strong><br />IEEE – UESB <em>(S.Y. 2016 – 17)</em></li>
+      </ol>
     `
   }
 }
