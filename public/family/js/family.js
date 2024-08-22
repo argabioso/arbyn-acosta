@@ -2816,11 +2816,11 @@ function addPersonDetails(node) {
     'government': 'Government Official',
     'software': 'Software Engineer',
     'book': 'has stories',
-    'male-twin': 'has male twin',
+    'male-twin': 'had a male twin',
     'dna': 'DNA-tested',
     'military': 'Military Veteran',
     'housewife': 'Housewife',
-    'fishery': 'has a fishery',
+    'fishery': 'had a fishery',
     'prelations': 'PR Skills'
   }
 
