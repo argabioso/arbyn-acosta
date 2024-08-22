@@ -52,7 +52,7 @@ var STORIES = {
       <hr />
       <h5>Living Family Line</h5>
       <figure>
-        <img alt="Living Family Line" src="images/stories/My_Family_Line.webp" />
+        <img alt="Living Family Line" src="images/stories/My_Family_Line.lossy.webp" />
         <p class="caption"><em>Photo taken on June 15, 2024. Arbyn's family line on his wedding day: (from left to right) Lydia Saplala, Arbyn Argabioso, and Roland Argabioso.</em></p>
       </figure>
     `
@@ -167,7 +167,7 @@ var STORIES = {
       <h5>Divisoria's Determined Vendor</h5>
       <p>Lydia Saplala grew up in challenging circumstances, but her determination to provide for her family never wavered. She worked tirelessly, raising her three children while running a small stall in Divisoria, where she sold various goods. In true entrepreneurial spirit, Lydia would even collect discarded vegetables, clean and cook them into street food, turning scraps into a source of income. Her resourcefulness and hard work not only sustained her family but also laid the foundation for the success of future generations.</p>
       <figure>
-        <img alt="Streets of Divisoria" src="images/stories/Divisoria.webp" />
+        <img alt="Streets of Divisoria" src="images/stories/Divisoria.lossy.webp" />
         <p class="caption"><em>Photo of one of the streets of Divisoria taken on August 2022.</em></p>
       </figure>
 
@@ -175,7 +175,7 @@ var STORIES = {
       <h5>Argabioso Brothers</h5>
       <p>Inspired by their mother's dedication, Lydia's sons persevered to reach the top of their respective fields as well. Roland Argabioso rose to the position of Deputy Director at the National Bureau of Investigation, Philippines, while Antonio Argabioso became the Senior Vice President of the Social Security System, Philippines. Danilo Argabioso, on the other hand, made his mark internationally as an engineer, contributing to projects across various countries, with a significant stint in Singapore.</p>
       <figure>
-        <img alt="Argabioso Brothers" src="images/stories/Argabioso_Brothers.webp" />
+        <img alt="Argabioso Brothers" src="images/stories/Argabioso_Brothers.lossy.webp" />
         <p class="caption"><em>Lydia's children. Photo was taken on June 15, 2024: (from left to right) Danilo, Antonio, and Roland Argabioso.</em></p>
       </figure>
 
@@ -199,7 +199,7 @@ var STORIES = {
       <h5>Against All Odds</h5>
       <p>Fernando's story is one of courage and resilience amidst the harrowing backdrop of World War II in the Philippines. Born on May 30, 1916, he fought bravely in the Battle of Bataan and survived the infamous Death March by ingeniously concealing himself in "nitchos" or death beds within a cemetery in Hermosa, Bataan. His quick thinking and bold moves were crucial to his survival during one of the darkest periods in Philippine history.</p>
       <figure>
-        <img alt="Bataan Death March" src="images/stories/Photograph_of_American_Prisoners_Using_Improvised_Litters_to_Carry_Comrades,_05-1942_-_NARA_-_535564.lossy.webp" />
+        <img alt="Bataan Death March" src="images/stories/Death_March.lossy.webp" />
         <p class="caption"><em>Prisoners of war on the Bataan Death March. (Photo owned by the U.S. Air Force)</em></p>
       </figure>
       <p>Fernando welcomed his eldest son, Bonifacio Saplala, around 1939. His second son, Claro Saplala, was born right after. Had Fernando not successfully evaded death during the March, the story of his family would have been starkly different. His return from the brink of death enabled him to continue his lineage, leading to the birth of his two daughters: Lydia Saplala on November 24, 1944; and Celia Saplala on March 2, 1946. Unfortunately, Fernando passed away on May 3, 1993, leaving behind a legacy of bravery and the enduring spirit of survival.</p>
@@ -274,25 +274,25 @@ var STORIES = {
 
       <hr />
       <h5>Orphaned at a Very Young Age</h5>
-      <p>When Babycor (shorthand for "Baby Corazon") was still three years old, her mother, Catalina Maramba, passed away because of an illness. Although her father, Manuel Acosta Jr., was still alive he wasn't always present because he worked as a Seaman.</p>
+      <p>When Babycor (shorthand for "Baby Corazon") was still three years old, her mother, Catalina Maramba, passed away because of an illness. Although her father, Manuel Acosta Jr., was still alive, he wasn't always present because he worked as a Seaman.</p>
       <figure>
         <img alt="Catalina Maramba with her children" src="images/stories/Lola_Catalina_Sick_with_Kids.webp" />
-        <p class="caption"><em>Photo of Catalina Maramba with her three children: (from left to right) Susan Acosta, Corazon Acosta, and Manuel Acosta III.</em></p>
+        <p class="caption"><em>Catalina Maramba with her three children: (from left to right) Susan Acosta, Corazon Acosta, and Manuel Acosta III.</em></p>
       </figure>
-      <p>Three months after Babycor turned eight years old, her father died as well. According to Manuel Acosta III, Corazon's older brother, they were taken care for mostly by their grandparents: Manuel Acosta Sr. and Natividad San Agustin, and also their aunt: Vicky Acosta.</p>
+      <p>Three months after Babycor turned eight years old, her father died as well. According to Manuel Acosta III, Corazon's older brother, they were cared for by their grandparents and aunt - Manuel Acosta Sr., Natividad San Agustin, and Vicky Acosta.</p>
       <figure>
         <img alt="Acosta Family Swimming Together" src="images/stories/Acosta_Swimming.webp" />
-        <p class="caption"><em>Photo of the Acosta Family swimming together. From left to right: Vicky Acosta, Manuel Acosta III, Natividad San Agustin, Benjamin Acosta Jr., Corazon Acosta, and Manuel Acosta Sr.</em></p>
+        <p class="caption"><em>Photo of some of the members of the Acosta Family swimming together. From left to right: Vicky Acosta, Manuel Acosta III, Natividad San Agustin, Benjamin Acosta Jr., Corazon Acosta, and Manuel Acosta Sr.</em></p>
       </figure>
-      <p>Fortunately, she also grew up close to her step mother: Loren "Nene" Asis. Later, when Corazon was older, she also became the godmother of her younger step-sister Loremei Asis.</p>
+      <p>Fortunately, she grew up close to her stepmother, Loren "Nene" Asis. Later, when Corazon was older, she also became the godmother of her younger step-sister Loremei "LM" Asis.</p>
       <figure>
         <img alt="Loren Asis and Corazon Acosta" src="images/stories/Lola_Nene.lossy.webp" />
-        <p class="caption"><em>Loremei Asis' graduation. From left to right: Corazon Acosta, Loren "Nene" Asis, Arbyn Argabioso, and Loremei Asis.</em></p>
+        <p class="caption"><em>Photo of Loremei Asis' graduation: (from left to right) Corazon Acosta, Loren "Nene" Asis, Arbyn Argabioso, and Loremei "LM" Asis.</em></p>
       </figure>
 
       <hr />
       <h5>90s Gamer Girl</h5>
-      <p>According to Darwin Acosta, Corazon's first cousin and youngest son of Benjamin Acosta Sr., Corazon was actually a great player of the original "Super Mario Bros." game. Without the advent of Social Media like what we have today, she discovered that she can gain unlimited lives in the game by doing what we now know as "Turtle Tipping"</p>
+      <p>According to Darwin Acosta, Corazon's first cousin and the youngest son of Benjamin Acosta Sr., Corazon was a great player in the original "Super Mario Bros." game. Without the advent of social media like what we have today, she discovered that she could gain unlimited lives in the game by doing what we now know as "Turtle Tipping."</p>
       <figure>
         <div class="youtube-container"><iframe class="youtube-embed" src="https://www.youtube.com/embed/_i0KzmOovqU?si=-01Wxzd-Z4rZn_0W" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
         <p class="caption"><em>Demo of how "Turtle Tipping" works.</em></p>
@@ -300,23 +300,23 @@ var STORIES = {
 
       <hr />
       <h5>Spent <strong>₱0</strong> for College</h5>
-      <p>It's probably not zero, but Corazon Acosta spent close to nothing when she studied Accountancy in the University of the East - Caloocan. Embarrassed and ashamed to accept money from her aunt: Amelia Acosta, she entered UE's Student Assistant program which acts as a "working student" type of scholarship.</p>
-      <p>The minimum requirement is you do the job required by what department you are assigned to and you don't get any failing grade. In turn, you will receive a small stipend and a full scholarship for that semester. Because of her hardwork and dedication, she actually graduated a semester earlier than expected and have spent nothing on school tuition.</p>
+      <p>It's probably not zero, but Corazon Acosta spent nearly nothing when she studied Accountancy at the University of the East - Caloocan. Embarrassed and ashamed to accept money from her aunt, Amelia Acosta, she entered UE's Student Assistant program that provides a "working student" scholarship.</p>
+      <p>The program required her to fulfill departmental duties and maintain passing grades in exchange for a modest stipend and full tuition coverage for the semester. Through her dedication and hard work, Corazon graduated a semester earlier than expected and has spent almost nothing on school tuition.</p>
       <figure>
         <img alt="Corazon in UE Caloocan's field" src="images/stories/Corazon_UE.webp" />
-        <p class="caption"><em>Babycor with some of her classmates in the Accountancy program.</em></p>
+        <p class="caption"><em>Photo of Babycor with some of her classmates in the Accountancy program in UE Caloocan's field.</em></p>
       </figure>
       <figure>
         <img alt="Corazon's Diploma" src="images/stories/Corazon_Diploma.webp" />
-        <p class="caption"><em>Babycor's Diploma for Bachelor of Science in Accountancy.</em></p>
+        <p class="caption"><em>Photo of Babycor's Diploma for Bachelor of Science in Accountancy.</em></p>
       </figure>
 
       <hr />
       <h5>Last Family Photo</h5>
       <p>For Babycor's 47th birthday, her son, Arbyn Argabioso, and her girlfriend, Mitchi Adanza, surprised her by visiting them in Santa Cruz, Laguna. Little did they know that seven days after taking this photo, Babycor would pass away.</p>
       <figure>
-        <img alt="Last photo in Santa Cruz, Laguna" src="images/stories/babycor_last_photo.webp" />
-        <p class="caption"><em>Babycor's last complete family photo.</em></p>
+        <img alt="Last photo in Santa Cruz, Laguna" src="images/stories/Babycor_Last_Family_Photo.webp" />
+        <p class="caption"><em>Photo of Babycor's family taken on May 18, 2018. </em></p>
       </figure>
     `
   },
@@ -398,7 +398,7 @@ var STORIES = {
         </li>
         <li class="male details-3">
           <div class="person-headshot">
-            <img src="images/people/relatives/dm.png" />
+            <img src="images/people/relatives/dm.webp" />
           </div>
           <div class="person-details">
             <span class="person-name">DM A. Adanza</span>
@@ -411,11 +411,11 @@ var STORIES = {
 
       <hr />
       <h5>Extra-curricular Super Star</h5>
-      <p>Back when Mitchie was still in college, she participated in <strong>a lot</strong> of extra-curricular activities. Sometimes ignoring more "practical" choices 😅 The very first official position that she ran for was the Public-relations Officer of the Engineering Student Council. She was in office from school year (S.Y.) 2013 to 2014.</p>
-      <p>After experiencing handling a student government position, she took on higher and more positions in more specific recognized student organizations (RSO). She also won awards for participating in internal and inter-school competitions.</p>
+      <p>While in college, Mitchie was actively involved in numerous extracurricular activities. Sometimes ignoring more "practical" choices 😅 The very first official position that she ran for was the Public Relations Officer of the Engineering Student Council. She was in office from the school year 2013 to 2014.</p>
+      <p>After handling a student government position, she took on higher and more positions in more specific recognized student organizations (RSO). She also won awards for participating in internal and inter-school competitions.</p>
       <figure>
         <img alt="IECEP - QCSC Induction" src="images/stories/QCSC_Induction.webp" />
-        <p class="caption"><em>Mitchie's induction as Public Relations Officer of IECEP - QCSC (a regional organization for ECE students). Mitchie is in the middle, wearing a blue dress. Photo was taken around 2015.</em></p>
+        <p class="caption"><em>Photo of Mitchie's induction as Public Relations Officer of IECEP - QCSC (a regional organization for ECE students) of the school year 2015. Mitchie is in the middle, wearing a blue dress.</em></p>
       </figure>
 
       <h5>List of Official Positions</h5>
