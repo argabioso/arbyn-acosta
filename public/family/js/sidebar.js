@@ -92,12 +92,13 @@ function addPersonDetails(node) {
   // Update sidebar content
   let tempInnerHTML = '';
   if (node.data.hasImage && node.data.fid !== undefined) {
-    tempInnerHTML += `<img class="headshot" alt="headshot" src="images/people/${headshotFilename}" />`;
+    tempInnerHTML += `<figure class="headshot"><img alt="headshot" src="images/people/${headshotFilename}" /></figure>`;
   }
   let hasBadges = false;
 
   var storyMarkerLabel = {
-    'computer': 'IT',
+    'retail': 'Divisoria Vendor',
+    'computer': 'Information Technology',
     'intelligence': 'Intelligence Officer',
     'government': 'Government Official',
     'software': 'Software Engineer',
@@ -160,7 +161,6 @@ function addPersonDetails(node) {
   tempInnerHTML += story;
 
   // Insert the new div into the container
-
   newDiv.innerHTML = tempInnerHTML;
   nodeDescription.appendChild(newDiv);
 }

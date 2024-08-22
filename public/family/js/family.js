@@ -2160,8 +2160,10 @@ for (const [key, svg] of Object.entries(isDark ? DARK_MARKERS : LIGHT_MARKERS)) 
       <h5>Troubled Teenage and Young Adult Years</h5>
       <p>During his teenage years, Roland faced significant challenges, including a serious altercation with a neighbor that led to threats of murder. In response, his mother Lydia banished him to Bataan to live with his grandmother, Lucina, where he completed his high school education.</p>
       <p>For his college education, Roland enrolled at the University of the East - Caloocan, initially pursuing Mechanical Engineering. However, his grades were poor, filled with failures. After a serious conversation with his mother, he resolved to improve himself by shifting his focus to Accountancy. His dedication paid off as his academic performance greatly improved, culminating in passing the national board examination to become a Certified Public Accountant in the Philippines.</p>
-      <img alt="Baby Roland Argabioso" src="images/stories/Baby_Roland.lossy.webp" />
-      <p class="caption"><em>Roland Argabioso when he was still a baby.</em></p>
+      <figure>
+        <img alt="Baby Roland Argabioso" src="images/stories/Baby_Roland.lossy.webp" />
+        <p class="caption"><em>Roland Argabioso when he was still a baby.</em></p>
+      </figure>
 
       <hr />
       <h5>Rising Through The Ranks</h5>
@@ -2181,6 +2183,79 @@ for (const [key, svg] of Object.entries(isDark ? DARK_MARKERS : LIGHT_MARKERS)) 
       <figure>
         <div class="youtube-container"><iframe class="youtube-embed" src="https://www.youtube.com/embed/XelM7m7V3FI?si=aLrttwYFY6x5m5xV&amp;start=6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
         <p class="caption"><em>Roland Argabioso in Dennis Cunanan's testification before the Senate for the Pork Barrel Scam.</em></p>
+      </figure>
+    `
+  },
+  'GHBZ-YVX': { // Lydia Saplala
+    headline: `Resilient entrepreneur and devoted mother of three, who built her livelihood and success from a humble Divisoria stall.`,
+    stories: `
+      <h5>Siblings</h5>
+      <ul class="siblings">
+        <li class="male details-3">
+          <div class="person-headshot">
+            <img src="images/people/relatives/boning.lossy.webp" />
+          </div>
+          <div class="person-details">
+            <span class="person-name">Bonifacio "Boning" P. Saplala</span>
+            <span class="relevant-dates">about 1939 — Living</span>
+            <span class="birth-place"><strong>B</strong> : Luzon, Philippines</span>
+            <span class="birth-place"><strong>L</strong> : Los Baños, Laguna, Philippines</span>
+          </div>
+        </li>
+        <li class="male details-3">
+          <div class="person-headshot">
+            <img src="images/people/relatives/claro_sr.lossy.webp" />
+          </div>
+          <div class="person-details">
+            <span class="person-name">Claro P. Saplala Sr.</span>
+            <span class="relevant-dates">from 1940 to 1943 — about 2019</span>
+            <span class="birth-place"><strong>B</strong> : Luzon, Philippines</span>
+            <span class="birth-place"><strong>D</strong> : Sangandaan, S. Caloocan, PHL</span>
+          </div>
+        </li>
+        <li class="person-placeholder">
+          <span class="person-name">$\{fullName\}</span>
+        </li>
+        <li class="female details-3">
+          <div class="person-headshot">
+            <img src="images/people/relatives/celia.lossy.webp" />
+          </div>
+          <div class="person-details">
+            <span class="person-name">Celia "Lola A" P. Saplala</span>
+            <span class="relevant-dates">2 Mar 1946 — Living</span>
+            <span class="birth-place"><strong>B</strong> : Luzon, Philippines</span>
+            <span class="birth-place"><strong>L</strong> : Dinalupihan, Bataan, Philippines</span>
+          </div>
+        </li>
+      </ul>
+
+      <hr />
+      <h5>Divisoria's Determined Vendor</h5>
+      <p>Lydia Saplala grew up in challenging circumstances, but her determination to provide for her family never wavered. She worked tirelessly, raising her three children while running a small stall in Divisoria, where she sold various goods. In true entrepreneurial spirit, Lydia would even collect discarded vegetables, clean and cook them into street food, turning scraps into a source of income. Her resourcefulness and hard work not only sustained her family but also laid the foundation for the success of future generations.</p>
+      <figure>
+        <img alt="Streets of Divisoria" src="images/stories/Divisoria.webp" />
+        <p class="caption"><em>Photo of one of the streets of Divisoria taken on August 2022.</em></p>
+      </figure>
+
+      <hr />
+      <h5>Argabioso Brothers</h5>
+      <p>Inspired by their mother's dedication, Lydia's sons persevered to reach the top of their respective fields as well. Roland Argabioso rose to the position of Deputy Director at the National Bureau of Investigation, Philippines, while Antonio Argabioso became the Senior Vice President of the Social Security System, Philippines. Danilo Argabioso, on the other hand, made his mark internationally as an engineer, contributing to projects across various countries, with a significant stint in Singapore.</p>
+      <figure>
+        <img alt="Argabioso Brothers" src="images/stories/Argabioso_Brothers.webp" />
+        <p class="caption"><em>Lydia's children. Photo was taken on June 15, 2024: (from left to right) Danilo, Antonio, and Roland Argabioso.</em></p>
+      </figure>
+
+      <hr />
+      <h5>Argabioso Grandchildren</h5>
+      <p>For Lydia, raising three children was just the beginning. Her legacy blossomed with at least seven grandchildren, each carving their unique path in the world.</p>
+      <p>Arbyn Argabioso, a Software Engineer, found his niche in the ever-evolving tech industry, while Lotus Argabioso pursued a career in medicine, becoming a respected doctor. Mark Argabioso followed in the footsteps of the engineering tradition, specializing in electrical engineering. Meanwhile, Michael Argabioso is currently delving into the complexities of law, preparing to enter the legal field. Danae Argabioso chose to focus on eye care as an optometrist, and Danielle Argabioso became a Certified Public Accountant.</p>
+      <figure>
+        <img alt="Tony Argabioso's Family" src="images/stories/Tony_Argabioso_Family.webp" />
+        <p class="caption"><em>Antonio Argabioso's side of the family. Photo was taken on June 15, 2024: (from left to right) Michael, Mark, Dulce, Antonio, and Lotus Argabioso.</em></p>
+      </figure>
+      <figure>
+        <img alt="Dada Argabioso's Family" src="images/stories/Dada_Argabioso_Family.webp" />
+        <p class="caption"><em>Danilo Argabioso's side of the family. Photo was taken on June 15, 2024: (from left to right) Danielle, Melo, and Danae Argabioso.</em></p>
       </figure>
     `
   },
@@ -2206,18 +2281,6 @@ for (const [key, svg] of Object.entries(isDark ? DARK_MARKERS : LIGHT_MARKERS)) 
       <figure>
         <img alt="Saplala Caloocan House" src="images/stories/Saplala_Caloocan_House.webp" />
         <p class="caption"><em>What Fernando Saplala's land looks like in February 2021.</em></p>
-      </figure>
-
-      <hr />
-      <h5>Saplala Descendants</h5>
-      <p>Fortunately for Fernando, having four children resulted in having at least eight grand children and more than a dozen great grandchildren.</p>
-      <figure>
-        <img alt="Saplala Caloocan House" src="images/stories/Saplala_Siblings.webp" />
-        <p class="caption"><em>Fernando's children. Photo was taken around 2016: (from left to right) Claro, Celia, Lydia, and Bonifacio.</em></p>
-      </figure>
-      <figure>
-        <img alt="Saplala Men" src="images/stories/Saplala_Men_2016.webp" />
-        <p class="caption"><em>Some of Fernando Saplala's male grandchildren and great grandchildren: (from left to right) Antonio Argabioso, Michael Argabioso, Mark Argabioso, Ferdie Franco, Danilo Argabioso, Ronaldo Saplala, Arbyn Argabioso, and Rolando Argabioso. Photo was taken on January 2016.</em></p>
       </figure>
     `
   },
@@ -2257,6 +2320,21 @@ for (const [key, svg] of Object.entries(isDark ? DARK_MARKERS : LIGHT_MARKERS)) 
         </li>
         <li class="person-placeholder">
           <span class="person-name">$\{fullName\}</span>
+        </li>
+      </ul>
+
+      <h5>Husband</h5>
+      <ul class="siblings">
+        <li class="male details-3">
+          <div class="person-headshot">
+            <img src="images/people/relatives/tatay_larry.webp" />
+          </div>
+          <div class="person-details">
+            <span class="person-name">Larry C. Ignacio</span>
+            <span class="relevant-dates">10 May 1971 — Living</span>
+            <span class="birth-place"><strong>B</strong> : Manila, Philippines</span>
+            <span class="birth-place"><strong>L</strong> : Magdalena, Laguna, Philippines</span>
+          </div>
         </li>
       </ul>
 
@@ -2392,7 +2470,7 @@ for (const [key, svg] of Object.entries(isDark ? DARK_MARKERS : LIGHT_MARKERS)) 
             <span class="person-name">DM A. Adanza</span>
             <span class="relevant-dates">13 Oct 2004 — Living</span>
             <span class="birth-place"><strong>B</strong> : Manila, Philippines</span>
-            <span class="death-place"><strong>L</strong> : Sangandaan, Sout Caloocan, PHL</span>
+            <span class="death-place"><strong>L</strong> : Sangandaan, S. Caloocan, PHL</span>
           </div>
         </li>
       </ul>
@@ -2407,13 +2485,24 @@ for (const [key, svg] of Object.entries(isDark ? DARK_MARKERS : LIGHT_MARKERS)) 
       </figure>
 
       <h5>List of Official Positions</h5>
+
       <ol>
-        <li><strong>President</strong><br />Rotaract Club <em>(S.Y. 2014 - 15)</em></li>
-        <li><strong>Secretary of External Affairs</strong><br />ECES - IECEP <em>(S.Y. 2014 - 15)</em></li>
-        <li><strong>School Representative</strong><br />IECEP - QCSC <em>(S.Y. 2014 - 15)</em></li>
-        <li><strong>Vice President of External Affairs</strong><br />ECES - IECEP <em>(S.Y. 2015 - 16)</em></li>
-        <li><strong>Public Relations Officer</strong><br />IECEP - QCSC <em>(S.Y. 2015 - 16)</em></li>
-        <li><strong>Chairman</strong><br />IEEE – UESB <em>(S.Y. 2016 – 17)</em></li>
+        <li>Rotaract Club, President</li>
+        <li>
+          <span>Electronics Engineering Society</span>
+          <ul>
+            <li>Secretary of External Affairs</li>
+            <li>Vice President of External Affairs</li>
+          </ul>
+        </li>
+        <li>
+          <span>IECEP - Quezon City Student Chapter</span>
+          <ul>
+            <li>School Representative</li>
+            <li>Public Relations Officer</li>
+          </ul>
+        </li>
+        <li>IEEE - UESB, Chairman</li>
       </ol>
     `
   }
@@ -2716,12 +2805,13 @@ function addPersonDetails(node) {
   // Update sidebar content
   let tempInnerHTML = '';
   if (node.data.hasImage && node.data.fid !== undefined) {
-    tempInnerHTML += `<img class="headshot" alt="headshot" src="images/people/${headshotFilename}" />`;
+    tempInnerHTML += `<figure class="headshot"><img alt="headshot" src="images/people/${headshotFilename}" /></figure>`;
   }
   let hasBadges = false;
 
   var storyMarkerLabel = {
-    'computer': 'IT',
+    'retail': 'Divisoria Vendor',
+    'computer': 'Information Technology',
     'intelligence': 'Intelligence Officer',
     'government': 'Government Official',
     'software': 'Software Engineer',
@@ -2784,7 +2874,6 @@ function addPersonDetails(node) {
   tempInnerHTML += story;
 
   // Insert the new div into the container
-
   newDiv.innerHTML = tempInnerHTML;
   nodeDescription.appendChild(newDiv);
 }
