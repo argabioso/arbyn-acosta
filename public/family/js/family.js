@@ -117,8 +117,10 @@ bino.useNonePhoto = function(nodeData) {
     !nodeData.hasImage
     && !nodeData.living
     && nodeData.birthDate == null
+    && nodeData.marriageDate == null
     && nodeData.deathDate == null
     && nodeData.birthPlace == null
+    && nodeData.marriagePlace == null
     && nodeData.deathPlace == null
   );
 }
@@ -145,7 +147,7 @@ bino.getRelativeDates = function(nodeData, isPrivate) {
 
   // If both birthYear and deathYear do not exist, return
   // "Living" or "Deceased" based on the living flag.
-  if (!birthYear && !deathYear) {
+  if (!birthYear && !deathYear && !marriageYear) {
     return living ? 'Living' : 'Deceased';
   }
 
@@ -156,6 +158,9 @@ bino.getRelativeDates = function(nodeData, isPrivate) {
 
     if (!marriageYear) {
       return `${separator}${deathYear}${age}`;
+    }
+    if (!deathYear) {
+      return `${separator}${marriageYear}${separator}${living ? 'Living' : 'Deceased'}${age}`;
     }
     return `${separator}${marriageYear}${separator}${deathYear}${age}`;
   }
@@ -543,7 +548,7 @@ const ui = {
         2: 408,
         3: 406,
         4: 410,
-        5: 364,
+        5: 389,
         6: 370,
         7: 308,
         8: 410,
@@ -934,10 +939,10 @@ for (const [key, svg] of Object.entries(isDark ? DARK_MARKERS : LIGHT_MARKERS)) 
   },
   {
     "baptismDate": null,
-    "birthDate": null,
+    "birthDate": "before 1902",
     "birthPlace": null,
     "deathAge": null,
-    "deathDate": null,
+    "deathDate": "after 1915-07",
     "deathPlace": null,
     "gender": "M",
     "hasDNA": false,
@@ -959,8 +964,8 @@ for (const [key, svg] of Object.entries(isDark ? DARK_MARKERS : LIGHT_MARKERS)) 
   },
   {
     "baptismDate": null,
-    "birthDate": "before 1892",
-    "birthPlace": "PHL",
+    "birthDate": "before 1902",
+    "birthPlace": null,
     "deathAge": null,
     "deathDate": "after 1916-05",
     "deathPlace": null,

@@ -9,8 +9,10 @@ bino.useNonePhoto = function(nodeData) {
     !nodeData.hasImage
     && !nodeData.living
     && nodeData.birthDate == null
+    && nodeData.marriageDate == null
     && nodeData.deathDate == null
     && nodeData.birthPlace == null
+    && nodeData.marriagePlace == null
     && nodeData.deathPlace == null
   );
 }
@@ -37,7 +39,7 @@ bino.getRelativeDates = function(nodeData, isPrivate) {
 
   // If both birthYear and deathYear do not exist, return
   // "Living" or "Deceased" based on the living flag.
-  if (!birthYear && !deathYear) {
+  if (!birthYear && !deathYear && !marriageYear) {
     return living ? 'Living' : 'Deceased';
   }
 
@@ -48,6 +50,9 @@ bino.getRelativeDates = function(nodeData, isPrivate) {
 
     if (!marriageYear) {
       return `${separator}${deathYear}${age}`;
+    }
+    if (!deathYear) {
+      return `${separator}${marriageYear}${separator}${living ? 'Living' : 'Deceased'}${age}`;
     }
     return `${separator}${marriageYear}${separator}${deathYear}${age}`;
   }

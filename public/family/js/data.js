@@ -307,10 +307,10 @@
   },
   {
     "baptismDate": null,
-    "birthDate": null,
+    "birthDate": "before 1902",
     "birthPlace": null,
     "deathAge": null,
-    "deathDate": null,
+    "deathDate": "after 1915-07",
     "deathPlace": null,
     "gender": "M",
     "hasDNA": false,
@@ -332,8 +332,8 @@
   },
   {
     "baptismDate": null,
-    "birthDate": "before 1892",
-    "birthPlace": "PHL",
+    "birthDate": "before 1902",
+    "birthPlace": null,
     "deathAge": null,
     "deathDate": "after 1916-05",
     "deathPlace": null,
