@@ -2823,7 +2823,7 @@ function addPersonDetails(node) {
   // Update sidebar content
   let tempInnerHTML = '';
   if (node.data.hasImage && node.data.fid !== undefined) {
-    tempInnerHTML += `<figure class="headshot"><img alt="headshot" src="images/people/${headshotFilename}" /></figure>`;
+    tempInnerHTML += `<figure class="headshot"><div><img alt="headshot" src="images/people/${headshotFilename}" /></div></figure>`;
   }
   let hasBadges = false;
 
