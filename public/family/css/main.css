@@ -9,6 +9,10 @@ body {
   padding: 0;
 }
 
+body.dark {
+  scrollbar-color: #9D9D9D #2E2E31;
+}
+
 #tree {
   position: absolute;
   top: 0;
@@ -91,6 +95,9 @@ body:not(.dark) #personDetailsDesc {
   width: 100%;
   margin-bottom: 1rem;
   border-radius: 5px;
+}
+
+#personDetailsDesc figure:not(.no-border) img {
   outline: 1px solid rgba(0, 0, 0, 0.125);
   outline-offset: -1px;
 }
