@@ -97,6 +97,7 @@ function addPersonDetails(node) {
   let hasBadges = false;
 
   var storyMarkerLabel = {
+    'farming': 'Farmer',
     'retail': 'Divisoria Vendor',
     'computer': 'Information Technology',
     'intelligence': 'Intelligence Officer',
