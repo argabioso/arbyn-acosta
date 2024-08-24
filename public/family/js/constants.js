@@ -13,9 +13,8 @@ const COLORS = {
   PLAIN: {fg: !isDark ? '#333333' : '#EAEAEA', bg: !isDark ? '#F0F0F0' : '#393939'},
 }
 
-const scaler = isMobileGlobal ? 450 : 1400;
 const ui = {
-  scale: window.innerWidth / scaler * 0.75,
+  scale: 0.937,
   font: {
     size: {
       name: 14.3,
