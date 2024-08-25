@@ -2477,6 +2477,14 @@ for (const [key, svg] of Object.entries(isDark ? DARK_MARKERS : LIGHT_MARKERS)) 
       </figure>
 
       <hr />
+      <h5>Short Engagement</h5>
+      <p>Based on a baptismal document found by Arbyn Argabioso, it looks like Corazon Acosta and Roland Argabioso, even for a brief period, were actually engaged. It was later confirmed by Roland Argabioso, on March 2023, that this was in fact true.</p>
+      <figure>
+        <img alt="Baptismal Record for Marriage" src="images/stories/Corazon_Baptismal_for_Marriage.webp" />
+        <p class="caption"><em>Part of Corazon's baptismal record requested on May 1997 for the purpose of marriage. </em></p>
+      </figure>
+
+      <hr />
       <h5>Last Family Photo</h5>
       <p>For Babycor's 47th birthday, her son, Arbyn Argabioso, and her girlfriend, Mitchi Adanza, surprised her by visiting them in Santa Cruz, Laguna. Little did they know that seven days after taking this photo, Babycor would pass away.</p>
       <figure>
