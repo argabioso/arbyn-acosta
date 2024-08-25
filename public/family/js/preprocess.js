@@ -17,6 +17,36 @@ for (const [i, person] of Object.entries(TREE_DATA)) {
   TREE_DATA[i]['useNonePhoto'] = bino.useNonePhoto(nodeData);
 
   // =======================================================================
+  // Auto-fill story marker
+  // =======================================================================
+  if (STORIES[person.fid] && !(isPrivate && person.living)) {
+    let counter = 0;
+    if (person.marker4) {
+      counter = 4;
+    } else if (person.marker3) {
+      counter = 4;
+    } else if (person.marker2) {
+      counter = 3;
+    } else if (person.marker && person.hasDNA) {
+      counter = 3;
+    } else if (person.marker && !person.hasDNA) {
+      counter = 2;
+    } else if (!person.marker && person.hasDNA) {
+      counter = 2;
+    } else {
+      counter = 1;
+    }
+
+    if (counter == 1) {
+      counter = '';
+    }
+    TREE_DATA[i][`marker${counter}`] = 'book';
+    TREE_DATA[i][`hasStories`] = true;
+  } else {
+    TREE_DATA[i][`hasStories`] = false;
+  }
+
+  // =======================================================================
   // Add "fullName" to each person
   // =======================================================================
   let middleInitialsArray  = ((!person.middleName) ? '' : person.middleName).trim().split(' ');
@@ -54,33 +84,6 @@ for (const [i, person] of Object.entries(TREE_DATA)) {
     ((!person.lastName) ? '' : person.lastName) +
     suffix
   );
-
-  // =======================================================================
-  // Auto-fill story marker
-  // =======================================================================
-  if (STORIES[person.fid] && !(isPrivate && person.living)) {
-    let counter = 0;
-    if (person.marker4) {
-      counter = 4;
-    } else if (person.marker3) {
-      counter = 4;
-    } else if (person.marker2) {
-      counter = 3;
-    } else if (person.marker && person.hasDNA) {
-      counter = 3;
-    } else if (person.marker && !person.hasDNA) {
-      counter = 2;
-    } else if (!person.marker && person.hasDNA) {
-      counter = 2;
-    } else {
-      counter = 1;
-    }
-
-    if (counter == 1) {
-      counter = '';
-    }
-    TREE_DATA[i][`marker${counter}`] = 'book';
-  }
 
   // =======================================================================
   // Improve locations and make living the death place for easier UI change

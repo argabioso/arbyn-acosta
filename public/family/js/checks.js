@@ -34,6 +34,7 @@ function checkPerPerson(person) {
 
     'parent', // derived attribute
 
+    'hasStories', // derived and aesthetic attribute
     'detailsRow1', // derived and aesthetic attribute
     'detailsRow2', // derived and aesthetic attribute
     'detailsRow3', // derived and aesthetic attribute

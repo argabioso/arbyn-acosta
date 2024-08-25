@@ -307,7 +307,7 @@
   },
   {
     "baptismDate": null,
-    "birthDate": "before 1902",
+    "birthDate": "before 1892",
     "birthPlace": null,
     "deathAge": null,
     "deathDate": "after 1915-07",
@@ -332,7 +332,7 @@
   },
   {
     "baptismDate": null,
-    "birthDate": "before 1902",
+    "birthDate": "before 1892",
     "birthPlace": null,
     "deathAge": null,
     "deathDate": "after 1916-05",
