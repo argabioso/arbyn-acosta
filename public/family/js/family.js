@@ -2628,7 +2628,7 @@ for (const [key, svg] of Object.entries(isDark ? DARK_MARKERS : LIGHT_MARKERS)) 
       </figure>
       <p>For Mitchie's proposal from Arbyn, it came as a surprise but there were some clues all throughout the day that Mitchie told Arbyn later on:</p>
       <ol>
-        <li>While entering the cinema, Mitchie noticed her best friend, Donn Zarny Han, because of his usual black shirt with white print.</li>
+        <li>While entering the cinema, Mitchie noticed her best friend, Donn Zarny Han, because of his usual black hoodie with white print.</li>
         <li>During the movie, Mitchie noticed one of her friends, Isabel Buenaobra, because of her recognizable red cap.</li>
         <li>During the movie, there were scenes where Bowser, the movie antagonist, would propose to Princess Peach. Mitchie took this as a sign and thought Arbyn was already proposing to her.</p</li>
       </ol>
