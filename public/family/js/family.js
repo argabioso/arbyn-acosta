@@ -405,6 +405,8 @@ const COLORS = {
   PURPLE: {fg: !isDark ? '#9831CF' : '#B73DF9', bg: !isDark ? '#F2E6F9' : '#41324B'},
   GREEN: {fg: !isDark ? '#259F31' : '#28BC36', bg: !isDark ? '#DFF1E0' : '#31402E'},
   PLAIN: {fg: !isDark ? '#333333' : '#EAEAEA', bg: !isDark ? '#F0F0F0' : '#393939'},
+  LIGHT_GRAY: {fg: !isDark ? '#333333' : '#B6BFBF', bg: !isDark ? '#F0F0F0' : '#373737'},
+  MARBLE: {fg: !isDark ? '#333333' : '#EDD5BB', bg: !isDark ? '#F0F0F0' : '#3d3833'},
 }
 
 const ui = {
@@ -440,12 +442,12 @@ const ui = {
         buysell: COLORS.PLAIN.bg,
         cattle: COLORS.BROWN.bg,
         church: COLORS.PLAIN.bg,
-        computer: COLORS.PLAIN.bg,
+        computer: COLORS.LIGHT_GRAY.bg,
         default: !isDark ? '#ffffff' : '#2f2f2f',
         dna: COLORS.PURPLE.bg,
         farming: COLORS.GREEN.bg,
         fishery: COLORS.PLAIN.bg,
-        government: COLORS.PLAIN.bg,
+        government: COLORS.MARBLE.bg,
         househusband: COLORS.BLUE.bg,
         housekeeper: COLORS.RED.bg,
         housewife: COLORS.RED.bg,
@@ -462,6 +464,7 @@ const ui = {
         sales: COLORS.YELLOW.bg,
         seaman: COLORS.PLAIN.bg,
         software: COLORS.PLAIN.bg,
+        skull: COLORS.PLAIN.bg,
         train: COLORS.PLAIN.bg,
         book: COLORS.CYAN.bg,
       },
@@ -474,12 +477,12 @@ const ui = {
         buysell: COLORS.PLAIN.fg,
         cattle: COLORS.BROWN.fg,
         church: COLORS.PLAIN.fg,
-        computer: COLORS.PLAIN.fg,
+        computer: COLORS.LIGHT_GRAY.fg,
         default: !isDark ? '#ffffff' : '#2f2f2f',
         dna: COLORS.PURPLE.fg,
         farming: COLORS.GREEN.fg,
         fishery: COLORS.PLAIN.fg,
-        government: COLORS.PLAIN.fg,
+        government: COLORS.MARBLE.fg,
         househusband: COLORS.BLUE.fg,
         housekeeper: COLORS.RED.fg,
         housewife: COLORS.RED.fg,
@@ -496,6 +499,7 @@ const ui = {
         sales: COLORS.YELLOW.fg,
         seaman: COLORS.PLAIN.fg,
         software: COLORS.PLAIN.fg,
+        skull: COLORS.PLAIN.fg,
         train: COLORS.PLAIN.fg,
         book: COLORS.CYAN.fg,
       },
@@ -587,6 +591,7 @@ const LIGHT_MARKERS = {
     "train": `<svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#333333"><path d="M140.78-348.48V-720q0-60.23 30.61-96.03 30.61-35.8 79-53.99 48.39-18.2 109-23.7t120.61-5.5q66 0 127.33 5.5 61.32 5.5 108.5 23.7 47.17 18.19 75.28 53.99T819.22-720v371.52q0 69.74-46.72 119.57-46.72 49.82-114.2 53.22l20 20q19.83 19.82 9.42 45-10.42 25.17-38.79 25.17-8.28 0-15.63-3.07-7.34-3.06-13.47-8.63L542.48-174H417.52l-77.35 76.78q-6.13 5.57-13.54 8.63-7.42 3.07-15.41 3.07-27.52 0-38.44-25.17-10.91-25.18 8.92-45l20-20q-67.48-3.4-114.2-53.22-46.72-49.83-46.72-119.57ZM480-793.22q-106 0-155 12.5t-67 27.5h441.22q-15-17-61.11-28.5T480-793.22Zm-233.22 240H440v-120H246.78v120Zm397.39 80H246.78h466.44-69.05Zm-124.17-80h193.22v-120H520v120ZM343.39-316.61q26 0 43-17t17-43q0-26-17-43t-43-17q-26 0-43 17t-17 43q0 26 17 43t43 17Zm273.22 0q26 0 43-17t17-43q0-26-17-43t-43-17q-26 0-43 17t-17 43q0 26 17 43t43 17ZM315.83-280h328.34q29.39 0 49.22-19.4t19.83-49.08v-124.74H246.78v124.74q0 29.68 19.83 49.08t49.22 19.4ZM480-753.22H699.22 258h222Z"/></svg>`,
     "book": `<svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#22AAB6"><path d="M481.6-140.56q-13.17 0-25.36-3.57-12.2-3.56-22.89-9.13-39.87-23.87-83.03-37.59-43.17-13.71-89.81-13.71-40.81 0-78.9 11t-73.6 29.87q-30.71 15.95-59.99-1.09t-29.28-50.78v-480.87q0-20.77 9.04-39.01 9.05-18.24 27.7-27.91 47.19-22.43 98.44-33.37 51.25-10.93 104.56-10.93 59.45 0 115.49 15 56.03 15 106.03 47v507.52q51-31.43 107-49.57 56-18.13 113-18.13 36 0 70.5 6.57 34.5 6.56 69.5 19.13v-508.35q16.65 5.57 32.78 11.91 16.13 6.35 32.87 13.22 18.65 8.65 27.13 27.45 8.48 18.79 8.48 39.47v490.78q0 31.09-29.28 44.5t-60.2-2.54q-35.3-18.87-73.49-29.87t-78.25-11q-45.78 0-88.24 13.85-42.45 13.86-81.76 37.45-10.13 5.57-22.7 9.13-12.57 3.57-25.74 3.57Zm129.88-249.48q-15.26 13.82-33.37 5.9Q560-392.07 560-412.43v-320.83q0-6.25 2.28-11.72 2.29-5.47 6.85-10.11l138.39-141.65q14.26-15.26 33.37-7.13Q760-895.74 760-875.35v335.78q0 6.33-2.85 11.66-2.86 5.32-7.28 10.08L611.48-390.04ZM378.74-286.91v-395.87q-29.48-13.18-58.09-18.11-28.61-4.94-60.51-4.94-38.85 0-73.21 6.52-34.36 6.51-66.93 17.66v402.26q33.38-13.41 67.76-19.92 34.37-6.52 71.74-6.52 33.41 0 61.37 3.87t57.87 15.05Zm0 0v-396.44 396.44Z"/></svg>`,
     "fishery": `<svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#333333"><path d="M438.67-92Q330-92 251-162.67 172-233.33 172-339v-229.33q0-17.11 16-23.23 16-6.11 28.5 5.49l163.17 158.4Q396-412.42 396-390.44q0 21.98-16.41 38.54-15.26 14.9-35.9 15.73-20.65.84-36.36-12.83l-31.66-29.67v45.34q0 61.33 49.36 99.66 49.36 38.34 113.83 38.34T552.17-236Q601-276.67 601-339v-138.33q-36.33-15.34-59.83-47.06-23.5-31.73-23.5-70.84 0-39.1 23.66-70.6Q565-697.33 601-713.67v-143q0-22.1 15.28-37.05 15.29-14.95 37.36-14.95t36.88 14.95q14.81 14.95 14.81 37.05v143q35.34 16.34 59.34 48.06 24 31.73 24 70.84 0 39.1-24 70.1-24 31-59.34 47.34v138.56q0 105.44-79.44 176.1Q546.44-92 438.67-92Zm214.55-449q22.78 0 38.61-15.72 15.84-15.71 15.84-38.16 0-22.45-15.72-38.29Q676.23-649 653.45-649t-38.62 15.81Q599-617.38 599-595.45q0 22.78 15.72 38.62Q630.43-541 653.22-541Zm.11-54.33Z"/></svg>`,
+    "skull": `<svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#333333"><path d="M224-65v-175q-32-17-61-45t-51-64.5Q90-386 77.5-429T65-519.73Q65-685 181.28-790q116.28-105 299-105T779-790q116 105 116 270.27Q895-472 882.5-429 870-386 848-349.5T797-285q-29 28-61 45v175H224Zm95-95h62v-100h68v100h62v-100h68v100h62v-132q37-16 66.5-39t50-52q20.5-29 32-63.52t11.5-73.33q0-126.12-88.72-203.63Q623.56-801 480.13-801q-143.42 0-231.78 77.53Q160-645.95 160-519.81q0 38.81 11 73.31t31.5 63.5q20.5 29 50 52t66.5 39v132Zm86-172h150l-75-150-75 150Zm-64.74-121q32.74 0 55.24-22.69 22.5-22.7 22.5-54.57 0-32.74-22.46-55.24-22.47-22.5-55-22.5-32.54 0-55.04 22.46-22.5 22.47-22.5 55 0 32.54 22.69 55.04 22.7 22.5 54.57 22.5Zm280 0q32.74 0 55.24-22.69 22.5-22.7 22.5-54.57 0-32.74-22.46-55.24-22.47-22.5-55-22.5-32.54 0-55.04 22.46-22.5 22.47-22.5 55 0 32.54 22.69 55.04 22.7 22.5 54.57 22.5ZM480-160Z"/></svg>`,
 };
 
 const DARK_MARKERS = {
@@ -602,8 +607,8 @@ const DARK_MARKERS = {
 
     // With changes
     "train": LIGHT_MARKERS["train"].replace("#333333", "#EAEAEA"),
+    "skull": LIGHT_MARKERS["skull"].replace("#333333", "#EAEAEA"),
     "beer": LIGHT_MARKERS["beer"].replace("#BD5C17", "#B3825D"),
-    // "book": LIGHT_MARKERS["book"].replace("#BD5C17", "#B3825D"),
     "buysell": LIGHT_MARKERS["buysell"].replace("#333333", "#EAEAEA"),
     "cattle": LIGHT_MARKERS["cattle"].replace("#BD5C17", "#B3825D"),
     "church": LIGHT_MARKERS["church"].replace("#333333", "#EAEAEA"),
@@ -611,14 +616,14 @@ const DARK_MARKERS = {
     "intelligence": LIGHT_MARKERS["intelligence"].replace("#4285F4", "#4B8FFF"),
     "farming": LIGHT_MARKERS["farming"].replace("#259F31", "#28BC36"),
     "fishery": LIGHT_MARKERS["fishery"].replace("#333333", "#EAEAEA"),
-    "government": LIGHT_MARKERS["government"].replace("#333333", "#EAEAEA"),
+    "government": LIGHT_MARKERS["government"].replace("#333333", "#EDD5BB"),
     "investigate": LIGHT_MARKERS["investigate"].replace("#333333", "#EAEAEA"),
     "manufacturing": LIGHT_MARKERS["manufacturing"].replace("#333333", "#EAEAEA"),
     "military": LIGHT_MARKERS["military"].replace("#E99E0E", "#FFB11B"),
     "police": LIGHT_MARKERS["police"].replace("#4285F4", "#4B8FFF"),
     "sales": LIGHT_MARKERS["sales"].replace("#E99E0E", "#FFB11B"),
     "prelations": LIGHT_MARKERS["prelations"].replace("#E99E0E", "#FFB11B"),
-    "computer": LIGHT_MARKERS["computer"].replace("#333333", "#FFFFFF"),
+    "computer": LIGHT_MARKERS["computer"].replace("#333333", "#B6BFBF"),
     "seaman": LIGHT_MARKERS["seaman"].replace("#333333", "#EAEAEA"),
     "sergeant": LIGHT_MARKERS["sergeant"].replace("#E99E0E", "#FFB11B"),
     "software": LIGHT_MARKERS["software"].replace("#333333", "#FFFFFF"),
@@ -934,6 +939,7 @@ for (const [key, svg] of Object.entries(isDark ? DARK_MARKERS : LIGHT_MARKERS)) 
     "vitalsCompleteAndVerified": false,
     "firstName": "Fernando",
     "marker": "military",
+    "marker2": "skull",
     "fid": "GHB8-7T6",
     "child": "82099124"
   },
@@ -2179,6 +2185,22 @@ for (const [key, svg] of Object.entries(isDark ? DARK_MARKERS : LIGHT_MARKERS)) 
       <p><strong>P-FT346</strong> paternal line was formed when it branched off from the ancestor <strong>P-BY49600</strong> and the rest of mankind around <strong>21,000 BCE</strong>. The man who is the most recent common ancestor of this line is estimated to have been born around <strong>1100 BCE</strong>.</p>
 
       <hr />
+      <h5>Cinematic Proposal</h5>
+      <p>For Arbyn's proposal to Mitchie, the plan was to show a custom video at the big screen after viewing a movie together. Arbyn booked one of the cinemas in the Director's Club of SM City Grand Central for over P20,000 on April 23, 2023 (8:30 PM).</p>
+      <p>The chosen movie was The Super Mario Brothers Movie because Arbyn believed it would appeal to anyone who watches it and, generally speaking, everyone is most likely familiar with Mario.</p>
+      <figure>
+        <img style="margin-bottom: 0;" src="images/stories/bg--cinema-top.webp" />
+        <div style="margin-bottom: 0;" class="youtube-container"><iframe class="youtube-embed" src="https://www.youtube.com/embed/LNkv-M1TMtg?si=OfPf6xg1yj5elFGQ&amp;start=89" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+        <img src="images/stories/bg--cinema-bottom.webp" />
+        <p class="caption"><em>Arbyn's proposal video which was played right after the The Super Mario Bros. Movie (2023).</em></p>
+      </figure>
+      <p>All of Arbyn and Mitchie's friends and families were in on the secret. Mitchie was the only one planned to be surprised.</p>
+      <figure>
+        <img alt="Cinematic Proposal at SM Grand, Director's Club" src="images/stories/Arbyns_Proposal_2.webp" />
+        <p class="caption"><em>Photo taken right before everyone exited the cinema. The proposal was attended by Mitchie's highschool best friends, Loren Asis' family, Mitchie's family, Arbyn's Elementary and childhood friends, some of Arbyn's cousins, and some strangers as seat fillers.</em></p>
+      </figure>
+
+      <hr />
       <h5>Living Family Line on His Wedding</h5>
       <figure>
         <img alt="Living Family Line" src="images/stories/Family_Line.lossy.webp" />
@@ -2562,6 +2584,14 @@ for (const [key, svg] of Object.entries(isDark ? DARK_MARKERS : LIGHT_MARKERS)) 
       </ul>
 
       <hr />
+      <h5>Family Line During Mitch's Childhood</h5>
+      <p>Mitchie was lucky enough to have seen one of her maternal great grandmothers, Enoria Borja. It gets even better because her parents were able to take and preserve a photo of them altogether. The photo was taken when Mitchie was still around two or three years old.</p>
+      <figure>
+        <img alt="Living Family Line" src="images/stories/Mitchies_Family_Line.lossy.webp" />
+        <p class="caption"><em>Photo of Mitchie's maternal lineage: (from left to right) Mylen Ajesta, Selma Vergara, Enoria Borja, and Roselyn Ajesta - Mitchie's aunt.</em></p>
+      </figure>
+
+      <hr />
       <h5>Extra-curricular Super Star</h5>
       <p>While in college, Mitchie was actively involved in numerous extracurricular activities. Sometimes ignoring more "practical" choices 😅 The very first official position that she ran for was the Public Relations Officer of the Engineering Student Council. She was in office from the school year 2013 to 2014.</p>
       <p>After handling a student government position, she took on higher and more positions in more specific recognized student organizations (RSO). She also won awards for participating in internal and inter-school competitions.</p>
@@ -2571,7 +2601,6 @@ for (const [key, svg] of Object.entries(isDark ? DARK_MARKERS : LIGHT_MARKERS)) 
       </figure>
 
       <h5>List of Official Positions</h5>
-
       <ol>
         <li>Rotaract Club, President</li>
         <li>
@@ -2590,6 +2619,23 @@ for (const [key, svg] of Object.entries(isDark ? DARK_MARKERS : LIGHT_MARKERS)) 
         </li>
         <li>IEEE - UESB, Chairman</li>
       </ol>
+
+      <hr />
+      <h5>Cinematic Proposal</h5>
+      <figure>
+        <img alt="Cinematic Proposal at SM Grand, Director's Club" src="images/stories/Arbyns_Proposal.webp" />
+        <p class="caption"><em>Mitchie, watching the proposal video, being photographed by her younger brother, DM Adanza.</em></p>
+      </figure>
+      <p>For Mitchie's proposal from Arbyn, it came as a surprise but there were some clues all throughout the day that Mitchie told Arbyn later on:</p>
+      <ol>
+        <li>While entering the cinema, Mitchie noticed her best friend, Donn Zarny Han, because of his usual black shirt with white print.</li>
+        <li>During the movie, Mitchie noticed one of her friends, Isabel Buenaobra, because of her recognizable red cap.</li>
+        <li>During the movie, there were scenes where Bowser, the movie antagonist, would propose to Princess Peach. Mitchie took this as a sign and thought Arbyn was already proposing to her.</p</li>
+      </ol>
+      <figure>
+        <img alt="Beautiful Engagement Ring" src="images/stories/Mitchies_Engagement_Ring.webp" />
+        <p class="caption"><em>Mitchie's lab-grown Diamond engagement ring.</em></p>
+      </figure>
     `
   }
 }
@@ -2911,7 +2957,8 @@ function addPersonDetails(node) {
     'military': 'Military Veteran',
     'housewife': 'Housewife',
     'fishery': 'had a fishery',
-    'prelations': 'PR Skills'
+    'prelations': 'PR Skills',
+    'skull': 'Death March Survivor',
   }
 
   if (headline) {

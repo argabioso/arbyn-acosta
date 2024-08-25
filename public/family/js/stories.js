@@ -60,6 +60,22 @@ var STORIES = {
       <p><strong>P-FT346</strong> paternal line was formed when it branched off from the ancestor <strong>P-BY49600</strong> and the rest of mankind around <strong>21,000 BCE</strong>. The man who is the most recent common ancestor of this line is estimated to have been born around <strong>1100 BCE</strong>.</p>
 
       <hr />
+      <h5>Cinematic Proposal</h5>
+      <p>For Arbyn's proposal to Mitchie, the plan was to show a custom video at the big screen after viewing a movie together. Arbyn booked one of the cinemas in the Director's Club of SM City Grand Central for over P20,000 on April 23, 2023 (8:30 PM).</p>
+      <p>The chosen movie was The Super Mario Brothers Movie because Arbyn believed it would appeal to anyone who watches it and, generally speaking, everyone is most likely familiar with Mario.</p>
+      <figure>
+        <img style="margin-bottom: 0;" src="images/stories/bg--cinema-top.webp" />
+        <div style="margin-bottom: 0;" class="youtube-container"><iframe class="youtube-embed" src="https://www.youtube.com/embed/LNkv-M1TMtg?si=OfPf6xg1yj5elFGQ&amp;start=89" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+        <img src="images/stories/bg--cinema-bottom.webp" />
+        <p class="caption"><em>Arbyn's proposal video which was played right after the The Super Mario Bros. Movie (2023).</em></p>
+      </figure>
+      <p>All of Arbyn and Mitchie's friends and families were in on the secret. Mitchie was the only one planned to be surprised.</p>
+      <figure>
+        <img alt="Cinematic Proposal at SM Grand, Director's Club" src="images/stories/Arbyns_Proposal_2.webp" />
+        <p class="caption"><em>Photo taken right before everyone exited the cinema. The proposal was attended by Mitchie's highschool best friends, Loren Asis' family, Mitchie's family, Arbyn's Elementary and childhood friends, some of Arbyn's cousins, and some strangers as seat fillers.</em></p>
+      </figure>
+
+      <hr />
       <h5>Living Family Line on His Wedding</h5>
       <figure>
         <img alt="Living Family Line" src="images/stories/Family_Line.lossy.webp" />
@@ -443,6 +459,14 @@ var STORIES = {
       </ul>
 
       <hr />
+      <h5>Family Line During Mitch's Childhood</h5>
+      <p>Mitchie was lucky enough to have seen one of her maternal great grandmothers, Enoria Borja. It gets even better because her parents were able to take and preserve a photo of them altogether. The photo was taken when Mitchie was still around two or three years old.</p>
+      <figure>
+        <img alt="Living Family Line" src="images/stories/Mitchies_Family_Line.lossy.webp" />
+        <p class="caption"><em>Photo of Mitchie's maternal lineage: (from left to right) Mylen Ajesta, Selma Vergara, Enoria Borja, and Roselyn Ajesta - Mitchie's aunt.</em></p>
+      </figure>
+
+      <hr />
       <h5>Extra-curricular Super Star</h5>
       <p>While in college, Mitchie was actively involved in numerous extracurricular activities. Sometimes ignoring more "practical" choices 😅 The very first official position that she ran for was the Public Relations Officer of the Engineering Student Council. She was in office from the school year 2013 to 2014.</p>
       <p>After handling a student government position, she took on higher and more positions in more specific recognized student organizations (RSO). She also won awards for participating in internal and inter-school competitions.</p>
@@ -452,7 +476,6 @@ var STORIES = {
       </figure>
 
       <h5>List of Official Positions</h5>
-
       <ol>
         <li>Rotaract Club, President</li>
         <li>
@@ -471,6 +494,23 @@ var STORIES = {
         </li>
         <li>IEEE - UESB, Chairman</li>
       </ol>
+
+      <hr />
+      <h5>Cinematic Proposal</h5>
+      <figure>
+        <img alt="Cinematic Proposal at SM Grand, Director's Club" src="images/stories/Arbyns_Proposal.webp" />
+        <p class="caption"><em>Mitchie, watching the proposal video, being photographed by her younger brother, DM Adanza.</em></p>
+      </figure>
+      <p>For Mitchie's proposal from Arbyn, it came as a surprise but there were some clues all throughout the day that Mitchie told Arbyn later on:</p>
+      <ol>
+        <li>While entering the cinema, Mitchie noticed her best friend, Donn Zarny Han, because of his usual black shirt with white print.</li>
+        <li>During the movie, Mitchie noticed one of her friends, Isabel Buenaobra, because of her recognizable red cap.</li>
+        <li>During the movie, there were scenes where Bowser, the movie antagonist, would propose to Princess Peach. Mitchie took this as a sign and thought Arbyn was already proposing to her.</p</li>
+      </ol>
+      <figure>
+        <img alt="Beautiful Engagement Ring" src="images/stories/Mitchies_Engagement_Ring.webp" />
+        <p class="caption"><em>Mitchie's lab-grown Diamond engagement ring.</em></p>
+      </figure>
     `
   }
 }

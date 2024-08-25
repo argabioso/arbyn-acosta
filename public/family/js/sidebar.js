@@ -109,7 +109,8 @@ function addPersonDetails(node) {
     'military': 'Military Veteran',
     'housewife': 'Housewife',
     'fishery': 'had a fishery',
-    'prelations': 'PR Skills'
+    'prelations': 'PR Skills',
+    'skull': 'Death March Survivor',
   }
 
   if (headline) {

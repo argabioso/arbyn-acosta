@@ -121,6 +121,7 @@ body:not(.dark) #personDetailsDesc {
   line-height: 22px;
 }
 
+#personDetailsDesc ol,
 #personDetailsDesc p {
   margin-bottom: 1.5rem;
 }

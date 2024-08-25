@@ -302,6 +302,7 @@
     "vitalsCompleteAndVerified": false,
     "firstName": "Fernando",
     "marker": "military",
+    "marker2": "skull",
     "fid": "GHB8-7T6",
     "child": "82099124"
   },
