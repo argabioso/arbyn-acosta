@@ -2675,7 +2675,7 @@ for (const [key, svg] of Object.entries(isDark ? DARK_MARKERS : LIGHT_MARKERS)) 
           </div>
           <div class="person-details">
             <span class="person-name">Victoria "Vicky" S. A. Acosta</span>
-            <span class="relevant-dates">17 Jun 1945 — 19 Feb 2018</span>
+            <span class="relevant-dates">17 Jun 1945 — 19 Feb 2018 (72)</span>
             <span class="birth-place"><strong>B</strong> : Manila, Philippines</span>
             <span class="death-place"><strong>D</strong> : Caloocan, Philippines</span>
           </div>
@@ -2686,7 +2686,7 @@ for (const [key, svg] of Object.entries(isDark ? DARK_MARKERS : LIGHT_MARKERS)) 
           </div>
           <div class="person-details">
             <span class="person-name">Amelia S. A. Acosta</span>
-            <span class="relevant-dates">12 Jun 1947 — 2 May 2021</span>
+            <span class="relevant-dates">12 Jun 1947 — 2 May 2021 (73)</span>
             <span class="birth-place"><strong>B</strong> : Manila, Philippines</span>
             <span class="death-place"><strong>D</strong> : United States of America</span>
           </div>
