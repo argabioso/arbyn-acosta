@@ -519,6 +519,26 @@ var STORIES = {
         <img alt="Beautiful Engagement Ring" src="images/stories/Mitchies_Engagement_Ring.webp" />
         <p class="caption"><em>Mitchie's lab-grown Diamond engagement ring.</em></p>
       </figure>
+
+      <hr />
+      <h5>First Pregnancy</h5>
+      <p>A compilation of reactions from Arbyn and Mitchie's relatives; and their close friends.</p>
+      <figure>
+        <div class="youtube-container"><iframe class="youtube-embed" src="https://www.youtube.com/embed/i3P0UsLRgrE?si=IiejESG094Lp1bCz&enablejsapi=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+        <p class="caption"><em>How Mitch and Arbyn found that they would be having a baby and how they announced it to their relatives.</em></p>
+      </figure>
+      <figure>
+        <div class="youtube-container"><iframe class="youtube-embed" src="https://www.youtube.com/embed/V8iCV7ZXOtI?si=1M-PCd6CSBQnDgNV&enablejsapi=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+        <p class="caption"><em>Mitchie's high school best friends, BCHZ, finding out she was pregnant.</em></p>
+      </figure>
+      <figure>
+        <div class="youtube-container"><iframe class="youtube-embed" src="https://www.youtube.com/embed/M5HGRCYIUNI?si=awXq-IIWGxw8znac&enablejsapi=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+        <p class="caption"><em>The Alviza family, a close family friend, finding out that Mitch was pregnant.</em></p>
+      </figure>
+      <figure>
+        <div class="youtube-container"><iframe class="youtube-embed" src="https://www.youtube.com/embed/ngbxxQQ0AYw?si=txA38vrjgNPRzgEL&enablejsapi=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+        <p class="caption"><em>Reaction video of Mitch and Arbyn's mutual friends.</em></p>
+      </figure>
     `
   }
 }
