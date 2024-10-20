@@ -540,5 +540,14 @@ var STORIES = {
         <p class="caption"><em>Reaction video of Mitch and Arbyn's mutual friends.</em></p>
       </figure>
     `
+  },
+  'GH12-DD8': {
+    stories: `
+      <h5>Last Remaining Photos</h5>
+      <figure>
+        <img alt="Pilar, Capiz" src="images/stories/Lola_Enoria.lossy.webp" />
+        <p class="caption"><em>Photo taken on Pilar, Capiz with her daughter Selma and her grandchildren: Mylen and Rolly.</em></p>
+      </figure>
+    `
   }
 }

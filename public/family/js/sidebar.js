@@ -111,6 +111,7 @@ function addPersonDetails(node) {
     'fishery': 'had a fishery',
     'prelations': 'PR Skills',
     'skull': 'Death March Survivor',
+    'centennial': 'Centenarian',
   }
 
   if (headline) {
