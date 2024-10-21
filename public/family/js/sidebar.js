@@ -112,6 +112,7 @@ function addPersonDetails(node) {
     'prelations': 'PR Skills',
     'skull': 'Death March Survivor',
     'centennial': 'Centenarian',
+    'justice': 'Law Enforcement Professional',
   }
 
   if (headline) {

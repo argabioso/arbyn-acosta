@@ -93,8 +93,8 @@
     "suffix": null,
     "vitalsCompleteAndVerified": false,
     "firstName": "Rolando",
-    "marker": "intelligence",
-    "marker3": "government",
+    "marker": "government",
+    "marker3": "justice",
     "marker4": "prelations",
     "fid": "GQJK-L51",
     "child": "85203214"
