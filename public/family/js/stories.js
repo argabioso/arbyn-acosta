@@ -548,6 +548,10 @@ var STORIES = {
         <img alt="Pilar, Capiz" src="images/stories/Lola_Enoria.lossy.webp" />
         <p class="caption"><em>Photo taken on Pilar, Capiz with her daughter Selma and her grandchildren: Mylen and Rolly.</em></p>
       </figure>
+      <figure>
+        <img alt="Living Family Line" src="images/stories/Mitchies_Family_Line.lossy.webp" />
+        <p class="caption"><em>Photo of Mitchie's maternal lineage: (from left to right) Mylen Ajesta, Selma Vergara, Enoria Borja, and Roselyn Ajesta - Mitchie's aunt.</em></p>
+      </figure>
     `
   }
 }
