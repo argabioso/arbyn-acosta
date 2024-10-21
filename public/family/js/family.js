@@ -680,7 +680,7 @@ for (const [key, svg] of Object.entries(isDark ? DARK_MARKERS : LIGHT_MARKERS)) 
     "prefix": null,
     "suffix": null,
     "vitalsCompleteAndVerified": false,
-    "firstName": "Yeuseff Loran",
+    "firstName": "Yeusef Loran",
     "height": 0,
     "width": 0
   },
@@ -899,7 +899,7 @@ for (const [key, svg] of Object.entries(isDark ? DARK_MARKERS : LIGHT_MARKERS)) 
     "birthPlace": null,
     "deathAge": null,
     "deathDate": "1946-06-23",
-    "deathPlace": null,
+    "deathPlace": "Majayjay, Laguna, PHL",
     "gender": "M",
     "hasDNA": false,
     "hasImage": false,
@@ -2241,7 +2241,7 @@ for (const [key, svg] of Object.entries(isDark ? DARK_MARKERS : LIGHT_MARKERS)) 
     "living": false,
     "livingPlace": null,
     "marriageDate": null,
-    "marriagePlace": null,
+    "marriagePlace": "PHL",
     "middleName": null,
     "nickname": null,
     "prefix": null,
@@ -2258,7 +2258,7 @@ for (const [key, svg] of Object.entries(isDark ? DARK_MARKERS : LIGHT_MARKERS)) 
     "birthPlace": "PHL",
     "deathAge": null,
     "deathDate": "after 1996-12-16",
-    "deathPlace": "PHL",
+    "deathPlace": "Tuguegarao, Cagayan, PHL",
     "gender": "F",
     "hasDNA": false,
     "hasImage": true,
@@ -2267,16 +2267,16 @@ for (const [key, svg] of Object.entries(isDark ? DARK_MARKERS : LIGHT_MARKERS)) 
     "living": false,
     "livingPlace": null,
     "marriageDate": null,
-    "marriagePlace": null,
+    "marriagePlace": "PHL",
     "middleName": null,
     "nickname": null,
     "prefix": null,
     "suffix": null,
     "vitalsCompleteAndVerified": false,
     "firstName": "Enoria",
+    "marker": "centennial",
     "fid": "GH12-DD8",
-    "child": "64719992",
-    "marker": "centennial"
+    "child": "64719992"
   }
 ];var STORIES = {
   'GQX8-CQP': { // Arbyn Argabioso
