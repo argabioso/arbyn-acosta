@@ -1,6 +1,7 @@
 var STORIES = {
   'GQX8-CQP': { // Arbyn Argabioso
     headline: 'An Electronics-Engineering-graduate turned Software Engineer focused on recording his family\'s history.',
+    headshot: 'GQX8-CQP-2.lossy.webp',
     stories: `
       <h5>Half Siblings <span class="chill">from Mother's Side</span></h5>
       <ul class="siblings">
@@ -447,6 +448,7 @@ var STORIES = {
     `
   },
   'GHB5-TWN': { // Mitchie Adanza
+    headshot: 'GHB5-TWN-2.lossy.webp',
     stories: `
       <h5>Siblings</h5>
       <ul class="siblings">
