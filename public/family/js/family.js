@@ -874,11 +874,11 @@ for (const [key, svg] of Object.entries(isDark ? DARK_MARKERS : LIGHT_MARKERS)) 
   },
   {
     "baptismDate": null,
-    "birthDate": "about 1905",
+    "birthDate": "before 1910",
     "birthPlace": null,
     "deathAge": null,
-    "deathDate": "1936-04-25",
-    "deathPlace": "Luisiana, Laguna, PHL",
+    "deathDate": "after 1936-10-13",
+    "deathPlace": null,
     "gender": "F",
     "hasDNA": false,
     "hasImage": false,
@@ -896,156 +896,6 @@ for (const [key, svg] of Object.entries(isDark ? DARK_MARKERS : LIGHT_MARKERS)) 
     "firstName": "Francisca",
     "fid": "GHBZ-P5Q",
     "child": "96832424"
-  },
-  {
-    "baptismDate": null,
-    "birthDate": "about 1886",
-    "birthPlace": null,
-    "deathAge": null,
-    "deathDate": "1946-06-23",
-    "deathPlace": "Majayjay, Laguna, PHL",
-    "gender": "M",
-    "hasDNA": false,
-    "hasImage": false,
-    "key": "38670752",
-    "lastName": "Mia",
-    "living": false,
-    "livingPlace": null,
-    "marriageDate": null,
-    "marriagePlace": null,
-    "middleName": null,
-    "nickname": null,
-    "prefix": null,
-    "suffix": null,
-    "vitalsCompleteAndVerified": false,
-    "firstName": "Francisco",
-    "fid": "GJJ8-MK1",
-    "child": "53221118"
-  },
-  {
-    "baptismDate": null,
-    "birthDate": null,
-    "birthPlace": null,
-    "deathAge": null,
-    "deathDate": null,
-    "deathPlace": null,
-    "gender": "M",
-    "hasDNA": false,
-    "hasImage": false,
-    "key": "52051920",
-    "lastName": "Mia",
-    "living": false,
-    "livingPlace": null,
-    "marriageDate": null,
-    "marriagePlace": null,
-    "middleName": null,
-    "nickname": null,
-    "prefix": null,
-    "suffix": null,
-    "vitalsCompleteAndVerified": false,
-    "firstName": "Santiago",
-    "fid": "GJJ8-HDC",
-    "child": "38670752"
-  },
-  {
-    "baptismDate": null,
-    "birthDate": null,
-    "birthPlace": null,
-    "deathAge": null,
-    "deathDate": null,
-    "deathPlace": null,
-    "gender": "F",
-    "hasDNA": false,
-    "hasImage": false,
-    "key": "32552672",
-    "lastName": "Trobela",
-    "living": false,
-    "livingPlace": null,
-    "marriageDate": null,
-    "marriagePlace": null,
-    "middleName": null,
-    "nickname": null,
-    "prefix": null,
-    "suffix": null,
-    "vitalsCompleteAndVerified": false,
-    "firstName": "Aniceta",
-    "fid": "GJJZ-54Z",
-    "child": "38670752"
-  },
-  {
-    "baptismDate": null,
-    "birthDate": null,
-    "birthPlace": null,
-    "deathAge": null,
-    "deathDate": null,
-    "deathPlace": null,
-    "gender": "F",
-    "hasDNA": false,
-    "hasImage": false,
-    "key": "58054954",
-    "lastName": "Arco",
-    "living": false,
-    "livingPlace": null,
-    "marriageDate": null,
-    "marriagePlace": null,
-    "middleName": null,
-    "nickname": null,
-    "prefix": null,
-    "suffix": null,
-    "vitalsCompleteAndVerified": false,
-    "firstName": "Gabina",
-    "fid": "GJJZ-65G",
-    "child": "53221118"
-  },
-  {
-    "baptismDate": null,
-    "birthDate": null,
-    "birthPlace": null,
-    "deathAge": null,
-    "deathDate": null,
-    "deathPlace": null,
-    "gender": "M",
-    "hasDNA": false,
-    "hasImage": false,
-    "key": "38190203",
-    "lastName": "Arco",
-    "living": false,
-    "livingPlace": null,
-    "marriageDate": null,
-    "marriagePlace": null,
-    "middleName": null,
-    "nickname": null,
-    "prefix": null,
-    "suffix": null,
-    "vitalsCompleteAndVerified": false,
-    "firstName": "Eleuterio",
-    "fid": "GJJ8-XXM",
-    "child": "58054954"
-  },
-  {
-    "baptismDate": null,
-    "birthDate": null,
-    "birthPlace": null,
-    "deathAge": null,
-    "deathDate": null,
-    "deathPlace": null,
-    "gender": "F",
-    "hasDNA": false,
-    "hasImage": false,
-    "key": "12606761",
-    "lastName": "Villarante",
-    "living": false,
-    "livingPlace": null,
-    "marriageDate": null,
-    "marriagePlace": null,
-    "middleName": null,
-    "nickname": null,
-    "prefix": null,
-    "suffix": null,
-    "vitalsCompleteAndVerified": false,
-    "firstName": "Sabina",
-    "fid": "GJJZ-1K6",
-    "child": "58054954"
   },
   {
     "baptismDate": null,
@@ -2075,7 +1925,7 @@ for (const [key, svg] of Object.entries(isDark ? DARK_MARKERS : LIGHT_MARKERS)) 
     "prefix": null,
     "suffix": null,
     "vitalsCompleteAndVerified": false,
-    "firstName": "Emmanuel",
+    "firstName": "Manuel",
     "fid": "GH12-XX4",
     "child": "17374654"
   },
@@ -3509,7 +3359,7 @@ const SOURCES = {
     'GQJK-L51:GQJK-G8W:partner',
 
     // Ninongs
-    // Emmanuel "Manny" Santos
+    // Manuel "Manny" Santos
     // Leo "Boyet" Talabucon
 
     // Ninangs
@@ -4966,13 +4816,13 @@ const SOURCES = {
   ],
 
   // =======================================================================
-  // Ajesta, Emmanuel
+  // Ajesta, Manuel
   //
   // GKBR-M9Y - Ajesta, Eustaquio
   // GKBR-7P7 - Bermúdez, Florencia
   // =======================================================================
 
-  // MyHeritage: Marriage Record of Lolo Emmanuel and Lola Ursula
+  // MyHeritage: Marriage Record of Lolo Manuel and Lola Ursula
   'https://drive.google.com/file/d/1irYmUaWoR44n7p-33kxmaI0H9HkWqDrY/view?side=ajesta': [
     'GH12-XX4:gender',
     'GH12-XX4:firstName',
@@ -5002,7 +4852,7 @@ const SOURCES = {
   // K2GJ-YY3 - Villanes, Leoncia
   // =======================================================================
 
-  // MyHeritage: Marriage Record of Lolo Emmanuel and Lola Ursula
+  // MyHeritage: Marriage Record of Lolo Manuel and Lola Ursula
   'https://drive.google.com/file/d/1irYmUaWoR44n7p-33kxmaI0H9HkWqDrY/view?side=badoles': [
     'GH12-HQN:gender',
     'GH12-HQN:firstName',

@@ -268,7 +268,7 @@ const SOURCES = {
     'GQJK-L51:GQJK-G8W:partner',
 
     // Ninongs
-    // Emmanuel "Manny" Santos
+    // Manuel "Manny" Santos
     // Leo "Boyet" Talabucon
 
     // Ninangs
@@ -1725,13 +1725,13 @@ const SOURCES = {
   ],
 
   // =======================================================================
-  // Ajesta, Emmanuel
+  // Ajesta, Manuel
   //
   // GKBR-M9Y - Ajesta, Eustaquio
   // GKBR-7P7 - Bermúdez, Florencia
   // =======================================================================
 
-  // MyHeritage: Marriage Record of Lolo Emmanuel and Lola Ursula
+  // MyHeritage: Marriage Record of Lolo Manuel and Lola Ursula
   'https://drive.google.com/file/d/1irYmUaWoR44n7p-33kxmaI0H9HkWqDrY/view?side=ajesta': [
     'GH12-XX4:gender',
     'GH12-XX4:firstName',
@@ -1761,7 +1761,7 @@ const SOURCES = {
   // K2GJ-YY3 - Villanes, Leoncia
   // =======================================================================
 
-  // MyHeritage: Marriage Record of Lolo Emmanuel and Lola Ursula
+  // MyHeritage: Marriage Record of Lolo Manuel and Lola Ursula
   'https://drive.google.com/file/d/1irYmUaWoR44n7p-33kxmaI0H9HkWqDrY/view?side=badoles': [
     'GH12-HQN:gender',
     'GH12-HQN:firstName',
