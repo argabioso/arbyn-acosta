@@ -552,7 +552,7 @@ const ui = {
       width: 410,
       widths: {
         0: 410,
-        1: 392, // My generation
+        1: 419, // My generation
         2: 409,
         3: 403,
         4: 408,
@@ -1645,7 +1645,7 @@ for (const [key, svg] of Object.entries(isDark ? DARK_MARKERS : LIGHT_MARKERS)) 
   {
     "baptismDate": null,
     "birthDate": "1994-12-16",
-    "birthPlace": "Santa Cruz, Manila, PHL",
+    "birthPlace": "Dr. Jose Fabella Memorial Hospital, Manila, PHL",
     "deathAge": null,
     "deathDate": null,
     "deathPlace": null,
@@ -1894,7 +1894,7 @@ for (const [key, svg] of Object.entries(isDark ? DARK_MARKERS : LIGHT_MARKERS)) 
     "living": false,
     "livingPlace": null,
     "marriageDate": "1962-08-05",
-    "marriagePlace": "Capiz, PHL",
+    "marriagePlace": "Pilar, Capiz, PHL",
     "middleName": "Badoles",
     "nickname": null,
     "prefix": null,
@@ -2069,7 +2069,7 @@ for (const [key, svg] of Object.entries(isDark ? DARK_MARKERS : LIGHT_MARKERS)) 
     "living": false,
     "livingPlace": null,
     "marriageDate": "1962-08-05",
-    "marriagePlace": "Capiz, PHL",
+    "marriagePlace": "Pilar, Capiz, PHL",
     "middleName": "Borja",
     "nickname": "Mamang",
     "prefix": null,

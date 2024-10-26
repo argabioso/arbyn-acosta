@@ -158,7 +158,7 @@ const ui = {
       width: 410,
       widths: {
         0: 410,
-        1: 392, // My generation
+        1: 419, // My generation
         2: 409,
         3: 403,
         4: 408,
