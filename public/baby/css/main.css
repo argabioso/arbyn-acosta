@@ -1,0 +1,257 @@
+*, *:before, *:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+html,
+body {
+  font-size: 16px;
+}
+
+html,
+body,
+.invitation {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  position: relative;
+}
+
+section {
+  font-family: "Google Sans", sans-serif;
+  position: relative;
+  margin: 0 auto;
+  padding: 46px 0;
+  width: 100%;
+}
+
+section h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 34px;
+  margin-top: 0;
+  line-height: 1.1;
+  letter-spacing: -1.5px;
+}
+
+section.sky-section {
+  height: 100vh;
+  padding: 0;
+  overflow: hidden;
+}
+
+/*section:not(.sky-section) {
+  width: 100;
+  margin: 0 auto;
+}*/
+
+.container {
+  padding-left: 22px;
+  padding-right: 22px;
+}
+
+.balloon--fg,
+.balloon--bg,
+.basket,
+.sky,
+.title {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.balloon--fg,
+.balloon--bg,
+.basket {
+  background: none;
+  width: min(90vw, 60vh);
+  height: calc(min(90vw, 60vh) * 1.34285714);
+  top: calc(min(90vw, 60vh) * 1.34285714 * -0.125);
+  right: calc(min(90vw, 60vh) * -0.125);
+}
+
+.basket {
+  animation: float-basket 2s ease-in-out infinite;
+  z-index: 5;
+}
+
+.balloon--fg {
+  animation: float-balloon--fg 2s ease-in-out infinite;
+  z-index: 6;
+}
+
+.balloon--bg {
+  animation: float-balloon--bg 2s ease-in-out infinite;
+  z-index: 4;
+}
+
+.balloon--fg > img,
+.balloon--bg > img,
+.basket > img,
+.title > img {
+  width: 100%;
+}
+
+.sky {
+  background-image: url("../img/bg--landscape.lossy.webp");
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.title {
+  font-family: 'archer_gage_demoregular';
+  font-size: 2rem;
+  color: #492f1a;
+  z-index: 7;
+  left: 38%;
+  text-align: center;
+  padding-left: 40px;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  width: 60vw;
+  max-width: 400px;
+}
+
+.img-landscape { display: block; }
+.img-portrait { display: none; }
+
+.details {
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
+}
+
+.google-map {
+  padding-bottom: 100%;
+  position: relative;
+}
+
+.google-map iframe {
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  position: absolute;
+  z-index: 4;
+}
+
+.when {
+  margin-bottom: 48px;
+  text-align: center;
+}
+
+.when .wedding-date {
+  font-family: "the-seasons", sans-serif;
+  font-weight: 700;
+  margin: 0;
+  display: block;
+  text-align: center;
+  color: #264592;
+  line-height: 1.4;
+  font-size: 2.125rem;
+  text-shadow: 0 0 1px #223473;
+  margin-bottom: 3px;
+}
+
+.when .wedding-countdown,
+.when .wedding-time {
+  margin: 0;
+  line-height: 1.5rem;
+  letter-spacing: 0rem;
+  color: rgb(171 166 159);
+  font-family: "Google Sans Text", sans-serif;
+  font-weight: 400;
+  text-align: center;
+  font-size: 1.25rem;
+}
+
+.breaker {
+  display: none;
+}
+
+@media only screen and (orientation: portrait) {
+  .sky { background-image: url("../img/bg--portrait.lossy.webp") }
+  .img-landscape { display: none; }
+  .img-portrait { display: block; }
+}
+
+@media only screen and (min-width: 900px) {
+  .title {
+    left: 50%;
+    text-align: center;
+    padding-left: 40px;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    width: 50vw;
+  }
+
+  .container,
+  .full-width-container {
+    margin: 0 auto;
+    width: 800px;
+  }
+}
+
+@media only screen and (min-width: 520px) {
+  .google-map {
+    padding-bottom: 60%;
+  }
+
+  .breaker {
+    display: inline;
+  }
+}
+
+@media screen and (max-width: 359px) {
+  section h2 {
+    font-size: 2.25rem;
+    margin-bottom: 22px;
+  }
+
+  .the-seasons {
+    font-size: 2.375rem;
+  }
+
+  .when {
+    margin-bottom: 38px;
+  }
+
+  .when .wedding-countdown,
+  .when .wedding-time {
+    font-size: 1rem;
+  }
+
+  .when .wedding-date {
+    font-size: 1.75rem;
+  }
+}
+
+@keyframes float-balloon--fg {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-30px) rotate(-2.5deg) translateX(5px);
+  }
+}
+
+@keyframes float-balloon--bg {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-30px) rotate(-2.5deg) translateX(5px);
+  }
+}
+
+@keyframes float-basket {
+  0%,
+  100% {
+    transform: translateY(10px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-30px) rotate(-5deg) translateX(10px);
+  }
+}
