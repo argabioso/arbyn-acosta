@@ -38,13 +38,13 @@
   src: local('Google Sans Bold Italic'), local('GoogleSans-BoldItalic'), url(../fonts/googlesans/v16/4UaZrENHsxJlGDuGo1OIlL3L-idxCwA.woff) format('woff');
 }*/
 
-/*@font-face {
+@font-face {
   font-family: 'Google Sans';
   font-style: normal;
   font-weight: 400;
   font-display: swap;
   src: local('Google Sans Regular'), local('GoogleSans-Regular'), url(../fonts/googlesans/v16/4UaGrENHsxJlGDuGo1OIlI3K.woff) format('woff');
-}*/
+}
 
 @font-face {
   font-family: 'Google Sans';

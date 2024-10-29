@@ -7,6 +7,8 @@
 html,
 body {
   font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 html,
@@ -28,12 +30,16 @@ section {
 
 section h2 {
   text-align: center;
-  font-size: 2.5rem;
-  font-weight: 400;
-  margin-bottom: 34px;
+  font-size: 2.25rem;
+  font-weight: 500;
+  margin-bottom: 22px;
   margin-top: 0;
   line-height: 1.1;
   letter-spacing: -1.5px;
+}
+
+section.registry h2 {
+  margin-bottom: 46px;
 }
 
 section.sky-section {
@@ -47,11 +53,12 @@ section.sky-section {
   margin: 0 auto;
 }*/
 
-.container {
+.own-container {
   padding-left: 22px;
   padding-right: 22px;
 }
 
+.bare-background,
 .balloon--fg,
 .balloon--bg,
 .basket,
@@ -94,8 +101,17 @@ section.sky-section {
   width: 100%;
 }
 
+.bare-background {
+  background-image: url("../img/bg-bare--landscape.lossy.webp");
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  z-index: 0;
+}
+
 .sky {
-  background-image: url("../img/bg--landscape.lossy.webp");
+  background-image: url("../img/bg-clouds-stars--landscape.lossy.webp");
   background-size: cover;
   width: 100%;
   height: 100%;
@@ -119,7 +135,16 @@ section.sky-section {
 .img-portrait { display: none; }
 
 .details {
-  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
+  background-color: white;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.05);
+  padding-bottom: 0;
+}
+
+.registry {
+  background-image: url("../img/black-bg.webp");
+  background-repeat: repeat;
+  background-color: #202020;
+  color: #e8e8e8;
 }
 
 .google-map {
@@ -149,7 +174,7 @@ section.sky-section {
   text-align: center;
   color: #264592;
   line-height: 1.4;
-  font-size: 2.3rem;
+  font-size: 1.75rem;
   text-shadow: 0 0 1px #223473;
   margin-bottom: 3px;
 }
@@ -170,47 +195,50 @@ section.sky-section {
   display: none;
 }
 
-@media only screen and (orientation: portrait) {
-  .sky { background-image: url("../img/bg--portrait.lossy.webp") }
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  grid-column-gap: 1.5rem;
+  grid-row-gap: 1.5rem;
+  justify-items: stretch;
+  align-items: stretch;
+}
+
+.item {
+  background-size: cover;
+  background-position: center center;
+  background-color: #666;
+  border-radius: 8px;
+  height: 10rem;
+  padding: 20px;
+}
+
+.item h3 {
+  font-family: "archer_gage_demoregular", serif;
+  font-weight: 700;
+  font-size: 1.35rem;
+  color: #201116;
+  margin: 0;
+  letter-spacing: -0.25px;
+  width: 75%;
+  text-shadow: 0px 0px 8px rgba(255, 255, 255, 0.4);
+  line-height: 1.2;
+}
+
+.hegen-baby-bottle { background-image: url("../img/items/hegen.webp"); }
+.mustella-products { background-image: url("../img/items/mustella.webp"); }
+
+@media screen and (orientation: portrait) {
+  .bare-background { background-image: url("../img/bg-bare--portrait.lossy.webp"); }
+  .sky { background-image: url("../img/bg-clouds-stars--portrait.lossy.webp"); }
   .img-landscape { display: none; }
   .img-portrait { display: block; }
 }
 
-@media only screen and (min-width: 900px) {
-  .title {
-    left: 50%;
-    text-align: center;
-    padding-left: 40px;
-    top: 51%;
-    transform: translateX(-50%) translateY(-50%);
-    width: 50vw;
-  }
-
-  .container,
-  .full-width-container {
-    margin: 0 auto;
-    width: 800px;
-  }
-}
-
-@media only screen and (min-width: 520px) {
-  .google-map {
-    padding-bottom: 60%;
-  }
-
-  .breaker {
-    display: inline;
-  }
-}
-
-@media screen and (max-width: 359px) {
+@media screen and (min-width: 359px) {
   section h2 {
-    font-size: 2.25rem;
-    margin-bottom: 22px;
-  }
-
-  .the-seasons {
-    font-size: 2.375rem;
+    margin-bottom: 34px;
   }
 
   .when {
@@ -223,7 +251,58 @@ section.sky-section {
   }
 
   .when .wedding-date {
-    font-size: 1.75rem;
+    font-size: 2.3rem;
+  }
+}
+
+@media screen and (min-width: 519px) {
+  .google-map {
+    padding-bottom: 60%;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .breaker {
+    display: inline;
+  }
+
+  .grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+}
+
+@media screen and (min-width: 799px) {
+  section {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+  section h2 {
+    margin-bottom: 42px;
+  }
+
+  section.registry h2 {
+    margin-bottom: 60px;
+  }
+
+  .details {
+    padding-bottom: 60px;
+  }
+
+  .title {
+    left: 50%;
+    text-align: center;
+    padding-left: 40px;
+    top: 51%;
+    transform: translateX(-50%) translateY(-50%);
+    width: 50vw;
+  }
+
+  .own-container,
+  .full-width-container {
+    margin: 0 auto;
+    width: 720px;
   }
 }
 
