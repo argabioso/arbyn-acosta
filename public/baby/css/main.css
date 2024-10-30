@@ -12,6 +12,7 @@
 
 html,
 body {
+  font-size: 16px;
   margin: 0;
   padding: 0;
   width: 100%;
@@ -22,7 +23,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-family: "Google Sans Text", sans-serif;
-  font-size: 16px;
   color: #442c19;
   line-height: 1.4;
 }
@@ -64,6 +64,7 @@ section figure {
   padding: 0;
   border-radius: 8px;
   overflow: hidden;
+  position: relative;
 }
 
 section figure > img {
@@ -197,6 +198,38 @@ section figure > img {
   z-index: 4;
 }
 
+#section-3.hero {
+  height: 70vh;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  grid-column-gap: 1.5rem;
+  grid-row-gap: 1.5rem;
+  justify-items: stretch;
+  align-items: stretch;
+}
+
+.registry-item__description {
+  position: absolute;
+  top: 0;
+  font-family: "Google Sans", sans-serif;
+  font-weight: 700;
+  font-size: 1.125rem;
+  letter-spacing: -0.02rem;
+  margin: 1rem;
+}
+
+.color_white {
+  color: white;
+}
+
+.color_black {
+  color: #201116;
+}
+
 /* =========================================================================
  * Portrait ONLY Styles (regardless of width)
  * ====================================================================== */
@@ -224,9 +257,22 @@ section figure > img {
  * Mid-width Screens (767px and above)
  * ====================================================================== */
 
+@media screen and (min-width: 319px) {
+  #section-3.hero {
+    height: 85vh;
+  }
+}
+
 @media screen and (min-width: 479px) {
   .google-map {
     padding-bottom: 60%;
+  }
+}
+
+@media screen and (min-width: 668px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
   }
 }
 
@@ -248,7 +294,7 @@ section figure > img {
   }
 
   .floating-bear {
-    left: calc((50vw - 25rem) + 7%);
+    left: calc((50vw - min(25rem, 50vw)) + 7%);
   }
 }
 
