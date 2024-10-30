@@ -139,16 +139,20 @@ section figure > img {
 .clouds-stars,
 .clouds-stars-2 {
   background-size: cover;
+  background-repeat: no-repeat;
+  position: absolute;
   width: 100%;
-  height: 100%;
 }
 
 .clouds-stars {
   background-image: url("../img/clouds-stars_landscape.lossy.webp");
+  height: max(61.111111vw, 100vh);
+  top: 0;
 }
 
 .clouds-stars-2 {
   background-image: url("../img/clouds-stars-2_landscape.lossy.webp");
+  height: max(61.111111vw, 100vh);
 }
 
 .title {
@@ -174,7 +178,7 @@ section figure > img {
   width: calc(min(90vw, 60vh) * 0.38165681);
   height: calc(min(90vw, 60vh) * 0.77573965);
   top: 20%;
-  left: 15%;
+  left: 7%;
   animation: float-balloon 2s ease-in-out infinite;
   z-index: 7;
 }
@@ -204,14 +208,12 @@ section figure > img {
 
   .clouds-stars {
     background-image: url("../img/clouds-stars_portrait.lossy.webp");
+    height: 133.33333333vw;
   }
 
   .clouds-stars-2 {
     background-image: url("../img/clouds-stars-2_portrait.lossy.webp");
-  }
-
-  .floating-bear {
-    left: 7%;
+    height: 133.33333333vw;
   }
 
   .title_landscape { display: none; }
@@ -234,10 +236,26 @@ section figure > img {
     top: 51%;
     width: 50vw;
   }
+
+  .floating-bear {
+    left: 15%;
+  }
 }
 
 @media screen and (min-width: 991px) {
   .google-map {
     padding-bottom: 40%;
+  }
+
+  .floating-bear {
+    left: calc((50vw - 25rem) + 7%);
+  }
+}
+
+@media screen and (min-width: 1143px) {
+  .balloon__foreground,
+  .balloon__background,
+  .balloon__basket {
+    right: calc(34vw - min(90vw, 60vh));
   }
 }

@@ -26,19 +26,21 @@
   <body class="invitation">
     <div class="invitation__background"></div>
 
-    <section class="sky hero">
+    <div class="clouds-stars"></div>
+    <div class="clouds-stars-2"></div>
+
+    <section id="section-1" class="sky hero">
       <div class="balloon">
         <div class="balloon__foreground"></div>
         <div class="balloon__background"></div>
         <div class="balloon__basket"></div>
       </div>
-      <div class="clouds-stars"></div>
 
       <div class="title title_landscape"><img src="img/title_landscape.lossy.webp" /></div>
       <div class="title title_portrait"><img src="img/title_portrait.lossy.webp" /></div>
     </section>
 
-    <section>
+    <section id="section-2">
       <div class="mcontainer">
         <header>
           <h3>When and where?</h3>
@@ -56,9 +58,19 @@
       </div>
     </section>
 
-    <section class="sky hero">
+    <section id="section-3" class="sky hero">
       <div class="floating-bear"></div>
-      <div class="clouds-stars-2"></div>
     </section>
+
+    <script>
+      function onResize() {
+        const section3Element = document.getElementById("section-3");
+        const cloudStars2 = document.querySelector(".clouds-stars-2");
+        cloudStars2.style.top = `${section3Element.offsetTop}px`;
+      }
+
+      window.addEventListener("resize", onResize);
+      window.addEventListener("DOMContentLoaded", onResize);
+    </script>
   </body>
 </html>
