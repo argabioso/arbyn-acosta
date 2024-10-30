@@ -8,61 +8,57 @@
 
     <title>Baby Argabioso &#124; Gender Reveal &amp; Baby Shower</title>
 
-    <link rel="stylesheet" href="https://use.typekit.net/yue6wsi.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pangolin&display=swap">
+    <link rel="stylesheet" href="https://use.typekit.net/yue6wsi.css">
+
     <link rel="stylesheet" href="../shared/css/fonts.css" />
 
     <link rel="stylesheet" href="css/fonts.css" />
     <link rel="stylesheet" href="css/grid.css" />
+    <link rel="stylesheet" href="css/animations.css" />
     <link rel="stylesheet" href="css/main.css" />
     <style>
     </style>
   </head>
 
-  <body>
-    <div class="bare-background"></div>
-    <div class="invitation">
-      <section class="sky-section">
-        <div class="balloon--fg"><img src="img/balloon--fg.lossy.webp" /></div>
-        <div class="balloon--bg"><img src="img/balloon--bg.lossy.webp" /></div>
-        <div class="basket"><img src="img/basket.lossy.webp" /></div>
-        <div class="sky"></div>
+  <body class="invitation">
+    <div class="invitation__background"></div>
 
-        <div class="title">
-          <img class="img-landscape" src="img/title--landscape.lossy.webp" />
-          <img class="img-portrait" src="img/title--portrait.lossy.webp" />
-        </div>
-      </section>
+    <section class="sky hero">
+      <div class="balloon">
+        <div class="balloon__foreground"></div>
+        <div class="balloon__background"></div>
+        <div class="balloon__basket"></div>
+      </div>
+      <div class="clouds-stars"></div>
 
-      <section class="details">
-        <div class="own-container">
-          <h2>When and where is the event? 🗓️</h2>
-          <div class="when">
-            <span class="wedding-countdown"></span>
-            <span class="wedding-date">December 7, 2024</span>
-            <span class="wedding-time">5:30 PM. Penthouse M1 Level, Lancaster Hotel, <br class="breaker" />622 Shaw Boulevard, Mandaluyong City</span>
-          </div>
-        </div>
-        <div class="full-width-container">
-          <div class="google-map">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3861.269764328587!2d121.04754967558148!3d14.583698285900764!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397c83949975521%3A0xe557f8939b6b1e98!2sLancaster%20Hotel%20Manila!5e0!3m2!1sen!2sph!4v1730129524273!5m2!1sen!2sph" width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-          </div>
-        </div>
-      </section>
+      <div class="title title_landscape"><img src="img/title_landscape.lossy.webp" /></div>
+      <div class="title title_portrait"><img src="img/title_portrait.lossy.webp" /></div>
+    </section>
 
-      <section class="registry">
-        <div class="own-container">
-          <h2>Our little one’s wishlist 🎁</h2>
+    <section>
+      <div class="mcontainer">
+        <header>
+          <h3>When and where?</h3>
+        </header>
 
-          <div class="grid">
-            <div class="item hegen-baby-bottle">
-              <h3>Hegen Wide-neck Baby Bottle</h3>
+        <div class="body">
+          <p>The reveal will be at the Penthouse, M1 Level of the <strong>Lancaster Hotel</strong>, 622 Shaw Boulevard, Mandaluyong City on <strong>December 7, 2024, at 5:30 PM</strong>.</p>
+          <figure>
+            <img src="img/lancaster.webp">
+            <div class="google-map">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3861.269764328587!2d121.04754967558148!3d14.583698285900764!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397c83949975521%3A0xe557f8939b6b1e98!2sLancaster%20Hotel%20Manila!5e0!3m2!1sen!2sph!4v1730129524273!5m2!1sen!2sph" width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
-            <div class="item mustella-products">
-              <h3>Mustell Skin Products</h3>
-            </div>
-          </div>
+          </figure>
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
+
+    <section class="sky hero">
+      <div class="floating-bear"></div>
+      <div class="clouds-stars-2"></div>
+    </section>
   </body>
 </html>

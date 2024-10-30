@@ -1,0 +1,19 @@
+@keyframes float-balloon {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-30px) rotate(-2.5deg) translateX(5px);
+  }
+}
+
+@keyframes float-basket {
+  0%,
+  100% {
+    transform: translateY(10px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-30px) rotate(-5deg) translateX(10px);
+  }
+}
