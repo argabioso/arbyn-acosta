@@ -61,6 +61,18 @@
       </div>
     </section>
 
+    <section id="section-6">
+      <div class="mcontainer">
+        <header>
+          <h3>Win a prize!</h3>
+        </header>
+
+        <div class="body">
+          <p>Bring a pack of baby diapers (in any size) for a chance to win a prize throughout the event! 🥳</p>
+        </div>
+      </div>
+    </section>
+
     <section id="section-3" class="sky hero">
       <div class="floating-bear"></div>
     </section>
@@ -130,7 +142,7 @@
     <script>
       // Get a reference to the div
       const rsvpButton = document.querySelector('#rsvp-button > a');
-      const section3Element = document.getElementById("section-3");
+      const section6Element = document.getElementById("section-6");
       const cloudStars2 = document.querySelector(".clouds-stars-2");
 
       // Function to check scroll position and update text
@@ -149,7 +161,7 @@
       }
 
       function onResize() {
-        cloudStars2.style.top = `${section3Element.offsetTop}px`;
+        cloudStars2.style.top = `${section6Element.offsetTop}px`;
       }
 
       window.addEventListener("resize", onResize);

@@ -59,6 +59,17 @@ section p > strong {
   color: #22201f;
 }
 
+#section-6 .body > p {
+  padding: 1rem;
+  background-color: #a98366;
+  color: white;
+  border-radius: 8px;
+  font-weight: 700;
+  letter-spacing: -0.02rem;
+  font-size: 1.125rem;
+  font-family: "Google Sans", sans-serif;
+}
+
 section figure {
   margin: 0;
   padding: 0;
