@@ -78,6 +78,10 @@ section figure > img {
   max-width: 50rem;
 }
 
+#section-4 {
+  padding-bottom: 3.6rem;
+}
+
 .hero {
   height: 100vh;
   padding: 0;
@@ -252,13 +256,13 @@ section figure > img {
   color: #201116;
 }
 
-.rsvp-button > a {
+#rsvp-button > a {
+  background-color: rgb(32, 17, 22, 0.75);
   display: block;
   font-family: "Google Sans", sans-serif;
   font-weight: 700;
-  font-size: 1.125rem;
+  font-size: 1rem;
   letter-spacing: -0.05rem;
-  background-color: #201116;
   color: white;
   padding: 0.5rem 1.5rem;
   position: fixed;
@@ -266,15 +270,15 @@ section figure > img {
   left: 50%;
   transform: translateX(-50%);
   z-index: 99;
-  border-radius: 25px;
-  width: 100px;
-  height: 25px;
+  border-radius: 40px;
+  width: 88px;
+  height: 22px;
   text-align: center;
   text-decoration: none;
-  opacity: 0.75;
+  transition: width 0.1s ease-in-out;
 }
 
-.rsvp-button:hover {
+#rsvp-button:hover {
   cursor: pointer;
 }
 

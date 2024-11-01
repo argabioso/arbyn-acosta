@@ -23,7 +23,7 @@
   </head>
 
   <body class="invitation">
-    <div class="rsvp-button">
+    <div id="rsvp-button">
       <a href="https://withjoy.com/babyarbyn-and-babymitchie/rsvp">Scroll down</a>
     </div>
 
@@ -128,14 +128,33 @@
     </section>
 
     <script>
+      // Get a reference to the div
+      const rsvpButton = document.querySelector('#rsvp-button > a');
+      const section3Element = document.getElementById("section-3");
+      const cloudStars2 = document.querySelector(".clouds-stars-2");
+
+      // Function to check scroll position and update text
+      function checkScrollPosition() {
+        const scrollPosition = window.scrollY;
+        const windowHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const scrollPercent = (scrollPosition / windowHeight) * 100;
+
+        if (scrollPercent >= 25) {
+          rsvpButton.innerText = "RSVP";
+          rsvpButton.style.width = "36px";
+        } else {
+          rsvpButton.innerText = "Scroll down";
+          rsvpButton.style.width = "88px";
+        }
+      }
+
       function onResize() {
-        const section3Element = document.getElementById("section-3");
-        const cloudStars2 = document.querySelector(".clouds-stars-2");
         cloudStars2.style.top = `${section3Element.offsetTop}px`;
       }
 
       window.addEventListener("resize", onResize);
       window.addEventListener("DOMContentLoaded", onResize);
+      window.addEventListener("scroll", checkScrollPosition);
     </script>
   </body>
 </html>
