@@ -22,7 +22,7 @@ body {
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-family: "Google Sans Text", sans-serif;
+  font-family: "Google Sans", sans-serif;
   color: #442c19;
   line-height: 1.4;
 }
