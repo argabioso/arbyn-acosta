@@ -294,6 +294,14 @@ section figure > img {
   font-family: "Google Sans", sans-serif;
 }
 
+#section-6 .notice {
+  background-image: url("../img/raffle.lossy.webp");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  padding-right: 43%;
+}
+
 /* =========================================================================
  * Portrait ONLY Styles (regardless of width)
  * ====================================================================== */
@@ -335,6 +343,10 @@ section figure > img {
   .grid {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
+  }
+
+  #section-6 .notice {
+    padding-right: 50%;
   }
 }
 
