@@ -2231,7 +2231,7 @@ for (const [key, svg] of Object.entries(isDark ? DARK_MARKERS : LIGHT_MARKERS)) 
           <div class="person-details">
             <span class="person-name">Antonio "Tony" S. Argabioso</span>
             <span class="relevant-dates">14 Dec 1963 — Living</span>
-            <span class="birth-place"><strong>B</strong> : Poblacion, Caloocan, Philippines</span>
+            <span class="birth-place"><strong>B</strong> : Poblacion, South Caloocan, PHL</span>
             <span class="birth-place"><strong>L</strong> : Quezon City, Philippines</span>
           </div>
         </li>
@@ -2245,7 +2245,7 @@ for (const [key, svg] of Object.entries(isDark ? DARK_MARKERS : LIGHT_MARKERS)) 
           <div class="person-details">
             <span class="person-name">Danilo "Dada" S. Argabioso</span>
             <span class="relevant-dates">31 Mar 1969 — Living</span>
-            <span class="birth-place"><strong>B</strong> : Poblacion, Caloocan, Philippines</span>
+            <span class="birth-place"><strong>B</strong> : Poblacion, South Caloocan, PHL</span>
             <span class="birth-place"><strong>L</strong> : Singapore / Cavite, Philippines</span>
           </div>
         </li>
@@ -2279,6 +2279,24 @@ for (const [key, svg] of Object.entries(isDark ? DARK_MARKERS : LIGHT_MARKERS)) 
         <div class="youtube-container"><iframe class="youtube-embed" src="https://www.youtube.com/embed/XelM7m7V3FI?si=aLrttwYFY6x5m5xV&amp;start=6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
         <p class="caption"><em>Roland Argabioso in Dennis Cunanan's testification before the Senate for the Pork Barrel Scam.</em></p>
       </figure>
+    `
+  },
+  'GQJK-LCT': { // Eusebio Argabioso
+    stories: `
+      <h5>Siblings</h5>
+      <ul class="siblings">
+        <li class="male details-3">
+          <div class="person-details">
+            <span class="person-name">Leonor Rosario M. Argabioso</span>
+            <span class="relevant-dates">18 Oct 1919 — 16 Sep 1981</span>
+            <span class="birth-place"><strong>B</strong> : Majayjay, Laguna, Philippines</span>
+            <span class="birth-place"><strong>D</strong> : Majayjay, Laguna, Philippines</span>
+          </div>
+        </li>
+        <li class="person-placeholder">
+          <span class="person-name">$\{fullName\}</span>
+        </li>
+      </ul>
     `
   },
   'GHBZ-TM4': { // Eusebio Argabioso
@@ -2439,8 +2457,8 @@ for (const [key, svg] of Object.entries(isDark ? DARK_MARKERS : LIGHT_MARKERS)) 
           <div class="person-details">
             <span class="person-name">Manuel M. Acosta III</span>
             <span class="relevant-dates">7 Nov 1966 — Living</span>
-            <span class="birth-place"><strong>B</strong> : Caloocan, Philippines</span>
-            <span class="birth-place"><strong>L</strong> : Caloocan, Philippines</span>
+            <span class="birth-place"><strong>B</strong> : South Caloocan, Philippines</span>
+            <span class="birth-place"><strong>L</strong> : Sangandaan, S. Caloocan, PHL</span>
           </div>
         </li>
         <li class="female details-3">
@@ -2450,7 +2468,7 @@ for (const [key, svg] of Object.entries(isDark ? DARK_MARKERS : LIGHT_MARKERS)) 
           <div class="person-details">
             <span class="person-name">Susan M. Acosta</span>
             <span class="relevant-dates">21 Feb 1968 — Living</span>
-            <span class="birth-place"><strong>B</strong> : Caloocan, Philippines</span>
+            <span class="birth-place"><strong>B</strong> : South Caloocan, Philippines</span>
             <span class="birth-place"><strong>L</strong> : Japan</span>
           </div>
         </li>
@@ -2568,7 +2586,7 @@ for (const [key, svg] of Object.entries(isDark ? DARK_MARKERS : LIGHT_MARKERS)) 
             <span class="person-name">Victoria "Vicky" S. A. Acosta</span>
             <span class="relevant-dates">17 Jun 1945 — 19 Feb 2018 (72)</span>
             <span class="birth-place"><strong>B</strong> : Manila, Philippines</span>
-            <span class="death-place"><strong>D</strong> : Caloocan, Philippines</span>
+            <span class="death-place"><strong>D</strong> : Sangandaan, S. Caloocan, PHL</span>
           </div>
         </li>
         <li class="female details-3">
