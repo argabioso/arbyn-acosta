@@ -149,8 +149,39 @@ var STORIES = {
   },
   'GHBZ-TM4': { // Eusebio Argabioso
     stories: `
+      <h5>Half Siblings <span class="chill">from Mother's Side</span></h5>
+      <ul class="siblings">
+        <li class="person-placeholder">
+          <span class="person-name">$\{fullName\}</span>
+        </li>
+        <li class="male details-3">
+          <div class="person-details">
+            <span class="person-name">Gregorio Orillo</span>
+            <span class="relevant-dates">17 Nov 1903 — 22 Apr 1993</span>
+            <span class="birth-place"><strong>B</strong> : Majayjay, Laguna, Philippines</span>
+            <span class="birth-place"><strong>D</strong> : United States of America</span>
+          </div>
+        </li>
+      </ul>
+
+      <hr />
       <h5>Cause of Death</h5>
       <p>Based on Eusebio's death certificate, he first started seeing symptoms of his illness around September 1972. He was diagnosed with peptic ulcer. One month after the onset of his symptoms, he died on October 27, 1972.</p>
+    `
+  },
+  'GHB8-RCH': { // Estebana Lopecillo
+    stories: `
+      <h5>Partner</h5>
+      <ul class="siblings">
+        <li class="male details-3">
+          <div class="person-details">
+            <span class="person-name">Pablo Orillo</span>
+            <span class="relevant-dates">before 1897 — after 1903</span>
+            <span class="birth-place"><strong>B</strong> : Majayjay, Laguna, Philippines</span>
+            <span class="birth-place"><strong>D</strong> : Philippines</span>
+          </div>
+        </li>
+      </ul>
     `
   },
   'GHBZ-YVX': { // Lydia Saplala
