@@ -69,13 +69,13 @@ function calculatePhotoScale(nodeData) {
       return 0.09175700;
 
     case 4:  // all places are available, NO image
-      return 0.63904221;
+      return 0.63904221 / 3;
     case 8:  // only two places are available, NO image
-      return 0.57759585;
+      return 0.57759585 / 3;
     case 12: // only one place is available, NO image
-      return 0.47322855;
+      return 0.47322855 / 3;
     case 16: // no place is available (maybe have dates), NO image
-      return 0.39550800;
+      return 0.39550800 / 3;
 
     default:
       return 1.00000000;
