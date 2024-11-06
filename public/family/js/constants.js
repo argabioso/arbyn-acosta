@@ -15,8 +15,37 @@ const COLORS = {
   MARBLE: {fg: !isDark ? '#333333' : '#EDD5BB', bg: !isDark ? '#F0F0F0' : '#3d3833'},
 }
 
+// Needs to be updated if the tree extends horizontally or vertically
+// this would include updating node widths, adding a new generation,
+// adding a detail to a node causing it to increase in height
+const tw = 3045;
+const th = 1678;
+const tree_ratio = tw / th;
+
+// Desired width based on Photoshop check. Includes Lolo Eusebio's gen
+const dw = 1842;
+const dh = 983;
+
+const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)
+const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0)
+const view_ratio = vw / vh;
+
+// console.log("dw", dw);
+// console.log("tw", tw);
+// console.log("th", th);
+// console.log("tree_ratio", tree_ratio);
+// console.log("vw", vw);
+// console.log("vh", vh);
+// console.log("view_ratio", view_ratio);
+
+// console.log("vw / dw", vw / dw);
+// console.log("vw / tw", vw / tw);
+// console.log("vh / th", vh / th);
+
+let scale = Math.min(0.9, Math.max((vh / dh), (vw / dw), (vw / tw), (vh / th)));
+
 const ui = {
-  scale: 0.937,
+  scale: scale,
   font: {
     size: {
       name: 14.3,
