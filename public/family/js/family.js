@@ -3507,7 +3507,7 @@ for (const [key, svg] of Object.entries(isDark ? DARK_MARKERS : LIGHT_MARKERS)) 
         <li class="male details-3">
           <div class="person-details">
             <span class="person-name">Leonor Rosario M. Argabioso</span>
-            <span class="relevant-dates">18 Oct 1919 — 16 Sep 1981 (${bino.calculateAge()})</span>
+            <span class="relevant-dates">18 Oct 1919 — 16 Sep 1981 (${bino.calculateAge('18 Oct 1919', '16 Sep 1981')})</span>
             <span class="birth-place"><strong>B</strong> : Majayjay, Laguna, Philippines</span>
             <span class="birth-place"><strong>D</strong> : Majayjay, Laguna, Philippines</span>
           </div>
