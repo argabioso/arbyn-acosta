@@ -42,7 +42,7 @@ const view_ratio = vw / vh;
 // console.log("vw / tw", vw / tw);
 // console.log("vh / th", vh / th);
 
-let scale = Math.min(0.9, Math.max((vh / dh), (vw / dw), (vw / tw), (vh / th)));
+let scale = Math.min(0.85625, Math.max((vh / dh), (vw / dw), (vw / tw), (vh / th)));
 
 const ui = {
   scale: scale,

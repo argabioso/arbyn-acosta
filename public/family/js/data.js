@@ -40,8 +40,12 @@
     "suffix": null,
     "vitalsCompleteAndVerified": false,
     "firstName": "Yeusef Loran",
+    "fid": "G1Q7-J85",
     "height": 0,
-    "width": 0
+    "width": 0,
+    "paternal_siblings": [],
+    "maternal_siblings": [],
+    "regular_siblings": []
   },
   {
     "baptismDate": "1995-05-27",
@@ -69,7 +73,17 @@
     "marker": "computer",
     "marker3": "software",
     "fid": "GQX8-CQP",
-    "child": "80378400"
+    "child": "80378400",
+    "paternal_siblings": [
+      "70275697"
+    ],
+    "father": "50954818",
+    "maternal_siblings": [
+      "41448711",
+      "21719634"
+    ],
+    "mother": "50342947",
+    "regular_siblings": []
   },
   {
     "baptismDate": null,
@@ -97,7 +111,15 @@
     "marker3": "justice",
     "marker4": "prelations",
     "fid": "GQJK-L51",
-    "child": "85203214"
+    "child": "85203214",
+    "paternal_siblings": [],
+    "father": "96832424",
+    "maternal_siblings": [],
+    "mother": "82099124",
+    "regular_siblings": [
+      "4793299",
+      "48615922"
+    ]
   },
   {
     "baptismDate": null,
@@ -124,7 +146,17 @@
     "marker": "beer",
     "marker2": "prelations",
     "fid": "GQJK-LCT",
-    "child": "50954818"
+    "child": "50954818",
+    "paternal_siblings": [],
+    "father": "79164376",
+    "maternal_siblings": [],
+    "mother": "53221118",
+    "regular_siblings": [
+      "36448299",
+      "7663556",
+      "85278460",
+      "21653420"
+    ]
   },
   {
     "baptismDate": null,
@@ -150,7 +182,14 @@
     "firstName": "Eusebio",
     "marker": "farming",
     "fid": "GHBZ-TM4",
-    "child": "96832424"
+    "child": "96832424",
+    "maternal_siblings": [
+      "83646651",
+      "52063403"
+    ],
+    "mother": "17601526",
+    "paternal_siblings": [],
+    "regular_siblings": []
   },
   {
     "baptismDate": null,
@@ -175,7 +214,10 @@
     "vitalsCompleteAndVerified": false,
     "firstName": "Estebana",
     "fid": "GHB8-RCH",
-    "child": "79164376"
+    "child": "79164376",
+    "paternal_siblings": [],
+    "maternal_siblings": [],
+    "regular_siblings": []
   },
   {
     "baptismDate": null,
@@ -200,7 +242,10 @@
     "vitalsCompleteAndVerified": false,
     "firstName": "Simplicio",
     "fid": "G2HQ-YQS",
-    "child": "17601526"
+    "child": "17601526",
+    "paternal_siblings": [],
+    "maternal_siblings": [],
+    "regular_siblings": []
   },
   {
     "baptismDate": null,
@@ -225,7 +270,10 @@
     "vitalsCompleteAndVerified": false,
     "firstName": "Gregoria",
     "fid": "G2H7-Q75",
-    "child": "17601526"
+    "child": "17601526",
+    "paternal_siblings": [],
+    "maternal_siblings": [],
+    "regular_siblings": []
   },
   {
     "baptismDate": null,
@@ -250,7 +298,10 @@
     "vitalsCompleteAndVerified": false,
     "firstName": "Francisca",
     "fid": "GHBZ-P5Q",
-    "child": "96832424"
+    "child": "96832424",
+    "paternal_siblings": [],
+    "maternal_siblings": [],
+    "regular_siblings": []
   },
   {
     "baptismDate": null,
@@ -277,7 +328,15 @@
     "marker": "retail",
     "marker3": "sales",
     "fid": "GHBZ-YVX",
-    "child": "50954818"
+    "child": "50954818",
+    "paternal_siblings": [],
+    "father": "78763160",
+    "maternal_siblings": [],
+    "mother": "25174592",
+    "regular_siblings": [
+      "31493676",
+      "46768390"
+    ]
   },
   {
     "baptismDate": null,
@@ -304,7 +363,15 @@
     "marker": "military",
     "marker2": "skull",
     "fid": "GHB8-7T6",
-    "child": "82099124"
+    "child": "82099124",
+    "paternal_siblings": [],
+    "father": "71728184",
+    "maternal_siblings": [],
+    "mother": "66525244",
+    "regular_siblings": [
+      "40891293",
+      "38373110"
+    ]
   },
   {
     "baptismDate": null,
@@ -329,7 +396,10 @@
     "vitalsCompleteAndVerified": false,
     "firstName": "Estanislao",
     "fid": "GNNH-JLM",
-    "child": "78763160"
+    "child": "78763160",
+    "paternal_siblings": [],
+    "maternal_siblings": [],
+    "regular_siblings": []
   },
   {
     "baptismDate": null,
@@ -354,7 +424,10 @@
     "vitalsCompleteAndVerified": false,
     "firstName": "Adela",
     "fid": "GJJX-1SG",
-    "child": "78763160"
+    "child": "78763160",
+    "paternal_siblings": [],
+    "maternal_siblings": [],
+    "regular_siblings": []
   },
   {
     "baptismDate": null,
@@ -378,7 +451,10 @@
     "suffix": null,
     "vitalsCompleteAndVerified": false,
     "firstName": "Estanislao",
-    "child": "66525244"
+    "child": "66525244",
+    "paternal_siblings": [],
+    "maternal_siblings": [],
+    "regular_siblings": []
   },
   {
     "baptismDate": null,
@@ -402,7 +478,10 @@
     "suffix": null,
     "vitalsCompleteAndVerified": false,
     "firstName": "Florentina",
-    "child": "66525244"
+    "child": "66525244",
+    "paternal_siblings": [],
+    "maternal_siblings": [],
+    "regular_siblings": []
   },
   {
     "baptismDate": null,
@@ -428,7 +507,10 @@
     "firstName": "Lucina",
     "marker": "housewife",
     "fid": "GHB8-GZL",
-    "child": "82099124"
+    "child": "82099124",
+    "paternal_siblings": [],
+    "maternal_siblings": [],
+    "regular_siblings": []
   },
   {
     "baptismDate": null,
@@ -454,7 +536,10 @@
     "firstName": "Victor",
     "marker": "fishery",
     "fid": "GHB8-M8D",
-    "child": "25174592"
+    "child": "25174592",
+    "paternal_siblings": [],
+    "maternal_siblings": [],
+    "regular_siblings": []
   },
   {
     "baptismDate": null,
@@ -479,7 +564,10 @@
     "vitalsCompleteAndVerified": false,
     "firstName": "Genoveba",
     "fid": "GHB8-M86",
-    "child": "25174592"
+    "child": "25174592",
+    "paternal_siblings": [],
+    "maternal_siblings": [],
+    "regular_siblings": []
   },
   {
     "baptismDate": "1971-09-05",
@@ -506,7 +594,15 @@
     "baptismPlace": "San Roque Cathedral Parish, South Caloocan, PHL",
     "marker": "housewife",
     "fid": "GQJK-G8W",
-    "child": "85203214"
+    "child": "85203214",
+    "paternal_siblings": [],
+    "father": "80469632",
+    "maternal_siblings": [],
+    "mother": "58601193",
+    "regular_siblings": [
+      "4256552",
+      "77082334"
+    ]
   },
   {
     "baptismDate": null,
@@ -533,7 +629,17 @@
     "marker": "male-twin",
     "marker2": "seaman",
     "fid": "GHBD-7M4",
-    "child": "50342947"
+    "child": "50342947",
+    "paternal_siblings": [],
+    "father": "59135880",
+    "maternal_siblings": [],
+    "mother": "54923824",
+    "regular_siblings": [
+      "73841862",
+      "41491264",
+      "12725118",
+      "54340914"
+    ]
   },
   {
     "baptismDate": null,
@@ -560,7 +666,15 @@
     "marker": "police",
     "marker2": "investigate",
     "fid": "GHBD-9L6",
-    "child": "80469632"
+    "child": "80469632",
+    "paternal_siblings": [],
+    "father": "91699953",
+    "maternal_siblings": [],
+    "mother": "91567169",
+    "regular_siblings": [
+      "64329171",
+      "6375936"
+    ]
   },
   {
     "baptismDate": null,
@@ -585,7 +699,10 @@
     "vitalsCompleteAndVerified": false,
     "firstName": "Ligorio",
     "fid": "GHB8-SQN",
-    "child": "59135880"
+    "child": "59135880",
+    "paternal_siblings": [],
+    "maternal_siblings": [],
+    "regular_siblings": []
   },
   {
     "baptismDate": null,
@@ -610,7 +727,10 @@
     "vitalsCompleteAndVerified": false,
     "firstName": "Maximiana",
     "fid": "GHB8-5K8",
-    "child": "59135880"
+    "child": "59135880",
+    "paternal_siblings": [],
+    "maternal_siblings": [],
+    "regular_siblings": []
   },
   {
     "baptismDate": null,
@@ -636,7 +756,10 @@
     "firstName": "Natividad",
     "marker": "housewife",
     "fid": "GHB8-DXY",
-    "child": "80469632"
+    "child": "80469632",
+    "paternal_siblings": [],
+    "maternal_siblings": [],
+    "regular_siblings": []
   },
   {
     "baptismDate": null,
@@ -661,7 +784,10 @@
     "vitalsCompleteAndVerified": false,
     "firstName": "Vicente",
     "fid": "GHB8-LCC",
-    "child": "54923824"
+    "child": "54923824",
+    "paternal_siblings": [],
+    "maternal_siblings": [],
+    "regular_siblings": []
   },
   {
     "baptismDate": null,
@@ -686,7 +812,10 @@
     "vitalsCompleteAndVerified": false,
     "firstName": "Nena",
     "fid": "GHB8-H7K",
-    "child": "54923824"
+    "child": "54923824",
+    "paternal_siblings": [],
+    "maternal_siblings": [],
+    "regular_siblings": []
   },
   {
     "baptismDate": null,
@@ -712,7 +841,17 @@
     "firstName": "Catalina",
     "marker": "housewife",
     "fid": "GHB8-J1B",
-    "child": "50342947"
+    "child": "50342947",
+    "paternal_siblings": [],
+    "father": "51727808",
+    "maternal_siblings": [],
+    "mother": "30299840",
+    "regular_siblings": [
+      "95216770",
+      "42349252",
+      "95739264",
+      "55618304"
+    ]
   },
   {
     "baptismDate": null,
@@ -739,7 +878,17 @@
     "marker": "police",
     "marker2": "train",
     "fid": "GHB8-GB6",
-    "child": "58601193"
+    "child": "58601193",
+    "paternal_siblings": [],
+    "father": "51683352",
+    "maternal_siblings": [],
+    "mother": "50346650",
+    "regular_siblings": [
+      "57182283",
+      "28928680",
+      "47386677",
+      "392680"
+    ]
   },
   {
     "baptismDate": null,
@@ -765,7 +914,14 @@
     "firstName": "Miguel",
     "marker": "government",
     "fid": "LLQS-641",
-    "child": "51727808"
+    "child": "51727808",
+    "paternal_siblings": [],
+    "father": "61599560",
+    "maternal_siblings": [],
+    "mother": "53643498",
+    "regular_siblings": [
+      "93051591"
+    ]
   },
   {
     "baptismDate": null,
@@ -792,7 +948,10 @@
     "marker": "sales",
     "marker2": "cattle",
     "fid": "LLQS-6YC",
-    "child": "51683352"
+    "child": "51683352",
+    "paternal_siblings": [],
+    "maternal_siblings": [],
+    "regular_siblings": []
   },
   {
     "baptismDate": null,
@@ -817,7 +976,10 @@
     "vitalsCompleteAndVerified": false,
     "firstName": "Maria",
     "fid": "L281-614",
-    "child": "51683352"
+    "child": "51683352",
+    "paternal_siblings": [],
+    "maternal_siblings": [],
+    "regular_siblings": []
   },
   {
     "baptismDate": null,
@@ -843,7 +1005,10 @@
     "firstName": "Agustin",
     "marker": "government",
     "fid": "GC7T-H59",
-    "child": "53643498"
+    "child": "53643498",
+    "paternal_siblings": [],
+    "maternal_siblings": [],
+    "regular_siblings": []
   },
   {
     "baptismDate": null,
@@ -868,7 +1033,10 @@
     "vitalsCompleteAndVerified": false,
     "firstName": "Felipa",
     "fid": "GC7T-1PK",
-    "child": "53643498"
+    "child": "53643498",
+    "paternal_siblings": [],
+    "maternal_siblings": [],
+    "regular_siblings": []
   },
   {
     "baptismDate": null,
@@ -893,7 +1061,10 @@
     "vitalsCompleteAndVerified": false,
     "firstName": "Mercedes",
     "fid": "LLQS-6F1",
-    "child": "51727808"
+    "child": "51727808",
+    "paternal_siblings": [],
+    "maternal_siblings": [],
+    "regular_siblings": []
   },
   {
     "baptismDate": null,
@@ -918,7 +1089,10 @@
     "vitalsCompleteAndVerified": false,
     "firstName": "Gregorio",
     "fid": "G7C3-B6P",
-    "child": "50346650"
+    "child": "50346650",
+    "paternal_siblings": [],
+    "maternal_siblings": [],
+    "regular_siblings": []
   },
   {
     "baptismDate": null,
@@ -943,7 +1117,10 @@
     "vitalsCompleteAndVerified": false,
     "firstName": "Leocadia",
     "fid": "G7C3-J9S",
-    "child": "50346650"
+    "child": "50346650",
+    "paternal_siblings": [],
+    "maternal_siblings": [],
+    "regular_siblings": []
   },
   {
     "baptismDate": null,
@@ -970,7 +1147,10 @@
     "marker": "apparel",
     "marker2": "sales",
     "fid": "GHBD-9LY",
-    "child": "58601193"
+    "child": "58601193",
+    "paternal_siblings": [],
+    "maternal_siblings": [],
+    "regular_siblings": []
   },
   {
     "baptismDate": null,
@@ -995,7 +1175,10 @@
     "vitalsCompleteAndVerified": false,
     "fid": "GY85-YPS",
     "firstName": "Unknown name",
-    "child": "30299840"
+    "child": "30299840",
+    "paternal_siblings": [],
+    "maternal_siblings": [],
+    "regular_siblings": []
   },
   {
     "baptismDate": null,
@@ -1022,7 +1205,14 @@
     "marker": "prelations",
     "marker3": "housewife",
     "fid": "GHB5-TWN",
-    "child": "80378400"
+    "child": "80378400",
+    "paternal_siblings": [],
+    "father": "41741428",
+    "maternal_siblings": [],
+    "mother": "55859428",
+    "regular_siblings": [
+      "1031404"
+    ]
   },
   {
     "baptismDate": null,
@@ -1050,7 +1240,14 @@
     "marker2": "househusband",
     "marker3": "prelations",
     "fid": "GHB5-XTZ",
-    "child": "16057808"
+    "child": "16057808",
+    "paternal_siblings": [],
+    "father": "32818992",
+    "maternal_siblings": [],
+    "mother": "18589217",
+    "regular_siblings": [
+      "78074094"
+    ]
   },
   {
     "baptismDate": null,
@@ -1076,7 +1273,10 @@
     "firstName": "Nestor",
     "marker": "farming",
     "fid": "GH12-SVQ",
-    "child": "41741428"
+    "child": "41741428",
+    "paternal_siblings": [],
+    "maternal_siblings": [],
+    "regular_siblings": []
   },
   {
     "baptismDate": null,
@@ -1102,7 +1302,10 @@
     "firstName": "Felomino",
     "marker": "farming",
     "fid": "GH12-DRN",
-    "child": "32818992"
+    "child": "32818992",
+    "paternal_siblings": [],
+    "maternal_siblings": [],
+    "regular_siblings": []
   },
   {
     "baptismDate": null,
@@ -1127,7 +1330,10 @@
     "vitalsCompleteAndVerified": false,
     "firstName": "Consuelo",
     "fid": "GH12-3GN",
-    "child": "32818992"
+    "child": "32818992",
+    "paternal_siblings": [],
+    "maternal_siblings": [],
+    "regular_siblings": []
   },
   {
     "baptismDate": null,
@@ -1153,7 +1359,10 @@
     "firstName": "Rufa",
     "marker": "farming",
     "fid": "GH12-9F6",
-    "child": "41741428"
+    "child": "41741428",
+    "paternal_siblings": [],
+    "maternal_siblings": [],
+    "regular_siblings": []
   },
   {
     "baptismDate": null,
@@ -1179,7 +1388,10 @@
     "firstName": "Cecelio",
     "marker": "sergeant",
     "fid": "GH12-9JZ",
-    "child": "18589217"
+    "child": "18589217",
+    "paternal_siblings": [],
+    "maternal_siblings": [],
+    "regular_siblings": []
   },
   {
     "baptismDate": null,
@@ -1204,7 +1416,10 @@
     "vitalsCompleteAndVerified": false,
     "firstName": "Jovita",
     "fid": "GH12-35H",
-    "child": "18589217"
+    "child": "18589217",
+    "paternal_siblings": [],
+    "maternal_siblings": [],
+    "regular_siblings": []
   },
   {
     "baptismDate": null,
@@ -1232,7 +1447,15 @@
     "marker2": "prelations",
     "marker3": "manager",
     "fid": "GHBR-FK3",
-    "child": "16057808"
+    "child": "16057808",
+    "paternal_siblings": [],
+    "father": "17374654",
+    "maternal_siblings": [],
+    "mother": "64719992",
+    "regular_siblings": [
+      "44750858",
+      "57433236"
+    ]
   },
   {
     "baptismDate": null,
@@ -1257,7 +1480,10 @@
     "vitalsCompleteAndVerified": false,
     "firstName": "Napoleon Crispolon",
     "fid": "GH12-Z3C",
-    "child": "55859428"
+    "child": "55859428",
+    "paternal_siblings": [],
+    "maternal_siblings": [],
+    "regular_siblings": []
   },
   {
     "baptismDate": null,
@@ -1282,7 +1508,10 @@
     "vitalsCompleteAndVerified": false,
     "firstName": "Manuel",
     "fid": "GH12-XX4",
-    "child": "17374654"
+    "child": "17374654",
+    "paternal_siblings": [],
+    "maternal_siblings": [],
+    "regular_siblings": []
   },
   {
     "baptismDate": null,
@@ -1307,7 +1536,10 @@
     "vitalsCompleteAndVerified": false,
     "firstName": "Eustaquio",
     "fid": "GKBR-M9Y",
-    "child": "40943586"
+    "child": "40943586",
+    "paternal_siblings": [],
+    "maternal_siblings": [],
+    "regular_siblings": []
   },
   {
     "baptismDate": null,
@@ -1332,7 +1564,10 @@
     "vitalsCompleteAndVerified": false,
     "firstName": "Florencia",
     "fid": "GKBR-7P7",
-    "child": "40943586"
+    "child": "40943586",
+    "paternal_siblings": [],
+    "maternal_siblings": [],
+    "regular_siblings": []
   },
   {
     "baptismDate": null,
@@ -1357,7 +1592,10 @@
     "vitalsCompleteAndVerified": false,
     "firstName": "Ursula",
     "fid": "GH12-HQN",
-    "child": "17374654"
+    "child": "17374654",
+    "paternal_siblings": [],
+    "maternal_siblings": [],
+    "regular_siblings": []
   },
   {
     "baptismDate": null,
@@ -1382,7 +1620,10 @@
     "vitalsCompleteAndVerified": false,
     "firstName": "Pedro Benjamin",
     "fid": "GKBT-9GD",
-    "child": "99295715"
+    "child": "99295715",
+    "paternal_siblings": [],
+    "maternal_siblings": [],
+    "regular_siblings": []
   },
   {
     "baptismDate": null,
@@ -1407,7 +1648,10 @@
     "vitalsCompleteAndVerified": false,
     "firstName": "Leoncia",
     "fid": "K2GJ-YY3",
-    "child": "99295715"
+    "child": "99295715",
+    "paternal_siblings": [],
+    "maternal_siblings": [],
+    "regular_siblings": []
   },
   {
     "baptismDate": null,
@@ -1433,7 +1677,10 @@
     "firstName": "Selma",
     "marker": "farming",
     "fid": "GH12-W17",
-    "child": "55859428"
+    "child": "55859428",
+    "paternal_siblings": [],
+    "maternal_siblings": [],
+    "regular_siblings": []
   },
   {
     "baptismDate": null,
@@ -1459,7 +1706,10 @@
     "firstName": "Benigno",
     "marker": "military",
     "fid": "GH12-6YL",
-    "child": "64719992"
+    "child": "64719992",
+    "paternal_siblings": [],
+    "maternal_siblings": [],
+    "regular_siblings": []
   },
   {
     "baptismDate": null,
@@ -1485,6 +1735,9 @@
     "firstName": "Enoria",
     "marker": "centennial",
     "fid": "GH12-DD8",
-    "child": "64719992"
+    "child": "64719992",
+    "paternal_siblings": [],
+    "maternal_siblings": [],
+    "regular_siblings": []
   }
 ];

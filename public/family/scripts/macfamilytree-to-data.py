@@ -1,11 +1,25 @@
 from datetime import datetime
-import json
+from typing import Optional
+import json as json_lib
 import re
 
+from pydantic import BaseModel
 from ged4py import GedcomReader
 
 
 CURRENT_DATE = datetime.now().strftime('%Y-%m-%d')
+
+
+class Name(BaseModel):
+    first: str
+    last: Optional[str] = None
+    middle: Optional[str] = None
+    suffix: Optional[str] = None
+    nickname: Optional[str] = None
+
+
+class Person(BaseModel):
+    name: Name
 
 
 def main():
@@ -16,6 +30,7 @@ def main():
     data = {}
     has_photo = {}
     markers = {}
+    all_children = {}
 
     with GedcomReader(path) as parser:
         for record in parser.records0("NOTE"):
@@ -185,15 +200,33 @@ def main():
                 elif sub_record_1.tag == "WIFE" and mother_key is None and xref_id in data:
                     mother_key = xref_id
 
-                elif sub_record_1.tag == "CHIL" and child_key is None and xref_id in data:
+                elif sub_record_1.tag == "CHIL" and xref_id in data:
                     child_key = xref_id
 
                 if father_key is not None and child_key is not None:
-                    data[father_key]["child"] = child_key
+                    if father_key not in all_children:
+                        all_children[father_key] = {"main": None, "others": []}
+
+                    if data[child_key].get("fid") is not None:
+                        data[father_key]["child"] = child_key
+                        all_children[father_key]["main"] = child_key
+
+                    elif child_key not in all_children[father_key]["others"]:
+                        all_children[father_key]["others"].append(child_key)
+
                     is_family_created = True
 
                 if mother_key is not None and child_key is not None:
-                    data[mother_key]["child"] = child_key
+                    if mother_key not in all_children:
+                        all_children[mother_key] = {"main": None, "others": []}
+
+                    if data[child_key].get("fid") is not None:
+                        data[mother_key]["child"] = child_key
+                        all_children[mother_key]["main"] = child_key
+
+                    elif child_key not in all_children[mother_key]["others"]:
+                        all_children[mother_key]["others"].append(child_key)
+
                     is_family_created = True
 
             if father_key and is_marriage_found:
@@ -208,8 +241,25 @@ def main():
                 if "marriagePlace" in temp_person:
                     data[mother_key]["marriagePlace"] = temp_person["marriagePlace"]
 
+    siblings_data = build_siblings_data(data, all_children)
+
+    file_output = "var SIBLINGS_DATA = "
+    file_output += json_lib.dumps(siblings_data, indent=2)
+    file_output += ";"
+
+    with open("../js/siblings.js", "w") as file:
+        file.write(file_output)
+
+    for key, children in all_children.items():
+        main = children["main"]
+        others = children["others"]
+
+        for child_key in others:
+            if child_key in data:
+                del data[child_key]
+
     data = build_family_tree(data)
-    # print(json.dumps(data, indent=2))
+    # print(json_lib.dumps(data, indent=2))
 
 
     file_output = '''
@@ -233,7 +283,7 @@ def main():
         var TREE_DATA =
     '''
 
-    file_output += json.dumps(data, indent=2)
+    file_output += json_lib.dumps(data, indent=2)
     file_output += ";"
 
     with open("../js/data.js", "w") as file:
@@ -305,6 +355,42 @@ def process_place(raw_value):
             temp_place = temp_place.replace(original, shorthand)
 
     return temp_place
+
+
+def build_siblings_data(tree_data, all_children):
+    sibling_keys = []
+    output = {}
+
+    for key, children in all_children.items():
+        main = children["main"]
+        others = children["others"]
+
+        if main is None or len(others) <= 0:
+            continue
+
+        if tree_data[key]["gender"] == "M":
+            tree_data[main]["paternal_siblings"] = others[:]
+            tree_data[main]["father"] = key
+
+        elif tree_data[key]["gender"] == "F":
+            tree_data[main]["maternal_siblings"] = others[:]
+            tree_data[main]["mother"] = key
+
+        sibling_keys += others
+
+    for key in set(sibling_keys):
+        output[key] = tree_data[key]
+
+    for key, person in tree_data.items():
+        paternal_siblings = set(person.get("paternal_siblings", []))
+        maternal_siblings = set(person.get("maternal_siblings", []))
+        regular_siblings = paternal_siblings.intersection(maternal_siblings)
+
+        person["paternal_siblings"] = list(paternal_siblings - regular_siblings)
+        person["maternal_siblings"] = list(maternal_siblings - regular_siblings)
+        person["regular_siblings"] = list(regular_siblings)
+
+    return output
 
 
 def build_family_tree(tree_data):

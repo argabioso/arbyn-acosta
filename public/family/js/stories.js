@@ -14,7 +14,7 @@ var STORIES = {
           </div>
           <div class="person-details">
             <span class="person-name">Ira Mae A. Ignacio</span>
-            <span class="relevant-dates">5 Aug 2004 — Living</span>
+            <span class="relevant-dates">5 Aug 2004 — Living (${bino.calculateAge('5 Aug 2004', null)})</span>
             <span class="birth-place"><strong>B</strong> : Tondo, Manila, Philippines</span>
             <span class="birth-place"><strong>L</strong> : Magdalena, Laguna, Philippines</span>
           </div>
@@ -25,7 +25,7 @@ var STORIES = {
           </div>
           <div class="person-details">
             <span class="person-name">Joshua Caleb A. Ignacio</span>
-            <span class="relevant-dates">1 Aug 2008 — Living</span>
+            <span class="relevant-dates">1 Aug 2008 — Living (${bino.calculateAge('1 Aug 2008', null)})</span>
             <span class="birth-place"><strong>B</strong> : Poblacion, South Caloocan, PHL</span>
             <span class="birth-place"><strong>L</strong> : Magdalena, Laguna, Philippines</span>
           </div>
@@ -43,7 +43,7 @@ var STORIES = {
           </div>
           <div class="person-details">
             <span class="person-name">Riand Nikole M. Argabioso</span>
-            <span class="relevant-dates">5 Nov 2003 — Living</span>
+            <span class="relevant-dates">5 Nov 2003 — Living (${bino.calculateAge('5 Nov 2003', null)})</span>
             <span class="birth-place"><strong>B</strong> : Quezon City, Philippines</span>
             <span class="birth-place"><strong>L</strong> : Malolos, Bulacan, Philippines</span>
           </div>
@@ -96,7 +96,7 @@ var STORIES = {
           </div>
           <div class="person-details">
             <span class="person-name">Antonio "Tony" S. Argabioso</span>
-            <span class="relevant-dates">14 Dec 1963 — Living</span>
+            <span class="relevant-dates">14 Dec 1963 — Living (${bino.calculateAge('14 Dec 1963', null)})</span>
             <span class="birth-place"><strong>B</strong> : Poblacion, South Caloocan, PHL</span>
             <span class="birth-place"><strong>L</strong> : Quezon City, Philippines</span>
           </div>
@@ -110,7 +110,7 @@ var STORIES = {
           </div>
           <div class="person-details">
             <span class="person-name">Danilo "Dada" S. Argabioso</span>
-            <span class="relevant-dates">31 Mar 1969 — Living</span>
+            <span class="relevant-dates">31 Mar 1969 — Living (${bino.calculateAge('31 Mar 1969', null)})</span>
             <span class="birth-place"><strong>B</strong> : Poblacion, South Caloocan, PHL</span>
             <span class="birth-place"><strong>L</strong> : Singapore / Cavite, Philippines</span>
           </div>
@@ -154,7 +154,7 @@ var STORIES = {
         <li class="male details-3">
           <div class="person-details">
             <span class="person-name">Leonor Rosario M. Argabioso</span>
-            <span class="relevant-dates">18 Oct 1919 — 16 Sep 1981</span>
+            <span class="relevant-dates">18 Oct 1919 — 16 Sep 1981 (${bino.calculateAge()})</span>
             <span class="birth-place"><strong>B</strong> : Majayjay, Laguna, Philippines</span>
             <span class="birth-place"><strong>D</strong> : Majayjay, Laguna, Philippines</span>
           </div>
@@ -175,7 +175,7 @@ var STORIES = {
         <li class="male details-3">
           <div class="person-details">
             <span class="person-name">Gregorio Orillo</span>
-            <span class="relevant-dates">17 Nov 1903 — 22 Apr 1993</span>
+            <span class="relevant-dates">17 Nov 1903 — 22 Apr 1993 (${bino.calculateAge('17 Nov 1903', '22 Apr 1993')})</span>
             <span class="birth-place"><strong>B</strong> : Majayjay, Laguna, Philippines</span>
             <span class="birth-place"><strong>D</strong> : United States of America</span>
           </div>
@@ -213,7 +213,7 @@ var STORIES = {
           </div>
           <div class="person-details">
             <span class="person-name">Bonifacio "Boning" P. Saplala</span>
-            <span class="relevant-dates">about 1939 — Living</span>
+            <span class="relevant-dates">about 1939 — Living (~${bino.calculateAge('about 1939', null)})</span>
             <span class="birth-place"><strong>B</strong> : Luzon, Philippines</span>
             <span class="birth-place"><strong>L</strong> : Los Baños, Laguna, Philippines</span>
           </div>
@@ -224,7 +224,7 @@ var STORIES = {
           </div>
           <div class="person-details">
             <span class="person-name">Claro P. Saplala Sr.</span>
-            <span class="relevant-dates">from 1940 to 1943 — about 2019</span>
+            <span class="relevant-dates">from 1940 to 1943 — about 2019 (~${bino.calculateAge('1942', '2019')})</span>
             <span class="birth-place"><strong>B</strong> : Luzon, Philippines</span>
             <span class="birth-place"><strong>D</strong> : Sangandaan, S. Caloocan, PHL</span>
           </div>
@@ -238,7 +238,7 @@ var STORIES = {
           </div>
           <div class="person-details">
             <span class="person-name">Celia "Lola A" P. Saplala</span>
-            <span class="relevant-dates">2 Mar 1946 — Living</span>
+            <span class="relevant-dates">2 Mar 1946 — Living (${bino.calculateAge('2 Mar 1946', null)})</span>
             <span class="birth-place"><strong>B</strong> : Luzon, Philippines</span>
             <span class="birth-place"><strong>L</strong> : Dinalupihan, Bataan, Philippines</span>
           </div>
@@ -322,7 +322,7 @@ var STORIES = {
           </div>
           <div class="person-details">
             <span class="person-name">Manuel M. Acosta III</span>
-            <span class="relevant-dates">7 Nov 1966 — Living</span>
+            <span class="relevant-dates">7 Nov 1966 — Living (${bino.calculateAge('7 Nov 1966', null)})</span>
             <span class="birth-place"><strong>B</strong> : South Caloocan, Philippines</span>
             <span class="birth-place"><strong>L</strong> : Sangandaan, S. Caloocan, PHL</span>
           </div>
@@ -333,7 +333,7 @@ var STORIES = {
           </div>
           <div class="person-details">
             <span class="person-name">Susan M. Acosta</span>
-            <span class="relevant-dates">21 Feb 1968 — Living</span>
+            <span class="relevant-dates">21 Feb 1968 — Living (${bino.calculateAge('21 Feb 1968', null)})</span>
             <span class="birth-place"><strong>B</strong> : South Caloocan, Philippines</span>
             <span class="birth-place"><strong>L</strong> : Japan</span>
           </div>
@@ -351,7 +351,7 @@ var STORIES = {
           </div>
           <div class="person-details">
             <span class="person-name">Larry C. Ignacio</span>
-            <span class="relevant-dates">10 May 1971 — Living</span>
+            <span class="relevant-dates">10 May 1971 — Living (${bino.calculateAge('10 May 1971', null)})</span>
             <span class="birth-place"><strong>B</strong> : Manila, Philippines</span>
             <span class="birth-place"><strong>L</strong> : Magdalena, Laguna, Philippines</span>
           </div>
@@ -450,7 +450,7 @@ var STORIES = {
           </div>
           <div class="person-details">
             <span class="person-name">Victoria "Vicky" S. A. Acosta</span>
-            <span class="relevant-dates">17 Jun 1945 — 19 Feb 2018 (72)</span>
+            <span class="relevant-dates">17 Jun 1945 — 19 Feb 2018 (${bino.calculateAge('17 Jun 1945', '19 Feb 2018')})</span>
             <span class="birth-place"><strong>B</strong> : Manila, Philippines</span>
             <span class="death-place"><strong>D</strong> : Sangandaan, S. Caloocan, PHL</span>
           </div>
@@ -461,7 +461,7 @@ var STORIES = {
           </div>
           <div class="person-details">
             <span class="person-name">Amelia S. A. Acosta</span>
-            <span class="relevant-dates">12 Jun 1947 — 2 May 2021 (73)</span>
+            <span class="relevant-dates">12 Jun 1947 — 2 May 2021 (${bino.calculateAge('12 Jun 1947', '2 May 2021')})</span>
             <span class="birth-place"><strong>B</strong> : Manila, Philippines</span>
             <span class="death-place"><strong>D</strong> : United States of America</span>
           </div>
@@ -478,7 +478,7 @@ var STORIES = {
           </div>
           <div class="person-details">
             <span class="person-name">Benjamin S. A. Acosta Sr.</span>
-            <span class="relevant-dates">23 Oct 1949 — before 2020</span>
+            <span class="relevant-dates">23 Oct 1949 — after 2011 (${bino.calculateAge('23 Oct 1949', '2011')}+)</span>
             <span class="birth-place"><strong>B</strong> : Manila, Philippines</span>
             <span class="death-place"><strong>D</strong> : United States of America</span>
           </div>
@@ -510,7 +510,7 @@ var STORIES = {
           </div>
           <div class="person-details">
             <span class="person-name">DM A. Adanza</span>
-            <span class="relevant-dates">13 Oct 2004 — Living</span>
+            <span class="relevant-dates">13 Oct 2004 — Living (${bino.calculateAge('13 Oct 2004', null)})</span>
             <span class="birth-place"><strong>B</strong> : Manila, Philippines</span>
             <span class="death-place"><strong>L</strong> : Sangandaan, S. Caloocan, PHL</span>
           </div>
