@@ -43,7 +43,7 @@ function showSidebar(node) {
   }
 
   var offcanvasElement = document.getElementById('personDetails');
-  var offcanvas = new bootstrap.Offcanvas(offcanvasElement);
+  var offcanvas = new Offcanvas(offcanvasElement);
   offcanvas.show();
 
   if (isDark) {

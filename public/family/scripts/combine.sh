@@ -2,6 +2,14 @@ echo "Creating family.js"
 filename="js/family.js"
 echo "" > $filename
 
+echo "Appending Bootstrap modules"
+cat js/bootstrap/dom/manipulator.js >> $filename
+cat js/bootstrap/dom/data.js >> $filename
+cat js/bootstrap/dom/selector-engine.js >> $filename
+cat js/bootstrap/dom/event-handler.js >> $filename
+cat js/bootstrap/base-component.js >> $filename
+cat js/bootstrap/offcanvas.js >> $filename
+
 echo "Appending modules to family.js"
 cat js/chart.js >> $filename
 cat js/utils.js >> $filename

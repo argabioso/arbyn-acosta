@@ -66,7 +66,7 @@ var STORIES = {
       <p>The chosen movie was The Super Mario Brothers Movie because Arbyn believed it would appeal to anyone who watches it and, generally speaking, everyone is most likely familiar with Mario.</p>
       <figure>
         <img style="margin-bottom: 0;" src="images/stories/bg--cinema-top.webp" />
-        <div style="margin-bottom: 0;" class="youtube-container"><iframe class="youtube-embed" src="https://www.youtube.com/embed/LNkv-M1TMtg?si=OfPf6xg1yj5elFGQ&amp;start=89" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+        <div style="margin-bottom: 0;" class="youtube-container"><iframe class="youtube-embed" loading="lazy" src="https://www.youtube.com/embed/LNkv-M1TMtg?controls=2&si=OfPf6xg1yj5elFGQ&amp;start=89" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
         <img src="images/stories/bg--cinema-bottom.webp" />
         <p class="caption"><em>Arbyn's proposal video which was played right after the The Super Mario Bros. Movie (2023).</em></p>
       </figure>
@@ -130,7 +130,7 @@ var STORIES = {
       <h5>Rising Through The Ranks</h5>
       <p>Roland's professional career is one that inspires us the most, marked by unwavering dedication, remarkable leadership, and immense intelligence. Beginning as a bureau agent, to commanding task forces, to eventually achieving the esteemed position of Deputy Director in 2016. His story exemplifies the power of commitment and skill in reaching the pinnacle of professional success.</p>
       <figure>
-        <div class="youtube-container"><iframe class="youtube-embed" src="https://www.youtube.com/embed/LFA6QfK7ZMc?si=U4zn0Fo7ZmmnVxpZ&amp;start=96" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+        <div class="youtube-container"><iframe class="youtube-embed" loading="lazy" src="https://www.youtube.com/embed/LFA6QfK7ZMc?controls=2&si=U4zn0Fo7ZmmnVxpZ&amp;start=96" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
         <p class="caption"><em>ABS-CBN interviewing Roland Argabioso regarding Robert Ponce immediately admitting his participation in murdering Ruby Rose.</em></p>
       </figure>
 
@@ -142,7 +142,7 @@ var STORIES = {
         <p class="caption"><em>NBI Assistant Regional Director Rolando Argabioso (center) and his team posing with their plaques of recognition as best investigative unit at NBI headquarters in Manila on Nov. 13, 2014.</em></p>
       </figure>
       <figure>
-        <div class="youtube-container"><iframe class="youtube-embed" src="https://www.youtube.com/embed/XelM7m7V3FI?si=aLrttwYFY6x5m5xV&amp;start=6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+        <div class="youtube-container"><iframe class="youtube-embed" loading="lazy" src="https://www.youtube.com/embed/XelM7m7V3FI?controls=2&si=aLrttwYFY6x5m5xV&amp;start=6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
         <p class="caption"><em>Roland Argabioso in Dennis Cunanan's testification before the Senate for the Pork Barrel Scam.</em></p>
       </figure>
     `
@@ -384,7 +384,7 @@ var STORIES = {
       <h5>90s Gamer Girl</h5>
       <p>According to Darwin Acosta, Corazon's first cousin and the youngest son of Benjamin Acosta Sr., Corazon was a great player in the original "Super Mario Bros." game. Without the advent of social media like what we have today, she discovered that she could gain unlimited lives in the game by doing what we now know as "Turtle Tipping."</p>
       <figure>
-        <div class="youtube-container"><iframe class="youtube-embed" src="https://www.youtube.com/embed/_i0KzmOovqU?si=-01Wxzd-Z4rZn_0W" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+        <div class="youtube-container"><iframe class="youtube-embed" loading="lazy" src="https://www.youtube.com/embed/_i0KzmOovqU?controls=2&si=-01Wxzd-Z4rZn_0W" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
         <p class="caption"><em>Demo of how "Turtle Tipping" works.</em></p>
       </figure>
 
@@ -575,19 +575,19 @@ var STORIES = {
       <h5>First Pregnancy</h5>
       <p>A compilation of reactions from Arbyn and Mitchie's relatives; and their close friends.</p>
       <figure>
-        <div class="youtube-container"><iframe class="youtube-embed" src="https://www.youtube.com/embed/Ipvyodk52zE?si=gQlyzQhIvdVZ7bJu&enablejsapi=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+        <div class="youtube-container"><iframe class="youtube-embed" loading="lazy" src="https://www.youtube.com/embed/Ipvyodk52zE?controls=2&si=gQlyzQhIvdVZ7bJu&enablejsapi=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
         <p class="caption"><em>How Mitch and Arbyn found that they would be having a baby and how they announced it to their relatives.</em></p>
       </figure>
       <figure>
-        <div class="youtube-container"><iframe class="youtube-embed" src="https://www.youtube.com/embed/V8iCV7ZXOtI?si=1M-PCd6CSBQnDgNV&enablejsapi=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+        <div class="youtube-container"><iframe class="youtube-embed" loading="lazy" src="https://www.youtube.com/embed/V8iCV7ZXOtI?controls=2&si=1M-PCd6CSBQnDgNV&enablejsapi=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
         <p class="caption"><em>Mitchie's high school best friends, BCHZ, finding out she was pregnant.</em></p>
       </figure>
       <figure>
-        <div class="youtube-container"><iframe class="youtube-embed" src="https://www.youtube.com/embed/M5HGRCYIUNI?si=awXq-IIWGxw8znac&enablejsapi=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+        <div class="youtube-container"><iframe class="youtube-embed" loading="lazy" src="https://www.youtube.com/embed/M5HGRCYIUNI?controls=2&si=awXq-IIWGxw8znac&enablejsapi=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
         <p class="caption"><em>The Alviza family, a close family friend, finding out that Mitch was pregnant.</em></p>
       </figure>
       <figure>
-        <div class="youtube-container"><iframe class="youtube-embed" src="https://www.youtube.com/embed/ngbxxQQ0AYw?si=txA38vrjgNPRzgEL&enablejsapi=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+        <div class="youtube-container"><iframe class="youtube-embed" loading="lazy" src="https://www.youtube.com/embed/ngbxxQQ0AYw?controls=2&si=txA38vrjgNPRzgEL&enablejsapi=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
         <p class="caption"><em>Reaction video of Mitch and Arbyn's mutual friends.</em></p>
       </figure>
     `
