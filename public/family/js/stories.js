@@ -194,7 +194,7 @@ var STORIES = {
         <li class="male details-3">
           <div class="person-details">
             <span class="person-name">Pablo Orillo</span>
-            <span class="relevant-dates">before 1897 — after 1903</span>
+            <span class="relevant-dates">before 1897 — before 30 Aug 1951 (54+)</span>
             <span class="birth-place"><strong>B</strong> : Majayjay, Laguna, Philippines</span>
             <span class="birth-place"><strong>D</strong> : Philippines</span>
           </div>

@@ -113,6 +113,7 @@ function addPersonDetails(node) {
     'skull': 'Death March Survivor',
     'centennial': 'Centenarian',
     'justice': 'Law Enforcement Professional',
+    'beer': 'really likes alcohol'
   }
 
   if (headline) {
