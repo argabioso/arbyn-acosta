@@ -19,7 +19,7 @@ for (const [i, person] of Object.entries(TREE_DATA)) {
   // =======================================================================
   // Auto-fill story marker
   // =======================================================================
-  if (STORIES[person.fid] && !(isPrivate && person.living)) {
+  if (!(isPrivate && person.living)) {
     let counter = 0;
     if (person.marker4) {
       counter = 4;
@@ -40,11 +40,10 @@ for (const [i, person] of Object.entries(TREE_DATA)) {
     if (counter == 1) {
       counter = '';
     }
-    TREE_DATA[i][`marker${counter}`] = 'book';
+    // TREE_DATA[i][`marker${counter}`] = 'book';
     TREE_DATA[i][`hasStories`] = true;
-  } else {
-    TREE_DATA[i][`hasStories`] = false;
   }
+  TREE_DATA[i][`hasStories`] = true;
 
   // =======================================================================
   // Add "fullName" to each person

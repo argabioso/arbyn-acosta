@@ -30,15 +30,11 @@ tree.nodeTemplate = $(
     // Reset to pointer mouse cursor because
     // people with stories are clickable
     mouseEnter: (e, node) => {
-      if (STORIES[node.data.fid] && (!isPrivate || (isPrivate && !node.data.living))) {
-        node.cursor = "pointer";
-      }
+      node.cursor = "pointer";
     },
     // Reset to default mouse cursor
     mouseLeave: (e, node) => {
-      if (STORIES[node.data.fid] && (!isPrivate || (isPrivate && !node.data.living))) {
-        node.cursor = "";
-      }
+      node.cursor = "";
     }
   },
   new bino.Binding('height', 'height'),

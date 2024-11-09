@@ -85,6 +85,10 @@ body:not(.dark) .offcanvas-header {
   background-color: #f3f4f5;
 }
 
+#personDetails {
+  border-right: 0;
+}
+
 #personDetailsDesc {
   background-color: #202124;
   padding-top: 0;

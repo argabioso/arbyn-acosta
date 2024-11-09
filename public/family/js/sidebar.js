@@ -10,11 +10,6 @@ function setScrollPos(selector, scroll) {
 }
 
 function showSidebar(node) {
-  // Don't do anything if the person doesn't have any story
-  if (!STORIES[node.data.fid] || (isPrivate && node.data.living)) {
-    return;
-  }
-
   // Check if the <div> for this node's details already exists
   var existingDiv = document.getElementById("details-" + node.key);
 
@@ -74,23 +69,27 @@ function addPersonDetails(node) {
   var newDiv = document.createElement("div");
   newDiv.id = "details-" + node.key;
 
-  let headline = STORIES[node.data.fid]['headline'];
-  if (headline) {
-    headline = headline.replace(/\$\{([^}]+)\}/g, (match, attrName) => {
-      return node.data[attrName] !== undefined ? node.data[attrName] : match;
-    });
-  }
+  let headline = null;
+  let headshotFilename = `${node.data.fid}.lossy.webp`;
 
-  // Determine headshot to use
-  let headshotFilename;
-  if (!STORIES[node.data.fid]['headshot']) {
-    headshotFilename = `${node.data.fid}.lossy.webp`;
-  } else {
-    headshotFilename = STORIES[node.data.fid]['headshot'];
+  if (STORIES[node.data.fid]) {
+    headline = STORIES[node.data.fid]['headline'] || null;
+    if (headline) {
+      headline = headline.replace(/\$\{([^}]+)\}/g, (match, attrName) => {
+        return node.data[attrName] !== undefined ? node.data[attrName] : match;
+      });
+    }
+
+    // Determine headshot to use
+    if (STORIES[node.data.fid]['headshot']) {
+      headshotFilename = STORIES[node.data.fid]['headshot'];
+    }
   }
 
   // Update sidebar content
   let tempInnerHTML = '';
+  let headlineInnerHTML = '';
+
   if (node.data.hasImage && node.data.fid !== undefined) {
     tempInnerHTML += `<figure class="headshot"><div><img alt="headshot" src="images/people/${headshotFilename}" /></div></figure>`;
   }
@@ -113,12 +112,59 @@ function addPersonDetails(node) {
     'skull': 'Death March Survivor',
     'centennial': 'Centenarian',
     'justice': 'Law Enforcement Professional',
-    'beer': 'really likes alcohol'
+    'beer': 'really likes alcohol',
+    'police': 'Police force',
+    'investigate': 'Investigator',
+    'apparel': 'Apparel Manufacturer',
+    'cattle': 'Cattle Vendor',
+    'train': 'Railroad Worker',
   }
 
   if (headline) {
     tempInnerHTML += `<p class="headline">${headline}</p>`;
     tempInnerHTML += `<hr class="headshot-sep" />`;
+  } else {
+    let childNoun = (node.data.gender == "M") ? "Son" : "Daughter";
+    let parentNoun = (node.data.gender == "M") ? "Father" : "Mother";
+
+    if (node.data.father) {
+      let fathersName = TREE_KEYMAP[node.data.father]['basicName'];
+      if (!fathersName.includes('nown')) {
+        headlineInnerHTML += `${childNoun} of ${fathersName}`;// and Corazon Acosta, and father of Yeusef Argabioso.`
+      }
+    }
+    if (node.data.mother) {
+      let mothersName = TREE_KEYMAP[node.data.mother]['basicName'];
+      if (!mothersName.includes('nown')) {
+        if (headlineInnerHTML != '') {
+          headlineInnerHTML += ` and ${mothersName}`;
+        } else {
+          headlineInnerHTML += `${childNoun} of ${mothersName}`;
+        }
+      }
+    }
+    if (node.data.child) {
+      let childsName = TREE_KEYMAP[node.data.child]['basicName'];
+      if (!childsName.includes('nown')) {
+        if (headlineInnerHTML != '') {
+          parentNoun = parentNoun.toLowerCase();
+          if (headlineInnerHTML.includes(' and ')) {
+            headlineInnerHTML += ', and '
+          } else {
+            headlineInnerHTML += ' and '
+          }
+        }
+        headlineInnerHTML += `${parentNoun} of ${childsName}`
+      }
+    }
+
+    if (headlineInnerHTML != '') {
+      if (!headlineInnerHTML.endsWith('.')) {
+        headlineInnerHTML += '.';
+      }
+      tempInnerHTML += `<p class="headline">${headlineInnerHTML}</p>`;
+      tempInnerHTML += `<hr class="headshot-sep" />`;
+    }
   }
 
   tempInnerHTML += '<div class="badges">'
@@ -153,6 +199,10 @@ function addPersonDetails(node) {
   }
   tempInnerHTML += '</div>'
 
+  if (tempInnerHTML.endsWith('<div class="badges"></div>')) {
+    tempInnerHTML = tempInnerHTML.replace('<div class="badges"></div>', '');
+  }
+
   // if (hasBadges && !headline) {
   //   tempInnerHTML += `<hr />`;
   // }
@@ -160,10 +210,23 @@ function addPersonDetails(node) {
   // if (headline) {
   //   tempInnerHTML += `<hr />`;
   // }
-  let story = STORIES[node.data.fid]['stories'].replace(/\$\{([^}]+)\}/g, (match, attrName) => {
-    return node.data[attrName] !== undefined ? node.data[attrName] : match;
-  });
+  let story;
+  if (STORIES[node.data.fid]) {
+    story = STORIES[node.data.fid]['stories'].replace(/\$\{([^}]+)\}/g, (match, attrName) => {
+      return node.data[attrName] !== undefined ? node.data[attrName] : match;
+    });
+  } else {
+    story = "";
+  }
   tempInnerHTML += story;
+
+  if (headlineInnerHTML != '' && tempInnerHTML.endsWith('<hr class="headshot-sep" />')) {
+    tempInnerHTML += '<p>No stories have been written about this person yet'
+    if (!node.data.hasImage) {
+      tempInnerHTML += ', and no photo is available'
+    }
+    tempInnerHTML += '.</p>'
+  }
 
   // Insert the new div into the container
   newDiv.innerHTML = tempInnerHTML;

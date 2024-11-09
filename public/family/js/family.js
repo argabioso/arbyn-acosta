@@ -2177,7 +2177,9 @@ for (const [key, svg] of Object.entries(isDark ? DARK_MARKERS : LIGHT_MARKERS)) 
     "height": 0,
     "width": 0,
     "paternal_siblings": [],
+    "father": "85203214",
     "maternal_siblings": [],
+    "mother": "16057808",
     "regular_siblings": []
   },
   {
@@ -2212,8 +2214,8 @@ for (const [key, svg] of Object.entries(isDark ? DARK_MARKERS : LIGHT_MARKERS)) 
     ],
     "father": "50954818",
     "maternal_siblings": [
-      "41448711",
-      "21719634"
+      "21719634",
+      "41448711"
     ],
     "mother": "50342947",
     "regular_siblings": []
@@ -2285,10 +2287,10 @@ for (const [key, svg] of Object.entries(isDark ? DARK_MARKERS : LIGHT_MARKERS)) 
     "maternal_siblings": [],
     "mother": "53221118",
     "regular_siblings": [
-      "36448299",
       "7663556",
-      "85278460",
-      "21653420"
+      "36448299",
+      "21653420",
+      "85278460"
     ]
   },
   {
@@ -2317,8 +2319,8 @@ for (const [key, svg] of Object.entries(isDark ? DARK_MARKERS : LIGHT_MARKERS)) 
     "fid": "GHBZ-TM4",
     "child": "96832424",
     "maternal_siblings": [
-      "83646651",
-      "52063403"
+      "52063403",
+      "83646651"
     ],
     "mother": "17601526",
     "paternal_siblings": [],
@@ -2349,7 +2351,9 @@ for (const [key, svg] of Object.entries(isDark ? DARK_MARKERS : LIGHT_MARKERS)) 
     "fid": "GHB8-RCH",
     "child": "79164376",
     "paternal_siblings": [],
+    "father": "24157287",
     "maternal_siblings": [],
+    "mother": "1093684",
     "regular_siblings": []
   },
   {
@@ -2502,8 +2506,8 @@ for (const [key, svg] of Object.entries(isDark ? DARK_MARKERS : LIGHT_MARKERS)) 
     "maternal_siblings": [],
     "mother": "66525244",
     "regular_siblings": [
-      "40891293",
-      "38373110"
+      "38373110",
+      "40891293"
     ]
   },
   {
@@ -2559,7 +2563,9 @@ for (const [key, svg] of Object.entries(isDark ? DARK_MARKERS : LIGHT_MARKERS)) 
     "fid": "GJJX-1SG",
     "child": "78763160",
     "paternal_siblings": [],
+    "father": "12094064",
     "maternal_siblings": [],
+    "mother": "14775735",
     "regular_siblings": []
   },
   {
@@ -2642,7 +2648,9 @@ for (const [key, svg] of Object.entries(isDark ? DARK_MARKERS : LIGHT_MARKERS)) 
     "fid": "GHB8-GZL",
     "child": "82099124",
     "paternal_siblings": [],
+    "father": "65750680",
     "maternal_siblings": [],
+    "mother": "40517733",
     "regular_siblings": []
   },
   {
@@ -2768,10 +2776,10 @@ for (const [key, svg] of Object.entries(isDark ? DARK_MARKERS : LIGHT_MARKERS)) 
     "maternal_siblings": [],
     "mother": "54923824",
     "regular_siblings": [
-      "73841862",
       "41491264",
+      "54340914",
       "12725118",
-      "54340914"
+      "73841862"
     ]
   },
   {
@@ -2805,8 +2813,8 @@ for (const [key, svg] of Object.entries(isDark ? DARK_MARKERS : LIGHT_MARKERS)) 
     "maternal_siblings": [],
     "mother": "91567169",
     "regular_siblings": [
-      "64329171",
-      "6375936"
+      "6375936",
+      "64329171"
     ]
   },
   {
@@ -2891,7 +2899,9 @@ for (const [key, svg] of Object.entries(isDark ? DARK_MARKERS : LIGHT_MARKERS)) 
     "fid": "GHB8-DXY",
     "child": "80469632",
     "paternal_siblings": [],
+    "father": "79826472",
     "maternal_siblings": [],
+    "mother": "45640239",
     "regular_siblings": []
   },
   {
@@ -2981,9 +2991,9 @@ for (const [key, svg] of Object.entries(isDark ? DARK_MARKERS : LIGHT_MARKERS)) 
     "mother": "30299840",
     "regular_siblings": [
       "95216770",
+      "55618304",
       "42349252",
-      "95739264",
-      "55618304"
+      "95739264"
     ]
   },
   {
@@ -3017,10 +3027,10 @@ for (const [key, svg] of Object.entries(isDark ? DARK_MARKERS : LIGHT_MARKERS)) 
     "maternal_siblings": [],
     "mother": "50346650",
     "regular_siblings": [
-      "57182283",
       "28928680",
+      "392680",
       "47386677",
-      "392680"
+      "57182283"
     ]
   },
   {
@@ -3111,7 +3121,9 @@ for (const [key, svg] of Object.entries(isDark ? DARK_MARKERS : LIGHT_MARKERS)) 
     "fid": "L281-614",
     "child": "51683352",
     "paternal_siblings": [],
+    "father": "85964364",
     "maternal_siblings": [],
+    "mother": "89545654",
     "regular_siblings": []
   },
   {
@@ -3196,7 +3208,9 @@ for (const [key, svg] of Object.entries(isDark ? DARK_MARKERS : LIGHT_MARKERS)) 
     "fid": "LLQS-6F1",
     "child": "51727808",
     "paternal_siblings": [],
+    "father": "23571091",
     "maternal_siblings": [],
+    "mother": "90879248",
     "regular_siblings": []
   },
   {
@@ -3281,8 +3295,9 @@ for (const [key, svg] of Object.entries(isDark ? DARK_MARKERS : LIGHT_MARKERS)) 
     "marker2": "sales",
     "fid": "GHBD-9LY",
     "child": "58601193",
-    "paternal_siblings": [],
     "maternal_siblings": [],
+    "mother": "78945712",
+    "paternal_siblings": [],
     "regular_siblings": []
   },
   {
@@ -3408,7 +3423,9 @@ for (const [key, svg] of Object.entries(isDark ? DARK_MARKERS : LIGHT_MARKERS)) 
     "fid": "GH12-SVQ",
     "child": "41741428",
     "paternal_siblings": [],
+    "father": "64714771",
     "maternal_siblings": [],
+    "mother": "58814600",
     "regular_siblings": []
   },
   {
@@ -3494,7 +3511,9 @@ for (const [key, svg] of Object.entries(isDark ? DARK_MARKERS : LIGHT_MARKERS)) 
     "fid": "GH12-9F6",
     "child": "41741428",
     "paternal_siblings": [],
+    "father": "36360078",
     "maternal_siblings": [],
+    "mother": "55588060",
     "regular_siblings": []
   },
   {
@@ -3615,7 +3634,9 @@ for (const [key, svg] of Object.entries(isDark ? DARK_MARKERS : LIGHT_MARKERS)) 
     "fid": "GH12-Z3C",
     "child": "55859428",
     "paternal_siblings": [],
+    "father": "40943586",
     "maternal_siblings": [],
+    "mother": "99295715",
     "regular_siblings": []
   },
   {
@@ -3643,7 +3664,9 @@ for (const [key, svg] of Object.entries(isDark ? DARK_MARKERS : LIGHT_MARKERS)) 
     "fid": "GH12-XX4",
     "child": "17374654",
     "paternal_siblings": [],
+    "father": "52727694",
     "maternal_siblings": [],
+    "mother": "35729864",
     "regular_siblings": []
   },
   {
@@ -3727,7 +3750,9 @@ for (const [key, svg] of Object.entries(isDark ? DARK_MARKERS : LIGHT_MARKERS)) 
     "fid": "GH12-HQN",
     "child": "17374654",
     "paternal_siblings": [],
+    "father": "95408617",
     "maternal_siblings": [],
+    "mother": "78914496",
     "regular_siblings": []
   },
   {
@@ -3812,7 +3837,9 @@ for (const [key, svg] of Object.entries(isDark ? DARK_MARKERS : LIGHT_MARKERS)) 
     "fid": "GH12-W17",
     "child": "55859428",
     "paternal_siblings": [],
+    "father": "27738578",
     "maternal_siblings": [],
+    "mother": "47733294",
     "regular_siblings": []
   },
   {
@@ -3874,6 +3901,396 @@ for (const [key, svg] of Object.entries(isDark ? DARK_MARKERS : LIGHT_MARKERS)) 
     "regular_siblings": []
   }
 ];var SIBLINGS_DATA = {
+  "41491264": {
+    "baptismDate": null,
+    "birthDate": "1948-07-06",
+    "birthPlace": "Manila, PHL",
+    "deathAge": null,
+    "deathDate": "1948-07-07",
+    "deathPlace": "Manila, PHL",
+    "gender": "M",
+    "hasDNA": false,
+    "hasImage": false,
+    "key": "41491264",
+    "lastName": "Acosta",
+    "living": false,
+    "livingPlace": null,
+    "marriageDate": null,
+    "marriagePlace": null,
+    "middleName": "San Agustin",
+    "nickname": null,
+    "prefix": null,
+    "suffix": null,
+    "vitalsCompleteAndVerified": false,
+    "firstName": "Benjamin",
+    "paternal_siblings": [],
+    "maternal_siblings": [],
+    "regular_siblings": []
+  },
+  "95216770": {
+    "baptismDate": null,
+    "birthDate": "1946-12-27",
+    "birthPlace": null,
+    "deathAge": null,
+    "deathDate": null,
+    "deathPlace": null,
+    "gender": "M",
+    "hasDNA": false,
+    "hasImage": false,
+    "key": "95216770",
+    "lastName": "Maramba",
+    "living": true,
+    "livingPlace": null,
+    "marriageDate": null,
+    "marriagePlace": null,
+    "middleName": "Dumantay",
+    "nickname": null,
+    "prefix": null,
+    "suffix": null,
+    "vitalsCompleteAndVerified": false,
+    "firstName": "Rodolfo",
+    "paternal_siblings": [],
+    "maternal_siblings": [],
+    "regular_siblings": []
+  },
+  "48615922": {
+    "baptismDate": null,
+    "birthDate": "1969-03-31",
+    "birthPlace": "South Caloocan, PHL",
+    "deathAge": null,
+    "deathDate": null,
+    "deathPlace": null,
+    "gender": "M",
+    "hasDNA": false,
+    "hasImage": true,
+    "key": "48615922",
+    "lastName": "Argabioso",
+    "living": true,
+    "livingPlace": null,
+    "marriageDate": null,
+    "marriagePlace": null,
+    "middleName": "Saplala",
+    "nickname": "Dada",
+    "prefix": null,
+    "suffix": null,
+    "vitalsCompleteAndVerified": false,
+    "firstName": "Danilo",
+    "paternal_siblings": [],
+    "maternal_siblings": [],
+    "regular_siblings": []
+  },
+  "52063403": {
+    "baptismDate": null,
+    "birthDate": null,
+    "birthPlace": null,
+    "deathAge": null,
+    "deathDate": null,
+    "deathPlace": null,
+    "gender": "M",
+    "hasDNA": false,
+    "hasImage": false,
+    "key": "52063403",
+    "lastName": "Orillo",
+    "living": true,
+    "livingPlace": null,
+    "marriageDate": null,
+    "marriagePlace": null,
+    "middleName": null,
+    "nickname": null,
+    "prefix": null,
+    "suffix": null,
+    "vitalsCompleteAndVerified": false,
+    "firstName": "Filomeno",
+    "paternal_siblings": [],
+    "maternal_siblings": [],
+    "regular_siblings": []
+  },
+  "44750858": {
+    "baptismDate": null,
+    "birthDate": "1964-08-05",
+    "birthPlace": null,
+    "deathAge": null,
+    "deathDate": "2023-01-23",
+    "deathPlace": null,
+    "gender": "F",
+    "hasDNA": false,
+    "hasImage": false,
+    "key": "44750858",
+    "lastName": "Ajesta",
+    "living": false,
+    "livingPlace": null,
+    "marriageDate": null,
+    "marriagePlace": null,
+    "middleName": "Vergara",
+    "nickname": null,
+    "prefix": null,
+    "suffix": null,
+    "vitalsCompleteAndVerified": false,
+    "firstName": "Roselyn",
+    "paternal_siblings": [],
+    "maternal_siblings": [],
+    "regular_siblings": []
+  },
+  "28928680": {
+    "baptismDate": null,
+    "birthDate": null,
+    "birthPlace": null,
+    "deathAge": null,
+    "deathDate": null,
+    "deathPlace": null,
+    "gender": "M",
+    "hasDNA": false,
+    "hasImage": false,
+    "key": "28928680",
+    "lastName": "Maramba",
+    "living": true,
+    "livingPlace": null,
+    "marriageDate": null,
+    "marriagePlace": null,
+    "middleName": "Reyes",
+    "nickname": null,
+    "prefix": null,
+    "suffix": null,
+    "vitalsCompleteAndVerified": false,
+    "firstName": "Augustin",
+    "paternal_siblings": [],
+    "maternal_siblings": [],
+    "regular_siblings": []
+  },
+  "93051591": {
+    "baptismDate": null,
+    "birthDate": "1870-07-21",
+    "birthPlace": "Santa Barbara, Pangasinan, PHL",
+    "deathAge": null,
+    "deathDate": "1941-12-27",
+    "deathPlace": "Quezon City, PHL",
+    "gender": "M",
+    "hasDNA": false,
+    "hasImage": true,
+    "key": "93051591",
+    "lastName": "Maramba",
+    "living": false,
+    "livingPlace": null,
+    "marriageDate": null,
+    "marriagePlace": null,
+    "middleName": "Bautista",
+    "nickname": null,
+    "prefix": null,
+    "suffix": null,
+    "vitalsCompleteAndVerified": false,
+    "firstName": "Daniel",
+    "paternal_siblings": [],
+    "maternal_siblings": [],
+    "regular_siblings": []
+  },
+  "38373110": {
+    "baptismDate": null,
+    "birthDate": "about 1907",
+    "birthPlace": null,
+    "deathAge": null,
+    "deathDate": null,
+    "deathPlace": null,
+    "gender": "F",
+    "hasDNA": false,
+    "hasImage": false,
+    "key": "38373110",
+    "lastName": "Saplala",
+    "living": true,
+    "livingPlace": null,
+    "marriageDate": null,
+    "marriagePlace": null,
+    "middleName": null,
+    "nickname": null,
+    "prefix": null,
+    "suffix": null,
+    "vitalsCompleteAndVerified": false,
+    "firstName": "Hilaria",
+    "paternal_siblings": [],
+    "maternal_siblings": [],
+    "regular_siblings": []
+  },
+  "73841862": {
+    "baptismDate": null,
+    "birthDate": "1945-06-17",
+    "birthPlace": "Metro Manila, PHL",
+    "deathAge": null,
+    "deathDate": "2018-02-19",
+    "deathPlace": "South Caloocan, PHL",
+    "gender": "F",
+    "hasDNA": false,
+    "hasImage": true,
+    "key": "73841862",
+    "lastName": "Acosta",
+    "living": false,
+    "livingPlace": null,
+    "marriageDate": null,
+    "marriagePlace": null,
+    "middleName": "San Agustin",
+    "nickname": "Vicky",
+    "prefix": null,
+    "suffix": null,
+    "vitalsCompleteAndVerified": false,
+    "firstName": "Victoria",
+    "paternal_siblings": [],
+    "maternal_siblings": [],
+    "regular_siblings": []
+  },
+  "85278460": {
+    "baptismDate": null,
+    "birthDate": "1919-10-18",
+    "birthPlace": "Majayjay, Laguna, PHL",
+    "deathAge": null,
+    "deathDate": "1981-09-16",
+    "deathPlace": null,
+    "gender": "F",
+    "hasDNA": false,
+    "hasImage": false,
+    "key": "85278460",
+    "lastName": "Argabioso",
+    "living": false,
+    "livingPlace": null,
+    "marriageDate": null,
+    "marriagePlace": null,
+    "middleName": "Mia",
+    "nickname": null,
+    "prefix": null,
+    "suffix": null,
+    "vitalsCompleteAndVerified": false,
+    "firstName": "Leonor Rosario",
+    "paternal_siblings": [],
+    "maternal_siblings": [],
+    "regular_siblings": []
+  },
+  "64329171": {
+    "baptismDate": null,
+    "birthDate": "about 1905",
+    "birthPlace": null,
+    "deathAge": null,
+    "deathDate": "about 1983",
+    "deathPlace": null,
+    "gender": "M",
+    "hasDNA": false,
+    "hasImage": false,
+    "key": "64329171",
+    "lastName": "Acosta",
+    "living": false,
+    "livingPlace": null,
+    "marriageDate": "1932-06-01",
+    "marriagePlace": null,
+    "middleName": "Bongco",
+    "nickname": null,
+    "prefix": null,
+    "suffix": null,
+    "vitalsCompleteAndVerified": false,
+    "firstName": "Felipe",
+    "paternal_siblings": [],
+    "maternal_siblings": [],
+    "regular_siblings": []
+  },
+  "54340914": {
+    "baptismDate": null,
+    "birthDate": "1949-10-23",
+    "birthPlace": "Metro Manila, PHL",
+    "deathAge": null,
+    "deathDate": "before 2020",
+    "deathPlace": null,
+    "gender": "M",
+    "hasDNA": false,
+    "hasImage": true,
+    "key": "54340914",
+    "lastName": "Acosta",
+    "living": false,
+    "livingPlace": null,
+    "marriageDate": null,
+    "marriagePlace": null,
+    "middleName": "San Agustin",
+    "nickname": "Ben",
+    "prefix": null,
+    "suffix": "Sr.",
+    "vitalsCompleteAndVerified": false,
+    "firstName": "Benjamin",
+    "paternal_siblings": [],
+    "maternal_siblings": [],
+    "regular_siblings": []
+  },
+  "4793299": {
+    "baptismDate": null,
+    "birthDate": "1963-12-14",
+    "birthPlace": "South Caloocan, PHL",
+    "deathAge": null,
+    "deathDate": null,
+    "deathPlace": null,
+    "gender": "M",
+    "hasDNA": false,
+    "hasImage": true,
+    "key": "4793299",
+    "lastName": "Argabioso",
+    "living": true,
+    "livingPlace": null,
+    "marriageDate": null,
+    "marriagePlace": null,
+    "middleName": "Saplala",
+    "nickname": "Toni",
+    "prefix": null,
+    "suffix": null,
+    "vitalsCompleteAndVerified": false,
+    "firstName": "Antonio",
+    "paternal_siblings": [],
+    "maternal_siblings": [],
+    "regular_siblings": []
+  },
+  "77082334": {
+    "baptismDate": null,
+    "birthDate": "1968-02-21",
+    "birthPlace": "South Caloocan, PHL",
+    "deathAge": null,
+    "deathDate": null,
+    "deathPlace": null,
+    "gender": "F",
+    "hasDNA": false,
+    "hasImage": true,
+    "key": "77082334",
+    "lastName": "Acosta",
+    "living": true,
+    "livingPlace": null,
+    "marriageDate": null,
+    "marriagePlace": null,
+    "middleName": "Maramba",
+    "nickname": null,
+    "prefix": null,
+    "suffix": null,
+    "vitalsCompleteAndVerified": false,
+    "firstName": "Susan",
+    "paternal_siblings": [],
+    "maternal_siblings": [],
+    "regular_siblings": []
+  },
+  "21653420": {
+    "baptismDate": null,
+    "birthDate": "1928-01-18",
+    "birthPlace": "Majayjay, Laguna, PHL",
+    "deathAge": null,
+    "deathDate": "2009-05-23",
+    "deathPlace": "Majayjay, Laguna, PHL",
+    "gender": "M",
+    "hasDNA": false,
+    "hasImage": true,
+    "key": "21653420",
+    "lastName": "Argabioso",
+    "living": false,
+    "livingPlace": null,
+    "marriageDate": null,
+    "marriagePlace": null,
+    "middleName": "Mia",
+    "nickname": null,
+    "prefix": null,
+    "suffix": "Sr.",
+    "vitalsCompleteAndVerified": false,
+    "firstName": "Celso",
+    "paternal_siblings": [],
+    "maternal_siblings": [],
+    "regular_siblings": []
+  },
   "95739264": {
     "baptismDate": null,
     "birthDate": "before 1964-08-28",
@@ -3900,80 +4317,54 @@ for (const [key, svg] of Object.entries(isDark ? DARK_MARKERS : LIGHT_MARKERS)) 
     "maternal_siblings": [],
     "regular_siblings": []
   },
-  "57433236": {
-    "baptismDate": null,
-    "birthDate": "1979-12-26",
-    "birthPlace": null,
-    "deathAge": null,
-    "deathDate": null,
-    "deathPlace": null,
-    "gender": "F",
-    "hasDNA": false,
-    "hasImage": false,
-    "key": "57433236",
-    "lastName": "Ajesta",
-    "living": true,
-    "livingPlace": null,
-    "marriageDate": null,
-    "marriagePlace": null,
-    "middleName": "Vergara",
-    "nickname": null,
-    "prefix": null,
-    "suffix": null,
-    "vitalsCompleteAndVerified": false,
-    "firstName": "Cecil",
-    "paternal_siblings": [],
-    "maternal_siblings": [],
-    "regular_siblings": []
-  },
-  "47386677": {
+  "36448299": {
     "baptismDate": null,
     "birthDate": null,
     "birthPlace": null,
     "deathAge": null,
-    "deathDate": null,
+    "deathDate": "before 2020",
     "deathPlace": null,
+    "gender": "F",
+    "hasDNA": false,
+    "hasImage": true,
+    "key": "36448299",
+    "lastName": "Argabioso",
+    "living": false,
+    "livingPlace": null,
+    "marriageDate": null,
+    "marriagePlace": null,
+    "middleName": "Mia",
+    "nickname": null,
+    "prefix": null,
+    "suffix": null,
+    "vitalsCompleteAndVerified": false,
+    "firstName": "Amada",
+    "paternal_siblings": [],
+    "maternal_siblings": [],
+    "regular_siblings": []
+  },
+  "31493676": {
+    "baptismDate": null,
+    "birthDate": null,
+    "birthPlace": "Luzon, PHL",
+    "deathAge": null,
+    "deathDate": "about 2019",
+    "deathPlace": "Luzon, PHL",
     "gender": "M",
     "hasDNA": false,
-    "hasImage": false,
-    "key": "47386677",
-    "lastName": "Maramba",
-    "living": true,
+    "hasImage": true,
+    "key": "31493676",
+    "lastName": "Saplala",
+    "living": false,
     "livingPlace": null,
     "marriageDate": null,
     "marriagePlace": null,
-    "middleName": "Reyes",
+    "middleName": "Perez",
     "nickname": null,
     "prefix": null,
-    "suffix": null,
+    "suffix": "Sr.",
     "vitalsCompleteAndVerified": false,
-    "firstName": "Juan",
-    "paternal_siblings": [],
-    "maternal_siblings": [],
-    "regular_siblings": []
-  },
-  "392680": {
-    "baptismDate": null,
-    "birthDate": null,
-    "birthPlace": null,
-    "deathAge": null,
-    "deathDate": null,
-    "deathPlace": null,
-    "gender": "F",
-    "hasDNA": false,
-    "hasImage": false,
-    "key": "392680",
-    "lastName": "Maramba",
-    "living": true,
-    "livingPlace": null,
-    "marriageDate": null,
-    "marriagePlace": null,
-    "middleName": "Reyes",
-    "nickname": null,
-    "prefix": null,
-    "suffix": null,
-    "vitalsCompleteAndVerified": false,
-    "firstName": "Milagros",
+    "firstName": "Claro",
     "paternal_siblings": [],
     "maternal_siblings": [],
     "regular_siblings": []
@@ -4000,32 +4391,6 @@ for (const [key, svg] of Object.entries(isDark ? DARK_MARKERS : LIGHT_MARKERS)) 
     "suffix": null,
     "vitalsCompleteAndVerified": false,
     "firstName": "Joshua Caleb",
-    "paternal_siblings": [],
-    "maternal_siblings": [],
-    "regular_siblings": []
-  },
-  "78074094": {
-    "baptismDate": null,
-    "birthDate": null,
-    "birthPlace": null,
-    "deathAge": null,
-    "deathDate": null,
-    "deathPlace": null,
-    "gender": "F",
-    "hasDNA": false,
-    "hasImage": false,
-    "key": "78074094",
-    "lastName": "Adanza",
-    "living": true,
-    "livingPlace": null,
-    "marriageDate": null,
-    "marriagePlace": null,
-    "middleName": "Elican",
-    "nickname": null,
-    "prefix": null,
-    "suffix": null,
-    "vitalsCompleteAndVerified": false,
-    "firstName": "Gloria",
     "paternal_siblings": [],
     "maternal_siblings": [],
     "regular_siblings": []
@@ -4082,85 +4447,7 @@ for (const [key, svg] of Object.entries(isDark ? DARK_MARKERS : LIGHT_MARKERS)) 
     "maternal_siblings": [],
     "regular_siblings": []
   },
-  "41448711": {
-    "baptismDate": null,
-    "birthDate": "2004-08-05",
-    "birthPlace": "Amisola Maternity Hospital, Tondo, Manila, PHL",
-    "deathAge": null,
-    "deathDate": null,
-    "deathPlace": null,
-    "gender": "F",
-    "hasDNA": false,
-    "hasImage": true,
-    "key": "41448711",
-    "lastName": "Ignacio",
-    "living": true,
-    "livingPlace": null,
-    "marriageDate": null,
-    "marriagePlace": null,
-    "middleName": "Acosta",
-    "nickname": null,
-    "prefix": null,
-    "suffix": null,
-    "vitalsCompleteAndVerified": false,
-    "firstName": "Ira Mae",
-    "paternal_siblings": [],
-    "maternal_siblings": [],
-    "regular_siblings": []
-  },
-  "36448299": {
-    "baptismDate": null,
-    "birthDate": null,
-    "birthPlace": null,
-    "deathAge": null,
-    "deathDate": "before 2020",
-    "deathPlace": null,
-    "gender": "F",
-    "hasDNA": false,
-    "hasImage": true,
-    "key": "36448299",
-    "lastName": "Argabioso",
-    "living": false,
-    "livingPlace": null,
-    "marriageDate": null,
-    "marriagePlace": null,
-    "middleName": "Mia",
-    "nickname": null,
-    "prefix": null,
-    "suffix": null,
-    "vitalsCompleteAndVerified": false,
-    "firstName": "Amada",
-    "paternal_siblings": [],
-    "maternal_siblings": [],
-    "regular_siblings": []
-  },
-  "42349252": {
-    "baptismDate": null,
-    "birthDate": "1928-04-20",
-    "birthPlace": null,
-    "deathAge": null,
-    "deathDate": null,
-    "deathPlace": null,
-    "gender": "F",
-    "hasDNA": false,
-    "hasImage": false,
-    "key": "42349252",
-    "lastName": "Maramba",
-    "living": true,
-    "livingPlace": null,
-    "marriageDate": "1953-02-08",
-    "marriagePlace": null,
-    "middleName": "Dumantay",
-    "nickname": null,
-    "prefix": null,
-    "suffix": null,
-    "vitalsCompleteAndVerified": false,
-    "firstName": "Aurora",
-    "paternal_siblings": [],
-    "maternal_siblings": [],
-    "regular_siblings": []
-  },
-  "28928680": {
+  "47386677": {
     "baptismDate": null,
     "birthDate": null,
     "birthPlace": null,
@@ -4170,7 +4457,7 @@ for (const [key, svg] of Object.entries(isDark ? DARK_MARKERS : LIGHT_MARKERS)) 
     "gender": "M",
     "hasDNA": false,
     "hasImage": false,
-    "key": "28928680",
+    "key": "47386677",
     "lastName": "Maramba",
     "living": true,
     "livingPlace": null,
@@ -4181,163 +4468,7 @@ for (const [key, svg] of Object.entries(isDark ? DARK_MARKERS : LIGHT_MARKERS)) 
     "prefix": null,
     "suffix": null,
     "vitalsCompleteAndVerified": false,
-    "firstName": "Augustin",
-    "paternal_siblings": [],
-    "maternal_siblings": [],
-    "regular_siblings": []
-  },
-  "38373110": {
-    "baptismDate": null,
-    "birthDate": "about 1907",
-    "birthPlace": null,
-    "deathAge": null,
-    "deathDate": null,
-    "deathPlace": null,
-    "gender": "F",
-    "hasDNA": false,
-    "hasImage": false,
-    "key": "38373110",
-    "lastName": "Saplala",
-    "living": true,
-    "livingPlace": null,
-    "marriageDate": null,
-    "marriagePlace": null,
-    "middleName": null,
-    "nickname": null,
-    "prefix": null,
-    "suffix": null,
-    "vitalsCompleteAndVerified": false,
-    "firstName": "Hilaria",
-    "paternal_siblings": [],
-    "maternal_siblings": [],
-    "regular_siblings": []
-  },
-  "54340914": {
-    "baptismDate": null,
-    "birthDate": "1949-10-23",
-    "birthPlace": "Metro Manila, PHL",
-    "deathAge": null,
-    "deathDate": "before 2020",
-    "deathPlace": null,
-    "gender": "M",
-    "hasDNA": false,
-    "hasImage": true,
-    "key": "54340914",
-    "lastName": "Acosta",
-    "living": false,
-    "livingPlace": null,
-    "marriageDate": null,
-    "marriagePlace": null,
-    "middleName": "San Agustin",
-    "nickname": "Ben",
-    "prefix": null,
-    "suffix": "Sr.",
-    "vitalsCompleteAndVerified": false,
-    "firstName": "Benjamin",
-    "paternal_siblings": [],
-    "maternal_siblings": [],
-    "regular_siblings": []
-  },
-  "95216770": {
-    "baptismDate": null,
-    "birthDate": "1946-12-27",
-    "birthPlace": null,
-    "deathAge": null,
-    "deathDate": null,
-    "deathPlace": null,
-    "gender": "M",
-    "hasDNA": false,
-    "hasImage": false,
-    "key": "95216770",
-    "lastName": "Maramba",
-    "living": true,
-    "livingPlace": null,
-    "marriageDate": null,
-    "marriagePlace": null,
-    "middleName": "Dumantay",
-    "nickname": null,
-    "prefix": null,
-    "suffix": null,
-    "vitalsCompleteAndVerified": false,
-    "firstName": "Rodolfo",
-    "paternal_siblings": [],
-    "maternal_siblings": [],
-    "regular_siblings": []
-  },
-  "12725118": {
-    "baptismDate": null,
-    "birthDate": "1947-06-12",
-    "birthPlace": "Metro Manila, PHL",
-    "deathAge": null,
-    "deathDate": "2021-05-02",
-    "deathPlace": null,
-    "gender": "F",
-    "hasDNA": false,
-    "hasImage": true,
-    "key": "12725118",
-    "lastName": "Acosta",
-    "living": false,
-    "livingPlace": null,
-    "marriageDate": null,
-    "marriagePlace": null,
-    "middleName": "San Agustin",
-    "nickname": null,
-    "prefix": null,
-    "suffix": null,
-    "vitalsCompleteAndVerified": false,
-    "firstName": "Amelia",
-    "paternal_siblings": [],
-    "maternal_siblings": [],
-    "regular_siblings": []
-  },
-  "31493676": {
-    "baptismDate": null,
-    "birthDate": null,
-    "birthPlace": "Luzon, PHL",
-    "deathAge": null,
-    "deathDate": "about 2019",
-    "deathPlace": "Luzon, PHL",
-    "gender": "M",
-    "hasDNA": false,
-    "hasImage": true,
-    "key": "31493676",
-    "lastName": "Saplala",
-    "living": false,
-    "livingPlace": null,
-    "marriageDate": null,
-    "marriagePlace": null,
-    "middleName": "Perez",
-    "nickname": null,
-    "prefix": null,
-    "suffix": "Sr.",
-    "vitalsCompleteAndVerified": false,
-    "firstName": "Claro",
-    "paternal_siblings": [],
-    "maternal_siblings": [],
-    "regular_siblings": []
-  },
-  "57182283": {
-    "baptismDate": null,
-    "birthDate": null,
-    "birthPlace": null,
-    "deathAge": null,
-    "deathDate": null,
-    "deathPlace": null,
-    "gender": "M",
-    "hasDNA": false,
-    "hasImage": false,
-    "key": "57182283",
-    "lastName": "Maramba",
-    "living": true,
-    "livingPlace": null,
-    "marriageDate": null,
-    "marriagePlace": null,
-    "middleName": "Reyes",
-    "nickname": null,
-    "prefix": null,
-    "suffix": null,
-    "vitalsCompleteAndVerified": false,
-    "firstName": "Jos\u00e9",
+    "firstName": "Juan",
     "paternal_siblings": [],
     "maternal_siblings": [],
     "regular_siblings": []
@@ -4368,54 +4499,54 @@ for (const [key, svg] of Object.entries(isDark ? DARK_MARKERS : LIGHT_MARKERS)) 
     "maternal_siblings": [],
     "regular_siblings": []
   },
-  "48615922": {
+  "392680": {
     "baptismDate": null,
-    "birthDate": "1969-03-31",
-    "birthPlace": "South Caloocan, PHL",
+    "birthDate": null,
+    "birthPlace": null,
     "deathAge": null,
     "deathDate": null,
-    "deathPlace": null,
-    "gender": "M",
-    "hasDNA": false,
-    "hasImage": true,
-    "key": "48615922",
-    "lastName": "Argabioso",
-    "living": true,
-    "livingPlace": null,
-    "marriageDate": null,
-    "marriagePlace": null,
-    "middleName": "Saplala",
-    "nickname": "Dada",
-    "prefix": null,
-    "suffix": null,
-    "vitalsCompleteAndVerified": false,
-    "firstName": "Danilo",
-    "paternal_siblings": [],
-    "maternal_siblings": [],
-    "regular_siblings": []
-  },
-  "85278460": {
-    "baptismDate": null,
-    "birthDate": "1919-10-18",
-    "birthPlace": "Majayjay, Laguna, PHL",
-    "deathAge": null,
-    "deathDate": "1981-09-16",
     "deathPlace": null,
     "gender": "F",
     "hasDNA": false,
     "hasImage": false,
-    "key": "85278460",
-    "lastName": "Argabioso",
-    "living": false,
+    "key": "392680",
+    "lastName": "Maramba",
+    "living": true,
     "livingPlace": null,
     "marriageDate": null,
     "marriagePlace": null,
-    "middleName": "Mia",
+    "middleName": "Reyes",
     "nickname": null,
     "prefix": null,
     "suffix": null,
     "vitalsCompleteAndVerified": false,
-    "firstName": "Leonor Rosario",
+    "firstName": "Milagros",
+    "paternal_siblings": [],
+    "maternal_siblings": [],
+    "regular_siblings": []
+  },
+  "12725118": {
+    "baptismDate": null,
+    "birthDate": "1947-06-12",
+    "birthPlace": "Metro Manila, PHL",
+    "deathAge": null,
+    "deathDate": "2021-05-02",
+    "deathPlace": null,
+    "gender": "F",
+    "hasDNA": false,
+    "hasImage": true,
+    "key": "12725118",
+    "lastName": "Acosta",
+    "living": false,
+    "livingPlace": null,
+    "marriageDate": null,
+    "marriagePlace": null,
+    "middleName": "San Agustin",
+    "nickname": null,
+    "prefix": null,
+    "suffix": null,
+    "vitalsCompleteAndVerified": false,
+    "firstName": "Amelia",
     "paternal_siblings": [],
     "maternal_siblings": [],
     "regular_siblings": []
@@ -4446,158 +4577,28 @@ for (const [key, svg] of Object.entries(isDark ? DARK_MARKERS : LIGHT_MARKERS)) 
     "maternal_siblings": [],
     "regular_siblings": []
   },
-  "77082334": {
+  "83646651": {
     "baptismDate": null,
-    "birthDate": "1968-02-21",
-    "birthPlace": "South Caloocan, PHL",
-    "deathAge": null,
-    "deathDate": null,
-    "deathPlace": null,
-    "gender": "F",
-    "hasDNA": false,
-    "hasImage": true,
-    "key": "77082334",
-    "lastName": "Acosta",
-    "living": true,
-    "livingPlace": null,
-    "marriageDate": null,
-    "marriagePlace": null,
-    "middleName": "Maramba",
-    "nickname": null,
-    "prefix": null,
-    "suffix": null,
-    "vitalsCompleteAndVerified": false,
-    "firstName": "Susan",
-    "paternal_siblings": [],
-    "maternal_siblings": [],
-    "regular_siblings": []
-  },
-  "93051591": {
-    "baptismDate": null,
-    "birthDate": "1870-07-21",
-    "birthPlace": "Santa Barbara, Pangasinan, PHL",
-    "deathAge": null,
-    "deathDate": "1941-12-27",
-    "deathPlace": "Quezon City, PHL",
-    "gender": "M",
-    "hasDNA": false,
-    "hasImage": true,
-    "key": "93051591",
-    "lastName": "Maramba",
-    "living": false,
-    "livingPlace": null,
-    "marriageDate": null,
-    "marriagePlace": null,
-    "middleName": "Bautista",
-    "nickname": null,
-    "prefix": null,
-    "suffix": null,
-    "vitalsCompleteAndVerified": false,
-    "firstName": "Daniel",
-    "paternal_siblings": [],
-    "maternal_siblings": [],
-    "regular_siblings": []
-  },
-  "21653420": {
-    "baptismDate": null,
-    "birthDate": "1928-01-18",
+    "birthDate": "1903-11-17",
     "birthPlace": "Majayjay, Laguna, PHL",
     "deathAge": null,
-    "deathDate": "2009-05-23",
-    "deathPlace": "Majayjay, Laguna, PHL",
-    "gender": "M",
-    "hasDNA": false,
-    "hasImage": true,
-    "key": "21653420",
-    "lastName": "Argabioso",
-    "living": false,
-    "livingPlace": null,
-    "marriageDate": null,
-    "marriagePlace": null,
-    "middleName": "Mia",
-    "nickname": null,
-    "prefix": null,
-    "suffix": "Sr.",
-    "vitalsCompleteAndVerified": false,
-    "firstName": "Celso",
-    "paternal_siblings": [],
-    "maternal_siblings": [],
-    "regular_siblings": []
-  },
-  "70275697": {
-    "baptismDate": null,
-    "birthDate": "2003-11-05",
-    "birthPlace": "St. Luke's Medical Center, Quezon City, PHL",
-    "deathAge": null,
-    "deathDate": null,
-    "deathPlace": null,
-    "gender": "F",
-    "hasDNA": false,
-    "hasImage": true,
-    "key": "70275697",
-    "lastName": "Argabioso",
-    "living": true,
-    "livingPlace": null,
-    "marriageDate": null,
-    "marriagePlace": null,
-    "middleName": "Martin",
-    "nickname": "Ryan",
-    "prefix": null,
-    "suffix": null,
-    "vitalsCompleteAndVerified": false,
-    "firstName": "Riand Nikole",
-    "paternal_siblings": [],
-    "maternal_siblings": [],
-    "regular_siblings": []
-  },
-  "55618304": {
-    "baptismDate": null,
-    "birthDate": null,
-    "birthPlace": null,
-    "deathAge": null,
-    "deathDate": null,
+    "deathDate": "1993-04-22",
     "deathPlace": null,
     "gender": "M",
     "hasDNA": false,
     "hasImage": false,
-    "key": "55618304",
-    "lastName": "Maramba",
-    "living": true,
-    "livingPlace": null,
-    "marriageDate": null,
-    "marriagePlace": null,
-    "middleName": "Dumantay",
-    "nickname": null,
-    "prefix": null,
-    "suffix": null,
-    "vitalsCompleteAndVerified": false,
-    "firstName": "Larry",
-    "paternal_siblings": [],
-    "maternal_siblings": [],
-    "regular_siblings": []
-  },
-  "44750858": {
-    "baptismDate": null,
-    "birthDate": "1964-08-05",
-    "birthPlace": null,
-    "deathAge": null,
-    "deathDate": "2023-01-23",
-    "deathPlace": null,
-    "gender": "F",
-    "hasDNA": false,
-    "hasImage": false,
-    "key": "44750858",
-    "lastName": "Ajesta",
+    "key": "83646651",
+    "lastName": "Orillo",
     "living": false,
     "livingPlace": null,
     "marriageDate": null,
     "marriagePlace": null,
-    "middleName": "Vergara",
+    "middleName": null,
     "nickname": null,
     "prefix": null,
     "suffix": null,
     "vitalsCompleteAndVerified": false,
-    "firstName": "Roselyn",
+    "firstName": "Gregorio",
     "paternal_siblings": [],
     "maternal_siblings": [],
     "regular_siblings": []
@@ -4628,6 +4629,110 @@ for (const [key, svg] of Object.entries(isDark ? DARK_MARKERS : LIGHT_MARKERS)) 
     "maternal_siblings": [],
     "regular_siblings": []
   },
+  "41448711": {
+    "baptismDate": null,
+    "birthDate": "2004-08-05",
+    "birthPlace": "Amisola Maternity Hospital, Tondo, Manila, PHL",
+    "deathAge": null,
+    "deathDate": null,
+    "deathPlace": null,
+    "gender": "F",
+    "hasDNA": false,
+    "hasImage": true,
+    "key": "41448711",
+    "lastName": "Ignacio",
+    "living": true,
+    "livingPlace": null,
+    "marriageDate": null,
+    "marriagePlace": null,
+    "middleName": "Acosta",
+    "nickname": null,
+    "prefix": null,
+    "suffix": null,
+    "vitalsCompleteAndVerified": false,
+    "firstName": "Ira Mae",
+    "paternal_siblings": [],
+    "maternal_siblings": [],
+    "regular_siblings": []
+  },
+  "78074094": {
+    "baptismDate": null,
+    "birthDate": null,
+    "birthPlace": null,
+    "deathAge": null,
+    "deathDate": null,
+    "deathPlace": null,
+    "gender": "F",
+    "hasDNA": false,
+    "hasImage": false,
+    "key": "78074094",
+    "lastName": "Adanza",
+    "living": true,
+    "livingPlace": null,
+    "marriageDate": null,
+    "marriagePlace": null,
+    "middleName": "Elican",
+    "nickname": null,
+    "prefix": null,
+    "suffix": null,
+    "vitalsCompleteAndVerified": false,
+    "firstName": "Gloria",
+    "paternal_siblings": [],
+    "maternal_siblings": [],
+    "regular_siblings": []
+  },
+  "57433236": {
+    "baptismDate": null,
+    "birthDate": "1979-12-26",
+    "birthPlace": null,
+    "deathAge": null,
+    "deathDate": null,
+    "deathPlace": null,
+    "gender": "F",
+    "hasDNA": false,
+    "hasImage": false,
+    "key": "57433236",
+    "lastName": "Ajesta",
+    "living": true,
+    "livingPlace": null,
+    "marriageDate": null,
+    "marriagePlace": null,
+    "middleName": "Vergara",
+    "nickname": null,
+    "prefix": null,
+    "suffix": null,
+    "vitalsCompleteAndVerified": false,
+    "firstName": "Cecil",
+    "paternal_siblings": [],
+    "maternal_siblings": [],
+    "regular_siblings": []
+  },
+  "70275697": {
+    "baptismDate": null,
+    "birthDate": "2003-11-05",
+    "birthPlace": "St. Luke's Medical Center, Quezon City, PHL",
+    "deathAge": null,
+    "deathDate": null,
+    "deathPlace": null,
+    "gender": "F",
+    "hasDNA": false,
+    "hasImage": true,
+    "key": "70275697",
+    "lastName": "Argabioso",
+    "living": true,
+    "livingPlace": null,
+    "marriageDate": null,
+    "marriagePlace": null,
+    "middleName": "Martin",
+    "nickname": "Ryan",
+    "prefix": null,
+    "suffix": null,
+    "vitalsCompleteAndVerified": false,
+    "firstName": "Riand Nikole",
+    "paternal_siblings": [],
+    "maternal_siblings": [],
+    "regular_siblings": []
+  },
   "46768390": {
     "baptismDate": null,
     "birthDate": "1946-03-02",
@@ -4654,137 +4759,7 @@ for (const [key, svg] of Object.entries(isDark ? DARK_MARKERS : LIGHT_MARKERS)) 
     "maternal_siblings": [],
     "regular_siblings": []
   },
-  "64329171": {
-    "baptismDate": null,
-    "birthDate": "about 1905",
-    "birthPlace": null,
-    "deathAge": null,
-    "deathDate": "about 1983",
-    "deathPlace": null,
-    "gender": "M",
-    "hasDNA": false,
-    "hasImage": false,
-    "key": "64329171",
-    "lastName": "Acosta",
-    "living": false,
-    "livingPlace": null,
-    "marriageDate": "1932-06-01",
-    "marriagePlace": null,
-    "middleName": "Bongco",
-    "nickname": null,
-    "prefix": null,
-    "suffix": null,
-    "vitalsCompleteAndVerified": false,
-    "firstName": "Felipe",
-    "paternal_siblings": [],
-    "maternal_siblings": [],
-    "regular_siblings": []
-  },
-  "41491264": {
-    "baptismDate": null,
-    "birthDate": "1948-07-06",
-    "birthPlace": "Manila, PHL",
-    "deathAge": null,
-    "deathDate": "1948-07-07",
-    "deathPlace": "Manila, PHL",
-    "gender": "M",
-    "hasDNA": false,
-    "hasImage": false,
-    "key": "41491264",
-    "lastName": "Acosta",
-    "living": false,
-    "livingPlace": null,
-    "marriageDate": null,
-    "marriagePlace": null,
-    "middleName": "San Agustin",
-    "nickname": null,
-    "prefix": null,
-    "suffix": null,
-    "vitalsCompleteAndVerified": false,
-    "firstName": "Benjamin",
-    "paternal_siblings": [],
-    "maternal_siblings": [],
-    "regular_siblings": []
-  },
-  "4793299": {
-    "baptismDate": null,
-    "birthDate": "1963-12-14",
-    "birthPlace": "South Caloocan, PHL",
-    "deathAge": null,
-    "deathDate": null,
-    "deathPlace": null,
-    "gender": "M",
-    "hasDNA": false,
-    "hasImage": true,
-    "key": "4793299",
-    "lastName": "Argabioso",
-    "living": true,
-    "livingPlace": null,
-    "marriageDate": null,
-    "marriagePlace": null,
-    "middleName": "Saplala",
-    "nickname": "Toni",
-    "prefix": null,
-    "suffix": null,
-    "vitalsCompleteAndVerified": false,
-    "firstName": "Antonio",
-    "paternal_siblings": [],
-    "maternal_siblings": [],
-    "regular_siblings": []
-  },
-  "73841862": {
-    "baptismDate": null,
-    "birthDate": "1945-06-17",
-    "birthPlace": "Metro Manila, PHL",
-    "deathAge": null,
-    "deathDate": "2018-02-19",
-    "deathPlace": "South Caloocan, PHL",
-    "gender": "F",
-    "hasDNA": false,
-    "hasImage": true,
-    "key": "73841862",
-    "lastName": "Acosta",
-    "living": false,
-    "livingPlace": null,
-    "marriageDate": null,
-    "marriagePlace": null,
-    "middleName": "San Agustin",
-    "nickname": "Vicky",
-    "prefix": null,
-    "suffix": null,
-    "vitalsCompleteAndVerified": false,
-    "firstName": "Victoria",
-    "paternal_siblings": [],
-    "maternal_siblings": [],
-    "regular_siblings": []
-  },
-  "83646651": {
-    "baptismDate": null,
-    "birthDate": "1903-11-17",
-    "birthPlace": "Majayjay, Laguna, PHL",
-    "deathAge": null,
-    "deathDate": "1993-04-22",
-    "deathPlace": null,
-    "gender": "M",
-    "hasDNA": false,
-    "hasImage": false,
-    "key": "83646651",
-    "lastName": "Orillo",
-    "living": false,
-    "livingPlace": null,
-    "marriageDate": null,
-    "marriagePlace": null,
-    "middleName": null,
-    "nickname": null,
-    "prefix": null,
-    "suffix": null,
-    "vitalsCompleteAndVerified": false,
-    "firstName": "Gregorio",
-    "paternal_siblings": [],
-    "maternal_siblings": [],
-    "regular_siblings": []
-  },
-  "52063403": {
+  "57182283": {
     "baptismDate": null,
     "birthDate": null,
     "birthPlace": null,
@@ -4794,18 +4769,70 @@ for (const [key, svg] of Object.entries(isDark ? DARK_MARKERS : LIGHT_MARKERS)) 
     "gender": "M",
     "hasDNA": false,
     "hasImage": false,
-    "key": "52063403",
-    "lastName": "Orillo",
+    "key": "57182283",
+    "lastName": "Maramba",
     "living": true,
     "livingPlace": null,
     "marriageDate": null,
     "marriagePlace": null,
-    "middleName": null,
+    "middleName": "Reyes",
     "nickname": null,
     "prefix": null,
     "suffix": null,
     "vitalsCompleteAndVerified": false,
-    "firstName": "Filomeno",
+    "firstName": "Jos\u00e9",
+    "paternal_siblings": [],
+    "maternal_siblings": [],
+    "regular_siblings": []
+  },
+  "55618304": {
+    "baptismDate": null,
+    "birthDate": null,
+    "birthPlace": null,
+    "deathAge": null,
+    "deathDate": null,
+    "deathPlace": null,
+    "gender": "M",
+    "hasDNA": false,
+    "hasImage": false,
+    "key": "55618304",
+    "lastName": "Maramba",
+    "living": true,
+    "livingPlace": null,
+    "marriageDate": null,
+    "marriagePlace": null,
+    "middleName": "Dumantay",
+    "nickname": null,
+    "prefix": null,
+    "suffix": null,
+    "vitalsCompleteAndVerified": false,
+    "firstName": "Larry",
+    "paternal_siblings": [],
+    "maternal_siblings": [],
+    "regular_siblings": []
+  },
+  "42349252": {
+    "baptismDate": null,
+    "birthDate": "1928-04-20",
+    "birthPlace": null,
+    "deathAge": null,
+    "deathDate": null,
+    "deathPlace": null,
+    "gender": "F",
+    "hasDNA": false,
+    "hasImage": false,
+    "key": "42349252",
+    "lastName": "Maramba",
+    "living": true,
+    "livingPlace": null,
+    "marriageDate": "1953-02-08",
+    "marriagePlace": null,
+    "middleName": "Dumantay",
+    "nickname": null,
+    "prefix": null,
+    "suffix": null,
+    "vitalsCompleteAndVerified": false,
+    "firstName": "Aurora",
     "paternal_siblings": [],
     "maternal_siblings": [],
     "regular_siblings": []
@@ -5001,7 +5028,7 @@ for (const [key, svg] of Object.entries(isDark ? DARK_MARKERS : LIGHT_MARKERS)) 
   },
   'GHB8-RCH': { // Estebana Lopecillo
     stories: `
-      <h5>Partner</h5>
+      <h5>Husband</h5>
       <ul class="siblings">
         <li class="male details-3">
           <div class="person-details">
@@ -5298,6 +5325,41 @@ for (const [key, svg] of Object.entries(isDark ? DARK_MARKERS : LIGHT_MARKERS)) 
       </ul>
     `
   },
+  'GHB8-GB6': { // Sotero Maramba
+    stories: `
+      <h5>Hunt For Train Robbers</h5>
+      <p>Sotero was once the Chief of Railroad Police for the Philippine National Railrod (PNR). While assigned there, armed bandits ambushed one of the train sets and netted more than $40,000 (P80,000).</p>
+      <figure>
+        <img alt="Chief of Railroad Police: Sotero Maramba" src="images/stories/chief-pnr.lossy.webp" />
+        <p class="caption"><em>Newspaper entry of the story.</em></p>
+      </figure>
+    `
+  },
+  'LLQS-641' : { // Miguel Maramba
+    stories: `
+      <h5>Siblings</h5>
+      <ul class="siblings">
+        <li class="person-placeholder">
+          <span class="person-name">$\{fullName\}</span>
+        </li>
+        <li class="male details-3">
+          <div class="person-headshot">
+            <img src="images/people/relatives/daniel-maramba.lossy.webp" />
+          </div>
+          <div class="person-details">
+            <span class="person-name">Daniel Maramba y Bautista</span>
+            <span class="relevant-dates">21 Jul 1870 — 28 Dec 1941 (${bino.calculateAge('21 Jul 1870', '28 Dec 1941')})</span>
+            <span class="birth-place"><strong>B</strong> : Santa Barbara, Pangasinan, PHL</span>
+            <span class="birth-place"><strong>D</strong> : Santa Barbara, Pangasinan, PHL</span>
+          </div>
+        </li>
+      </ul>
+
+      <h5>Famous brother</h5>
+      <p>Although Miguel himself has made a name in the field of politics, his brother is more known throughout Pangasinan.</p>
+      <p><strong>Daniel Maramba</strong> was Santa Barbara's Municipal Secretary from 1902 to 1903 and Municipal President from 1907 to 1908. In 1916, he was elected as Governor of Pangasinan and served until 1922. He was also dubbed the "Grand Old Man of Pangasinan".</p>
+    `
+  },
   'GC7T-H59': {
     stories: `
       <h5>Coin Church Bell</h5>
@@ -5439,7 +5501,7 @@ for (const [i, person] of Object.entries(TREE_DATA)) {
   // =======================================================================
   // Auto-fill story marker
   // =======================================================================
-  if (STORIES[person.fid] && !(isPrivate && person.living)) {
+  if (!(isPrivate && person.living)) {
     let counter = 0;
     if (person.marker4) {
       counter = 4;
@@ -5460,11 +5522,10 @@ for (const [i, person] of Object.entries(TREE_DATA)) {
     if (counter == 1) {
       counter = '';
     }
-    TREE_DATA[i][`marker${counter}`] = 'book';
+    // TREE_DATA[i][`marker${counter}`] = 'book';
     TREE_DATA[i][`hasStories`] = true;
-  } else {
-    TREE_DATA[i][`hasStories`] = false;
   }
+  TREE_DATA[i][`hasStories`] = true;
 
   // =======================================================================
   // Add "fullName" to each person
@@ -5637,11 +5698,6 @@ function setScrollPos(selector, scroll) {
 }
 
 function showSidebar(node) {
-  // Don't do anything if the person doesn't have any story
-  if (!STORIES[node.data.fid] || (isPrivate && node.data.living)) {
-    return;
-  }
-
   // Check if the <div> for this node's details already exists
   var existingDiv = document.getElementById("details-" + node.key);
 
@@ -5701,23 +5757,27 @@ function addPersonDetails(node) {
   var newDiv = document.createElement("div");
   newDiv.id = "details-" + node.key;
 
-  let headline = STORIES[node.data.fid]['headline'];
-  if (headline) {
-    headline = headline.replace(/\$\{([^}]+)\}/g, (match, attrName) => {
-      return node.data[attrName] !== undefined ? node.data[attrName] : match;
-    });
-  }
+  let headline = null;
+  let headshotFilename = `${node.data.fid}.lossy.webp`;
 
-  // Determine headshot to use
-  let headshotFilename;
-  if (!STORIES[node.data.fid]['headshot']) {
-    headshotFilename = `${node.data.fid}.lossy.webp`;
-  } else {
-    headshotFilename = STORIES[node.data.fid]['headshot'];
+  if (STORIES[node.data.fid]) {
+    headline = STORIES[node.data.fid]['headline'] || null;
+    if (headline) {
+      headline = headline.replace(/\$\{([^}]+)\}/g, (match, attrName) => {
+        return node.data[attrName] !== undefined ? node.data[attrName] : match;
+      });
+    }
+
+    // Determine headshot to use
+    if (STORIES[node.data.fid]['headshot']) {
+      headshotFilename = STORIES[node.data.fid]['headshot'];
+    }
   }
 
   // Update sidebar content
   let tempInnerHTML = '';
+  let headlineInnerHTML = '';
+
   if (node.data.hasImage && node.data.fid !== undefined) {
     tempInnerHTML += `<figure class="headshot"><div><img alt="headshot" src="images/people/${headshotFilename}" /></div></figure>`;
   }
@@ -5740,12 +5800,59 @@ function addPersonDetails(node) {
     'skull': 'Death March Survivor',
     'centennial': 'Centenarian',
     'justice': 'Law Enforcement Professional',
-    'beer': 'really likes alcohol'
+    'beer': 'really likes alcohol',
+    'police': 'Police force',
+    'investigate': 'Investigator',
+    'apparel': 'Apparel Manufacturer',
+    'cattle': 'Cattle Vendor',
+    'train': 'Railroad Worker',
   }
 
   if (headline) {
     tempInnerHTML += `<p class="headline">${headline}</p>`;
     tempInnerHTML += `<hr class="headshot-sep" />`;
+  } else {
+    let childNoun = (node.data.gender == "M") ? "Son" : "Daughter";
+    let parentNoun = (node.data.gender == "M") ? "Father" : "Mother";
+
+    if (node.data.father) {
+      let fathersName = TREE_KEYMAP[node.data.father]['basicName'];
+      if (!fathersName.includes('nown')) {
+        headlineInnerHTML += `${childNoun} of ${fathersName}`;// and Corazon Acosta, and father of Yeusef Argabioso.`
+      }
+    }
+    if (node.data.mother) {
+      let mothersName = TREE_KEYMAP[node.data.mother]['basicName'];
+      if (!mothersName.includes('nown')) {
+        if (headlineInnerHTML != '') {
+          headlineInnerHTML += ` and ${mothersName}`;
+        } else {
+          headlineInnerHTML += `${childNoun} of ${mothersName}`;
+        }
+      }
+    }
+    if (node.data.child) {
+      let childsName = TREE_KEYMAP[node.data.child]['basicName'];
+      if (!childsName.includes('nown')) {
+        if (headlineInnerHTML != '') {
+          parentNoun = parentNoun.toLowerCase();
+          if (headlineInnerHTML.includes(' and ')) {
+            headlineInnerHTML += ', and '
+          } else {
+            headlineInnerHTML += ' and '
+          }
+        }
+        headlineInnerHTML += `${parentNoun} of ${childsName}`
+      }
+    }
+
+    if (headlineInnerHTML != '') {
+      if (!headlineInnerHTML.endsWith('.')) {
+        headlineInnerHTML += '.';
+      }
+      tempInnerHTML += `<p class="headline">${headlineInnerHTML}</p>`;
+      tempInnerHTML += `<hr class="headshot-sep" />`;
+    }
   }
 
   tempInnerHTML += '<div class="badges">'
@@ -5780,6 +5887,10 @@ function addPersonDetails(node) {
   }
   tempInnerHTML += '</div>'
 
+  if (tempInnerHTML.endsWith('<div class="badges"></div>')) {
+    tempInnerHTML = tempInnerHTML.replace('<div class="badges"></div>', '');
+  }
+
   // if (hasBadges && !headline) {
   //   tempInnerHTML += `<hr />`;
   // }
@@ -5787,10 +5898,23 @@ function addPersonDetails(node) {
   // if (headline) {
   //   tempInnerHTML += `<hr />`;
   // }
-  let story = STORIES[node.data.fid]['stories'].replace(/\$\{([^}]+)\}/g, (match, attrName) => {
-    return node.data[attrName] !== undefined ? node.data[attrName] : match;
-  });
+  let story;
+  if (STORIES[node.data.fid]) {
+    story = STORIES[node.data.fid]['stories'].replace(/\$\{([^}]+)\}/g, (match, attrName) => {
+      return node.data[attrName] !== undefined ? node.data[attrName] : match;
+    });
+  } else {
+    story = "";
+  }
   tempInnerHTML += story;
+
+  if (headlineInnerHTML != '' && tempInnerHTML.endsWith('<hr class="headshot-sep" />')) {
+    tempInnerHTML += '<p>No stories have been written about this person yet'
+    if (!node.data.hasImage) {
+      tempInnerHTML += ', and no photo is available'
+    }
+    tempInnerHTML += '.</p>'
+  }
 
   // Insert the new div into the container
   newDiv.innerHTML = tempInnerHTML;
@@ -6684,15 +6808,11 @@ tree.nodeTemplate = $(
     // Reset to pointer mouse cursor because
     // people with stories are clickable
     mouseEnter: (e, node) => {
-      if (STORIES[node.data.fid] && (!isPrivate || (isPrivate && !node.data.living))) {
-        node.cursor = "pointer";
-      }
+      node.cursor = "pointer";
     },
     // Reset to default mouse cursor
     mouseLeave: (e, node) => {
-      if (STORIES[node.data.fid] && (!isPrivate || (isPrivate && !node.data.living))) {
-        node.cursor = "";
-      }
+      node.cursor = "";
     }
   },
   new bino.Binding('height', 'height'),

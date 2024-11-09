@@ -44,7 +44,9 @@
     "height": 0,
     "width": 0,
     "paternal_siblings": [],
+    "father": "85203214",
     "maternal_siblings": [],
+    "mother": "16057808",
     "regular_siblings": []
   },
   {
@@ -79,8 +81,8 @@
     ],
     "father": "50954818",
     "maternal_siblings": [
-      "41448711",
-      "21719634"
+      "21719634",
+      "41448711"
     ],
     "mother": "50342947",
     "regular_siblings": []
@@ -152,10 +154,10 @@
     "maternal_siblings": [],
     "mother": "53221118",
     "regular_siblings": [
-      "36448299",
       "7663556",
-      "85278460",
-      "21653420"
+      "36448299",
+      "21653420",
+      "85278460"
     ]
   },
   {
@@ -184,8 +186,8 @@
     "fid": "GHBZ-TM4",
     "child": "96832424",
     "maternal_siblings": [
-      "83646651",
-      "52063403"
+      "52063403",
+      "83646651"
     ],
     "mother": "17601526",
     "paternal_siblings": [],
@@ -216,7 +218,9 @@
     "fid": "GHB8-RCH",
     "child": "79164376",
     "paternal_siblings": [],
+    "father": "24157287",
     "maternal_siblings": [],
+    "mother": "1093684",
     "regular_siblings": []
   },
   {
@@ -369,8 +373,8 @@
     "maternal_siblings": [],
     "mother": "66525244",
     "regular_siblings": [
-      "40891293",
-      "38373110"
+      "38373110",
+      "40891293"
     ]
   },
   {
@@ -426,7 +430,9 @@
     "fid": "GJJX-1SG",
     "child": "78763160",
     "paternal_siblings": [],
+    "father": "12094064",
     "maternal_siblings": [],
+    "mother": "14775735",
     "regular_siblings": []
   },
   {
@@ -509,7 +515,9 @@
     "fid": "GHB8-GZL",
     "child": "82099124",
     "paternal_siblings": [],
+    "father": "65750680",
     "maternal_siblings": [],
+    "mother": "40517733",
     "regular_siblings": []
   },
   {
@@ -635,10 +643,10 @@
     "maternal_siblings": [],
     "mother": "54923824",
     "regular_siblings": [
-      "73841862",
       "41491264",
+      "54340914",
       "12725118",
-      "54340914"
+      "73841862"
     ]
   },
   {
@@ -672,8 +680,8 @@
     "maternal_siblings": [],
     "mother": "91567169",
     "regular_siblings": [
-      "64329171",
-      "6375936"
+      "6375936",
+      "64329171"
     ]
   },
   {
@@ -758,7 +766,9 @@
     "fid": "GHB8-DXY",
     "child": "80469632",
     "paternal_siblings": [],
+    "father": "79826472",
     "maternal_siblings": [],
+    "mother": "45640239",
     "regular_siblings": []
   },
   {
@@ -848,9 +858,9 @@
     "mother": "30299840",
     "regular_siblings": [
       "95216770",
+      "55618304",
       "42349252",
-      "95739264",
-      "55618304"
+      "95739264"
     ]
   },
   {
@@ -884,10 +894,10 @@
     "maternal_siblings": [],
     "mother": "50346650",
     "regular_siblings": [
-      "57182283",
       "28928680",
+      "392680",
       "47386677",
-      "392680"
+      "57182283"
     ]
   },
   {
@@ -978,7 +988,9 @@
     "fid": "L281-614",
     "child": "51683352",
     "paternal_siblings": [],
+    "father": "85964364",
     "maternal_siblings": [],
+    "mother": "89545654",
     "regular_siblings": []
   },
   {
@@ -1063,7 +1075,9 @@
     "fid": "LLQS-6F1",
     "child": "51727808",
     "paternal_siblings": [],
+    "father": "23571091",
     "maternal_siblings": [],
+    "mother": "90879248",
     "regular_siblings": []
   },
   {
@@ -1148,8 +1162,9 @@
     "marker2": "sales",
     "fid": "GHBD-9LY",
     "child": "58601193",
-    "paternal_siblings": [],
     "maternal_siblings": [],
+    "mother": "78945712",
+    "paternal_siblings": [],
     "regular_siblings": []
   },
   {
@@ -1275,7 +1290,9 @@
     "fid": "GH12-SVQ",
     "child": "41741428",
     "paternal_siblings": [],
+    "father": "64714771",
     "maternal_siblings": [],
+    "mother": "58814600",
     "regular_siblings": []
   },
   {
@@ -1361,7 +1378,9 @@
     "fid": "GH12-9F6",
     "child": "41741428",
     "paternal_siblings": [],
+    "father": "36360078",
     "maternal_siblings": [],
+    "mother": "55588060",
     "regular_siblings": []
   },
   {
@@ -1482,7 +1501,9 @@
     "fid": "GH12-Z3C",
     "child": "55859428",
     "paternal_siblings": [],
+    "father": "40943586",
     "maternal_siblings": [],
+    "mother": "99295715",
     "regular_siblings": []
   },
   {
@@ -1510,7 +1531,9 @@
     "fid": "GH12-XX4",
     "child": "17374654",
     "paternal_siblings": [],
+    "father": "52727694",
     "maternal_siblings": [],
+    "mother": "35729864",
     "regular_siblings": []
   },
   {
@@ -1594,7 +1617,9 @@
     "fid": "GH12-HQN",
     "child": "17374654",
     "paternal_siblings": [],
+    "father": "95408617",
     "maternal_siblings": [],
+    "mother": "78914496",
     "regular_siblings": []
   },
   {
@@ -1679,7 +1704,9 @@
     "fid": "GH12-W17",
     "child": "55859428",
     "paternal_siblings": [],
+    "father": "27738578",
     "maternal_siblings": [],
+    "mother": "47733294",
     "regular_siblings": []
   },
   {

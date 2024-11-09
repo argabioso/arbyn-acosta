@@ -189,7 +189,7 @@ var STORIES = {
   },
   'GHB8-RCH': { // Estebana Lopecillo
     stories: `
-      <h5>Partner</h5>
+      <h5>Husband</h5>
       <ul class="siblings">
         <li class="male details-3">
           <div class="person-details">
@@ -484,6 +484,41 @@ var STORIES = {
           </div>
         </li>
       </ul>
+    `
+  },
+  'GHB8-GB6': { // Sotero Maramba
+    stories: `
+      <h5>Hunt For Train Robbers</h5>
+      <p>Sotero was once the Chief of Railroad Police for the Philippine National Railrod (PNR). While assigned there, armed bandits ambushed one of the train sets and netted more than $40,000 (P80,000).</p>
+      <figure>
+        <img alt="Chief of Railroad Police: Sotero Maramba" src="images/stories/chief-pnr.lossy.webp" />
+        <p class="caption"><em>Newspaper entry of the story.</em></p>
+      </figure>
+    `
+  },
+  'LLQS-641' : { // Miguel Maramba
+    stories: `
+      <h5>Siblings</h5>
+      <ul class="siblings">
+        <li class="person-placeholder">
+          <span class="person-name">$\{fullName\}</span>
+        </li>
+        <li class="male details-3">
+          <div class="person-headshot">
+            <img src="images/people/relatives/daniel-maramba.lossy.webp" />
+          </div>
+          <div class="person-details">
+            <span class="person-name">Daniel Maramba y Bautista</span>
+            <span class="relevant-dates">21 Jul 1870 — 28 Dec 1941 (${bino.calculateAge('21 Jul 1870', '28 Dec 1941')})</span>
+            <span class="birth-place"><strong>B</strong> : Santa Barbara, Pangasinan, PHL</span>
+            <span class="birth-place"><strong>D</strong> : Santa Barbara, Pangasinan, PHL</span>
+          </div>
+        </li>
+      </ul>
+
+      <h5>Famous brother</h5>
+      <p>Although Miguel himself has made a name in the field of politics, his brother is more known throughout Pangasinan.</p>
+      <p><strong>Daniel Maramba</strong> was Santa Barbara's Municipal Secretary from 1902 to 1903 and Municipal President from 1907 to 1908. In 1916, he was elected as Governor of Pangasinan and served until 1922. He was also dubbed the "Grand Old Man of Pangasinan".</p>
     `
   },
   'GC7T-H59': {

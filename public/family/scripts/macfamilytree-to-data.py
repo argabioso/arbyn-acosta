@@ -365,7 +365,7 @@ def build_siblings_data(tree_data, all_children):
         main = children["main"]
         others = children["others"]
 
-        if main is None or len(others) <= 0:
+        if main is None:
             continue
 
         if tree_data[key]["gender"] == "M":
