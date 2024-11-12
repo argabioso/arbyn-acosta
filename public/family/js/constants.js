@@ -53,7 +53,7 @@ const ui = {
     },
   },
   color: {
-    background: !isDark ? '#f8f9fa' : '#202124',
+    background: !isDark ? '#f4f5f6' : '#202124',
     node: {
       background: !isDark ? '#ffffff' : '#2f2f2f',
       stroke: !isDark ? '#429537' : '#2E8A21',
