@@ -5345,8 +5345,10 @@ for (const [key, svg] of Object.entries(isDark ? DARK_MARKERS : LIGHT_MARKERS)) 
   },
   'GHB8-J1B': { // Lola Lina
     headshot: 'GHB8-J1B.signed.webp',
+    gravemarker: 'GHB8-GB6.lossy.webp',
   },
   'GHB8-GB6': { // Sotero Maramba
+    gravemarker: 'GHB8-GB6.lossy.webp',
     stories: `
       <h5>Hunt For Train Robbers</h5>
       <p>Sotero was once the Chief of Railroad Police for the Philippine National Railrod (PNR). While assigned there, armed bandits ambushed one of the train sets and netted more than $40,000 (P80,000).</p>
@@ -5355,6 +5357,9 @@ for (const [key, svg] of Object.entries(isDark ? DARK_MARKERS : LIGHT_MARKERS)) 
         <p class="caption"><em>Newspaper entry of the story.</em></p>
       </figure>
     `
+  },
+  'GHBD-9LY': { // Lola Cresencia
+    gravemarker: 'GHB8-GB6.lossy.webp',
   },
   'LLQS-641' : { // Miguel Maramba
     stories: `
