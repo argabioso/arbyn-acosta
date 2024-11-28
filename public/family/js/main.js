@@ -24,18 +24,10 @@ var tree = $(
 tree.nodeTemplate = $(
   bino.Node, {
     selectable: false,
+    cursor: "pointer",
     click: (e, node) => {
       showSidebar(node)
     },
-    // Reset to pointer mouse cursor because
-    // people with stories are clickable
-    mouseEnter: (e, node) => {
-      node.cursor = "pointer";
-    },
-    // Reset to default mouse cursor
-    mouseLeave: (e, node) => {
-      node.cursor = "";
-    }
   },
   new bino.Binding('height', 'height'),
   new bino.Binding('width', 'width'),

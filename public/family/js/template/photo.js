@@ -1,6 +1,10 @@
 template['Photo'] = function() {
   return $(bino.Panel, 'Spot',
-    { isClipping: true, margin: new bino.Margin(0.2, 0, 0, 0.2) },
+    {
+      isClipping: true,
+      margin: new bino.Margin(0.2, 0, 0, 0.2),
+      cursor: "pointer",
+    },
     $(
       bino.Shape, 'Rectangle',
       new bino.Binding('width', '', function(nodeData) {

@@ -5,6 +5,7 @@ template['Node'] = function() {
       figure: 'RoundedRectangle',
       fill: ui.color.node.background,
       strokeWidth: 1,
+      cursor: "pointer",
     },
     new bino.Binding('desiredSize', '', function(nodeData) {
       return new bino.Size(ui.measure.node.widths[nodeData.generation], nodeData.height - ((nodeData.vitalsCompleteAndVerified && isChecking) ? 1 : 0));

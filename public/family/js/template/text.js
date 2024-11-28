@@ -4,6 +4,7 @@ template['Name'] = function() {
     {
       font: `700 ${ui.font.size.name}px Google Sans, sans-serif`,
       height: ui.font.size.name + 2,
+      cursor: "pointer",
     },
     new bino.Binding('width', '', function(nodeData) {
       return (ui.measure.node.widths[nodeData.generation] - 94) - 15;
@@ -35,6 +36,7 @@ template['DetailRow1'] = function() {
       {
         font: `400 ${ui.font.size.details}px "Google Sans Text", sans-serif`,
         height: ui.font.size.details + 2,
+        cursor: "pointer",
       },
       new bino.Binding("width", '', function(nodeData) {
         return (ui.measure.node.widths[nodeData.generation] - 94) - 15;
@@ -96,6 +98,7 @@ template['DetailRow2'] = function() {
       {
         font: `400 ${ui.font.size.details}px "Google Sans Text", sans-serif`,
         height: ui.font.size.details + 2,
+        cursor: "pointer",
       },
       new bino.Binding("width", '', function(nodeData) {
         return (ui.measure.node.widths[nodeData.generation] - 94) - 33;
@@ -158,6 +161,7 @@ template['DetailRow3'] = function() {
       {
         font: `400 ${ui.font.size.details}px "Google Sans Text", sans-serif`,
         height: ui.font.size.details + 2,
+        cursor: "pointer",
       },
       new bino.Binding("width", '', function(nodeData) {
         return (ui.measure.node.widths[nodeData.generation] - 94) - 33;
@@ -220,6 +224,7 @@ template['DetailRow4'] = function() {
       {
         font: `400 ${ui.font.size.details}px "Google Sans Text", sans-serif`,
         height: ui.font.size.details + 2,
+        cursor: "pointer",
       },
       new bino.Binding("width", '', function(nodeData) {
         return (ui.measure.node.widths[nodeData.generation] - 94) - 33;

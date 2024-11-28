@@ -4986,14 +4986,23 @@ for (const [key, svg] of Object.entries(isDark ? DARK_MARKERS : LIGHT_MARKERS)) 
       </figure>
     `
   },
-  'GQJK-LCT': { // Eusebio Argabioso
+  'GQJK-LCT': { // Marcial Argabioso
+    gravemarker: 'GQJK-LCT.lossy.webp',
     stories: `
       <h5>Siblings</h5>
       <ul class="siblings">
-        <li class="male details-3">
+        <li class="female details-3">
           <div class="person-details">
             <span class="person-name">Leonor Rosario M. Argabioso</span>
             <span class="relevant-dates">18 Oct 1919 — 16 Sep 1981 (${bino.calculateAge('18 Oct 1919', '16 Sep 1981')})</span>
+            <span class="birth-place"><strong>B</strong> : Majayjay, Laguna, Philippines</span>
+            <span class="birth-place"><strong>D</strong> : Majayjay, Laguna, Philippines</span>
+          </div>
+        </li>
+        <li class="male details-3">
+          <div class="person-details">
+            <span class="person-name">Celso M. Argabioso Sr.</span>
+            <span class="relevant-dates">18 Jan 1928 — 23 May 2009 (${bino.calculateAge('18 Jan 1928', '23 May 2009')})</span>
             <span class="birth-place"><strong>B</strong> : Majayjay, Laguna, Philippines</span>
             <span class="birth-place"><strong>D</strong> : Majayjay, Laguna, Philippines</span>
           </div>
@@ -5013,7 +5022,7 @@ for (const [key, svg] of Object.entries(isDark ? DARK_MARKERS : LIGHT_MARKERS)) 
         </li>
         <li class="male details-3">
           <div class="person-details">
-            <span class="person-name">Gregorio Orillo</span>
+            <span class="person-name">Gregorio "Oyong" Orillo</span>
             <span class="relevant-dates">17 Nov 1903 — 22 Apr 1993 (${bino.calculateAge('17 Nov 1903', '22 Apr 1993')})</span>
             <span class="birth-place"><strong>B</strong> : Majayjay, Laguna, Philippines</span>
             <span class="birth-place"><strong>D</strong> : United States of America</span>
@@ -5152,6 +5161,7 @@ for (const [key, svg] of Object.entries(isDark ? DARK_MARKERS : LIGHT_MARKERS)) 
   'GQJK-G8W': { // Corazon Acosta
     headshot: 'GQJK-G8W.signed.webp',
     headline: 'University of the East - Caloocan Accountancy graduate, housewife, and mother of three.',
+    gravemarker: 'GQJK-G8W.lossy.webp',
     stories: `
       <h5>Siblings</h5>
       <ul class="siblings">
@@ -5260,14 +5270,16 @@ for (const [key, svg] of Object.entries(isDark ? DARK_MARKERS : LIGHT_MARKERS)) 
       <h5>Cause of Death</h5>
       <p>It was never verified medically how Corazon died. The assumption is that its a collection of conditions that ultimately resulted to her death.</p>
       <ol>
-      <li><p><strong>Chronic stress</strong>. Around the time before Corazon died, there were disputes and fights regarding the ownership of their family house and land in Caloocan. This was between her, her sister, her nephew, and their aunt.</p></li>
-      <li><p><strong>Perimenopause</strong>. It was believed that Corazon was going through Perimenopause which caused her heavy periods which might've caused the next condition.</p></li>
-      <li><p><strong>Iron-deficiency Anemia</strong>. Her family in Laguna stated that she was taking in iron supplements for this condition. During the same time, she was experiencing anemia rashes around her body.</p></li>
-      <li><p><strong>Mentality</strong>. Corazon was known to go to hospitals as a last resort. Because of this, while she was experiencing all the conditions stated before, she didn't seek out medical professional opinion until the last minute.</p></li>
+        <li><p><strong>Chronic stress</strong>. Around the time before Corazon died, there were disputes and fights regarding the ownership of their family house and land in Caloocan. This was between her, her sister, her nephew, and their aunt.</p></li>
+        <li><p><strong>Perimenopause</strong>. It was believed that Corazon was going through Perimenopause which caused her heavy periods which might've caused the next condition.</p></li>
+        <li><p><strong>Iron-deficiency Anemia</strong>. Her family in Laguna stated that she was taking in iron supplements for this condition. During the same time, she was experiencing anemia rashes around her body.</p></li>
+        <li><p><strong>Mentality</strong>. Corazon was known to go to hospitals as a last resort. Because of this, while she was experiencing all the conditions stated before, she didn't seek out medical professional opinion until the last minute.</p></li>
+      </ol>
     `
   },
   'GHBD-7M4': { // Lolo Manuel Jr.
     headshot: 'GHBD-7M4.signed.webp',
+    gravemarker: 'GHBD-7M4.lossy.webp',
     stories: `
       <h5>Twin</h5>
       <ul class="siblings">
@@ -5316,7 +5328,7 @@ for (const [key, svg] of Object.entries(isDark ? DARK_MARKERS : LIGHT_MARKERS)) 
             <img src="images/people/relatives/ben.lossy.webp" />
           </div>
           <div class="person-details">
-            <span class="person-name">Benjamin S. A. Acosta Sr.</span>
+            <span class="person-name">Benjamin "Ben" S. A. Acosta Sr.</span>
             <span class="relevant-dates">23 Oct 1949 — after 2011 (${bino.calculateAge('23 Oct 1949', '2011')}+)</span>
             <span class="birth-place"><strong>B</strong> : Manila, Philippines</span>
             <span class="death-place"><strong>D</strong> : United States of America</span>
@@ -5324,6 +5336,15 @@ for (const [key, svg] of Object.entries(isDark ? DARK_MARKERS : LIGHT_MARKERS)) 
         </li>
       </ul>
     `
+  },
+  'GHBD-9L6': { // Lolo Manuel Sr.
+    headshot: 'GHBD-9L6.signed.webp',
+  },
+  'GHB8-DXY': { // Lola Nati
+    gravemarker: 'GHB8-DXY.lossy.webp',
+  },
+  'GHB8-J1B': { // Lola Lina
+    headshot: 'GHB8-J1B.signed.webp',
   },
   'GHB8-GB6': { // Sotero Maramba
     stories: `
@@ -5466,7 +5487,10 @@ for (const [key, svg] of Object.entries(isDark ? DARK_MARKERS : LIGHT_MARKERS)) 
       </figure>
     `
   },
-  'GH12-DD8': {
+  'GH12-W17': {
+    gravemarker: 'GH12-W17.lossy.webp',
+  },
+  'GH12-DD8': { // Lola Enoria
     stories: `
       <h5>Last Remaining Photos</h5>
       <figure>
@@ -5806,6 +5830,8 @@ function addPersonDetails(node) {
     'apparel': 'Apparel Manufacturer',
     'cattle': 'Cattle Vendor',
     'train': 'Railroad Worker',
+    'manager': 'Work Manager',
+    'sergeant': 'Military Sergeant',
   }
 
   if (headline) {
@@ -5837,7 +5863,7 @@ function addPersonDetails(node) {
         if (headlineInnerHTML != '') {
           parentNoun = parentNoun.toLowerCase();
           if (headlineInnerHTML.includes(' and ')) {
-            headlineInnerHTML += ', and '
+            headlineInnerHTML += '. '
           } else {
             headlineInnerHTML += ' and '
           }
@@ -5898,13 +5924,11 @@ function addPersonDetails(node) {
   // if (headline) {
   //   tempInnerHTML += `<hr />`;
   // }
-  let story;
-  if (STORIES[node.data.fid]) {
+  let story = '';
+  if (STORIES[node.data.fid] && STORIES[node.data.fid]['stories']) {
     story = STORIES[node.data.fid]['stories'].replace(/\$\{([^}]+)\}/g, (match, attrName) => {
       return node.data[attrName] !== undefined ? node.data[attrName] : match;
     });
-  } else {
-    story = "";
   }
   tempInnerHTML += story;
 
@@ -5914,6 +5938,18 @@ function addPersonDetails(node) {
       tempInnerHTML += ', and no photo is available'
     }
     tempInnerHTML += '.</p>'
+  }
+
+  // Add gravemarker if photo is indicated
+  if (STORIES[node.data.fid] && STORIES[node.data.fid].gravemarker !== undefined) {
+    tempInnerHTML += `
+      <hr />
+      <h5>Grave Marker</h5>
+      <figure>
+        <img alt="Grave Marker photo" src="images/gravemarkers/${STORIES[node.data.fid].gravemarker}" />
+        <p class="caption"><em>${node.data.basicName}'s grave marker photo.</em></p>
+      </figure>
+    `;
   }
 
   // Insert the new div into the container
@@ -5980,6 +6016,7 @@ template['Node'] = function() {
       figure: 'RoundedRectangle',
       fill: ui.color.node.background,
       strokeWidth: 1,
+      cursor: "pointer",
     },
     new bino.Binding('desiredSize', '', function(nodeData) {
       return new bino.Size(ui.measure.node.widths[nodeData.generation], nodeData.height - ((nodeData.vitalsCompleteAndVerified && isChecking) ? 1 : 0));
@@ -6145,7 +6182,11 @@ template['Link'] = function() {
 }
 template['Photo'] = function() {
   return $(bino.Panel, 'Spot',
-    { isClipping: true, margin: new bino.Margin(0.2, 0, 0, 0.2) },
+    {
+      isClipping: true,
+      margin: new bino.Margin(0.2, 0, 0, 0.2),
+      cursor: "pointer",
+    },
     $(
       bino.Shape, 'Rectangle',
       new bino.Binding('width', '', function(nodeData) {
@@ -6506,6 +6547,7 @@ template['Name'] = function() {
     {
       font: `700 ${ui.font.size.name}px Google Sans, sans-serif`,
       height: ui.font.size.name + 2,
+      cursor: "pointer",
     },
     new bino.Binding('width', '', function(nodeData) {
       return (ui.measure.node.widths[nodeData.generation] - 94) - 15;
@@ -6537,6 +6579,7 @@ template['DetailRow1'] = function() {
       {
         font: `400 ${ui.font.size.details}px "Google Sans Text", sans-serif`,
         height: ui.font.size.details + 2,
+        cursor: "pointer",
       },
       new bino.Binding("width", '', function(nodeData) {
         return (ui.measure.node.widths[nodeData.generation] - 94) - 15;
@@ -6598,6 +6641,7 @@ template['DetailRow2'] = function() {
       {
         font: `400 ${ui.font.size.details}px "Google Sans Text", sans-serif`,
         height: ui.font.size.details + 2,
+        cursor: "pointer",
       },
       new bino.Binding("width", '', function(nodeData) {
         return (ui.measure.node.widths[nodeData.generation] - 94) - 33;
@@ -6660,6 +6704,7 @@ template['DetailRow3'] = function() {
       {
         font: `400 ${ui.font.size.details}px "Google Sans Text", sans-serif`,
         height: ui.font.size.details + 2,
+        cursor: "pointer",
       },
       new bino.Binding("width", '', function(nodeData) {
         return (ui.measure.node.widths[nodeData.generation] - 94) - 33;
@@ -6722,6 +6767,7 @@ template['DetailRow4'] = function() {
       {
         font: `400 ${ui.font.size.details}px "Google Sans Text", sans-serif`,
         height: ui.font.size.details + 2,
+        cursor: "pointer",
       },
       new bino.Binding("width", '', function(nodeData) {
         return (ui.measure.node.widths[nodeData.generation] - 94) - 33;
@@ -6802,18 +6848,10 @@ var tree = $(
 tree.nodeTemplate = $(
   bino.Node, {
     selectable: false,
+    cursor: "pointer",
     click: (e, node) => {
       showSidebar(node)
     },
-    // Reset to pointer mouse cursor because
-    // people with stories are clickable
-    mouseEnter: (e, node) => {
-      node.cursor = "pointer";
-    },
-    // Reset to default mouse cursor
-    mouseLeave: (e, node) => {
-      node.cursor = "";
-    }
   },
   new bino.Binding('height', 'height'),
   new bino.Binding('width', 'width'),

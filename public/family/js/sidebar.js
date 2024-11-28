@@ -118,6 +118,8 @@ function addPersonDetails(node) {
     'apparel': 'Apparel Manufacturer',
     'cattle': 'Cattle Vendor',
     'train': 'Railroad Worker',
+    'manager': 'Work Manager',
+    'sergeant': 'Military Sergeant',
   }
 
   if (headline) {
@@ -149,7 +151,7 @@ function addPersonDetails(node) {
         if (headlineInnerHTML != '') {
           parentNoun = parentNoun.toLowerCase();
           if (headlineInnerHTML.includes(' and ')) {
-            headlineInnerHTML += ', and '
+            headlineInnerHTML += '. '
           } else {
             headlineInnerHTML += ' and '
           }
@@ -210,13 +212,11 @@ function addPersonDetails(node) {
   // if (headline) {
   //   tempInnerHTML += `<hr />`;
   // }
-  let story;
-  if (STORIES[node.data.fid]) {
+  let story = '';
+  if (STORIES[node.data.fid] && STORIES[node.data.fid]['stories']) {
     story = STORIES[node.data.fid]['stories'].replace(/\$\{([^}]+)\}/g, (match, attrName) => {
       return node.data[attrName] !== undefined ? node.data[attrName] : match;
     });
-  } else {
-    story = "";
   }
   tempInnerHTML += story;
 
@@ -226,6 +226,18 @@ function addPersonDetails(node) {
       tempInnerHTML += ', and no photo is available'
     }
     tempInnerHTML += '.</p>'
+  }
+
+  // Add gravemarker if photo is indicated
+  if (STORIES[node.data.fid] && STORIES[node.data.fid].gravemarker !== undefined) {
+    tempInnerHTML += `
+      <hr />
+      <h5>Grave Marker</h5>
+      <figure>
+        <img alt="Grave Marker photo" src="images/gravemarkers/${STORIES[node.data.fid].gravemarker}" />
+        <p class="caption"><em>${node.data.basicName}'s grave marker photo.</em></p>
+      </figure>
+    `;
   }
 
   // Insert the new div into the container
