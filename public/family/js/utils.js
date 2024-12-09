@@ -57,6 +57,11 @@ bino.getRelativeDates = function(nodeData, isPrivate) {
     return `${separator}${marriageYear}${separator}${deathYear}${age}`;
   }
 
+  // Do not show negative ages
+  if (age < 0) {
+    age = "NaN";
+  }
+
   // If deathYear does not exist, return the formatted
   // `birthYear` with a separator and "Living" or "Deceased"
   // based on the living flag.
