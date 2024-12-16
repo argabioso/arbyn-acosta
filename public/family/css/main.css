@@ -38,11 +38,11 @@ p > strong {
 }
 
 #tree {
-  background-color: #f4f5f6;
+  background-color: #f2f3f4;
 }
 
 .dark #tree {
-  background-color: #202124;
+  background-color: #1c1c1d;
 }
 
 #tree-wrapper:focus,

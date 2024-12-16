@@ -1911,9 +1911,9 @@ const ui = {
     },
   },
   color: {
-    background: !isDark ? '#f4f5f6' : '#202124',
+    background: !isDark ? '#f2f3f4' : '#1c1c1d',
     node: {
-      background: !isDark ? '#ffffff' : '#2f2f2f',
+      background: !isDark ? '#ffffff' : '#252728',
       stroke: !isDark ? '#429537' : '#2E8A21',
       name: !isDark ? '#000000' : '#fefefe',
       details: {
