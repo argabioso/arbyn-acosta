@@ -501,7 +501,12 @@ var STORIES = {
   'GHBD-9L6': { // Lolo Manuel Sr.
     headshot: 'GHBD-9L6.signed.webp',
   },
+  'GHB8-5K8': { // Lola Maximiana
+    headshotDark: 'GHB8-5K8.dark.webp',
+    headshotLight: 'GHB8-5K8.light.webp',
+  },
   'GHB8-DXY': { // Lola Nati
+    headshot: 'GHB8-DXY.signed.webp',
     gravemarker: 'GHB8-DXY.lossy.webp',
   },
   'GHB8-J1B': { // Lola Lina

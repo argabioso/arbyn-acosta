@@ -84,13 +84,20 @@ function addPersonDetails(node) {
     if (STORIES[node.data.fid]['headshot']) {
       headshotFilename = STORIES[node.data.fid]['headshot'];
     }
+    if (STORIES[node.data.fid]['headshotDark'] && isDark) {
+      console.log("EME")
+      headshotFilename = STORIES[node.data.fid]['headshotDark'];
+      console.log(headshotFilename)
+    } else if (STORIES[node.data.fid]['headshotLight'] && !isDark) {
+      headshotFilename = STORIES[node.data.fid]['headshotLight'];
+    }
   }
 
   // Update sidebar content
   let tempInnerHTML = '';
   let headlineInnerHTML = '';
 
-  if (node.data.hasImage && node.data.fid !== undefined) {
+  if ((node.data.hasImage || (STORIES[node.data.fid] && headshotFilename != `${node.data.fid}.lossy.webp`)) && node.data.fid !== undefined) {
     tempInnerHTML += `<figure class="headshot"><div><img alt="headshot" src="images/people/${headshotFilename}" /></div></figure>`;
   }
   let hasBadges = false;
