@@ -4992,6 +4992,7 @@ for (const [key, svg] of Object.entries(isDark ? DARK_MARKERS : LIGHT_MARKERS)) 
     `
   },
   'GQJK-LCT': { // Marcial Argabioso
+    headshot: 'GQJK-LCT.signed.webp',
     gravemarker: 'GQJK-LCT.lossy.webp',
     stories: `
       <h5>Siblings</h5>
