@@ -148,7 +148,7 @@ var STORIES = {
     `
   },
   'GQJK-LCT': { // Marcial Argabioso
-    headshot: 'GQJK-LCT.signed.webp',
+    headshot: 'GQJK-LCT-2.signed.webp',
     gravemarker: 'GQJK-LCT.lossy.webp',
     stories: `
       <h5>Siblings</h5>
