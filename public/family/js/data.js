@@ -76,15 +76,15 @@
     "marker3": "software",
     "fid": "GQX8-CQP",
     "child": "80378400",
-    "paternal_siblings": [
-      "70275697"
-    ],
-    "father": "50954818",
     "maternal_siblings": [
       "21719634",
       "41448711"
     ],
     "mother": "50342947",
+    "paternal_siblings": [
+      "70275697"
+    ],
+    "father": "50954818",
     "regular_siblings": []
   },
   {
@@ -154,10 +154,10 @@
     "maternal_siblings": [],
     "mother": "53221118",
     "regular_siblings": [
-      "7663556",
-      "36448299",
       "21653420",
-      "85278460"
+      "7663556",
+      "85278460",
+      "36448299"
     ]
   },
   {
@@ -215,6 +215,7 @@
     "suffix": null,
     "vitalsCompleteAndVerified": false,
     "firstName": "Estebana",
+    "marker": "housewife",
     "fid": "GHB8-RCH",
     "child": "79164376",
     "paternal_siblings": [],
@@ -338,8 +339,8 @@
     "maternal_siblings": [],
     "mother": "25174592",
     "regular_siblings": [
-      "31493676",
-      "46768390"
+      "46768390",
+      "31493676"
     ]
   },
   {
@@ -380,7 +381,7 @@
   {
     "baptismDate": null,
     "birthDate": "before 1892",
-    "birthPlace": null,
+    "birthPlace": "Guagua, Pampanga, PHL",
     "deathAge": null,
     "deathDate": "after 1915-07",
     "deathPlace": null,
@@ -408,7 +409,7 @@
   {
     "baptismDate": null,
     "birthDate": "before 1892",
-    "birthPlace": null,
+    "birthPlace": "Orani, Bataan, PHL",
     "deathAge": null,
     "deathDate": "after 1916-05",
     "deathPlace": null,
@@ -643,10 +644,10 @@
     "maternal_siblings": [],
     "mother": "54923824",
     "regular_siblings": [
-      "41491264",
       "54340914",
-      "12725118",
-      "73841862"
+      "41491264",
+      "73841862",
+      "12725118"
     ]
   },
   {
@@ -680,8 +681,8 @@
     "maternal_siblings": [],
     "mother": "91567169",
     "regular_siblings": [
-      "6375936",
-      "64329171"
+      "64329171",
+      "6375936"
     ]
   },
   {
@@ -857,9 +858,9 @@
     "maternal_siblings": [],
     "mother": "30299840",
     "regular_siblings": [
-      "95216770",
       "55618304",
       "42349252",
+      "95216770",
       "95739264"
     ]
   },
@@ -894,10 +895,10 @@
     "maternal_siblings": [],
     "mother": "50346650",
     "regular_siblings": [
-      "28928680",
       "392680",
-      "47386677",
-      "57182283"
+      "28928680",
+      "57182283",
+      "47386677"
     ]
   },
   {
