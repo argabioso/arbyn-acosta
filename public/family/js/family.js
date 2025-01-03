@@ -5363,7 +5363,7 @@ for (const [key, svg] of Object.entries(isDark ? DARK_MARKERS : LIGHT_MARKERS)) 
     gravemarker: 'GHB8-GB6.lossy.webp',
     stories: `
       <h5>Hunt For Train Robbers</h5>
-      <p>Sotero was once the Chief of Railroad Police for the Philippine National Railrod (PNR). While assigned there, armed bandits ambushed one of the train sets and netted more than $40,000 (P80,000).</p>
+      <p>Sotero was once the Chief of Railroad Police for the Philippine National Railroad (PNR). While assigned there, armed bandits ambushed one of the train sets and netted more than $40,000 (P80,000).</p>
       <figure>
         <img alt="Chief of Railroad Police: Sotero Maramba" src="images/stories/chief-pnr.lossy.webp" />
         <p class="caption"><em>Newspaper entry of the story.</em></p>
