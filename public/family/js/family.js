@@ -5484,7 +5484,7 @@ for (const [key, svg] of Object.entries(isDark ? DARK_MARKERS : LIGHT_MARKERS)) 
       </figure>
 
       <hr />
-      <h5>Grand Wedding on the 15th day of June 2024</h5>
+      <h5>Wedding of the Year</h5>
       <figure>
         <div class="youtube-container"><iframe class="youtube-embed" loading="lazy" src="https://www.youtube.com/embed/KkXfQCUHxsY?si=ewY6H0b_Ta-sTCCA&controls=2&enablejsapi=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
         <p class="caption"><em>Arbyn and Mitchie's grand wedding held on St. John Bosco Parish Church. Reception venue was on Casa Ibarra, Pasay.</em></p>
