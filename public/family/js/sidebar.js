@@ -103,6 +103,7 @@ function addPersonDetails(node) {
   let hasBadges = false;
 
   var storyMarkerLabel = {
+    'manufacturing': 'Factory Worker',
     'farming': 'Farmer',
     'retail': 'Divisoria Vendor',
     'computer': 'Information Technology',

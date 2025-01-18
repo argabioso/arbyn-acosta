@@ -5201,7 +5201,7 @@ for (const [key, svg] of Object.entries(isDark ? DARK_MARKERS : LIGHT_MARKERS)) 
   },
   'GQJK-G8W': { // Corazon Acosta
     headshot: 'GQJK-G8W-2.signed.webp',
-    headline: 'University of the East - Caloocan Accountancy graduate, housewife, and mother of three.',
+    headline: 'University-of-the-East-Accountancy graduate, housewife, and mother of three.',
     gravemarker: 'GQJK-G8W.lossy.webp',
     stories: `
       <h5>Siblings</h5>
@@ -5558,6 +5558,12 @@ for (const [key, svg] of Object.entries(isDark ? DARK_MARKERS : LIGHT_MARKERS)) 
         <p class="caption"><em>Wedding video captured and edited by The Wedding Narrative.</em></p>
       </figure>
 
+      <h5>Living Family Line on Her Wedding</h5>
+      <figure>
+        <img alt="Living Family Line" src="images/stories/Mitch_Family_Line.lossy.webp" />
+        <p class="caption"><em>Photo taken on June 15, 2024. Mitch's family line on his wedding day: (from left to right) Mylen Ajesta, Mitchie Adanza, and Darne Adanza.</em></p>
+      </figure>
+
       <hr />
       <h5>First Pregnancy</h5>
       <p>Since this is her first pregnancy, Mitchie wanted to capture all of the reactions of those closest to them when they find out that they're expecting their first baby. A compilation of reactions from Arbyn and Mitchie's relatives; and their close friends.</p>
@@ -5579,11 +5585,15 @@ for (const [key, svg] of Object.entries(isDark ? DARK_MARKERS : LIGHT_MARKERS)) 
       </figure>
     `
   },
-  'GHBR-FK3': { // Mama
+  'GHBR-FK3': { // Mylen Ajesta
+    headline: 'A hardworking beautician and selfless provider who supported her family’s survival and educational needs; and worked as an OFW in the Middle East to ensure her children’s success.',
     stories: `
       <h5>Siblings</h5>
       <ul class="siblings">
         <li class="female details-3">
+          <div class="person-headshot">
+            <img src="images/people/relatives/roselyn.lossy.webp" />
+          </div>
           <div class="person-details">
             <span class="person-name">Roselyn "Beng" V. Ajesta</span>
             <span class="relevant-dates">5 Aug 1964 — 23 Jan 2023 (${bino.calculateAge('5 Aug 1964', '23 Jan 2023')})</span>
@@ -5592,6 +5602,9 @@ for (const [key, svg] of Object.entries(isDark ? DARK_MARKERS : LIGHT_MARKERS)) 
           </div>
         </li>
         <li class="male details-3">
+          <div class="person-headshot">
+            <img src="images/people/relatives/rolly.lossy.webp" />
+          </div>
           <div class="person-details">
             <span class="person-name">Rolly V. Ajesta</span>
             <span class="relevant-dates">21 Oct 1971 — Living (${bino.calculateAge('21 Oct 1971', null)})</span>
@@ -5603,6 +5616,9 @@ for (const [key, svg] of Object.entries(isDark ? DARK_MARKERS : LIGHT_MARKERS)) 
           <span class="person-name">$\{fullName\}</span>
         </li>
         <li class="male details-3">
+          <div class="person-headshot">
+            <img src="images/people/relatives/bong.lossless.webp" />
+          </div>
           <div class="person-details">
             <span class="person-name">Rodel "Bong" V. Ajesta</span>
             <span class="relevant-dates">15 Mar 1977 — Living (${bino.calculateAge('15 Mar 1979', null)})</span>
@@ -5611,6 +5627,9 @@ for (const [key, svg] of Object.entries(isDark ? DARK_MARKERS : LIGHT_MARKERS)) 
           </div>
         </li>
         <li class="female details-3">
+          <div class="person-headshot">
+            <img src="images/people/relatives/cecil.lossless.webp" />
+          </div>
           <div class="person-details">
             <span class="person-name">Cecil V. Ajesta</span>
             <span class="relevant-dates">26 Dec 1979 — Living (${bino.calculateAge('26 Dec 1979', null)})</span>
@@ -5961,6 +5980,7 @@ function addPersonDetails(node) {
   let hasBadges = false;
 
   var storyMarkerLabel = {
+    'manufacturing': 'Factory Worker',
     'farming': 'Farmer',
     'retail': 'Divisoria Vendor',
     'computer': 'Information Technology',
