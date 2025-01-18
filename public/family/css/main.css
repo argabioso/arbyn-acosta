@@ -42,7 +42,7 @@ p > strong {
 }
 
 .dark #tree {
-  background-color: #1c1c1d;
+  background-color: #1a1b1c;
 }
 
 #tree-wrapper:focus,
@@ -178,13 +178,14 @@ ol ul {
 #personDetailsDesc h5,
 #personDetailsDesc h6 {
   font-family: 'Google Sans', sans-serif;
-  font-weight: 500;
+  font-weight: 700;
 }
 
 #personDetailsDesc h5 {
   font-size: 17px;
   line-height: 22px;
   margin-bottom: 1rem;
+  letter-spacing: -0.025rem;
 }
 
 #personDetailsDesc h6 {

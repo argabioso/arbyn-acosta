@@ -1,3 +1,4 @@
+from collections import OrderedDict
 from datetime import datetime
 from typing import Optional
 import json as json_lib
@@ -27,10 +28,10 @@ def main():
 
     print(f"Processing GEDCOM file: {path}")
 
-    data = {}
-    has_photo = {}
-    markers = {}
-    all_children = {}
+    data = OrderedDict()
+    has_photo = OrderedDict()
+    markers = OrderedDict()
+    all_children = OrderedDict()
 
     with GedcomReader(path) as parser:
         for record in parser.records0("NOTE"):
@@ -141,6 +142,9 @@ def main():
                                 person["hasDNA"] = True
                                 continue
 
+                            if marker == "signature":
+                                person["hasSignature"] = True
+
                             if i + 1 == 2 and person["hasDNA"]:
                                 suffix = ""
                             else:
@@ -182,7 +186,7 @@ def main():
             is_marriage_found = False
             is_family_created = False
 
-            temp_person = {}
+            temp_person = OrderedDict()
 
             for sub_record_1 in record.sub_records:
                 if sub_record_1.tag == "MARR" and not is_marriage_found:
@@ -359,7 +363,7 @@ def process_place(raw_value):
 
 def build_siblings_data(tree_data, all_children):
     sibling_keys = []
-    output = {}
+    output = OrderedDict()
 
     for key, children in all_children.items():
         main = children["main"]
@@ -386,9 +390,9 @@ def build_siblings_data(tree_data, all_children):
         maternal_siblings = set(person.get("maternal_siblings", []))
         regular_siblings = paternal_siblings.intersection(maternal_siblings)
 
-        person["paternal_siblings"] = list(paternal_siblings - regular_siblings)
-        person["maternal_siblings"] = list(maternal_siblings - regular_siblings)
-        person["regular_siblings"] = list(regular_siblings)
+        person["paternal_siblings"] = sorted(list(paternal_siblings - regular_siblings))
+        person["maternal_siblings"] = sorted(list(maternal_siblings - regular_siblings))
+        person["regular_siblings"] = sorted(list(regular_siblings))
 
     return output
 

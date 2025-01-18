@@ -117,6 +117,21 @@ var STORIES = {
         </li>
       </ul>
 
+      <h5>Wife</h5>
+      <ul class="siblings">
+        <li class="female details-3">
+          <div class="person-headshot">
+            <img src="images/people/relatives/yen.lossy.webp" />
+          </div>
+          <div class="person-details">
+            <span class="person-name">Nierene "Yen" D. Martin</span>
+            <span class="relevant-dates">29 Aug 1977 — Living (${bino.calculateAge('29 Aug 1977', null)})</span>
+            <span class="birth-place"><strong>B</strong> : Lubao, Pampanga, Philippines</span>
+            <span class="birth-place"><strong>L</strong> : Malolos, Bulacan, Philippines</span>
+          </div>
+        </li>
+      </ul>
+
       <hr />
       <h5>Troubled Teenage and Young Adult Years</h5>
       <p>During his teenage years, Roland faced significant challenges, including a serious altercation with a neighbor that led to threats of murder. In response, his mother Lydia banished him to Bataan to live with his grandmother, Lucina, where he completed his high school education.</p>
@@ -173,6 +188,7 @@ var STORIES = {
           <span class="person-name">$\{fullName\}</span>
         </li>
       </ul>
+      <p>We are sure that $\{firstName\} had other siblings other than the ones listed. We just don't know the details regarding them that's why they're not listed.</p>
     `
   },
   'GHBZ-TM4': { // Eusebio Argabioso
@@ -194,7 +210,7 @@ var STORIES = {
 
       <hr />
       <h5>Cause of Death</h5>
-      <p>Based on Eusebio's death certificate, he first started seeing symptoms of his illness around September 1972. He was diagnosed with peptic ulcer. One month after the onset of his symptoms, he died on October 27, 1972.</p>
+      <p>According to Eusebio's death certificate, he first started seeing symptoms of his illness around September 1972. He was diagnosed with peptic ulcer. One month after the onset of his symptoms, he died on October 27, 1972.</p>
     `
   },
   'GHB8-RCH': { // Estebana Lopecillo
@@ -321,7 +337,7 @@ var STORIES = {
     `
   },
   'GQJK-G8W': { // Corazon Acosta
-    headshot: 'GQJK-G8W.signed.webp',
+    headshot: 'GQJK-G8W-2.signed.webp',
     headline: 'University of the East - Caloocan Accountancy graduate, housewife, and mother of three.',
     gravemarker: 'GQJK-G8W.lossy.webp',
     stories: `
@@ -414,7 +430,7 @@ var STORIES = {
 
       <hr />
       <h5>Short Engagement</h5>
-      <p>Based on a baptismal document found by Arbyn Argabioso, it looks like Corazon Acosta and Roland Argabioso, even for a brief period, were actually engaged. It was later confirmed by Roland Argabioso, on March 2023, that this was in fact true.</p>
+      <p>According to a baptismal document found by Arbyn Argabioso, it looks like Corazon Acosta and Roland Argabioso, even for a brief period, were actually engaged. It was later confirmed by Roland Argabioso, on March 2023, that this was in fact true.</p>
       <figure>
         <img alt="Baptismal Record for Marriage" src="images/stories/Corazon_Baptismal_for_Marriage.webp" />
         <p class="caption"><em>Part of Corazon's baptismal record requested on May 1997 for the purpose of marriage. </em></p>
@@ -501,6 +517,33 @@ var STORIES = {
   },
   'GHBD-9L6': { // Lolo Manuel Sr.
     headshot: 'GHBD-9L6.signed.webp',
+    stories: `
+      <h5>Siblings</h5>
+      <ul class="siblings">
+        <li class="female details-3">
+          <div class="person-details">
+            <span class="person-name">Isabel Bongco Acosta</span>
+            <span class="relevant-dates">17 May 1911 — 3 Oct 1984 (${bino.calculateAge('17 May 1911', '3 Oct 1984')})</span>
+            <span class="birth-place"><strong>B</strong> : Luzon, Philippines</span>
+            <span class="birth-place"><strong>D</strong> : Luzon, Philippines</span>
+          </div>
+        </li>
+        <li class="person-placeholder">
+          <span class="person-name">$\{fullName\}</span>
+        </li>
+      </ul>
+      <p>We are sure that $\{firstName\} had other siblings other than Isabel. We just don't know the details regarding them that's why they're not listed.</p>
+
+      <hr />
+      <h5>Cause of Death</h5>
+      <p>According to Manuel Sr.'s death certificate, he first exhibited symptoms of arteriosclerosis in 1989. This was followed by the onset of a cerebrovascular accident (stroke) in January 1994. On November 20, 1994, he suffered a cardiorespiratory arrest, which ultimately led to his passing.</p>
+    `
+  },
+  'GHB8-SQN': { // Lolo Ligorio
+    stories: `
+      <h5>Cause of Death</h5>
+      <p>According to Ligorio's death certificate, his death was not caused by an illness or a medical condition. He died of old age.</p>
+    `
   },
   'GHB8-5K8': { // Lola Maximiana
     headshotDark: 'GHB8-5K8.dark.webp',
@@ -513,6 +556,10 @@ var STORIES = {
   'GHB8-J1B': { // Lola Lina
     headshot: 'GHB8-J1B.signed.webp',
     gravemarker: 'GHB8-GB6.lossy.webp',
+    stories: `
+      <h5>Siblings</h5>
+      <p>According to Becky Maramba, one of $\{firstName\}'s sisters, they had <strong>14 other siblings</strong>. We just don't know the details regarding all of them that's why they're not listed.</p>
+    `
   },
   'GHB8-GB6': { // Sotero Maramba
     gravemarker: 'GHB8-GB6.lossy.webp',
@@ -547,7 +594,9 @@ var STORIES = {
           </div>
         </li>
       </ul>
+      <p>We are sure that $\{firstName\} had other siblings other than Daniel Maramba. We just don't know the details regarding them that's why they're not listed.</p>
 
+      <hr />
       <h5>Famous brother</h5>
       <p>Although Miguel himself has made a name in the field of politics, his brother is more known throughout Pangasinan.</p>
       <p><strong>Daniel Maramba</strong> was Santa Barbara's Municipal Secretary from 1902 to 1903 and Municipal President from 1907 to 1908. In 1916, he was elected as Governor of Pangasinan and served until 1922. He was also dubbed the "Grand Old Man of Pangasinan".</p>
@@ -576,7 +625,7 @@ var STORIES = {
             <img src="images/people/relatives/dm.webp" />
           </div>
           <div class="person-details">
-            <span class="person-name">DM A. Adanza</span>
+            <span class="person-name">DM "Pangs" A. Adanza</span>
             <span class="relevant-dates">13 Oct 2004 — Living (${bino.calculateAge('13 Oct 2004', null)})</span>
             <span class="birth-place"><strong>B</strong> : Manila, Philippines</span>
             <span class="death-place"><strong>L</strong> : Sangandaan, S. Caloocan, PHL</span>
@@ -639,15 +688,16 @@ var STORIES = {
       </figure>
 
       <hr />
-      <h5>Wedding of the Year</h5>
+      <h5>Grand Wedding</h5>
+      <p>Arbyn and Mitchie's grand wedding was held on June 15, 2014 at St. John Bosco Parish Church, Makati. Reception venue was at Casa Ibarra, Pasay.</p>
       <figure>
         <div class="youtube-container"><iframe class="youtube-embed" loading="lazy" src="https://www.youtube.com/embed/KkXfQCUHxsY?si=ewY6H0b_Ta-sTCCA&controls=2&enablejsapi=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
-        <p class="caption"><em>Arbyn and Mitchie's grand wedding held on St. John Bosco Parish Church. Reception venue was on Casa Ibarra, Pasay.</em></p>
+        <p class="caption"><em>Wedding video captured and edited by The Wedding Narrative.</em></p>
       </figure>
 
       <hr />
       <h5>First Pregnancy</h5>
-      <p>A compilation of reactions from Arbyn and Mitchie's relatives; and their close friends.</p>
+      <p>Since this is her first pregnancy, Mitchie wanted to capture all of the reactions of those closest to them when they find out that they're expecting their first baby. A compilation of reactions from Arbyn and Mitchie's relatives; and their close friends.</p>
       <figure>
         <div class="youtube-container"><iframe class="youtube-embed" loading="lazy" src="https://www.youtube.com/embed/Ipvyodk52zE?controls=2&si=gQlyzQhIvdVZ7bJu&enablejsapi=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
         <p class="caption"><em>How Mitch and Arbyn found that they would be having a baby and how they announced it to their relatives.</em></p>
@@ -666,8 +716,62 @@ var STORIES = {
       </figure>
     `
   },
-  'GH12-W17': {
+  'GHBR-FK3': { // Mama
+    stories: `
+      <h5>Siblings</h5>
+      <ul class="siblings">
+        <li class="female details-3">
+          <div class="person-details">
+            <span class="person-name">Roselyn "Beng" V. Ajesta</span>
+            <span class="relevant-dates">5 Aug 1964 — 23 Jan 2023 (${bino.calculateAge('5 Aug 1964', '23 Jan 2023')})</span>
+            <span class="birth-place"><strong>B</strong> : Pilar, Capiz, Philippines</span>
+            <span class="death-place"><strong>D</strong> : Santa Maria, Bulacan, PHL</span>
+          </div>
+        </li>
+        <li class="male details-3">
+          <div class="person-details">
+            <span class="person-name">Rolly V. Ajesta</span>
+            <span class="relevant-dates">21 Oct 1971 — Living (${bino.calculateAge('21 Oct 1971', null)})</span>
+            <span class="birth-place"><strong>B</strong> : Pilar, Capiz, Philippines</span>
+            <span class="death-place"><strong>L</strong> : Santa Maria, Bulacan, PHL</span>
+          </div>
+        </li>
+        <li class="person-placeholder">
+          <span class="person-name">$\{fullName\}</span>
+        </li>
+        <li class="male details-3">
+          <div class="person-details">
+            <span class="person-name">Rodel "Bong" V. Ajesta</span>
+            <span class="relevant-dates">15 Mar 1977 — Living (${bino.calculateAge('15 Mar 1979', null)})</span>
+            <span class="birth-place"><strong>B</strong> : Pilar, Capiz, Philippines</span>
+            <span class="death-place"><strong>L</strong> : Santa Maria, Bulacan, PHL</span>
+          </div>
+        </li>
+        <li class="female details-3">
+          <div class="person-details">
+            <span class="person-name">Cecil V. Ajesta</span>
+            <span class="relevant-dates">26 Dec 1979 — Living (${bino.calculateAge('26 Dec 1979', null)})</span>
+            <span class="birth-place"><strong>B</strong> : Pilar, Capiz, Philippines</span>
+            <span class="death-place"><strong>L</strong> : Canada</span>
+          </div>
+        </li>
+      </ul>
+    `
+  },
+  'GH12-W17': { // Mamang
     gravemarker: 'GH12-W17.lossy.webp',
+  },
+  'GH12-SVQ': { // Nestor Adanza
+    stories: `
+      <h5>Cause of Death</h5>
+      <p>According to Nestor's death certificate, he died of Acute Myocardial Infarction.</p>
+    `
+  },
+  'GH12-DRN': { // Filomeno Adanza
+    stories: `
+      <h5>Cause of Death</h5>
+      <p>According to Filomeno's death certificate, he died of Pulmonary Tuberculosis.</p>
+    `
   },
   'GH12-DD8': { // Lola Enoria
     stories: `

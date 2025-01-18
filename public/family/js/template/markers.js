@@ -229,6 +229,7 @@ template["FourthMarker"] = function() {
 function marginConditions(marker) {
   const defaultMargins = new bino.Margin(2, 0, 0, 2);
   const margins = {
+    'signature': new bino.Margin(2, 0, 0, -0.025),
     'fishery': new bino.Margin(2, 0, 0, 2.7),
     'prelations': new bino.Margin(3, 0, 0, 2),
     'intelligence': new bino.Margin(1.95, 0, 0, 1.85),

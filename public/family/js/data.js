@@ -76,15 +76,15 @@
     "marker3": "software",
     "fid": "GQX8-CQP",
     "child": "80378400",
+    "paternal_siblings": [
+      "70275697"
+    ],
+    "father": "50954818",
     "maternal_siblings": [
       "21719634",
       "41448711"
     ],
     "mother": "50342947",
-    "paternal_siblings": [
-      "70275697"
-    ],
-    "father": "50954818",
     "regular_siblings": []
   },
   {
@@ -145,8 +145,10 @@
     "suffix": null,
     "vitalsCompleteAndVerified": false,
     "firstName": "Marcial",
-    "marker": "beer",
-    "marker2": "prelations",
+    "hasSignature": true,
+    "marker": "signature",
+    "marker2": "beer",
+    "marker3": "prelations",
     "fid": "GQJK-LCT",
     "child": "50954818",
     "paternal_siblings": [],
@@ -155,9 +157,9 @@
     "mother": "53221118",
     "regular_siblings": [
       "21653420",
+      "36448299",
       "7663556",
-      "85278460",
-      "36448299"
+      "85278460"
     ]
   },
   {
@@ -339,8 +341,8 @@
     "maternal_siblings": [],
     "mother": "25174592",
     "regular_siblings": [
-      "46768390",
-      "31493676"
+      "31493676",
+      "46768390"
     ]
   },
   {
@@ -361,7 +363,7 @@
     "marriagePlace": "Lubao, Pampanga, PHL",
     "middleName": null,
     "nickname": "Andong",
-    "prefix": null,
+    "prefix": "Lt.",
     "suffix": null,
     "vitalsCompleteAndVerified": false,
     "firstName": "Fernando",
@@ -601,7 +603,9 @@
     "vitalsCompleteAndVerified": false,
     "firstName": "Corazon",
     "baptismPlace": "San Roque Cathedral Parish, South Caloocan, PHL",
-    "marker": "housewife",
+    "hasSignature": true,
+    "marker": "signature",
+    "marker2": "housewife",
     "fid": "GQJK-G8W",
     "child": "85203214",
     "paternal_siblings": [],
@@ -635,8 +639,10 @@
     "suffix": "Jr.",
     "vitalsCompleteAndVerified": false,
     "firstName": "Manuel",
-    "marker": "male-twin",
-    "marker2": "seaman",
+    "hasSignature": true,
+    "marker": "signature",
+    "marker2": "male-twin",
+    "marker3": "seaman",
     "fid": "GHBD-7M4",
     "child": "50342947",
     "paternal_siblings": [],
@@ -644,10 +650,10 @@
     "maternal_siblings": [],
     "mother": "54923824",
     "regular_siblings": [
-      "54340914",
+      "12725118",
       "41491264",
-      "73841862",
-      "12725118"
+      "54340914",
+      "73841862"
     ]
   },
   {
@@ -672,8 +678,10 @@
     "suffix": "Sr.",
     "vitalsCompleteAndVerified": false,
     "firstName": "Manuel",
-    "marker": "police",
-    "marker2": "investigate",
+    "hasSignature": true,
+    "marker": "signature",
+    "marker2": "police",
+    "marker3": "investigate",
     "fid": "GHBD-9L6",
     "child": "80469632",
     "paternal_siblings": [],
@@ -681,8 +689,8 @@
     "maternal_siblings": [],
     "mother": "91567169",
     "regular_siblings": [
-      "64329171",
-      "6375936"
+      "6375936",
+      "64329171"
     ]
   },
   {
@@ -735,6 +743,8 @@
     "suffix": null,
     "vitalsCompleteAndVerified": false,
     "firstName": "Maximiana",
+    "hasSignature": true,
+    "marker": "signature",
     "fid": "GHB8-5K8",
     "child": "59135880",
     "paternal_siblings": [],
@@ -763,7 +773,9 @@
     "suffix": null,
     "vitalsCompleteAndVerified": false,
     "firstName": "Natividad",
-    "marker": "housewife",
+    "hasSignature": true,
+    "marker": "signature",
+    "marker2": "housewife",
     "fid": "GHB8-DXY",
     "child": "80469632",
     "paternal_siblings": [],
@@ -850,7 +862,9 @@
     "suffix": null,
     "vitalsCompleteAndVerified": false,
     "firstName": "Catalina",
-    "marker": "housewife",
+    "hasSignature": true,
+    "marker": "signature",
+    "marker2": "housewife",
     "fid": "GHB8-J1B",
     "child": "50342947",
     "paternal_siblings": [],
@@ -858,8 +872,8 @@
     "maternal_siblings": [],
     "mother": "30299840",
     "regular_siblings": [
-      "55618304",
       "42349252",
+      "55618304",
       "95216770",
       "95739264"
     ]
@@ -895,10 +909,10 @@
     "maternal_siblings": [],
     "mother": "50346650",
     "regular_siblings": [
-      "392680",
       "28928680",
-      "57182283",
-      "47386677"
+      "392680",
+      "47386677",
+      "57182283"
     ]
   },
   {

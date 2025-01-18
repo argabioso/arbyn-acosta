@@ -53,7 +53,7 @@ const ui = {
     },
   },
   color: {
-    background: !isDark ? '#f2f3f4' : '#1c1c1d',
+    background: !isDark ? '#f2f3f4' : '#1a1b1c',
     node: {
       background: !isDark ? '#ffffff' : '#252728',
       stroke: !isDark ? '#429537' : '#2E8A21',
@@ -100,6 +100,7 @@ const ui = {
         retail: COLORS.ORANGE.bg,
         sales: COLORS.YELLOW.bg,
         seaman: COLORS.PLAIN.bg,
+        signature: COLORS.PURPLE.bg,
         software: COLORS.PLAIN.bg,
         skull: COLORS.PLAIN.bg,
         train: COLORS.PLAIN.bg,
@@ -137,6 +138,7 @@ const ui = {
         retail: COLORS.ORANGE.fg,
         sales: COLORS.YELLOW.fg,
         seaman: COLORS.PLAIN.fg,
+        signature: COLORS.PURPLE.fg,
         software: COLORS.PLAIN.fg,
         skull: COLORS.PLAIN.fg,
         train: COLORS.PLAIN.fg,
@@ -189,8 +191,8 @@ const ui = {
         0: 410,
         1: 419, // My generation
         2: 409,
-        3: 403,
-        4: 408,
+        3: 408,
+        4: 428,
         5: 389,
         6: 370,
         7: 308,

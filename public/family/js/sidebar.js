@@ -127,6 +127,7 @@ function addPersonDetails(node) {
     'train': 'Railroad Worker',
     'manager': 'Work Manager',
     'sergeant': 'Military Sergeant',
+    'signature': 'Has a signed document',
   }
 
   if (headline) {
