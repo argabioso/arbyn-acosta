@@ -573,6 +573,7 @@ var STORIES = {
     `
   },
   'GHBD-9LY': { // Lola Cresencia
+    headshot: 'GHBD-9LY.signed.webp',
     gravemarker: 'GHB8-GB6.lossy.webp',
   },
   'LLQS-641' : { // Miguel Maramba
@@ -781,6 +782,7 @@ var STORIES = {
     gravemarker: 'GH12-W17.lossy.webp',
   },
   'GH12-SVQ': { // Nestor Adanza
+    headshot: 'GH12-SVQ.signed.webp',
     stories: `
       <h5>Cause of Death</h5>
       <p>According to Nestor's death certificate, he died of Acute Myocardial Infarction.</p>
