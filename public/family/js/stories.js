@@ -739,6 +739,17 @@ var STORIES = {
             <span class="death-place"><strong>D</strong> : Santa Maria, Bulacan, PHL</span>
           </div>
         </li>
+        <li class="female details-3">
+          <div class="person-headshot">
+            <img src="images/people/relatives/nene.lossy.webp" />
+          </div>
+          <div class="person-details">
+            <span class="person-name">Nene V. Ajesta</span>
+            <span class="relevant-dates">Between 1965 and 1970 — Living (${bino.calculateAge('1970', null)}+)</span>
+            <span class="birth-place"><strong>B</strong> : Pilar, Capiz, Philippines</span>
+            <span class="death-place"><strong>L</strong> : Pilar, Capiz, Philippines</span>
+          </div>
+        </li>
         <li class="male details-3">
           <div class="person-headshot">
             <img src="images/people/relatives/rolly.lossy.webp" />
@@ -759,7 +770,7 @@ var STORIES = {
           </div>
           <div class="person-details">
             <span class="person-name">Rodel "Bong" V. Ajesta</span>
-            <span class="relevant-dates">15 Mar 1977 — Living (${bino.calculateAge('15 Mar 1979', null)})</span>
+            <span class="relevant-dates">15 Mar 1977 — Living (${bino.calculateAge('15 Mar 1977', null)})</span>
             <span class="birth-place"><strong>B</strong> : Pilar, Capiz, Philippines</span>
             <span class="death-place"><strong>L</strong> : Santa Maria, Bulacan, PHL</span>
           </div>
@@ -779,6 +790,7 @@ var STORIES = {
     `
   },
   'GH12-W17': { // Mamang
+    headshot: 'GH12-W17.signed.webp',
     gravemarker: 'GH12-W17.lossy.webp',
   },
   'GH12-SVQ': { // Nestor Adanza
