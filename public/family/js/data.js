@@ -76,15 +76,15 @@
     "marker3": "software",
     "fid": "GQX8-CQP",
     "child": "80378400",
-    "paternal_siblings": [
-      "70275697"
-    ],
-    "father": "50954818",
     "maternal_siblings": [
       "21719634",
       "41448711"
     ],
     "mother": "50342947",
+    "paternal_siblings": [
+      "70275697"
+    ],
+    "father": "50954818",
     "regular_siblings": []
   },
   {
@@ -1719,7 +1719,9 @@
     "suffix": null,
     "vitalsCompleteAndVerified": false,
     "firstName": "Selma",
-    "marker": "farming",
+    "hasSignature": true,
+    "marker": "signature",
+    "marker2": "farming",
     "fid": "GH12-W17",
     "child": "55859428",
     "paternal_siblings": [],
