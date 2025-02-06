@@ -23,6 +23,67 @@ class Person(BaseModel):
     name: Name
 
 
+def add_use_none_photo(node):
+  return (
+    not node.get("hasImage")
+    and not node.get("living")
+    and node.get("birthDate") is None
+    and node.get("marriageDate") is None
+    and node.get("deathDate") is None
+    and node.get("birthPlace") is None
+    and node.get("marriagePlace") is None
+    and node.get("deathPlace") is None
+  )
+
+
+def calculate_adjusted_height(node_data):
+    adjusted_height = 95.5
+
+    if node_data["useNonePhoto"]:
+        return adjusted_height - 60
+
+    if "rbyn" in node_data["firstName"]:
+        print(node_data)
+
+    if node_data["birthPlace"] is None:
+        adjusted_height -= 15
+    if node_data["marriagePlace"] is None:
+        adjusted_height -= 15
+    if node_data["deathPlace"] is None and node_data["livingPlace"] is None:
+        adjusted_height -= 15
+
+    return adjusted_height
+
+
+def calculate_photo_scale(node_data):
+    if node_data["useNonePhoto"]:
+      return 0.3
+
+    birth_place = node_data["birthPlace"]
+    death_place = node_data["deathPlace"]
+    marriage_place = node_data["marriagePlace"]
+    living_place = node_data.get("livingPlace")
+
+    if living_place:
+        death_place = living_place
+
+    empty_count = sum([(1 if e is None else 0) for e in [birth_place, death_place, marriage_place]])
+
+    if not node_data["hasImage"] or node_data.get("fid") is None:
+        empty_count = (empty_count + 1) * 4;
+
+    return {
+        0: 0.15525600,
+        1: 0.13400100,
+        2: 0.10978800,
+        3: 0.09175700,
+        4: 0.63904221 / 3,
+        8: 0.57759585 / 3,
+        12: 0.47322855 / 3,
+        16: 0.39550800 / 3,
+    }.get(empty_count, 1.0)
+
+
 def main():
     path = "tree.ged"
 
@@ -265,6 +326,14 @@ def main():
     data = build_family_tree(data)
     # print(json_lib.dumps(data, indent=2))
 
+    for i, person in enumerate(data):
+        data[i]["useNonePhoto"] = add_use_none_photo(person)
+        data[i]["height"] = calculate_adjusted_height(person)
+        data[i]["photoScale"] = calculate_photo_scale(person)
+        data[i]["detailsRow1"] = {}
+        data[i]["detailsRow2"] = {}
+        data[i]["detailsRow3"] = {}
+        data[i]["detailsRow4"] = {}
 
     file_output = '''
         // Age for Mothers (youngest ever was 9) so let's use 10

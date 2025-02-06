@@ -1,3 +1,11 @@
+import { MARKER_SYMBOLS } from './marker_symbols.js';
+import { STORIES } from './stories.js';
+import { TREE_KEYMAP } from './preprocess.js';
+import {
+  MARKER_BACKGROUND_COLORS,
+  MARKER_FOREGROUND_COLORS,
+} from './settings.js';
+
 // Function to handle the click event on a node and show the sidebar
 
 function setScrollPos(selector, scroll) {
@@ -9,7 +17,22 @@ function setScrollPos(selector, scroll) {
   }
 }
 
-function showSidebar(node) {
+function addQueryParam(key, value) {
+  const currentUrl = new URL(window.location);
+  currentUrl.searchParams.set(key, value);
+  window.history.replaceState({}, '', currentUrl);
+}
+
+function encodeUtf8ToUrlSafeBase64(str) {
+  const utf8Bytes = new TextEncoder().encode(str);
+  const binaryString = String.fromCharCode(...utf8Bytes);
+  let base64String = btoa(binaryString);
+  // Convert to URL-safe Base64
+  base64String = base64String.replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
+  return base64String;
+}
+
+export const showSidebar = (node) => {
   // Check if the <div> for this node's details already exists
   var existingDiv = document.getElementById("details-" + node.key);
 
@@ -85,9 +108,7 @@ function addPersonDetails(node) {
       headshotFilename = STORIES[node.data.fid]['headshot'];
     }
     if (STORIES[node.data.fid]['headshotDark'] && isDark) {
-      console.log("EME")
       headshotFilename = STORIES[node.data.fid]['headshotDark'];
-      console.log(headshotFilename)
     } else if (STORIES[node.data.fid]['headshotLight'] && !isDark) {
       headshotFilename = STORIES[node.data.fid]['headshotLight'];
     }
@@ -182,10 +203,10 @@ function addPersonDetails(node) {
   if (node.data.hasDNA) {
     tempInnerHTML += `
       <span class="badge rounded-pill story-marker" style="
-        background: ${adjustBrightness(ui.color.marker.background.dna, 3 * (!isDark ? -1 : 1))};
-        color: ${adjustBrightness(ui.color.marker.foreground.dna, 5 * (!isDark ? -1 : 1))};
+        background: ${adjustBrightness(MARKER_BACKGROUND_COLORS.dna, 3 * (!isDark ? -1 : 1))};
+        color: ${adjustBrightness(MARKER_FOREGROUND_COLORS.dna, 5 * (!isDark ? -1 : 1))};
       ">
-        <img src=${MARKERS['dna']} />
+        <img src=${MARKER_SYMBOLS['dna']} />
         ${storyMarkerLabel['dna']}
       </span>
     `
@@ -198,10 +219,10 @@ function addPersonDetails(node) {
     if (marker !== undefined) {
       tempInnerHTML += `
         <span class="badge rounded-pill story-marker" style="
-          background: ${adjustBrightness(ui.color.marker.background[marker], 3 * (!isDark ? -1 : 1))};
-          color: ${adjustBrightness(ui.color.marker.foreground[marker], 5 * (!isDark ? -1 : 1))};
+          background: ${adjustBrightness(MARKER_BACKGROUND_COLORS[marker], 3 * (!isDark ? -1 : 1))};
+          color: ${adjustBrightness(MARKER_FOREGROUND_COLORS[marker], 5 * (!isDark ? -1 : 1))};
         ">
-          <img src=${MARKERS[marker]} />
+          <img src=${MARKER_SYMBOLS[marker]} />
           ${markerLabel}
         </span>
       `
@@ -238,10 +259,14 @@ function addPersonDetails(node) {
   }
 
   // Add gravemarker if photo is indicated
+  let graveStory = STORIES[node.data.fid].graveStory;
+  graveStory = (graveStory === undefined) ? '' : `<p>${graveStory}</p>`;
+
   if (STORIES[node.data.fid] && STORIES[node.data.fid].gravemarker !== undefined) {
     tempInnerHTML += `
       <hr />
       <h5>Grave Marker</h5>
+      ${graveStory}
       <figure>
         <img alt="Grave Marker photo" src="images/gravemarkers/${STORIES[node.data.fid].gravemarker}" />
         <p class="caption"><em>${node.data.basicName}'s grave marker photo.</em></p>

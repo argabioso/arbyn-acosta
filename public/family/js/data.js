@@ -41,13 +41,19 @@
     "vitalsCompleteAndVerified": false,
     "firstName": "Yeusef Loran",
     "fid": "G1Q7-J85",
-    "height": 0,
+    "height": 50.5,
     "width": 0,
     "paternal_siblings": [],
     "father": "85203214",
     "maternal_siblings": [],
     "mother": "16057808",
-    "regular_siblings": []
+    "regular_siblings": [],
+    "useNonePhoto": false,
+    "photoScale": 0.131836,
+    "detailsRow1": {},
+    "detailsRow2": {},
+    "detailsRow3": {},
+    "detailsRow4": {}
   },
   {
     "baptismDate": "1995-05-27",
@@ -76,16 +82,23 @@
     "marker3": "software",
     "fid": "GQX8-CQP",
     "child": "80378400",
+    "paternal_siblings": [
+      "70275697"
+    ],
+    "father": "50954818",
     "maternal_siblings": [
       "21719634",
       "41448711"
     ],
     "mother": "50342947",
-    "paternal_siblings": [
-      "70275697"
-    ],
-    "father": "50954818",
-    "regular_siblings": []
+    "regular_siblings": [],
+    "useNonePhoto": false,
+    "height": 95.5,
+    "photoScale": 0.155256,
+    "detailsRow1": {},
+    "detailsRow2": {},
+    "detailsRow3": {},
+    "detailsRow4": {}
   },
   {
     "baptismDate": null,
@@ -121,7 +134,14 @@
     "regular_siblings": [
       "4793299",
       "48615922"
-    ]
+    ],
+    "useNonePhoto": false,
+    "height": 95.5,
+    "photoScale": 0.155256,
+    "detailsRow1": {},
+    "detailsRow2": {},
+    "detailsRow3": {},
+    "detailsRow4": {}
   },
   {
     "baptismDate": null,
@@ -160,7 +180,14 @@
       "36448299",
       "7663556",
       "85278460"
-    ]
+    ],
+    "useNonePhoto": false,
+    "height": 95.5,
+    "photoScale": 0.155256,
+    "detailsRow1": {},
+    "detailsRow2": {},
+    "detailsRow3": {},
+    "detailsRow4": {}
   },
   {
     "baptismDate": null,
@@ -193,7 +220,14 @@
     ],
     "mother": "17601526",
     "paternal_siblings": [],
-    "regular_siblings": []
+    "regular_siblings": [],
+    "useNonePhoto": false,
+    "height": 80.5,
+    "photoScale": 0.19253195,
+    "detailsRow1": {},
+    "detailsRow2": {},
+    "detailsRow3": {},
+    "detailsRow4": {}
   },
   {
     "baptismDate": null,
@@ -224,7 +258,14 @@
     "father": "24157287",
     "maternal_siblings": [],
     "mother": "1093684",
-    "regular_siblings": []
+    "regular_siblings": [],
+    "useNonePhoto": false,
+    "height": 80.5,
+    "photoScale": 0.19253195,
+    "detailsRow1": {},
+    "detailsRow2": {},
+    "detailsRow3": {},
+    "detailsRow4": {}
   },
   {
     "baptismDate": null,
@@ -252,7 +293,14 @@
     "child": "17601526",
     "paternal_siblings": [],
     "maternal_siblings": [],
-    "regular_siblings": []
+    "regular_siblings": [],
+    "useNonePhoto": true,
+    "height": 35.5,
+    "photoScale": 0.3,
+    "detailsRow1": {},
+    "detailsRow2": {},
+    "detailsRow3": {},
+    "detailsRow4": {}
   },
   {
     "baptismDate": null,
@@ -280,7 +328,14 @@
     "child": "17601526",
     "paternal_siblings": [],
     "maternal_siblings": [],
-    "regular_siblings": []
+    "regular_siblings": [],
+    "useNonePhoto": true,
+    "height": 35.5,
+    "photoScale": 0.3,
+    "detailsRow1": {},
+    "detailsRow2": {},
+    "detailsRow3": {},
+    "detailsRow4": {}
   },
   {
     "baptismDate": null,
@@ -308,7 +363,14 @@
     "child": "96832424",
     "paternal_siblings": [],
     "maternal_siblings": [],
-    "regular_siblings": []
+    "regular_siblings": [],
+    "useNonePhoto": false,
+    "height": 50.5,
+    "photoScale": 0.131836,
+    "detailsRow1": {},
+    "detailsRow2": {},
+    "detailsRow3": {},
+    "detailsRow4": {}
   },
   {
     "baptismDate": null,
@@ -343,7 +405,14 @@
     "regular_siblings": [
       "31493676",
       "46768390"
-    ]
+    ],
+    "useNonePhoto": false,
+    "height": 95.5,
+    "photoScale": 0.155256,
+    "detailsRow1": {},
+    "detailsRow2": {},
+    "detailsRow3": {},
+    "detailsRow4": {}
   },
   {
     "baptismDate": null,
@@ -378,7 +447,14 @@
     "regular_siblings": [
       "38373110",
       "40891293"
-    ]
+    ],
+    "useNonePhoto": false,
+    "height": 95.5,
+    "photoScale": 0.155256,
+    "detailsRow1": {},
+    "detailsRow2": {},
+    "detailsRow3": {},
+    "detailsRow4": {}
   },
   {
     "baptismDate": null,
@@ -406,7 +482,14 @@
     "child": "78763160",
     "paternal_siblings": [],
     "maternal_siblings": [],
-    "regular_siblings": []
+    "regular_siblings": [],
+    "useNonePhoto": false,
+    "height": 80.5,
+    "photoScale": 0.19253195,
+    "detailsRow1": {},
+    "detailsRow2": {},
+    "detailsRow3": {},
+    "detailsRow4": {}
   },
   {
     "baptismDate": null,
@@ -436,7 +519,14 @@
     "father": "12094064",
     "maternal_siblings": [],
     "mother": "14775735",
-    "regular_siblings": []
+    "regular_siblings": [],
+    "useNonePhoto": false,
+    "height": 80.5,
+    "photoScale": 0.19253195,
+    "detailsRow1": {},
+    "detailsRow2": {},
+    "detailsRow3": {},
+    "detailsRow4": {}
   },
   {
     "baptismDate": null,
@@ -463,7 +553,14 @@
     "child": "66525244",
     "paternal_siblings": [],
     "maternal_siblings": [],
-    "regular_siblings": []
+    "regular_siblings": [],
+    "useNonePhoto": true,
+    "height": 35.5,
+    "photoScale": 0.3,
+    "detailsRow1": {},
+    "detailsRow2": {},
+    "detailsRow3": {},
+    "detailsRow4": {}
   },
   {
     "baptismDate": null,
@@ -490,7 +587,14 @@
     "child": "66525244",
     "paternal_siblings": [],
     "maternal_siblings": [],
-    "regular_siblings": []
+    "regular_siblings": [],
+    "useNonePhoto": true,
+    "height": 35.5,
+    "photoScale": 0.3,
+    "detailsRow1": {},
+    "detailsRow2": {},
+    "detailsRow3": {},
+    "detailsRow4": {}
   },
   {
     "baptismDate": null,
@@ -521,7 +625,14 @@
     "father": "65750680",
     "maternal_siblings": [],
     "mother": "40517733",
-    "regular_siblings": []
+    "regular_siblings": [],
+    "useNonePhoto": false,
+    "height": 95.5,
+    "photoScale": 0.155256,
+    "detailsRow1": {},
+    "detailsRow2": {},
+    "detailsRow3": {},
+    "detailsRow4": {}
   },
   {
     "baptismDate": null,
@@ -550,7 +661,14 @@
     "child": "25174592",
     "paternal_siblings": [],
     "maternal_siblings": [],
-    "regular_siblings": []
+    "regular_siblings": [],
+    "useNonePhoto": false,
+    "height": 50.5,
+    "photoScale": 0.131836,
+    "detailsRow1": {},
+    "detailsRow2": {},
+    "detailsRow3": {},
+    "detailsRow4": {}
   },
   {
     "baptismDate": null,
@@ -578,7 +696,14 @@
     "child": "25174592",
     "paternal_siblings": [],
     "maternal_siblings": [],
-    "regular_siblings": []
+    "regular_siblings": [],
+    "useNonePhoto": true,
+    "height": 35.5,
+    "photoScale": 0.3,
+    "detailsRow1": {},
+    "detailsRow2": {},
+    "detailsRow3": {},
+    "detailsRow4": {}
   },
   {
     "baptismDate": "1971-09-05",
@@ -615,7 +740,14 @@
     "regular_siblings": [
       "4256552",
       "77082334"
-    ]
+    ],
+    "useNonePhoto": false,
+    "height": 95.5,
+    "photoScale": 0.155256,
+    "detailsRow1": {},
+    "detailsRow2": {},
+    "detailsRow3": {},
+    "detailsRow4": {}
   },
   {
     "baptismDate": null,
@@ -654,7 +786,14 @@
       "41491264",
       "54340914",
       "73841862"
-    ]
+    ],
+    "useNonePhoto": false,
+    "height": 95.5,
+    "photoScale": 0.155256,
+    "detailsRow1": {},
+    "detailsRow2": {},
+    "detailsRow3": {},
+    "detailsRow4": {}
   },
   {
     "baptismDate": null,
@@ -691,7 +830,14 @@
     "regular_siblings": [
       "6375936",
       "64329171"
-    ]
+    ],
+    "useNonePhoto": false,
+    "height": 95.5,
+    "photoScale": 0.155256,
+    "detailsRow1": {},
+    "detailsRow2": {},
+    "detailsRow3": {},
+    "detailsRow4": {}
   },
   {
     "baptismDate": null,
@@ -719,7 +865,14 @@
     "child": "59135880",
     "paternal_siblings": [],
     "maternal_siblings": [],
-    "regular_siblings": []
+    "regular_siblings": [],
+    "useNonePhoto": false,
+    "height": 80.5,
+    "photoScale": 0.19253195,
+    "detailsRow1": {},
+    "detailsRow2": {},
+    "detailsRow3": {},
+    "detailsRow4": {}
   },
   {
     "baptismDate": null,
@@ -749,7 +902,14 @@
     "child": "59135880",
     "paternal_siblings": [],
     "maternal_siblings": [],
-    "regular_siblings": []
+    "regular_siblings": [],
+    "useNonePhoto": false,
+    "height": 65.5,
+    "photoScale": 0.15774285000000002,
+    "detailsRow1": {},
+    "detailsRow2": {},
+    "detailsRow3": {},
+    "detailsRow4": {}
   },
   {
     "baptismDate": null,
@@ -782,7 +942,14 @@
     "father": "79826472",
     "maternal_siblings": [],
     "mother": "45640239",
-    "regular_siblings": []
+    "regular_siblings": [],
+    "useNonePhoto": false,
+    "height": 95.5,
+    "photoScale": 0.155256,
+    "detailsRow1": {},
+    "detailsRow2": {},
+    "detailsRow3": {},
+    "detailsRow4": {}
   },
   {
     "baptismDate": null,
@@ -810,7 +977,14 @@
     "child": "54923824",
     "paternal_siblings": [],
     "maternal_siblings": [],
-    "regular_siblings": []
+    "regular_siblings": [],
+    "useNonePhoto": true,
+    "height": 35.5,
+    "photoScale": 0.3,
+    "detailsRow1": {},
+    "detailsRow2": {},
+    "detailsRow3": {},
+    "detailsRow4": {}
   },
   {
     "baptismDate": null,
@@ -838,7 +1012,14 @@
     "child": "54923824",
     "paternal_siblings": [],
     "maternal_siblings": [],
-    "regular_siblings": []
+    "regular_siblings": [],
+    "useNonePhoto": true,
+    "height": 35.5,
+    "photoScale": 0.3,
+    "detailsRow1": {},
+    "detailsRow2": {},
+    "detailsRow3": {},
+    "detailsRow4": {}
   },
   {
     "baptismDate": null,
@@ -876,7 +1057,14 @@
       "55618304",
       "95216770",
       "95739264"
-    ]
+    ],
+    "useNonePhoto": false,
+    "height": 95.5,
+    "photoScale": 0.155256,
+    "detailsRow1": {},
+    "detailsRow2": {},
+    "detailsRow3": {},
+    "detailsRow4": {}
   },
   {
     "baptismDate": null,
@@ -913,7 +1101,14 @@
       "392680",
       "47386677",
       "57182283"
-    ]
+    ],
+    "useNonePhoto": false,
+    "height": 95.5,
+    "photoScale": 0.155256,
+    "detailsRow1": {},
+    "detailsRow2": {},
+    "detailsRow3": {},
+    "detailsRow4": {}
   },
   {
     "baptismDate": null,
@@ -946,7 +1141,14 @@
     "mother": "53643498",
     "regular_siblings": [
       "93051591"
-    ]
+    ],
+    "useNonePhoto": false,
+    "height": 80.5,
+    "photoScale": 0.19253195,
+    "detailsRow1": {},
+    "detailsRow2": {},
+    "detailsRow3": {},
+    "detailsRow4": {}
   },
   {
     "baptismDate": null,
@@ -976,7 +1178,14 @@
     "child": "51683352",
     "paternal_siblings": [],
     "maternal_siblings": [],
-    "regular_siblings": []
+    "regular_siblings": [],
+    "useNonePhoto": false,
+    "height": 65.5,
+    "photoScale": 0.15774285000000002,
+    "detailsRow1": {},
+    "detailsRow2": {},
+    "detailsRow3": {},
+    "detailsRow4": {}
   },
   {
     "baptismDate": null,
@@ -1006,7 +1215,14 @@
     "father": "85964364",
     "maternal_siblings": [],
     "mother": "89545654",
-    "regular_siblings": []
+    "regular_siblings": [],
+    "useNonePhoto": false,
+    "height": 65.5,
+    "photoScale": 0.15774285000000002,
+    "detailsRow1": {},
+    "detailsRow2": {},
+    "detailsRow3": {},
+    "detailsRow4": {}
   },
   {
     "baptismDate": null,
@@ -1035,7 +1251,14 @@
     "child": "53643498",
     "paternal_siblings": [],
     "maternal_siblings": [],
-    "regular_siblings": []
+    "regular_siblings": [],
+    "useNonePhoto": false,
+    "height": 50.5,
+    "photoScale": 0.131836,
+    "detailsRow1": {},
+    "detailsRow2": {},
+    "detailsRow3": {},
+    "detailsRow4": {}
   },
   {
     "baptismDate": null,
@@ -1063,7 +1286,14 @@
     "child": "53643498",
     "paternal_siblings": [],
     "maternal_siblings": [],
-    "regular_siblings": []
+    "regular_siblings": [],
+    "useNonePhoto": true,
+    "height": 35.5,
+    "photoScale": 0.3,
+    "detailsRow1": {},
+    "detailsRow2": {},
+    "detailsRow3": {},
+    "detailsRow4": {}
   },
   {
     "baptismDate": null,
@@ -1093,7 +1323,14 @@
     "father": "23571091",
     "maternal_siblings": [],
     "mother": "90879248",
-    "regular_siblings": []
+    "regular_siblings": [],
+    "useNonePhoto": true,
+    "height": 35.5,
+    "photoScale": 0.3,
+    "detailsRow1": {},
+    "detailsRow2": {},
+    "detailsRow3": {},
+    "detailsRow4": {}
   },
   {
     "baptismDate": null,
@@ -1121,7 +1358,14 @@
     "child": "50346650",
     "paternal_siblings": [],
     "maternal_siblings": [],
-    "regular_siblings": []
+    "regular_siblings": [],
+    "useNonePhoto": true,
+    "height": 35.5,
+    "photoScale": 0.3,
+    "detailsRow1": {},
+    "detailsRow2": {},
+    "detailsRow3": {},
+    "detailsRow4": {}
   },
   {
     "baptismDate": null,
@@ -1149,7 +1393,14 @@
     "child": "50346650",
     "paternal_siblings": [],
     "maternal_siblings": [],
-    "regular_siblings": []
+    "regular_siblings": [],
+    "useNonePhoto": true,
+    "height": 35.5,
+    "photoScale": 0.3,
+    "detailsRow1": {},
+    "detailsRow2": {},
+    "detailsRow3": {},
+    "detailsRow4": {}
   },
   {
     "baptismDate": null,
@@ -1182,7 +1433,14 @@
     "maternal_siblings": [],
     "mother": "78945712",
     "paternal_siblings": [],
-    "regular_siblings": []
+    "regular_siblings": [],
+    "useNonePhoto": false,
+    "height": 95.5,
+    "photoScale": 0.155256,
+    "detailsRow1": {},
+    "detailsRow2": {},
+    "detailsRow3": {},
+    "detailsRow4": {}
   },
   {
     "baptismDate": null,
@@ -1210,7 +1468,14 @@
     "child": "30299840",
     "paternal_siblings": [],
     "maternal_siblings": [],
-    "regular_siblings": []
+    "regular_siblings": [],
+    "useNonePhoto": false,
+    "height": 65.5,
+    "photoScale": 0.109788,
+    "detailsRow1": {},
+    "detailsRow2": {},
+    "detailsRow3": {},
+    "detailsRow4": {}
   },
   {
     "baptismDate": null,
@@ -1244,7 +1509,14 @@
     "mother": "55859428",
     "regular_siblings": [
       "1031404"
-    ]
+    ],
+    "useNonePhoto": false,
+    "height": 95.5,
+    "photoScale": 0.155256,
+    "detailsRow1": {},
+    "detailsRow2": {},
+    "detailsRow3": {},
+    "detailsRow4": {}
   },
   {
     "baptismDate": null,
@@ -1278,8 +1550,16 @@
     "maternal_siblings": [],
     "mother": "18589217",
     "regular_siblings": [
+      "55460122",
       "78074094"
-    ]
+    ],
+    "useNonePhoto": false,
+    "height": 95.5,
+    "photoScale": 0.155256,
+    "detailsRow1": {},
+    "detailsRow2": {},
+    "detailsRow3": {},
+    "detailsRow4": {}
   },
   {
     "baptismDate": null,
@@ -1312,7 +1592,14 @@
     "father": "64714771",
     "maternal_siblings": [],
     "mother": "58814600",
-    "regular_siblings": []
+    "regular_siblings": [],
+    "useNonePhoto": false,
+    "height": 95.5,
+    "photoScale": 0.155256,
+    "detailsRow1": {},
+    "detailsRow2": {},
+    "detailsRow3": {},
+    "detailsRow4": {}
   },
   {
     "baptismDate": null,
@@ -1341,7 +1628,14 @@
     "child": "32818992",
     "paternal_siblings": [],
     "maternal_siblings": [],
-    "regular_siblings": []
+    "regular_siblings": [],
+    "useNonePhoto": false,
+    "height": 95.5,
+    "photoScale": 0.155256,
+    "detailsRow1": {},
+    "detailsRow2": {},
+    "detailsRow3": {},
+    "detailsRow4": {}
   },
   {
     "baptismDate": null,
@@ -1369,7 +1663,14 @@
     "child": "32818992",
     "paternal_siblings": [],
     "maternal_siblings": [],
-    "regular_siblings": []
+    "regular_siblings": [],
+    "useNonePhoto": false,
+    "height": 95.5,
+    "photoScale": 0.155256,
+    "detailsRow1": {},
+    "detailsRow2": {},
+    "detailsRow3": {},
+    "detailsRow4": {}
   },
   {
     "baptismDate": null,
@@ -1400,7 +1701,14 @@
     "father": "36360078",
     "maternal_siblings": [],
     "mother": "55588060",
-    "regular_siblings": []
+    "regular_siblings": [],
+    "useNonePhoto": false,
+    "height": 95.5,
+    "photoScale": 0.155256,
+    "detailsRow1": {},
+    "detailsRow2": {},
+    "detailsRow3": {},
+    "detailsRow4": {}
   },
   {
     "baptismDate": null,
@@ -1429,7 +1737,14 @@
     "child": "18589217",
     "paternal_siblings": [],
     "maternal_siblings": [],
-    "regular_siblings": []
+    "regular_siblings": [],
+    "useNonePhoto": false,
+    "height": 65.5,
+    "photoScale": 0.15774285000000002,
+    "detailsRow1": {},
+    "detailsRow2": {},
+    "detailsRow3": {},
+    "detailsRow4": {}
   },
   {
     "baptismDate": null,
@@ -1457,7 +1772,14 @@
     "child": "18589217",
     "paternal_siblings": [],
     "maternal_siblings": [],
-    "regular_siblings": []
+    "regular_siblings": [],
+    "useNonePhoto": true,
+    "height": 35.5,
+    "photoScale": 0.3,
+    "detailsRow1": {},
+    "detailsRow2": {},
+    "detailsRow3": {},
+    "detailsRow4": {}
   },
   {
     "baptismDate": null,
@@ -1491,9 +1813,19 @@
     "maternal_siblings": [],
     "mother": "64719992",
     "regular_siblings": [
+      "12480511",
+      "39029788",
       "44750858",
+      "4993776",
       "57433236"
-    ]
+    ],
+    "useNonePhoto": false,
+    "height": 95.5,
+    "photoScale": 0.155256,
+    "detailsRow1": {},
+    "detailsRow2": {},
+    "detailsRow3": {},
+    "detailsRow4": {}
   },
   {
     "baptismDate": null,
@@ -1523,7 +1855,14 @@
     "father": "40943586",
     "maternal_siblings": [],
     "mother": "99295715",
-    "regular_siblings": []
+    "regular_siblings": [],
+    "useNonePhoto": false,
+    "height": 95.5,
+    "photoScale": 0.21301407000000003,
+    "detailsRow1": {},
+    "detailsRow2": {},
+    "detailsRow3": {},
+    "detailsRow4": {}
   },
   {
     "baptismDate": null,
@@ -1553,7 +1892,14 @@
     "father": "52727694",
     "maternal_siblings": [],
     "mother": "35729864",
-    "regular_siblings": []
+    "regular_siblings": [],
+    "useNonePhoto": false,
+    "height": 80.5,
+    "photoScale": 0.19253195,
+    "detailsRow1": {},
+    "detailsRow2": {},
+    "detailsRow3": {},
+    "detailsRow4": {}
   },
   {
     "baptismDate": null,
@@ -1581,7 +1927,14 @@
     "child": "40943586",
     "paternal_siblings": [],
     "maternal_siblings": [],
-    "regular_siblings": []
+    "regular_siblings": [],
+    "useNonePhoto": true,
+    "height": 35.5,
+    "photoScale": 0.3,
+    "detailsRow1": {},
+    "detailsRow2": {},
+    "detailsRow3": {},
+    "detailsRow4": {}
   },
   {
     "baptismDate": null,
@@ -1609,7 +1962,14 @@
     "child": "40943586",
     "paternal_siblings": [],
     "maternal_siblings": [],
-    "regular_siblings": []
+    "regular_siblings": [],
+    "useNonePhoto": true,
+    "height": 35.5,
+    "photoScale": 0.3,
+    "detailsRow1": {},
+    "detailsRow2": {},
+    "detailsRow3": {},
+    "detailsRow4": {}
   },
   {
     "baptismDate": null,
@@ -1639,7 +1999,14 @@
     "father": "95408617",
     "maternal_siblings": [],
     "mother": "78914496",
-    "regular_siblings": []
+    "regular_siblings": [],
+    "useNonePhoto": false,
+    "height": 65.5,
+    "photoScale": 0.15774285000000002,
+    "detailsRow1": {},
+    "detailsRow2": {},
+    "detailsRow3": {},
+    "detailsRow4": {}
   },
   {
     "baptismDate": null,
@@ -1667,7 +2034,14 @@
     "child": "99295715",
     "paternal_siblings": [],
     "maternal_siblings": [],
-    "regular_siblings": []
+    "regular_siblings": [],
+    "useNonePhoto": true,
+    "height": 35.5,
+    "photoScale": 0.3,
+    "detailsRow1": {},
+    "detailsRow2": {},
+    "detailsRow3": {},
+    "detailsRow4": {}
   },
   {
     "baptismDate": null,
@@ -1695,7 +2069,14 @@
     "child": "99295715",
     "paternal_siblings": [],
     "maternal_siblings": [],
-    "regular_siblings": []
+    "regular_siblings": [],
+    "useNonePhoto": false,
+    "height": 80.5,
+    "photoScale": 0.19253195,
+    "detailsRow1": {},
+    "detailsRow2": {},
+    "detailsRow3": {},
+    "detailsRow4": {}
   },
   {
     "baptismDate": null,
@@ -1728,7 +2109,14 @@
     "father": "27738578",
     "maternal_siblings": [],
     "mother": "47733294",
-    "regular_siblings": []
+    "regular_siblings": [],
+    "useNonePhoto": false,
+    "height": 95.5,
+    "photoScale": 0.155256,
+    "detailsRow1": {},
+    "detailsRow2": {},
+    "detailsRow3": {},
+    "detailsRow4": {}
   },
   {
     "baptismDate": null,
@@ -1757,7 +2145,14 @@
     "child": "64719992",
     "paternal_siblings": [],
     "maternal_siblings": [],
-    "regular_siblings": []
+    "regular_siblings": [],
+    "useNonePhoto": false,
+    "height": 65.5,
+    "photoScale": 0.15774285000000002,
+    "detailsRow1": {},
+    "detailsRow2": {},
+    "detailsRow3": {},
+    "detailsRow4": {}
   },
   {
     "baptismDate": null,
@@ -1786,6 +2181,13 @@
     "child": "64719992",
     "paternal_siblings": [],
     "maternal_siblings": [],
-    "regular_siblings": []
+    "regular_siblings": [],
+    "useNonePhoto": false,
+    "height": 95.5,
+    "photoScale": 0.155256,
+    "detailsRow1": {},
+    "detailsRow2": {},
+    "detailsRow3": {},
+    "detailsRow4": {}
   }
 ];

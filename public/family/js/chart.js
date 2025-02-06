@@ -55,7 +55,7 @@ Model data should not have any references to a Diagram or any part of a diagram,
   "function"===typeof define&&define.amd&&define("undefined"!==typeof global?global.go:self.go);
   'undefined'!==typeof module&&'object'===typeof module.exports&&(module.exports='undefined'!==typeof global?global.go:self.go);
 
-const bino = go;
+export const bino = go;
 
 class TopLeftBorderRadius extends bino.Shape {
   constructor() {
@@ -104,4 +104,4 @@ bino.Shape.defineFigureGenerator('BottomLeftBorderRadius', (shape) => {
 });
 
 // For conciseness. See the "Building Parts" intro page for more
-var $ = bino.GraphObject.make;
+export const $ = bino.GraphObject.make;

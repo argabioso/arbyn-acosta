@@ -1,5 +1,249 @@
-var TREE_KEYMAP = {};
-var TREE_FIDMAP = {};
+import {
+  IS_PRIVATE,
+  TREE_NODE_BASE_HEIGHT,
+}  from './settings.js';
+
+export const TREE_KEYMAP = {};
+export const TREE_FIDMAP = {};
+
+/**
+ * Get lifespan information from given nodeData.
+ * @param {Object} nodeData - Contains living, birthDate, and deathDate data.
+ * @return {string} Formatted lifespan string.
+ */
+const getRelativeDates = function(nodeData, isPrivate) {
+  if (nodeData.useNonePhoto) {
+    return "";
+  }
+
+  const separator = ' — ';
+  const { living, birthDate, marriageDate, deathDate } = nodeData;
+
+  let rawAge = calculateAge(birthDate, deathDate)
+  let age = rawAge;
+
+  const birthYear = formatDate(nodeData.birthDate, isPrivate && nodeData.living);
+  const marriageYear = formatDate(nodeData.marriageDate, isPrivate && nodeData.living);
+  const deathYear = formatDate(nodeData.deathDate, false);
+
+  // If both birthYear and deathYear do not exist, return
+  // "Living" or "Deceased" based on the living flag.
+  if (!birthYear && !deathYear && !marriageYear) {
+    return living ? 'Living' : 'Deceased';
+  }
+
+  // If birthYear does not exist, return the
+  // formatted deathYear with a separator.
+  if (!birthYear) {
+    let age = (nodeData.deathAge) ? ` (${nodeData.deathAge})` : '';
+
+    if (!marriageYear) {
+      return `${separator}${deathYear}${age}`;
+    }
+    if (!deathYear) {
+      return `${separator}${marriageYear}${separator}${living ? 'Living' : 'Deceased'}${age}`;
+    }
+    return `${separator}${marriageYear}${separator}${deathYear}${age}`;
+  }
+
+  // Do not show negative ages
+  if (age < 0) {
+    age = "NaN";
+  }
+
+  // If deathYear does not exist, return the formatted
+  // `birthYear` with a separator and "Living" or "Deceased"
+  // based on the living flag.
+  if (!deathYear) {
+    if (nodeData.deathAge) {
+      age = nodeData.deathAge;
+    }
+
+    if (String(age).includes("NaN")) {
+      if (!marriageYear) {
+        return `${birthYear}${separator}${living ? 'Living' : 'Deceased'}`;
+      } else {
+        return `${birthYear}${separator}${marriageYear}${separator}${living ? 'Living' : 'Deceased'}`;
+      }
+    }
+    if (!marriageYear) {
+      return `${birthYear}${separator}${living ? 'Living' : 'Deceased'}` + (living ? ` (${age})` : '');
+    } else {
+      return `${birthYear}${separator}${marriageYear}${separator}${living ? 'Living' : 'Deceased'}` + (living ? ` (${age})` : '');
+    }
+  }
+
+  if (deathDate.includes('after')) {
+    if (birthDate.includes('after')) {
+      age = `~${rawAge}`;
+    } else if (birthDate.includes('before')) {
+      age = `${rawAge}+`;
+    } else if (birthDate.includes('about')) {
+      age = `${rawAge}+`;
+    } else {
+      age = `${rawAge}+`;
+    }
+  } else if (deathDate.includes('before')) {
+    if (birthDate.includes('after')) {
+      age = `${rawAge}-`;
+    } else if (birthDate.includes('before')) {
+      age = `~${rawAge}`;
+    } else if (birthDate.includes('about')) {
+      age = `${rawAge}-`;
+    } else {
+      age = `${rawAge}-`;
+    }
+  } else if (deathDate.includes('about')) {
+    age = `~${rawAge}`;
+  } else {
+    if (birthDate.includes('after')) {
+      age = `${rawAge}-`;
+    } else if (birthDate.includes('before')) {
+      age = `${rawAge}+`;
+    } else if (birthDate.includes('about')) {
+      age = `~${rawAge}`;
+    }
+  }
+
+  if (nodeData.deathAge) {
+    age = nodeData.deathAge;
+  }
+
+  if (String(age).includes("NaN")) {
+    if (!marriageYear) {
+      return `${birthYear}${separator}${deathYear}`;
+    } else {
+      return `${birthYear}${separator}${marriageYear}${separator}${deathYear}`;
+    }
+  }
+
+  // If both birthYear and deathYear exist,
+  // return the formatted lifespan string.
+  if (!marriageYear) {
+    return `${birthYear}${separator}${deathYear} (${age})`;
+  } else {
+    return `${birthYear}${separator}${marriageYear}${separator}${deathYear} (${age})`;
+  }
+}
+
+/**
+ * Converts country codes in the input string to their full country names.
+ *
+ * @param {string|null|undefined} input - The input string potentially containing a country code.
+ * @returns {string|null|undefined} - The input with country codes replaced by full country names.
+ */
+const convertCountryCode = function(input) {
+  if (!input) {
+    return input;
+  }
+
+  const lookup = {
+    'USA': 'United States of America',
+    'PHL': 'Philippines',
+    'BHR': 'Bahrain',
+    // ... add other country codes and names as needed
+  };
+
+  const segments = input.split(',').map(segment => segment.trim());
+  if (input.length < 37) {
+    segments[segments.length - 1] = lookup[segments[segments.length - 1]]
+  }
+
+  // // If only one segment and it's a known country code, return the full name
+  // if (segments.length === 1 && lookup[segments[0]]) {
+  //   return lookup[segments[0]];
+  // }
+
+  // // If two segments and the second one is a known country code, replace it with the full name
+  // if (segments.length === 2 && lookup[segments[1]]) {
+  //   segments[1] = lookup[segments[1]];
+  // }
+
+  let output = segments.join(', ');
+  if (output.length >= 44 && output.toLowerCase().includes("south caloocan")) {
+    output = output.replace("South Caloocan", "S. Caloocan");
+  }
+
+  return output;
+}
+
+/**
+ * Calculates the age based on the birth date and optionally the death date.
+ * If the death date is not provided, the current date is used.
+ *
+ * @param {string} birthDateString - The birth date in a string format.
+ * @param {string} [deathDateString] - The optional death date in a string format.
+ * @returns {number} - The calculated age.
+ */
+export const calculateAge = function(birthDateString, deathDateString) {
+    const birthDate = new Date(birthDateString);
+    const deathDate = deathDateString ? new Date(deathDateString) : new Date();
+
+    let age = deathDate.getFullYear() - birthDate.getFullYear();
+    const monthDifference = deathDate.getMonth() - birthDate.getMonth();
+
+    // Adjust age if birth month hasn't occurred in the death year
+    if (monthDifference < 0 || (monthDifference === 0 && deathDate.getDate() < birthDate.getDate())) {
+        age--;
+    }
+
+    return age;
+}
+
+/**
+ * Format date string as 'day month year'.
+ * @param {string} dateString - Date in 'YYYY-MM-DD' format.
+ * @return {string|null} Formatted date or null if dateString is falsy.
+ */
+const formatDate = function(raw, isPrivate, noDay) {
+  const months = [
+    'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+    'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec',
+  ];
+  const longMonths = [
+    'January', 'February', 'March',
+    'April', 'May', 'June', 'July',
+    'August', 'September', 'October',
+    'November', 'December',
+  ];
+
+  if (!raw) {
+    return null;
+  }
+
+  if (raw.includes("from ") && raw.includes(" to ")) {
+    return raw;
+  }
+
+  // Check for prefix words
+  let [prefix, dateString] = raw.includes(' ') ? raw.split(' ') : ["", raw];
+  let [year, month, day] = dateString.split('-', 3);
+
+  // Add a separating space for prefix if its populated
+  if (prefix != '') {
+    prefix += ' ';
+  }
+
+  if (month && !isPrivate) {
+    day = (day === undefined) ? "" : day + " ";
+
+    // Remove leading zero from days
+    if (day.startsWith('0')) {
+      day = day.slice(1);
+    }
+
+    if (!noDay) {
+      return `${prefix}${day}${months[parseInt(month, 10) - 1]} ${year}`;
+    }
+    return `${prefix}${months[parseInt(month, 10) - 1]} ${year}`;
+  }
+
+  // if (month) {
+  //   return `${prefix}${longMonths[parseInt(month, 10) - 1]} ${year}`;
+  // }
+
+  return `${prefix}${year}`;
+};
 
 for (const [i, person] of Object.entries(TREE_DATA)) {
   // =======================================================================
@@ -10,16 +254,12 @@ for (const [i, person] of Object.entries(TREE_DATA)) {
     continue;
   }
 
-  // =======================================================================
-  // Add do we use none photo flag
-  // =======================================================================
   let nodeData = TREE_DATA[i];
-  TREE_DATA[i]['useNonePhoto'] = bino.useNonePhoto(nodeData);
 
   // =======================================================================
   // Auto-fill story marker
   // =======================================================================
-  if (!(isPrivate && person.living)) {
+  if (!(IS_PRIVATE && person.living)) {
     let counter = 0;
     if (person.marker4) {
       counter = 4;
@@ -65,7 +305,7 @@ for (const [i, person] of Object.entries(TREE_DATA)) {
 
   let firstName = person.firstName;
   let nickname = (!person.nickname) ? '' : `"${person.nickname}" `;
-  if (isPrivate && person.living) {
+  if (IS_PRIVATE && person.living) {
     nickname = '';
   }
 
@@ -87,10 +327,10 @@ for (const [i, person] of Object.entries(TREE_DATA)) {
   // =======================================================================
   // Improve locations and make living the death place for easier UI change
   // =======================================================================
-  TREE_DATA[i]['birthPlace'] = bino.convertCountryCode(person.birthPlace);
-  TREE_DATA[i]['marriagePlace'] = bino.convertCountryCode(person.marriagePlace);
-  TREE_DATA[i]['deathPlace'] = bino.convertCountryCode(person.deathPlace);
-  TREE_DATA[i]['livingPlace'] = bino.convertCountryCode(person.livingPlace);
+  TREE_DATA[i]['birthPlace'] = convertCountryCode(person.birthPlace);
+  TREE_DATA[i]['marriagePlace'] = convertCountryCode(person.marriagePlace);
+  TREE_DATA[i]['deathPlace'] = convertCountryCode(person.deathPlace);
+  TREE_DATA[i]['livingPlace'] = convertCountryCode(person.livingPlace);
 
   // Replace death place with living place for quicker size changes
   if (person.living) {
@@ -107,12 +347,9 @@ for (const [i, person] of Object.entries(TREE_DATA)) {
   const separator = ' — ';
 
   TREE_DATA[i]['detailsRow1'] = {
-    'text': bino.getRelativeDates(person, isPrivate),
+    'text': getRelativeDates(person, IS_PRIVATE),
     'letter': null,
   }
-  TREE_DATA[i]['detailsRow2'] = {}
-  TREE_DATA[i]['detailsRow3'] = {}
-  TREE_DATA[i]['detailsRow4'] = {}
 
   if (person.birthPlace != null && !birthUsed) {
     birthUsed = true;
