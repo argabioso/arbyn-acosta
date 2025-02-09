@@ -259,7 +259,7 @@ function addPersonDetails(node) {
   }
 
   // Add gravemarker if photo is indicated
-  let graveStory = STORIES[node.data.fid].graveStory;
+  let graveStory = STORIES[node.data.fid]?.graveStory;
   graveStory = (graveStory === undefined) ? '' : `<p>${graveStory}</p>`;
 
   if (STORIES[node.data.fid] && STORIES[node.data.fid].gravemarker !== undefined) {
