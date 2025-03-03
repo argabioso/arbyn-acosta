@@ -1,5 +1,6 @@
 import { $, bino } from '../chart.js';
 import {
+  IS_PRIVATE,
   TREE_BACKGROUND_COLOR,
   TREE_NODE_BACKGROUND_COLOR,
   TREE_NODE_WIDTHS_BY_GENERATION,
@@ -41,8 +42,10 @@ export const BaseNodeContainer = () => {
         fill: TREE_NODE_BACKGROUND_COLOR,
         stroke: TREE_NODE_BACKGROUND_COLOR,
         strokeWidth: 1,
-        cursor: "pointer",
       },
+      new bino.Binding('cursor', '', (nodeData) => {
+        return (nodeData.living && IS_PRIVATE) ? "default" : "pointer"
+      }),
       new bino.Binding('desiredSize', '', (nodeData) => {
         return new bino.Size(TREE_NODE_WIDTHS_BY_GENERATION[nodeData.generation], nodeData.height);
       }),

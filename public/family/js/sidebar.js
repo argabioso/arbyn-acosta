@@ -4,6 +4,7 @@ import { TREE_KEYMAP } from './preprocess.js';
 import {
   MARKER_BACKGROUND_COLORS,
   MARKER_FOREGROUND_COLORS,
+  IS_PRIVATE,
 } from './settings.js';
 
 // Function to handle the click event on a node and show the sidebar
@@ -33,6 +34,10 @@ function encodeUtf8ToUrlSafeBase64(str) {
 }
 
 export const showSidebar = (node) => {
+  if (node.data.living && IS_PRIVATE) {
+    return;
+  }
+
   // Check if the <div> for this node's details already exists
   var existingDiv = document.getElementById("details-" + node.key);
 

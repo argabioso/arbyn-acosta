@@ -3,6 +3,7 @@ import {
   DEFAULT_FEMALE_PHOTO,
   DEFAULT_MALE_PHOTO,
   EMPTY_PHOTO,
+  IS_PRIVATE,
   TREE_NODE_BASE_HEIGHT,
 } from '../settings.js'
 
@@ -15,6 +16,9 @@ export const Photo = () => {
       margin: new bino.Margin(0.2, 0, 0, 0.2),
       cursor: "pointer",
     },
+    new bino.Binding('cursor', '', (nodeData) => {
+      return (nodeData.living && IS_PRIVATE) ? "default" : "pointer"
+    }),
     $(
       bino.Shape,
       'Rectangle',

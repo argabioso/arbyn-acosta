@@ -1,5 +1,6 @@
 import { $, bino } from '../../chart.js';
 import {
+  IS_PRIVATE,
   TREE_NODE_BASE_HEIGHT,
   TREE_NODE_PADDING,
   TREE_NODE_WIDTHS_BY_GENERATION,
@@ -15,7 +16,6 @@ export const NameText = () => {
     {
       font: `700 ${TREE_TEXTS_NAME_FONT_SIZE}px Google Sans, sans-serif`,
       height: TREE_TEXTS_NAME_FONT_SIZE + 2,
-      cursor: "pointer",
       margin: new bino.Margin(
         TREE_NODE_PADDING,
         0,
@@ -23,6 +23,9 @@ export const NameText = () => {
         TREE_NODE_BASE_HEIGHT + TREE_TEXTS_DETAILS_FONT_SIZE,
       )
     },
+    new bino.Binding('cursor', '', (nodeData) => {
+      return (nodeData.living && IS_PRIVATE) ? "default" : "pointer"
+    }),
     new bino.Binding('width', '', function(nodeData) {
       return (TREE_NODE_WIDTHS_BY_GENERATION[nodeData.generation] - 94) - 15;
     }),

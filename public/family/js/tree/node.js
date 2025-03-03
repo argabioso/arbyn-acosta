@@ -20,17 +20,20 @@ import {
   ThirdMarker,
   FourthMarker,
 } from './markers.js';
+import { IS_PRIVATE } from '../settings.js';
 import { showSidebar } from '../sidebar.js';
 
 export const TreeNode = () => {
   return $(
     bino.Node, {
       selectable: false,
-      cursor: "pointer",
       click: (e, node) => {
         showSidebar(node);
       },
     },
+    new bino.Binding('cursor', '', (nodeData) => {
+      return (nodeData.living && IS_PRIVATE) ? "default" : "pointer"
+    }),
     new bino.Binding('height', 'height'),
     new bino.Binding('width', 'width'),
 

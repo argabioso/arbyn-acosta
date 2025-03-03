@@ -795,6 +795,22 @@ export const STORIES = {
   'GH12-W17': { // Mamang
     headshot: 'GH12-W17.signed.webp',
     gravemarker: 'GH12-W17.lossy.webp',
+    stories: `
+      <h5>Siblings</h5>
+      <ul class="siblings">
+        <li class="female details-3">
+          <div class="person-headshot">
+            <img src="images/people/relatives/tessie.lossy.webp" />
+          </div>
+          <div class="person-details">
+            <span class="person-name">Tessie B. Vergara</span>
+            <span class="relevant-dates">16 Sep 1950 — Living (${calculateAge('16 Sep 1950', null)})</span>
+            <span class="birth-place"><strong>B</strong> : Pilar, Capiz, Philippines</span>
+            <span class="death-place"><strong>L</strong> : Bulacan, PHL</span>
+          </div>
+        </li>
+      </ul>
+    `
   },
   'GH12-SVQ': { // Nestor Adanza
     headshot: 'GH12-SVQ.signed.webp',
