@@ -162,6 +162,15 @@ export const STORIES = {
         <div class="youtube-container"><iframe class="youtube-embed" loading="lazy" src="https://www.youtube.com/embed/XelM7m7V3FI?controls=2&si=aLrttwYFY6x5m5xV&amp;start=6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
         <p class="caption"><em>Roland Argabioso in Dennis Cunanan's testification before the Senate for the Pork Barrel Scam.</em></p>
       </figure>
+
+      <hr />
+      <h5>Aftermath of Duterte's Administration</h5>
+      <p>In 2016, following the election of President Rodrigo Duterte, Roland faced an abrupt turning point in his career. Due to the high-ranking nature of his role as Deputy Director in the National Bureau of Investigation (NBI)—a position requiring presidential appointment—Roland was removed from office as part of a broader administrative reshuffle.</p>
+      <p>Undeterred by this unexpected challenge, Roland quickly transitioned to the private sector. In 2017, he joined the International Container Terminal Services Inc. (ICTSI) as the Asia Pacific Department Manager, overseeing crucial operations and leveraging his leadership experience in a new domain. This career shift marked another chapter of resilience and adaptability in Roland’s inspiring professional journey.</p>
+      <figure>
+        <img alt="ICTSI 2017 Portfolio: New Hires" src="images/stories/Roland_ICTSI.webp" />
+        <p class="caption"><em>Roland mentioned in ICTSI's 2017 Portfolio as one of their new hires.</em></p>
+      </figure>
     `
   },
   'GQJK-LCT': { // Marcial Argabioso
@@ -747,8 +756,8 @@ export const STORIES = {
             <img src="images/people/relatives/nene.lossy.webp" />
           </div>
           <div class="person-details">
-            <span class="person-name">Nene V. Ajesta</span>
-            <span class="relevant-dates">Between 1965 and 1970 — Living (${calculateAge('1970', null)}+)</span>
+            <span class="person-name">Criselda V. Ajesta</span>
+            <span class="relevant-dates">Bet. 1965 and 1970 — Living (${calculateAge('1970', null)}+)</span>
             <span class="birth-place"><strong>B</strong> : Pilar, Capiz, Philippines</span>
             <span class="death-place"><strong>L</strong> : Pilar, Capiz, Philippines</span>
           </div>
