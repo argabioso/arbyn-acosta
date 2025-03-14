@@ -149,7 +149,7 @@ function addPersonDetails(node) {
     'beer': 'really likes alcohol',
     'police': 'Police force',
     'investigate': 'Investigator',
-    'apparel': 'Apparel Manufacturer',
+    'apparel': 'Seamstress',
     'cattle': 'Cattle Vendor',
     'train': 'Railroad Worker',
     'manager': 'Work Manager',

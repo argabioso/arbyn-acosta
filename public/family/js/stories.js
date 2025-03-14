@@ -571,6 +571,10 @@ export const STORIES = {
     stories: `
       <h5>Siblings</h5>
       <p>According to Becky Maramba, one of $\{firstName\}'s sisters, they had <strong>14 other siblings</strong>. We just don't know the details regarding all of them that's why they're not listed.</p>
+
+      <hr />
+      <h5>Cause of Death</h5>
+      <p>According to Catalina's death certificate, she died from severe congestive heart failure which was caused by her Primary Myocardial Disease.</p>
     `
   },
   'GHB8-GB6': { // Sotero Maramba
