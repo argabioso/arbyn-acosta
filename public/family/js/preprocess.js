@@ -176,15 +176,39 @@ const convertCountryCode = function(input) {
  * @returns {number} - The calculated age.
  */
 export const calculateAge = function(birthDateString, deathDateString) {
-    const birthDate = new Date(birthDateString);
-    const deathDate = deathDateString ? new Date(deathDateString) : new Date();
+    const startDate = new Date(birthDateString);
+    const endDate = deathDateString ? new Date(deathDateString) : new Date();
 
-    let age = deathDate.getFullYear() - birthDate.getFullYear();
-    const monthDifference = deathDate.getMonth() - birthDate.getMonth();
+    let age = endDate.getFullYear() - startDate.getFullYear();
+    const monthDiff = endDate.getMonth() - startDate.getMonth();
 
     // Adjust age if birth month hasn't occurred in the death year
-    if (monthDifference < 0 || (monthDifference === 0 && deathDate.getDate() < birthDate.getDate())) {
+    if (monthDiff < 0 || (monthDiff === 0 && endDate.getDate() < startDate.getDate())) {
         age--;
+    }
+
+    if (age == 0) {
+      if (monthDiff > 1) {
+        return `${monthDiff} months`;
+      }
+      if (monthDiff == 1) {
+        return "1 month";
+      }
+
+      const dayDiff = endDate.getDate() - startDate.getDate();
+      const weekDiff = parseInt(dayDiff / 7);
+      if (dayDiff >= 14) {
+        return `${weekDiff} weeks`
+      }
+      if (dayDiff >= 7) {
+        return `${weekDiff} week`
+      }
+      if (dayDiff > 1) {
+        return `${dayDiff} days`;
+      }
+      if (dayDiff == 1) {
+        return "1 day";
+      }
     }
 
     return age;
