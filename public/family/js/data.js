@@ -27,7 +27,7 @@
     "deathPlace": null,
     "gender": "M",
     "hasDNA": false,
-    "hasImage": false,
+    "hasImage": true,
     "key": "80378400",
     "lastName": "Argabioso",
     "living": true,
