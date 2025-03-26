@@ -450,10 +450,10 @@ export const STORIES = {
 
       <hr />
       <h5>Last Family Photo</h5>
-      <p>For Babycor's 47th birthday, her son, Arbyn Argabioso, and her girlfriend, Mitchie Adanza, surprised her by visiting them in Santa Cruz, Laguna. Little did they know that seven days after taking this photo, Babycor would pass away.</p>
+      <p>For Babycor's 47th birthday, her son, Arbyn Argabioso, and her girlfriend, Mitchie Adanza, surprised her by visiting them in Santa Cruz, Laguna. Little did they know that two months after taking this photo, Babycor would pass away.</p>
       <figure>
         <img alt="Last photo in Santa Cruz, Laguna" src="images/stories/Babycor_Last_Family_Photo.webp" />
-        <p class="caption"><em>Photo of Babycor's family taken on May 18, 2018. </em></p>
+        <p class="caption"><em>Photo of Babycor's family taken on March 10, 2018. </em></p>
       </figure>
 
       <hr />
