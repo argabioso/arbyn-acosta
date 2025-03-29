@@ -42,9 +42,6 @@ def calculate_adjusted_height(node_data):
     if node_data["useNonePhoto"]:
         return adjusted_height - 60
 
-    if "rbyn" in node_data["firstName"]:
-        print(node_data)
-
     if node_data["birthPlace"] is None:
         adjusted_height -= 15
     if node_data["marriagePlace"] is None:
