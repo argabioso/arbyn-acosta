@@ -19,7 +19,7 @@ const calculateScale = () => {
   const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0)
   const view_ratio = vw / vh;
 
-  return Math.min(0.9, Math.max((vh / dh), (vw / dw), (vw / tw), (vh / th)));
+  return Math.min(0.75, Math.max((vh / dh), (vw / dw), (vw / tw), (vh / th)));
 }
 
 let tree = $(
