@@ -36,7 +36,7 @@ window.onload = () => {
   }
 
   // Show the copyright once everything loads up
-  document.querySelector('footer').classList.remove("hidden");
+  // document.querySelector('footer').classList.remove("hidden");
 
   // for (let fid in STORIES) {
   //   let person = TREE_FIDMAP[fid];
