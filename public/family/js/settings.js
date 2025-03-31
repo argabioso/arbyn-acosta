@@ -146,7 +146,7 @@ export const TREE_NODE_PADDING = 10.0;
 export const TREE_NODE_BASE_HEIGHT = 95.5;
 export const TREE_NODE_GENDER_BAND_WIDTH = 2.6;
 export const TREE_NODE_WIDTHS_BY_GENERATION = {
-  0: 346,
+  0: 366,
   1: 419, // Arbyn's generation
   2: 409,
   3: 405,
