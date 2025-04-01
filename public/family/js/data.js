@@ -81,15 +81,15 @@
     "marker3": "software",
     "fid": "GQX8-CQP",
     "child": "80378400",
+    "paternal_siblings": [
+      "70275697"
+    ],
+    "father": "50954818",
     "maternal_siblings": [
       "21719634",
       "41448711"
     ],
     "mother": "50342947",
-    "paternal_siblings": [
-      "70275697"
-    ],
-    "father": "50954818",
     "regular_siblings": [],
     "useNonePhoto": false,
     "height": 95.5,
@@ -1067,7 +1067,7 @@
   },
   {
     "baptismDate": null,
-    "birthDate": "1903-04-22",
+    "birthDate": "1904-04-22",
     "birthPlace": "Santa Barbara, Pangasinan, PHL",
     "deathAge": null,
     "deathDate": "1969-12-12",
@@ -1403,7 +1403,7 @@
   },
   {
     "baptismDate": null,
-    "birthDate": "1918-04-19",
+    "birthDate": "1908-04-19",
     "birthPlace": "Malasiqui, Pangasinan, PHL",
     "deathAge": null,
     "deathDate": "1990-04-16",
