@@ -760,7 +760,7 @@ export const STORIES = {
             <img src="images/people/relatives/nene.lossy.webp" />
           </div>
           <div class="person-details">
-            <span class="person-name">Criselda V. Ajesta</span>
+            <span class="person-name">Criselda "Nene" V. Ajesta</span>
             <span class="relevant-dates">Bet. 1965 and 1970 — Living (${calculateAge('1970', null)}+)</span>
             <span class="birth-place"><strong>B</strong> : Pilar, Capiz, Philippines</span>
             <span class="death-place"><strong>L</strong> : Pilar, Capiz, Philippines</span>
@@ -771,7 +771,7 @@ export const STORIES = {
             <img src="images/people/relatives/rolly.lossy.webp" />
           </div>
           <div class="person-details">
-            <span class="person-name">Rolly V. Ajesta</span>
+            <span class="person-name">Roly V. Ajesta</span>
             <span class="relevant-dates">21 Oct 1971 — Living (${calculateAge('21 Oct 1971', null)})</span>
             <span class="birth-place"><strong>B</strong> : Pilar, Capiz, Philippines</span>
             <span class="death-place"><strong>L</strong> : Santa Maria, Bulacan, PHL</span>
