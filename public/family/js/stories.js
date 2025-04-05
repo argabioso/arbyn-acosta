@@ -264,7 +264,7 @@ export const STORIES = {
           </div>
           <div class="person-details">
             <span class="person-name">Bonifacio "Boning" P. Saplala</span>
-            <span class="relevant-dates">about 1939 — Living (~${calculateAge('about 1939', null)})</span>
+            <span class="relevant-dates">5 Jun 1938 — Living (~${calculateAge('5 Jun 1938', null)})</span>
             <span class="birth-place"><strong>B</strong> : Luzon, Philippines</span>
             <span class="birth-place"><strong>L</strong> : Los Baños, Laguna, Philippines</span>
           </div>
@@ -275,7 +275,7 @@ export const STORIES = {
           </div>
           <div class="person-details">
             <span class="person-name">Claro P. Saplala Sr.</span>
-            <span class="relevant-dates">from 1940 to 1943 — about 2019 (~${calculateAge('1942', '2019')})</span>
+            <span class="relevant-dates">from 1939 to 1944 — about 2019 (~${calculateAge('1941', '2019')})</span>
             <span class="birth-place"><strong>B</strong> : Luzon, Philippines</span>
             <span class="birth-place"><strong>D</strong> : Sangandaan, S. Caloocan, PHL</span>
           </div>
