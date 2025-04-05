@@ -13,6 +13,7 @@ import {
 const marginConditions = (marker) => {
   const defaultMargins = new bino.Margin(2, 0, 0, 2);
   const margins = {
+    'family': new bino.Margin(3, 0, 0, 2.5),
     'signature': new bino.Margin(2, 0, 0, -0.025),
     'fishery': new bino.Margin(2, 0, 0, 2.7),
     'prelations': new bino.Margin(3, 0, 0, 2),

@@ -77,8 +77,9 @@
     "vitalsCompleteAndVerified": false,
     "firstName": "Arbyn",
     "baptismPlace": "San Roque Cathedral Parish, South Caloocan, PHL",
-    "marker": "computer",
-    "marker3": "software",
+    "marker": "family",
+    "marker4": "software",
+    "marker3": "computer",
     "fid": "GQX8-CQP",
     "child": "80378400",
     "paternal_siblings": [

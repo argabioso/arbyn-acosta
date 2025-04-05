@@ -144,6 +144,19 @@ export const STORIES = {
       </figure>
 
       <hr />
+      <h5>Popularity in Caloocan</h5>
+      <p>From his teenage years until now, Roland has remained a well-known figure in parts of Caloocan, especially around the Camelot area—not just for his early connections, but more so for his lasting impact on the community. </p>
+      <figure>
+        <img alt="Teenage Roland Argabioso with Friends" src="images/stories/Roland_Popularity_2.lossless.webp" />
+        <p class="caption"><em>Roland Argabioso with his friends during their teenage years.</em></p>
+      </figure>
+      <p>While he was once part of a group of boys in Camelot known for their notoriety and antics, and played on various basketball teams in his youth, it’s his consistent willingness to help others that truly made his name stick. Over the years, he has offered financial support to those in need and even helped some people find jobs during tough times. These acts of generosity have left a lasting impression, keeping his name alive even long after he moved away from his hometown.</p>
+      <figure>
+        <img alt="Roland Argabioso with Friends" src="images/stories/Roland_Popularity.lossless.webp" />
+        <p class="caption"><em>Roland Argabioso with his friends on his son's baptism day.</em></p>
+      </figure>
+
+      <hr />
       <h5>Rising Through The Ranks</h5>
       <p>Roland's professional career is one that inspires us the most, marked by unwavering dedication, remarkable leadership, and immense intelligence. Beginning as a bureau agent, to commanding task forces, to eventually achieving the esteemed position of Deputy Director in 2016. His story exemplifies the power of commitment and skill in reaching the pinnacle of professional success.</p>
       <figure>
@@ -293,7 +306,7 @@ export const STORIES = {
 
       <hr />
       <h5>Mother of the Argabioso Brothers</h5>
-      <p>Inspired by their mother's dedication, Lydia's sons persevered to reach the top of their respective fields as well. Roland Argabioso rose to the position of Deputy Director at the National Bureau of Investigation, Philippines, while Antonio Argabioso became the Senior Vice President of the Social Security System, Philippines. Danilo Argabioso, on the other hand, made his mark internationally as an engineer, contributing to projects across various countries, with a significant stint in Singapore.</p>
+      <p>Inspired by their mother's dedication, Lydia's sons persevered to reach the top of their respective fields as well. Roland Argabioso rose to the position of Deputy Director at the National Bureau of Investigation, Philippines, while Antonio Argabioso became one of the Senior Vice Presidents of the Social Security System, Philippines. Danilo Argabioso, on the other hand, made his mark internationally as an engineer, contributing to projects across various countries, with a significant stint in Singapore.</p>
       <figure>
         <img alt="Argabioso Brothers" src="images/stories/Argabioso_Brothers.lossy.webp" />
         <p class="caption"><em>Lydia's children. Photo was taken on June 15, 2024: (from left to right) Danilo, Antonio, and Roland Argabioso.</em></p>

@@ -129,10 +129,11 @@ function addPersonDetails(node) {
   let hasBadges = false;
 
   var storyMarkerLabel = {
+    'family': 'Family Historian',
     'manufacturing': 'Factory Worker',
     'farming': 'Farmer',
     'retail': 'Divisoria Vendor',
-    'computer': 'Information Technology',
+    'computer': 'Tech Industry',
     'intelligence': 'Intelligence Officer',
     'government': 'Government Official',
     'software': 'Software Engineer',

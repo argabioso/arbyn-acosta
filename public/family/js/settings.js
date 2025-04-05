@@ -76,6 +76,7 @@ export const MARKER_BACKGROUND_COLORS = {
   skull: COLORS.PLAIN.bg,
   train: COLORS.PLAIN.bg,
   book: COLORS.CYAN.bg,
+  family: COLORS.RED.bg,
 }
 
 export const MARKER_FOREGROUND_COLORS = {
@@ -115,6 +116,7 @@ export const MARKER_FOREGROUND_COLORS = {
   skull: COLORS.PLAIN.fg,
   train: COLORS.PLAIN.fg,
   book: COLORS.CYAN.fg,
+  family: COLORS.RED.fg,
 }
 
 export const DEFAULT_MALE_PHOTO = (
